@@ -35,7 +35,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
         public static void ButtonSaveClick()
         {
-            declaration.Definition.TemplateVariableDefinition();
+            Definition.TemplateVariableDefinition();
             Model_DatabaseTemplate.SaveDatabase();
 
             MessageBoxButtons btn = MessageBoxButtons.YesNo;

@@ -22,7 +22,8 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[1];
 
             // Push data to the database
-            //FillCommonSettingDatabase(DatabaseVariables.WsOutputDatabase);
+            FillCommonSettingDatabase(DatabaseVariables.WsOutputDatabase);
+            
 
 
             // Save the database
@@ -35,7 +36,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 
         public static void FillCommonSettingDatabase(Worksheet Ws)
         {
-            
+            //Ws.Cells[DatabaseVariables.ProjectName];
         }
     }
 }

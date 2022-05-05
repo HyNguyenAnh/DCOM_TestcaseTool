@@ -25,7 +25,6 @@ namespace dcom.declaration
             DatabaseVariables.NameOutputDatabase = "DB_" + DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
             DatabaseVariables.DirectoryOutputDatabase = DatabaseVariables.DatabaseDirectory;
             DatabaseVariables.PathOutputDatabase = DatabaseVariables.DirectoryOutputDatabase + @"\" + DatabaseVariables.NameOutputDatabase;
-            //DatabaseVariables.SubID = TestcaseVariables.NameOutputTestcase.Remove(TestcaseVariables.NameOutputTestcase.Length - 5) + "_";
 
             DatabaseVariables.StartRowIndexDatabaseTables = new int[]
             {   2, // Common Setting
@@ -54,22 +53,23 @@ namespace dcom.declaration
                 1, // Data Path Information
                 1  // Selected Service
             };
-
+            Model_SaveCommonSettingDatabase.ProjectInformation_View();
             // Get data from view
             List<string[]>[] CommonSettingDatabase_View = new List<string[]>[]{
                 //Model_SaveCommonSettingDatabase.CommonSetting(),
                 //Model_SaveCommonSettingDatabase.CommonCommand(),
                 //Model_SaveCommonSettingDatabase.CommonDID(),
-                //Model_SaveCommonSettingDatabase.ProjectInformation_View(),
+                Model_SaveCommonSettingDatabase.ProjectInformation_View(),
                 //Model_SaveCommonSettingDatabase.DataPathInformation(),
                 //Model_SaveCommonSettingDatabase.SelectedServiceInformation(),
             };
 
             // Project Information
-            //CommonSettingDatabase_View[0].ElementAt(0)[1] = DatabaseVariables.ProjectName;
-            //CommonSettingDatabase_View[0].ElementAt(1)[1] = DatabaseVariables.Variant;
-            //CommonSettingDatabase_View[0].ElementAt(2)[1] = DatabaseVariables.Release;
-            //CommonSettingDatabase_View[0].ElementAt(3)[1] = DatabaseVariables.RC;
+            
+            DatabaseVariables.ProjectName_View = CommonSettingDatabase_View[0].ElementAt(0)[0];
+            DatabaseVariables.Variant_View = CommonSettingDatabase_View[0].ElementAt(1)[0];
+            DatabaseVariables.Release_View = CommonSettingDatabase_View[0].ElementAt(2)[0];
+            DatabaseVariables.RC_View = CommonSettingDatabase_View[0].ElementAt(3)[0];
         }
 
         public static void DatabaseVariableDefinition()

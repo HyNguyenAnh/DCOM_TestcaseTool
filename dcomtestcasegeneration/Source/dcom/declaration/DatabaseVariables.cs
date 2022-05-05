@@ -35,6 +35,10 @@ namespace dcom.declaration
         public static string Variant { get; set; }
         public static string Release { get; set; }
         public static string RC { get; set; }
+        public static string ProjectName_View { get; set; }
+        public static string Variant_View { get; set; }
+        public static string Release_View { get; set; }
+        public static string RC_View { get; set; }
 
         public static List<List<string[]>> DatabaseService10 { get; set; }
         public static List<List<string[]>> DatabaseService11 { get; set; }
