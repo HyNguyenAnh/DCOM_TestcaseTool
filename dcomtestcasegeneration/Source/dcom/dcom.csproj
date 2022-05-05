@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{169C1B6D-861F-4808-9091-1DEA390D0E7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dcom</RootNamespace>
+    <AssemblyName>dcom</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>dcom.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.6.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.6.3\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.XML.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controllers\controllers_middleware\Controller_ServiceHandling.cs" />
+    <Compile Include="controllers\controllers_middleware\Controller_ExcelHandling.cs" />
+    <Compile Include="controllers\controllers_middleware\Controller_FileHandling.cs" />
+    <Compile Include="controllers\controllers_middleware\Controller_UIHandling.cs" />
+    <Compile Include="controllers\controllers_UIcontainer\Controllers_FunctionButton.cs" />
+    <Compile Include="declaration\SystemVariables.cs" />
+    <Compile Include="declaration\common_setting.cs" />
+    <Compile Include="declaration\DatabaseVariables.cs" />
+    <Compile Include="declaration\Definition.cs" />
+    <Compile Include="declaration\TemplateVariables.cs" />
+    <Compile Include="declaration\TestcaseVariables.cs" />
+    <Compile Include="declaration\ServiceVariables.cs" />
+    <Compile Include="declaration\UIVariables.cs" />
+    <Compile Include="models\models_databaseHandling\models_getDatabase\Model_GetCommonSettingDatabase.cs" />
+    <Compile Include="models\models_databaseHandling\models_getDatabase\Model_GetServiceDatabase.cs" />
+    <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_DatabaseTemplate.cs" />
+    <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveCommonSettingDatabase.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService10.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService2F.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService85.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService3E.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService28.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService27.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService31.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService2E.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService22.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService19.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService14.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService11.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_TestcaseKeyword.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_TestcaseTemplate.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service10.Designer.cs">
+      <DependentUpon>View_Service10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service11.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service11.Designer.cs">
+      <DependentUpon>View_Service11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service14.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service14.Designer.cs">
+      <DependentUpon>View_Service14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service19.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service19.Designer.cs">
+      <DependentUpon>View_Service19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service22.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service22.Designer.cs">
+      <DependentUpon>View_Service22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service27.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service27.Designer.cs">
+      <DependentUpon>View_Service27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service28.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service28.Designer.cs">
+      <DependentUpon>View_Service28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service2E.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service2E.Designer.cs">
+      <DependentUpon>View_Service2E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service2F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service2F.Designer.cs">
+      <DependentUpon>View_Service2F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service31.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service31.Designer.cs">
+      <DependentUpon>View_Service31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service3E.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service3E.Designer.cs">
+      <DependentUpon>View_Service3E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service85.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_Service\View_Service85.Designer.cs">
+      <DependentUpon>View_Service85.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Home.Designer.cs">
+      <DependentUpon>View_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\View_MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\View_MainWindow.Designer.cs">
+      <DependentUpon>View_MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Play.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Play.Designer.cs">
+      <DependentUpon>View_Play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Save.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Save.Designer.cs">
+      <DependentUpon>View_Save.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_ToolBar\View_Setting.Designer.cs">
+      <DependentUpon>View_Setting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service10.resx">
+      <DependentUpon>View_Service10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service11.resx">
+      <DependentUpon>View_Service11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service14.resx">
+      <DependentUpon>View_Service14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service19.resx">
+      <DependentUpon>View_Service19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service22.resx">
+      <DependentUpon>View_Service22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service27.resx">
+      <DependentUpon>View_Service27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service28.resx">
+      <DependentUpon>View_Service28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service2E.resx">
+      <DependentUpon>View_Service2E.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service2F.resx">
+      <DependentUpon>View_Service2F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service31.resx">
+      <DependentUpon>View_Service31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service3E.resx">
+      <DependentUpon>View_Service3E.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_Service\View_Service85.resx">
+      <DependentUpon>View_Service85.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_ToolBar\View_Home.resx">
+      <DependentUpon>View_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\View_MainWindow.resx">
+      <DependentUpon>View_MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_ToolBar\View_Play.resx">
+      <DependentUpon>View_Play.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_ToolBar\View_Save.resx">
+      <DependentUpon>View_Save.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\views_ToolBar\View_Setting.resx">
+      <DependentUpon>View_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\dcom.views.view_commonSetting.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftBorderBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browse-icon-31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bosch_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\traditional-economy-clipart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-folder-another-style-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture21.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
