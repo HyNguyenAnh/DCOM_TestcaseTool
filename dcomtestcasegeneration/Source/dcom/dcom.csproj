@@ -93,7 +93,6 @@
     <Compile Include="declaration\common_setting.cs" />
     <Compile Include="declaration\DatabaseVariables.cs" />
     <Compile Include="declaration\Definition.cs" />
-    <Compile Include="declaration\TemplateVariables.cs" />
     <Compile Include="declaration\TestcaseVariables.cs" />
     <Compile Include="declaration\ServiceVariables.cs" />
     <Compile Include="declaration\UIVariables.cs" />

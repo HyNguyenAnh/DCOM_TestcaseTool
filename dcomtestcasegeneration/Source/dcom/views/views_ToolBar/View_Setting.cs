@@ -355,8 +355,6 @@ namespace dcom.views.views_ToolBar
             DatabaseVariables.DatabaseSource = "Server";
         }
 
-        
-
         private void textBox_PublicCANDBC_TextChanged(object sender, EventArgs e)
         {
             DatabaseVariables.PublicCANDBC = textBox_PublicCANDBC.Text;

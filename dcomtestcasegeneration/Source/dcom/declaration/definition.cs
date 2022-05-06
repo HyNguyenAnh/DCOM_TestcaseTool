@@ -53,23 +53,13 @@ namespace dcom.declaration
                 1, // Data Path Information
                 1  // Selected Service
             };
-            Model_SaveCommonSettingDatabase.ProjectInformation_View();
-            // Get data from view
-            List<string[]>[] CommonSettingDatabase_View = new List<string[]>[]{
-                //Model_SaveCommonSettingDatabase.CommonSetting(),
-                //Model_SaveCommonSettingDatabase.CommonCommand(),
-                //Model_SaveCommonSettingDatabase.CommonDID(),
-                Model_SaveCommonSettingDatabase.ProjectInformation_View(),
-                //Model_SaveCommonSettingDatabase.DataPathInformation(),
-                //Model_SaveCommonSettingDatabase.SelectedServiceInformation(),
-            };
+            
 
             // Project Information
-            
-            DatabaseVariables.ProjectName_View = CommonSettingDatabase_View[0].ElementAt(0)[0];
-            DatabaseVariables.Variant_View = CommonSettingDatabase_View[0].ElementAt(1)[0];
-            DatabaseVariables.Release_View = CommonSettingDatabase_View[0].ElementAt(2)[0];
-            DatabaseVariables.RC_View = CommonSettingDatabase_View[0].ElementAt(3)[0];
+            //DatabaseVariables.ProjectName_View = CommonSettingDatabase_View[0].ElementAt(0)[0];
+            //DatabaseVariables.Variant_View = CommonSettingDatabase_View[0].ElementAt(1)[0];
+            //DatabaseVariables.Release_View = CommonSettingDatabase_View[0].ElementAt(2)[0];
+            //DatabaseVariables.RC_View = CommonSettingDatabase_View[0].ElementAt(3)[0];
         }
 
         public static void DatabaseVariableDefinition()

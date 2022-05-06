@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using dcom.views.views_ToolBar;
 
 namespace dcom.models.models_databaseHandling.models_saveDatabase
 {
@@ -25,7 +26,6 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             FillCommonSettingDatabase(DatabaseVariables.WsOutputDatabase);
             
 
-
             // Save the database
             Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
 
@@ -36,7 +36,28 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 
         public static void FillCommonSettingDatabase(Worksheet Ws)
         {
-            //Ws.Cells[DatabaseVariables.ProjectName];
+            int ID = 0;
+            int rowIndex = DatabaseVariables.StartRowIndexDatabaseTables[ID];
+            int columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables[ID] + 1;
+
+            // Project Information
+            ID = 8;
+            Ws.Cells[rowIndex, columnIndex] = DatabaseVariables.ProjectName;
+            Ws.Cells[rowIndex + 1, columnIndex] = DatabaseVariables.Variant;
+            Ws.Cells[rowIndex + 2, columnIndex] = DatabaseVariables.Release;
+            Ws.Cells[rowIndex + 3, columnIndex] = DatabaseVariables.RC;
+
+            // Data Path Information
+            ID = 9;
+            Ws.Cells[rowIndex, columnIndex] = DatabaseVariables.DatabaseSource;
+            Ws.Cells[rowIndex + 1, columnIndex] = DatabaseVariables.PathOutputDatabase;
+            Ws.Cells[rowIndex + 4, columnIndex] = TestcaseVariables.DirectoryOutputTestcase;
+            Ws.Cells[rowIndex + 5, columnIndex] = DatabaseVariables.TemplatePath;
+            Ws.Cells[rowIndex + 6, columnIndex] = DatabaseVariables.DirectoryOutputDatabase;
+
+            // Selected Service
+            //DatabaseVariables.ID++;
+
         }
     }
 }
