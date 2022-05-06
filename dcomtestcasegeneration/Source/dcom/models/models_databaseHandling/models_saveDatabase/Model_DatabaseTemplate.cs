@@ -36,24 +36,24 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 
         public static void FillCommonSettingDatabase(Worksheet Ws)
         {
-            int ID = 0;
-            int rowIndex = DatabaseVariables.StartRowIndexDatabaseTables[ID];
-            int columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables[ID] + 1;
+            //for (int ID = 0; ID = )
+            int [] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
+            int [] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
 
             // Project Information
-            ID = 8;
-            Ws.Cells[rowIndex, columnIndex] = DatabaseVariables.ProjectName;
-            Ws.Cells[rowIndex + 1, columnIndex] = DatabaseVariables.Variant;
-            Ws.Cells[rowIndex + 2, columnIndex] = DatabaseVariables.Release;
-            Ws.Cells[rowIndex + 3, columnIndex] = DatabaseVariables.RC;
+            
+            Ws.Cells[rowIndex[8], columnIndex[8] + 1] = DatabaseVariables.ProjectName;
+            Ws.Cells[rowIndex[8] + 1, columnIndex[8] + 1] = DatabaseVariables.Variant;
+            Ws.Cells[rowIndex[8] + 2, columnIndex[8] + 1] = DatabaseVariables.Release;
+            Ws.Cells[rowIndex[8] + 3, columnIndex[8] + 1] = DatabaseVariables.RC;
 
             // Data Path Information
-            ID = 9;
-            Ws.Cells[rowIndex, columnIndex] = DatabaseVariables.DatabaseSource;
-            Ws.Cells[rowIndex + 1, columnIndex] = DatabaseVariables.PathOutputDatabase;
-            Ws.Cells[rowIndex + 4, columnIndex] = TestcaseVariables.DirectoryOutputTestcase;
-            Ws.Cells[rowIndex + 5, columnIndex] = DatabaseVariables.TemplatePath;
-            Ws.Cells[rowIndex + 6, columnIndex] = DatabaseVariables.DirectoryOutputDatabase;
+            
+            Ws.Cells[rowIndex[9], columnIndex[9] + 1] = DatabaseVariables.DatabaseSource;
+            Ws.Cells[rowIndex[9] + 1, columnIndex[9] + 1] = DatabaseVariables.PathOutputDatabase;
+            Ws.Cells[rowIndex[9] + 4, columnIndex[9] + 1] = DatabaseVariables.TestcaseDirectory;
+            Ws.Cells[rowIndex[9] + 5, columnIndex[9] + 1] = DatabaseVariables.TemplatePath;
+            Ws.Cells[rowIndex[9] + 6, columnIndex[9] + 1] = DatabaseVariables.DirectoryOutputDatabase;
 
             // Selected Service
             //DatabaseVariables.ID++;
