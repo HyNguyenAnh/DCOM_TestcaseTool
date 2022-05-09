@@ -92,7 +92,6 @@ namespace dcom.views.views_ToolBar
             this.panel_PublicCANDBCBrowse = new System.Windows.Forms.Panel();
             this.panel_PrivateCANDBCBrowse = new System.Windows.Forms.Panel();
             this.panel_DBPathBrowse = new System.Windows.Forms.Panel();
-            //this.textBox_CoresiPath = new System.Windows.Forms.TextBox();
             this.textBox_PublicCANDBC = new System.Windows.Forms.TextBox();
             this.textBox_PrivateCANDBC = new System.Windows.Forms.TextBox();
             this.textBox_TestcaseDirectory = new System.Windows.Forms.TextBox();

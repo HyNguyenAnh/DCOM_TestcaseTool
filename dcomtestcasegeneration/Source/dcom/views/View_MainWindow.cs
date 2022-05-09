@@ -237,8 +237,6 @@ namespace dcom.views
             Cursor = Cursors.WaitCursor;
 
             Controllers_FunctionButton.ButtonExportClick();
-            //View_Play frm = new View_Play();
-            //Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
 
             Cursor = Cursors.Default;
         }
@@ -248,10 +246,6 @@ namespace dcom.views
             Cursor = Cursors.WaitCursor;
 
             Controllers_FunctionButton.ButtonSaveClick();
-
-            //View_Save frm = new View_Save();
-            //Controllers_FunctionButton.ButtonExportClick();
-            //Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
 
             Cursor = Cursors.Default;
         }
