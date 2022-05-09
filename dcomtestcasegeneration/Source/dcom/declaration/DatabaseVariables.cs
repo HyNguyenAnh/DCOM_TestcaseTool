@@ -18,15 +18,12 @@ namespace dcom.declaration
         public static Workbook WbDatabase { get; set; }
         public static Worksheet WsDatabase { get; set; }
 
-        //public static string DatabaseSource { get; set; }
         public static string DatabasePath { get; set; }
         public static string PublicCANDBC { get; set; }
         public static string PrivateCANDBC { get; set; }
         public static string TestcaseDirectory { get; set; }
         public static string DatabaseDirectory { get; set; }
         public static string TemplatePath { get; set; }
-        
-
         public static string DatabaseSource = "Local";
 
         public static int[] StartRowIndexDatabaseTables { get; set; }
@@ -89,5 +86,7 @@ namespace dcom.declaration
         public static string[] ProjectInformation { get; set; }
         public static string[] DataPathInformation { get; set; }
         public static int ID { get; set; }
+
+        public static string [] AllowSession_Physical { get; set; }
     }
 }

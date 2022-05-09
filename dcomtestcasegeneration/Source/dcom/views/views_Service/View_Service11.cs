@@ -193,10 +193,9 @@ namespace dcom.views.views_Service
         {
             UIVariables.Service11_ButtonStatus_AddressingMode[2] = !UIVariables.Service11_ButtonStatus_AddressingMode[2];
 
-            button_PhysicalExtended.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[0];
-            button_PhysicalExtended.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[1];
-            button_PhysicalExtended.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2]);
-
+            button_PhysicalProgramming.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[0];
+            button_PhysicalProgramming.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[1];
+            button_PhysicalProgramming.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2]);
         }
 
         private void button_Service11_FunctionalDefault_Click(object sender, EventArgs e)
@@ -250,6 +249,26 @@ namespace dcom.views.views_Service
         }
 
         private void dataGridView_CommonSetting_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button_Service11_PhysicalDefault_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseVariables.AllowSession_Physical[0] = button_PhysicalDefault.Text;
+        }
+
+        private void button_Service11_PhysicalProgramming_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseVariables.AllowSession_Physical[1] = button_PhysicalProgramming.Text;
+        }
+
+        private void button_Service11_PhysicalExtended_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseVariables.AllowSession_Physical[2] = button_PhysicalProgramming.Text;
+        }
+
+        private void button_Service11_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
 
         }
