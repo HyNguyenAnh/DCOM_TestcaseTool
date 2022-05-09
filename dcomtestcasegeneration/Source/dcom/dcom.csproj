@@ -99,7 +99,6 @@
     <Compile Include="models\models_databaseHandling\models_getDatabase\Model_GetCommonSettingDatabase.cs" />
     <Compile Include="models\models_databaseHandling\models_getDatabase\Model_GetServiceDatabase.cs" />
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_DatabaseTemplate.cs" />
-    <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveCommonSettingDatabase.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService10.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService2F.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService85.cs" />
