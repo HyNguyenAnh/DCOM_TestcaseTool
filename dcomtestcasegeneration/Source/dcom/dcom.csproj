@@ -103,6 +103,7 @@
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService10.cs" />
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService14.cs" />
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService11.cs" />
+    <Compile Include="models\models_databaseHandling\Model_UIInformation.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService10.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService2F.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService85.cs" />

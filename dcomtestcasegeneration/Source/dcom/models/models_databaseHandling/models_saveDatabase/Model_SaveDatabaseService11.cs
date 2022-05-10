@@ -15,6 +15,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
         {
             int[] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
+            string status = "";
 
             // Specification
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(0).Count(); index++)
@@ -30,7 +31,15 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11.ElementAt(1)[0].Count(); index_++)
                 {
-                    Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_];
+                    if (DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_] == "ON")
+                    {
+                        status = "1";
+                    }
+                    else if (DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_] == "OFF")
+                    {
+                        status = "0";
+                    }
+                    Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
         }

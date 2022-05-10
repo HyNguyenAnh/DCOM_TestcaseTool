@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace dcom.declaration
 {
-    class ApplicationDirectory
+    class SystemVariables
     {
-        
+        public static string currentApplicationPath { get; set; }
+        //public static string 
     }
 }

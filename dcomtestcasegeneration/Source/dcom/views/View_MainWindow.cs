@@ -244,7 +244,7 @@ namespace dcom.views
         private void button_save_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-
+            
             Controllers_FunctionButton.ButtonSaveClick();
 
             Cursor = Cursors.Default;

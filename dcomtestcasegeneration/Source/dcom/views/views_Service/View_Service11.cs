@@ -193,9 +193,9 @@ namespace dcom.views.views_Service
         {
             UIVariables.Service11_ButtonStatus_AddressingMode[2] = !UIVariables.Service11_ButtonStatus_AddressingMode[2];
 
-            button_PhysicalProgramming.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[0];
-            button_PhysicalProgramming.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[1];
-            button_PhysicalProgramming.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2]);
+            button_PhysicalExtended.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[0];
+            button_PhysicalExtended.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2])[1];
+            button_PhysicalExtended.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[2]);
         }
 
         private void button_Service11_FunctionalDefault_Click(object sender, EventArgs e)
@@ -212,9 +212,9 @@ namespace dcom.views.views_Service
         {
             UIVariables.Service11_ButtonStatus_AddressingMode[4] = !UIVariables.Service11_ButtonStatus_AddressingMode[4];
 
-            button_FunctionalProgramming.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[3])[0];
-            button_FunctionalProgramming.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[3])[1];
-            button_FunctionalProgramming.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[3]);
+            button_FunctionalProgramming.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[4])[0];
+            button_FunctionalProgramming.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[4])[1];
+            button_FunctionalProgramming.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[4]);
 
         }
 
@@ -222,9 +222,9 @@ namespace dcom.views.views_Service
         {
             UIVariables.Service11_ButtonStatus_AddressingMode[5] = !UIVariables.Service11_ButtonStatus_AddressingMode[5];
 
-            button_FunctionalExtended.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[3])[0];
-            button_FunctionalExtended.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[3])[1];
-            button_FunctionalExtended.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[3]);
+            button_FunctionalExtended.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[5])[0];
+            button_FunctionalExtended.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[5])[1];
+            button_FunctionalExtended.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_AddressingMode[5]);
 
         }
 
@@ -255,22 +255,32 @@ namespace dcom.views.views_Service
 
         private void button_Service11_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.AllowSession_Physical[0] = button_PhysicalDefault.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[0][1] = button_PhysicalDefault.Text;
         }
 
         private void button_Service11_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.AllowSession_Physical[1] = button_PhysicalProgramming.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[0][2] = button_PhysicalProgramming.Text;
         }
 
         private void button_Service11_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.AllowSession_Physical[2] = button_PhysicalProgramming.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[0][3] = button_PhysicalExtended.Text;
         }
 
         private void button_Service11_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
+            DatabaseVariables.DatabaseService11.ElementAt(1)[1][1] = button_FunctionalDefault.Text;
+        }
 
+        private void button_Service11_FunctionalProgramming_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseVariables.DatabaseService11.ElementAt(1)[1][2] = button_FunctionalProgramming.Text;
+        }
+
+        private void button_Service11_FunctionalExtended_TextChanged(object sender, EventArgs e)
+        {
+            DatabaseVariables.DatabaseService11.ElementAt(1)[1][3] = button_FunctionalExtended.Text;
         }
     }
 }

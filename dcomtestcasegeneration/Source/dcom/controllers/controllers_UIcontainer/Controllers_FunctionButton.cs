@@ -53,7 +53,6 @@ namespace dcom.controllers.controllers_UIcontainer
 
         public static void ButtonLoadDataClick()
         {
-            
             string databasePath = DatabaseVariables.DatabasePath;
             
             // Open the database
@@ -63,6 +62,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
             // Close the database
             Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
+
         }
     }
 }

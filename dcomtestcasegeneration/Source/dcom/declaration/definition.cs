@@ -8,6 +8,8 @@ using dcom.controllers;
 using dcom.models.models_databaseHandling.models_getDatabase;
 using dcom.models.models_databaseHandling.models_saveDatabase;
 using Microsoft.Office.Interop.Excel;
+using System.IO;
+
 namespace dcom.declaration
 {
     public class Definition
@@ -17,7 +19,7 @@ namespace dcom.declaration
             DatabaseVariableDefinition();
             TestcaseVariableDefinition();
             TemplateVariableDefinition();
-
+            SystemVariableDefinition();
         }
 
         public static void TemplateVariableDefinition()
@@ -259,6 +261,10 @@ namespace dcom.declaration
 
         }
         
+        public static void SystemVariableDefinition()
+        {
+            SystemVariables.currentApplicationPath = Directory.GetCurrentDirectory();
+        }
         public static void UIVariableDefinition()
         {
             //
