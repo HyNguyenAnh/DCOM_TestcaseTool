@@ -39,9 +39,28 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     {
                         status = "0";
                     }
+                    else
+                    {
+                        status = DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_];
+                    }
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
         }
+        //public static void ConvertStatusToBinary(int index, int index_, string status)
+        //{
+        //    if (DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_] == "ON")
+        //    {
+        //        status = "1";
+        //    }
+        //    else if (DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_] == "OFF")
+        //    {
+        //        status = "0";
+        //    }
+        //    else
+        //    {
+        //        status = DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_];
+        //    }
+        //}
     }
 }

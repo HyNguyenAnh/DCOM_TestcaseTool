@@ -3,6 +3,7 @@ using dcom.declaration;
 using dcom.models.models_databaseHandling.models_getDatabase;
 using dcom.models.models_testcaseHandling;
 using dcom.models.models_databaseHandling.models_saveDatabase;
+using dcom.models.models_systemHandling;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -36,7 +37,10 @@ namespace dcom.controllers.controllers_UIcontainer
         public static void ButtonSaveClick()
         {
             Definition.TemplateVariableDefinition();
+            Definition.SystemVariableDefinition();
             Model_DatabaseTemplate.SaveDatabase();
+            Model_SystemInformation.createBackupFile();
+            
 
             MessageBoxButtons btn = MessageBoxButtons.YesNo;
             DialogResult res = MessageBox.Show("The database updated successfully!\nWould you like to open the database excel file?", "Notice", btn);
@@ -62,7 +66,6 @@ namespace dcom.controllers.controllers_UIcontainer
 
             // Close the database
             Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
-
         }
     }
 }

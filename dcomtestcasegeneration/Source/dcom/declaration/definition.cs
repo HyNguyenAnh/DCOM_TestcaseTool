@@ -9,6 +9,7 @@ using dcom.models.models_databaseHandling.models_getDatabase;
 using dcom.models.models_databaseHandling.models_saveDatabase;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
+using System.Reflection;
 
 namespace dcom.declaration
 {
@@ -263,7 +264,9 @@ namespace dcom.declaration
         
         public static void SystemVariableDefinition()
         {
-            SystemVariables.currentApplicationPath = Directory.GetCurrentDirectory();
+            SystemVariables.currentApplicationPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            SystemVariables.backupFileName = "BackupFile.txt";
+            SystemVariables.backupFilePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, SystemVariables.backupFileName)).LocalPath;
         }
         public static void UIVariableDefinition()
         {

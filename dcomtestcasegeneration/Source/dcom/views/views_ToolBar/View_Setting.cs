@@ -92,6 +92,8 @@ namespace dcom.views.views_ToolBar
                 SelectedServiceInformation[selectedServiceIndex].ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex])[1];
             }
 
+            // Load 
+
         }
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
         {
@@ -177,18 +179,19 @@ namespace dcom.views.views_ToolBar
 
 
             // Push data to Common Setting
-            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView_CommonSetting);
+            //controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView_CommonSetting);
 
             List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
-            for (int rowIndex = 0; rowIndex < DatabaseCommonSetting.Count; rowIndex++)
-            {
-                dataGridView_CommonSetting.Rows.Add();
-                dataGridView_CommonSetting.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
-                dataGridView_CommonSetting.Rows[rowIndex].Cells[1].Value = DatabaseCommonSetting.ElementAt(rowIndex)[0]; // Description
-                dataGridView_CommonSetting.Rows[rowIndex].Cells[2].Value = DatabaseCommonSetting.ElementAt(rowIndex)[1]; // Variable
-                dataGridView_CommonSetting.Rows[rowIndex].Cells[3].Value = DatabaseCommonSetting.ElementAt(rowIndex)[2]; // Value
-                dataGridView_CommonSetting.Rows[rowIndex].Cells[4].Value = DatabaseCommonSetting.ElementAt(rowIndex)[3]; // Timeout
-            }
+            PutDatabaseCommonSettingToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting, 0);
+            //for (int rowIndex = 0; rowIndex < DatabaseCommonSetting.Count; rowIndex++)
+            //{
+            //    dataGridView_CommonSetting.Rows.Add();
+            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
+            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[1].Value = DatabaseCommonSetting.ElementAt(rowIndex)[0]; // Description
+            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[2].Value = DatabaseCommonSetting.ElementAt(rowIndex)[1]; // Variable
+            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[3].Value = DatabaseCommonSetting.ElementAt(rowIndex)[2]; // Value
+            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[4].Value = DatabaseCommonSetting.ElementAt(rowIndex)[3]; // Timeout
+            //}
 
             // Push data to Common Command
             controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView_CommonCommand);
@@ -221,6 +224,22 @@ namespace dcom.views.views_ToolBar
             
         }
 
+        public static void PutDatabaseCommonSettingToDataGridView(DataGridView dataGridView, List<string[]> DatabaseCommonSetting, int index)
+        {
+            // Push data to Common Setting
+            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView);
+
+
+            for (int rowIndex = 0; rowIndex < DatabaseCommonSetting.Count; rowIndex++)
+            {
+                dataGridView.Rows.Add();
+                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
+                dataGridView.Rows[rowIndex].Cells[1].Value = DatabaseCommonSetting.ElementAt(rowIndex)[0]; // Description
+                dataGridView.Rows[rowIndex].Cells[2].Value = DatabaseCommonSetting.ElementAt(rowIndex)[1]; // Variable
+                dataGridView.Rows[rowIndex].Cells[3].Value = DatabaseCommonSetting.ElementAt(rowIndex)[2]; // Value
+                dataGridView.Rows[rowIndex].Cells[4].Value = DatabaseCommonSetting.ElementAt(rowIndex)[3]; // Timeout
+            }
+        }
         private void button_SelectService10_Click(object sender, EventArgs e)
         {
             DatabaseVariables.SelectedServiceStatus[0] = !DatabaseVariables.SelectedServiceStatus[0];

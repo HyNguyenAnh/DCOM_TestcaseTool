@@ -530,6 +530,7 @@ namespace dcom.views
             this.Controls.Add(this.tableLayoutPanel_base);
             this.Name = "View_MainWindow";
             this.Text = "DCOM Testcase Generation Automation";
+            this.Load += new System.EventHandler(this.View_MainWindow_Load);
             this.tableLayoutPanel_base.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

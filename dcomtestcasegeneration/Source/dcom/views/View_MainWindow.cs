@@ -13,6 +13,7 @@ using dcom.controllers.controllers_middleware;
 using dcom.controllers.controllers_UIcontainer;
 using dcom.declaration;
 using System.DirectoryServices.AccountManagement;
+using dcom.models.models_systemHandling;
 
 namespace dcom.views
 {
@@ -24,11 +25,17 @@ namespace dcom.views
         {
             InitializeComponent();
 
+           
+        }
+
+        private void View_MainWindow_Load(object sender, EventArgs e)
+        {
             // Load home page
             View_Home frm = new View_Home();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
-        }
 
+            
+        }
         private void button_service10_MouseHover(object sender, EventArgs e)
         {
             button_service10.Margin = new Padding(buttonHoverMargin);
@@ -374,5 +381,7 @@ namespace dcom.views
         {
             button_setting.PerformClick();
         }
+
+  
     }
 }
