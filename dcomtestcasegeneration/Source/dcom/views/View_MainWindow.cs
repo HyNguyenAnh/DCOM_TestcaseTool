@@ -24,8 +24,8 @@ namespace dcom.views
         public View_MainWindow()
         {
             InitializeComponent();
+            SystemVariables.checkTheFirstLoad = true;
 
-           
         }
 
         private void View_MainWindow_Load(object sender, EventArgs e)
@@ -233,9 +233,13 @@ namespace dcom.views
         {
             Cursor = Cursors.WaitCursor;
 
+            if (SystemVariables.checkTheFirstLoad == true)
+            {
+                Model_BackupInformation.BackupInformation();
+            }
             View_Setting frm = new View_Setting();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
-
+            
             Cursor = Cursors.Default;
         }
 

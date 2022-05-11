@@ -18,38 +18,19 @@ namespace dcom.views.views_ToolBar
         public View_Home()
         {
             InitializeComponent();
-
         }
 
         private void button_homepage_goToSetting_Click(object sender, EventArgs e)
         {
-            MessageBoxButtons btn = MessageBoxButtons.YesNo;
-            DialogResult res = MessageBox.Show("Would you want to load the last recent database?", "Notice", btn);
-
-            if (res == DialogResult.Yes)
+            Cursor = Cursors.WaitCursor;
+            if (SystemVariables.checkTheFirstLoad == true)
             {
-                Cursor = Cursors.WaitCursor;
-
-                //this.button_setting.PerformClick();
-                Definition.SystemVariableDefinition();
-                Model_SystemInformation.readBackupFile();
-                string databasePath = DatabaseVariables.DatabasePath;
-                DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
-
-                Definition.DatabaseVariableDefinition();
-
-                // Close the database
-                Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
-
-                Cursor = Cursors.Default;
+                Model_BackupInformation.BackupInformation();
             }
-            else
-            {
-                // Close the pop-up
-            }
-
             View_MainWindow view_MainWindow = (View_MainWindow)this?.Parent?.Parent?.Parent?.Parent;
             view_MainWindow.button_setting.PerformClick();
+            
+            Cursor = Cursors.Default;
         }
     }
 }

@@ -12,5 +12,6 @@ namespace dcom.declaration
         public static string dcomtestcasegenerationFileDirectory { get; set; }
         public static string backupFilePath { get; set; }
         public static string backupFileName { get; set; }
+        public static bool checkTheFirstLoad { get; set; }
     }
 }

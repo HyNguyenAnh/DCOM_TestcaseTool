@@ -92,7 +92,8 @@ namespace dcom.views.views_ToolBar
                 SelectedServiceInformation[selectedServiceIndex].ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex])[1];
             }
 
-            // Load 
+            // Load Common Keyword Information
+
 
         }
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
