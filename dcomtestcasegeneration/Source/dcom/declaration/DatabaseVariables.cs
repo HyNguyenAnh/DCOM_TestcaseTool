@@ -63,6 +63,7 @@ namespace dcom.declaration
         public static string[] DatabaseCommonCommandReadSession { get; set; }
         public static string[] DatabaseCommonDIDCurrentSession { get; set; }
         public static string[] DatabaseCommonDIDInvalidCounter { get; set; }
+        public static string[] DatabaseCommonDIDCurrentVoltage { get; set; }
 
         public static List<string[]> DatabaseSelectedService { get; set; }
 

@@ -26,7 +26,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[2];
             Model_SaveDatabaseService10.SaveDatabaseService10(DatabaseVariables.WsOutputDatabase);
 
-            // Save data from service 10 to the database
+            // Save data from service 11 to the database
             DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[3];
             Model_SaveDatabaseService11.SaveDatabaseService11(DatabaseVariables.WsOutputDatabase);
 

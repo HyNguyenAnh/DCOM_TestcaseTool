@@ -94,6 +94,16 @@ namespace dcom.views.views_ToolBar
 
             // Load Common Keyword Information
 
+            //DatabaseVariables.DatabaseCommonSetting = new List<string[]>[]
+            //{
+            //    DatabaseVariables.ID,
+            //    DatabaseVariables.DatabaseCommonSettingCreateFault,
+            //    DatabaseVariables.DatabaseCommonSettingVehicleSpeed,
+            //    DatabaseVariables.DatabaseCommonSettingEngineStatus,
+            //    DatabaseVariables.DatabaseCommonSettingPowerMode,
+            //    DatabaseVariables.DatabaseCommonSettingSecurityUnlock,
+            //};
+            //for (int commonKeywordInformationIndex = 0; commonKeywordInformationIndex < DatabaseVariables.DatabaseCommonCommand)
 
         }
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
@@ -229,7 +239,6 @@ namespace dcom.views.views_ToolBar
         {
             // Push data to Common Setting
             controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView);
-
 
             for (int rowIndex = 0; rowIndex < DatabaseCommonSetting.Count; rowIndex++)
             {

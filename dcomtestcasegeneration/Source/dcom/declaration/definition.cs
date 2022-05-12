@@ -125,9 +125,11 @@ namespace dcom.declaration
             // Common DID
             DatabaseVariables.DatabaseCommonDIDCurrentSession = CommonSettingDatabase[2].ElementAt(0);
             DatabaseVariables.DatabaseCommonDIDInvalidCounter = CommonSettingDatabase[2].ElementAt(1);
+            DatabaseVariables.DatabaseCommonDIDCurrentVoltage = CommonSettingDatabase[2].ElementAt(2);
 
             DatabaseVariables.DatabaseCommonDID.Add(DatabaseVariables.DatabaseCommonDIDCurrentSession);
             DatabaseVariables.DatabaseCommonDID.Add(DatabaseVariables.DatabaseCommonDIDInvalidCounter);
+            DatabaseVariables.DatabaseCommonDID.Add(DatabaseVariables.DatabaseCommonDIDCurrentVoltage);
 
             // Project Information
             DatabaseVariables.ProjectName = CommonSettingDatabase[3].ElementAt(0)[1];
