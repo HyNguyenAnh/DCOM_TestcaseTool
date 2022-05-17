@@ -25,7 +25,18 @@ namespace dcom.views
         {
             InitializeComponent();
             SystemVariables.checkTheFirstLoad = true;
-
+            //button_service10.Enabled = false;
+            //button_service11.Enabled = false;
+            //button_service14.Enabled = false;
+            //button_service19.Enabled = false;
+            //button_service22.Enabled = false;
+            //button_service2e.Enabled = false;
+            //button_service27.Enabled = false;
+            //button_service2f.Enabled = false;
+            //button_service28.Enabled = false;
+            //button_service3e.Enabled = false;
+            //button_service85.Enabled = false;
+            //button_service31.Enabled = false;
         }
 
         private void View_MainWindow_Load(object sender, EventArgs e)

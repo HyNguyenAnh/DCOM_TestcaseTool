@@ -52,6 +52,34 @@ namespace dcom.declaration
             false,
         };
 
+        // Service 10
+
+        public static bool[] Service10_ButtonStatus_SubFunction = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        };
+        public static bool Service10_ButtonStatus_SuppressBit = false;
+        public static bool[] Service10_ButtonStatus_AddressingMode = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        };
+        public static bool[] Service10_ButtonStatus_Condition = new bool[]
+        {
+            false,
+            false
+        };
+        public static string[] Service10_NRCPriority { get; set; }
+
         // Service11
 
         public static bool[] Service11_ButtonStatus_SubFunction = new bool[]

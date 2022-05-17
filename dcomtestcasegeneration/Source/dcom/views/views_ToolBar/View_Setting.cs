@@ -93,18 +93,14 @@ namespace dcom.views.views_ToolBar
             }
 
             // Load Common Keyword Information
+            List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
+            PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
 
-            //DatabaseVariables.DatabaseCommonSetting = new List<string[]>[]
-            //{
-            //    DatabaseVariables.ID,
-            //    DatabaseVariables.DatabaseCommonSettingCreateFault,
-            //    DatabaseVariables.DatabaseCommonSettingVehicleSpeed,
-            //    DatabaseVariables.DatabaseCommonSettingEngineStatus,
-            //    DatabaseVariables.DatabaseCommonSettingPowerMode,
-            //    DatabaseVariables.DatabaseCommonSettingSecurityUnlock,
-            //};
-            //for (int commonKeywordInformationIndex = 0; commonKeywordInformationIndex < DatabaseVariables.DatabaseCommonCommand)
+            List<string[]> DatabaseCommonCommand = DatabaseVariables.DatabaseCommonCommand;
+            PutDatabaseToDataGridView(dataGridView_CommonCommand, DatabaseCommonCommand);
 
+            List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
+            PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
         }
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
         {
@@ -125,7 +121,7 @@ namespace dcom.views.views_ToolBar
         {
             textBox_TestcaseDirectory.Text = Controller_UIHandling.GetFolderDialogPath(textBox_TestcaseDirectory.Text);
         }
-
+        
         private void button_LoadDB_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
@@ -190,66 +186,37 @@ namespace dcom.views.views_ToolBar
 
 
             // Push data to Common Setting
-            //controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView_CommonSetting);
-
             List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
-            PutDatabaseCommonSettingToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting, 0);
-            //for (int rowIndex = 0; rowIndex < DatabaseCommonSetting.Count; rowIndex++)
-            //{
-            //    dataGridView_CommonSetting.Rows.Add();
-            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
-            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[1].Value = DatabaseCommonSetting.ElementAt(rowIndex)[0]; // Description
-            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[2].Value = DatabaseCommonSetting.ElementAt(rowIndex)[1]; // Variable
-            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[3].Value = DatabaseCommonSetting.ElementAt(rowIndex)[2]; // Value
-            //    dataGridView_CommonSetting.Rows[rowIndex].Cells[4].Value = DatabaseCommonSetting.ElementAt(rowIndex)[3]; // Timeout
-            //}
+            PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
 
             // Push data to Common Command
-            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView_CommonCommand);
-
             List<string[]> DatabaseCommonCommand = DatabaseVariables.DatabaseCommonCommand;
-            for (int rowIndex = 0; rowIndex < DatabaseCommonCommand.Count; rowIndex++)
-            {
-                dataGridView_CommonCommand.Rows.Add();
-                dataGridView_CommonCommand.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
-                dataGridView_CommonCommand.Rows[rowIndex].Cells[1].Value = DatabaseCommonCommand.ElementAt(rowIndex)[0]; // Description
-                dataGridView_CommonCommand.Rows[rowIndex].Cells[2].Value = DatabaseCommonCommand.ElementAt(rowIndex)[1]; // Request
-                dataGridView_CommonCommand.Rows[rowIndex].Cells[3].Value = DatabaseCommonCommand.ElementAt(rowIndex)[2]; // Response
-            }
-
+            PutDatabaseToDataGridView(dataGridView_CommonCommand, DatabaseCommonCommand);
+            
             // Push data to Common DID
-            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView_CommonDID);
-
             List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
-            for (int rowIndex = 0; rowIndex < DatabaseCommonDID.Count; rowIndex++)
-            {
-                dataGridView_CommonDID.Rows.Add();
-                dataGridView_CommonDID.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
-                dataGridView_CommonDID.Rows[rowIndex].Cells[1].Value = DatabaseCommonDID.ElementAt(rowIndex)[0]; // Description
-                dataGridView_CommonDID.Rows[rowIndex].Cells[2].Value = DatabaseCommonDID.ElementAt(rowIndex)[1]; // DID
-            }
+            PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
 
             Cursor = Cursors.Default;
             MessageBox.Show("The database is loaded successfully");
-
-            
         }
 
-        public static void PutDatabaseCommonSettingToDataGridView(DataGridView dataGridView, List<string[]> DatabaseCommonSetting, int index)
+        public static void PutDatabaseToDataGridView(DataGridView dataGridView, List<string[]> Data)
         {
-            // Push data to Common Setting
+            // Push data to Grid View
             controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView);
 
-            for (int rowIndex = 0; rowIndex < DatabaseCommonSetting.Count; rowIndex++)
+            for (int rowIndex = 0; rowIndex < Data.Count(); rowIndex++)
             {
                 dataGridView.Rows.Add();
-                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                 // ID
-                dataGridView.Rows[rowIndex].Cells[1].Value = DatabaseCommonSetting.ElementAt(rowIndex)[0]; // Description
-                dataGridView.Rows[rowIndex].Cells[2].Value = DatabaseCommonSetting.ElementAt(rowIndex)[1]; // Variable
-                dataGridView.Rows[rowIndex].Cells[3].Value = DatabaseCommonSetting.ElementAt(rowIndex)[2]; // Value
-                dataGridView.Rows[rowIndex].Cells[4].Value = DatabaseCommonSetting.ElementAt(rowIndex)[3]; // Timeout
+                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                          // ID
+                for (int cellIndex = 0; cellIndex < Data.ElementAt(rowIndex).Count(); cellIndex++)
+                {
+                    dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value = Data.ElementAt(rowIndex)[cellIndex];   // data
+                }
             }
         }
+
         private void button_SelectService10_Click(object sender, EventArgs e)
         {
             DatabaseVariables.SelectedServiceStatus[0] = !DatabaseVariables.SelectedServiceStatus[0];

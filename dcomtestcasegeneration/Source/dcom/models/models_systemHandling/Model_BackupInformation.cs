@@ -37,6 +37,7 @@ namespace dcom.models.models_systemHandling
             }
             else
             {
+                SystemVariables.checkTheFirstLoad = false;
                 // Close the pop-up
             }
         }

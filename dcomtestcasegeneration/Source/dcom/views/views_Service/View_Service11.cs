@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using dcom.controllers.controllers_middleware;
 using dcom.controllers.controllers_UIcontainer;
 using dcom.declaration;
+
 namespace dcom.views.views_Service
 {
     public partial class View_Service11 : UserControl
@@ -255,32 +256,32 @@ namespace dcom.views.views_Service
 
         private void button_Service11_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService11.ElementAt(1)[0][1] = button_PhysicalDefault.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[0][0] = button_PhysicalDefault.Text;
         }
 
         private void button_Service11_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService11.ElementAt(1)[0][2] = button_PhysicalProgramming.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[0][1] = button_PhysicalProgramming.Text;
         }
 
         private void button_Service11_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService11.ElementAt(1)[0][3] = button_PhysicalExtended.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[0][2] = button_PhysicalExtended.Text;
         }
 
         private void button_Service11_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService11.ElementAt(1)[1][1] = button_FunctionalDefault.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[1][0] = button_FunctionalDefault.Text;
         }
 
         private void button_Service11_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService11.ElementAt(1)[1][2] = button_FunctionalProgramming.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[1][1] = button_FunctionalProgramming.Text;
         }
 
         private void button_Service11_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService11.ElementAt(1)[1][3] = button_FunctionalExtended.Text;
+            DatabaseVariables.DatabaseService11.ElementAt(1)[1][2] = button_FunctionalExtended.Text;
         }
     }
 }

@@ -48,7 +48,7 @@ namespace dcom.declaration
                 1, // Common command
                 1, // Common DID
                 1, // Specification
-                6, // Allow session
+                7, // Allow session
                 11,// NRC
                 1, // Optional
                 1, // Precondition
@@ -81,7 +81,7 @@ namespace dcom.declaration
                 1, // Common command
                 1, // Common DID
                 1, // Specification
-                6, // Allow session
+                7, // Allow session
                 11,// NRC
                 1, // Optional
                 1, // Precondition

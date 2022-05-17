@@ -29,7 +29,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 dataRow = new string[]
                 {
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[0]   ].Text,   // Common_Setting
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[0]    ].Text,  // Common_Setting
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[0] + 1].Text,  // Variable
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[0] + 2].Text,  // Value
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[0] + 3].Text,  // Time_out 
@@ -53,10 +53,10 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 dataRow = new string[]
                 {
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[1]   ].Text,  // Common command
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[1]    ].Text, // Common command
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[1] + 1].Text, // Request
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[1] + 2].Text, // Response
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[1] + 3].Text, // Type_check 
+                    //ws.Cells[rowIndex, startColumnIndexDatabaseTable[1] + 3].Text, // Type_check 
                 };
 
                 dataTable.Add(dataRow);

@@ -186,6 +186,19 @@ namespace dcom.controllers.controllers_middleware
             }
         }
 
+        public static string ConvertFromStatusToBool(string value)
+        {
+            // Example: ON -> 1; OFF -> 0
+            if(value == "ON")
+            {
+                return "1";
+            }
+            else
+            {
+                return "0";
+            }
+        }
+
         public static string ConvertFromSubFunctionToDiagnosticSessionDisplayString(string subFunction)
         {
             // Example: 01 -> Default, 02 -> Programming, 03 -> Extended
