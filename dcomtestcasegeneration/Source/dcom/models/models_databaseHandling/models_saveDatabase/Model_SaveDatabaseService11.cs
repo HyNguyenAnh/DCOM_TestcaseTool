@@ -16,6 +16,27 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             int[] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
             string status = "";
+
+            string[] SavePhysicalService11 = new string[]
+{
+                DatabaseVariables.PhysicalDefaultService11,
+                DatabaseVariables.PhysicalProgrammingService11,
+                DatabaseVariables.PhysicalExtendedService11,
+};
+
+            string[] SaveFunctionalService11 = new string[]
+            {
+                DatabaseVariables.FunctionalDefaultService11,
+                DatabaseVariables.FunctionalProgrammingService11,
+                DatabaseVariables.FunctionalExtendedService11,
+            };
+
+            List<string[]> SaveAllowSessionService11 = new List<string[]>
+            {
+                SavePhysicalService11,
+                SaveFunctionalService11,
+            };
+
             // Specification
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(0).Count(); index++)
             {
@@ -26,14 +47,16 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Allow session
-            for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(1).Count(); index++)
+            for (int index = 0; index < SaveAllowSessionService11.Count(); index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11.ElementAt(1)[0].Count(); index_++)
+                for (int index_ = 0; index_ < SaveAllowSessionService11.ElementAt(index).Count(); index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromStatusToBool(DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_]);
+                    status = Controller_ServiceHandling.ConvertFromStatusToBool(SaveAllowSessionService11.ElementAt(index)[index_]);
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
+
+            // 
         }
     }
 }

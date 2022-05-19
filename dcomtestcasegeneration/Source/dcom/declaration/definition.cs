@@ -155,9 +155,39 @@ namespace dcom.declaration
 
             // Service 10
             DatabaseVariables.DatabaseService10 = Model_GetServiceDatabase.DatabaseService("10");
+            UIVariables.PhysicalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][0];
+            UIVariables.PhysicalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][1];
+            UIVariables.PhysicalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][2];
+
+            UIVariables.FunctionalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][0];
+            UIVariables.FunctionalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][1];
+            UIVariables.FunctionalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][2];
+
+            UIVariables.DtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][0] = "1";
+            UIVariables.DtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][1];
+            UIVariables.DtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][2];
+
+            UIVariables.PtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][0];
+            UIVariables.PtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][1] = "1";
+            UIVariables.PtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][2];
+
+            UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][0];
+            UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
+            UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2] = "1";
+        
+            
 
             // Service 11
             DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
+            
+            DatabaseVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][0];
+            DatabaseVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
+            DatabaseVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
+            
+            DatabaseVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][0];
+            DatabaseVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
+            DatabaseVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
+
 
             // Service 14
             DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");

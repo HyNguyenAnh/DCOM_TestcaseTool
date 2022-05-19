@@ -42,6 +42,16 @@ namespace dcom.views.views_Service
 
             ButtonStatus_SuppressBit = button_SupressBit;
 
+            ButtonStatus_AddressingMode = new Button[]{
+                button_PhysicalDefault,
+                button_PhysicalProgramming,
+                button_PhysicalExtended,
+                button_FunctionalDefault,
+                button_FunctionalProgramming,
+                button_FunctionalExtended,
+
+            };
+
             ButtonStatus_Condition = new Button[]
             {
                 button_ConditionEngine,
@@ -111,7 +121,7 @@ namespace dcom.views.views_Service
                 ButtonStatus_AddressingMode[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_AddressingMode[index]);
             }
 
-            // Load SubFunction
+            // Load Condition
 
             for (int index = 0; index < ButtonStatus_Condition.Length; index++)
             {
@@ -156,18 +166,18 @@ namespace dcom.views.views_Service
 
         private void button_EtoD_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[3] = !UIVariables.Service10_ButtonStatus_SubFunction[3];
+            UIVariables.Service10_ButtonStatus_SubFunction[4] = !UIVariables.Service10_ButtonStatus_SubFunction[4];
 
-            button_EtoD.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[3])[0];
-            button_EtoD.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[3])[1];
+            button_EtoD.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[4])[0];
+            button_EtoD.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[4])[1];
         }
 
         private void button_EtoP_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[3] = !UIVariables.Service10_ButtonStatus_SubFunction[3];
+            UIVariables.Service10_ButtonStatus_SubFunction[5] = !UIVariables.Service10_ButtonStatus_SubFunction[5];
 
-            button_EtoP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[3])[0];
-            button_EtoP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[3])[1];
+            button_EtoP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[5])[0];
+            button_EtoP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[5])[1];
         }
 
         private void button_Service10_SupressBit_Click(object sender, EventArgs e)
@@ -266,32 +276,62 @@ namespace dcom.views.views_Service
 
         private void button_Service10_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService10.ElementAt(1)[0][0] = button_PhysicalDefault.Text;
+            UIVariables.PhysicalDefaultService10 = button_PhysicalDefault.Text;
         }
 
         private void button_Service10_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService10.ElementAt(1)[0][1] = button_PhysicalProgramming.Text;
+            UIVariables.PhysicalProgrammingService10 = button_PhysicalProgramming.Text;
         }
 
         private void button_Service10_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService10.ElementAt(1)[0][2] = button_PhysicalExtended.Text;
+            UIVariables.PhysicalExtendedService10 = button_PhysicalExtended.Text;
         }
 
         private void button_Service10_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService10.ElementAt(1)[1][0] = button_FunctionalDefault.Text;
+            UIVariables.FunctionalDefaultService10 = button_FunctionalDefault.Text;
         }
 
         private void button_Service10_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService10.ElementAt(1)[1][1] = button_FunctionalProgramming.Text;
+            UIVariables.FunctionalProgrammingService10 = button_FunctionalProgramming.Text;
         }
 
         private void button_Service10_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseService10.ElementAt(1)[1][2] = button_FunctionalExtended.Text;
+            UIVariables.FunctionalExtendedService10 = button_FunctionalExtended.Text;
+        }
+
+        private void button_DtoP_BackColorChanged(object sender, EventArgs e)
+        {
+            UIVariables.DtoPService10 = button_DtoP.BackColor.Name.ToString();
+        }
+
+        private void button_DtoE_BackColorChanged(object sender, EventArgs e)
+        {
+            UIVariables.DtoEService10 = button_DtoE.BackColor.Name.ToString();
+        }
+
+        private void button_PtoD_BackColorChanged(object sender, EventArgs e)
+        {
+            UIVariables.PtoDService10 = button_PtoD.BackColor.Name.ToString();
+        }
+
+        private void button_PtoE_BackColorChanged(object sender, EventArgs e)
+        {
+            UIVariables.PtoEService10 = button_PtoE.BackColor.Name.ToString();
+        }
+
+        private void button_EtoD_BackColorChanged(object sender, EventArgs e)
+        {
+            UIVariables.EtoDService10 = button_EtoD.BackColor.Name.ToString();
+        }
+
+        private void button_EtoP_BackColorChanged(object sender, EventArgs e)
+        {
+            UIVariables.EtoPService10 = button_EtoP.BackColor.Name.ToString();
         }
     }
 }

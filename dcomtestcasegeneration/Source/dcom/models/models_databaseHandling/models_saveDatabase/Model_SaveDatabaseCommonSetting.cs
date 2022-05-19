@@ -16,31 +16,87 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             int[] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
 
+            // Common Setting
+            List<string[]> SaveCommonSetting = new List<string[]>
+            {
+                DatabaseVariables.DatabaseCommonSettingCreateFault,
+                DatabaseVariables.DatabaseCommonSettingVehicleSpeed,
+                DatabaseVariables.DatabaseCommonSettingEngineStatus,
+                DatabaseVariables.DatabaseCommonSettingPowerMode,
+                DatabaseVariables.DatabaseCommonSettingSecurityUnlock,
+            };
+            for (int index = 0; index < SaveCommonSetting.Count; index++)
+            {
+                for (int index_ = 0; index_ < SaveCommonSetting.ElementAt(index).Length; index_++)
+                {
+                    Ws.Cells[rowIndex[0] + index, columnIndex[0] + index_] = SaveCommonSetting.ElementAt(index)[index_];
+                }
+            }
+
+            // Common Command
+            List<string[]> SaveCommonCommand = new List<string[]>
+            {
+                DatabaseVariables.DatabaseCommonCommandReadDTCStatusActive,
+                DatabaseVariables.DatabaseCommonCommandReadDTCStatusPassive,
+                DatabaseVariables.DatabaseCommonCommandReadDTCStatusNoDTC,
+            };
+            for (int index = 0; index < SaveCommonCommand.Count; index++)
+            {
+                for (int index_ = 0; index_ < SaveCommonCommand.ElementAt(index).Length; index_++)
+                {
+                    Ws.Cells[rowIndex[1] + index, columnIndex[1] + index_] = SaveCommonCommand.ElementAt(index)[index_];
+                }
+            }
+
+            // Common DID
+            List<string[]> SaveCommonDID = new List<string[]>
+            {
+                DatabaseVariables.DatabaseCommonDIDCurrentSession,
+                DatabaseVariables.DatabaseCommonDIDInvalidCounter,
+                DatabaseVariables.DatabaseCommonDIDCurrentVoltage,
+            };
+            for (int index = 0; index < SaveCommonDID.Count; index++)
+            {
+                for (int index_ = 0; index_ < SaveCommonDID.ElementAt(index).Length; index_++)
+                {
+                    Ws.Cells[rowIndex[2] + index, columnIndex[2] + index_] = SaveCommonDID.ElementAt(index)[index_];
+                }
+            }
+
             // Project Information
-            Ws.Cells[rowIndex[8], columnIndex[8] + 1] = DatabaseVariables.ProjectName;
-            Ws.Cells[rowIndex[8] + 1, columnIndex[8] + 1] = DatabaseVariables.Variant;
-            Ws.Cells[rowIndex[8] + 2, columnIndex[8] + 1] = DatabaseVariables.Release;
-            Ws.Cells[rowIndex[8] + 3, columnIndex[8] + 1] = DatabaseVariables.RC;
+            string[] ProjectInformation = new string[]
+            {
+                DatabaseVariables.ProjectName,
+                DatabaseVariables.Variant,
+                DatabaseVariables.Release,
+                DatabaseVariables.RC,
+            };
+            for (int index = 0; index < ProjectInformation.Length; index++)
+            {
+                Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = ProjectInformation[index];
+            }
 
             // Data Path Information
-            Ws.Cells[rowIndex[9], columnIndex[9] + 1] = DatabaseVariables.DatabaseSource;
-            Ws.Cells[rowIndex[9] + 1, columnIndex[9] + 1] = DatabaseVariables.PathOutputDatabase;
-            Ws.Cells[rowIndex[9] + 4, columnIndex[9] + 1] = DatabaseVariables.TestcaseDirectory;
-            Ws.Cells[rowIndex[9] + 5, columnIndex[9] + 1] = DatabaseVariables.TemplatePath;
-            Ws.Cells[rowIndex[9] + 6, columnIndex[9] + 1] = DatabaseVariables.DirectoryOutputDatabase;
+            string[] DataPathInformation = new string[]
+            {
+                DatabaseVariables.DatabaseSource,
+                DatabaseVariables.PathOutputDatabase,
+                "",
+                "",
+                DatabaseVariables.TestcaseDirectory,
+                DatabaseVariables.TemplatePath,
+                DatabaseVariables.DirectoryOutputDatabase,
+            };
+            for(int index = 0; index < DataPathInformation.Length; index++)
+            {
+                Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = DataPathInformation[index];
+            }
+            
 
             // Selected Service
             for (int index = 0; index < 12; index++)
             {
-                string selectedServiceStatus;
-                if (DatabaseVariables.SelectedServiceStatus[index] == true)
-                {
-                    selectedServiceStatus = "1";
-                }
-                else
-                {
-                    selectedServiceStatus = "0";
-                }
+                string selectedServiceStatus = Controller_ServiceHandling.ConvertFromBoolToStringBit(DatabaseVariables.SelectedServiceStatus[index]);
                 Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = selectedServiceStatus;
             }
         }

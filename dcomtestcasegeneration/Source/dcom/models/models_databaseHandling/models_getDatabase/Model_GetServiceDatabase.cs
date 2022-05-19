@@ -56,10 +56,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 dataRow = new string[]
                 {
-                    //ws.Cells[rowIndex, startColumnIndexDatabaseTable[4]   ].Text,  // Mode
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + 1].Text, // Default
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + 2].Text, // Programming
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + 3].Text, // Extended
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[4]    ].Text, // Default
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + 1].Text, // Programming
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + 2].Text, // Extended
                 };
 
                 dataTable.Add(dataRow);

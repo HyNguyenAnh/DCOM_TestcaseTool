@@ -217,10 +217,23 @@ namespace dcom.views.views_ToolBar
             }
         }
 
+        public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data, int rows, int cols)
+        {
+            // Save data to Grid View
+            dataGridView.Update();
+            dataGridView.Refresh();
+            for (int rowIndex = 0; rowIndex < rows; rowIndex++)
+            {
+                for (int cellIndex = 0; cellIndex < cols; cellIndex++)
+                {
+                    Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
+                }
+            }
+        }
+
         private void button_SelectService10_Click(object sender, EventArgs e)
         {
             DatabaseVariables.SelectedServiceStatus[0] = !DatabaseVariables.SelectedServiceStatus[0];
-
             button_SelectService10.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[0])[0];
             button_SelectService10.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[0])[1];
         }
@@ -366,6 +379,19 @@ namespace dcom.views.views_ToolBar
             DatabaseVariables.TestcaseDirectory = textBox_TestcaseDirectory.Text;
         }
 
+        private void dataGridView_CommonSetting_SelectionChanged(object sender, EventArgs e)
+        {
+            SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting, 5, 4);
+        }
 
+        private void dataGridView_CommonCommand_SelectionChanged(object sender, EventArgs e)
+        {
+            SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand, 3, 3);
+        }
+
+        private void dataGridView_CommonDID_SelectionChanged(object sender, EventArgs e)
+        {
+            SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID, 3, 2);
+        }
     }
 }

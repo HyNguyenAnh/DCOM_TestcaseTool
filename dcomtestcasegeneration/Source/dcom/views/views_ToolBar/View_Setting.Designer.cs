@@ -89,8 +89,8 @@ namespace dcom.views.views_ToolBar
             this.radioButton_DBSourceServer = new System.Windows.Forms.RadioButton();
             this.radioButton_DBSourceLocal = new System.Windows.Forms.RadioButton();
             this.panel_TestcaseDirectoryBrowse = new System.Windows.Forms.Panel();
-            this.panel_PublicCANDBCBrowse = new System.Windows.Forms.Panel();
             this.panel_PrivateCANDBCBrowse = new System.Windows.Forms.Panel();
+            this.panel_PublicCANDBCBrowse = new System.Windows.Forms.Panel();
             this.panel_DBPathBrowse = new System.Windows.Forms.Panel();
             this.textBox_PublicCANDBC = new System.Windows.Forms.TextBox();
             this.textBox_PrivateCANDBC = new System.Windows.Forms.TextBox();
@@ -328,6 +328,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.Size = new System.Drawing.Size(487, 197);
             this.dataGridView_CommonSetting.StandardTab = true;
             this.dataGridView_CommonSetting.TabIndex = 6;
+            this.dataGridView_CommonSetting.SelectionChanged += new System.EventHandler(this.dataGridView_CommonSetting_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -432,6 +433,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonCommand.Size = new System.Drawing.Size(487, 197);
             this.dataGridView_CommonCommand.StandardTab = true;
             this.dataGridView_CommonCommand.TabIndex = 5;
+            this.dataGridView_CommonCommand.SelectionChanged += new System.EventHandler(this.dataGridView_CommonCommand_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -530,6 +532,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonDID.Size = new System.Drawing.Size(487, 197);
             this.dataGridView_CommonDID.StandardTab = true;
             this.dataGridView_CommonDID.TabIndex = 5;
+            this.dataGridView_CommonDID.SelectionChanged += new System.EventHandler(this.dataGridView_CommonDID_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1023,18 +1026,6 @@ namespace dcom.views.views_ToolBar
             this.panel_TestcaseDirectoryBrowse.TabIndex = 16;
             this.panel_TestcaseDirectoryBrowse.Click += new System.EventHandler(this.panel_TestcaseDirectoryBrowse_Click);
             // 
-            // panel_PublicCANDBCBrowse
-            // 
-            this.panel_PublicCANDBCBrowse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_PublicCANDBCBrowse.BackgroundImage")));
-            this.panel_PublicCANDBCBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel_PublicCANDBCBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel_PublicCANDBCBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_PublicCANDBCBrowse.Location = new System.Drawing.Point(443, 83);
-            this.panel_PublicCANDBCBrowse.Name = "panel_PublicCANDBCBrowse";
-            this.panel_PublicCANDBCBrowse.Size = new System.Drawing.Size(34, 34);
-            this.panel_PublicCANDBCBrowse.TabIndex = 14;
-            this.panel_PublicCANDBCBrowse.Click += new System.EventHandler(this.panel_PublicCANDBCBrowse_Click);
-            // 
             // panel_PrivateCANDBCBrowse
             // 
             this.panel_PrivateCANDBCBrowse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_PrivateCANDBCBrowse.BackgroundImage")));
@@ -1046,6 +1037,18 @@ namespace dcom.views.views_ToolBar
             this.panel_PrivateCANDBCBrowse.Size = new System.Drawing.Size(34, 34);
             this.panel_PrivateCANDBCBrowse.TabIndex = 15;
             this.panel_PrivateCANDBCBrowse.Click += new System.EventHandler(this.panel_PrivateCANDBCBrowse_Click);
+            // 
+            // panel_PublicCANDBCBrowse
+            // 
+            this.panel_PublicCANDBCBrowse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_PublicCANDBCBrowse.BackgroundImage")));
+            this.panel_PublicCANDBCBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel_PublicCANDBCBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_PublicCANDBCBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_PublicCANDBCBrowse.Location = new System.Drawing.Point(443, 83);
+            this.panel_PublicCANDBCBrowse.Name = "panel_PublicCANDBCBrowse";
+            this.panel_PublicCANDBCBrowse.Size = new System.Drawing.Size(34, 34);
+            this.panel_PublicCANDBCBrowse.TabIndex = 14;
+            this.panel_PublicCANDBCBrowse.Click += new System.EventHandler(this.panel_PublicCANDBCBrowse_Click);
             // 
             // panel_DBPathBrowse
             // 

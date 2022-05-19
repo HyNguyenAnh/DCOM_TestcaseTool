@@ -147,6 +147,18 @@ namespace dcom.controllers.controllers_middleware
                 return 0;
             }
         }
+        public static string ConvertFromBoolToStringBit(bool value)
+        {
+            // Example: true -> "1"; false -> "0"
+            if (value)
+            {
+                return "1";
+            }
+            else
+            {
+                return "0";
+            }
+        }
         public static bool ConvertFromIntToBool(int value)
         {
             // Example: 1 -> true; 0 -> false
@@ -188,8 +200,8 @@ namespace dcom.controllers.controllers_middleware
 
         public static string ConvertFromStatusToBool(string value)
         {
-            // Example: ON -> 1; OFF -> 0
-            if(value == "ON")
+            // Example: ON | Brown | 1 -> 1; OFF -> 0
+            if(value == "ON" | value == "Brown" | value == "1")
             {
                 return "1";
             }
