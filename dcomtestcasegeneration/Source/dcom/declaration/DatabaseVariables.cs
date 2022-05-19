@@ -85,36 +85,6 @@ namespace dcom.declaration
 
         };
 
-        // Service 10
-        //public static string DtoDService10 { get; set; }
-        //public static string PtoPService10 { get; set; }
-        //public static string EtoEService10 { get; set; }
-        //public static string DtoPService10 { get; set; }
-        //public static string DtoEService10 { get; set; }
-        //public static string PtoDService10 { get; set; }
-        //public static string PtoEService10 { get; set; }
-        //public static string EtoDService10 { get; set; }
-        //public static string EtoPService10 { get; set; }
-        //public static string PhysicalDefaultService10 { get; set; }
-        //public static string PhysicalProgrammingService10 { get; set; }
-        //public static string PhysicalExtendedService10 { get; set; }
-        //public static string FunctionalDefaultService10 { get; set; }
-        //public static string FunctionalProgrammingService10 { get; set; }
-        //public static string FunctionalExtendedService10 { get; set; }
-        //public static string SupressBitSevice10 { get; set; }
-
-        // Service 11
-        public static string HardResetService11 { get; set; }
-        public static string KeyOnOffResetService11 { get; set; }
-        public static string SoftResetService11 { get; set; }
-        public static string PhysicalDefaultService11 { get; set; }
-        public static string PhysicalProgrammingService11 { get; set; }
-        public static string PhysicalExtendedService11 { get; set; }
-        public static string FunctionalDefaultService11 { get; set; }
-        public static string FunctionalProgrammingService11 { get; set; }
-        public static string FunctionalExtendedService11 { get; set; }
-        public static string SupressBitSevice11 { get; set; }
-
         public static string[] ProjectInformation { get; set; }
         public static string[] DataPathInformation { get; set; }
         public static int ID { get; set; }

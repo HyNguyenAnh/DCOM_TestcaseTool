@@ -256,47 +256,52 @@ namespace dcom.views.views_Service
 
         private void button_Service11_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.PhysicalDefaultService11 = button_PhysicalDefault.Text;
+            UIVariables.PhysicalDefaultService11 = button_PhysicalDefault.Text;
         }
 
         private void button_Service11_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.PhysicalProgrammingService11 = button_PhysicalProgramming.Text;
+            UIVariables.PhysicalProgrammingService11 = button_PhysicalProgramming.Text;
         }
 
         private void button_Service11_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.PhysicalExtendedService11 = button_PhysicalExtended.Text;
+            UIVariables.PhysicalExtendedService11 = button_PhysicalExtended.Text;
         }
 
         private void button_Service11_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.FunctionalDefaultService11 = button_FunctionalDefault.Text;
+            UIVariables.FunctionalDefaultService11 = button_FunctionalDefault.Text;
         }
 
         private void button_Service11_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.FunctionalProgrammingService11 = button_FunctionalProgramming.Text;
+            UIVariables.FunctionalProgrammingService11 = button_FunctionalProgramming.Text;
         }
 
         private void button_Service11_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.FunctionalExtendedService11 = button_FunctionalExtended.Text;
+            UIVariables.FunctionalExtendedService11 = button_FunctionalExtended.Text;
         }
 
         private void button_HardReset_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.HardResetService11 = button_HardReset.Text;
+            UIVariables.HardResetService11 = button_HardReset.Text;
         }
 
         private void button_KeyOnOffReset_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.KeyOnOffResetService11 = button_KeyOnOffReset.Text;
+            UIVariables.KeyOnOffResetService11 = button_KeyOnOffReset.Text;
         }
 
         private void button_SoftReset_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.SoftResetService11 = button_SoftReset.Text;
+            UIVariables.SoftResetService11 = button_SoftReset.Text;
+        }
+
+        private void button_SupressBit_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.SupressBitSevice11 = button_SupressBit.Text;
         }
     }
 }

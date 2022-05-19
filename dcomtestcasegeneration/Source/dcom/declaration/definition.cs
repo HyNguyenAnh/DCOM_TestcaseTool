@@ -180,13 +180,13 @@ namespace dcom.declaration
             // Service 11
             DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
             
-            DatabaseVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][0];
-            DatabaseVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
-            DatabaseVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
-            
-            DatabaseVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][0];
-            DatabaseVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
-            DatabaseVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
+            UIVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][0];
+            UIVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
+            UIVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
+
+            UIVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][0];
+            UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
+            UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
 
 
             // Service 14

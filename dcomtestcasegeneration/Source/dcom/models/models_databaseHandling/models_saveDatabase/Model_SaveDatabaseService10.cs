@@ -78,6 +78,10 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
+
+            // Optional
+            status = Controller_ServiceHandling.ConvertFromStatusToBool(UIVariables.SupressBitSevice10);
+            Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
         }
     }
 }

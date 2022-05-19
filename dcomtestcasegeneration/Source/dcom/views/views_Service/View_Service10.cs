@@ -333,5 +333,10 @@ namespace dcom.views.views_Service
         {
             UIVariables.EtoPService10 = button_EtoP.BackColor.Name.ToString();
         }
+
+        private void button_SupressBit_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.SupressBitSevice10 = button_SupressBit.Text;
+        }
     }
 }

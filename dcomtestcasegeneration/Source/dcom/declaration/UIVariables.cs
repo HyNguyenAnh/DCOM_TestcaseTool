@@ -97,13 +97,6 @@ namespace dcom.declaration
         public static string FunctionalExtendedService10 { get; set; }
         public static string SupressBitSevice10 { get; set; }
 
-        public static List<string[]> SaveAllowSessionService10 = new List<string[]> { };
-        public static string[] SavePhysicalService10 { get; set; }
-        public static string[] SaveFunctionalService10 { get; set; }
-        public static string[] SaveDefaultService10 { get; set; }
-        public static string[] SaveProgrammingService10 { get; set; }
-        public static string[] SaveExtendedService10 { get; set; }
-
         // Service11
 
         public static bool[] Service11_ButtonStatus_SubFunction = new bool[]
@@ -128,8 +121,17 @@ namespace dcom.declaration
             false
         };
         public static string[] Service11_NRCPriority { get; set; }
-        public static List<string[]> SaveAllowSessionService11 = new List<string[]> { };
-        public static string[] SavePhysicalService11 { get; set; }
-        public static string[] SaveFunctionalService11 { get; set; }
+
+        // Service 11
+        public static string HardResetService11 { get; set; }
+        public static string KeyOnOffResetService11 { get; set; }
+        public static string SoftResetService11 { get; set; }
+        public static string PhysicalDefaultService11 { get; set; }
+        public static string PhysicalProgrammingService11 { get; set; }
+        public static string PhysicalExtendedService11 { get; set; }
+        public static string FunctionalDefaultService11 { get; set; }
+        public static string FunctionalProgrammingService11 { get; set; }
+        public static string FunctionalExtendedService11 { get; set; }
+        public static string SupressBitSevice11 { get; set; }
     }
 }

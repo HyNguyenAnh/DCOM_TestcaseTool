@@ -19,16 +19,16 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 
             string[] SavePhysicalService11 = new string[]
 {
-                DatabaseVariables.PhysicalDefaultService11,
-                DatabaseVariables.PhysicalProgrammingService11,
-                DatabaseVariables.PhysicalExtendedService11,
+                UIVariables.PhysicalDefaultService11,
+                UIVariables.PhysicalProgrammingService11,
+                UIVariables.PhysicalExtendedService11,
 };
 
             string[] SaveFunctionalService11 = new string[]
             {
-                DatabaseVariables.FunctionalDefaultService11,
-                DatabaseVariables.FunctionalProgrammingService11,
-                DatabaseVariables.FunctionalExtendedService11,
+                UIVariables.FunctionalDefaultService11,
+                UIVariables.FunctionalProgrammingService11,
+                UIVariables.FunctionalExtendedService11,
             };
 
             List<string[]> SaveAllowSessionService11 = new List<string[]>
@@ -56,7 +56,9 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
             }
 
-            // 
+            // Optional
+            status = Controller_ServiceHandling.ConvertFromStatusToBool(UIVariables.SupressBitSevice11);
+            Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
         }
     }
 }
