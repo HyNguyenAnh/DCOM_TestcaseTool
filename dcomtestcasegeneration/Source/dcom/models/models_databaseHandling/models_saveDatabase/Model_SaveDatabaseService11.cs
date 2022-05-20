@@ -51,13 +51,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < SaveAllowSessionService11.ElementAt(index).Count(); index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromStatusToBool(SaveAllowSessionService11.ElementAt(index)[index_]);
+                    status = Controller_ServiceHandling.ConvertFromStatusToString(SaveAllowSessionService11.ElementAt(index)[index_]);
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
 
             // Optional
-            status = Controller_ServiceHandling.ConvertFromStatusToBool(UIVariables.SupressBitSevice11);
+            status = Controller_ServiceHandling.ConvertFromBoolToString(UIVariables.Service11_ButtonStatus_SuppressBit);
             Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
         }
     }

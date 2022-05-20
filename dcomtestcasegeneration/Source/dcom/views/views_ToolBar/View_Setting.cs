@@ -131,6 +131,7 @@ namespace dcom.views.views_ToolBar
             // Get data in databases
             Controllers_FunctionButton.ButtonLoadDataClick();
 
+            //views_Service.View_Service10.DataGridViewComboBoxColumn_NRCPriority[0] = UIVariables.Service10_NRCPriority[0];
             // Push data to Project Information
             textBox_ProjectName.Text = DatabaseVariables.ProjectName;
             textBox_Variant.Text = DatabaseVariables.Variant;

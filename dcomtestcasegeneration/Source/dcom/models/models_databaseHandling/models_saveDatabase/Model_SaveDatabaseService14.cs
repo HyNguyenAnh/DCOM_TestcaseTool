@@ -30,7 +30,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService14.ElementAt(1)[0].Count(); index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromStatusToBool(DatabaseVariables.DatabaseService14.ElementAt(1)[index][index_]);
+                    status = Controller_ServiceHandling.ConvertFromStatusToString(DatabaseVariables.DatabaseService14.ElementAt(1)[index][index_]);
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }

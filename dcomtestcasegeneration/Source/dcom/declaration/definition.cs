@@ -10,6 +10,7 @@ using dcom.models.models_databaseHandling.models_saveDatabase;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
 using System.Reflection;
+using dcom.controllers.controllers_middleware;
 
 namespace dcom.declaration
 {
@@ -174,8 +175,16 @@ namespace dcom.declaration
             UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][0];
             UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
             UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2] = "1";
-        
-            
+
+            UIVariables.Service10_NRCPriority = DatabaseVariables.DatabaseService10.ElementAt(2)[0];
+            UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[2][1]);
+            //for (int index = 0; index < UIVariables.Service11_ButtonStatus_AddressingMode; index++)
+            //{
+            //    for(int index_ = 0; index_ < DatabaseVariables.DatabaseService10.ElementAt(1).Sum(); index_++)
+            //    {
+                    
+            //    }
+            //}
 
             // Service 11
             DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
@@ -188,6 +197,8 @@ namespace dcom.declaration
             UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
             UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
 
+            UIVariables.Service11_NRCPriority = DatabaseVariables.DatabaseService11.ElementAt(2)[0];
+            UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[2][1]);
 
             // Service 14
             DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");

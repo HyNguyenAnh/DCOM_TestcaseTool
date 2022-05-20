@@ -95,7 +95,6 @@ namespace dcom.declaration
         public static string FunctionalDefaultService10 { get; set; }
         public static string FunctionalProgrammingService10 { get; set; }
         public static string FunctionalExtendedService10 { get; set; }
-        public static string SupressBitSevice10 { get; set; }
 
         // Service11
 

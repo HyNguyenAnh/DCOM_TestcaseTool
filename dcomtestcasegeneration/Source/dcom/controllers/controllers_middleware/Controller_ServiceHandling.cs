@@ -197,8 +197,20 @@ namespace dcom.controllers.controllers_middleware
                 return "OFF";
             }
         }
+        public static bool ConvertFromStatusToBool(string value)
+        {
+            // Example: "ON" -> 1; "OFF" -> 0
+            if(value == "ON")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-        public static string ConvertFromStatusToBool(string value)
+        public static string ConvertFromStatusToString(string value)
         {
             // Example: ON | Brown | 1 -> 1; OFF -> 0
             if(value == "ON" | value == "Brown" | value == "1")

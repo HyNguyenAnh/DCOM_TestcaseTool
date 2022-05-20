@@ -74,13 +74,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < SaveAllowSessionService10[index].Count(); index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromStatusToBool(SaveAllowSessionService10[index].ElementAt(index_).ToString());
+                    status = Controller_ServiceHandling.ConvertFromStatusToString(SaveAllowSessionService10[index].ElementAt(index_).ToString());
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
 
             // Optional
-            status = Controller_ServiceHandling.ConvertFromStatusToBool(UIVariables.SupressBitSevice10);
+            status = Controller_ServiceHandling.ConvertFromBoolToString(UIVariables.Service10_ButtonStatus_SuppressBit);
             Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
         }
     }

@@ -301,7 +301,7 @@ namespace dcom.views.views_Service
 
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.SupressBitSevice11 = button_SupressBit.Text;
+            UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
         }
     }
 }

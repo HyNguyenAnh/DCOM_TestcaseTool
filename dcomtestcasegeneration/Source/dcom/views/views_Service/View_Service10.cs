@@ -25,6 +25,7 @@ namespace dcom.views.views_Service
         {
             InitializeComponent();
             LoadData();
+            
         }
 
         public void LoadData()
@@ -336,7 +337,7 @@ namespace dcom.views.views_Service
 
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.SupressBitSevice10 = button_SupressBit.Text;
+            UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
         }
     }
 }
