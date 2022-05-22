@@ -142,15 +142,16 @@ namespace dcom.declaration
             DatabaseVariables.DatabaseSource = CommonSettingDatabase[4].ElementAt(0)[1];
             DatabaseVariables.PublicCANDBC = CommonSettingDatabase[4].ElementAt(2)[1];
             DatabaseVariables.PrivateCANDBC = CommonSettingDatabase[4].ElementAt(3)[1];
-            DatabaseVariables.TestcaseDirectory = CommonSettingDatabase[4].ElementAt(4)[1];
-            DatabaseVariables.TemplatePath = CommonSettingDatabase[4].ElementAt(5)[1];
-            DatabaseVariables.DatabaseDirectory = CommonSettingDatabase[4].ElementAt(6)[1];
+            string[] databasePathSplit = DatabaseVariables.DatabasePath.Split('\\');
+            DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
+            string[] databaseDirectorySplit = DatabaseVariables.DatabaseDirectory.Split('\\');
+            DatabaseVariables.TestcaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "") + @"\Template";
 
             // Selected Service Information
             DatabaseVariables.SelectedServiceStatus = new bool[12];
             for (int index = 0; index < CommonSettingDatabase[5].Count; index++)
             {
-                DatabaseVariables.SelectedServiceStatus[index] = controllers.controllers_middleware.Controller_ServiceHandling.ConvertFromStringToBool(CommonSettingDatabase[5].ElementAt(index)[1]);
+                DatabaseVariables.SelectedServiceStatus[index] = Controller_ServiceHandling.ConvertFromStringToBool(CommonSettingDatabase[5].ElementAt(index)[1]);
             }
 
 
@@ -176,15 +177,24 @@ namespace dcom.declaration
             UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
             UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2] = "1";
 
-            UIVariables.Service10_NRCPriority = DatabaseVariables.DatabaseService10.ElementAt(2)[0];
             UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[2][1]);
-            //for (int index = 0; index < UIVariables.Service11_ButtonStatus_AddressingMode; index++)
+            //for(int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(2).Count; index++)
             //{
-            //    for(int index_ = 0; index_ < DatabaseVariables.DatabaseService10.ElementAt(1).Sum(); index_++)
-            //    {
-                    
-            //    }
+            //    UIVariables.Service10_NRCPriority[index] = DatabaseVariables.DatabaseService10.ElementAt(2)[index][0];
             //}
+            string[] Service10_ButtonStatus_AddressingMode = new string[]
+            {
+                UIVariables.PhysicalDefaultService10,
+                UIVariables.PhysicalProgrammingService10,
+                UIVariables.PhysicalExtendedService10,
+                UIVariables.FunctionalDefaultService10,
+                UIVariables.FunctionalProgrammingService10,
+                UIVariables.FunctionalExtendedService10,
+            };
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_AddressingMode.Length; index++)
+            {
+                UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_AddressingMode[index]);
+            }
 
             // Service 11
             DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
@@ -310,6 +320,7 @@ namespace dcom.declaration
             SystemVariables.currentApplicationPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             SystemVariables.backupFileName = "BackupFile.txt";
             SystemVariables.backupFilePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, SystemVariables.backupFileName)).LocalPath;
+            DatabaseVariables.TemplatePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, @"DB\Template.xlsx")).LocalPath;
         }
         public static void UIVariableDefinition()
         {

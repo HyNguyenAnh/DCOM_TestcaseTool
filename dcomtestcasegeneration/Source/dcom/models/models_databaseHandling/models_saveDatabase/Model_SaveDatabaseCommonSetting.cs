@@ -84,8 +84,6 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 "",
                 "",
                 DatabaseVariables.TestcaseDirectory,
-                DatabaseVariables.TemplatePath,
-                DatabaseVariables.DirectoryOutputDatabase,
             };
             for(int index = 0; index < DataPathInformation.Length; index++)
             {

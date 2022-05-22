@@ -63,6 +63,7 @@ namespace dcom.controllers.controllers_UIcontainer
             DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
 
             Definition.DatabaseVariableDefinition();
+            Definition.UIVariableDefinition();
 
             // Close the database
             Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);

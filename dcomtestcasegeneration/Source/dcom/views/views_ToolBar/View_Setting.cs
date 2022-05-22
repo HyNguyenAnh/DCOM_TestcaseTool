@@ -382,17 +382,17 @@ namespace dcom.views.views_ToolBar
 
         private void dataGridView_CommonSetting_SelectionChanged(object sender, EventArgs e)
         {
-            SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting, 5, 4);
+            //SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting, 5, 4);
         }
 
         private void dataGridView_CommonCommand_SelectionChanged(object sender, EventArgs e)
         {
-            SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand, 3, 3);
+            //SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand, 3, 3);
         }
 
         private void dataGridView_CommonDID_SelectionChanged(object sender, EventArgs e)
         {
-            SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID, 3, 2);
+            //SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID, 3, 2);
         }
     }
 }
