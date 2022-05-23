@@ -146,6 +146,7 @@ namespace dcom.declaration
             DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
             string[] databaseDirectorySplit = DatabaseVariables.DatabaseDirectory.Split('\\');
             DatabaseVariables.TestcaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "") + @"\Template";
+            DatabaseVariables.TemplatePath = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB\Template.xlsx")).LocalPath;
 
             // Selected Service Information
             DatabaseVariables.SelectedServiceStatus = new bool[12];
@@ -157,59 +158,10 @@ namespace dcom.declaration
 
             // Service 10
             DatabaseVariables.DatabaseService10 = Model_GetServiceDatabase.DatabaseService("10");
-            UIVariables.PhysicalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][0];
-            UIVariables.PhysicalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][1];
-            UIVariables.PhysicalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][2];
-
-            UIVariables.FunctionalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][0];
-            UIVariables.FunctionalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][1];
-            UIVariables.FunctionalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][2];
-
-            UIVariables.DtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][0] = "1";
-            UIVariables.DtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][1];
-            UIVariables.DtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][2];
-
-            UIVariables.PtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][0];
-            UIVariables.PtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][1] = "1";
-            UIVariables.PtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][2];
-
-            UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][0];
-            UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
-            UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2] = "1";
-
-            UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[2][1]);
-            //for(int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(2).Count; index++)
-            //{
-            //    UIVariables.Service10_NRCPriority[index] = DatabaseVariables.DatabaseService10.ElementAt(2)[index][0];
-            //}
-            string[] Service10_ButtonStatus_AddressingMode = new string[]
-            {
-                UIVariables.PhysicalDefaultService10,
-                UIVariables.PhysicalProgrammingService10,
-                UIVariables.PhysicalExtendedService10,
-                UIVariables.FunctionalDefaultService10,
-                UIVariables.FunctionalProgrammingService10,
-                UIVariables.FunctionalExtendedService10,
-            };
-            for (int index = 0; index < UIVariables.Service10_ButtonStatus_AddressingMode.Length; index++)
-            {
-                UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_AddressingMode[index]);
-            }
 
             // Service 11
             DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
             
-            UIVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][0];
-            UIVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
-            UIVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
-
-            UIVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][0];
-            UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
-            UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
-
-            UIVariables.Service11_NRCPriority = DatabaseVariables.DatabaseService11.ElementAt(2)[0];
-            UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[2][1]);
-
             // Service 14
             DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");
 
@@ -320,11 +272,116 @@ namespace dcom.declaration
             SystemVariables.currentApplicationPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             SystemVariables.backupFileName = "BackupFile.txt";
             SystemVariables.backupFilePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, SystemVariables.backupFileName)).LocalPath;
-            DatabaseVariables.TemplatePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, @"DB\Template.xlsx")).LocalPath;
+            
         }
         public static void UIVariableDefinition()
         {
-            //
+            // Service 10
+            UIVariables.PhysicalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][0];
+            UIVariables.PhysicalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][1];
+            UIVariables.PhysicalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][2];
+
+            UIVariables.FunctionalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][0];
+            UIVariables.FunctionalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][1];
+            UIVariables.FunctionalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][2];
+
+            UIVariables.DtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][0] = "1";
+            UIVariables.DtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][1];
+            UIVariables.DtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][2];
+
+            UIVariables.PtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][0];
+            UIVariables.PtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][1] = "1";
+            UIVariables.PtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][2];
+
+            UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][0];
+            UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
+            UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2] = "1";
+
+            UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[2][1]);
+            //for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(2).Count; index++)
+            //{
+            //    UIVariables.Service10_NRCPriority[index] = DatabaseVariables.DatabaseService10.ElementAt(2)[index][0];
+            //}
+
+            string[] Service10_ButtonStatus_AddressingMode = new string[]
+            {
+                UIVariables.PhysicalDefaultService10,
+                UIVariables.PhysicalProgrammingService10,
+                UIVariables.PhysicalExtendedService10,
+                UIVariables.FunctionalDefaultService10,
+                UIVariables.FunctionalProgrammingService10,
+                UIVariables.FunctionalExtendedService10,
+            };
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_AddressingMode.Length; index++)
+            {
+                UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_AddressingMode[index]);
+            }
+
+            string[] Service10_ButtonStatus_SubFunction = new string[]
+            {
+                UIVariables.DtoDService10,
+                UIVariables.DtoPService10,
+                UIVariables.DtoEService10,
+                UIVariables.PtoDService10,
+                UIVariables.PtoPService10,
+                UIVariables.PtoEService10,
+                UIVariables.EtoDService10,
+                UIVariables.EtoPService10,
+                UIVariables.EtoEService10,
+            };
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_SubFunction.Length; index++)
+            {
+                UIVariables.Service10_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_SubFunction[index]);
+            }
+
+            // Service 11
+            UIVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][0];
+            UIVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
+            UIVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
+
+            UIVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][0];
+            UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
+            UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
+
+
+            UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[2][1]);
+
+            string[] Service11_ButtonStatus_AddressingMode = new string[]
+            {
+                UIVariables.PhysicalDefaultService11,
+                UIVariables.PhysicalProgrammingService11,
+                UIVariables.PhysicalExtendedService11,
+                UIVariables.FunctionalDefaultService11,
+                UIVariables.FunctionalProgrammingService11,
+                UIVariables.FunctionalExtendedService11,
+            };
+            for (int index = 0; index < UIVariables.Service11_ButtonStatus_AddressingMode.Length; index++)
+            {
+                UIVariables.Service11_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service11_ButtonStatus_AddressingMode[index]);
+            }
+
+            // Service 14
+            UIVariables.PhysicalDefaultService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][0];
+            UIVariables.PhysicalProgrammingService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][1];
+            UIVariables.PhysicalExtendedService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][2];
+
+            UIVariables.FunctionalDefaultService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][0];
+            UIVariables.FunctionalProgrammingService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][1];
+            UIVariables.FunctionalExtendedService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][2];
+
+            string[] Service14_ButtonStatus_AddressingMode = new string[]
+            {
+                UIVariables.PhysicalDefaultService14,
+                UIVariables.PhysicalProgrammingService14,
+                UIVariables.PhysicalExtendedService14,
+                UIVariables.FunctionalDefaultService14,
+                UIVariables.FunctionalProgrammingService14,
+                UIVariables.FunctionalExtendedService14,
+            };
+            for (int index = 0; index < UIVariables.Service14_ButtonStatus_AddressingMode.Length; index++)
+            {
+                UIVariables.Service14_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service14_ButtonStatus_AddressingMode[index]);
+            }
         }
     }
 }

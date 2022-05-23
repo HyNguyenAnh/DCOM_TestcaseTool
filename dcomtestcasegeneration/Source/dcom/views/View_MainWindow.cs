@@ -237,7 +237,7 @@ namespace dcom.views
             }
             View_Setting frm = new View_Setting();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
-            
+
             Cursor = Cursors.Default;
         }
 

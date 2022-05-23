@@ -175,13 +175,13 @@ namespace dcom.controllers.controllers_middleware
         {
             // "0" -> false
             // "1" -> true
-            if (value == "0")
+            if (value == "1")
             {
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
 

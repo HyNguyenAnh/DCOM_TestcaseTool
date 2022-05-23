@@ -91,7 +91,7 @@ namespace dcom.views.views_Service
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
             {
                 Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], NRCs);
-
+                //dataGridView_NRCPriority =;
             }
 
             // Load SubFunction

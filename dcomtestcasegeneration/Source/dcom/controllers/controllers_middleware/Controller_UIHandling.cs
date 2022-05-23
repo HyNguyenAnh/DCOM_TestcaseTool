@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using dcom.declaration;
+using dcom.views.views_ToolBar;
 
 namespace dcom.controllers.controllers_middleware
 {
@@ -330,6 +332,37 @@ namespace dcom.controllers.controllers_middleware
             }
         }
 
+        public static void PutDatabaseToDataGridView(DataGridView dataGridView, List<string[]> Data)
+        {
+            // Push data to Grid View
+            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView);
+
+            for (int rowIndex = 0; rowIndex < Data.Count(); rowIndex++)
+            {
+                dataGridView.Rows.Add();
+                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                          // ID
+                for (int cellIndex = 0; cellIndex < Data.ElementAt(rowIndex).Count(); cellIndex++)
+                {
+                    dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value = Data.ElementAt(rowIndex)[cellIndex];   // data
+                }
+            }
+        }
+        public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data, int rows, int cols)
+        {
+            if (SystemVariables.checkTheFirstLoad == false)
+            {
+                // Save data from Grid View
+                dataGridView.Update();
+                dataGridView.Refresh();
+                for (int rowIndex = 0; rowIndex < rows; rowIndex++)
+                {
+                    for (int cellIndex = 0; cellIndex < cols; cellIndex++)
+                    {
+                        Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
+                    }
+                }
+            }
+        }
 
     }
 }

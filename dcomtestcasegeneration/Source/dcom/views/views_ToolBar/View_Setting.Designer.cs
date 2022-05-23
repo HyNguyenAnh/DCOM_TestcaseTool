@@ -327,7 +327,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_CommonSetting.Size = new System.Drawing.Size(487, 197);
             this.dataGridView_CommonSetting.StandardTab = true;
-            this.dataGridView_CommonSetting.TabIndex = 6;
+            this.dataGridView_CommonSetting.TabIndex = 5;
             this.dataGridView_CommonSetting.SelectionChanged += new System.EventHandler(this.dataGridView_CommonSetting_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn8

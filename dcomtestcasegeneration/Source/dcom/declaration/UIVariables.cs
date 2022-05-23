@@ -121,7 +121,6 @@ namespace dcom.declaration
         };
         public static string[] Service11_NRCPriority { get; set; }
 
-        // Service 11
         public static string HardResetService11 { get; set; }
         public static string KeyOnOffResetService11 { get; set; }
         public static string SoftResetService11 { get; set; }
@@ -132,5 +131,38 @@ namespace dcom.declaration
         public static string FunctionalProgrammingService11 { get; set; }
         public static string FunctionalExtendedService11 { get; set; }
         public static string SupressBitSevice11 { get; set; }
+
+        // Service14
+
+        public static bool[] Service14_ButtonStatus_SubFunction = new bool[]
+        {
+            false,
+            false,
+            false
+        };
+        public static bool Service14_ButtonStatus_SuppressBit = false;
+        public static bool[] Service14_ButtonStatus_AddressingMode = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        };
+        public static bool[] Service14_ButtonStatus_Condition = new bool[]
+        {
+            false,
+            false
+        };
+        public static string[] Service14_NRCPriority { get; set; }
+
+        public static string PhysicalDefaultService14 { get; set; }
+        public static string PhysicalProgrammingService14 { get; set; }
+        public static string PhysicalExtendedService14 { get; set; }
+        public static string FunctionalDefaultService14 { get; set; }
+        public static string FunctionalProgrammingService14 { get; set; }
+        public static string FunctionalExtendedService14 { get; set; }
+        public static string SupressBitSevice14 { get; set; }
     }
 }

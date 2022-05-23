@@ -15,7 +15,6 @@ namespace dcom.models.models_systemHandling
     {
         public static void BackupInformation()
         {
-            
             MessageBoxButtons btn = MessageBoxButtons.YesNo;
             DialogResult res = MessageBox.Show("Would you want to load the last recent database?", "Notice", btn);
 
@@ -30,6 +29,7 @@ namespace dcom.models.models_systemHandling
                 DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
 
                 Definition.DatabaseVariableDefinition();
+                Definition.UIVariableDefinition();
 
                 // Close the database
                 Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);

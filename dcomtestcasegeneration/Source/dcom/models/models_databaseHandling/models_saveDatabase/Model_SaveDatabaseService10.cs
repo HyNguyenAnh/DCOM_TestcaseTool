@@ -80,7 +80,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Optional
-            status = Controller_ServiceHandling.ConvertFromBoolToString(UIVariables.Service10_ButtonStatus_SuppressBit);
+            status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_SuppressBit);
             Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
         }
     }

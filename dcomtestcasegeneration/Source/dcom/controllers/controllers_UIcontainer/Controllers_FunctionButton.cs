@@ -41,7 +41,6 @@ namespace dcom.controllers.controllers_UIcontainer
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile();
             
-
             MessageBoxButtons btn = MessageBoxButtons.YesNo;
             DialogResult res = MessageBox.Show("The database updated successfully!\nWould you like to open the database excel file?", "Notice", btn);
 

@@ -94,13 +94,13 @@ namespace dcom.views.views_ToolBar
 
             // Load Common Keyword Information
             List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
-            PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
+            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
 
             List<string[]> DatabaseCommonCommand = DatabaseVariables.DatabaseCommonCommand;
-            PutDatabaseToDataGridView(dataGridView_CommonCommand, DatabaseCommonCommand);
+            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonCommand, DatabaseCommonCommand);
 
             List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
-            PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
+            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
         }
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
         {
@@ -131,7 +131,6 @@ namespace dcom.views.views_ToolBar
             // Get data in databases
             Controllers_FunctionButton.ButtonLoadDataClick();
 
-            //views_Service.View_Service10.DataGridViewComboBoxColumn_NRCPriority[0] = UIVariables.Service10_NRCPriority[0];
             // Push data to Project Information
             textBox_ProjectName.Text = DatabaseVariables.ProjectName;
             textBox_Variant.Text = DatabaseVariables.Variant;
@@ -188,49 +187,20 @@ namespace dcom.views.views_ToolBar
 
             // Push data to Common Setting
             List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
-            PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
+            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
 
             // Push data to Common Command
             List<string[]> DatabaseCommonCommand = DatabaseVariables.DatabaseCommonCommand;
-            PutDatabaseToDataGridView(dataGridView_CommonCommand, DatabaseCommonCommand);
+            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonCommand, DatabaseCommonCommand);
             
             // Push data to Common DID
             List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
-            PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
+            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
 
             Cursor = Cursors.Default;
             MessageBox.Show("The database is loaded successfully");
         }
 
-        public static void PutDatabaseToDataGridView(DataGridView dataGridView, List<string[]> Data)
-        {
-            // Push data to Grid View
-            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView);
-
-            for (int rowIndex = 0; rowIndex < Data.Count(); rowIndex++)
-            {
-                dataGridView.Rows.Add();
-                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                          // ID
-                for (int cellIndex = 0; cellIndex < Data.ElementAt(rowIndex).Count(); cellIndex++)
-                {
-                    dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value = Data.ElementAt(rowIndex)[cellIndex];   // data
-                }
-            }
-        }
-
-        public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data, int rows, int cols)
-        {
-            // Save data to Grid View
-            dataGridView.Update();
-            dataGridView.Refresh();
-            for (int rowIndex = 0; rowIndex < rows; rowIndex++)
-            {
-                for (int cellIndex = 0; cellIndex < cols; cellIndex++)
-                {
-                    Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
-                }
-            }
-        }
 
         private void button_SelectService10_Click(object sender, EventArgs e)
         {
@@ -382,17 +352,17 @@ namespace dcom.views.views_ToolBar
 
         private void dataGridView_CommonSetting_SelectionChanged(object sender, EventArgs e)
         {
-            //SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting, 5, 4);
+            //Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting, 5, 4);
         }
 
         private void dataGridView_CommonCommand_SelectionChanged(object sender, EventArgs e)
         {
-            //SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand, 3, 3);
+            Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand, 3, 3);
         }
 
         private void dataGridView_CommonDID_SelectionChanged(object sender, EventArgs e)
         {
-            //SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID, 3, 2);
+            Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID, 3, 2);
         }
     }
 }
