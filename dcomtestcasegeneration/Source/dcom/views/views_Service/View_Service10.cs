@@ -131,7 +131,7 @@ namespace dcom.views.views_Service
                 ButtonStatus_Condition[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[index]);
             }
 
-
+            dataGridView_NRCPriority.Enabled = true;
         }
         private void button_DtoP_Click(object sender, EventArgs e)
         {
@@ -338,6 +338,14 @@ namespace dcom.views.views_Service
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
+        }
+
+        private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView_NRCPriority.Enabled == true)
+            {
+                Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service10_NRCPriority);
+            }
         }
     }
 }

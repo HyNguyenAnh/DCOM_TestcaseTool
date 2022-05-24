@@ -128,7 +128,7 @@ namespace dcom.views.views_Service
                 ButtonStatus_Condition[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[index]);
             }
 
-            
+            dataGridView_NRCPriority.Enabled = true;
         }
         private void button_Service11_HardReset_Click(object sender, EventArgs e)
         {
@@ -302,6 +302,14 @@ namespace dcom.views.views_Service
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
+        }
+
+        private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView_NRCPriority.Enabled == true)
+            {
+                Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service11_NRCPriority);
+            }
         }
     }
 }

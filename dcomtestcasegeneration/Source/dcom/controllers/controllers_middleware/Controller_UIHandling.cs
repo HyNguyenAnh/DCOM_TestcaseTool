@@ -364,5 +364,19 @@ namespace dcom.controllers.controllers_middleware
             }
         }
 
+        public static void SaveDataGridViewNRCToDatabase(DataGridView dataGridView, string[] Data)
+        {
+            if (SystemVariables.checkTheFirstLoad == false)
+            {
+                // Save data from Grid View
+                dataGridView.Update();
+                dataGridView.Refresh();
+                for (int cellIndex = 0; cellIndex < Data.Length; cellIndex++)
+                {
+                    Data[cellIndex] = dataGridView.Rows[0].Cells[cellIndex].Value.ToString();
+                }
+            }
+        }
+
     }
 }

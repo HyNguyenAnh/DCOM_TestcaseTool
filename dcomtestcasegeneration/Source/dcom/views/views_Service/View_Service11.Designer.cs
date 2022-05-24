@@ -279,6 +279,7 @@ namespace dcom.views.views_Service
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_NRCPriority.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView_NRCPriority.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_NRCPriority.Enabled = false;
             this.dataGridView_NRCPriority.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_NRCPriority.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_NRCPriority.Margin = new System.Windows.Forms.Padding(0);
@@ -293,6 +294,7 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.StandardTab = true;
             this.dataGridView_NRCPriority.TabIndex = 7;
             this.dataGridView_NRCPriority.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CommonSetting_CellContentClick);
+            this.dataGridView_NRCPriority.SelectionChanged += new System.EventHandler(this.dataGridView_NRCPriority_SelectionChanged);
             // 
             // Column1
             // 

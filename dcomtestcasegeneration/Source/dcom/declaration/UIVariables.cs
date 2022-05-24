@@ -53,7 +53,7 @@ namespace dcom.declaration
         };
 
         // Service 10
-        public static List<List<string[]>> DatabaseService10 { get; set; }
+        
         public static bool[] Service10_ButtonStatus_SubFunction = new bool[]
         {
             false,

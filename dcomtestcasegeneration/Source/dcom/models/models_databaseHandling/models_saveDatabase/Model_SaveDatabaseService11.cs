@@ -56,6 +56,12 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
             }
 
+            // NRC
+            for (int index = 0; index < UIVariables.Service11_NRCPriority.Length; index++)
+            {
+                Ws.Cells[rowIndex[5] + index, columnIndex[5] + 1] = UIVariables.Service11_NRCPriority[index];
+            }
+
             // Optional
             status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_SuppressBit);
             Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;

@@ -54,6 +54,12 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
                 }
             }
+
+            // NRC
+            for (int index = 0; index < UIVariables.Service14_NRCPriority.Length; index++)
+            {
+                Ws.Cells[rowIndex[5] + index, columnIndex[5] + 1] = UIVariables.Service14_NRCPriority[index];
+            }
         }
     }
 }
