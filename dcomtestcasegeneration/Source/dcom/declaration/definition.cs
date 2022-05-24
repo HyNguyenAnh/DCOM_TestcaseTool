@@ -145,7 +145,7 @@ namespace dcom.declaration
             string[] databasePathSplit = DatabaseVariables.DatabasePath.Split('\\');
             DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
             string[] databaseDirectorySplit = DatabaseVariables.DatabaseDirectory.Split('\\');
-            DatabaseVariables.TestcaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "") + @"\Template";
+            DatabaseVariables.TestcaseDirectory = DatabaseVariables.DatabaseDirectory.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "") + @"\Template";
             DatabaseVariables.TemplatePath = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB\Template.xlsx")).LocalPath;
 
             // Selected Service Information
