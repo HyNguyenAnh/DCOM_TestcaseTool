@@ -53,7 +53,7 @@ namespace dcom.declaration
         };
 
         // Service 10
-
+        public static List<List<string[]>> DatabaseService10 { get; set; }
         public static bool[] Service10_ButtonStatus_SubFunction = new bool[]
         {
             false,
@@ -78,7 +78,24 @@ namespace dcom.declaration
             false,
             false
         };
-        public static string[] Service10_NRCPriority { get; set; }
+        public static string[] Service10_NRCPriority = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
 
         public static string DtoDService10 { get; set; }
         public static string PtoPService10 { get; set; }
@@ -119,7 +136,24 @@ namespace dcom.declaration
             false,
             false
         };
-        public static string[] Service11_NRCPriority { get; set; }
+        public static string[] Service11_NRCPriority = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
 
         public static string HardResetService11 { get; set; }
         public static string KeyOnOffResetService11 { get; set; }
@@ -155,7 +189,24 @@ namespace dcom.declaration
             false,
             false
         };
-        public static string[] Service14_NRCPriority { get; set; }
+        public static string[] Service14_NRCPriority = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
 
         public static string PhysicalDefaultService14 { get; set; }
         public static string PhysicalProgrammingService14 { get; set; }

@@ -32,6 +32,7 @@ namespace dcom.views.views_Service
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Service10));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,28 +43,12 @@ namespace dcom.views.views_Service
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Service10));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_bodySetting = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox_Service11NRC = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_NRCPriority = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
@@ -79,7 +64,6 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_ConditionEngine_NRC = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.view_Service851 = new dcom.views.views_Service.View_Service85();
             this.groupBox_Service11AddressingMode = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -124,6 +108,22 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.view_Service851 = new dcom.views.views_Service.View_Service85();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel_bodySetting.SuspendLayout();
             this.groupBox_Service11NRC.SuspendLayout();
@@ -301,141 +301,6 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.Size = new System.Drawing.Size(514, 44);
             this.dataGridView_NRCPriority.StandardTab = true;
             this.dataGridView_NRCPriority.TabIndex = 7;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column1.HeaderText = "1";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column2.HeaderText = "2";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column3.HeaderText = "3";
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column4.HeaderText = "4";
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column5.HeaderText = "5";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column6.HeaderText = "6";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column7.HeaderText = "7";
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column8.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column8.HeaderText = "8";
-            this.Column8.Name = "Column8";
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column9.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column9.HeaderText = "9";
-            this.Column9.Name = "Column9";
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column10.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column10.HeaderText = "10";
-            this.Column10.Name = "Column10";
-            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column11
-            // 
-            this.Column11.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column11.HeaderText = "11";
-            this.Column11.Name = "Column11";
-            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column12
-            // 
-            this.Column12.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column12.HeaderText = "12";
-            this.Column12.Name = "Column12";
-            this.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column13
-            // 
-            this.Column13.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column13.HeaderText = "13";
-            this.Column13.Name = "Column13";
-            this.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column14
-            // 
-            this.Column14.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column14.HeaderText = "14";
-            this.Column14.Name = "Column14";
-            this.Column14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column15
-            // 
-            this.Column15.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Column15.HeaderText = "15";
-            this.Column15.Name = "Column15";
-            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // pictureBox1
             // 
@@ -661,13 +526,6 @@ namespace dcom.views.views_Service
             this.label18.Text = "When the engine is running or the electric power train is ready, the responsed NR" +
     "C is:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // view_Service851
-            // 
-            this.view_Service851.Location = new System.Drawing.Point(3, 3);
-            this.view_Service851.Name = "view_Service851";
-            this.view_Service851.Size = new System.Drawing.Size(60, 22);
-            this.view_Service851.TabIndex = 1;
             // 
             // groupBox_Service11AddressingMode
             // 
@@ -1411,6 +1269,148 @@ namespace dcom.views.views_Service
             this.panel2.Size = new System.Drawing.Size(10, 50);
             this.panel2.TabIndex = 3;
             // 
+            // view_Service851
+            // 
+            this.view_Service851.Location = new System.Drawing.Point(3, 3);
+            this.view_Service851.Name = "view_Service851";
+            this.view_Service851.Size = new System.Drawing.Size(60, 22);
+            this.view_Service851.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column1.HeaderText = "1";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column2.HeaderText = "2";
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column3.HeaderText = "3";
+            this.Column3.Name = "Column3";
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column4.HeaderText = "4";
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column5.HeaderText = "5";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column6.HeaderText = "6";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column7.HeaderText = "7";
+            this.Column7.Name = "Column7";
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column8.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column8.HeaderText = "8";
+            this.Column8.Name = "Column8";
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column9.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column9.HeaderText = "9";
+            this.Column9.Name = "Column9";
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Column10.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column10.HeaderText = "10";
+            this.Column10.Name = "Column10";
+            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column11
+            // 
+            this.Column11.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column11.HeaderText = "11";
+            this.Column11.Name = "Column11";
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column12
+            // 
+            this.Column12.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column12.HeaderText = "12";
+            this.Column12.Name = "Column12";
+            this.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column13
+            // 
+            this.Column13.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column13.HeaderText = "13";
+            this.Column13.Name = "Column13";
+            this.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column14
+            // 
+            this.Column14.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column14.HeaderText = "14";
+            this.Column14.Name = "Column14";
+            this.Column14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column15
+            // 
+            this.Column15.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Column15.HeaderText = "15";
+            this.Column15.Name = "Column15";
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // View_Service10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1474,21 +1474,6 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         public System.Windows.Forms.DataGridView dataGridView_NRCPriority;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column15;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.Label label14;
@@ -1546,5 +1531,20 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.Button button_PtoD;
         private System.Windows.Forms.Button button_DtoE;
         private System.Windows.Forms.Button button_DtoP;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column15;
     }
 }

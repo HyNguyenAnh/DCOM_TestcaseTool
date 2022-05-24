@@ -34,6 +34,7 @@ namespace dcom.models.models_systemHandling
                 // Close the database
                 Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
                 SystemVariables.checkTheFirstLoad = false;
+                
             }
             else
             {

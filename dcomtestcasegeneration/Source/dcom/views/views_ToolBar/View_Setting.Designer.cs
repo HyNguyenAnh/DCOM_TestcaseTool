@@ -318,6 +318,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridViewTextBoxColumn11,
             this.Column1});
             this.dataGridView_CommonSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_CommonSetting.Enabled = false;
             this.dataGridView_CommonSetting.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_CommonSetting.Location = new System.Drawing.Point(17, 18);
             this.dataGridView_CommonSetting.Margin = new System.Windows.Forms.Padding(7);
@@ -423,6 +424,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dataGridView_CommonCommand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_CommonCommand.Enabled = false;
             this.dataGridView_CommonCommand.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_CommonCommand.Location = new System.Drawing.Point(17, 18);
             this.dataGridView_CommonCommand.Margin = new System.Windows.Forms.Padding(7);
@@ -522,6 +524,7 @@ namespace dcom.views.views_ToolBar
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dataGridView_CommonDID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_CommonDID.Enabled = false;
             this.dataGridView_CommonDID.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_CommonDID.Location = new System.Drawing.Point(17, 18);
             this.dataGridView_CommonDID.Margin = new System.Windows.Forms.Padding(7);

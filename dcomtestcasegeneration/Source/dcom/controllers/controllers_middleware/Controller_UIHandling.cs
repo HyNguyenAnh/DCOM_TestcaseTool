@@ -347,16 +347,16 @@ namespace dcom.controllers.controllers_middleware
                 }
             }
         }
-        public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data, int rows, int cols)
+        public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data)
         {
             if (SystemVariables.checkTheFirstLoad == false)
             {
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
-                for (int rowIndex = 0; rowIndex < rows; rowIndex++)
+                for (int rowIndex = 0; rowIndex < Data.Count; rowIndex++)
                 {
-                    for (int cellIndex = 0; cellIndex < cols; cellIndex++)
+                    for (int cellIndex = 0; cellIndex < Data.ElementAt(rowIndex).Length; cellIndex++)
                     {
                         Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
                     }

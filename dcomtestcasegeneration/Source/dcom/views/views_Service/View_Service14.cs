@@ -82,7 +82,8 @@ namespace dcom.views.views_Service
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], NRCs);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], UIVariables.Service14_NRCPriority);
+                dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service14_NRCPriority[index];
             }
 
             // Load Addressing Mode

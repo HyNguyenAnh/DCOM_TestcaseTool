@@ -196,7 +196,10 @@ namespace dcom.views.views_ToolBar
             // Push data to Common DID
             List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
-
+            
+            dataGridView_CommonSetting.Enabled = true;
+            dataGridView_CommonCommand.Enabled = true;
+            dataGridView_CommonDID.Enabled = true;
             Cursor = Cursors.Default;
             MessageBox.Show("The database is loaded successfully");
         }
@@ -352,17 +355,26 @@ namespace dcom.views.views_ToolBar
 
         private void dataGridView_CommonSetting_SelectionChanged(object sender, EventArgs e)
         {
-            //Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting, 5, 4);
+            if (dataGridView_CommonSetting.Enabled == true)
+            {
+                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting);
+            }
         }
 
         private void dataGridView_CommonCommand_SelectionChanged(object sender, EventArgs e)
         {
-            Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand, 3, 3);
+            if (dataGridView_CommonCommand.Enabled == true)
+            {
+                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonCommand, DatabaseVariables.DatabaseCommonCommand);
+            }
         }
 
         private void dataGridView_CommonDID_SelectionChanged(object sender, EventArgs e)
         {
-            Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID, 3, 2);
+            if (dataGridView_CommonDID.Enabled == true)
+            {
+                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID);
+            }
         }
     }
 }

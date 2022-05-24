@@ -81,21 +81,8 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 dataRow = new string[]
                 {
-                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 1 ].Text,  // Priority
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 1 ].Text,  // NRC 11
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 2 ].Text,  // NRC 7F
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 3 ].Text,  // NRC 13_S
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 4 ].Text,  // NRC 12
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 5 ].Text,  // NRC 31
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 6 ].Text,  // NRC 13_L
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 7 ].Text,  // NRC 33
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 8 ].Text,  // NRC 7E
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 9 ].Text,  // NRC 22
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 10].Text,  // NRC 36
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 11].Text,  // NRC 24
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 12].Text,  // NRC 35
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 13].Text,  // NRC 37
-                //    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 14].Text,  // NRC lenght
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5]     ].Text,     // Priority
+                    ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + 1 ].Text,     // NRC
                 };
 
                 dataTable.Add(dataRow);
