@@ -76,8 +76,15 @@ namespace dcom.declaration
         public static bool[] Service10_ButtonStatus_Condition = new bool[]
         {
             false,
-            false
+            false,
         };
+
+        public static string[] Service10_NRCCondition = new string[2]
+        {
+            "",
+            "",
+        };
+
         public static string[] Service10_NRCPriority = new string[15]
         {
             "",
@@ -134,7 +141,7 @@ namespace dcom.declaration
         public static bool[] Service11_ButtonStatus_Condition = new bool[]
         {
             false,
-            false
+            false,
         };
         public static string[] Service11_NRCPriority = new string[15]
         {
@@ -151,6 +158,11 @@ namespace dcom.declaration
             "",
             "",
             "",
+            "",
+            "",
+        };
+        public static string[] Service11_NRCCondition = new string[2]
+        {
             "",
             "",
         };
@@ -204,6 +216,11 @@ namespace dcom.declaration
             "",
             "",
             "",
+            "",
+            "",
+        };
+        public static string[] Service14_NRCCondition = new string[2]
+        {
             "",
             "",
         };

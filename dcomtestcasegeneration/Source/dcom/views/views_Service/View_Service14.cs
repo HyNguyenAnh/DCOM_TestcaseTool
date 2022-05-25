@@ -77,7 +77,7 @@ namespace dcom.views.views_Service
             for (int index = 0; index < ComboBox_ConditionNRCs.Length; index++)
             {
                 Controller_UIHandling.AddArrayElementToComboBox(ComboBox_ConditionNRCs[index], NRCs);
-
+                ComboBox_ConditionNRCs[index].Text = UIVariables.Service14_NRCCondition[index];
             }
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
@@ -226,6 +226,26 @@ namespace dcom.views.views_Service
             {
                 Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service14_NRCPriority);
             }
+        }
+
+        private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service14_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+        }
+
+        private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service14_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+        }
+
+        private void comboBox_ConditionEngine_NRC_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service14_NRCCondition[0] = comboBox_ConditionEngine_NRC.Text;
+        }
+
+        private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service14_NRCCondition[1] = comboBox_ConditionVehicle_NRC.Text;
         }
     }
 }

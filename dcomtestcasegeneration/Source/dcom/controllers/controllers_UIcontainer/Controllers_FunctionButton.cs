@@ -18,7 +18,7 @@ namespace dcom.controllers.controllers_UIcontainer
     {
         public static void ButtonExportClick()
         {
-            declaration.Definition.TestcaseVariableDefinition();
+            Definition.TestcaseVariableDefinition();
             Model_TestcaseTemplate.ExportTestcase();
 
             MessageBoxButtons btn = MessageBoxButtons.YesNo;

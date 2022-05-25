@@ -75,7 +75,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 for (int index_ = 0; index_ < SaveAllowSessionService10[index].Count(); index_++)
                 {
                     status = Controller_ServiceHandling.ConvertFromStatusToString(SaveAllowSessionService10[index].ElementAt(index_).ToString());
-                    Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
+                    Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_ + 1] = status;
                 }
             }
 
@@ -88,6 +88,14 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Optional
             status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_SuppressBit);
             Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
+
+            // Precondition
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition.Length; index++)
+            {
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Condition[index]);
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 1] = status;
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = UIVariables.Service10_NRCCondition[index];
+            }
         }
     }
 }

@@ -49,7 +49,7 @@ namespace dcom.declaration
                 1, // Common command
                 1, // Common DID
                 1, // Specification
-                7, // Allow session
+                6, // Allow session
                 11,// NRC
                 1, // Optional
                 1, // Precondition
@@ -82,7 +82,7 @@ namespace dcom.declaration
                 1, // Common command
                 1, // Common DID
                 1, // Specification
-                7, // Allow session
+                6, // Allow session
                 11,// NRC
                 1, // Optional
                 1, // Precondition
@@ -193,6 +193,7 @@ namespace dcom.declaration
             DatabaseVariables.DatabaseService85 = Model_GetServiceDatabase.DatabaseService("85");
 
         }
+        
         public static void TestcaseVariableDefinition()
         {
 
@@ -274,33 +275,34 @@ namespace dcom.declaration
             SystemVariables.backupFilePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, SystemVariables.backupFileName)).LocalPath;
             
         }
+        
         public static void UIVariableDefinition()
         {
-            // Service 10
+         // Service 10
             // Physiscal
-            UIVariables.PhysicalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][0];
-            UIVariables.PhysicalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][1];
-            UIVariables.PhysicalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][2];
+            UIVariables.PhysicalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][1];
+            UIVariables.PhysicalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][2];
+            UIVariables.PhysicalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][3];
             
             // Functional
-            UIVariables.FunctionalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][0];
-            UIVariables.FunctionalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][1];
-            UIVariables.FunctionalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][2];
+            UIVariables.FunctionalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][1];
+            UIVariables.FunctionalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][2];
+            UIVariables.FunctionalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][3];
 
             // Default
-            UIVariables.DtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][0] = "1";
-            UIVariables.DtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][1];
-            UIVariables.DtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][2];
+            UIVariables.DtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][1] = "1";
+            UIVariables.DtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][2];
+            UIVariables.DtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][3];
 
             // Programming
-            UIVariables.PtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][0];
-            UIVariables.PtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][1] = "1";
-            UIVariables.PtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][2];
+            UIVariables.PtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][1];
+            UIVariables.PtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][2] = "1";
+            UIVariables.PtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][3];
 
             // Extended
-            UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][0];
-            UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
-            UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2] = "1";
+            UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
+            UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2];
+            UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][3] = "1";
 
             // SuppressBit
             UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[2][1]);
@@ -342,16 +344,26 @@ namespace dcom.declaration
                 UIVariables.Service10_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_SubFunction[index]);
             }
 
+            // Condition
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition.Length; index++)
+            {
+                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(4)[index][1]);
+            }
+            for (int index = 0; index < UIVariables.Service10_NRCCondition.Length; index++)
+            {
+                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(4)[index][2];
+            }
+
             // Service 11
             // Physiscal
-            UIVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][0];
-            UIVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
-            UIVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
+            UIVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
+            UIVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
+            UIVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][3];
 
             // Functional
-            UIVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][0];
-            UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
-            UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
+            UIVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
+            UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
+            UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][3];
 
 
             UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[2][1]);
@@ -377,16 +389,26 @@ namespace dcom.declaration
                 UIVariables.Service11_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service11_ButtonStatus_AddressingMode[index]);
             }
 
+            // Condition
+            for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
+            {
+                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(4)[index][1]);
+            }
+            for (int index = 0; index < UIVariables.Service11_NRCCondition.Length; index++)
+            {
+                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(4)[index][2];
+            }
+
             // Service 14
             // Physiscal
-            UIVariables.PhysicalDefaultService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][0];
-            UIVariables.PhysicalProgrammingService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][1];
-            UIVariables.PhysicalExtendedService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][2];
+            UIVariables.PhysicalDefaultService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][1];
+            UIVariables.PhysicalProgrammingService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][2];
+            UIVariables.PhysicalExtendedService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[0][3];
 
             // Functional
-            UIVariables.FunctionalDefaultService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][0];
-            UIVariables.FunctionalProgrammingService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][1];
-            UIVariables.FunctionalExtendedService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][2];
+            UIVariables.FunctionalDefaultService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][1];
+            UIVariables.FunctionalProgrammingService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][2];
+            UIVariables.FunctionalExtendedService14 = DatabaseVariables.DatabaseService14.ElementAt(1)[1][3];
 
             // NRC
             for (int index = 0; index < DatabaseVariables.DatabaseService14.ElementAt(2).Count; index++)
@@ -407,6 +429,16 @@ namespace dcom.declaration
             for (int index = 0; index < UIVariables.Service14_ButtonStatus_AddressingMode.Length; index++)
             {
                 UIVariables.Service14_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service14_ButtonStatus_AddressingMode[index]);
+            }
+
+            // Condition
+            for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
+            {
+                UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(4)[index][1]);
+            }
+            for (int index = 0; index < UIVariables.Service14_NRCCondition.Length; index++)
+            {
+                UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(4)[index][2];
             }
         }
     }

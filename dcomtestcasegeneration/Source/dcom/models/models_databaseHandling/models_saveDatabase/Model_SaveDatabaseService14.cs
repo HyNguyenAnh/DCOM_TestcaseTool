@@ -51,7 +51,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 for (int index_ = 0; index_ < SaveAllowSessionService14.ElementAt(index).Count(); index_++)
                 {
                     status = Controller_ServiceHandling.ConvertFromStatusToString(SaveAllowSessionService14.ElementAt(index)[index_]);
-                    Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_] = status;
+                    Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_ + 1] = status;
                 }
             }
 
@@ -59,6 +59,14 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             for (int index = 0; index < UIVariables.Service14_NRCPriority.Length; index++)
             {
                 Ws.Cells[rowIndex[5] + index, columnIndex[5] + 1] = UIVariables.Service14_NRCPriority[index];
+            }
+
+            // Precondition
+            for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
+            {
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_Condition[index]);
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 1] = status;
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = UIVariables.Service14_NRCCondition[index];
             }
         }
     }
