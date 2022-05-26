@@ -15,7 +15,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
         {
             int[] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
-            string status = "";
+            string status;
 
             string[] SavePhysicalService11 = new string[]
 {
@@ -40,10 +40,11 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Specification
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(0).Count(); index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11.ElementAt(0)[0].Count(); index_++)
+                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11.ElementAt(0)[index].Count() - 1; index_++)
                 {
                     Ws.Cells[rowIndex[3] + index, columnIndex[3] + index_] = DatabaseVariables.DatabaseService11.ElementAt(0)[index][index_];
                 }
+                Ws.Cells[rowIndex[3] + index, columnIndex[3] + 3] = Controller_ServiceHandling.ConvertFromBoolToExpectedValue(UIVariables.Service11_ButtonStatus_SubFunction[index], "11", "12", (index + 1).ToString());
             }
 
             // Allow session
@@ -63,9 +64,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Optional
-            status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_SuppressBit);
-            Ws.Cells[rowIndex[6] + 2, columnIndex[6] + 1] = status;
-
+            for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(3).Count; index++)
+            {   if (DatabaseVariables.DatabaseService11.ElementAt(3)[index][0].Contains("Suppress"))
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_SuppressBit);
+                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = status;
+                }
+            }
             // Precondition
             for(int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
             {

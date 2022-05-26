@@ -125,6 +125,33 @@ namespace dcom.controllers.controllers_middleware
             return DisplayString;
         }
 
+        public static bool ConvertFromExpectedValueToBool(string ExpectedValue)
+        {
+            // Example: 117f12 -> false; 5101 -> true
+            if (ExpectedValue.ToLower().Contains("7f"))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public static string ConvertFromBoolToExpectedValue(bool value, string SID, string errorNRC, string modeID)
+        {
+            string ExpectedValue;
+            // Example: 117f12 -> false; 5101 -> true
+            if (value)
+            {
+                ExpectedValue = Controller_ServiceHandling.GetResponseID(SID) + "0" + modeID;
+            }
+            else
+            {
+                ExpectedValue = SID + "7f" + errorNRC;
+            }
+            return ExpectedValue;
+        }
+
         public static string ConvertFromDisplayStringToCodeString(string DisplayString)
         {
             // Example: 22 F1 89 -> 22f189

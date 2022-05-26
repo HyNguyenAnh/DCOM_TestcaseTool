@@ -7,6 +7,7 @@ using dcom.models.models_systemHandling;
 using dcom.controllers.controllers_middleware;
 using dcom.declaration;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace dcom.models.models_systemHandling
@@ -15,29 +16,39 @@ namespace dcom.models.models_systemHandling
     {
         public static void BackupInformation()
         {
-            MessageBoxButtons btn = MessageBoxButtons.YesNo;
-            DialogResult res = MessageBox.Show("Would you want to load the last recent database?", "Notice", btn);
-
-            if (res == DialogResult.Yes)
+            Definition.SystemVariableDefinition();
+            if (File.Exists(SystemVariables.backupFilePath))
             {
-                // Get the last recent database path from backup file
-                Definition.SystemVariableDefinition();
-                Model_SystemInformation.readBackupFile();
+                MessageBoxButtons btn = MessageBoxButtons.YesNo;
+                DialogResult res = MessageBox.Show("Would you want to load the last recent database?", "Notice", btn);
 
-                // Load data from database
-                string databasePath = DatabaseVariables.DatabasePath;
-                DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
+                if (res == DialogResult.Yes)
+                {
+                    // Get the last recent database path from backup file
+                    Model_SystemInformation.readBackupFile();
 
-                Definition.DatabaseVariableDefinition();
-                Definition.UIVariableDefinition();
+                    // Load data from database
+                    string databasePath = DatabaseVariables.DatabasePath;
+                    DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
 
-                // Close the database
-                Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
-                SystemVariables.checkTheFirstLoad = false;
-                
+                    Definition.DatabaseVariableDefinition();
+                    Definition.UIVariableDefinition();
+
+                    // Close the database
+                    Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
+                    SystemVariables.checkTheFirstLoad = false;
+
+                }
+                else
+                {
+                    SystemVariables.checkTheFirstLoad = false;
+                    // Close the pop-up
+                }
             }
             else
             {
+                MessageBoxButtons btn_ = MessageBoxButtons.OK;
+                MessageBox.Show("You don't have backup file", "Notice", btn_);
                 SystemVariables.checkTheFirstLoad = false;
                 // Close the pop-up
             }

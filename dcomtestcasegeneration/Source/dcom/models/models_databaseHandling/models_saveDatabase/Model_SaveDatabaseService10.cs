@@ -15,7 +15,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
         {
             int[] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
-            string status = "";
+            string status;
 
             string[] SavePhysicalService10 = new string[]
             {

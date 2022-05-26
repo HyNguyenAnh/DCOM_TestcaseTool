@@ -286,17 +286,17 @@ namespace dcom.views.views_Service
 
         private void button_HardReset_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.HardResetService11 = button_HardReset.Text;
+            UIVariables.Service11_ButtonStatus_SubFunction[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_HardReset.Text);
         }
 
         private void button_KeyOnOffReset_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.KeyOnOffResetService11 = button_KeyOnOffReset.Text;
+            UIVariables.Service11_ButtonStatus_SubFunction[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_KeyOnOffReset.Text);
         }
 
         private void button_SoftReset_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.SoftResetService11 = button_SoftReset.Text;
+            UIVariables.Service11_ButtonStatus_SubFunction[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_SoftReset.Text);
         }
 
         private void button_SupressBit_TextChanged(object sender, EventArgs e)

@@ -389,6 +389,18 @@ namespace dcom.declaration
                 UIVariables.Service11_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service11_ButtonStatus_AddressingMode[index]);
             }
 
+            // Sub Function
+            string[] Service11_ButtonStatus_SubFunction = new string[]
+            {
+                UIVariables.HardResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[0][3],
+                UIVariables.KeyOnOffResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[1][3],
+                UIVariables.SoftResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[2][3],
+            };
+            for (int index = 0; index < UIVariables.Service11_ButtonStatus_SubFunction.Length; index++)
+            {
+                UIVariables.Service11_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromExpectedValueToBool(Service11_ButtonStatus_SubFunction[index]);
+            }
+
             // Condition
             for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
             {
