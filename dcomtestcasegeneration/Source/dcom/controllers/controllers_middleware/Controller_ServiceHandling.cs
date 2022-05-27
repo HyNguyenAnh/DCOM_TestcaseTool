@@ -125,10 +125,10 @@ namespace dcom.controllers.controllers_middleware
             return DisplayString;
         }
 
-        public static bool ConvertFromExpectedValueToBool(string ExpectedValue)
+        public static bool ConvertFromExpectedValueToBool(string expectedValue)
         {
-            // Example: 117f12 -> false; 5101 -> true
-            if (ExpectedValue.ToLower().Contains("7f"))
+            // Example: 7f1112 -> false; 5101 -> true
+            if (expectedValue.ToLower().Contains("7f"))
             {
                 return false;
             }
@@ -139,17 +139,17 @@ namespace dcom.controllers.controllers_middleware
         }
         public static string ConvertFromBoolToExpectedValue(bool value, string SID, string errorNRC, string modeID)
         {
-            string ExpectedValue;
-            // Example: 117f12 -> false; 5101 -> true
+            string expectedValue;
+            // Example: false -> 117f12; true -> 5101
             if (value)
             {
-                ExpectedValue = Controller_ServiceHandling.GetResponseID(SID) + "0" + modeID;
+                expectedValue = Controller_ServiceHandling.GetResponseID(SID) + "0" + modeID;
             }
             else
             {
-                ExpectedValue = SID + "7f" + errorNRC;
+                expectedValue = "7f" + SID + errorNRC;
             }
-            return ExpectedValue;
+            return expectedValue;
         }
 
         public static string ConvertFromDisplayStringToCodeString(string DisplayString)
@@ -239,7 +239,7 @@ namespace dcom.controllers.controllers_middleware
 
         public static string ConvertFromStatusToString(string value)
         {
-            // Example: ON | Brown | 1 -> 1; OFF -> 0
+            // Example: "ON" | "Brown" | "1" -> "1"; "OFF" -> "0"
             if(value == "ON" | value == "Brown" | value == "1")
             {
                 return "1";
