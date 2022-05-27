@@ -1,0 +1,41 @@
+Diagnostic Identification
+- DID name
+- DID
+- Length*
+- Value*
+
+
+
+
+Service 2E - Write
+Service 22 - Read
+
+
+
+2e+DID+value >> 6E + DID
+
+
+
+0 - Tester Present ON 3E
+1 - Access to 1003
+2 - SetEnvVar(string Name EnvLogInLevel1, string Value 1, int WaitTime 1000)
+2* - envvar(EnvLogInLevel1(1;1000))
+envvar(E_pubc_BCS_BCS_2_A_BCS_VehSpd_Pv(3;100))
+
+
+
+
+3 - Write DID: 2ef1f001
+
+
+
+
+
+
+22 READ
+
+
+
+22+DID >> 62 + DID + value
+Request: 22f1f0
+Response: 62f1f001
