@@ -36,9 +36,9 @@ namespace dcom.declaration
                 21,// Common DID
                 3, // Specification
                 3, // Allow session
-                4, // NRC
-                101,// Optional
-                112, // Precondition
+                3, // NRC
+                3,// Optional
+                3, // Condition
                 31, // Project Information
                 41, // Data Path Information
                 51  // Selected Service
@@ -51,8 +51,8 @@ namespace dcom.declaration
                 1, // Specification
                 6, // Allow session
                 11,// NRC
-                1, // Optional
-                1, // Precondition
+                19, // Optional
+                14, // Condition
                 1, // Project Information
                 1, // Data Path Information
                 1  // Selected Service
@@ -69,9 +69,9 @@ namespace dcom.declaration
                 21,// Common DID
                 3, // Specification
                 3, // Allow session
-                4, // NRC
-                101,// Optional
-                112, // Precondition
+                3, // NRC
+                3,// Optional
+                3, // Condition
                 31, // Project Information
                 41, // Data Path Information
                 51  // Selected Service
@@ -84,8 +84,8 @@ namespace dcom.declaration
                 1, // Specification
                 6, // Allow session
                 11,// NRC
-                1, // Optional
-                1, // Precondition
+                19, // Optional
+                14, // Condition
                 1, // Project Information
                 1, // Data Path Information
                 1  // Selected Service
@@ -305,7 +305,7 @@ namespace dcom.declaration
             UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][3] = "1";
 
             // SuppressBit
-            UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[2][1]);
+            UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[0][1]);
 
             // NRC
             for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(2).Count; index++)
@@ -347,11 +347,11 @@ namespace dcom.declaration
             // Condition
             for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition.Length; index++)
             {
-                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(4)[index][1]);
+                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(4)[index][2]);
             }
             for (int index = 0; index < UIVariables.Service10_NRCCondition.Length; index++)
             {
-                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(4)[index][2];
+                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(4)[index][3];
             }
 
             // Service 11
@@ -366,7 +366,7 @@ namespace dcom.declaration
             UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][3];
 
 
-            UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[2][1]);
+            UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[0][1]);
 
             // NRC
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(2).Count; index++)
@@ -392,23 +392,23 @@ namespace dcom.declaration
             // Sub Function
             string[] Service11_ButtonStatus_SubFunction = new string[]
             {
-                UIVariables.HardResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[0][3],
-                UIVariables.KeyOnOffResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[1][3],
-                UIVariables.SoftResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[2][3],
+                UIVariables.HardResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[0][1],
+                UIVariables.KeyOnOffResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[1][1],
+                UIVariables.SoftResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[2][1],
             };
             for (int index = 0; index < UIVariables.Service11_ButtonStatus_SubFunction.Length; index++)
             {
-                UIVariables.Service11_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromExpectedValueToBool(Service11_ButtonStatus_SubFunction[index]);
+                UIVariables.Service11_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service11_ButtonStatus_SubFunction[index]);
             }
 
             // Condition
             for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
             {
-                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(4)[index][1]);
+                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(4)[index][2]);
             }
             for (int index = 0; index < UIVariables.Service11_NRCCondition.Length; index++)
             {
-                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(4)[index][2];
+                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(4)[index][3];
             }
 
             // Service 14
@@ -446,11 +446,11 @@ namespace dcom.declaration
             // Condition
             for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
             {
-                UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(4)[index][1]);
+                UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(4)[index][2]);
             }
             for (int index = 0; index < UIVariables.Service14_NRCCondition.Length; index++)
             {
-                UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(4)[index][2];
+                UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(4)[index][3];
             }
         }
     }

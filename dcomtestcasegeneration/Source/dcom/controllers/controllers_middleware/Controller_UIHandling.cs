@@ -335,7 +335,7 @@ namespace dcom.controllers.controllers_middleware
         public static void PutDatabaseToDataGridView(DataGridView dataGridView, List<string[]> Data)
         {
             // Push data to Grid View
-            controllers.controllers_middleware.Controller_UIHandling.CleanDataGridView(dataGridView);
+            Controller_UIHandling.CleanDataGridView(dataGridView);
 
             for (int rowIndex = 0; rowIndex < Data.Count(); rowIndex++)
             {
