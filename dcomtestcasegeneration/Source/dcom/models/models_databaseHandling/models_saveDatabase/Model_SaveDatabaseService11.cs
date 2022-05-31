@@ -70,13 +70,18 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_SuppressBit);
                     Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = status;
                 }
+                else
+                {
+                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "0";
+                }
             }
-            // Precondition
+
+            // Condition
             for(int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_Condition[index]);
-                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 1] = status;
-                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = UIVariables.Service11_NRCCondition[index];
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = status;
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service11_NRCCondition[index];
             }
         }
     }

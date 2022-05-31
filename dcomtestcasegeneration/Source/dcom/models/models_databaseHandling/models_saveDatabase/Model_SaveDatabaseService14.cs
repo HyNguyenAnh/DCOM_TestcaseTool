@@ -61,12 +61,26 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 Ws.Cells[rowIndex[5] + index, columnIndex[5] + 1] = UIVariables.Service14_NRCPriority[index];
             }
 
+            // Optional
+            for (int index = 0; index < DatabaseVariables.DatabaseService14.ElementAt(3).Count; index++)
+            {
+                if (DatabaseVariables.DatabaseService14.ElementAt(3)[index][0].Contains("Suppress"))
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_SuppressBit);
+                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = status;
+                }
+                else
+                {
+                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "0";
+                }
+            }
+
             // Precondition
             for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_Condition[index]);
-                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 1] = status;
-                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = UIVariables.Service14_NRCCondition[index];
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = status;
+                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service14_NRCCondition[index];
             }
         }
     }
