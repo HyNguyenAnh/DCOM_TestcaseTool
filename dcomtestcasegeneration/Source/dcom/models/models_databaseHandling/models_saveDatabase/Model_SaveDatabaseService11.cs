@@ -40,20 +40,18 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Specification
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(0).Count(); index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11.ElementAt(0)[index].Count() - 1; index_++)
-                {
-                    Ws.Cells[rowIndex[3] + index, columnIndex[3] + index_] = DatabaseVariables.DatabaseService11.ElementAt(0)[index][index_];
-                }
-                Ws.Cells[rowIndex[3] + index, columnIndex[3] + 3] = Controller_ServiceHandling.ConvertFromBoolToExpectedValue(UIVariables.Service11_ButtonStatus_SubFunction[index], "11", "12", (index + 1).ToString());
+                Ws.Cells[rowIndex[3] + index, columnIndex[3] + 1] = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_ResetMode[index]);
             }
 
             // Allow session
-            for (int index = 0; index < SaveAllowSessionService11.Count(); index++)
+            int n = 0;
+            for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(1).Count(); index++)
             {
-                for (int index_ = 0; index_ < SaveAllowSessionService11.ElementAt(index).Count(); index_++)
+                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11.ElementAt(1)[index].Count() - 1; index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromStatusToString(SaveAllowSessionService11.ElementAt(index)[index_]);
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_AddressingMode[n]);
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_ + 1] = status;
+                    n++;
                 }
             }
 
@@ -65,14 +63,15 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 
             // Optional
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(3).Count; index++)
-            {   if (DatabaseVariables.DatabaseService11.ElementAt(3)[index][0].Contains("Suppress"))
+            {   
+                if (DatabaseVariables.DatabaseService11.ElementAt(3)[index][0].Contains("Suppress"))
                 {
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_SuppressBit);
                     Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = status;
                 }
                 else
                 {
-                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "0";
+                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "1";
                 }
             }
 

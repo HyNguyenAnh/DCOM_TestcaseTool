@@ -15,12 +15,13 @@ namespace dcom.views.views_Service
 {
     public partial class View_Service10 : UserControl
     {
-        public static Button[] ButtonStatus_SubFunction;
+        public static Button[] ButtonStatus_SessionTransition;
         public static Button ButtonStatus_SuppressBit;
         public static Button[] ButtonStatus_AddressingMode;
         public static Button[] ButtonStatus_Condition;
         public static ComboBox[] ComboBox_ConditionNRCs;
         public static DataGridViewComboBoxColumn[] DataGridViewComboBoxColumn_NRCPriority;
+        public static TextBox[] InvalidValue_Condition;
         public View_Service10()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace dcom.views.views_Service
         public void LoadData()
         {
             // Definition
-            ButtonStatus_SubFunction = new Button[]
+            ButtonStatus_SessionTransition = new Button[]
             {
                 button_DtoP,
                 button_DtoE,
@@ -55,14 +56,14 @@ namespace dcom.views.views_Service
 
             ButtonStatus_Condition = new Button[]
             {
-                button_ConditionEngine,
                 button_ConditionVehicleSpeed,
+                button_ConditionEngine,
             };
 
             ComboBox_ConditionNRCs = new ComboBox[]
             {
-                comboBox_ConditionEngine_NRC,
                 comboBox_ConditionVehicle_NRC,
+                comboBox_ConditionEngine_NRC,
             };
 
             DataGridViewComboBoxColumn_NRCPriority = new DataGridViewComboBoxColumn[]
@@ -84,6 +85,11 @@ namespace dcom.views.views_Service
                 Column15,
             };
 
+            InvalidValue_Condition = new TextBox[]
+            {
+                VehicleSpeedValue_Text,
+            };
+
 
             // Load elements to comboBox
             string[] NRCs = UIVariables.NRCs;
@@ -99,12 +105,19 @@ namespace dcom.views.views_Service
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service10_NRCPriority[index];
             }
 
-            // Load SubFunction
-
-            for (int index = 0; index < ButtonStatus_SubFunction.Length; index++)
+            // Load Session Transition
+            for (int index = 0; index < ButtonStatus_SessionTransition.Length; index++)
             {
-                ButtonStatus_SubFunction[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[index])[0];
-                ButtonStatus_SubFunction[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[index])[1];
+                if (index < 3)
+                {
+                    ButtonStatus_SessionTransition[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 1])[0];
+                    ButtonStatus_SessionTransition[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 1])[1];
+                }
+                else if(index > 2)
+                {
+                    ButtonStatus_SessionTransition[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 2])[0];
+                    ButtonStatus_SessionTransition[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 2])[1];
+                }
             }
 
             // Load Suppress bit
@@ -130,55 +143,60 @@ namespace dcom.views.views_Service
                 ButtonStatus_Condition[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[index])[1];
                 ButtonStatus_Condition[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[index]);
             }
+            // Load Invalid Value Condition
+            VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
 
+            comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service10_ButtonStatus_Condition[1];
+            comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service10_ButtonStatus_Condition[0];
+            VehicleSpeedValue_Text.Enabled = UIVariables.Service10_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
         private void button_DtoP_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[0] = !UIVariables.Service10_ButtonStatus_SubFunction[0];
+            UIVariables.Service10_ButtonStatus_SessionTransition[1] = !UIVariables.Service10_ButtonStatus_SessionTransition[1];
 
-            button_DtoP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[0])[0];
-            button_DtoP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[0])[1];
+            button_DtoP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[1])[0];
+            button_DtoP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[1])[1];
         }
 
         private void button_DtoE_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[1] = !UIVariables.Service10_ButtonStatus_SubFunction[1];
+            UIVariables.Service10_ButtonStatus_SessionTransition[2] = !UIVariables.Service10_ButtonStatus_SessionTransition[2];
 
-            button_DtoE.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[1])[0];
-            button_DtoE.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[1])[1];
+            button_DtoE.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[2])[0];
+            button_DtoE.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[2])[1];
         }
 
         private void button_PtoD_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[2] = !UIVariables.Service10_ButtonStatus_SubFunction[2];
+            UIVariables.Service10_ButtonStatus_SessionTransition[3] = !UIVariables.Service10_ButtonStatus_SessionTransition[3];
 
-            button_PtoD.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[2])[0];
-            button_PtoD.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[2])[1];
+            button_PtoD.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[3])[0];
+            button_PtoD.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[3])[1];
         }
 
         private void button_PtoE_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[3] = !UIVariables.Service10_ButtonStatus_SubFunction[3];
+            UIVariables.Service10_ButtonStatus_SessionTransition[5] = !UIVariables.Service10_ButtonStatus_SessionTransition[5];
 
-            button_PtoE.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[3])[0];
-            button_PtoE.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[3])[1];
+            button_PtoE.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[5])[0];
+            button_PtoE.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[5])[1];
         }
 
         private void button_EtoD_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[4] = !UIVariables.Service10_ButtonStatus_SubFunction[4];
+            UIVariables.Service10_ButtonStatus_SessionTransition[6] = !UIVariables.Service10_ButtonStatus_SessionTransition[6];
 
-            button_EtoD.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[4])[0];
-            button_EtoD.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[4])[1];
+            button_EtoD.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[6])[0];
+            button_EtoD.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[6])[1];
         }
 
         private void button_EtoP_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_SubFunction[5] = !UIVariables.Service10_ButtonStatus_SubFunction[5];
+            UIVariables.Service10_ButtonStatus_SessionTransition[7] = !UIVariables.Service10_ButtonStatus_SessionTransition[7];
 
-            button_EtoP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[5])[0];
-            button_EtoP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SubFunction[5])[1];
+            button_EtoP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[7])[0];
+            button_EtoP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[7])[1];
         }
 
         private void button_Service10_SupressBit_Click(object sender, EventArgs e)
@@ -252,21 +270,21 @@ namespace dcom.views.views_Service
 
         private void button_Service10_ConditionEngine_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_Condition[0] = !UIVariables.Service10_ButtonStatus_Condition[0];
+            UIVariables.Service10_ButtonStatus_Condition[1] = !UIVariables.Service10_ButtonStatus_Condition[1];
 
-            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[0])[0];
-            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[0])[1];
-            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[0]);
+            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[1])[0];
+            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[1])[1];
+            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[1]);
 
         }
 
         private void button_Service10_ConditionVehicleSpeed_Click(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_Condition[1] = !UIVariables.Service10_ButtonStatus_Condition[1];
+            UIVariables.Service10_ButtonStatus_Condition[0] = !UIVariables.Service10_ButtonStatus_Condition[0];
 
-            button_ConditionVehicleSpeed.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[1])[0];
-            button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[1])[1];
-            button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[1]);
+            button_ConditionVehicleSpeed.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[0])[0];
+            button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[0])[1];
+            button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[0]);
 
         }
 
@@ -277,62 +295,62 @@ namespace dcom.views.views_Service
 
         private void button_Service10_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalDefaultService10 = button_PhysicalDefault.Text;
+            UIVariables.Service10_ButtonStatus_AddressingMode[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service10_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalProgrammingService10 = button_PhysicalProgramming.Text;
+            UIVariables.Service10_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalProgramming.Text);
         }
 
         private void button_Service10_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalExtendedService10 = button_PhysicalExtended.Text;
+            UIVariables.Service10_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalExtended.Text);
         }
 
         private void button_Service10_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalDefaultService10 = button_FunctionalDefault.Text;
+            UIVariables.Service10_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalDefault.Text);
         }
 
         private void button_Service10_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalProgrammingService10 = button_FunctionalProgramming.Text;
+            UIVariables.Service10_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalProgramming.Text);
         }
 
         private void button_Service10_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalExtendedService10 = button_FunctionalExtended.Text;
+            UIVariables.Service10_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalExtended.Text);
         }
 
         private void button_DtoP_BackColorChanged(object sender, EventArgs e)
         {
-            UIVariables.DtoPService10 = button_DtoP.BackColor.Name.ToString();
+            UIVariables.Service10_ButtonStatus_SessionTransition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_DtoP.BackColor.Name.ToString());
         }
 
         private void button_DtoE_BackColorChanged(object sender, EventArgs e)
         {
-            UIVariables.DtoEService10 = button_DtoE.BackColor.Name.ToString();
+            UIVariables.Service10_ButtonStatus_SessionTransition[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_DtoE.BackColor.Name.ToString());
         }
 
         private void button_PtoD_BackColorChanged(object sender, EventArgs e)
         {
-            UIVariables.PtoDService10 = button_PtoD.BackColor.Name.ToString();
+            UIVariables.Service10_ButtonStatus_SessionTransition[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PtoD.BackColor.Name.ToString());
         }
 
         private void button_PtoE_BackColorChanged(object sender, EventArgs e)
         {
-            UIVariables.PtoEService10 = button_PtoE.BackColor.Name.ToString();
+            UIVariables.Service10_ButtonStatus_SessionTransition[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PtoE.BackColor.Name.ToString());
         }
 
         private void button_EtoD_BackColorChanged(object sender, EventArgs e)
         {
-            UIVariables.EtoDService10 = button_EtoD.BackColor.Name.ToString();
+            UIVariables.Service10_ButtonStatus_SessionTransition[6] = Controller_ServiceHandling.ConvertFromStatusToBool(button_EtoD.BackColor.Name.ToString());
         }
 
         private void button_EtoP_BackColorChanged(object sender, EventArgs e)
         {
-            UIVariables.EtoPService10 = button_EtoP.BackColor.Name.ToString();
+            UIVariables.Service10_ButtonStatus_SessionTransition[7] = Controller_ServiceHandling.ConvertFromStatusToBool(button_EtoP.BackColor.Name.ToString());
         }
 
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
@@ -349,22 +367,60 @@ namespace dcom.views.views_Service
         }
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+            UIVariables.Service10_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+            if(UIVariables.Service10_ButtonStatus_Condition[1] == true)
+            {
+                comboBox_ConditionEngine_NRC.Enabled = true;
+                //comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
+            }
+            else
+            {
+                comboBox_ConditionEngine_NRC.Enabled = false;
+                //comboBox_ConditionEngine_NRC.Text = "";
+            }
         }
 
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service10_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+            UIVariables.Service10_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+            if (UIVariables.Service10_ButtonStatus_Condition[0] == true)
+            {
+                comboBox_ConditionVehicle_NRC.Enabled = true;
+                VehicleSpeedValue_Text.Enabled = true;
+                //comboBox_ConditionVehicle_NRC.Text = UIVariables.Service10_NRCCondition[0];
+                //VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
+            }
+            else
+            {
+                comboBox_ConditionVehicle_NRC.Enabled = false;
+                VehicleSpeedValue_Text.Enabled = false;
+                //comboBox_ConditionVehicle_NRC.Text = "";
+                //VehicleSpeedValue_Text.Text = "";
+            }
         }
 
         private void comboBox_ConditionEngine_NRC_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service10_NRCCondition[0] = comboBox_ConditionEngine_NRC.Text;
+            if (UIVariables.Service10_ButtonStatus_Condition[1] == true)
+            {
+                UIVariables.Service10_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
+            }
         }
 
         private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service10_NRCCondition[1] = comboBox_ConditionVehicle_NRC.Text;
+            if (UIVariables.Service10_ButtonStatus_Condition[0] == true)
+            {
+                UIVariables.Service10_NRCCondition[0] = comboBox_ConditionVehicle_NRC.Text;
+            }
+        }
+
+        private void VehicleSpeedValue_Text_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service10_ButtonStatus_Condition[0] == true)
+            {
+                UIVariables.Service10_InvalidValueCondition[0] = VehicleSpeedValue_Text.Text;
+            }
         }
     }
 }

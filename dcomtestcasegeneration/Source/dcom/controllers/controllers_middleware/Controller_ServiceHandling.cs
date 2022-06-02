@@ -227,7 +227,7 @@ namespace dcom.controllers.controllers_middleware
         public static bool ConvertFromStatusToBool(string value)
         {
             // Example: "ON" -> 1; "OFF" -> 0
-            if(value == "ON")
+            if(value == "ON" | value == "Brown")
             {
                 return true;
             }

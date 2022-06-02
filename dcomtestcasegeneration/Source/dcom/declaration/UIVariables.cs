@@ -54,8 +54,11 @@ namespace dcom.declaration
 
         // Service 10
         
-        public static bool[] Service10_ButtonStatus_SubFunction = new bool[]
+        public static bool[] Service10_ButtonStatus_SessionTransition = new bool[]
         {
+            false,
+            false,
+            false,
             false,
             false,
             false,
@@ -85,6 +88,14 @@ namespace dcom.declaration
             "",
         };
 
+        public static string[] Service10_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+
         public static string[] Service10_NRCPriority = new string[15]
         {
             "",
@@ -104,25 +115,10 @@ namespace dcom.declaration
             "",
         };
 
-        public static string DtoDService10 { get; set; }
-        public static string PtoPService10 { get; set; }
-        public static string EtoEService10 { get; set; }
-        public static string DtoPService10 { get; set; }
-        public static string DtoEService10 { get; set; }
-        public static string PtoDService10 { get; set; }
-        public static string PtoEService10 { get; set; }
-        public static string EtoDService10 { get; set; }
-        public static string EtoPService10 { get; set; }
-        public static string PhysicalDefaultService10 { get; set; }
-        public static string PhysicalProgrammingService10 { get; set; }
-        public static string PhysicalExtendedService10 { get; set; }
-        public static string FunctionalDefaultService10 { get; set; }
-        public static string FunctionalProgrammingService10 { get; set; }
-        public static string FunctionalExtendedService10 { get; set; }
 
         // Service11
 
-        public static bool[] Service11_ButtonStatus_SubFunction = new bool[]
+        public static bool[] Service11_ButtonStatus_ResetMode = new bool[]
         {
             false,
             false,

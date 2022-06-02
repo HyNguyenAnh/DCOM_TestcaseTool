@@ -278,32 +278,44 @@ namespace dcom.declaration
         
         public static void UIVariableDefinition()
         {
-         // Service 10
-            // Physiscal
-            UIVariables.PhysicalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][1];
-            UIVariables.PhysicalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][2];
-            UIVariables.PhysicalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[0][3];
+            // Service 10
+
+            // Sub Function
+            for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(0).Count; index++)
+            {
+                DatabaseVariables.DatabaseService10.ElementAt(0)[index][1] = "1";
+            }
+
+            // Addressing Mode
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_AddressingMode.Length; index++)
+            {
+                if (index < 3)
+                {
+                    UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[0][index + 1]);
+                }
+                else
+                {
+                    UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[1][index - 2]);
+                }
+            }
+
+            // Session Transition
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_SessionTransition.Length; index++)
+            {
+                if (index < 3)
+                {
+                    UIVariables.Service10_ButtonStatus_SessionTransition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[2][index + 1]);
+                }
+                else if ((index < 6) && (index > 2))
+                {
+                    UIVariables.Service10_ButtonStatus_SessionTransition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[3][index - 2]);
+                }
+                else
+                {
+                    UIVariables.Service10_ButtonStatus_SessionTransition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[4][index - 5]);
+                }
+            }
             
-            // Functional
-            UIVariables.FunctionalDefaultService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][1];
-            UIVariables.FunctionalProgrammingService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][2];
-            UIVariables.FunctionalExtendedService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[1][3];
-
-            // Default
-            UIVariables.DtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][1] = "1";
-            UIVariables.DtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][2];
-            UIVariables.DtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[2][3];
-
-            // Programming
-            UIVariables.PtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][1];
-            UIVariables.PtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][2] = "1";
-            UIVariables.PtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[3][3];
-
-            // Extended
-            UIVariables.EtoDService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][1];
-            UIVariables.EtoPService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][2];
-            UIVariables.EtoEService10 = DatabaseVariables.DatabaseService10.ElementAt(1)[4][3] = "1";
-
             // SuppressBit
             UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[0][1]);
 
@@ -311,37 +323,6 @@ namespace dcom.declaration
             for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(2).Count; index++)
             {
                 UIVariables.Service10_NRCPriority[index] = DatabaseVariables.DatabaseService10.ElementAt(2)[index][1];
-            }
-
-            // Addressing Mode
-            string[] Service10_ButtonStatus_AddressingMode = new string[]
-            {
-                UIVariables.PhysicalDefaultService10,
-                UIVariables.PhysicalProgrammingService10,
-                UIVariables.PhysicalExtendedService10,
-                UIVariables.FunctionalDefaultService10,
-                UIVariables.FunctionalProgrammingService10,
-                UIVariables.FunctionalExtendedService10,
-            };
-            for (int index = 0; index < UIVariables.Service10_ButtonStatus_AddressingMode.Length; index++)
-            {
-                UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_AddressingMode[index]);
-            }
-
-            // Sub Function
-            string[] Service10_ButtonStatus_SubFunction = new string[]
-            {
-                
-                UIVariables.DtoPService10,
-                UIVariables.DtoEService10,
-                UIVariables.PtoDService10,
-                UIVariables.PtoEService10,
-                UIVariables.EtoDService10,
-                UIVariables.EtoPService10,
-            };
-            for (int index = 0; index < UIVariables.Service10_ButtonStatus_SubFunction.Length; index++)
-            {
-                UIVariables.Service10_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service10_ButtonStatus_SubFunction[index]);
             }
 
             // Condition
@@ -353,18 +334,32 @@ namespace dcom.declaration
             {
                 UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(4)[index][3];
             }
+            for (int index = 0; index < UIVariables.Service10_InvalidValueCondition.Length; index++)
+            {
+                UIVariables.Service10_InvalidValueCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(4)[index][1];
+            }
+
 
             // Service 11
-            // Physiscal
-            UIVariables.PhysicalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][1];
-            UIVariables.PhysicalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][2];
-            UIVariables.PhysicalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[0][3];
 
-            // Functional
-            UIVariables.FunctionalDefaultService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][1];
-            UIVariables.FunctionalProgrammingService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][2];
-            UIVariables.FunctionalExtendedService11 = DatabaseVariables.DatabaseService11.ElementAt(1)[1][3];
+            // Reset Mode
+            for (int index = 0; index < UIVariables.Service11_ButtonStatus_ResetMode.Length; index++)
+            {
+                UIVariables.Service11_ButtonStatus_ResetMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(0)[index][1]);
+            }
 
+            // Addressing Mode
+            for (int index = 0; index < UIVariables.Service11_ButtonStatus_AddressingMode.Length; index++)
+            {
+                if (index < 3)
+                {
+                    UIVariables.Service11_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(1)[0][index + 1]);
+                }
+                else
+                {
+                    UIVariables.Service11_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(1)[1][index - 2]);
+                }
+            }
 
             UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[0][1]);
 
@@ -372,33 +367,6 @@ namespace dcom.declaration
             for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(2).Count; index++)
             {
                 UIVariables.Service11_NRCPriority[index] = DatabaseVariables.DatabaseService11.ElementAt(2)[index][1];
-            }
-
-            // Addressing Mode
-            string[] Service11_ButtonStatus_AddressingMode = new string[]
-            {
-                UIVariables.PhysicalDefaultService11,
-                UIVariables.PhysicalProgrammingService11,
-                UIVariables.PhysicalExtendedService11,
-                UIVariables.FunctionalDefaultService11,
-                UIVariables.FunctionalProgrammingService11,
-                UIVariables.FunctionalExtendedService11,
-            };
-            for (int index = 0; index < UIVariables.Service11_ButtonStatus_AddressingMode.Length; index++)
-            {
-                UIVariables.Service11_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service11_ButtonStatus_AddressingMode[index]);
-            }
-
-            // Sub Function
-            string[] Service11_ButtonStatus_SubFunction = new string[]
-            {
-                UIVariables.HardResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[0][1],
-                UIVariables.KeyOnOffResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[1][1],
-                UIVariables.SoftResetService11 = DatabaseVariables.DatabaseService11.ElementAt(0)[2][1],
-            };
-            for (int index = 0; index < UIVariables.Service11_ButtonStatus_SubFunction.Length; index++)
-            {
-                UIVariables.Service11_ButtonStatus_SubFunction[index] = Controller_ServiceHandling.ConvertFromStringToBool(Service11_ButtonStatus_SubFunction[index]);
             }
 
             // Condition

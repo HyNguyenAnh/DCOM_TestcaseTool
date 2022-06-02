@@ -15,7 +15,7 @@ namespace dcom.views.views_Service
 {
     public partial class View_Service11 : UserControl
     {
-        public static Button[] ButtonStatus_SubFunction;
+        public static Button[] ButtonStatus_ResetMode;
         public static Button ButtonStatus_SuppressBit;
         public static Button[] ButtonStatus_AddressingMode;
         public static Button[] ButtonStatus_Condition;
@@ -30,7 +30,7 @@ namespace dcom.views.views_Service
         public void LoadData()
         {
             // Definition
-            ButtonStatus_SubFunction = new Button[]{
+            ButtonStatus_ResetMode = new Button[]{
                 button_HardReset,
                 button_KeyOnOffReset,
                 button_SoftReset,
@@ -94,13 +94,13 @@ namespace dcom.views.views_Service
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service11_NRCPriority[index];
             }
 
-            // Load SubFunction
+            // Load Reset Mode
 
-            for (int index = 0; index < ButtonStatus_SubFunction.Length; index++)
+            for (int index = 0; index < ButtonStatus_ResetMode.Length; index++)
             {
-                ButtonStatus_SubFunction[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[index])[0];
-                ButtonStatus_SubFunction[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[index])[1];
-                ButtonStatus_SubFunction[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[index]);
+                ButtonStatus_ResetMode[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[index])[0];
+                ButtonStatus_ResetMode[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[index])[1];
+                ButtonStatus_ResetMode[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[index]);
             }
 
             // Load Suppress bit
@@ -132,31 +132,31 @@ namespace dcom.views.views_Service
         }
         private void button_Service11_HardReset_Click(object sender, EventArgs e)
         {
-            UIVariables.Service11_ButtonStatus_SubFunction[0] = !UIVariables.Service11_ButtonStatus_SubFunction[0];
+            UIVariables.Service11_ButtonStatus_ResetMode[0] = !UIVariables.Service11_ButtonStatus_ResetMode[0];
 
-            button_HardReset.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[0])[0];
-            button_HardReset.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[0])[1];
-            button_HardReset.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[0]);
+            button_HardReset.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[0])[0];
+            button_HardReset.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[0])[1];
+            button_HardReset.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[0]);
 
         }
 
         private void button_Service11_KeyOnOffReset_Click(object sender, EventArgs e)
         {
-            UIVariables.Service11_ButtonStatus_SubFunction[1] = !UIVariables.Service11_ButtonStatus_SubFunction[1];
+            UIVariables.Service11_ButtonStatus_ResetMode[1] = !UIVariables.Service11_ButtonStatus_ResetMode[1];
 
-            button_KeyOnOffReset.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[1])[0];
-            button_KeyOnOffReset.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[1])[1];
-            button_KeyOnOffReset.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[1]);
+            button_KeyOnOffReset.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[1])[0];
+            button_KeyOnOffReset.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[1])[1];
+            button_KeyOnOffReset.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[1]);
 
         }
 
         private void button_Service11_SoftReset_Click(object sender, EventArgs e)
         {
-            UIVariables.Service11_ButtonStatus_SubFunction[2] = !UIVariables.Service11_ButtonStatus_SubFunction[2];
+            UIVariables.Service11_ButtonStatus_ResetMode[2] = !UIVariables.Service11_ButtonStatus_ResetMode[2];
 
-            button_SoftReset.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[2])[0];
-            button_SoftReset.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[2])[1];
-            button_SoftReset.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_SubFunction[2]);
+            button_SoftReset.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[2])[0];
+            button_SoftReset.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[2])[1];
+            button_SoftReset.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_ResetMode[2]);
 
         }
 
@@ -256,47 +256,47 @@ namespace dcom.views.views_Service
 
         private void button_Service11_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalDefaultService11 = button_PhysicalDefault.Text;
+            UIVariables.Service11_ButtonStatus_AddressingMode[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service11_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalProgrammingService11 = button_PhysicalProgramming.Text;
+            UIVariables.Service11_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalProgramming.Text);
         }
 
         private void button_Service11_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalExtendedService11 = button_PhysicalExtended.Text;
+            UIVariables.Service11_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalExtended.Text);
         }
 
         private void button_Service11_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalDefaultService11 = button_FunctionalDefault.Text;
+            UIVariables.Service11_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalDefault.Text);
         }
 
         private void button_Service11_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalProgrammingService11 = button_FunctionalProgramming.Text;
+            UIVariables.Service11_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalProgramming.Text);
         }
 
         private void button_Service11_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalExtendedService11 = button_FunctionalExtended.Text;
+            UIVariables.Service11_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalExtended.Text);
         }
 
         private void button_HardReset_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service11_ButtonStatus_SubFunction[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_HardReset.Text);
+            UIVariables.Service11_ButtonStatus_ResetMode[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_HardReset.Text);
         }
 
         private void button_KeyOnOffReset_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service11_ButtonStatus_SubFunction[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_KeyOnOffReset.Text);
+            UIVariables.Service11_ButtonStatus_ResetMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_KeyOnOffReset.Text);
         }
 
         private void button_SoftReset_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service11_ButtonStatus_SubFunction[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_SoftReset.Text);
+            UIVariables.Service11_ButtonStatus_ResetMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_SoftReset.Text);
         }
 
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
