@@ -17,25 +17,6 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
             string status;
 
-            string[] SavePhysicalService14 = new string[]
-{
-                UIVariables.PhysicalDefaultService14,
-                UIVariables.PhysicalProgrammingService14,
-                UIVariables.PhysicalExtendedService14,
-};
-
-            string[] SaveFunctionalService14 = new string[]
-            {
-                UIVariables.FunctionalDefaultService14,
-                UIVariables.FunctionalProgrammingService14,
-                UIVariables.FunctionalExtendedService14,
-            };
-
-            List<string[]> SaveAllowSessionService14 = new List<string[]>
-            {
-                SavePhysicalService14,
-                SaveFunctionalService14,
-            };
             // Specification
             for (int index = 0; index < DatabaseVariables.DatabaseService14.ElementAt(0).Count(); index++)
             {
@@ -46,12 +27,14 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Allow session
-            for (int index = 0; index < SaveAllowSessionService14.Count(); index++)
+            int n = 0;
+            for (int index = 0; index < DatabaseVariables.DatabaseService14.ElementAt(1).Count(); index++)
             {
-                for (int index_ = 0; index_ < SaveAllowSessionService14.ElementAt(index).Count(); index_++)
+                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService14.ElementAt(1)[index].Count() - 1; index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromStatusToString(SaveAllowSessionService14.ElementAt(index)[index_]);
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_AddressingMode[n]);
                     Ws.Cells[rowIndex[4] + index, columnIndex[4] + index_ + 1] = status;
+                    n++;
                 }
             }
 
@@ -75,12 +58,16 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
             }
 
-            // Precondition
+            // Condition
             for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_Condition[index]);
                 Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = status;
-                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service14_NRCCondition[index];
+                if (status == "1")
+                {
+                    Ws.Cells[rowIndex[7] + index, columnIndex[7] + 1] = UIVariables.Service14_InvalidValueCondition[index];
+                    Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service14_NRCCondition[index];
+                }
             }
         }
     }

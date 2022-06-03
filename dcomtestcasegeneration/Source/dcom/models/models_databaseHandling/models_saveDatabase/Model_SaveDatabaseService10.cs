@@ -67,7 +67,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
                 else
                 {
-                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "1";
+                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "0";
                 }
             }
 
@@ -76,7 +76,11 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Condition[index]);
                 Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = status;
-                Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service10_NRCCondition[index];
+                if (status == "1")
+                {
+                    Ws.Cells[rowIndex[7] + index, columnIndex[7] + 1] = UIVariables.Service10_InvalidValueCondition[index];
+                    Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service10_NRCCondition[index];
+                }
             }
         }
     }

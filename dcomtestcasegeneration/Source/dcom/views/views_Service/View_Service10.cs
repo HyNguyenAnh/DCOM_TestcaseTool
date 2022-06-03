@@ -26,7 +26,6 @@ namespace dcom.views.views_Service
         {
             InitializeComponent();
             LoadData();
-            
         }
 
         public void LoadData()
@@ -143,6 +142,7 @@ namespace dcom.views.views_Service
                 ButtonStatus_Condition[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[index])[1];
                 ButtonStatus_Condition[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service10_ButtonStatus_Condition[index]);
             }
+
             // Load Invalid Value Condition
             VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
 
@@ -371,12 +371,12 @@ namespace dcom.views.views_Service
             if(UIVariables.Service10_ButtonStatus_Condition[1] == true)
             {
                 comboBox_ConditionEngine_NRC.Enabled = true;
-                //comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
+                comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
             }
             else
             {
                 comboBox_ConditionEngine_NRC.Enabled = false;
-                //comboBox_ConditionEngine_NRC.Text = "";
+                comboBox_ConditionEngine_NRC.Text = "NRC";
             }
         }
 
@@ -387,15 +387,15 @@ namespace dcom.views.views_Service
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
                 VehicleSpeedValue_Text.Enabled = true;
-                //comboBox_ConditionVehicle_NRC.Text = UIVariables.Service10_NRCCondition[0];
-                //VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
+                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service10_NRCCondition[0];
+                VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
             }
             else
             {
                 comboBox_ConditionVehicle_NRC.Enabled = false;
                 VehicleSpeedValue_Text.Enabled = false;
-                //comboBox_ConditionVehicle_NRC.Text = "";
-                //VehicleSpeedValue_Text.Text = "";
+                comboBox_ConditionVehicle_NRC.Text = "NRC";
+                VehicleSpeedValue_Text.Text = "...km/h";
             }
         }
 

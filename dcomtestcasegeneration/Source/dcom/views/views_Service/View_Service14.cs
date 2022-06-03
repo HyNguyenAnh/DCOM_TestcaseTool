@@ -21,6 +21,7 @@ namespace dcom.views.views_Service
         public static Button[] ButtonStatus_Condition;
         public static ComboBox[] ComboBox_ConditionNRCs;
         public static DataGridViewComboBoxColumn[] DataGridViewComboBoxColumn_NRCPriority;
+        public static TextBox[] InvalidValue_Condition;
         public View_Service14()
         {
             InitializeComponent();
@@ -40,15 +41,16 @@ namespace dcom.views.views_Service
 
             };
 
-            ButtonStatus_Condition = new Button[]{
-                button_ConditionEngine,
+            ButtonStatus_Condition = new Button[]
+            {
                 button_ConditionVehicleSpeed,
+                button_ConditionEngine,
             };
 
             ComboBox_ConditionNRCs = new ComboBox[]
             {
-                comboBox_ConditionEngine_NRC,
                 comboBox_ConditionVehicle_NRC,
+                comboBox_ConditionEngine_NRC,
             };
 
             DataGridViewComboBoxColumn_NRCPriority = new DataGridViewComboBoxColumn[]
@@ -70,7 +72,10 @@ namespace dcom.views.views_Service
                 Column15,
             };
 
-
+            InvalidValue_Condition = new TextBox[]
+            {
+                VehicleSpeedValue_Text,
+            };
 
             // Load elements to comboBox
             string[] NRCs = UIVariables.NRCs;
@@ -104,6 +109,12 @@ namespace dcom.views.views_Service
                 ButtonStatus_Condition[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[index]);
             }
 
+            // Load Invalid Value Condition
+            VehicleSpeedValue_Text.Text = UIVariables.Service14_InvalidValueCondition[0];
+
+            comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service14_ButtonStatus_Condition[1];
+            comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service14_ButtonStatus_Condition[0];
+            VehicleSpeedValue_Text.Enabled = UIVariables.Service14_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
         private void button_Service14_PhysicalDefault_Click(object sender, EventArgs e)
@@ -167,21 +178,21 @@ namespace dcom.views.views_Service
 
         private void button_Service14_ConditionEngine_Click(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_Condition[0] = !UIVariables.Service14_ButtonStatus_Condition[0];
+            UIVariables.Service14_ButtonStatus_Condition[1] = !UIVariables.Service14_ButtonStatus_Condition[1];
 
-            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[0])[0];
-            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[0])[1];
-            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[0]);
+            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[1])[0];
+            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[1])[1];
+            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[1]);
 
         }
 
         private void button_Service14_ConditionVehicleSpeed_Click(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_Condition[1] = !UIVariables.Service14_ButtonStatus_Condition[1];
+            UIVariables.Service14_ButtonStatus_Condition[0] = !UIVariables.Service14_ButtonStatus_Condition[0];
 
-            button_ConditionVehicleSpeed.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[1])[0];
-            button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[1])[1];
-            button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[1]);
+            button_ConditionVehicleSpeed.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[0])[0];
+            button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[0])[1];
+            button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service14_ButtonStatus_Condition[0]);
 
         }
 
@@ -230,22 +241,60 @@ namespace dcom.views.views_Service
 
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+            UIVariables.Service14_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+            if (UIVariables.Service14_ButtonStatus_Condition[1] == true)
+            {
+                comboBox_ConditionEngine_NRC.Enabled = true;
+                comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
+            }
+            else
+            {
+                comboBox_ConditionEngine_NRC.Enabled = false;
+                comboBox_ConditionEngine_NRC.Text = "NRC";
+            }
         }
 
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+            UIVariables.Service14_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+            if (UIVariables.Service14_ButtonStatus_Condition[0] == true)
+            {
+                comboBox_ConditionVehicle_NRC.Enabled = true;
+                VehicleSpeedValue_Text.Enabled = true;
+                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service14_NRCCondition[0];
+                VehicleSpeedValue_Text.Text = UIVariables.Service14_InvalidValueCondition[0];
+            }
+            else
+            {
+                comboBox_ConditionVehicle_NRC.Enabled = false;
+                VehicleSpeedValue_Text.Enabled = false;
+                comboBox_ConditionVehicle_NRC.Text = "NRC";
+                VehicleSpeedValue_Text.Text = "...km/h";
+            }
         }
 
         private void comboBox_ConditionEngine_NRC_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_NRCCondition[0] = comboBox_ConditionEngine_NRC.Text;
+            if (UIVariables.Service14_ButtonStatus_Condition[1] == true)
+            {
+                UIVariables.Service14_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
+            }
         }
 
         private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_NRCCondition[1] = comboBox_ConditionVehicle_NRC.Text;
+            if (UIVariables.Service14_ButtonStatus_Condition[0] == true)
+            {
+                UIVariables.Service14_NRCCondition[0] = comboBox_ConditionVehicle_NRC.Text;
+            }
+        }
+
+        private void VehicleSpeedValue_Text_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service14_ButtonStatus_Condition[0] == true)
+            {
+                UIVariables.Service14_InvalidValueCondition[0] = VehicleSpeedValue_Text.Text;
+            }
         }
     }
 }

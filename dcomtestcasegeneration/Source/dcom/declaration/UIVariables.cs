@@ -81,7 +81,6 @@ namespace dcom.declaration
             false,
             false,
         };
-
         public static string[] Service10_NRCCondition = new string[2]
         {
             "",
@@ -162,17 +161,13 @@ namespace dcom.declaration
             "",
             "",
         };
-
-        public static string HardResetService11 { get; set; }
-        public static string KeyOnOffResetService11 { get; set; }
-        public static string SoftResetService11 { get; set; }
-        public static string PhysicalDefaultService11 { get; set; }
-        public static string PhysicalProgrammingService11 { get; set; }
-        public static string PhysicalExtendedService11 { get; set; }
-        public static string FunctionalDefaultService11 { get; set; }
-        public static string FunctionalProgrammingService11 { get; set; }
-        public static string FunctionalExtendedService11 { get; set; }
-        public static string SupressBitSevice11 { get; set; }
+        public static string[] Service11_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
 
         // Service14
 
@@ -217,6 +212,13 @@ namespace dcom.declaration
         };
         public static string[] Service14_NRCCondition = new string[2]
         {
+            "",
+            "",
+        };
+        public static string[] Service14_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
             "",
             "",
         };
