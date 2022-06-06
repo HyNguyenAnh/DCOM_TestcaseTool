@@ -77,6 +77,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
@@ -198,6 +199,12 @@
     <Compile Include="views\views_Service\View_Service85.Designer.cs">
       <DependentUpon>View_Service85.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.Designer.cs">
+      <DependentUpon>View_Service10_Tc.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\views_ToolBar\View_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -216,11 +223,11 @@
     <Compile Include="views\views_ToolBar\View_Play.Designer.cs">
       <DependentUpon>View_Play.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\views_ToolBar\View_Save.cs">
+    <Compile Include="views\views_ToolBar\View_Setting_Testcase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\views_ToolBar\View_Save.Designer.cs">
-      <DependentUpon>View_Save.cs</DependentUpon>
+    <Compile Include="views\views_ToolBar\View_Setting_Testcase.Designer.cs">
+      <DependentUpon>View_Setting_Testcase.cs</DependentUpon>
     </Compile>
     <Compile Include="views\views_ToolBar\View_Setting.cs">
       <SubType>UserControl</SubType>
@@ -269,6 +276,9 @@
     <EmbeddedResource Include="views\views_Service\View_Service85.resx">
       <DependentUpon>View_Service85.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.resx">
+      <DependentUpon>View_Service10_Tc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\views_ToolBar\View_Home.resx">
       <DependentUpon>View_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,8 +288,8 @@
     <EmbeddedResource Include="views\views_ToolBar\View_Play.resx">
       <DependentUpon>View_Play.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\views_ToolBar\View_Save.resx">
-      <DependentUpon>View_Save.cs</DependentUpon>
+    <EmbeddedResource Include="views\views_ToolBar\View_Setting_Testcase.resx">
+      <DependentUpon>View_Setting_Testcase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\views_ToolBar\View_Setting.resx">
       <DependentUpon>View_Setting.cs</DependentUpon>
@@ -336,6 +346,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Picture21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_service85_tc.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

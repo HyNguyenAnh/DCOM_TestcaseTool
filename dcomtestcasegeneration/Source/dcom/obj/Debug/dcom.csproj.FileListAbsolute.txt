@@ -163,7 +163,6 @@ D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Serv
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Save.resources
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting.resources
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
@@ -213,3 +212,4 @@ D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dco
 D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
 D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.exe
 D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.pdb
+D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting_Testcase.resources

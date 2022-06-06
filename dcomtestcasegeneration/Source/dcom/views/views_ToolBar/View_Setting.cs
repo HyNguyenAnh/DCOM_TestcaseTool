@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using dcom.controllers.controllers_middleware;
 using dcom.controllers.controllers_UIcontainer;
 using dcom.declaration;
+
 namespace dcom.views.views_ToolBar
 {
     public partial class View_Setting : UserControl
