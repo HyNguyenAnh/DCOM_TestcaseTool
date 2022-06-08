@@ -82,7 +82,6 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_ConditionEngine_NRC = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.view_Service851 = new dcom.views.views_Service.View_Service85();
             this.groupBox_Service11AddressingMode = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -101,20 +100,12 @@ namespace dcom.views.views_Service
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox_Service11ResetMode = new System.Windows.Forms.GroupBox();
+            this.view_Service851 = new dcom.views.views_Service.View_Service85();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.button_SupressBit = new System.Windows.Forms.Button();
-            this.button_SoftReset = new System.Windows.Forms.Button();
-            this.button_KeyOnOffReset = new System.Windows.Forms.Button();
-            this.button_HardReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -142,8 +133,6 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,7 +184,7 @@ namespace dcom.views.views_Service
             // 
             this.tableLayoutPanel_bodyRight.ColumnCount = 1;
             this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Controls.Add(this.panel2, 0, 10);
+            this.tableLayoutPanel_bodyRight.Controls.Add(this.panel2, 0, 9);
             this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
@@ -221,7 +210,7 @@ namespace dcom.views.views_Service
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(0, 500);
+            this.panel2.Location = new System.Drawing.Point(0, 450);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 50);
@@ -244,7 +233,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_bodySetting.Size = new System.Drawing.Size(1119, 611);
-            this.tableLayoutPanel_bodySetting.TabIndex = 9;
+            this.tableLayoutPanel_bodySetting.TabIndex = 10;
             // 
             // groupBox_Service11NRC
             // 
@@ -340,6 +329,7 @@ namespace dcom.views.views_Service
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_NRCPriority.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView_NRCPriority.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_NRCPriority.Enabled = false;
             this.dataGridView_NRCPriority.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_NRCPriority.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_NRCPriority.Margin = new System.Windows.Forms.Padding(0);
@@ -712,13 +702,6 @@ namespace dcom.views.views_Service
     "C is:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // view_Service851
-            // 
-            this.view_Service851.Location = new System.Drawing.Point(3, 3);
-            this.view_Service851.Name = "view_Service851";
-            this.view_Service851.Size = new System.Drawing.Size(60, 22);
-            this.view_Service851.TabIndex = 1;
-            // 
             // groupBox_Service11AddressingMode
             // 
             this.groupBox_Service11AddressingMode.Controls.Add(this.tableLayoutPanel12);
@@ -1007,7 +990,14 @@ namespace dcom.views.views_Service
             this.groupBox_Service11ResetMode.Size = new System.Drawing.Size(539, 285);
             this.groupBox_Service11ResetMode.TabIndex = 0;
             this.groupBox_Service11ResetMode.TabStop = false;
-            this.groupBox_Service11ResetMode.Text = "Sub Function";
+            this.groupBox_Service11ResetMode.Text = "Parameter";
+            // 
+            // view_Service851
+            // 
+            this.view_Service851.Location = new System.Drawing.Point(3, 3);
+            this.view_Service851.Name = "view_Service851";
+            this.view_Service851.Size = new System.Drawing.Size(60, 22);
+            this.view_Service851.TabIndex = 1;
             // 
             // tableLayoutPanel13
             // 
@@ -1024,22 +1014,17 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(533, 266);
-            this.tableLayoutPanel13.TabIndex = 4;
+            this.tableLayoutPanel13.TabIndex = 5;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button_SupressBit, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_SoftReset, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_KeyOnOffReset, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_HardReset, 0, 0);
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button_SupressBit, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(29, 28);
@@ -1058,13 +1043,13 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(359, 55);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(242, 55);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(111, 150);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(228, 150);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
             // label8
@@ -1073,101 +1058,13 @@ namespace dcom.views.views_Service
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label8.Location = new System.Drawing.Point(13, 5);
+            this.label8.Location = new System.Drawing.Point(56, 5);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 140);
+            this.label8.Size = new System.Drawing.Size(116, 140);
             this.label8.TabIndex = 0;
             this.label8.Text = "Supress Bit";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Coral;
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(241, 55);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(108, 150);
-            this.tableLayoutPanel6.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 80);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 32);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "03";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Brown;
-            this.label6.Location = new System.Drawing.Point(22, 26);
-            this.label6.Margin = new System.Windows.Forms.Padding(5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 44);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Soft Reset";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Coral;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(123, 55);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(108, 150);
-            this.tableLayoutPanel5.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 80);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 32);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "02";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Brown;
-            this.label4.Location = new System.Drawing.Point(22, 26);
-            this.label4.Margin = new System.Windows.Forms.Padding(5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 44);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Key Reset";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_SupressBit
             // 
@@ -1178,64 +1075,13 @@ namespace dcom.views.views_Service
             this.button_SupressBit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SupressBit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SupressBit.ForeColor = System.Drawing.Color.White;
-            this.button_SupressBit.Location = new System.Drawing.Point(359, 5);
+            this.button_SupressBit.Location = new System.Drawing.Point(242, 5);
             this.button_SupressBit.Margin = new System.Windows.Forms.Padding(5);
             this.button_SupressBit.Name = "button_SupressBit";
-            this.button_SupressBit.Size = new System.Drawing.Size(111, 40);
+            this.button_SupressBit.Size = new System.Drawing.Size(228, 40);
             this.button_SupressBit.TabIndex = 3;
             this.button_SupressBit.Text = "ON";
             this.button_SupressBit.UseVisualStyleBackColor = false;
-            // 
-            // button_SoftReset
-            // 
-            this.button_SoftReset.BackColor = System.Drawing.Color.Brown;
-            this.button_SoftReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_SoftReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_SoftReset.FlatAppearance.BorderSize = 0;
-            this.button_SoftReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SoftReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SoftReset.ForeColor = System.Drawing.Color.White;
-            this.button_SoftReset.Location = new System.Drawing.Point(241, 5);
-            this.button_SoftReset.Margin = new System.Windows.Forms.Padding(5);
-            this.button_SoftReset.Name = "button_SoftReset";
-            this.button_SoftReset.Size = new System.Drawing.Size(108, 40);
-            this.button_SoftReset.TabIndex = 2;
-            this.button_SoftReset.Text = "ON";
-            this.button_SoftReset.UseVisualStyleBackColor = false;
-            // 
-            // button_KeyOnOffReset
-            // 
-            this.button_KeyOnOffReset.BackColor = System.Drawing.Color.Brown;
-            this.button_KeyOnOffReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_KeyOnOffReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_KeyOnOffReset.FlatAppearance.BorderSize = 0;
-            this.button_KeyOnOffReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_KeyOnOffReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_KeyOnOffReset.ForeColor = System.Drawing.Color.White;
-            this.button_KeyOnOffReset.Location = new System.Drawing.Point(123, 5);
-            this.button_KeyOnOffReset.Margin = new System.Windows.Forms.Padding(5);
-            this.button_KeyOnOffReset.Name = "button_KeyOnOffReset";
-            this.button_KeyOnOffReset.Size = new System.Drawing.Size(108, 40);
-            this.button_KeyOnOffReset.TabIndex = 1;
-            this.button_KeyOnOffReset.Text = "ON";
-            this.button_KeyOnOffReset.UseVisualStyleBackColor = false;
-            // 
-            // button_HardReset
-            // 
-            this.button_HardReset.BackColor = System.Drawing.Color.Brown;
-            this.button_HardReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_HardReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_HardReset.FlatAppearance.BorderSize = 0;
-            this.button_HardReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_HardReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_HardReset.ForeColor = System.Drawing.Color.White;
-            this.button_HardReset.Location = new System.Drawing.Point(5, 5);
-            this.button_HardReset.Margin = new System.Windows.Forms.Padding(5);
-            this.button_HardReset.Name = "button_HardReset";
-            this.button_HardReset.Size = new System.Drawing.Size(108, 40);
-            this.button_HardReset.TabIndex = 0;
-            this.button_HardReset.Text = "ON";
-            this.button_HardReset.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel4
             // 
@@ -1251,7 +1097,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(108, 150);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(227, 150);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // label1
@@ -1260,12 +1106,12 @@ namespace dcom.views.views_Service
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Location = new System.Drawing.Point(27, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 44);
+            this.label1.Size = new System.Drawing.Size(172, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hard Reset";
+            this.label1.Text = "Request Message";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -1274,12 +1120,12 @@ namespace dcom.views.views_Service
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 80);
+            this.label2.Location = new System.Drawing.Point(73, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 32);
+            this.label2.Size = new System.Drawing.Size(81, 32);
             this.label2.TabIndex = 1;
-            this.label2.Text = "01";
+            this.label2.Text = "3E00";
             // 
             // View_Service3E
             // 
@@ -1320,10 +1166,6 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
@@ -1394,16 +1236,7 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_SupressBit;
-        private System.Windows.Forms.Button button_SoftReset;
-        private System.Windows.Forms.Button button_KeyOnOffReset;
-        private System.Windows.Forms.Button button_HardReset;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

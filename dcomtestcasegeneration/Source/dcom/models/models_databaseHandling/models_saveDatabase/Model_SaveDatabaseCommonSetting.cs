@@ -33,21 +33,6 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
             }
 
-            // Common Command
-            List<string[]> SaveCommonCommand = new List<string[]>
-            {
-                DatabaseVariables.DatabaseCommonCommandReadDTCStatusActive,
-                DatabaseVariables.DatabaseCommonCommandReadDTCStatusPassive,
-                DatabaseVariables.DatabaseCommonCommandReadDTCStatusNoDTC,
-            };
-            for (int index = 0; index < SaveCommonCommand.Count; index++)
-            {
-                for (int index_ = 0; index_ < SaveCommonCommand.ElementAt(index).Length; index_++)
-                {
-                    Ws.Cells[rowIndex[1] + index, columnIndex[1] + index_] = SaveCommonCommand.ElementAt(index)[index_];
-                }
-            }
-
             // Common DID
             List<string[]> SaveCommonDID = new List<string[]>
             {
@@ -59,7 +44,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < SaveCommonDID.ElementAt(index).Length; index_++)
                 {
-                    Ws.Cells[rowIndex[2] + index, columnIndex[2] + index_] = SaveCommonDID.ElementAt(index)[index_];
+                    Ws.Cells[rowIndex[1] + index, columnIndex[1] + index_] = SaveCommonDID.ElementAt(index)[index_];
                 }
             }
 
@@ -73,7 +58,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             };
             for (int index = 0; index < ProjectInformation.Length; index++)
             {
-                Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = ProjectInformation[index];
+                Ws.Cells[rowIndex[2] + index, columnIndex[2] + 1] = ProjectInformation[index];
             }
 
             // Data Path Information
@@ -81,13 +66,11 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 DatabaseVariables.DatabaseSource,
                 DatabaseVariables.PathOutputDatabase,
-                "",
-                "",
                 DatabaseVariables.TestcaseDirectory,
             };
             for(int index = 0; index < DataPathInformation.Length; index++)
             {
-                Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = DataPathInformation[index];
+                Ws.Cells[rowIndex[3] + index, columnIndex[3] + 1] = DataPathInformation[index];
             }
             
 
@@ -95,7 +78,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             for (int index = 0; index < 12; index++)
             {
                 string selectedServiceStatus = Controller_ServiceHandling.ConvertFromBoolToStringBit(DatabaseVariables.SelectedServiceStatus[index]);
-                Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = selectedServiceStatus;
+                Ws.Cells[rowIndex[4] + index, columnIndex[4] + 1] = selectedServiceStatus;
             }
         }
     }

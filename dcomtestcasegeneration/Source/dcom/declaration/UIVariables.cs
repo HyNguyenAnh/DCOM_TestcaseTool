@@ -17,8 +17,7 @@ namespace dcom.declaration
             "13L",
             "22",
             "24",
-            "31P",
-            "31V",
+            "31",
             "33",
             "35",
             "36",
@@ -33,8 +32,6 @@ namespace dcom.declaration
         public static string[] ProjectInformation = new string[] { };
         public static string DBSource = "";
         public static string DBPath = "";
-        public static string PublicCANDBC = "";
-        public static string PrivateCANDBC = "";
         public static string TestcaseDirectory = "";
         public static bool[] SelectedServiceStatus = new bool[]
         {
@@ -86,7 +83,6 @@ namespace dcom.declaration
             "",
             "",
         };
-
         public static string[] Service10_InvalidValueCondition = new string[4]
         {
             "",
@@ -94,7 +90,6 @@ namespace dcom.declaration
             "",
             "",
         };
-
         public static string[] Service10_NRCPriority = new string[15]
         {
             "",
@@ -115,7 +110,7 @@ namespace dcom.declaration
         };
 
 
-        // Service11
+        // Service 11
 
         public static bool[] Service11_ButtonStatus_ResetMode = new bool[]
         {
@@ -169,7 +164,7 @@ namespace dcom.declaration
             "",
         };
 
-        // Service14
+        // Service 14
 
         public static bool[] Service14_ButtonStatus_SubFunction = new bool[]
         {
@@ -223,12 +218,49 @@ namespace dcom.declaration
             "",
         };
 
-        public static string PhysicalDefaultService14 { get; set; }
-        public static string PhysicalProgrammingService14 { get; set; }
-        public static string PhysicalExtendedService14 { get; set; }
-        public static string FunctionalDefaultService14 { get; set; }
-        public static string FunctionalProgrammingService14 { get; set; }
-        public static string FunctionalExtendedService14 { get; set; }
-        public static string SupressBitSevice14 { get; set; }
+        // Service 19
+
+
+        // Service 22
+        public static List<string[]> Service22_Specification = new List<string[]> { };
+        public static List<bool[]> Service22_AllowSession = new List<bool[]> { };
+        public static bool Service22_ButtonStatus_SuppressBit = false;
+        public static string[] Service22_NRCPriority = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };       
+        public static string[] Service22_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static bool[] Service22_ButtonStatus_Condition = new bool[]
+        {
+            false,
+            false,
+        };
+        public static string[] Service22_NRCCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
     }
 }

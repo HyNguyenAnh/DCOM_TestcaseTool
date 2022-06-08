@@ -29,26 +29,23 @@ namespace dcom.views.views_Service
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Service85));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_bodySetting = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox_Service11NRC = new System.Windows.Forms.GroupBox();
+            this.groupBox_Service85NRC = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_NRCPriority = new System.Windows.Forms.DataGridView();
@@ -71,7 +68,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.groupBox_Service11Condition = new System.Windows.Forms.GroupBox();
+            this.groupBox_Service85Condition = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
@@ -82,7 +79,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_ConditionEngine_NRC = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.groupBox_Service11AddressingMode = new System.Windows.Forms.GroupBox();
+            this.groupBox_Service85AddressingMode = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -99,51 +96,47 @@ namespace dcom.views.views_Service
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox_Service11ResetMode = new System.Windows.Forms.GroupBox();
+            this.groupBox_Service85ResetMode = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button_SupressBit = new System.Windows.Forms.Button();
-            this.button_SoftReset = new System.Windows.Forms.Button();
-            this.button_KeyOnOffReset = new System.Windows.Forms.Button();
-            this.button_HardReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel_bodyRight.SuspendLayout();
             this.tableLayoutPanel_bodySetting.SuspendLayout();
-            this.groupBox_Service11NRC.SuspendLayout();
+            this.groupBox_Service85NRC.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NRCPriority)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel20.SuspendLayout();
-            this.groupBox_Service11Condition.SuspendLayout();
+            this.groupBox_Service85Condition.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
-            this.groupBox_Service11AddressingMode.SuspendLayout();
+            this.groupBox_Service85AddressingMode.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            this.groupBox_Service11ResetMode.SuspendLayout();
+            this.groupBox_Service85ResetMode.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel_bodyRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -165,76 +158,15 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1159, 631);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1149, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 631);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // tableLayoutPanel_bodyRight
-            // 
-            this.tableLayoutPanel_bodyRight.ColumnCount = 1;
-            this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Controls.Add(this.panel2, 0, 11);
-            this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
-            this.tableLayoutPanel_bodyRight.RowCount = 13;
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 631);
-            this.tableLayoutPanel_bodyRight.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(0, 550);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 50);
-            this.panel2.TabIndex = 4;
-            // 
             // tableLayoutPanel_bodySetting
             // 
             this.tableLayoutPanel_bodySetting.ColumnCount = 2;
             this.tableLayoutPanel_bodySetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_bodySetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service11NRC, 1, 1);
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service11Condition, 0, 1);
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service11AddressingMode, 1, 0);
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service11ResetMode, 0, 0);
+            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85NRC, 1, 1);
+            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85Condition, 0, 1);
+            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85AddressingMode, 1, 0);
+            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85ResetMode, 0, 0);
             this.tableLayoutPanel_bodySetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_bodySetting.Location = new System.Drawing.Point(20, 10);
             this.tableLayoutPanel_bodySetting.Margin = new System.Windows.Forms.Padding(10);
@@ -245,19 +177,19 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel_bodySetting.Size = new System.Drawing.Size(1119, 611);
             this.tableLayoutPanel_bodySetting.TabIndex = 9;
             // 
-            // groupBox_Service11NRC
+            // groupBox_Service85NRC
             // 
-            this.groupBox_Service11NRC.Controls.Add(this.tableLayoutPanel16);
-            this.groupBox_Service11NRC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service11NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service11NRC.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service11NRC.Location = new System.Drawing.Point(569, 315);
-            this.groupBox_Service11NRC.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox_Service11NRC.Name = "groupBox_Service11NRC";
-            this.groupBox_Service11NRC.Size = new System.Drawing.Size(540, 286);
-            this.groupBox_Service11NRC.TabIndex = 3;
-            this.groupBox_Service11NRC.TabStop = false;
-            this.groupBox_Service11NRC.Text = "Negative Reponse Code";
+            this.groupBox_Service85NRC.Controls.Add(this.tableLayoutPanel16);
+            this.groupBox_Service85NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85NRC.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85NRC.Location = new System.Drawing.Point(569, 315);
+            this.groupBox_Service85NRC.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox_Service85NRC.Name = "groupBox_Service85NRC";
+            this.groupBox_Service85NRC.Size = new System.Drawing.Size(540, 286);
+            this.groupBox_Service85NRC.TabIndex = 3;
+            this.groupBox_Service85NRC.TabStop = false;
+            this.groupBox_Service85NRC.Text = "Negative Reponse Code";
             // 
             // tableLayoutPanel16
             // 
@@ -305,14 +237,14 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView_NRCPriority.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_NRCPriority.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_NRCPriority.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_NRCPriority.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView_NRCPriority.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_NRCPriority.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -330,14 +262,14 @@ namespace dcom.views.views_Service
             this.Column13,
             this.Column14,
             this.Column15});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Brown;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_NRCPriority.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Brown;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_NRCPriority.DefaultCellStyle = dataGridViewCellStyle38;
             this.dataGridView_NRCPriority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_NRCPriority.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_NRCPriority.Location = new System.Drawing.Point(0, 0);
@@ -345,8 +277,8 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.Name = "dataGridView_NRCPriority";
             this.dataGridView_NRCPriority.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_NRCPriority.RowHeadersVisible = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView_NRCPriority.RowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView_NRCPriority.RowsDefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridView_NRCPriority.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView_NRCPriority.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_NRCPriority.Size = new System.Drawing.Size(514, 44);
@@ -356,8 +288,8 @@ namespace dcom.views.views_Service
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle28;
             this.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column1.HeaderText = "1";
             this.Column1.Name = "Column1";
@@ -366,8 +298,8 @@ namespace dcom.views.views_Service
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle29;
             this.Column2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column2.HeaderText = "2";
             this.Column2.Name = "Column2";
@@ -376,8 +308,8 @@ namespace dcom.views.views_Service
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle30;
             this.Column3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column3.HeaderText = "3";
             this.Column3.Name = "Column3";
@@ -386,8 +318,8 @@ namespace dcom.views.views_Service
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle31;
             this.Column4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column4.HeaderText = "4";
             this.Column4.Name = "Column4";
@@ -396,8 +328,8 @@ namespace dcom.views.views_Service
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle32;
             this.Column5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column5.HeaderText = "5";
             this.Column5.Name = "Column5";
@@ -406,8 +338,8 @@ namespace dcom.views.views_Service
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle33;
             this.Column6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column6.HeaderText = "6";
             this.Column6.Name = "Column6";
@@ -416,8 +348,8 @@ namespace dcom.views.views_Service
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle34;
             this.Column7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column7.HeaderText = "7";
             this.Column7.Name = "Column7";
@@ -426,8 +358,8 @@ namespace dcom.views.views_Service
             // Column8
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle35;
             this.Column8.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column8.HeaderText = "8";
             this.Column8.Name = "Column8";
@@ -436,8 +368,8 @@ namespace dcom.views.views_Service
             // Column9
             // 
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle36;
             this.Column9.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column9.HeaderText = "9";
             this.Column9.Name = "Column9";
@@ -446,8 +378,8 @@ namespace dcom.views.views_Service
             // Column10
             // 
             this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle37;
             this.Column10.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Column10.HeaderText = "10";
             this.Column10.Name = "Column10";
@@ -540,19 +472,19 @@ namespace dcom.views.views_Service
             this.label15.Text = "Lowest Priority";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox_Service11Condition
+            // groupBox_Service85Condition
             // 
-            this.groupBox_Service11Condition.Controls.Add(this.tableLayoutPanel14);
-            this.groupBox_Service11Condition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service11Condition.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service11Condition.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service11Condition.Location = new System.Drawing.Point(10, 315);
-            this.groupBox_Service11Condition.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox_Service11Condition.Name = "groupBox_Service11Condition";
-            this.groupBox_Service11Condition.Size = new System.Drawing.Size(539, 286);
-            this.groupBox_Service11Condition.TabIndex = 2;
-            this.groupBox_Service11Condition.TabStop = false;
-            this.groupBox_Service11Condition.Text = "Condition";
+            this.groupBox_Service85Condition.Controls.Add(this.tableLayoutPanel14);
+            this.groupBox_Service85Condition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85Condition.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85Condition.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85Condition.Location = new System.Drawing.Point(10, 315);
+            this.groupBox_Service85Condition.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox_Service85Condition.Name = "groupBox_Service85Condition";
+            this.groupBox_Service85Condition.Size = new System.Drawing.Size(539, 286);
+            this.groupBox_Service85Condition.TabIndex = 2;
+            this.groupBox_Service85Condition.TabStop = false;
+            this.groupBox_Service85Condition.Text = "Condition";
             // 
             // tableLayoutPanel14
             // 
@@ -710,19 +642,19 @@ namespace dcom.views.views_Service
     "C is:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox_Service11AddressingMode
+            // groupBox_Service85AddressingMode
             // 
-            this.groupBox_Service11AddressingMode.Controls.Add(this.tableLayoutPanel12);
-            this.groupBox_Service11AddressingMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service11AddressingMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service11AddressingMode.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service11AddressingMode.Location = new System.Drawing.Point(569, 10);
-            this.groupBox_Service11AddressingMode.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox_Service11AddressingMode.Name = "groupBox_Service11AddressingMode";
-            this.groupBox_Service11AddressingMode.Size = new System.Drawing.Size(540, 285);
-            this.groupBox_Service11AddressingMode.TabIndex = 1;
-            this.groupBox_Service11AddressingMode.TabStop = false;
-            this.groupBox_Service11AddressingMode.Text = "Addressing Mode";
+            this.groupBox_Service85AddressingMode.Controls.Add(this.tableLayoutPanel12);
+            this.groupBox_Service85AddressingMode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85AddressingMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85AddressingMode.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85AddressingMode.Location = new System.Drawing.Point(569, 10);
+            this.groupBox_Service85AddressingMode.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox_Service85AddressingMode.Name = "groupBox_Service85AddressingMode";
+            this.groupBox_Service85AddressingMode.Size = new System.Drawing.Size(540, 285);
+            this.groupBox_Service85AddressingMode.TabIndex = 1;
+            this.groupBox_Service85AddressingMode.TabStop = false;
+            this.groupBox_Service85AddressingMode.Text = "Addressing Mode";
             // 
             // tableLayoutPanel12
             // 
@@ -986,19 +918,19 @@ namespace dcom.views.views_Service
             this.label9.Text = "Default";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox_Service11ResetMode
+            // groupBox_Service85ResetMode
             // 
-            this.groupBox_Service11ResetMode.Controls.Add(this.tableLayoutPanel13);
-            this.groupBox_Service11ResetMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service11ResetMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service11ResetMode.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service11ResetMode.Location = new System.Drawing.Point(10, 10);
-            this.groupBox_Service11ResetMode.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox_Service11ResetMode.Name = "groupBox_Service11ResetMode";
-            this.groupBox_Service11ResetMode.Size = new System.Drawing.Size(539, 285);
-            this.groupBox_Service11ResetMode.TabIndex = 0;
-            this.groupBox_Service11ResetMode.TabStop = false;
-            this.groupBox_Service11ResetMode.Text = "Sub Function";
+            this.groupBox_Service85ResetMode.Controls.Add(this.tableLayoutPanel13);
+            this.groupBox_Service85ResetMode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85ResetMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85ResetMode.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85ResetMode.Location = new System.Drawing.Point(10, 10);
+            this.groupBox_Service85ResetMode.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox_Service85ResetMode.Name = "groupBox_Service85ResetMode";
+            this.groupBox_Service85ResetMode.Size = new System.Drawing.Size(539, 285);
+            this.groupBox_Service85ResetMode.TabIndex = 0;
+            this.groupBox_Service85ResetMode.TabStop = false;
+            this.groupBox_Service85ResetMode.Text = "Sub Function";
             // 
             // tableLayoutPanel13
             // 
@@ -1019,18 +951,14 @@ namespace dcom.views.views_Service
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 2, 1);
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button_SupressBit, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_SoftReset, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_KeyOnOffReset, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_HardReset, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_SupressBit, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(29, 28);
@@ -1049,13 +977,13 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(359, 55);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(337, 55);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(111, 150);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(133, 150);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
             // label8
@@ -1064,57 +992,13 @@ namespace dcom.views.views_Service
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label8.Location = new System.Drawing.Point(13, 5);
+            this.label8.Location = new System.Drawing.Point(8, 5);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 140);
+            this.label8.Size = new System.Drawing.Size(116, 140);
             this.label8.TabIndex = 0;
             this.label8.Text = "Supress Bit";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Coral;
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(241, 55);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(108, 150);
-            this.tableLayoutPanel6.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 80);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 32);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "03";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Brown;
-            this.label6.Location = new System.Drawing.Point(22, 26);
-            this.label6.Margin = new System.Windows.Forms.Padding(5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 44);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Soft Reset";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel5
             // 
@@ -1124,13 +1008,13 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(123, 55);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(171, 55);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(108, 150);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(156, 150);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // label3
@@ -1139,7 +1023,7 @@ namespace dcom.views.views_Service
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 80);
+            this.label3.Location = new System.Drawing.Point(54, 80);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 32);
@@ -1152,12 +1036,12 @@ namespace dcom.views.views_Service
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Brown;
-            this.label4.Location = new System.Drawing.Point(22, 26);
+            this.label4.Location = new System.Drawing.Point(27, 26);
             this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 44);
+            this.label4.Size = new System.Drawing.Size(101, 44);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Key Reset";
+            this.label4.Text = "Start DTC Setting";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_SupressBit
@@ -1169,64 +1053,13 @@ namespace dcom.views.views_Service
             this.button_SupressBit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SupressBit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SupressBit.ForeColor = System.Drawing.Color.White;
-            this.button_SupressBit.Location = new System.Drawing.Point(359, 5);
+            this.button_SupressBit.Location = new System.Drawing.Point(337, 5);
             this.button_SupressBit.Margin = new System.Windows.Forms.Padding(5);
             this.button_SupressBit.Name = "button_SupressBit";
-            this.button_SupressBit.Size = new System.Drawing.Size(111, 40);
+            this.button_SupressBit.Size = new System.Drawing.Size(133, 40);
             this.button_SupressBit.TabIndex = 3;
             this.button_SupressBit.Text = "ON";
             this.button_SupressBit.UseVisualStyleBackColor = false;
-            // 
-            // button_SoftReset
-            // 
-            this.button_SoftReset.BackColor = System.Drawing.Color.Brown;
-            this.button_SoftReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_SoftReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_SoftReset.FlatAppearance.BorderSize = 0;
-            this.button_SoftReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SoftReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SoftReset.ForeColor = System.Drawing.Color.White;
-            this.button_SoftReset.Location = new System.Drawing.Point(241, 5);
-            this.button_SoftReset.Margin = new System.Windows.Forms.Padding(5);
-            this.button_SoftReset.Name = "button_SoftReset";
-            this.button_SoftReset.Size = new System.Drawing.Size(108, 40);
-            this.button_SoftReset.TabIndex = 2;
-            this.button_SoftReset.Text = "ON";
-            this.button_SoftReset.UseVisualStyleBackColor = false;
-            // 
-            // button_KeyOnOffReset
-            // 
-            this.button_KeyOnOffReset.BackColor = System.Drawing.Color.Brown;
-            this.button_KeyOnOffReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_KeyOnOffReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_KeyOnOffReset.FlatAppearance.BorderSize = 0;
-            this.button_KeyOnOffReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_KeyOnOffReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_KeyOnOffReset.ForeColor = System.Drawing.Color.White;
-            this.button_KeyOnOffReset.Location = new System.Drawing.Point(123, 5);
-            this.button_KeyOnOffReset.Margin = new System.Windows.Forms.Padding(5);
-            this.button_KeyOnOffReset.Name = "button_KeyOnOffReset";
-            this.button_KeyOnOffReset.Size = new System.Drawing.Size(108, 40);
-            this.button_KeyOnOffReset.TabIndex = 1;
-            this.button_KeyOnOffReset.Text = "ON";
-            this.button_KeyOnOffReset.UseVisualStyleBackColor = false;
-            // 
-            // button_HardReset
-            // 
-            this.button_HardReset.BackColor = System.Drawing.Color.Brown;
-            this.button_HardReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_HardReset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_HardReset.FlatAppearance.BorderSize = 0;
-            this.button_HardReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_HardReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_HardReset.ForeColor = System.Drawing.Color.White;
-            this.button_HardReset.Location = new System.Drawing.Point(5, 5);
-            this.button_HardReset.Margin = new System.Windows.Forms.Padding(5);
-            this.button_HardReset.Name = "button_HardReset";
-            this.button_HardReset.Size = new System.Drawing.Size(108, 40);
-            this.button_HardReset.TabIndex = 0;
-            this.button_HardReset.Text = "ON";
-            this.button_HardReset.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel4
             // 
@@ -1242,7 +1075,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(108, 150);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(156, 150);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // label1
@@ -1251,12 +1084,12 @@ namespace dcom.views.views_Service
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Location = new System.Drawing.Point(29, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 44);
+            this.label1.Size = new System.Drawing.Size(98, 44);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hard Reset";
+            this.label1.Text = "Stop DTC Setting";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -1265,12 +1098,73 @@ namespace dcom.views.views_Service
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 80);
+            this.label2.Location = new System.Drawing.Point(54, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "01";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1149, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 631);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // tableLayoutPanel_bodyRight
+            // 
+            this.tableLayoutPanel_bodyRight.ColumnCount = 1;
+            this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_bodyRight.Controls.Add(this.panel2, 0, 10);
+            this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
+            this.tableLayoutPanel_bodyRight.RowCount = 13;
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 631);
+            this.tableLayoutPanel_bodyRight.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(0, 500);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 50);
+            this.panel2.TabIndex = 4;
             // 
             // View_Service85
             // 
@@ -1280,24 +1174,23 @@ namespace dcom.views.views_Service
             this.Name = "View_Service85";
             this.Size = new System.Drawing.Size(1159, 631);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel_bodyRight.ResumeLayout(false);
             this.tableLayoutPanel_bodySetting.ResumeLayout(false);
-            this.groupBox_Service11NRC.ResumeLayout(false);
-            this.groupBox_Service11NRC.PerformLayout();
+            this.groupBox_Service85NRC.ResumeLayout(false);
+            this.groupBox_Service85NRC.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NRCPriority)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
-            this.groupBox_Service11Condition.ResumeLayout(false);
+            this.groupBox_Service85Condition.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel18.PerformLayout();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.tableLayoutPanel19.PerformLayout();
-            this.groupBox_Service11AddressingMode.ResumeLayout(false);
+            this.groupBox_Service85AddressingMode.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -1306,17 +1199,16 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
-            this.groupBox_Service11ResetMode.ResumeLayout(false);
+            this.groupBox_Service85ResetMode.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel_bodyRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1328,7 +1220,7 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodyRight;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodySetting;
-        private System.Windows.Forms.GroupBox groupBox_Service11NRC;
+        private System.Windows.Forms.GroupBox groupBox_Service85NRC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         public System.Windows.Forms.DataGridView dataGridView_NRCPriority;
@@ -1351,7 +1243,7 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox groupBox_Service11Condition;
+        private System.Windows.Forms.GroupBox groupBox_Service85Condition;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
@@ -1362,7 +1254,7 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.ComboBox comboBox_ConditionEngine_NRC;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.GroupBox groupBox_Service11AddressingMode;
+        private System.Windows.Forms.GroupBox groupBox_Service85AddressingMode;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
@@ -1379,21 +1271,15 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox_Service11ResetMode;
+        private System.Windows.Forms.GroupBox groupBox_Service85ResetMode;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_SupressBit;
-        private System.Windows.Forms.Button button_SoftReset;
-        private System.Windows.Forms.Button button_KeyOnOffReset;
-        private System.Windows.Forms.Button button_HardReset;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

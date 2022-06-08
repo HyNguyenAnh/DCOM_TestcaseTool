@@ -31,31 +31,28 @@ namespace dcom.declaration
             DatabaseVariables.PathOutputDatabase = DatabaseVariables.DirectoryOutputDatabase + @"\" + DatabaseVariables.NameOutputDatabase;
 
             DatabaseVariables.StartRowIndexDatabaseTables = new int[]
-            {   2, // Common Setting
-                11,// Common command
-                21,// Common DID
-                3, // Specification
-                3, // Allow session
-                3, // NRC
-                3,// Optional
-                3, // Condition
+            {   2,  // Common Setting
+                21, // Common DID
                 31, // Project Information
                 41, // Data Path Information
-                51  // Selected Service
-
+                51, // Selected Service
+                3,  // Specification
+                3,  // Allow session
+                3,  // NRC
+                3,  // Optional
+                3,  // Condition
             };
             DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
-            {   1, // Common Setting
-                1, // Common command
-                1, // Common DID
-                1, // Specification
-                6, // Allow session
-                11,// NRC
+            {   1,  // Common Setting
+                1,  // Common DID
+                1,  // Project Information
+                1,  // Data Path Information
+                1,  // Selected Service
+                1,  // Specification
+                6,  // Allow session
+                11, // NRC
                 19, // Optional
                 14, // Condition
-                1, // Project Information
-                1, // Data Path Information
-                1  // Selected Service
             };
 
         }
@@ -64,37 +61,34 @@ namespace dcom.declaration
         {
 
             DatabaseVariables.StartRowIndexDatabaseTables = new int[]
-            {   2, // Common Setting
-                11,// Common command
-                21,// Common DID
-                3, // Specification
-                3, // Allow session
-                3, // NRC
-                3,// Optional
-                3, // Condition
+            {   2,  // Common Setting
+                21, // Common DID
                 31, // Project Information
                 41, // Data Path Information
-                51  // Selected Service
-
+                51, // Selected Service
+                3,  // Specification
+                3,  // Allow session
+                3,  // NRC
+                3,  // Optional
+                3,  // Condition
             };
             DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
-            {   1, // Common Setting
-                1, // Common command
-                1, // Common DID
-                1, // Specification
-                6, // Allow session
-                11,// NRC
+            {   1,  // Common Setting
+                1,  // Common DID
+                1,  // Project Information
+                1,  // Data Path Information
+                1,  // Selected Service
+                1,  // Specification
+                6,  // Allow session
+                11, // NRC
                 19, // Optional
                 14, // Condition
-                1, // Project Information
-                1, // Data Path Information
-                1  // Selected Service
             };
+
 
             // Get data from database
             List<string[]>[] CommonSettingDatabase = new List<string[]>[]{
                 Model_GetCommonSettingDatabase.CommonSetting(),
-                Model_GetCommonSettingDatabase.CommonCommand(),
                 Model_GetCommonSettingDatabase.CommonDID(),
                 Model_GetCommonSettingDatabase.ProjectInformation(),
                 Model_GetCommonSettingDatabase.DataPathInformation(),
@@ -113,35 +107,23 @@ namespace dcom.declaration
             DatabaseVariables.DatabaseCommonSetting.Add(DatabaseVariables.DatabaseCommonSettingPowerMode);
             DatabaseVariables.DatabaseCommonSetting.Add(DatabaseVariables.DatabaseCommonSettingSecurityUnlock);
 
-
-            // Common Command
-            DatabaseVariables.DatabaseCommonCommandReadDTCStatusActive = CommonSettingDatabase[1].ElementAt(0);
-            DatabaseVariables.DatabaseCommonCommandReadDTCStatusPassive = CommonSettingDatabase[1].ElementAt(1);
-            DatabaseVariables.DatabaseCommonCommandReadDTCStatusNoDTC = CommonSettingDatabase[1].ElementAt(2);
-
-            DatabaseVariables.DatabaseCommonCommand.Add(DatabaseVariables.DatabaseCommonCommandReadDTCStatusActive);
-            DatabaseVariables.DatabaseCommonCommand.Add(DatabaseVariables.DatabaseCommonCommandReadDTCStatusPassive);
-            DatabaseVariables.DatabaseCommonCommand.Add(DatabaseVariables.DatabaseCommonCommandReadDTCStatusNoDTC);
-
             // Common DID
-            DatabaseVariables.DatabaseCommonDIDCurrentSession = CommonSettingDatabase[2].ElementAt(0);
-            DatabaseVariables.DatabaseCommonDIDInvalidCounter = CommonSettingDatabase[2].ElementAt(1);
-            DatabaseVariables.DatabaseCommonDIDCurrentVoltage = CommonSettingDatabase[2].ElementAt(2);
+            DatabaseVariables.DatabaseCommonDIDCurrentSession = CommonSettingDatabase[1].ElementAt(0);
+            DatabaseVariables.DatabaseCommonDIDInvalidCounter = CommonSettingDatabase[1].ElementAt(1);
+            DatabaseVariables.DatabaseCommonDIDCurrentVoltage = CommonSettingDatabase[1].ElementAt(2);
 
             DatabaseVariables.DatabaseCommonDID.Add(DatabaseVariables.DatabaseCommonDIDCurrentSession);
             DatabaseVariables.DatabaseCommonDID.Add(DatabaseVariables.DatabaseCommonDIDInvalidCounter);
             DatabaseVariables.DatabaseCommonDID.Add(DatabaseVariables.DatabaseCommonDIDCurrentVoltage);
 
             // Project Information
-            DatabaseVariables.ProjectName = CommonSettingDatabase[3].ElementAt(0)[1];
-            DatabaseVariables.Variant = CommonSettingDatabase[3].ElementAt(1)[1];
-            DatabaseVariables.Release = CommonSettingDatabase[3].ElementAt(2)[1];
-            DatabaseVariables.RC = CommonSettingDatabase[3].ElementAt(3)[1];
+            DatabaseVariables.ProjectName = CommonSettingDatabase[2].ElementAt(0)[1];
+            DatabaseVariables.Variant = CommonSettingDatabase[2].ElementAt(1)[1];
+            DatabaseVariables.Release = CommonSettingDatabase[2].ElementAt(2)[1];
+            DatabaseVariables.RC = CommonSettingDatabase[2].ElementAt(3)[1];
 
             // Data Path Information
-            DatabaseVariables.DatabaseSource = CommonSettingDatabase[4].ElementAt(0)[1];
-            DatabaseVariables.PublicCANDBC = CommonSettingDatabase[4].ElementAt(2)[1];
-            DatabaseVariables.PrivateCANDBC = CommonSettingDatabase[4].ElementAt(3)[1];
+            DatabaseVariables.DatabaseSource = CommonSettingDatabase[3].ElementAt(0)[1];
             string[] databasePathSplit = DatabaseVariables.DatabasePath.Split('\\');
             DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
             string[] databaseDirectorySplit = DatabaseVariables.DatabaseDirectory.Split('\\');
@@ -149,10 +131,9 @@ namespace dcom.declaration
             DatabaseVariables.TemplatePath = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB\Template.xlsx")).LocalPath;
 
             // Selected Service Information
-            DatabaseVariables.SelectedServiceStatus = new bool[12];
-            for (int index = 0; index < CommonSettingDatabase[5].Count; index++)
+            for (int index = 0; index < CommonSettingDatabase[4].Count; index++)
             {
-                DatabaseVariables.SelectedServiceStatus[index] = Controller_ServiceHandling.ConvertFromStringToBool(CommonSettingDatabase[5].ElementAt(index)[1]);
+                DatabaseVariables.SelectedServiceStatus[index] = Controller_ServiceHandling.ConvertFromStringToBool(CommonSettingDatabase[4].ElementAt(index)[1]);
             }
 
 

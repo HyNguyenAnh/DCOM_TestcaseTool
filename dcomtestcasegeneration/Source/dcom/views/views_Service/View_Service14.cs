@@ -203,32 +203,32 @@ namespace dcom.views.views_Service
 
         private void button_Service14_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalDefaultService14 = button_PhysicalDefault.Text;
+            UIVariables.Service14_ButtonStatus_AddressingMode[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service14_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalProgrammingService14 = button_PhysicalProgramming.Text;
+            UIVariables.Service14_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service14_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.PhysicalExtendedService14 = button_PhysicalExtended.Text;
+            UIVariables.Service14_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service14_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalDefaultService14 = button_FunctionalDefault.Text;
+            UIVariables.Service14_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service14_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalProgrammingService14 = button_FunctionalProgramming.Text;
+            UIVariables.Service14_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void button_Service14_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.FunctionalExtendedService14 = button_FunctionalExtended.Text;
+            UIVariables.Service14_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)

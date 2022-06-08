@@ -15,8 +15,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
     {
         public static void SaveDatabase()
         {
-            // Open the database(template) file
+            // Copy template file to save requirement database
             DatabaseVariables.WbOutputDatabase = Controller_ExcelHandling.OpenExcel(DatabaseVariables.TemplatePath);
+            Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
+            Controller_ExcelHandling.CloseExcel(DatabaseVariables.TemplatePath, DatabaseVariables.WbDatabase);
+
+            // Open the requirement database(template) file
+            DatabaseVariables.WbOutputDatabase = Controller_ExcelHandling.OpenExcel(DatabaseVariables.PathOutputDatabase);
 
             // Save data from common setting to the database
             DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[1];
@@ -37,7 +42,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Save the database
             Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
 
-            // After Handling, close the testcase file
+            // After Handling, close the template file
             Controller_ExcelHandling.CloseExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
         }
     }

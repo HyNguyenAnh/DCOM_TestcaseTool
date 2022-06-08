@@ -1061,11 +1061,12 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.Controls.Add(this.button_EtoP, 0, 0);
             this.tableLayoutPanel23.Controls.Add(this.button_EtoD, 0, 0);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel23.Location = new System.Drawing.Point(236, 0);
             this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel23.Size = new System.Drawing.Size(118, 50);
             this.tableLayoutPanel23.TabIndex = 10;
             // 
@@ -1073,6 +1074,7 @@ namespace dcom.views.views_Service
             // 
             this.button_EtoP.BackColor = System.Drawing.Color.Brown;
             this.button_EtoP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_EtoP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_EtoP.FlatAppearance.BorderSize = 0;
             this.button_EtoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_EtoP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1091,6 +1093,7 @@ namespace dcom.views.views_Service
             // 
             this.button_EtoD.BackColor = System.Drawing.Color.Brown;
             this.button_EtoD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_EtoD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_EtoD.FlatAppearance.BorderSize = 0;
             this.button_EtoD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_EtoD.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1112,6 +1115,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel22.Controls.Add(this.button_PtoE, 0, 0);
             this.tableLayoutPanel22.Controls.Add(this.button_PtoD, 0, 0);
+            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel22.Location = new System.Drawing.Point(118, 0);
             this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
@@ -1124,6 +1128,7 @@ namespace dcom.views.views_Service
             // 
             this.button_PtoE.BackColor = System.Drawing.Color.Brown;
             this.button_PtoE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_PtoE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_PtoE.FlatAppearance.BorderSize = 0;
             this.button_PtoE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PtoE.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1142,6 +1147,7 @@ namespace dcom.views.views_Service
             // 
             this.button_PtoD.BackColor = System.Drawing.Color.Brown;
             this.button_PtoD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_PtoD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_PtoD.FlatAppearance.BorderSize = 0;
             this.button_PtoD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_PtoD.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1344,6 +1350,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel21.Controls.Add(this.button_DtoE, 0, 0);
             this.tableLayoutPanel21.Controls.Add(this.button_DtoP, 0, 0);
+            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
@@ -1356,6 +1363,7 @@ namespace dcom.views.views_Service
             // 
             this.button_DtoE.BackColor = System.Drawing.Color.Brown;
             this.button_DtoE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_DtoE.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_DtoE.FlatAppearance.BorderSize = 0;
             this.button_DtoE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_DtoE.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1374,6 +1382,7 @@ namespace dcom.views.views_Service
             // 
             this.button_DtoP.BackColor = System.Drawing.Color.Brown;
             this.button_DtoP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_DtoP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_DtoP.FlatAppearance.BorderSize = 0;
             this.button_DtoP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_DtoP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

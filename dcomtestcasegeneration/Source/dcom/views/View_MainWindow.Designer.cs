@@ -43,10 +43,6 @@ namespace dcom.views
             this.button_save = new System.Windows.Forms.Button();
             this.button_play = new System.Windows.Forms.Button();
             this.tableLayoutPanel_bodyLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.button_service85 = new System.Windows.Forms.Button();
-            this.button_service3e = new System.Windows.Forms.Button();
-            this.button_service31 = new System.Windows.Forms.Button();
-            this.button_service2f = new System.Windows.Forms.Button();
             this.button_service2e = new System.Windows.Forms.Button();
             this.button_service28 = new System.Windows.Forms.Button();
             this.button_service27 = new System.Windows.Forms.Button();
@@ -55,6 +51,10 @@ namespace dcom.views
             this.button_service14 = new System.Windows.Forms.Button();
             this.button_service11 = new System.Windows.Forms.Button();
             this.button_service10 = new System.Windows.Forms.Button();
+            this.button_service31 = new System.Windows.Forms.Button();
+            this.button_service3e = new System.Windows.Forms.Button();
+            this.button_canTP = new System.Windows.Forms.Button();
+            this.button_service85 = new System.Windows.Forms.Button();
             this.panel_bodyMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_base.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -261,10 +261,6 @@ namespace dcom.views
             this.tableLayoutPanel_bodyLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel_bodyLeft.ColumnCount = 1;
             this.tableLayoutPanel_bodyLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service85, 0, 11);
-            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service3e, 0, 10);
-            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service31, 0, 9);
-            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service2f, 0, 8);
             this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service2e, 0, 7);
             this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service28, 0, 6);
             this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service27, 0, 5);
@@ -273,6 +269,10 @@ namespace dcom.views
             this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service14, 0, 2);
             this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service11, 0, 1);
             this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service10, 0, 0);
+            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service31, 0, 8);
+            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service3e, 0, 9);
+            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_canTP, 0, 11);
+            this.tableLayoutPanel_bodyLeft.Controls.Add(this.button_service85, 0, 10);
             this.tableLayoutPanel_bodyLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_bodyLeft.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_bodyLeft.Margin = new System.Windows.Forms.Padding(0);
@@ -293,78 +293,6 @@ namespace dcom.views
             this.tableLayoutPanel_bodyLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_bodyLeft.Size = new System.Drawing.Size(50, 617);
             this.tableLayoutPanel_bodyLeft.TabIndex = 0;
-            // 
-            // button_service85
-            // 
-            this.button_service85.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service85.BackgroundImage")));
-            this.button_service85.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_service85.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_service85.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_service85.FlatAppearance.BorderSize = 0;
-            this.button_service85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service85.Location = new System.Drawing.Point(10, 560);
-            this.button_service85.Margin = new System.Windows.Forms.Padding(10);
-            this.button_service85.Name = "button_service85";
-            this.button_service85.Size = new System.Drawing.Size(30, 30);
-            this.button_service85.TabIndex = 5;
-            this.button_service85.UseVisualStyleBackColor = true;
-            this.button_service85.Click += new System.EventHandler(this.button_service85_Click);
-            this.button_service85.MouseLeave += new System.EventHandler(this.button_service85_MouseLeave);
-            this.button_service85.MouseHover += new System.EventHandler(this.button_service85_MouseHover);
-            // 
-            // button_service3e
-            // 
-            this.button_service3e.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service3e.BackgroundImage")));
-            this.button_service3e.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_service3e.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_service3e.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_service3e.FlatAppearance.BorderSize = 0;
-            this.button_service3e.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service3e.Location = new System.Drawing.Point(10, 510);
-            this.button_service3e.Margin = new System.Windows.Forms.Padding(10);
-            this.button_service3e.Name = "button_service3e";
-            this.button_service3e.Size = new System.Drawing.Size(30, 30);
-            this.button_service3e.TabIndex = 5;
-            this.button_service3e.UseVisualStyleBackColor = true;
-            this.button_service3e.Click += new System.EventHandler(this.button_service3e_Click);
-            this.button_service3e.MouseLeave += new System.EventHandler(this.button_service3e_MouseLeave);
-            this.button_service3e.MouseHover += new System.EventHandler(this.button_service3e_MouseHover);
-            // 
-            // button_service31
-            // 
-            this.button_service31.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service31.BackgroundImage")));
-            this.button_service31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_service31.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_service31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_service31.FlatAppearance.BorderSize = 0;
-            this.button_service31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service31.Location = new System.Drawing.Point(10, 460);
-            this.button_service31.Margin = new System.Windows.Forms.Padding(10);
-            this.button_service31.Name = "button_service31";
-            this.button_service31.Size = new System.Drawing.Size(30, 30);
-            this.button_service31.TabIndex = 5;
-            this.button_service31.UseVisualStyleBackColor = true;
-            this.button_service31.Click += new System.EventHandler(this.button_service31_Click);
-            this.button_service31.MouseLeave += new System.EventHandler(this.button_service31_MouseLeave);
-            this.button_service31.MouseHover += new System.EventHandler(this.button_service31_MouseHover);
-            // 
-            // button_service2f
-            // 
-            this.button_service2f.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service2f.BackgroundImage")));
-            this.button_service2f.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_service2f.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_service2f.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_service2f.FlatAppearance.BorderSize = 0;
-            this.button_service2f.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service2f.Location = new System.Drawing.Point(10, 410);
-            this.button_service2f.Margin = new System.Windows.Forms.Padding(10);
-            this.button_service2f.Name = "button_service2f";
-            this.button_service2f.Size = new System.Drawing.Size(30, 30);
-            this.button_service2f.TabIndex = 5;
-            this.button_service2f.UseVisualStyleBackColor = true;
-            this.button_service2f.Click += new System.EventHandler(this.button_service2f_Click);
-            this.button_service2f.MouseLeave += new System.EventHandler(this.button_service2f_MouseLeave);
-            this.button_service2f.MouseHover += new System.EventHandler(this.button_service2f_MouseHover);
             // 
             // button_service2e
             // 
@@ -510,6 +438,78 @@ namespace dcom.views
             this.button_service10.MouseLeave += new System.EventHandler(this.button_service10_MouseLeave);
             this.button_service10.MouseHover += new System.EventHandler(this.button_service10_MouseHover);
             // 
+            // button_service31
+            // 
+            this.button_service31.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service31.BackgroundImage")));
+            this.button_service31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_service31.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_service31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_service31.FlatAppearance.BorderSize = 0;
+            this.button_service31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_service31.Location = new System.Drawing.Point(10, 410);
+            this.button_service31.Margin = new System.Windows.Forms.Padding(10);
+            this.button_service31.Name = "button_service31";
+            this.button_service31.Size = new System.Drawing.Size(30, 30);
+            this.button_service31.TabIndex = 5;
+            this.button_service31.UseVisualStyleBackColor = true;
+            this.button_service31.Click += new System.EventHandler(this.button_service31_Click);
+            this.button_service31.MouseLeave += new System.EventHandler(this.button_service31_MouseLeave);
+            this.button_service31.MouseHover += new System.EventHandler(this.button_service31_MouseHover);
+            // 
+            // button_service3e
+            // 
+            this.button_service3e.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service3e.BackgroundImage")));
+            this.button_service3e.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_service3e.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_service3e.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_service3e.FlatAppearance.BorderSize = 0;
+            this.button_service3e.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_service3e.Location = new System.Drawing.Point(10, 460);
+            this.button_service3e.Margin = new System.Windows.Forms.Padding(10);
+            this.button_service3e.Name = "button_service3e";
+            this.button_service3e.Size = new System.Drawing.Size(30, 30);
+            this.button_service3e.TabIndex = 5;
+            this.button_service3e.UseVisualStyleBackColor = true;
+            this.button_service3e.Click += new System.EventHandler(this.button_service3e_Click);
+            this.button_service3e.MouseLeave += new System.EventHandler(this.button_service3e_MouseLeave);
+            this.button_service3e.MouseHover += new System.EventHandler(this.button_service3e_MouseHover);
+            // 
+            // button_canTP
+            // 
+            this.button_canTP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_canTP.BackgroundImage")));
+            this.button_canTP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_canTP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_canTP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_canTP.FlatAppearance.BorderSize = 0;
+            this.button_canTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_canTP.Location = new System.Drawing.Point(10, 560);
+            this.button_canTP.Margin = new System.Windows.Forms.Padding(10);
+            this.button_canTP.Name = "button_canTP";
+            this.button_canTP.Size = new System.Drawing.Size(30, 30);
+            this.button_canTP.TabIndex = 5;
+            this.button_canTP.UseVisualStyleBackColor = true;
+            this.button_canTP.Click += new System.EventHandler(this.button_canTP_Click);
+            this.button_canTP.MouseLeave += new System.EventHandler(this.button_canTP_MouseLeave);
+            this.button_canTP.MouseHover += new System.EventHandler(this.button_canTP_MouseHover);
+            // 
+            // button_service85
+            // 
+            this.button_service85.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service85.BackgroundImage")));
+            this.button_service85.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_service85.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_service85.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_service85.FlatAppearance.BorderSize = 0;
+            this.button_service85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_service85.Location = new System.Drawing.Point(10, 510);
+            this.button_service85.Margin = new System.Windows.Forms.Padding(10);
+            this.button_service85.Name = "button_service85";
+            this.button_service85.Size = new System.Drawing.Size(30, 30);
+            this.button_service85.TabIndex = 5;
+            this.button_service85.UseVisualStyleBackColor = true;
+            this.button_service85.Click += new System.EventHandler(this.button_service85_Click);
+            this.button_service85.MouseLeave += new System.EventHandler(this.button_service85_MouseLeave);
+            this.button_service85.MouseHover += new System.EventHandler(this.button_service85_MouseHover);
+            // 
             // panel_bodyMain
             // 
             this.panel_bodyMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -554,7 +554,7 @@ namespace dcom.views
         public System.Windows.Forms.Button button_setting;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_service31;
-        private System.Windows.Forms.Button button_service2f;
+        private System.Windows.Forms.Button button_canTP;
         private System.Windows.Forms.Button button_service2e;
         private System.Windows.Forms.Button button_service28;
         private System.Windows.Forms.Button button_service27;

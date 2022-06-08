@@ -1,46 +1,47 @@
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\dcom.exe.config
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\dcom.exe
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\dcom.pdb
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\EntityFramework.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\EPPlus.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\ExcelDataReader.DataSet.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\ExcelDataReader.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\EntityFramework.xml
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\EPPlus.xml
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\ExcelDataReader.pdb
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\ExcelDataReader.xml
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\ExcelDataReader.DataSet.pdb
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\ExcelDataReader.DataSet.xml
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.csproj.ResolveComReference.cache
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.Properties.Resources.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service10.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service11.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service14.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service19.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service22.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service27.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service28.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2E.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2F.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service31.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Save.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting.resources
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.exe
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.pdb
-C:\Users\nuc81hc\Documents\Visual Studio 2019\Projects\dcom_automation_gen_tool\Source\dcom\obj\Debug\dcom.csproj.AssemblyReference.cache
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\dcom.exe.config
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\dcom.exe
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\dcom.pdb
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\EntityFramework.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\EPPlus.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\ExcelDataReader.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\EntityFramework.xml
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\EPPlus.xml
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\ExcelDataReader.pdb
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\ExcelDataReader.xml
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.ResolveComReference.cache
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.Properties.Resources.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service10.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service11.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service14.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service19.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service22.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service27.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service28.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2E.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_CanTP.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service31.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service10_Tc.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service10_Tc1.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting_Testcase.resources
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.exe
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.pdb
+C:\Users\nuc81hc\Documents\MyTasks\TOOL\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.AssemblyReference.cache
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\dcom.exe.config
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\dcom.exe
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\dcom.pdb
@@ -70,146 +71,18 @@ D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenera
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service27.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service28.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2E.resources
-D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2F.resources
+D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_CanTP.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service31.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
+D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service10_Tc.resources
+D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service10_Tc1.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
-D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Save.resources
-D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting.resources
+D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting_Testcase.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.exe
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.pdb
-D:\HuyNA_repo\Source\dcom\bin\Debug\dcom.exe.config
-D:\HuyNA_repo\Source\dcom\bin\Debug\dcom.exe
-D:\HuyNA_repo\Source\dcom\bin\Debug\dcom.pdb
-D:\HuyNA_repo\Source\dcom\bin\Debug\EntityFramework.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\EntityFramework.SqlServer.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\EPPlus.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\ExcelDataReader.DataSet.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\ExcelDataReader.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\FontAwesome.Sharp.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\HuyNA_repo\Source\dcom\bin\Debug\EntityFramework.xml
-D:\HuyNA_repo\Source\dcom\bin\Debug\EntityFramework.SqlServer.xml
-D:\HuyNA_repo\Source\dcom\bin\Debug\EPPlus.xml
-D:\HuyNA_repo\Source\dcom\bin\Debug\ExcelDataReader.pdb
-D:\HuyNA_repo\Source\dcom\bin\Debug\ExcelDataReader.xml
-D:\HuyNA_repo\Source\dcom\bin\Debug\ExcelDataReader.DataSet.pdb
-D:\HuyNA_repo\Source\dcom\bin\Debug\ExcelDataReader.DataSet.xml
-D:\HuyNA_repo\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.csprojAssemblyReference.cache
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.csproj.ResolveComReference.cache
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.Properties.Resources.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service10.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service11.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service14.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service19.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service22.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service27.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service28.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2E.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2F.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service31.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Save.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting.resources
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.exe
-D:\HuyNA_repo\Source\dcom\obj\Debug\dcom.pdb
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\dcom.exe.config
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\dcom.exe
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\dcom.pdb
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.SqlServer.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\EPPlus.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.DataSet.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\FontAwesome.Sharp.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.xml
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.SqlServer.xml
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\EPPlus.xml
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.pdb
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.xml
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.DataSet.pdb
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.DataSet.xml
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csprojAssemblyReference.cache
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.ResolveComReference.cache
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.Properties.Resources.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service10.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service11.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service14.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service19.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service22.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service27.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service28.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2E.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2F.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service31.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting.resources
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.exe
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.pdb
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\dcom.exe.config
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\dcom.exe
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\dcom.pdb
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.SqlServer.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\EPPlus.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.DataSet.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\FontAwesome.Sharp.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.xml
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\EntityFramework.SqlServer.xml
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\EPPlus.xml
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.pdb
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.xml
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.DataSet.pdb
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\ExcelDataReader.DataSet.xml
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.AssemblyReference.cache
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.ResolveComReference.cache
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.Properties.Resources.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service10.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service11.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service14.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service19.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service22.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service27.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service28.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2E.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service2F.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service31.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Save.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting.resources
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.GenerateResource.cache
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CoreCompileInputs.cache
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.exe
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.pdb
-D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Setting_Testcase.resources

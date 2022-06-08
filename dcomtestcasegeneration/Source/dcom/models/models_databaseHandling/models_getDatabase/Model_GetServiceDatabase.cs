@@ -27,11 +27,11 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[3]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[3]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[5]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[5]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[3] - 1, startColumnIndexDatabaseTable[3] + index].Text != ""; index++)
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[5] - 1, startColumnIndexDatabaseTable[5] + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[3] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -49,11 +49,11 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[4]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[4]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[4]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[6]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[4] - 1, startColumnIndexDatabaseTable[4] + index].Text != ""; index++)
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[6] - 1, startColumnIndexDatabaseTable[6] + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[6] + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -67,38 +67,25 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
-
-            // Definition worksheet
-            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
-            Worksheet ws = DatabaseVariables.WsDatabase;
-
-            for (int rowIndex = startRowIndexDatabaseTable[5]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[5]].Text != ""; rowIndex++)
+            int startColumnIndexDatabaseTable_except;
+            if(SID == "22" || SID == "2e")
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[5] - 1, startColumnIndexDatabaseTable[5] + index].Text != ""; index++)
-                {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + index].Text);
-                }
-                dataTable.Add(dataRow.ToArray());
-                dataRow.Clear();
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[7] + 1;
             }
-            return dataTable;
-        }
-
-        public static List<string[]> Optional(string SID)
-        {
-            List<string[]> dataTable = new List<string[]>();
-            List<string> dataRow = new List<string>();
-            string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
+            else
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[7];
+            }
 
             // Definition worksheet
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[6]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[6]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[7]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[6] - 1, startColumnIndexDatabaseTable[6] + index].Text != ""; index++)
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[7] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[6] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[7] + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -111,16 +98,25 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
+            int startColumnIndexDatabaseTable_except;
+            if (SID == "22" || SID == "2e" || SID == "27")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[8] + 1;
+            }
+            else
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[8];
+            }
 
             // Definition worksheet
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[7]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[7]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[8]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[7] - 1, startColumnIndexDatabaseTable[7] + index].Text != ""; index++)
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[8] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[7] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[8] + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -129,14 +125,46 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             return dataTable;
         }
 
+        public static List<string[]> Optional(string SID)
+        {
+            List<string[]> dataTable = new List<string[]>();
+            List<string> dataRow = new List<string>();
+            string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
+            int startColumnIndexDatabaseTable_except;
+            if (SID == "22" || SID == "2e" || SID == "27")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[9] + 1;
+            }
+            else
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[9];
+            }
+
+            // Definition worksheet
+            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
+            Worksheet ws = DatabaseVariables.WsDatabase;
+
+            for (int rowIndex = startRowIndexDatabaseTable[9]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
+            {
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[9] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
+                {
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[9] + index].Text);
+                }
+                dataTable.Add(dataRow.ToArray());
+                dataRow.Clear();
+            }
+            return dataTable;
+        }
+
+
         public static List<List<string[]>> DatabaseService(string SID)
         {
             List<List<string[]>> data = new List<List<string[]>> { };
             data.Add(Specification(SID));
             data.Add(AllowSession(SID));
             data.Add(NRC(SID));
-            data.Add(Optional(SID));
             data.Add(Condition(SID));
+            data.Add(Optional(SID));
 
             return data;
 

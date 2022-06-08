@@ -38,7 +38,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             return dataTable;
         }
 
-        public static List<string[]> CommonCommand()
+        public static List<string[]> CommonDID()
         {
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
@@ -59,7 +59,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             return dataTable;
         }
 
-        public static List<string[]> CommonDID()
+        public static List<string[]> ProjectInformation()
         {
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
@@ -80,27 +80,6 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             return dataTable;
         }
 
-        public static List<string[]> ProjectInformation()
-        {
-            List<string[]> dataTable = new List<string[]>();
-            List<string> dataRow = new List<string>();
-
-            // Definition worksheet
-            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
-            Worksheet ws = DatabaseVariables.WsDatabase;
-
-            for (int rowIndex = startRowIndexDatabaseTable[8]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[8]].Text != ""; rowIndex++)
-            {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[8] - 1, startColumnIndexDatabaseTable[8] + index].Text != ""; index++)
-                {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[8] + index].Text);
-                }
-                dataTable.Add(dataRow.ToArray());
-                dataRow.Clear();
-            }
-            return dataTable;
-        }
-
         public static List<string[]> DataPathInformation()
         {
             List<string[]> dataTable = new List<string[]>();
@@ -110,11 +89,11 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[9]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[9]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[3]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[3]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[9] - 1, startColumnIndexDatabaseTable[9] + index].Text != ""; index++)
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[3] - 1, startColumnIndexDatabaseTable[3] + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[9] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[3] + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -131,11 +110,11 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[10]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[10]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[4]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[4]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[10] - 1, startColumnIndexDatabaseTable[10] + index].Text != ""; index++)
+                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[4] - 1, startColumnIndexDatabaseTable[4] + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[10] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();

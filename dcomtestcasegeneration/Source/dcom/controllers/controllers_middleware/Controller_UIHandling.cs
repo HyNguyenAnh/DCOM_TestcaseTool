@@ -194,7 +194,6 @@ namespace dcom.controllers.controllers_middleware
         }
 
         // Insert new row in the above of selected row
-        // The new row include the same day and date with the selected row
         public static void InsertBefore(DataGridView dataGridView)
         {
             // Declare
@@ -218,9 +217,7 @@ namespace dcom.controllers.controllers_middleware
         }
 
         // Insert new row in the below of selected row
-        // The new row include the same day and date with the selected row
-        // Insert the selected date + dateIndex (Example: selected date: 16/10/2021, dateIndex = 2 => The Inserted date: 18/10/2021)
-        public static void InsertAfter(DataGridView dataGridView, int dateIndex)
+        public static void InsertAfter(DataGridView dataGridView)
         {
             // Declare
             int selectedRow;
@@ -252,9 +249,9 @@ namespace dcom.controllers.controllers_middleware
         {
             foreach (DataGridViewCell dataGridViewCell in dataGridView.SelectedCells)
             {
+                int rowPosition = dataGridViewCell.RowIndex + addPosition;
                 try
                 {
-                    int rowPosition = dataGridViewCell.RowIndex + addPosition;
                     dataGridView.Rows.Insert(rowPosition, rowCount);
                 }
                 catch
@@ -262,6 +259,22 @@ namespace dcom.controllers.controllers_middleware
                     // Will perform the below command if the selected row is the last row
                     dataGridView.Rows.Add();
                 }
+
+                // Update the No column, If new row is inserted, the "No" will update the number
+                for (int index = rowPosition; index < dataGridView.Rows.Count - 1; index++)
+                {
+                    dataGridView.Rows[index].Cells[0].Value = index + 1;
+                }
+            }
+        }
+
+        public static void InitialDataGridRows(DataGridView dataGridView, int initRowCount)
+        {
+            dataGridView.Rows.Insert(0, initRowCount);
+
+            for (int index = 0; index < initRowCount; index++)
+            {
+                dataGridView.Rows[index].Cells[0].Value = index + 1;
             }
         }
         public static DataGridViewCell GetStartCell(DataGridView dgView)

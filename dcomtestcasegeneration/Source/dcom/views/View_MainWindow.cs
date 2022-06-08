@@ -126,15 +126,15 @@ namespace dcom.views
 
         }
 
-        private void button_service2f_MouseHover(object sender, EventArgs e)
+        private void button_canTP_MouseHover(object sender, EventArgs e)
         {
-            button_service2f.Margin = new Padding(buttonHoverMargin);
+            button_canTP.Margin = new Padding(buttonHoverMargin);
 
         }
 
-        private void button_service2f_MouseLeave(object sender, EventArgs e)
+        private void button_canTP_MouseLeave(object sender, EventArgs e)
         {
-            button_service2f.Margin = new Padding(buttonLeaveMargin);
+            button_canTP.Margin = new Padding(buttonLeaveMargin);
 
         }
 
@@ -235,7 +235,8 @@ namespace dcom.views
             {
                 Model_BackupInformation.BackupInformation();
             }
-            View_Setting frm = new View_Setting();
+            View_Setting_Testcase frm = new View_Setting_Testcase();
+            //View_Setting frm = new View_Setting();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
 
             Cursor = Cursors.Default;
@@ -339,11 +340,11 @@ namespace dcom.views
             Cursor = Cursors.Default;
         }
 
-        private void button_service2f_Click(object sender, EventArgs e)
+        private void button_canTP_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service2F frm = new View_Service2F();
+            View_CanTP frm = new View_CanTP();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
 
             Cursor = Cursors.Default;

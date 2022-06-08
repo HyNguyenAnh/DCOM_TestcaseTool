@@ -104,6 +104,7 @@
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService10.cs" />
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService14.cs" />
     <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService11.cs" />
+    <Compile Include="models\models_databaseHandling\models_saveDatabase\Model_SaveDatabaseService22.cs" />
     <Compile Include="models\models_systemHandling\Model_BackupInformation.cs" />
     <Compile Include="models\models_systemHandling\Model_SystemInformation.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService10.cs" />
@@ -175,11 +176,11 @@
     <Compile Include="views\views_Service\View_Service2E.Designer.cs">
       <DependentUpon>View_Service2E.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\views_Service\View_Service2F.cs">
+    <Compile Include="views\views_Service\View_CanTP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\views_Service\View_Service2F.Designer.cs">
-      <DependentUpon>View_Service2F.cs</DependentUpon>
+    <Compile Include="views\views_Service\View_CanTP.Designer.cs">
+      <DependentUpon>View_CanTP.cs</DependentUpon>
     </Compile>
     <Compile Include="views\views_Service\View_Service31.cs">
       <SubType>UserControl</SubType>
@@ -205,6 +206,12 @@
     <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.Designer.cs">
       <DependentUpon>View_Service10_Tc.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc1.Designer.cs">
+      <DependentUpon>View_Service10_Tc1.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\views_ToolBar\View_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,12 +235,6 @@
     </Compile>
     <Compile Include="views\views_ToolBar\View_Setting_Testcase.Designer.cs">
       <DependentUpon>View_Setting_Testcase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="views\views_ToolBar\View_Setting.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="views\views_ToolBar\View_Setting.Designer.cs">
-      <DependentUpon>View_Setting.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -264,8 +265,8 @@
     <EmbeddedResource Include="views\views_Service\View_Service2E.resx">
       <DependentUpon>View_Service2E.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\views_Service\View_Service2F.resx">
-      <DependentUpon>View_Service2F.cs</DependentUpon>
+    <EmbeddedResource Include="views\views_Service\View_CanTP.resx">
+      <DependentUpon>View_CanTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\views_Service\View_Service31.resx">
       <DependentUpon>View_Service31.cs</DependentUpon>
@@ -279,6 +280,9 @@
     <EmbeddedResource Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.resx">
       <DependentUpon>View_Service10_Tc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc1.resx">
+      <DependentUpon>View_Service10_Tc1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\views_ToolBar\View_Home.resx">
       <DependentUpon>View_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,9 +294,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\views_ToolBar\View_Setting_Testcase.resx">
       <DependentUpon>View_Setting_Testcase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\views_ToolBar\View_Setting.resx">
-      <DependentUpon>View_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\dcom.views.view_commonSetting.datasource" />

@@ -31,19 +31,19 @@ namespace dcom.views.views_ToolBar
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Home));
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_homepage_goToSetting = new System.Windows.Forms.Button();
             this.label_homepage_greeting = new System.Windows.Forms.Label();
             this.panel_process = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.button_homepage_goToSetting = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel_process.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel4
@@ -64,62 +64,6 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1161, 633);
             this.tableLayoutPanel4.TabIndex = 8;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.panel2, 0, 3);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(1151, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 5;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(10, 633);
-            this.tableLayoutPanel5.TabIndex = 6;
-            // 
-            // tableLayoutPanel_bodyRight
-            // 
-            this.tableLayoutPanel_bodyRight.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel_bodyRight.ColumnCount = 1;
-            this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
-            this.tableLayoutPanel_bodyRight.RowCount = 13;
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 633);
-            this.tableLayoutPanel_bodyRight.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(0, 150);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 50);
-            this.panel2.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
@@ -144,25 +88,6 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1141, 633);
             this.tableLayoutPanel2.TabIndex = 7;
-            // 
-            // button_homepage_goToSetting
-            // 
-            this.button_homepage_goToSetting.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_homepage_goToSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.button_homepage_goToSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_homepage_goToSetting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.button_homepage_goToSetting.FlatAppearance.BorderSize = 0;
-            this.button_homepage_goToSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_homepage_goToSetting.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
-            this.button_homepage_goToSetting.ForeColor = System.Drawing.Color.White;
-            this.button_homepage_goToSetting.Location = new System.Drawing.Point(370, 410);
-            this.button_homepage_goToSetting.Margin = new System.Windows.Forms.Padding(0);
-            this.button_homepage_goToSetting.Name = "button_homepage_goToSetting";
-            this.button_homepage_goToSetting.Size = new System.Drawing.Size(400, 63);
-            this.button_homepage_goToSetting.TabIndex = 4;
-            this.button_homepage_goToSetting.Text = "Go To Setting";
-            this.button_homepage_goToSetting.UseVisualStyleBackColor = false;
-            this.button_homepage_goToSetting.Click += new System.EventHandler(this.button_homepage_goToSetting_Click);
             // 
             // label_homepage_greeting
             // 
@@ -220,6 +145,81 @@ namespace dcom.views.views_ToolBar
             this.label2.Text = "Welcome to DCOM Testcase Generation Automation tool";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button_homepage_goToSetting
+            // 
+            this.button_homepage_goToSetting.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_homepage_goToSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.button_homepage_goToSetting.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_homepage_goToSetting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.button_homepage_goToSetting.FlatAppearance.BorderSize = 0;
+            this.button_homepage_goToSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_homepage_goToSetting.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F);
+            this.button_homepage_goToSetting.ForeColor = System.Drawing.Color.White;
+            this.button_homepage_goToSetting.Location = new System.Drawing.Point(370, 410);
+            this.button_homepage_goToSetting.Margin = new System.Windows.Forms.Padding(0);
+            this.button_homepage_goToSetting.Name = "button_homepage_goToSetting";
+            this.button_homepage_goToSetting.Size = new System.Drawing.Size(400, 63);
+            this.button_homepage_goToSetting.TabIndex = 4;
+            this.button_homepage_goToSetting.Text = "Go To Setting";
+            this.button_homepage_goToSetting.UseVisualStyleBackColor = false;
+            this.button_homepage_goToSetting.Click += new System.EventHandler(this.button_homepage_goToSetting_Click);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.panel2, 0, 3);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(1151, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 5;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(10, 633);
+            this.tableLayoutPanel5.TabIndex = 6;
+            // 
+            // tableLayoutPanel_bodyRight
+            // 
+            this.tableLayoutPanel_bodyRight.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel_bodyRight.ColumnCount = 1;
+            this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
+            this.tableLayoutPanel_bodyRight.RowCount = 13;
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 633);
+            this.tableLayoutPanel_bodyRight.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 150);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 50);
+            this.panel2.TabIndex = 6;
+            // 
             // View_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,10 +229,10 @@ namespace dcom.views.views_ToolBar
             this.Name = "View_Home";
             this.Size = new System.Drawing.Size(1161, 633);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel_process.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
