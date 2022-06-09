@@ -360,6 +360,34 @@ namespace dcom.controllers.controllers_middleware
                 }
             }
         }
+        public static void PutDatabaseToDataGridView_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData, int col)
+        {
+            // Push data to Grid View
+            Controller_UIHandling.CleanDataGridView(dataGridView);
+            switch (col)
+            {
+                case 1:
+                    for (int rowIndex = 0; rowIndex < stringData.Count(); rowIndex++)
+                    {
+                        for (int cellIndex = col; cellIndex < stringData.ElementAt(rowIndex).Count() + col; cellIndex++)
+                        {
+                            dataGridView.Rows[rowIndex].Cells[cellIndex].Value = stringData.ElementAt(rowIndex)[cellIndex - col];
+                        }
+                    }
+                    break;
+                case 5:
+                    for (int rowIndex = 0; rowIndex < boolData.Count(); rowIndex++)
+                    {
+                        for (int cellIndex = col; cellIndex < boolData.ElementAt(rowIndex).Count() + col; cellIndex++)
+                        {
+                            dataGridView.Rows[rowIndex].Cells[cellIndex].Value = boolData.ElementAt(rowIndex)[cellIndex - col];
+                        }
+                    }
+                    break;
+            }
+            
+        }
+
         public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data)
         {
             if (SystemVariables.checkTheFirstLoad == false)
@@ -374,6 +402,38 @@ namespace dcom.controllers.controllers_middleware
                         Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
                     }
                 }
+            }
+        }
+
+        public static void SaveDataGridViewToDatabase_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData, int col)
+        {
+            if (SystemVariables.checkTheFirstLoad == false)
+            {
+                // Save data from Grid View
+                dataGridView.Update();
+                dataGridView.Refresh();
+                switch (col)
+                {
+                    case 1:
+                        for (int rowIndex = 0; rowIndex < stringData.Count; rowIndex++)
+                        {
+                            for (int cellIndex = col; cellIndex < stringData.ElementAt(rowIndex).Length + col; cellIndex++)
+                            {
+                                stringData.ElementAt(rowIndex)[cellIndex - col] = dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString();
+                            }
+                        }
+                        break;
+                    case 5:
+                        for (int rowIndex = 0; rowIndex < boolData.Count; rowIndex++)
+                        {
+                            for (int cellIndex = col; cellIndex < boolData.ElementAt(rowIndex).Length + col; cellIndex++)
+                            {
+                                boolData.ElementAt(rowIndex)[cellIndex - col] = Controller_ServiceHandling.ConvertFromStatusToBool(dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString());
+                            }
+                        }
+                        break;
+                }
+                
             }
         }
 

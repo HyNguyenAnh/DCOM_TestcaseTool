@@ -22,7 +22,6 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 DatabaseVariables.DatabaseCommonSettingCreateFault,
                 DatabaseVariables.DatabaseCommonSettingVehicleSpeed,
                 DatabaseVariables.DatabaseCommonSettingEngineStatus,
-                DatabaseVariables.DatabaseCommonSettingPowerMode,
                 DatabaseVariables.DatabaseCommonSettingSecurityUnlock,
             };
             for (int index = 0; index < SaveCommonSetting.Count; index++)

@@ -22,7 +22,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
-
+            Console.WriteLine(sheetName);
             // Definition worksheet
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
@@ -49,7 +49,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[4]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[6]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[6]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[6]].Text != ""; rowIndex++)
             {
                 for (int index = 0; ws.Cells[startRowIndexDatabaseTable[6] - 1, startColumnIndexDatabaseTable[6] + index].Text != ""; index++)
                 {

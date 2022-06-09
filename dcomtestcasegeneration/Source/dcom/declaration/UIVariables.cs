@@ -27,7 +27,7 @@ namespace dcom.declaration
             "83",
         };
 
-
+        public static List<ValueType[]> data { get; set; }
         // Setting
         public static string[] ProjectInformation = new string[] { };
         public static string DBSource = "";
@@ -222,8 +222,8 @@ namespace dcom.declaration
 
 
         // Service 22
-        public static List<string[]> Service22_Specification = new List<string[]> { };
-        public static List<bool[]> Service22_AllowSession = new List<bool[]> { };
+        public static List<string[]> Service22_DIDTable_AllowSession = new List<string[]> { };
+        public static List<bool[]> Service22_DIDTable_AddressingMode = new List<bool[]> { };
         public static bool Service22_ButtonStatus_SuppressBit = false;
         public static string[] Service22_NRCPriority = new string[15]
         {
@@ -256,6 +256,48 @@ namespace dcom.declaration
             false,
         };
         public static string[] Service22_NRCCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+
+        // Service 2e
+        public static List<string[]> Service2e_DIDTable_AllowSession = new List<string[]> { };
+        public static List<bool[]> Service2e_DIDTable_AddressingMode = new List<bool[]> { };
+        public static bool Service2e_ButtonStatus_SuppressBit = false;
+        public static string[] Service2e_NRCPriority = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service2e_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static bool[] Service2e_ButtonStatus_Condition = new bool[]
+        {
+            false,
+            false,
+        };
+        public static string[] Service2e_NRCCondition = new string[]
         {
             "",
             "",

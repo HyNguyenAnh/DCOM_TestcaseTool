@@ -15,10 +15,10 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
     {
         public static void SaveDatabase()
         {
-            // Copy template file to save requirement database
+            // Create a copy file from template file to save requirement database
             DatabaseVariables.WbOutputDatabase = Controller_ExcelHandling.OpenExcel(DatabaseVariables.TemplatePath);
-            Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
-            Controller_ExcelHandling.CloseExcel(DatabaseVariables.TemplatePath, DatabaseVariables.WbDatabase);
+            Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
+            Controller_ExcelHandling.CloseExcel(DatabaseVariables.TemplatePath, DatabaseVariables.WbOutputDatabase);
 
             // Open the requirement database(template) file
             DatabaseVariables.WbOutputDatabase = Controller_ExcelHandling.OpenExcel(DatabaseVariables.PathOutputDatabase);
@@ -38,6 +38,10 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Save data from service 14 to the database
             DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[4];
             Model_SaveDatabaseService14.SaveDatabaseService14(DatabaseVariables.WsOutputDatabase);
+
+            // Save data from service 22 to the database
+            DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[6];
+            Model_SaveDatabaseService22.SaveDatabaseService22(DatabaseVariables.WsOutputDatabase);
 
             // Save the database
             Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);

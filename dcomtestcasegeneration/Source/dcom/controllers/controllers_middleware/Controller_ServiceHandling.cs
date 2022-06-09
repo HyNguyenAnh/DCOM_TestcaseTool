@@ -46,10 +46,10 @@ namespace dcom.controllers.controllers_middleware
                 case "27": title = " Service 27h - Security Access"; break;
                 case "28": title = " Service 28h - Communication Control"; break;
                 case "2E": title = " Service 2Eh - Write Data by Identifier"; break;
-                case "2F": title = " Service 2Fh - Input Output Control By Identifier"; break;
                 case "31": title = " Service 31h - Routine Control"; break;
                 case "3E": title = " Service 3Eh - Tester Present"; break;
                 case "85": title = " Service 85h - Control DTC Setting"; break;
+                case "CanTP": title = " CanTP - Input Output Control By Identifier"; break;
                 default: title = ""; break;
             }
 
@@ -61,9 +61,13 @@ namespace dcom.controllers.controllers_middleware
             // SID  = "0" => Sheet Name = "Common_settings"
             // SID != "0" => Sheet Name = "Service_" + SID :: Example: Service_10, Service_2E
 
-            if (SID != "0")
+            if (SID != "0" && SID != "CanTP")
             {
                 return "Service_" + SID;
+            }
+            if(SID == "CanTP")
+            {
+                return "CanTP";
             }
             else
             {

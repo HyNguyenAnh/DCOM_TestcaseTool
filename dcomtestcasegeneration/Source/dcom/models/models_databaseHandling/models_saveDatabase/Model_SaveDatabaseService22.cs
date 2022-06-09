@@ -11,6 +11,11 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 {
     class Model_SaveDatabaseService22
     {
-
+        public static void SaveDatabaseService22(Worksheet Ws)
+        {
+            int[] rowIndex = DatabaseVariables.StartRowIndexDatabaseTables;
+            int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
+            string status;
+        }
     }
 }

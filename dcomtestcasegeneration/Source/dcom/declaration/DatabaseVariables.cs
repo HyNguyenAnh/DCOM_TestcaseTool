@@ -19,8 +19,6 @@ namespace dcom.declaration
         public static Worksheet WsDatabase { get; set; }
 
         public static string DatabasePath { get; set; }
-        public static string PublicCANDBC { get; set; }
-        public static string PrivateCANDBC { get; set; }
         public static string TestcaseDirectory { get; set; }
         public static string DatabaseDirectory { get; set; }
         public static string TemplatePath { get; set; }
@@ -41,7 +39,7 @@ namespace dcom.declaration
         public static List<List<string[]>> DatabaseService27 { get; set; }
         public static List<List<string[]>> DatabaseService28 { get; set; }
         public static List<List<string[]>> DatabaseService2E { get; set; }
-        public static List<List<string[]>> DatabaseService2F { get; set; }
+        public static List<List<string[]>> DatabaseCanTP { get; set; }
         public static List<List<string[]>> DatabaseService31 { get; set; }
         public static List<List<string[]>> DatabaseService3E { get; set; }
         public static List<List<string[]>> DatabaseService85 { get; set; }
@@ -56,11 +54,6 @@ namespace dcom.declaration
         public static string[] DatabaseCommonSettingPowerMode { get; set; }
         public static string[] DatabaseCommonSettingSecurityUnlock{ get; set; }
 
-        public static string[] DatabaseCommonCommandReadDTCStatusActive { get; set; }
-        public static string[] DatabaseCommonCommandReadDTCStatusPassive { get; set; }
-        public static string[] DatabaseCommonCommandReadDTCStatusNoDTC { get; set; }
-        public static string[] DatabaseCommonCommandReadInvalidCounter { get; set; }
-        public static string[] DatabaseCommonCommandReadSession { get; set; }
         public static string[] DatabaseCommonDIDCurrentSession { get; set; }
         public static string[] DatabaseCommonDIDInvalidCounter { get; set; }
         public static string[] DatabaseCommonDIDCurrentVoltage { get; set; }
@@ -86,10 +79,5 @@ namespace dcom.declaration
         };
 
         public static string[] ProjectInformation { get; set; }
-        public static string[] DataPathInformation { get; set; }
-        public static int ID { get; set; }
-
-        public static string [] AllowSession_Physical { get; set; }
-        public static string[] AllowSession_Functional { get; set; }
     }
 }

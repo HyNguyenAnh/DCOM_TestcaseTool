@@ -243,16 +243,6 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service11_ConditionEngine_Click(object sender, EventArgs e)
-        {
-            UIVariables.Service11_ButtonStatus_Condition[1] = !UIVariables.Service11_ButtonStatus_Condition[1];
-
-            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[1])[0];
-            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[1])[1];
-            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[1]);
-
-        }
-
         private void button_Service11_ConditionVehicleSpeed_Click(object sender, EventArgs e)
         {
             UIVariables.Service11_ButtonStatus_Condition[0] = !UIVariables.Service11_ButtonStatus_Condition[0];
@@ -261,6 +251,16 @@ namespace dcom.views.views_Service
             button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[0])[1];
             button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[0]);
 
+        }
+
+
+        private void button_Service11_ConditionEngine_Click(object sender, EventArgs e)
+        {
+            UIVariables.Service11_ButtonStatus_Condition[1] = !UIVariables.Service11_ButtonStatus_Condition[1];
+
+            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[1])[0];
+            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[1])[1];
+            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service11_ButtonStatus_Condition[1]);
         }
 
         private void dataGridView_CommonSetting_CellContentClick(object sender, DataGridViewCellEventArgs e)

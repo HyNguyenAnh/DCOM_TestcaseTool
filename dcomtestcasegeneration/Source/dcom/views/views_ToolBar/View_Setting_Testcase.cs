@@ -51,10 +51,10 @@ namespace dcom.views.views_ToolBar
                 button_SelectService27,
                 button_SelectService28,
                 button_SelectService2E,
-                button_SelectCANTP,
                 button_SelectService31,
                 button_SelectService3E,
                 button_SelectService85,
+                button_SelectCANTP,
             };
 
             CommonKeywordInformation = new DataGridView[]{
@@ -88,7 +88,6 @@ namespace dcom.views.views_ToolBar
 
             for (int selectedServiceIndex = 0; selectedServiceIndex < DatabaseVariables.SelectedServiceStatus.Length; selectedServiceIndex++)
             {
-                Console.WriteLine(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex]);
                 SelectedServiceInformation[selectedServiceIndex].BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex])[0];
                 SelectedServiceInformation[selectedServiceIndex].ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex])[1];
             }

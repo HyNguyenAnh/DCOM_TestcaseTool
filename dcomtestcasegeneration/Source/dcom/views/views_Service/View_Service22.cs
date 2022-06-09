@@ -7,16 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using dcom.controllers.controllers_UIcontainer;
 using dcom.controllers.controllers_middleware;
+using dcom.controllers.controllers_UIcontainer;
+using dcom.declaration;
 
 namespace dcom.views.views_Service
 {
     public partial class View_Service22 : UserControl
     {
+        public static Button ButtonStatus_SuppressBit;
+        public static DataGridView DIDTable;
+        public static Button[] ButtonStatus_Condition;
+        public static ComboBox[] ComboBox_ConditionNRCs;
+        public static DataGridViewComboBoxColumn[] DataGridViewComboBoxColumn_NRCPriority;
+        public static TextBox[] InvalidValue_Condition;
         public View_Service22()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            // Definition
+
+            DIDTable = dataGridView_DIDTable;
+
+            // Load data to DataGridView
+            List<string[]> DIDTable_AllowSession = UIVariables.Service22_DIDTable_AllowSession;
+            List<bool[]> DIDTable_AddressingMode = UIVariables.Service22_DIDTable_AddressingMode;
+            Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(DIDTable, DIDTable_AllowSession, DIDTable_AddressingMode, 1);
+            Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(DIDTable, DIDTable_AllowSession, DIDTable_AddressingMode, 5);
         }
         private void View_Service22_Load(object sender, EventArgs e)
         {
