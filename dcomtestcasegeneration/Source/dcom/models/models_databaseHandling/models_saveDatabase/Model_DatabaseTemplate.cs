@@ -43,6 +43,26 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[6];
             Model_SaveDatabaseService22.SaveDatabaseService22(DatabaseVariables.WsOutputDatabase);
 
+            // Save data from service 2E to the database
+            DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[7];
+            Model_SaveDatabaseService2E.SaveDatabaseService2E(DatabaseVariables.WsOutputDatabase);
+
+            // Save data from service 27 to the database
+            DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[8];
+            Model_SaveDatabaseService27.SaveDatabaseService27(DatabaseVariables.WsOutputDatabase);
+
+            // Save data from service 28 to the database
+            DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[9];
+            Model_SaveDatabaseService28.SaveDatabaseService28(DatabaseVariables.WsOutputDatabase);
+
+            // Save data from service 3E to the database
+            DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[10];
+            Model_SaveDatabaseService3E.SaveDatabaseService3E(DatabaseVariables.WsOutputDatabase);
+
+            // Save data from service 85 to the database
+            DatabaseVariables.WsOutputDatabase = DatabaseVariables.WbOutputDatabase.Sheets[11];
+            Model_SaveDatabaseService85.SaveDatabaseService85(DatabaseVariables.WsOutputDatabase);
+
             // Save the database
             Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
 

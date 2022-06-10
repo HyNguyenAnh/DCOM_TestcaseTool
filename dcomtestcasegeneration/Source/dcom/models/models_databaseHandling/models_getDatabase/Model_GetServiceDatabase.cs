@@ -68,7 +68,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
             int startColumnIndexDatabaseTable_except;
-            if(SID == "22" || SID == "2e")
+            if(SID == "22" || SID == "2E")
             {
                 startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[7] + 1;
             }
@@ -85,7 +85,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 for (int index = 0; ws.Cells[startRowIndexDatabaseTable[7] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[7] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable_except + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -99,7 +99,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
             int startColumnIndexDatabaseTable_except;
-            if (SID == "22" || SID == "2e" || SID == "27")
+            if (SID == "22" || SID == "2E" || SID == "27")
             {
                 startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[8] + 1;
             }
@@ -116,7 +116,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 for (int index = 0; ws.Cells[startRowIndexDatabaseTable[8] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[8] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable_except + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -131,7 +131,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
             int startColumnIndexDatabaseTable_except;
-            if (SID == "22" || SID == "2e" || SID == "27")
+            if (SID == "22" || SID == "2E" || SID == "27")
             {
                 startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[9] + 1;
             }
@@ -148,7 +148,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             {
                 for (int index = 0; ws.Cells[startRowIndexDatabaseTable[9] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[9] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable_except + index].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();

@@ -25,56 +25,56 @@ namespace dcom.views.views_Service
         public View_Service14()
         {
             InitializeComponent();
-            LoadData();
         }
-        public void LoadData()
+
+        private void View_Service14_Load(object sender, EventArgs e)
         {
             // Definition
 
             ButtonStatus_AddressingMode = new Button[]{
-                button_PhysicalDefault,
-                button_PhysicalProgramming,
-                button_PhysicalExtended,
-                button_FunctionalDefault,
-                button_FunctionalProgramming,
-                button_FunctionalExtended,
+            button_PhysicalDefault,
+            button_PhysicalProgramming,
+            button_PhysicalExtended,
+            button_FunctionalDefault,
+            button_FunctionalProgramming,
+            button_FunctionalExtended,
 
-            };
+        };
 
             ButtonStatus_Condition = new Button[]
             {
-                button_ConditionVehicleSpeed,
-                button_ConditionEngine,
+            button_ConditionVehicleSpeed,
+            button_ConditionEngine,
             };
 
             ComboBox_ConditionNRCs = new ComboBox[]
             {
-                comboBox_ConditionVehicle_NRC,
-                comboBox_ConditionEngine_NRC,
+            comboBox_ConditionVehicle_NRC,
+            comboBox_ConditionEngine_NRC,
             };
 
             DataGridViewComboBoxColumn_NRCPriority = new DataGridViewComboBoxColumn[]
             {
-                Column1,
-                Column2,
-                Column3,
-                Column4,
-                Column5,
-                Column6,
-                Column7,
-                Column8,
-                Column9,
-                Column10,
-                Column11,
-                Column12,
-                Column13,
-                Column14,
-                Column15,
+            Column1,
+            Column2,
+            Column3,
+            Column4,
+            Column5,
+            Column6,
+            Column7,
+            Column8,
+            Column9,
+            Column10,
+            Column11,
+            Column12,
+            Column13,
+            Column14,
+            Column15,
             };
 
             InvalidValue_Condition = new TextBox[]
             {
-                VehicleSpeedValue_Text,
+            VehicleSpeedValue_Text,
             };
 
             // Load elements to comboBox
@@ -117,6 +117,7 @@ namespace dcom.views.views_Service
             VehicleSpeedValue_Text.Enabled = UIVariables.Service14_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
+
         private void button_Service14_PhysicalDefault_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[0] = !UIVariables.Service14_ButtonStatus_AddressingMode[0];

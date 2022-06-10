@@ -63,11 +63,11 @@ namespace dcom.controllers.controllers_middleware
 
             if (SID != "0" && SID != "CanTP")
             {
-                return "Service_" + SID;
+                return "Service_" + SID.ToUpper();
             }
             if(SID == "CanTP")
             {
-                return "CanTP";
+                return SID;
             }
             else
             {
@@ -207,6 +207,20 @@ namespace dcom.controllers.controllers_middleware
             // "0" -> false
             // "1" -> true
             if (value == "1")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool ConvertFromStringLevelToBool(string value)
+        {
+            // "0" -> false
+            // "1" -> true
+            if (value == "1" || value == "2" || value == "3")
             {
                 return true;
             }

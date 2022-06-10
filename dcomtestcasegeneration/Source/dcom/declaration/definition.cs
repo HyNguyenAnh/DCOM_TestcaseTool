@@ -349,15 +349,9 @@ namespace dcom.declaration
             // Condition
             for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
             {
-                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[index][2]);
-            }
-            for (int index = 0; index < UIVariables.Service11_NRCCondition.Length; index++)
-            {
-                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(3)[index][3];
-            }
-            for (int index = 0; index < UIVariables.Service11_InvalidValueCondition.Length; index++)
-            {
                 UIVariables.Service11_InvalidValueCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(3)[index][1];
+                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[index][2]);
+                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(3)[index][3];
             }
 
             // Optional
@@ -395,23 +389,25 @@ namespace dcom.declaration
             // Condition
             for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
             {
+                UIVariables.Service14_InvalidValueCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][1];
                 UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(3)[index][2]);
-            }
-            for (int index = 0; index < UIVariables.Service14_NRCCondition.Length; index++)
-            {
                 UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][3];
             }
-            for (int index = 0; index < UIVariables.Service14_InvalidValueCondition.Length; index++)
-            {
-                try
-                {
-                    UIVariables.Service14_InvalidValueCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][1];
-                }
-                catch
-                {
-                    UIVariables.Service14_InvalidValueCondition[index] = "";
-                }
-            }
+            //for (int index = 0; index < UIVariables.Service14_NRCCondition.Length; index++)
+            //{
+                
+            //}
+            //for (int index = 0; index < UIVariables.Service14_InvalidValueCondition.Length; index++)
+            //{
+            //    try
+            //    {
+            //        UIVariables.Service14_InvalidValueCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][1];
+            //    }
+            //    catch
+            //    {
+            //        UIVariables.Service14_InvalidValueCondition[index] = "";
+            //    }
+            //}
 
             // Optional
             UIVariables.Service14_ButtonStatus_SuppressBit = false;
@@ -423,22 +419,21 @@ namespace dcom.declaration
 
             // Service 22
 
-            // Allow Session
+            // Specification
             for(int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(0).Count; index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22.ElementAt(0)[index].Length; index_++)
-                {
-                    UIVariables.Service22_DIDTable_AllowSession.ElementAt(index)[index_] = DatabaseVariables.DatabaseService22.ElementAt(0)[index][index_];
-                }
+                UIVariables.Service22_DIDTable_Specification.Add(DatabaseVariables.DatabaseService22.ElementAt(0).ElementAt(index));
             }
 
             // Addressing Mode
             for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(1).Count; index++)
             {
+                List<bool> dataRow = new List<bool>();
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22.ElementAt(1)[index].Length; index_++)
                 {
-                    UIVariables.Service22_DIDTable_AddressingMode.ElementAt(index)[index_] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(1)[index][index_]);
+                    dataRow.Add(Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(1)[index][index_]));
                 }
+                UIVariables.Service22_DIDTable_AddressingMode.Add(dataRow.ToArray());
             }
 
             // NRC
@@ -448,22 +443,91 @@ namespace dcom.declaration
             }
 
             // Condition
-            for (int index = 0; index < UIVariables.Service22_InvalidValueCondition.Length; index++)
-            {
-                UIVariables.Service22_InvalidValueCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][1];
-            }
             for (int index = 0; index < UIVariables.Service22_ButtonStatus_Condition.Length; index++)
             {
+                UIVariables.Service22_InvalidValueCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][1];
                 UIVariables.Service22_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(3)[index][2]);
-            }
-            for (int index = 0; index < UIVariables.Service22_NRCCondition.Length; index++)
-            {
                 UIVariables.Service22_NRCCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][3];
             }
-            
+
             // Optional
             UIVariables.Service22_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(4)[0][1]);
 
+
+            // Service 2E
+
+            // Specification
+            for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(0).Count; index++)
+            {
+                UIVariables.Service2E_DIDTable_Specification.Add(DatabaseVariables.DatabaseService22.ElementAt(0).ElementAt(index));
+            }
+
+            // Addressing Mode
+            for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(1).Count; index++)
+            {
+                List<bool> dataRow = new List<bool>();
+                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService2E.ElementAt(1)[index].Length; index_++)
+                {
+                    dataRow.Add(Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(1)[index][index_]));
+                }
+                UIVariables.Service2E_DIDTable_AddressingMode.Add(dataRow.ToArray());
+            }
+
+            // NRC
+            for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(2).Count; index++)
+            {
+                UIVariables.Service2E_NRCPriority[index] = DatabaseVariables.DatabaseService2E.ElementAt(2)[index][1];
+            }
+
+            // Condition
+            for (int index = 0; index < UIVariables.Service2E_ButtonStatus_Condition.Length; index++)
+            {
+                UIVariables.Service2E_InvalidValueCondition[index] = DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1];
+                UIVariables.Service2E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2]);
+                UIVariables.Service2E_NRCCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][3];
+            }
+            // Optional
+            UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStringLevelToBool(DatabaseVariables.DatabaseService22.ElementAt(4)[1][1]);
+
+
+            // Service 27
+
+            // Specification
+            for (int index = 0; index < DatabaseVariables.DatabaseService27.ElementAt(0).Count; index++)
+            {
+                DatabaseVariables.DatabaseService27.ElementAt(0)[index][1] = "1";
+            }
+
+            // Allow Session || Addressing Mode
+            for (int index = 0; index < UIVariables.Service27_ButtonStatus_AddressingMode.Length; index++)
+            {
+                if (index < 3)
+                {
+                    UIVariables.Service27_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(1)[0][index + 1]);
+                }
+                else
+                {
+                    UIVariables.Service27_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(1)[1][index - 2]);
+                }
+            }
+
+            // NRC
+            for (int index = 0; index < DatabaseVariables.DatabaseService27.ElementAt(2).Count; index++)
+            {
+                UIVariables.Service27_NRCPrioritySeed[index] = DatabaseVariables.DatabaseService27.ElementAt(2)[index][1];
+                UIVariables.Service27_NRCPriorityKey[index] = DatabaseVariables.DatabaseService27.ElementAt(2)[index][2];
+            }
+
+            // Condition
+            for (int index = 0; index < UIVariables.Service27_ButtonStatus_Condition.Length; index++)
+            {
+                UIVariables.Service27_InvalidValueCondition[index] = DatabaseVariables.DatabaseService27.ElementAt(3)[index][1];
+                UIVariables.Service27_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(3)[index][2]);
+                UIVariables.Service27_NRCCondition[index] = DatabaseVariables.DatabaseService27.ElementAt(3)[index][3];
+            }
+
+            // Optional
+            UIVariables.Service27_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(4)[0][1]);
         }
     }
 }

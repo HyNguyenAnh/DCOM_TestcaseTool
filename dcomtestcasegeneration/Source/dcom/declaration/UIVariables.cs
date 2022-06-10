@@ -26,8 +26,12 @@ namespace dcom.declaration
             "7F",
             "83",
         };
-
-        public static List<ValueType[]> data { get; set; }
+        public static string[] SecurityUnlockLevel = new string[]
+        {
+            "1",
+            "2",
+            "3",
+        };
         // Setting
         public static string[] ProjectInformation = new string[] { };
         public static string DBSource = "";
@@ -151,12 +155,14 @@ namespace dcom.declaration
             "",
             "",
         };
-        public static string[] Service11_NRCCondition = new string[2]
+        public static string[] Service11_NRCCondition = new string[]
         {
             "",
             "",
+            "",
+            "",
         };
-        public static string[] Service11_InvalidValueCondition = new string[4]
+        public static string[] Service11_InvalidValueCondition = new string[]
         {
             "",
             "",
@@ -205,12 +211,14 @@ namespace dcom.declaration
             "",
             "",
         };
-        public static string[] Service14_NRCCondition = new string[2]
+        public static string[] Service14_NRCCondition = new string[]
         {
             "",
             "",
+            "",
+            "",
         };
-        public static string[] Service14_InvalidValueCondition = new string[4]
+        public static string[] Service14_InvalidValueCondition = new string[]
         {
             "",
             "",
@@ -222,7 +230,7 @@ namespace dcom.declaration
 
 
         // Service 22
-        public static List<string[]> Service22_DIDTable_AllowSession = new List<string[]> { };
+        public static List<string[]> Service22_DIDTable_Specification = new List<string[]> { };
         public static List<bool[]> Service22_DIDTable_AddressingMode = new List<bool[]> { };
         public static bool Service22_ButtonStatus_SuppressBit = false;
         public static string[] Service22_NRCPriority = new string[15]
@@ -243,7 +251,7 @@ namespace dcom.declaration
             "",
             "",
         };       
-        public static string[] Service22_InvalidValueCondition = new string[4]
+        public static string[] Service22_InvalidValueCondition = new string[]
         {
             "",
             "",
@@ -263,11 +271,12 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 2e
-        public static List<string[]> Service2e_DIDTable_AllowSession = new List<string[]> { };
-        public static List<bool[]> Service2e_DIDTable_AddressingMode = new List<bool[]> { };
-        public static bool Service2e_ButtonStatus_SuppressBit = false;
-        public static string[] Service2e_NRCPriority = new string[15]
+        // Service 2E
+        public static List<string[]> Service2E_DIDTable_Specification = new List<string[]> { };
+        public static List<bool[]> Service2E_DIDTable_AddressingMode = new List<bool[]> { };
+        public static bool Service2E_ButtonStatus_SecurityUnlock = false;
+        public static string Service2E_SecurityUnlockLv = "Level";
+        public static string[] Service2E_NRCPriority = new string[15]
         {
             "",
             "",
@@ -285,19 +294,88 @@ namespace dcom.declaration
             "",
             "",
         };
-        public static string[] Service2e_InvalidValueCondition = new string[4]
+        public static string[] Service2E_InvalidValueCondition = new string[]
         {
             "",
             "",
             "",
             "",
         };
-        public static bool[] Service2e_ButtonStatus_Condition = new bool[]
+        public static bool[] Service2E_ButtonStatus_Condition = new bool[]
         {
             false,
             false,
         };
-        public static string[] Service2e_NRCCondition = new string[]
+        public static string[] Service2E_NRCCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+
+        // Service 27
+        public static bool Service27_ButtonStatus_SuppressBit = false;
+        public static bool[] Service27_ButtonStatus_AddressingMode = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        };
+        public static bool[] Service27_ButtonStatus_Condition = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+        };
+        public static string[] Service27_NRCPrioritySeed = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service27_NRCPriorityKey = new string[15]
+        {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service27_NRCCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service27_InvalidValueCondition = new string[]
         {
             "",
             "",

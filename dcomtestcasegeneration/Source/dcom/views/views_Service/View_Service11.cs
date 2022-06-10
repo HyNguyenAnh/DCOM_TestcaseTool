@@ -325,22 +325,6 @@ namespace dcom.views.views_Service
                 Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service11_NRCPriority);
             }
         }
-
-        private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
-        {
-            UIVariables.Service11_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
-            if (UIVariables.Service11_ButtonStatus_Condition[1] == true)
-            {
-                comboBox_ConditionEngine_NRC.Enabled = true;
-                comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
-            }
-            else
-            {
-                comboBox_ConditionEngine_NRC.Enabled = false;
-                comboBox_ConditionEngine_NRC.Text = "NRC";
-            }
-        }
-
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service11_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
@@ -357,6 +341,21 @@ namespace dcom.views.views_Service
                 vehicleSpeedValue_Text.Enabled = false;
                 comboBox_ConditionVehicle_NRC.Text = "NRC";
                 vehicleSpeedValue_Text.Text = "...km/h";
+            }
+        }
+
+        private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service11_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+            if (UIVariables.Service11_ButtonStatus_Condition[1] == true)
+            {
+                comboBox_ConditionEngine_NRC.Enabled = true;
+                comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
+            }
+            else
+            {
+                comboBox_ConditionEngine_NRC.Enabled = false;
+                comboBox_ConditionEngine_NRC.Text = "NRC";
             }
         }
 

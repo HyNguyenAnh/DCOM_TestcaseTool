@@ -360,32 +360,24 @@ namespace dcom.controllers.controllers_middleware
                 }
             }
         }
-        public static void PutDatabaseToDataGridView_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData, int col)
+        public static void PutDatabaseToDataGridView_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData)
         {
             // Push data to Grid View
-            Controller_UIHandling.CleanDataGridView(dataGridView);
-            switch (col)
+            for (int rowIndex = 0; rowIndex < stringData.Count(); rowIndex++)
             {
-                case 1:
-                    for (int rowIndex = 0; rowIndex < stringData.Count(); rowIndex++)
+                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex;
+                for (int cellIndex = 1; cellIndex < stringData.ElementAt(0).Length + boolData.ElementAt(0).Length + 1; cellIndex++)
+                {
+                    if (cellIndex < stringData.ElementAt(0).Length + 1)
                     {
-                        for (int cellIndex = col; cellIndex < stringData.ElementAt(rowIndex).Count() + col; cellIndex++)
-                        {
-                            dataGridView.Rows[rowIndex].Cells[cellIndex].Value = stringData.ElementAt(rowIndex)[cellIndex - col];
-                        }
+                        dataGridView.Rows[rowIndex].Cells[cellIndex].Value = stringData.ElementAt(rowIndex)[cellIndex - 1];
                     }
-                    break;
-                case 5:
-                    for (int rowIndex = 0; rowIndex < boolData.Count(); rowIndex++)
+                    else
                     {
-                        for (int cellIndex = col; cellIndex < boolData.ElementAt(rowIndex).Count() + col; cellIndex++)
-                        {
-                            dataGridView.Rows[rowIndex].Cells[cellIndex].Value = boolData.ElementAt(rowIndex)[cellIndex - col];
-                        }
+                        dataGridView.Rows[rowIndex].Cells[cellIndex].Value = boolData.ElementAt(rowIndex)[cellIndex - (stringData.ElementAt(0).Length + 1)];
                     }
-                    break;
+                }
             }
-            
         }
 
         public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data)
@@ -405,35 +397,28 @@ namespace dcom.controllers.controllers_middleware
             }
         }
 
-        public static void SaveDataGridViewToDatabase_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData, int col)
+        public static void SaveDataGridViewToDatabase_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData)
         {
             if (SystemVariables.checkTheFirstLoad == false)
             {
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
-                switch (col)
+
+                for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value.ToString() != ""; rowIndex++)
                 {
-                    case 1:
-                        for (int rowIndex = 0; rowIndex < stringData.Count; rowIndex++)
+                    for (int cellIndex = 1; cellIndex < stringData.ElementAt(rowIndex).Length + boolData.ElementAt(rowIndex).Length + 1; cellIndex++)
+                    {
+                        if (cellIndex < stringData.ElementAt(rowIndex).Length + 1)
                         {
-                            for (int cellIndex = col; cellIndex < stringData.ElementAt(rowIndex).Length + col; cellIndex++)
-                            {
-                                stringData.ElementAt(rowIndex)[cellIndex - col] = dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString();
-                            }
+                            stringData.ElementAt(rowIndex)[cellIndex - 1] = dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString();
                         }
-                        break;
-                    case 5:
-                        for (int rowIndex = 0; rowIndex < boolData.Count; rowIndex++)
+                        else
                         {
-                            for (int cellIndex = col; cellIndex < boolData.ElementAt(rowIndex).Length + col; cellIndex++)
-                            {
-                                boolData.ElementAt(rowIndex)[cellIndex - col] = Controller_ServiceHandling.ConvertFromStatusToBool(dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString());
-                            }
+                            boolData.ElementAt(rowIndex)[cellIndex - (stringData.ElementAt(rowIndex).Length + 1)] = Convert.ToBoolean(dataGridView.Rows[rowIndex].Cells[cellIndex].Value);
                         }
-                        break;
-                }
-                
+                    }
+                }                
             }
         }
 
