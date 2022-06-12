@@ -34,38 +34,38 @@ namespace dcom.views.views_Service
 
             ButtonStatus_Condition = new Button[]
             {
-            button_ConditionVehicleSpeed,
-            button_ConditionEngine,
+                button_ConditionVehicleSpeed,
+                button_ConditionEngine,
             };
 
             ComboBox_ConditionNRCs = new ComboBox[]
             {
-            comboBox_ConditionVehicle_NRC,
-            comboBox_ConditionEngine_NRC,
+                comboBox_ConditionVehicle_NRC,
+                comboBox_ConditionEngine_NRC,
             };
 
             DataGridViewComboBoxColumn_NRCPriority = new DataGridViewComboBoxColumn[]
             {
-            Column1,
-            Column2,
-            Column3,
-            Column4,
-            Column5,
-            Column6,
-            Column7,
-            Column8,
-            Column9,
-            Column10,
-            Column11,
-            Column12,
-            Column13,
-            Column14,
-            Column15,
+                Column1,
+                Column2,
+                Column3,
+                Column4,
+                Column5,
+                Column6,
+                Column7,
+                Column8,
+                Column9,
+                Column10,
+                Column11,
+                Column12,
+                Column13,
+                Column14,
+                Column15,
             };
 
             InvalidValue_Condition = new TextBox[]
             {
-            vehicleSpeedValue_Text,
+                vehicleSpeedValue_Text,
             };
 
             ButtonStatus_SecurityUnlock = button_SecurityUnlock;

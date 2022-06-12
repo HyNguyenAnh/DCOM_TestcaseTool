@@ -35,7 +35,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService28.ElementAt(1)[index].Count() - 1; index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_AddressingMode[n]);
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service28_ButtonStatus_AddressingMode[n]);
                     Ws.Cells[rowIndex[6] + index, columnIndex[6] + index_ + 1] = status;
                     n++;
                 }

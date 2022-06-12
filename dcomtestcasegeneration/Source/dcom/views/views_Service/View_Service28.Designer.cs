@@ -57,7 +57,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel30 = new System.Windows.Forms.TableLayoutPanel();
-            this.VehicleSpeedValue_Text = new System.Windows.Forms.TextBox();
+            this.vehicleSpeedValue_Text = new System.Windows.Forms.TextBox();
             this.comboBox_ConditionVehicle_NRC = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button_ConditionVehicleSpeed = new System.Windows.Forms.Button();
@@ -411,7 +411,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel30.ColumnCount = 2;
             this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel30.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel30.Controls.Add(this.VehicleSpeedValue_Text, 0, 0);
+            this.tableLayoutPanel30.Controls.Add(this.vehicleSpeedValue_Text, 0, 0);
             this.tableLayoutPanel30.Controls.Add(this.comboBox_ConditionVehicle_NRC, 1, 0);
             this.tableLayoutPanel30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel30.Location = new System.Drawing.Point(0, 138);
@@ -422,17 +422,17 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel30.Size = new System.Drawing.Size(282, 46);
             this.tableLayoutPanel30.TabIndex = 5;
             // 
-            // VehicleSpeedValue_Text
+            // vehicleSpeedValue_Text
             // 
-            this.VehicleSpeedValue_Text.Enabled = false;
-            this.VehicleSpeedValue_Text.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.VehicleSpeedValue_Text.Location = new System.Drawing.Point(4, 4);
-            this.VehicleSpeedValue_Text.Margin = new System.Windows.Forms.Padding(4);
-            this.VehicleSpeedValue_Text.Name = "VehicleSpeedValue_Text";
-            this.VehicleSpeedValue_Text.Size = new System.Drawing.Size(117, 31);
-            this.VehicleSpeedValue_Text.TabIndex = 0;
-            this.VehicleSpeedValue_Text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.VehicleSpeedValue_Text.TextChanged += new System.EventHandler(this.VehicleSpeedValue_Text_TextChanged);
+            this.vehicleSpeedValue_Text.Enabled = false;
+            this.vehicleSpeedValue_Text.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.vehicleSpeedValue_Text.Location = new System.Drawing.Point(4, 4);
+            this.vehicleSpeedValue_Text.Margin = new System.Windows.Forms.Padding(4);
+            this.vehicleSpeedValue_Text.Name = "vehicleSpeedValue_Text";
+            this.vehicleSpeedValue_Text.Size = new System.Drawing.Size(117, 31);
+            this.vehicleSpeedValue_Text.TabIndex = 0;
+            this.vehicleSpeedValue_Text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.vehicleSpeedValue_Text.TextChanged += new System.EventHandler(this.VehicleSpeedValue_Text_TextChanged);
             // 
             // comboBox_ConditionVehicle_NRC
             // 
@@ -1967,7 +1967,7 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox comboBox_ConditionEngine_NRC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel30;
-        private System.Windows.Forms.TextBox VehicleSpeedValue_Text;
+        private System.Windows.Forms.TextBox vehicleSpeedValue_Text;
         private System.Windows.Forms.ComboBox comboBox_ConditionVehicle_NRC;
     }
 }

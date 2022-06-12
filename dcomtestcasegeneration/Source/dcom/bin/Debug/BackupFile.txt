@@ -1,2 +1,2 @@
-D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Database\DB_SAIC_AS28_R1.0_DCOM.xlsx
-6/11/2022 10:43:20 PM
+D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Database\Database_template.xlsx
+6/12/2022 12:49:26 PM

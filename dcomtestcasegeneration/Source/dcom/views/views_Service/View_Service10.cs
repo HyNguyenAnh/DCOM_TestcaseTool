@@ -84,7 +84,7 @@ namespace dcom.views.views_Service
 
             InvalidValue_Condition = new TextBox[]
             {
-                VehicleSpeedValue_Text,
+                vehicleSpeedValue_Text,
             };
 
 
@@ -142,11 +142,11 @@ namespace dcom.views.views_Service
             }
 
             // Load Invalid Value Condition
-            VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
+            vehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service10_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service10_ButtonStatus_Condition[0];
-            VehicleSpeedValue_Text.Enabled = UIVariables.Service10_ButtonStatus_Condition[0];
+            vehicleSpeedValue_Text.Enabled = UIVariables.Service10_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
 
@@ -385,16 +385,16 @@ namespace dcom.views.views_Service
             if (UIVariables.Service10_ButtonStatus_Condition[0] == true)
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
-                VehicleSpeedValue_Text.Enabled = true;
+                vehicleSpeedValue_Text.Enabled = true;
                 comboBox_ConditionVehicle_NRC.Text = UIVariables.Service10_NRCCondition[0];
-                VehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
+                vehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
             }
             else
             {
                 comboBox_ConditionVehicle_NRC.Enabled = false;
-                VehicleSpeedValue_Text.Enabled = false;
+                vehicleSpeedValue_Text.Enabled = false;
                 comboBox_ConditionVehicle_NRC.Text = "NRC";
-                VehicleSpeedValue_Text.Text = "...km/h";
+                vehicleSpeedValue_Text.Text = "...km/h";
             }
         }
 
@@ -418,7 +418,7 @@ namespace dcom.views.views_Service
         {
             if (UIVariables.Service10_ButtonStatus_Condition[0] == true)
             {
-                UIVariables.Service10_InvalidValueCondition[0] = VehicleSpeedValue_Text.Text;
+                UIVariables.Service10_InvalidValueCondition[0] = vehicleSpeedValue_Text.Text;
             }
         }
     }
