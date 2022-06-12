@@ -49,14 +49,14 @@ namespace dcom.views.views_Service
 
             ButtonStatus_SuppressBit = button_SupressBit;
 
-            ButtonStatus_AddressingMode = new Button[]{
+            ButtonStatus_AddressingMode = new Button[]
+            {
                 button_PhysicalDefault,
                 button_PhysicalProgramming,
                 button_PhysicalExtended,
                 button_FunctionalDefault,
                 button_FunctionalProgramming,
                 button_FunctionalExtended,
-
             };
 
             ButtonStatus_Condition = new Button[]
@@ -92,7 +92,7 @@ namespace dcom.views.views_Service
 
             InvalidValue_Condition = new TextBox[]
             {
-                VehicleSpeedValue_Text,
+                vehicleSpeedValue_Text,
             };
 
 
@@ -151,11 +151,11 @@ namespace dcom.views.views_Service
             }
 
             // Load Invalid Value Condition
-            VehicleSpeedValue_Text.Text = UIVariables.Service28_InvalidValueCondition[0];
+            vehicleSpeedValue_Text.Text = UIVariables.Service28_InvalidValueCondition[0];
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service28_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service28_ButtonStatus_Condition[0];
-            VehicleSpeedValue_Text.Enabled = UIVariables.Service28_ButtonStatus_Condition[0];
+            vehicleSpeedValue_Text.Enabled = UIVariables.Service28_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
 
@@ -412,16 +412,16 @@ namespace dcom.views.views_Service
             if (UIVariables.Service28_ButtonStatus_Condition[0] == true)
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
-                VehicleSpeedValue_Text.Enabled = true;
+                vehicleSpeedValue_Text.Enabled = true;
                 comboBox_ConditionVehicle_NRC.Text = UIVariables.Service28_NRCCondition[0];
-                VehicleSpeedValue_Text.Text = UIVariables.Service28_InvalidValueCondition[0];
+                vehicleSpeedValue_Text.Text = UIVariables.Service28_InvalidValueCondition[0];
             }
             else
             {
                 comboBox_ConditionVehicle_NRC.Enabled = false;
-                VehicleSpeedValue_Text.Enabled = false;
+                vehicleSpeedValue_Text.Enabled = false;
                 comboBox_ConditionVehicle_NRC.Text = "NRC";
-                VehicleSpeedValue_Text.Text = "...km/h";
+                vehicleSpeedValue_Text.Text = "...km/h";
             }
         }
 
@@ -445,7 +445,7 @@ namespace dcom.views.views_Service
         {
             if (UIVariables.Service28_ButtonStatus_Condition[0] == true)
             {
-                UIVariables.Service28_InvalidValueCondition[0] = VehicleSpeedValue_Text.Text;
+                UIVariables.Service28_InvalidValueCondition[0] = vehicleSpeedValue_Text.Text;
             }
         }
     }

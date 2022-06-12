@@ -75,7 +75,7 @@ namespace dcom.views.views_Service
             this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_ConditionVehicle_NRC = new System.Windows.Forms.ComboBox();
-            this.VehicleSpeedValue_Text = new System.Windows.Forms.TextBox();
+            this.vehicleSpeedValue_Text = new System.Windows.Forms.TextBox();
             this.button_ConditionVehicleSpeed = new System.Windows.Forms.Button();
             this.button_ConditionEngine = new System.Windows.Forms.Button();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
@@ -206,7 +206,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service11NRC.Location = new System.Drawing.Point(759, 388);
             this.groupBox_Service11NRC.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.groupBox_Service11NRC.Name = "groupBox_Service11NRC";
-            this.groupBox_Service11NRC.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Service11NRC.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Service11NRC.Size = new System.Drawing.Size(721, 353);
             this.groupBox_Service11NRC.TabIndex = 3;
             this.groupBox_Service11NRC.TabStop = false;
@@ -520,7 +520,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service11Condition.Location = new System.Drawing.Point(13, 388);
             this.groupBox_Service11Condition.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.groupBox_Service11Condition.Name = "groupBox_Service11Condition";
-            this.groupBox_Service11Condition.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Service11Condition.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Service11Condition.Size = new System.Drawing.Size(720, 353);
             this.groupBox_Service11Condition.TabIndex = 2;
             this.groupBox_Service11Condition.TabStop = false;
@@ -536,7 +536,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel14.Controls.Add(this.view_Service851, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(4, 20);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 3;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -604,14 +604,14 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel24.Controls.Add(this.comboBox_ConditionVehicle_NRC, 1, 0);
-            this.tableLayoutPanel24.Controls.Add(this.VehicleSpeedValue_Text, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.vehicleSpeedValue_Text, 0, 0);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 138);
             this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 1;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel24.Size = new System.Drawing.Size(253, 46);
             this.tableLayoutPanel24.TabIndex = 3;
             // 
@@ -622,25 +622,25 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionVehicle_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionVehicle_NRC.FormattingEnabled = true;
             this.comboBox_ConditionVehicle_NRC.Location = new System.Drawing.Point(147, 4);
-            this.comboBox_ConditionVehicle_NRC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_ConditionVehicle_NRC.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_ConditionVehicle_NRC.Name = "comboBox_ConditionVehicle_NRC";
             this.comboBox_ConditionVehicle_NRC.Size = new System.Drawing.Size(85, 31);
             this.comboBox_ConditionVehicle_NRC.TabIndex = 3;
             this.comboBox_ConditionVehicle_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_TextChanged);
             // 
-            // VehicleSpeedValue_Text
+            // vehicleSpeedValue_Text
             // 
-            this.VehicleSpeedValue_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.vehicleSpeedValue_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VehicleSpeedValue_Text.Enabled = false;
-            this.VehicleSpeedValue_Text.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.VehicleSpeedValue_Text.Location = new System.Drawing.Point(4, 4);
-            this.VehicleSpeedValue_Text.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.VehicleSpeedValue_Text.Name = "VehicleSpeedValue_Text";
-            this.VehicleSpeedValue_Text.Size = new System.Drawing.Size(118, 31);
-            this.VehicleSpeedValue_Text.TabIndex = 2;
-            this.VehicleSpeedValue_Text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.VehicleSpeedValue_Text.TextChanged += new System.EventHandler(this.VehicleSpeedValue_Text_TextChanged);
+            this.vehicleSpeedValue_Text.Enabled = false;
+            this.vehicleSpeedValue_Text.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.vehicleSpeedValue_Text.Location = new System.Drawing.Point(4, 4);
+            this.vehicleSpeedValue_Text.Margin = new System.Windows.Forms.Padding(4);
+            this.vehicleSpeedValue_Text.Name = "vehicleSpeedValue_Text";
+            this.vehicleSpeedValue_Text.Size = new System.Drawing.Size(118, 31);
+            this.vehicleSpeedValue_Text.TabIndex = 2;
+            this.vehicleSpeedValue_Text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.vehicleSpeedValue_Text.TextChanged += new System.EventHandler(this.VehicleSpeedValue_Text_TextChanged);
             // 
             // button_ConditionVehicleSpeed
             // 
@@ -704,7 +704,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionEngine_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionEngine_NRC.FormattingEnabled = true;
             this.comboBox_ConditionEngine_NRC.Location = new System.Drawing.Point(83, 142);
-            this.comboBox_ConditionEngine_NRC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_ConditionEngine_NRC.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_ConditionEngine_NRC.Name = "comboBox_ConditionEngine_NRC";
             this.comboBox_ConditionEngine_NRC.Size = new System.Drawing.Size(85, 31);
             this.comboBox_ConditionEngine_NRC.TabIndex = 1;
@@ -728,7 +728,7 @@ namespace dcom.views.views_Service
             // view_Service851
             // 
             this.view_Service851.Location = new System.Drawing.Point(5, 5);
-            this.view_Service851.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.view_Service851.Margin = new System.Windows.Forms.Padding(5);
             this.view_Service851.Name = "view_Service851";
             this.view_Service851.Size = new System.Drawing.Size(77, 23);
             this.view_Service851.TabIndex = 1;
@@ -742,7 +742,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service11AddressingMode.Location = new System.Drawing.Point(759, 12);
             this.groupBox_Service11AddressingMode.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.groupBox_Service11AddressingMode.Name = "groupBox_Service11AddressingMode";
-            this.groupBox_Service11AddressingMode.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Service11AddressingMode.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Service11AddressingMode.Size = new System.Drawing.Size(721, 352);
             this.groupBox_Service11AddressingMode.TabIndex = 1;
             this.groupBox_Service11AddressingMode.TabStop = false;
@@ -757,7 +757,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel8, 1, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(4, 20);
-            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 3;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1037,7 +1037,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service11ResetMode.Location = new System.Drawing.Point(13, 12);
             this.groupBox_Service11ResetMode.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.groupBox_Service11ResetMode.Name = "groupBox_Service11ResetMode";
-            this.groupBox_Service11ResetMode.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_Service11ResetMode.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_Service11ResetMode.Size = new System.Drawing.Size(720, 352);
             this.groupBox_Service11ResetMode.TabIndex = 0;
             this.groupBox_Service11ResetMode.TabStop = false;
@@ -1052,7 +1052,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 20);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 3;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1206,7 +1206,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(145, 184);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
@@ -1498,7 +1498,7 @@ namespace dcom.views.views_Service
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "View_Service10";
             this.Size = new System.Drawing.Size(1545, 777);
             this.Load += new System.EventHandler(this.View_Service10_Load);
@@ -1633,6 +1633,6 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private System.Windows.Forms.ComboBox comboBox_ConditionVehicle_NRC;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox VehicleSpeedValue_Text;
+        private System.Windows.Forms.TextBox vehicleSpeedValue_Text;
     }
 }

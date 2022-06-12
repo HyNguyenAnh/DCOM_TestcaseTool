@@ -33,71 +33,71 @@ namespace dcom.views.views_Service
         {
             // Definition
 
-            ButtonStatus_AddressingMode = new Button[]{
-            button_PhysicalDefault,
-            button_PhysicalProgramming,
-            button_PhysicalExtended,
-            button_FunctionalDefault,
-            button_FunctionalProgramming,
-            button_FunctionalExtended,
-
+            ButtonStatus_AddressingMode = new Button[]
+            {
+                button_PhysicalDefault,
+                button_PhysicalProgramming,
+                button_PhysicalExtended,
+                button_FunctionalDefault,
+                button_FunctionalProgramming,
+                button_FunctionalExtended,
             };
 
             ButtonStatus_SuppressBit = button_SupressBit;
 
             ButtonStatus_Condition = new Button[]
             {
-            button_ConditionVehicleSpeed,
-            button_ConditionEngine,
+                button_ConditionVehicleSpeed,
+                button_ConditionEngine,
             };
 
             ComboBox_ConditionNRCs = new ComboBox[]
             {
-            comboBox_ConditionVehicle_NRC,
-            comboBox_ConditionEngine_NRC,
+                comboBox_ConditionVehicle_NRC,
+                comboBox_ConditionEngine_NRC,
             };
 
             DataGridViewComboBoxColumn_NRCPrioritySeed = new DataGridViewComboBoxColumn[]
             {
-            Column1,
-            Column2,
-            Column3,
-            Column4,
-            Column5,
-            Column6,
-            Column7,
-            Column8,
-            Column9,
-            Column10,
-            Column11,
-            Column12,
-            Column13,
-            Column14,
-            Column15,
+                Column1,
+                Column2,
+                Column3,
+                Column4,
+                Column5,
+                Column6,
+                Column7,
+                Column8,
+                Column9,
+                Column10,
+                Column11,
+                Column12,
+                Column13,
+                Column14,
+                Column15,
             };
 
             DataGridViewComboBoxColumn_NRCPriorityKey = new DataGridViewComboBoxColumn[]
             {
-            dataGridViewComboBoxColumn1,
-            dataGridViewComboBoxColumn2,
-            dataGridViewComboBoxColumn3,
-            dataGridViewComboBoxColumn4,
-            dataGridViewComboBoxColumn5,
-            dataGridViewComboBoxColumn6,
-            dataGridViewComboBoxColumn7,
-            dataGridViewComboBoxColumn8,
-            dataGridViewComboBoxColumn9,
-            dataGridViewComboBoxColumn10,
-            dataGridViewComboBoxColumn11,
-            dataGridViewComboBoxColumn12,
-            dataGridViewComboBoxColumn13,
-            dataGridViewComboBoxColumn14,
-            dataGridViewComboBoxColumn15,
+                dataGridViewComboBoxColumn1,
+                dataGridViewComboBoxColumn2,
+                dataGridViewComboBoxColumn3,
+                dataGridViewComboBoxColumn4,
+                dataGridViewComboBoxColumn5,
+                dataGridViewComboBoxColumn6,
+                dataGridViewComboBoxColumn7,
+                dataGridViewComboBoxColumn8,
+                dataGridViewComboBoxColumn9,
+                dataGridViewComboBoxColumn10,
+                dataGridViewComboBoxColumn11,
+                dataGridViewComboBoxColumn12,
+                dataGridViewComboBoxColumn13,
+                dataGridViewComboBoxColumn14,
+                dataGridViewComboBoxColumn15,
             };
 
             InvalidValue_Condition = new TextBox[]
             {
-            VehicleSpeedValue_Text,
+                vehicleSpeedValue_Text,
             };
 
             // Load elements to comboBox
@@ -115,7 +115,7 @@ namespace dcom.views.views_Service
             }
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriorityKey.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriorityKey[index], UIVariables.Service27_NRCPriorityKey);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriorityKey[index], NRCs);
                 dataGridView_NRCPriorityKey.Rows[0].Cells[index].Value = UIVariables.Service27_NRCPriorityKey[index];
             }
 
@@ -144,11 +144,11 @@ namespace dcom.views.views_Service
             }
 
             // Load Invalid Value Condition
-            VehicleSpeedValue_Text.Text = UIVariables.Service27_InvalidValueCondition[0];
+            vehicleSpeedValue_Text.Text = UIVariables.Service27_InvalidValueCondition[0];
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service27_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service27_ButtonStatus_Condition[0];
-            VehicleSpeedValue_Text.Enabled = UIVariables.Service27_ButtonStatus_Condition[0];
+            vehicleSpeedValue_Text.Enabled = UIVariables.Service27_ButtonStatus_Condition[0];
             dataGridView_NRCPrioritySeed.Enabled = true;
             dataGridView_NRCPriorityKey.Enabled = true;
         }
@@ -312,16 +312,16 @@ namespace dcom.views.views_Service
             if (UIVariables.Service27_ButtonStatus_Condition[0] == true)
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
-                VehicleSpeedValue_Text.Enabled = true;
+                vehicleSpeedValue_Text.Enabled = true;
                 comboBox_ConditionVehicle_NRC.Text = UIVariables.Service27_NRCCondition[0];
-                VehicleSpeedValue_Text.Text = UIVariables.Service27_InvalidValueCondition[0];
+                vehicleSpeedValue_Text.Text = UIVariables.Service27_InvalidValueCondition[0];
             }
             else
             {
                 comboBox_ConditionVehicle_NRC.Enabled = false;
-                VehicleSpeedValue_Text.Enabled = false;
+                vehicleSpeedValue_Text.Enabled = false;
                 comboBox_ConditionVehicle_NRC.Text = "NRC";
-                VehicleSpeedValue_Text.Text = "...km/h";
+                vehicleSpeedValue_Text.Text = "...km/h";
             }
         }
 
@@ -342,7 +342,7 @@ namespace dcom.views.views_Service
         {
             if (UIVariables.Service27_ButtonStatus_Condition[0] == true)
             {
-                UIVariables.Service27_InvalidValueCondition[0] = VehicleSpeedValue_Text.Text;
+                UIVariables.Service27_InvalidValueCondition[0] = vehicleSpeedValue_Text.Text;
             }
         }
 
