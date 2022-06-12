@@ -405,7 +405,7 @@ namespace dcom.controllers.controllers_middleware
                 dataGridView.Update();
                 dataGridView.Refresh();
 
-                for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value.ToString() != ""; rowIndex++)
+                for (int rowIndex = 0; rowIndex < stringData.Count; rowIndex++)
                 {
                     for (int cellIndex = 1; cellIndex < stringData.ElementAt(rowIndex).Length + boolData.ElementAt(rowIndex).Length + 1; cellIndex++)
                     {

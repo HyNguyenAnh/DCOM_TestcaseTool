@@ -81,7 +81,7 @@ namespace dcom.views.views_Service
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], UIVariables.Service2E_NRCPriority);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], NRCs);
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service2E_NRCPriority[index];
             }
 
@@ -107,12 +107,11 @@ namespace dcom.views.views_Service
             Controller_UIHandling.AddArrayElementToComboBox(ComboBox_SecurityUnlock, UIVariables.SecurityUnlockLevel);
 
             // Load data to DataGridView
-            List<string[]> DIDTable_Specification = UIVariables.Service2E_DIDTable_Specification;
-            List<bool[]> DIDTable_AddressingMode = UIVariables.Service2E_DIDTable_AddressingMode;
-            Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(dataGridView_DIDTable, DIDTable_Specification, DIDTable_AddressingMode);
+            Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(dataGridView_DIDTable, UIVariables.Service2E_DIDTable_Specification, UIVariables.Service2E_DIDTable_AddressingMode);
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service2E_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service2E_ButtonStatus_Condition[0];
+            comboBox_SecurityUnlock.Enabled = UIVariables.Service2E_ButtonStatus_SecurityUnlock;
             vehicleSpeedValue_Text.Enabled = UIVariables.Service2E_ButtonStatus_Condition[0];
             dataGridView_DIDTable.Enabled = true;
             dataGridView_NRCPriority.Enabled = true;
@@ -179,6 +178,21 @@ namespace dcom.views.views_Service
 
         }
 
+        private void button_SecurityUnlock_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStatusToBool(button_SecurityUnlock.Text);
+            if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
+            {
+                comboBox_SecurityUnlock.Enabled = true;
+                comboBox_SecurityUnlock.Text = UIVariables.Service2E_SecurityUnlockLv;
+            }
+            else
+            {
+                comboBox_SecurityUnlock.Enabled = false;
+                comboBox_SecurityUnlock.Text = "Level";
+            }
+        }
+
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service2E_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
@@ -209,6 +223,14 @@ namespace dcom.views.views_Service
             {
                 comboBox_ConditionEngine_NRC.Enabled = false;
                 comboBox_ConditionEngine_NRC.Text = "NRC";
+            }
+        }
+        private void comboBox_SecurityUnlock_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
+            {
+                UIVariables.Service2E_SecurityUnlockLv = comboBox_SecurityUnlock.Text;
+                UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStringLevelToBool(comboBox_SecurityUnlock.Text);
             }
         }
         private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
@@ -247,14 +269,6 @@ namespace dcom.views.views_Service
             if (dataGridView_DIDTable.Enabled == true)
             {
                 Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service2E_DIDTable_Specification, UIVariables.Service2E_DIDTable_AddressingMode);
-            }
-        }
-
-        private void comboBox_SecurityUnlock_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service2E_ButtonStatus_SecurityUnlock)
-            {
-                UIVariables.Service2E_SecurityUnlockLv = comboBox_SecurityUnlock.Text;
             }
         }
     }

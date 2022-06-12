@@ -59,10 +59,11 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Optional
             for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(4).Count; index++)
             {
-                if (DatabaseVariables.DatabaseService2E.ElementAt(4)[index][0].Contains("Security"))
+                if (DatabaseVariables.DatabaseService2E.ElementAt(4)[index][0].Contains("Security") && UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
                 {
                     status = UIVariables.Service2E_SecurityUnlockLv;
                     Ws.Cells[rowIndex[9] + index, columnIndex[9] + 2] = status;
+                    Console.WriteLine(status);
                 }
                 else
                 {

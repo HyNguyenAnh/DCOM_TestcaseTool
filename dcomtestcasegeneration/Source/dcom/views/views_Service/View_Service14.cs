@@ -39,7 +39,7 @@ namespace dcom.views.views_Service
             button_FunctionalProgramming,
             button_FunctionalExtended,
 
-        };
+            };
 
             ButtonStatus_Condition = new Button[]
             {
@@ -87,7 +87,7 @@ namespace dcom.views.views_Service
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], UIVariables.Service14_NRCPriority);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], NRCs);
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service14_NRCPriority[index];
             }
 
@@ -209,27 +209,27 @@ namespace dcom.views.views_Service
 
         private void button_Service14_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service14_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalProgramming.Text);
         }
 
         private void button_Service14_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service14_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalExtended.Text);
         }
 
         private void button_Service14_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service14_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalDefault.Text);
         }
 
         private void button_Service14_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service14_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalProgramming.Text);
         }
 
         private void button_Service14_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service14_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalExtended.Text);
         }
 
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)

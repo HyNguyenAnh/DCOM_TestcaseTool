@@ -25,10 +25,9 @@ namespace dcom.views.views_Service
         public View_Service11()
         {
             InitializeComponent();
-            LoadData();
         }
 
-        public void LoadData()
+        private void View_Service11_Load(object sender, EventArgs e)
         {
             // Definition
             ButtonStatus_ResetMode = new Button[]{
@@ -95,7 +94,7 @@ namespace dcom.views.views_Service
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], UIVariables.Service11_NRCPriority);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], NRCs);
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service11_NRCPriority[index];
             }
 
@@ -133,17 +132,18 @@ namespace dcom.views.views_Service
             }
 
             // Load Invalid Value Condition
-            for(int index = 0; index < InvalidValue_Condition.Length; index++)
+            for (int index = 0; index < InvalidValue_Condition.Length; index++)
             {
                 InvalidValue_Condition[index].Text = UIVariables.Service11_InvalidValueCondition[index];
             }
-            
+
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service11_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service11_ButtonStatus_Condition[0];
             vehicleSpeedValue_Text.Enabled = UIVariables.Service11_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
+
         private void button_Service11_HardReset_Click(object sender, EventArgs e)
         {
             UIVariables.Service11_ButtonStatus_ResetMode[0] = !UIVariables.Service11_ButtonStatus_ResetMode[0];

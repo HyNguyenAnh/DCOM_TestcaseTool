@@ -25,10 +25,8 @@ namespace dcom.views.views_Service
         public View_Service10()
         {
             InitializeComponent();
-            LoadData();
         }
-
-        public void LoadData()
+        private void View_Service10_Load(object sender, EventArgs e)
         {
             // Definition
             ButtonStatus_SessionTransition = new Button[]
@@ -100,7 +98,7 @@ namespace dcom.views.views_Service
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], UIVariables.Service10_NRCPriority);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriority[index], NRCs);
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service10_NRCPriority[index];
             }
 
@@ -112,7 +110,7 @@ namespace dcom.views.views_Service
                     ButtonStatus_SessionTransition[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 1])[0];
                     ButtonStatus_SessionTransition[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 1])[1];
                 }
-                else if(index > 2)
+                else if (index > 2)
                 {
                     ButtonStatus_SessionTransition[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 2])[0];
                     ButtonStatus_SessionTransition[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service10_ButtonStatus_SessionTransition[index + 2])[1];
@@ -151,6 +149,7 @@ namespace dcom.views.views_Service
             VehicleSpeedValue_Text.Enabled = UIVariables.Service10_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
+
         private void button_DtoP_Click(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[1] = !UIVariables.Service10_ButtonStatus_SessionTransition[1];

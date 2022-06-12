@@ -1,2 +1,2 @@
-D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Database\Database_template.xlsx
-6/10/2022 5:36:42 PM
+D:\BOSCH_WORK\DCOM_TestcaseTool\dcomtestcasegeneration\Database\DB_SAIC_AS28_R1.0_DCOM.xlsx
+6/11/2022 10:43:20 PM

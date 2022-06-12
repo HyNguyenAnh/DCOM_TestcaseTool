@@ -304,15 +304,9 @@ namespace dcom.declaration
             // Condition
             for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition.Length; index++)
             {
-                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[index][2]);
-            }
-            for (int index = 0; index < UIVariables.Service10_NRCCondition.Length; index++)
-            {
-                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(3)[index][3];
-            }
-            for (int index = 0; index < UIVariables.Service10_InvalidValueCondition.Length; index++)
-            {
                 UIVariables.Service10_InvalidValueCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(3)[index][1];
+                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[index][2]);
+                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(3)[index][3];
             }
 
             // SuppressBit
@@ -393,21 +387,6 @@ namespace dcom.declaration
                 UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(3)[index][2]);
                 UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][3];
             }
-            //for (int index = 0; index < UIVariables.Service14_NRCCondition.Length; index++)
-            //{
-                
-            //}
-            //for (int index = 0; index < UIVariables.Service14_InvalidValueCondition.Length; index++)
-            //{
-            //    try
-            //    {
-            //        UIVariables.Service14_InvalidValueCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][1];
-            //    }
-            //    catch
-            //    {
-            //        UIVariables.Service14_InvalidValueCondition[index] = "";
-            //    }
-            //}
 
             // Optional
             UIVariables.Service14_ButtonStatus_SuppressBit = false;
@@ -486,9 +465,10 @@ namespace dcom.declaration
                 UIVariables.Service2E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2]);
                 UIVariables.Service2E_NRCCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][3];
             }
+
             // Optional
             UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStringLevelToBool(DatabaseVariables.DatabaseService22.ElementAt(4)[1][1]);
-
+            UIVariables.Service2E_SecurityUnlockLv = DatabaseVariables.DatabaseService22.ElementAt(4)[1][1];
 
             // Service 27
 
@@ -528,6 +508,52 @@ namespace dcom.declaration
 
             // Optional
             UIVariables.Service27_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(4)[0][1]);
+
+
+            // Service 28
+
+            // Control Type
+            for (int index = 0; index < UIVariables.Service28_ButtonStatus_ControlType.Length; index++)
+            {
+                UIVariables.Service28_ButtonStatus_ControlType[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(0)[index][1]);
+            }
+
+            // Communication Type
+            for (int index = 0; index < UIVariables.Service28_ButtonStatus_CommunicationType.Length; index++)
+            {
+                UIVariables.Service28_ButtonStatus_CommunicationType[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(0)[index][3]);
+            }
+
+            // Addressing Mode
+            for (int index = 0; index < UIVariables.Service28_ButtonStatus_AddressingMode.Length; index++)
+            {
+                if (index < 3)
+                {
+                    UIVariables.Service28_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(1)[0][index + 1]);
+                }
+                else
+                {
+                    UIVariables.Service28_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(1)[1][index - 2]);
+                }
+            }
+
+            // NRC
+            for (int index = 0; index < DatabaseVariables.DatabaseService28.ElementAt(2).Count; index++)
+            {
+                UIVariables.Service28_NRCPriority[index] = DatabaseVariables.DatabaseService28.ElementAt(2)[index][1];
+            }
+
+            // Condition
+            for (int index = 0; index < UIVariables.Service28_ButtonStatus_Condition.Length; index++)
+            {
+                UIVariables.Service28_InvalidValueCondition[index] = DatabaseVariables.DatabaseService28.ElementAt(3)[index][1];
+                UIVariables.Service28_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(3)[index][2]);
+                UIVariables.Service28_NRCCondition[index] = DatabaseVariables.DatabaseService28.ElementAt(3)[index][3];
+            }
+
+            // SuppressBit
+            UIVariables.Service28_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(4)[0][1]);
+
         }
     }
 }

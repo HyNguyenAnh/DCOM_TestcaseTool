@@ -66,7 +66,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
                 else
                 {
-                    Ws.Cells[rowIndex[6] + index, columnIndex[6] + 1] = "0";
+                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = "0";
                 }
             }
         }

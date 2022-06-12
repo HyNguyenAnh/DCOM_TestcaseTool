@@ -20,6 +20,7 @@ namespace dcom.views.views_Service
         public static Button[] ButtonStatus_AddressingMode;
         public static Button[] ButtonStatus_Condition;
         public static ComboBox[] ComboBox_ConditionNRCs;
+        public static DataGridView[][] DataGridViewComboBoxColumn_NRCPriority;
         public static DataGridViewComboBoxColumn[] DataGridViewComboBoxColumn_NRCPrioritySeed;
         public static DataGridViewComboBoxColumn[] DataGridViewComboBoxColumn_NRCPriorityKey;
         public static TextBox[] InvalidValue_Condition;
@@ -77,21 +78,21 @@ namespace dcom.views.views_Service
 
             DataGridViewComboBoxColumn_NRCPriorityKey = new DataGridViewComboBoxColumn[]
             {
-            Column1,
-            Column2,
-            Column3,
-            Column4,
-            Column5,
-            Column6,
-            Column7,
-            Column8,
-            Column9,
-            Column10,
-            Column11,
-            Column12,
-            Column13,
-            Column14,
-            Column15,
+            dataGridViewComboBoxColumn1,
+            dataGridViewComboBoxColumn2,
+            dataGridViewComboBoxColumn3,
+            dataGridViewComboBoxColumn4,
+            dataGridViewComboBoxColumn5,
+            dataGridViewComboBoxColumn6,
+            dataGridViewComboBoxColumn7,
+            dataGridViewComboBoxColumn8,
+            dataGridViewComboBoxColumn9,
+            dataGridViewComboBoxColumn10,
+            dataGridViewComboBoxColumn11,
+            dataGridViewComboBoxColumn12,
+            dataGridViewComboBoxColumn13,
+            dataGridViewComboBoxColumn14,
+            dataGridViewComboBoxColumn15,
             };
 
             InvalidValue_Condition = new TextBox[]
@@ -109,15 +110,13 @@ namespace dcom.views.views_Service
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPrioritySeed.Length; index++)
             {
-                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPrioritySeed[index], UIVariables.Service27_NRCPrioritySeed);
+                Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPrioritySeed[index], NRCs);
                 dataGridView_NRCPrioritySeed.Rows[0].Cells[index].Value = UIVariables.Service27_NRCPrioritySeed[index];
-                Console.WriteLine("done");
             }
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriorityKey.Length; index++)
             {
                 Controller_UIHandling.AddArrayElementToDataGridViewComboBoxColumn(DataGridViewComboBoxColumn_NRCPriorityKey[index], UIVariables.Service27_NRCPriorityKey);
                 dataGridView_NRCPriorityKey.Rows[0].Cells[index].Value = UIVariables.Service27_NRCPriorityKey[index];
-                Console.WriteLine("done1");
             }
 
             // Load Addressing Mode
@@ -254,27 +253,27 @@ namespace dcom.views.views_Service
 
         private void button_Service27_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service27_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service27_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalProgramming.Text);
         }
 
         private void button_Service27_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service27_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service27_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalExtended.Text);
         }
 
         private void button_Service27_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service27_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service27_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalDefault.Text);
         }
 
         private void button_Service27_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service27_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service27_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalProgramming.Text);
         }
 
         private void button_Service27_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service27_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            UIVariables.Service27_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalExtended.Text);
         }
 
         private void dataGridView_NRCPrioritySeed_SelectionChanged(object sender, EventArgs e)
