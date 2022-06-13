@@ -22,7 +22,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
-            Console.WriteLine(sheetName);
+
             // Definition worksheet
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;

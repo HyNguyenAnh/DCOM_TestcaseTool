@@ -236,7 +236,6 @@ namespace dcom.views
                 Model_BackupInformation.BackupInformation();
             }
             View_Setting_Testcase frm = new View_Setting_Testcase();
-            //View_Setting frm = new View_Setting();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
 
             Cursor = Cursors.Default;

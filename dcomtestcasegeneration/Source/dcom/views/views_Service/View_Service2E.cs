@@ -28,8 +28,10 @@ namespace dcom.views.views_Service
 
         private void View_Service2E_Load(object sender, EventArgs e)
         {
+            UIVariables.CompletedEdit = false;
             // Initial 100 empty row for the DID table
             Controller_UIHandling.InitialDataGridRows(dataGridView_DIDTable, 100);
+
             // Definition
 
             ButtonStatus_Condition = new Button[]
@@ -181,6 +183,7 @@ namespace dcom.views.views_Service
         private void button_SecurityUnlock_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStatusToBool(button_SecurityUnlock.Text);
+            Console.WriteLine(button_SecurityUnlock.Text);
             if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
             {
                 comboBox_SecurityUnlock.Enabled = true;
@@ -230,7 +233,6 @@ namespace dcom.views.views_Service
             if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
             {
                 UIVariables.Service2E_SecurityUnlockLv = comboBox_SecurityUnlock.Text;
-                UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStringLevelToBool(comboBox_SecurityUnlock.Text);
             }
         }
         private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
@@ -271,5 +273,20 @@ namespace dcom.views.views_Service
                 Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service2E_DIDTable_Specification, UIVariables.Service2E_DIDTable_AddressingMode);
             }
         }
+
+        private void dataGridView_DIDTable_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //e.ThrowException = true;
+            //if (e.Exception.Message == "DataGridView Default Error Dialog")
+            //{
+            //    object value = dataGridView_DIDTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            //    if (!((DataGridViewCheckBoxColumn)dataGridView_DIDTable.Columns[e.ColumnIndex]).Items.Contains(value))
+            //    {
+
+            //    }
+            //}
+            //e.Cancel = true;
+        }
+
     }
 }

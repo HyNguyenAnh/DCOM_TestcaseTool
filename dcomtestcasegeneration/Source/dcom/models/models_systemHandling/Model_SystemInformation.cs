@@ -10,6 +10,26 @@ namespace dcom.models.models_systemHandling
 {
     class Model_SystemInformation
     {
+        public static void createRequirementDBFolder()
+        {
+            try
+            {
+                if (Directory.Exists(DatabaseVariables.DirectoryOutputDatabase))
+                {
+                    //The code will execute if the folder exists
+                }
+                //The below code will create a folder if the folder is not exists in C#.Net.            
+                DirectoryInfo folder = Directory.CreateDirectory(DatabaseVariables.DirectoryOutputDatabase);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+
+            }
+        }
         public static void createBackupFile()
         {
             if (File.Exists(SystemVariables.backupFilePath))

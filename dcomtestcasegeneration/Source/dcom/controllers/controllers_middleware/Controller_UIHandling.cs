@@ -348,15 +348,15 @@ namespace dcom.controllers.controllers_middleware
         public static void PutDatabaseToDataGridView(DataGridView dataGridView, List<string[]> Data)
         {
             // Push data to Grid View
-            Controller_UIHandling.CleanDataGridView(dataGridView);
+            CleanDataGridView(dataGridView);
 
-            for (int rowIndex = 0; rowIndex < Data.Count(); rowIndex++)
+            for (int rowIndex = 0; rowIndex < Data?.Count(); rowIndex++)
             {
                 dataGridView.Rows.Add();
-                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex + 1;                                          // ID
-                for (int cellIndex = 0; cellIndex < Data.ElementAt(rowIndex).Count(); cellIndex++)
+                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex;                                          // ID
+                for (int cellIndex = 0; cellIndex < Data?.ElementAt(rowIndex).Count(); cellIndex++)
                 {
-                    dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value = Data.ElementAt(rowIndex)[cellIndex];   // data
+                    dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value = Data?.ElementAt(rowIndex)[cellIndex];   // data
                 }
             }
         }
@@ -365,7 +365,6 @@ namespace dcom.controllers.controllers_middleware
             // Push data to Grid View
             for (int rowIndex = 0; rowIndex < stringData.Count(); rowIndex++)
             {
-                dataGridView.Rows[rowIndex].Cells[0].Value = rowIndex;
                 for (int cellIndex = 1; cellIndex < stringData.ElementAt(0).Length + boolData.ElementAt(0).Length + 1; cellIndex++)
                 {
                     if (cellIndex < stringData.ElementAt(0).Length + 1)
@@ -382,14 +381,14 @@ namespace dcom.controllers.controllers_middleware
 
         public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data)
         {
-            if (SystemVariables.checkTheFirstLoad == false)
+            if (SystemVariables.checkTheFirstLoad == false && Data.Count > 0)
             {
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
-                for (int rowIndex = 0; rowIndex < Data.Count; rowIndex++)
+                for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
                 {
-                    for (int cellIndex = 0; cellIndex < Data.ElementAt(rowIndex).Length; cellIndex++)
+                    for (int cellIndex = 0; cellIndex < dataGridView.Columns.Count - 1; cellIndex++)
                     {
                         Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
                     }
@@ -399,19 +398,26 @@ namespace dcom.controllers.controllers_middleware
 
         public static void SaveDataGridViewToDatabase_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData)
         {
-            if (SystemVariables.checkTheFirstLoad == false)
+            if (SystemVariables.checkTheFirstLoad == false && stringData.Count > 0)
             {
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
 
-                for (int rowIndex = 0; rowIndex < stringData.Count; rowIndex++)
+                for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
                 {
-                    for (int cellIndex = 1; cellIndex < stringData.ElementAt(rowIndex).Length + boolData.ElementAt(rowIndex).Length + 1; cellIndex++)
+                    for (int cellIndex = 1; cellIndex < dataGridView.Columns.Count; cellIndex++)
                     {
-                        if (cellIndex < stringData.ElementAt(rowIndex).Length + 1)
+                        if (cellIndex < 5)
                         {
-                            stringData.ElementAt(rowIndex)[cellIndex - 1] = dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString();
+                            if (dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString() != "null")
+                            {
+                                stringData.ElementAt(rowIndex)[cellIndex - 1] = dataGridView.Rows[rowIndex].Cells[cellIndex].Value.ToString();
+                            }
+                            else
+                            {
+                                stringData.ElementAt(rowIndex)[cellIndex - 1] = "";
+                            }
                         }
                         else
                         {

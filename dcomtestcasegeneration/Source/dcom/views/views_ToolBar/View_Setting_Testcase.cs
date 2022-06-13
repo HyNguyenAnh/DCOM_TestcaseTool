@@ -28,11 +28,16 @@ namespace dcom.views.views_ToolBar
         {
             InitializeComponent();
             button_LoadDB.Enabled = false;
-
-            LoadData();
         }
-        public void LoadData()
+
+
+
+        private void View_Setting_Testcase_Load(object sender, EventArgs e)
         {
+            // Initial 100 empty row for the DID table
+            Controller_UIHandling.InitialDataGridRows(dataGridView_CommonSetting, 10);
+            Controller_UIHandling.InitialDataGridRows(dataGridView_CommonDID, 10);
+
             // Definition
             ProjectInformation = new TextBox[]{
                 textBox_ProjectName,
@@ -61,6 +66,8 @@ namespace dcom.views.views_ToolBar
                 dataGridView_CommonSetting,
                 dataGridView_CommonDID,
             };
+
+            
 
             // Load Project Information
 
@@ -98,7 +105,11 @@ namespace dcom.views.views_ToolBar
 
             List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
+
+            dataGridView_CommonSetting.Enabled = true;
+            dataGridView_CommonDID.Enabled = true;
         }
+
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
         {
             comboBox_DBPath.Text = Controller_UIHandling.GetFileDialogPath(comboBox_DBPath.Text);
@@ -170,9 +181,10 @@ namespace dcom.views.views_ToolBar
 
 
             // Push data to Common Setting
+            
             List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
-
+            
             // Push data to Common DID
             List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);

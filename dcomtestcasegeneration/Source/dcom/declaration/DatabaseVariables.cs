@@ -44,21 +44,17 @@ namespace dcom.declaration
         public static List<List<string[]>> DatabaseService3E { get; set; }
         public static List<List<string[]>> DatabaseService85 { get; set; }
 
-        public static List<string[]> DatabaseCommonSetting = new List<string[]> { };
-        public static List<string[]> DatabaseCommonCommand = new List<string[]> { };
-        public static List<string[]> DatabaseCommonDID = new List<string[]> { };
+        public static List<string[]> DatabaseCommonSetting { get; set; }
+        public static List<string[]> DatabaseCommonDID { get; set; }
 
         public static string[] DatabaseCommonSettingCreateFault { get; set; }
         public static string[] DatabaseCommonSettingVehicleSpeed { get; set; }
         public static string[] DatabaseCommonSettingEngineStatus { get; set; }
-        public static string[] DatabaseCommonSettingPowerMode { get; set; }
         public static string[] DatabaseCommonSettingSecurityUnlock{ get; set; }
 
         public static string[] DatabaseCommonDIDCurrentSession { get; set; }
         public static string[] DatabaseCommonDIDInvalidCounter { get; set; }
         public static string[] DatabaseCommonDIDCurrentVoltage { get; set; }
-
-        public static List<string[]> DatabaseSelectedService { get; set; }
 
 
         public static bool[] SelectedServiceStatus = new bool[]

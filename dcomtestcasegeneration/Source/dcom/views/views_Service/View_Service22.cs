@@ -238,7 +238,7 @@ namespace dcom.views.views_Service
 
         private void dataGridView_DIDTable_SelectionChanged(object sender, EventArgs e)
         {
-            if(dataGridView_DIDTable.Enabled == true)
+            if (dataGridView_DIDTable.Enabled == true)
             {
                 Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AddressingMode);
             }

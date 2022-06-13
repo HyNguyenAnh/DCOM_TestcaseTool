@@ -8,6 +8,7 @@ namespace dcom.declaration
 {
     class UIVariables
     {
+        public static bool CompletedEdit = false;
         // NRC List
         public static string[] NRCs = new string[]
         {
@@ -82,12 +83,14 @@ namespace dcom.declaration
             false,
             false,
         };
-        public static string[] Service10_NRCCondition = new string[2]
+        public static string[] Service10_NRCCondition = new string[]
         {
             "",
             "",
+            "",
+            "",
         };
-        public static string[] Service10_InvalidValueCondition = new string[4]
+        public static string[] Service10_InvalidValueCondition = new string[]
         {
             "",
             "",
@@ -229,8 +232,8 @@ namespace dcom.declaration
 
 
         // Service 22
-        public static List<string[]> Service22_DIDTable_Specification = new List<string[]> { };
-        public static List<bool[]> Service22_DIDTable_AddressingMode = new List<bool[]> { };
+        public static List<string[]> Service22_DIDTable_Specification { get; set; }
+        public static List<bool[]> Service22_DIDTable_AddressingMode { get; set; }
         public static bool Service22_ButtonStatus_SuppressBit = false;
         public static string[] Service22_NRCPriority = new string[15]
         {
@@ -271,10 +274,10 @@ namespace dcom.declaration
         };
 
         // Service 2E
-        public static List<string[]> Service2E_DIDTable_Specification = new List<string[]> { };
-        public static List<bool[]> Service2E_DIDTable_AddressingMode = new List<bool[]> { };
+        public static List<string[]> Service2E_DIDTable_Specification { get; set; }
+        public static List<bool[]> Service2E_DIDTable_AddressingMode { get; set; }
         public static bool Service2E_ButtonStatus_SecurityUnlock = false;
-        public static string Service2E_SecurityUnlockLv = "Level";
+        public static string Service2E_SecurityUnlockLv;
         public static string[] Service2E_NRCPriority = new string[15]
         {
             "",
