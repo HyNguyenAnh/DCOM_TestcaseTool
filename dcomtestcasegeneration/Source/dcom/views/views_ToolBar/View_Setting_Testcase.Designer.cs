@@ -29,9 +29,9 @@ namespace dcom.views.views_ToolBar
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Setting_Testcase));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel_base = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -97,7 +97,7 @@ namespace dcom.views.views_ToolBar
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel_body = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_testcaseService = new System.Windows.Forms.TableLayoutPanel();
-            this.button_service2f_tc = new System.Windows.Forms.Button();
+            this.button_canTP_tc = new System.Windows.Forms.Button();
             this.button_service85_tc = new System.Windows.Forms.Button();
             this.button_service3e_tc = new System.Windows.Forms.Button();
             this.button_service31_tc = new System.Windows.Forms.Button();
@@ -332,14 +332,14 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_CommonSetting.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonSetting.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView_CommonSetting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonSetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
@@ -431,14 +431,14 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonDID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_CommonDID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonDID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView_CommonDID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonDID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -1144,7 +1144,7 @@ namespace dcom.views.views_ToolBar
             // 
             this.tableLayoutPanel_body.ColumnCount = 2;
             this.tableLayoutPanel_body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_body.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel_body.Controls.Add(this.tableLayoutPanel_testcaseService, 0, 0);
             this.tableLayoutPanel_body.Controls.Add(this.panel_bodyTestcase, 0, 0);
             this.tableLayoutPanel_body.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1155,14 +1155,13 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_body.Size = new System.Drawing.Size(1133, 605);
             this.tableLayoutPanel_body.TabIndex = 0;
-            this.tableLayoutPanel_body.Visible = false;
             // 
             // tableLayoutPanel_testcaseService
             // 
             this.tableLayoutPanel_testcaseService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel_testcaseService.ColumnCount = 1;
             this.tableLayoutPanel_testcaseService.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service2f_tc, 0, 11);
+            this.tableLayoutPanel_testcaseService.Controls.Add(this.button_canTP_tc, 0, 11);
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service85_tc, 0, 10);
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service3e_tc, 0, 9);
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service31_tc, 0, 8);
@@ -1175,41 +1174,43 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service11_tc, 0, 1);
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service10_tc, 0, 0);
             this.tableLayoutPanel_testcaseService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_testcaseService.Location = new System.Drawing.Point(1083, 0);
+            this.tableLayoutPanel_testcaseService.Location = new System.Drawing.Point(1078, 0);
             this.tableLayoutPanel_testcaseService.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel_testcaseService.Name = "tableLayoutPanel_testcaseService";
             this.tableLayoutPanel_testcaseService.RowCount = 13;
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_testcaseService.Size = new System.Drawing.Size(50, 605);
+            this.tableLayoutPanel_testcaseService.Size = new System.Drawing.Size(55, 605);
             this.tableLayoutPanel_testcaseService.TabIndex = 3;
             // 
-            // button_service2f_tc
+            // button_canTP_tc
             // 
-            this.button_service2f_tc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_service2f_tc.BackgroundImage")));
-            this.button_service2f_tc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_service2f_tc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_service2f_tc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_service2f_tc.FlatAppearance.BorderSize = 0;
-            this.button_service2f_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service2f_tc.Location = new System.Drawing.Point(10, 560);
-            this.button_service2f_tc.Margin = new System.Windows.Forms.Padding(10);
-            this.button_service2f_tc.Name = "button_service2f_tc";
-            this.button_service2f_tc.Size = new System.Drawing.Size(30, 30);
-            this.button_service2f_tc.TabIndex = 5;
-            this.button_service2f_tc.UseVisualStyleBackColor = true;
+            this.button_canTP_tc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_canTP_tc.BackgroundImage")));
+            this.button_canTP_tc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_canTP_tc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_canTP_tc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_canTP_tc.FlatAppearance.BorderSize = 0;
+            this.button_canTP_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_canTP_tc.Location = new System.Drawing.Point(10, 549);
+            this.button_canTP_tc.Margin = new System.Windows.Forms.Padding(10);
+            this.button_canTP_tc.Name = "button_canTP_tc";
+            this.button_canTP_tc.Size = new System.Drawing.Size(35, 29);
+            this.button_canTP_tc.TabIndex = 5;
+            this.button_canTP_tc.UseVisualStyleBackColor = true;
+            this.button_canTP_tc.Click += new System.EventHandler(this.button_canTP_tc_Click);
+            this.button_canTP_tc.MouseLeave += new System.EventHandler(this.button_canTP_tc_MouseLeave);
+            this.button_canTP_tc.MouseHover += new System.EventHandler(this.button_canTP_tc_MouseHover);
             // 
             // button_service85_tc
             // 
@@ -1219,12 +1220,15 @@ namespace dcom.views.views_ToolBar
             this.button_service85_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service85_tc.FlatAppearance.BorderSize = 0;
             this.button_service85_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service85_tc.Location = new System.Drawing.Point(10, 510);
+            this.button_service85_tc.Location = new System.Drawing.Point(10, 500);
             this.button_service85_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service85_tc.Name = "button_service85_tc";
-            this.button_service85_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service85_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service85_tc.TabIndex = 5;
             this.button_service85_tc.UseVisualStyleBackColor = true;
+            this.button_service85_tc.Click += new System.EventHandler(this.button_service85_tc_Click);
+            this.button_service85_tc.MouseLeave += new System.EventHandler(this.button_service85_tc_MouseLeave);
+            this.button_service85_tc.MouseHover += new System.EventHandler(this.button_service85_tc_MouseHover);
             // 
             // button_service3e_tc
             // 
@@ -1234,12 +1238,15 @@ namespace dcom.views.views_ToolBar
             this.button_service3e_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service3e_tc.FlatAppearance.BorderSize = 0;
             this.button_service3e_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service3e_tc.Location = new System.Drawing.Point(10, 460);
+            this.button_service3e_tc.Location = new System.Drawing.Point(10, 451);
             this.button_service3e_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service3e_tc.Name = "button_service3e_tc";
-            this.button_service3e_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service3e_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service3e_tc.TabIndex = 5;
             this.button_service3e_tc.UseVisualStyleBackColor = true;
+            this.button_service3e_tc.Click += new System.EventHandler(this.button_service3e_tc_Click);
+            this.button_service3e_tc.MouseLeave += new System.EventHandler(this.button_service3e_tc_MouseLeave);
+            this.button_service3e_tc.MouseHover += new System.EventHandler(this.button_service3e_tc_MouseHover);
             // 
             // button_service31_tc
             // 
@@ -1249,12 +1256,15 @@ namespace dcom.views.views_ToolBar
             this.button_service31_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service31_tc.FlatAppearance.BorderSize = 0;
             this.button_service31_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service31_tc.Location = new System.Drawing.Point(10, 410);
+            this.button_service31_tc.Location = new System.Drawing.Point(10, 402);
             this.button_service31_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service31_tc.Name = "button_service31_tc";
-            this.button_service31_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service31_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service31_tc.TabIndex = 5;
             this.button_service31_tc.UseVisualStyleBackColor = true;
+            this.button_service31_tc.Click += new System.EventHandler(this.button_service31_tc_Click);
+            this.button_service31_tc.MouseLeave += new System.EventHandler(this.button_service31_tc_MouseLeave);
+            this.button_service31_tc.MouseHover += new System.EventHandler(this.button_service31_tc_MouseHover);
             // 
             // button_service2e_tc
             // 
@@ -1264,12 +1274,15 @@ namespace dcom.views.views_ToolBar
             this.button_service2e_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service2e_tc.FlatAppearance.BorderSize = 0;
             this.button_service2e_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service2e_tc.Location = new System.Drawing.Point(10, 360);
+            this.button_service2e_tc.Location = new System.Drawing.Point(10, 353);
             this.button_service2e_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service2e_tc.Name = "button_service2e_tc";
-            this.button_service2e_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service2e_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service2e_tc.TabIndex = 5;
             this.button_service2e_tc.UseVisualStyleBackColor = true;
+            this.button_service2e_tc.Click += new System.EventHandler(this.button_service2e_tc_Click);
+            this.button_service2e_tc.MouseLeave += new System.EventHandler(this.button_service2e_tc_MouseLeave);
+            this.button_service2e_tc.MouseHover += new System.EventHandler(this.button_service2e_tc_MouseHover);
             // 
             // button_service28_tc
             // 
@@ -1279,12 +1292,15 @@ namespace dcom.views.views_ToolBar
             this.button_service28_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service28_tc.FlatAppearance.BorderSize = 0;
             this.button_service28_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service28_tc.Location = new System.Drawing.Point(10, 310);
+            this.button_service28_tc.Location = new System.Drawing.Point(10, 304);
             this.button_service28_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service28_tc.Name = "button_service28_tc";
-            this.button_service28_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service28_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service28_tc.TabIndex = 5;
             this.button_service28_tc.UseVisualStyleBackColor = true;
+            this.button_service28_tc.Click += new System.EventHandler(this.button_service28_tc_Click);
+            this.button_service28_tc.MouseLeave += new System.EventHandler(this.button_service28_tc_MouseLeave);
+            this.button_service28_tc.MouseHover += new System.EventHandler(this.button_service28_tc_MouseHover);
             // 
             // button_service27_tc
             // 
@@ -1294,12 +1310,15 @@ namespace dcom.views.views_ToolBar
             this.button_service27_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service27_tc.FlatAppearance.BorderSize = 0;
             this.button_service27_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service27_tc.Location = new System.Drawing.Point(10, 260);
+            this.button_service27_tc.Location = new System.Drawing.Point(10, 255);
             this.button_service27_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service27_tc.Name = "button_service27_tc";
-            this.button_service27_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service27_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service27_tc.TabIndex = 5;
             this.button_service27_tc.UseVisualStyleBackColor = true;
+            this.button_service27_tc.Click += new System.EventHandler(this.button_service27_tc_Click);
+            this.button_service27_tc.MouseLeave += new System.EventHandler(this.button_service27_tc_MouseLeave);
+            this.button_service27_tc.MouseHover += new System.EventHandler(this.button_service27_tc_MouseHover);
             // 
             // button_service22_tc
             // 
@@ -1309,12 +1328,15 @@ namespace dcom.views.views_ToolBar
             this.button_service22_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service22_tc.FlatAppearance.BorderSize = 0;
             this.button_service22_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service22_tc.Location = new System.Drawing.Point(10, 210);
+            this.button_service22_tc.Location = new System.Drawing.Point(10, 206);
             this.button_service22_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service22_tc.Name = "button_service22_tc";
-            this.button_service22_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service22_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service22_tc.TabIndex = 5;
             this.button_service22_tc.UseVisualStyleBackColor = true;
+            this.button_service22_tc.Click += new System.EventHandler(this.button_service22_tc_Click);
+            this.button_service22_tc.MouseLeave += new System.EventHandler(this.button_service22_tc_MouseLeave);
+            this.button_service22_tc.MouseHover += new System.EventHandler(this.button_service22_tc_MouseHover);
             // 
             // button_service19_tc
             // 
@@ -1324,12 +1346,15 @@ namespace dcom.views.views_ToolBar
             this.button_service19_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service19_tc.FlatAppearance.BorderSize = 0;
             this.button_service19_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service19_tc.Location = new System.Drawing.Point(10, 160);
+            this.button_service19_tc.Location = new System.Drawing.Point(10, 157);
             this.button_service19_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service19_tc.Name = "button_service19_tc";
-            this.button_service19_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service19_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service19_tc.TabIndex = 5;
             this.button_service19_tc.UseVisualStyleBackColor = true;
+            this.button_service19_tc.Click += new System.EventHandler(this.button_service19_tc_Click);
+            this.button_service19_tc.MouseLeave += new System.EventHandler(this.button_service19_tc_MouseLeave);
+            this.button_service19_tc.MouseHover += new System.EventHandler(this.button_service19_tc_MouseHover);
             // 
             // button_service14_tc
             // 
@@ -1339,12 +1364,15 @@ namespace dcom.views.views_ToolBar
             this.button_service14_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service14_tc.FlatAppearance.BorderSize = 0;
             this.button_service14_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service14_tc.Location = new System.Drawing.Point(10, 110);
+            this.button_service14_tc.Location = new System.Drawing.Point(10, 108);
             this.button_service14_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service14_tc.Name = "button_service14_tc";
-            this.button_service14_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service14_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service14_tc.TabIndex = 5;
             this.button_service14_tc.UseVisualStyleBackColor = true;
+            this.button_service14_tc.Click += new System.EventHandler(this.button_service14_tc_Click);
+            this.button_service14_tc.MouseLeave += new System.EventHandler(this.button_service14_tc_MouseLeave);
+            this.button_service14_tc.MouseHover += new System.EventHandler(this.button_service14_tc_MouseHover);
             // 
             // button_service11_tc
             // 
@@ -1354,12 +1382,15 @@ namespace dcom.views.views_ToolBar
             this.button_service11_tc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_service11_tc.FlatAppearance.BorderSize = 0;
             this.button_service11_tc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_service11_tc.Location = new System.Drawing.Point(10, 60);
+            this.button_service11_tc.Location = new System.Drawing.Point(10, 59);
             this.button_service11_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service11_tc.Name = "button_service11_tc";
-            this.button_service11_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service11_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service11_tc.TabIndex = 5;
             this.button_service11_tc.UseVisualStyleBackColor = true;
+            this.button_service11_tc.Click += new System.EventHandler(this.button_service11_tc_Click);
+            this.button_service11_tc.MouseLeave += new System.EventHandler(this.button_service11_tc_MouseLeave);
+            this.button_service11_tc.MouseHover += new System.EventHandler(this.button_service11_tc_MouseHover);
             // 
             // button_service10_tc
             // 
@@ -1372,7 +1403,7 @@ namespace dcom.views.views_ToolBar
             this.button_service10_tc.Location = new System.Drawing.Point(10, 10);
             this.button_service10_tc.Margin = new System.Windows.Forms.Padding(10);
             this.button_service10_tc.Name = "button_service10_tc";
-            this.button_service10_tc.Size = new System.Drawing.Size(30, 30);
+            this.button_service10_tc.Size = new System.Drawing.Size(35, 29);
             this.button_service10_tc.TabIndex = 5;
             this.button_service10_tc.UseVisualStyleBackColor = true;
             this.button_service10_tc.Click += new System.EventHandler(this.button_service10_tc_Click);
@@ -1381,10 +1412,11 @@ namespace dcom.views.views_ToolBar
             // 
             // panel_bodyTestcase
             // 
+            this.panel_bodyTestcase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_bodyTestcase.Location = new System.Drawing.Point(0, 0);
             this.panel_bodyTestcase.Margin = new System.Windows.Forms.Padding(0);
             this.panel_bodyTestcase.Name = "panel_bodyTestcase";
-            this.panel_bodyTestcase.Size = new System.Drawing.Size(1083, 605);
+            this.panel_bodyTestcase.Size = new System.Drawing.Size(1078, 605);
             this.panel_bodyTestcase.TabIndex = 2;
             // 
             // View_Setting_Testcase
@@ -1494,7 +1526,7 @@ namespace dcom.views.views_ToolBar
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_body;
         private System.Windows.Forms.Panel panel_bodyTestcase;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_testcaseService;
-        private System.Windows.Forms.Button button_service2f_tc;
+        private System.Windows.Forms.Button button_canTP_tc;
         private System.Windows.Forms.Button button_service85_tc;
         private System.Windows.Forms.Button button_service3e_tc;
         private System.Windows.Forms.Button button_service31_tc;

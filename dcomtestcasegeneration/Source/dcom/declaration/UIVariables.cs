@@ -233,7 +233,7 @@ namespace dcom.declaration
 
         // Service 22
         public static List<string[]> Service22_DIDTable_Specification { get; set; }
-        public static List<bool[]> Service22_DIDTable_AddressingMode { get; set; }
+        public static List<bool[]> Service22_DIDTable_AllowSessionAddressingMode { get; set; }
         public static bool Service22_ButtonStatus_SuppressBit = false;
         public static string[] Service22_NRCPriority = new string[15]
         {

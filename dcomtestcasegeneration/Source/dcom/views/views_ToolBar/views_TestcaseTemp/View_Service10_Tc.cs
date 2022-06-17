@@ -16,5 +16,10 @@ namespace dcom.views.views_ToolBar.views_TestcaseTemp
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

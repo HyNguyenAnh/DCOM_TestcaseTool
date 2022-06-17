@@ -212,11 +212,11 @@
     <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.Designer.cs">
       <DependentUpon>View_Service10_Tc.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc1.cs">
+    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service11_Tc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc1.Designer.cs">
-      <DependentUpon>View_Service10_Tc1.cs</DependentUpon>
+    <Compile Include="views\views_ToolBar\views_TestcaseTemp\View_Service11_Tc.Designer.cs">
+      <DependentUpon>View_Service11_Tc.cs</DependentUpon>
     </Compile>
     <Compile Include="views\views_ToolBar\View_Home.cs">
       <SubType>UserControl</SubType>
@@ -286,8 +286,8 @@
     <EmbeddedResource Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc.resx">
       <DependentUpon>View_Service10_Tc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\views_ToolBar\views_TestcaseTemp\View_Service10_Tc1.resx">
-      <DependentUpon>View_Service10_Tc1.cs</DependentUpon>
+    <EmbeddedResource Include="views\views_ToolBar\views_TestcaseTemp\View_Service11_Tc.resx">
+      <DependentUpon>View_Service11_Tc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\views_ToolBar\View_Home.resx">
       <DependentUpon>View_Home.cs</DependentUpon>

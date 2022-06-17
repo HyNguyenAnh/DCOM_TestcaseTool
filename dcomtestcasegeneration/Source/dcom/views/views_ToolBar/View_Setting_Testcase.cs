@@ -360,14 +360,234 @@ namespace dcom.views.views_ToolBar
             Cursor = Cursors.Default;
         }
 
+        private void button_service11_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service11_Tc frm = new View_Service11_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service14_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service19_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service22_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service27_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service28_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service2e_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service31_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service3e_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_service85_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
+        private void button_canTP_tc_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+
+            View_Service10_Tc frm = new View_Service10_Tc();
+            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+
+            Cursor = Cursors.Default;
+        }
+
         private void button_service10_tc_MouseHover(object sender, EventArgs e)
         {
             button_service10_tc.Margin = new Padding(buttonHoverMargin);
         }
 
+        private void button_service11_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service11_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service14_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service14_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service19_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service19_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service22_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service22_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service27_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service27_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service28_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service28_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service2e_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service2e_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service31_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service31_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service3e_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service3e_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_service85_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_service85_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
+        private void button_canTP_tc_MouseHover(object sender, EventArgs e)
+        {
+            button_canTP_tc.Margin = new Padding(buttonHoverMargin);
+        }
+
         private void button_service10_tc_MouseLeave(object sender, EventArgs e)
         {
             button_service10_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service11_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service11_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service14_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service14_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service19_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service19_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service22_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service22_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service27_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service27_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service28_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service28_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service2e_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service2e_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service31_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service31_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service3e_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service3e_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_service85_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_service85_tc.Margin = new Padding(buttonLeaveMargin);
+        }
+
+        private void button_canTP_tc_MouseLeave(object sender, EventArgs e)
+        {
+            button_canTP_tc.Margin = new Padding(buttonLeaveMargin);
         }
     }
 }

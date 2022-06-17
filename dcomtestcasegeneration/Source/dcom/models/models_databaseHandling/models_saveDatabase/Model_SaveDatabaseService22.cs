@@ -32,7 +32,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22.ElementAt(1)[index].Count(); index_++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_DIDTable_AddressingMode[index][index_]);
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_DIDTable_AllowSessionAddressingMode[index][index_]);
                     Ws.Cells[rowIndex[6] + index, columnIndex[6] + index_] = status;
                 }
             }

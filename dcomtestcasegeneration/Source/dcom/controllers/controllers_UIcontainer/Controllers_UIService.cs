@@ -159,8 +159,8 @@ namespace dcom.controllers.controllers_UIcontainer
                 UIVariables.Service22_DIDTable_Specification.Add(DatabaseVariables.DatabaseService22.ElementAt(0).ElementAt(index));
             }
 
-            // Addressing Mode
-            UIVariables.Service22_DIDTable_AddressingMode = new List<bool[]> { };
+            // Allow Session && Addressing Mode
+            UIVariables.Service22_DIDTable_AllowSessionAddressingMode = new List<bool[]> { };
             for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(1).Count; index++)
             {
                 List<bool> dataRow = new List<bool>();
@@ -168,7 +168,7 @@ namespace dcom.controllers.controllers_UIcontainer
                 {
                     dataRow.Add(Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(1)[index][index_]));
                 }
-                UIVariables.Service22_DIDTable_AddressingMode.Add(dataRow.ToArray());
+                UIVariables.Service22_DIDTable_AllowSessionAddressingMode.Add(dataRow.ToArray());
             }
 
             // NRC

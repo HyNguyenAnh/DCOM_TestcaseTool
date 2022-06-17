@@ -14,18 +14,18 @@ namespace dcom.controllers.controllers_middleware
             
             switch (SID)
             {
-                case "10": index = "2.1.1"; break;
-                case "11": index = "2.1.2"; break;
-                case "14": index = "2.1.3"; break;
-                case "19": index = "2.1.4"; break;
-                case "22": index = "2.1.5"; break;
-                case "27": index = "2.1.6"; break;
-                case "28": index = "2.1.7"; break;
-                case "2E": index = "2.1.8"; break;
-                case "2F": index = "2.1.9"; break;
-                case "31": index = "2.1.10"; break;
-                case "3E": index = "2.1.11"; break;
-                case "85": index = "2.1.12"; break;
+                case "10": index = "2.1"; break;
+                case "11": index = "2.2"; break;
+                case "14": index = "2.3"; break;
+                case "19": index = "2.4"; break;
+                case "22": index = "2.5"; break;
+                case "27": index = "2.6"; break;
+                case "28": index = "2.7"; break;
+                case "2E": index = "2.8"; break;
+                case "31": index = "2.9"; break;
+                case "3E": index = "2.10"; break;
+                case "85": index = "2.11"; break;
+                case "CanTP": index = "2.12"; break;
                 default  : index = "3"; break;
             }
 
@@ -455,7 +455,7 @@ namespace dcom.controllers.controllers_middleware
                 case "11": data = "Request reset the camera with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "14": data = "Request clear DTC with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "19": data = "Request read DTC with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "22": data = "Request read DID with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
+                case "22": data = "Send " + RequestDisplayString + " Using " + TestStepTitleAddressingMode; break;
                 case "27": data = "Request security access with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "28": data = "Request communication control with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "2E": data = "Request write DID with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;

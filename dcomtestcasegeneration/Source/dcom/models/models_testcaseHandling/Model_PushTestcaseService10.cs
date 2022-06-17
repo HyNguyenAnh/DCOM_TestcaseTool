@@ -280,8 +280,8 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> Specification = DatabaseVariables.DatabaseService10.ElementAt(0);
         public static List<string[]> AllowSession = DatabaseVariables.DatabaseService10.ElementAt(1);
         public static List<string[]> NRC = DatabaseVariables.DatabaseService10.ElementAt(2);
-        public static List<string[]> Optional = DatabaseVariables.DatabaseService10.ElementAt(3);
-        public static List<string[]> Precondition = DatabaseVariables.DatabaseService10.ElementAt(4);
+        public static List<string[]> Condition = DatabaseVariables.DatabaseService10.ElementAt(3);
+        public static List<string[]> Optional = DatabaseVariables.DatabaseService10.ElementAt(4);
 
         public static string[] subFunction = Controller_ServiceHandling.GetSubFunctions(Specification);
 

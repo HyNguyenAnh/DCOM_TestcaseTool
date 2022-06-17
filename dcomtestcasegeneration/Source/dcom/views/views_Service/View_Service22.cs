@@ -97,7 +97,7 @@ namespace dcom.views.views_Service
             }
 
             // Load data to DataGridView
-            Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AddressingMode);
+            Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AllowSessionAddressingMode);
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service22_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service22_ButtonStatus_Condition[0];
@@ -240,7 +240,7 @@ namespace dcom.views.views_Service
         {
             if (dataGridView_DIDTable.Enabled == true)
             {
-                Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AddressingMode);
+                Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AllowSessionAddressingMode);
             }
         }
     }

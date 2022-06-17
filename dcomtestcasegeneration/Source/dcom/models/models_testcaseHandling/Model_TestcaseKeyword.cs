@@ -25,7 +25,7 @@ namespace dcom.models.models_testcaseHandling
 
             // Test step 
 
-            TestStep = "Tester present " + TestStepStatus;
+            TestStep = "Tester present " + TestStepStatus + "wait" + timeout;
 
             // Test response
             TestReponse = "-";
@@ -399,7 +399,7 @@ namespace dcom.models.models_testcaseHandling
             }
             else
             {
-                ResponseCodeString = "7f" + ResponseID + "7f";
+                ResponseCodeString = "7f" + SID + "7f";
             }
 
             ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: false, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: true, isParametterAvailable: false);
@@ -424,7 +424,7 @@ namespace dcom.models.models_testcaseHandling
             return Data;
         }
 
-        public static string[] RequestService22(string DID, string expectedValue, bool isDIDSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
+        public static string[] RequestService22(string DID, string expectedValue, bool isAddressingModeSupported, bool isSIDSupportedInActiveSession, bool isParametersupported, bool addressingMode)
         {
 
             string SID = "22";
@@ -438,23 +438,58 @@ namespace dcom.models.models_testcaseHandling
             string ResponseCodeString;
 
             // Configure response string
-            if (isSIDSupportedInActiveSession)
+            if (addressingMode)
             {
-                if (isDIDSupported)
+                if (isAddressingModeSupported)
                 {
-                    ResponseCodeString = ResponseID + DID + expectedValue;
+                    if (isSIDSupportedInActiveSession)
+                    {
+                        if (isParametersupported)
+                        {
+                            ResponseCodeString = ResponseID + DID + expectedValue;
+                        }
+                        else
+                        {
+                            ResponseCodeString = "7f" + SID + "31";
+                        }
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + SID + "7f";
+                    }
                 }
                 else
                 {
-                    ResponseCodeString = "7f" + ResponseID + "31";
+                    ResponseCodeString = "7f" + SID + "31";
                 }
             }
             else
             {
-                ResponseCodeString = "7f" + ResponseID + "7f";
+                if (isAddressingModeSupported)
+                {
+                    if (isSIDSupportedInActiveSession)
+                    {
+                        if (isParametersupported)
+                        {
+                            ResponseCodeString = ResponseID + DID + expectedValue;
+                        }
+                        else
+                        {
+                            ResponseCodeString = "7f" + SID + "31";
+                        }
+                    }
+                    else
+                    {
+                        ResponseCodeString = "";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "";
+                }
             }
 
-            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: false, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: true, isParametterAvailable: true);
+            //ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: false, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: true, isParametterAvailable: true);
 
 
             // Test step 

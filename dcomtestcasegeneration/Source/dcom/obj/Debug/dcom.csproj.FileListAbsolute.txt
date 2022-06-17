@@ -76,7 +76,6 @@ D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenera
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service3E.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_Service.View_Service85.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service10_Tc.resources
-D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service10_Tc1.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Home.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.View_MainWindow.resources
 D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.View_Play.resources
@@ -174,3 +173,4 @@ D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CoreCompi
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.csproj.CopyComplete
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.exe
 D:\HuyNA_repo\dcomtestcasegeneration\Source\dcom\obj\Debug\dcom.pdb
+D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\obj\Debug\dcom.views.views_ToolBar.views_TestcaseTemp.View_Service11_Tc.resources

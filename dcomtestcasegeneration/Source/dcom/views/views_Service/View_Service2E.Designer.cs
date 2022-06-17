@@ -65,6 +65,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_SecurityUnlock = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.view_Service852 = new dcom.views.views_Service.View_Service85();
             this.groupBox_Service2ECondition = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -78,6 +79,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_ConditionEngine_NRC = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.view_Service851 = new dcom.views.views_Service.View_Service85();
             this.groupBox_Service2ENRC = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
@@ -103,6 +105,17 @@ namespace dcom.views.views_Service
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox_Service2EDID = new System.Windows.Forms.GroupBox();
             this.dataGridView_DIDTable = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip_DIDTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertBeforeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertAfterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDIDname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,19 +126,6 @@ namespace dcom.views.views_Service
             this.colDefault = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colProgramming = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Extended = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.contextMenuStrip_DIDTable = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insertBeforeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insertAfterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.view_Service852 = new dcom.views.views_Service.View_Service85();
-            this.view_Service851 = new dcom.views.views_Service.View_Service85();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel_bodySetting.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -147,8 +147,8 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel20.SuspendLayout();
             this.groupBox_Service2EDID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DIDTable)).BeginInit();
-            this.tableLayoutPanel_bodyRight.SuspendLayout();
             this.contextMenuStrip_DIDTable.SuspendLayout();
+            this.tableLayoutPanel_bodyRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -179,7 +179,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service2EDID, 0, 0);
             this.tableLayoutPanel_bodySetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_bodySetting.Location = new System.Drawing.Point(20, 10);
-            this.tableLayoutPanel_bodySetting.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.tableLayoutPanel_bodySetting.Margin = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel_bodySetting.Name = "tableLayoutPanel_bodySetting";
             this.tableLayoutPanel_bodySetting.RowCount = 2;
             this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -212,7 +212,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service2ESecurityUnlock.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Service2ESecurityUnlock.ForeColor = System.Drawing.Color.Brown;
             this.groupBox_Service2ESecurityUnlock.Location = new System.Drawing.Point(490, 10);
-            this.groupBox_Service2ESecurityUnlock.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupBox_Service2ESecurityUnlock.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_Service2ESecurityUnlock.Name = "groupBox_Service2ESecurityUnlock";
             this.groupBox_Service2ESecurityUnlock.Size = new System.Drawing.Size(240, 286);
             this.groupBox_Service2ESecurityUnlock.TabIndex = 6;
@@ -264,7 +264,7 @@ namespace dcom.views.views_Service
             this.button_SecurityUnlock.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SecurityUnlock.ForeColor = System.Drawing.Color.White;
             this.button_SecurityUnlock.Location = new System.Drawing.Point(5, 5);
-            this.button_SecurityUnlock.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button_SecurityUnlock.Margin = new System.Windows.Forms.Padding(5);
             this.button_SecurityUnlock.Name = "button_SecurityUnlock";
             this.button_SecurityUnlock.Size = new System.Drawing.Size(190, 40);
             this.button_SecurityUnlock.TabIndex = 0;
@@ -282,7 +282,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(5, 55);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
@@ -309,12 +309,20 @@ namespace dcom.views.views_Service
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Brown;
             this.label2.Location = new System.Drawing.Point(5, 5);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(180, 102);
             this.label2.TabIndex = 0;
             this.label2.Text = "Kindly select the level of security unlock";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // view_Service852
+            // 
+            this.view_Service852.Location = new System.Drawing.Point(4, 4);
+            this.view_Service852.Margin = new System.Windows.Forms.Padding(4);
+            this.view_Service852.Name = "view_Service852";
+            this.view_Service852.Size = new System.Drawing.Size(1, 19);
+            this.view_Service852.TabIndex = 1;
             // 
             // groupBox_Service2ECondition
             // 
@@ -323,7 +331,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service2ECondition.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Service2ECondition.ForeColor = System.Drawing.Color.Brown;
             this.groupBox_Service2ECondition.Location = new System.Drawing.Point(10, 10);
-            this.groupBox_Service2ECondition.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupBox_Service2ECondition.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_Service2ECondition.Name = "groupBox_Service2ECondition";
             this.groupBox_Service2ECondition.Size = new System.Drawing.Size(460, 286);
             this.groupBox_Service2ECondition.TabIndex = 4;
@@ -379,7 +387,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel18.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(205, 55);
-            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
@@ -435,7 +443,7 @@ namespace dcom.views.views_Service
             this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Brown;
             this.label13.Location = new System.Drawing.Point(5, 5);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label13.Margin = new System.Windows.Forms.Padding(5);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(180, 102);
             this.label13.TabIndex = 2;
@@ -452,7 +460,7 @@ namespace dcom.views.views_Service
             this.button_ConditionVehicleSpeed.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ConditionVehicleSpeed.ForeColor = System.Drawing.Color.White;
             this.button_ConditionVehicleSpeed.Location = new System.Drawing.Point(205, 5);
-            this.button_ConditionVehicleSpeed.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button_ConditionVehicleSpeed.Margin = new System.Windows.Forms.Padding(5);
             this.button_ConditionVehicleSpeed.Name = "button_ConditionVehicleSpeed";
             this.button_ConditionVehicleSpeed.Size = new System.Drawing.Size(190, 40);
             this.button_ConditionVehicleSpeed.TabIndex = 1;
@@ -471,7 +479,7 @@ namespace dcom.views.views_Service
             this.button_ConditionEngine.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ConditionEngine.ForeColor = System.Drawing.Color.White;
             this.button_ConditionEngine.Location = new System.Drawing.Point(5, 5);
-            this.button_ConditionEngine.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button_ConditionEngine.Margin = new System.Windows.Forms.Padding(5);
             this.button_ConditionEngine.Name = "button_ConditionEngine";
             this.button_ConditionEngine.Size = new System.Drawing.Size(190, 40);
             this.button_ConditionEngine.TabIndex = 0;
@@ -489,7 +497,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel19.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(5, 55);
-            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
@@ -517,13 +525,21 @@ namespace dcom.views.views_Service
             this.label18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Brown;
             this.label18.Location = new System.Drawing.Point(5, 5);
-            this.label18.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label18.Margin = new System.Windows.Forms.Padding(5);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(180, 102);
             this.label18.TabIndex = 0;
             this.label18.Text = "When the engine is running or the electric power train is ready, the responsed NR" +
     "C is:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // view_Service851
+            // 
+            this.view_Service851.Location = new System.Drawing.Point(4, 4);
+            this.view_Service851.Margin = new System.Windows.Forms.Padding(4);
+            this.view_Service851.Name = "view_Service851";
+            this.view_Service851.Size = new System.Drawing.Size(1, 19);
+            this.view_Service851.TabIndex = 1;
             // 
             // groupBox_Service2ENRC
             // 
@@ -532,7 +548,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service2ENRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Service2ENRC.ForeColor = System.Drawing.Color.Brown;
             this.groupBox_Service2ENRC.Location = new System.Drawing.Point(750, 10);
-            this.groupBox_Service2ENRC.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupBox_Service2ENRC.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_Service2ENRC.Name = "groupBox_Service2ENRC";
             this.groupBox_Service2ENRC.Size = new System.Drawing.Size(359, 286);
             this.groupBox_Service2ENRC.TabIndex = 5;
@@ -845,7 +861,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service2EDID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Service2EDID.ForeColor = System.Drawing.Color.Brown;
             this.groupBox_Service2EDID.Location = new System.Drawing.Point(10, 10);
-            this.groupBox_Service2EDID.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupBox_Service2EDID.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_Service2EDID.Name = "groupBox_Service2EDID";
             this.groupBox_Service2EDID.Size = new System.Drawing.Size(1099, 285);
             this.groupBox_Service2EDID.TabIndex = 7;
@@ -884,7 +900,7 @@ namespace dcom.views.views_Service
             this.dataGridView_DIDTable.Enabled = false;
             this.dataGridView_DIDTable.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_DIDTable.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView_DIDTable.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dataGridView_DIDTable.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView_DIDTable.Name = "dataGridView_DIDTable";
             this.dataGridView_DIDTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_DIDTable.RowHeadersVisible = false;
@@ -895,6 +911,149 @@ namespace dcom.views.views_Service
             this.dataGridView_DIDTable.TabIndex = 6;
             this.dataGridView_DIDTable.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DIDTable_DataError);
             this.dataGridView_DIDTable.SelectionChanged += new System.EventHandler(this.dataGridView_DIDTable_SelectionChanged);
+            // 
+            // contextMenuStrip_DIDTable
+            // 
+            this.contextMenuStrip_DIDTable.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip_DIDTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cutToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.insertToolStripMenuItem});
+            this.contextMenuStrip_DIDTable.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.contextMenuStrip_DIDTable.Name = "contextMenuStrip_cycleMode";
+            this.contextMenuStrip_DIDTable.Size = new System.Drawing.Size(149, 134);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.cutToolStripMenuItem.Text = "Cut";
+            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // insertToolStripMenuItem
+            // 
+            this.insertToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertBeforeToolStripMenuItem,
+            this.insertAfterToolStripMenuItem});
+            this.insertToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("insertToolStripMenuItem.Image")));
+            this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
+            this.insertToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.insertToolStripMenuItem.Text = "Insert";
+            // 
+            // insertBeforeToolStripMenuItem
+            // 
+            this.insertBeforeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("insertBeforeToolStripMenuItem.Image")));
+            this.insertBeforeToolStripMenuItem.Name = "insertBeforeToolStripMenuItem";
+            this.insertBeforeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
+            this.insertBeforeToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.insertBeforeToolStripMenuItem.Text = "Insert before";
+            this.insertBeforeToolStripMenuItem.Click += new System.EventHandler(this.insertBeforeToolStripMenuItem_Click);
+            // 
+            // insertAfterToolStripMenuItem
+            // 
+            this.insertAfterToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("insertAfterToolStripMenuItem.Image")));
+            this.insertAfterToolStripMenuItem.Name = "insertAfterToolStripMenuItem";
+            this.insertAfterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
+            this.insertAfterToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.insertAfterToolStripMenuItem.Text = "Insert after";
+            this.insertAfterToolStripMenuItem.Click += new System.EventHandler(this.insertAfterToolStripMenuItem_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1149, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 631);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // tableLayoutPanel_bodyRight
+            // 
+            this.tableLayoutPanel_bodyRight.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel_bodyRight.ColumnCount = 1;
+            this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_bodyRight.Controls.Add(this.panel2, 0, 7);
+            this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
+            this.tableLayoutPanel_bodyRight.RowCount = 13;
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 631);
+            this.tableLayoutPanel_bodyRight.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(0, 350);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 50);
+            this.panel2.TabIndex = 4;
             // 
             // colNo
             // 
@@ -1025,165 +1184,6 @@ namespace dcom.views.views_Service
             this.Extended.Name = "Extended";
             this.Extended.Width = 63;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1149, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 631);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // tableLayoutPanel_bodyRight
-            // 
-            this.tableLayoutPanel_bodyRight.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel_bodyRight.ColumnCount = 1;
-            this.tableLayoutPanel_bodyRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Controls.Add(this.panel2, 0, 7);
-            this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
-            this.tableLayoutPanel_bodyRight.RowCount = 13;
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 631);
-            this.tableLayoutPanel_bodyRight.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(0, 350);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 50);
-            this.panel2.TabIndex = 4;
-            // 
-            // contextMenuStrip_DIDTable
-            // 
-            this.contextMenuStrip_DIDTable.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip_DIDTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cutToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.insertToolStripMenuItem});
-            this.contextMenuStrip_DIDTable.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.contextMenuStrip_DIDTable.Name = "contextMenuStrip_cycleMode";
-            this.contextMenuStrip_DIDTable.Size = new System.Drawing.Size(149, 134);
-            // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.cutToolStripMenuItem.Text = "Cut";
-            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.copyToolStripMenuItem.Text = "Copy";
-            this.copyToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // insertToolStripMenuItem
-            // 
-            this.insertToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.insertBeforeToolStripMenuItem,
-            this.insertAfterToolStripMenuItem});
-            this.insertToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("insertToolStripMenuItem.Image")));
-            this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            this.insertToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.insertToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.insertToolStripMenuItem.Text = "Insert";
-            // 
-            // insertBeforeToolStripMenuItem
-            // 
-            this.insertBeforeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("insertBeforeToolStripMenuItem.Image")));
-            this.insertBeforeToolStripMenuItem.Name = "insertBeforeToolStripMenuItem";
-            this.insertBeforeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Insert;
-            this.insertBeforeToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.insertBeforeToolStripMenuItem.Text = "Insert before";
-            this.insertBeforeToolStripMenuItem.Click += new System.EventHandler(this.insertBeforeToolStripMenuItem_Click);
-            // 
-            // insertAfterToolStripMenuItem
-            // 
-            this.insertAfterToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("insertAfterToolStripMenuItem.Image")));
-            this.insertAfterToolStripMenuItem.Name = "insertAfterToolStripMenuItem";
-            this.insertAfterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
-            this.insertAfterToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.insertAfterToolStripMenuItem.Text = "Insert after";
-            this.insertAfterToolStripMenuItem.Click += new System.EventHandler(this.insertAfterToolStripMenuItem_Click);
-            // 
-            // view_Service852
-            // 
-            this.view_Service852.Location = new System.Drawing.Point(4, 4);
-            this.view_Service852.Margin = new System.Windows.Forms.Padding(4);
-            this.view_Service852.Name = "view_Service852";
-            this.view_Service852.Size = new System.Drawing.Size(1, 19);
-            this.view_Service852.TabIndex = 1;
-            // 
-            // view_Service851
-            // 
-            this.view_Service851.Location = new System.Drawing.Point(4, 4);
-            this.view_Service851.Margin = new System.Windows.Forms.Padding(4);
-            this.view_Service851.Name = "view_Service851";
-            this.view_Service851.Size = new System.Drawing.Size(1, 19);
-            this.view_Service851.TabIndex = 1;
-            // 
             // View_Service2E
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1219,8 +1219,8 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel20.PerformLayout();
             this.groupBox_Service2EDID.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DIDTable)).EndInit();
-            this.tableLayoutPanel_bodyRight.ResumeLayout(false);
             this.contextMenuStrip_DIDTable.ResumeLayout(false);
+            this.tableLayoutPanel_bodyRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1283,6 +1283,11 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertBeforeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertAfterToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox_ConditionEngine_NRC;
+        private System.Windows.Forms.ComboBox comboBox_SecurityUnlock;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        private System.Windows.Forms.TextBox vehicleSpeedValue_Text;
+        private System.Windows.Forms.ComboBox comboBox_ConditionVehicle_NRC;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDIDname;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDID;
@@ -1293,10 +1298,5 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.DataGridViewCheckBoxColumn colDefault;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colProgramming;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Extended;
-        private System.Windows.Forms.ComboBox comboBox_ConditionEngine_NRC;
-        private System.Windows.Forms.ComboBox comboBox_SecurityUnlock;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
-        private System.Windows.Forms.TextBox vehicleSpeedValue_Text;
-        private System.Windows.Forms.ComboBox comboBox_ConditionVehicle_NRC;
     }
 }

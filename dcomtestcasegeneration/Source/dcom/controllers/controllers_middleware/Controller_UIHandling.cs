@@ -363,17 +363,17 @@ namespace dcom.controllers.controllers_middleware
         public static void PutDatabaseToDataGridView_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData)
         {
             // Push data to Grid View
-            for (int rowIndex = 0; rowIndex < stringData.Count(); rowIndex++)
+            for (int rowIndex = 0; rowIndex < stringData?.Count(); rowIndex++)
             {
-                for (int cellIndex = 1; cellIndex < stringData.ElementAt(0).Length + boolData.ElementAt(0).Length + 1; cellIndex++)
+                for (int cellIndex = 1; cellIndex < stringData?.ElementAt(0).Length + boolData?.ElementAt(0).Length + 1; cellIndex++)
                 {
                     if (cellIndex < stringData.ElementAt(0).Length + 1)
                     {
-                        dataGridView.Rows[rowIndex].Cells[cellIndex].Value = stringData.ElementAt(rowIndex)[cellIndex - 1];
+                        dataGridView.Rows[rowIndex].Cells[cellIndex].Value = stringData?.ElementAt(rowIndex)[cellIndex - 1];
                     }
                     else
                     {
-                        dataGridView.Rows[rowIndex].Cells[cellIndex].Value = boolData.ElementAt(rowIndex)[cellIndex - (stringData.ElementAt(0).Length + 1)];
+                        dataGridView.Rows[rowIndex].Cells[cellIndex].Value = boolData?.ElementAt(rowIndex)[cellIndex - (stringData.ElementAt(0).Length + 1)];
                     }
                 }
             }
