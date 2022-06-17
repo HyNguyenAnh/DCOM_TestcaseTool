@@ -1,0 +1,10 @@
+Công:
+- Update UI service 22, 2e (add status column [valid;invalid])
+- Fix bug in data grid in No column
+
+
+
+Huy:
+- Update testcase for allow session + addressing mode + suppress bit for service 22, 2e, 27, 28, 85, 3e
+- Update database in service 22, 2e : add Allow Session table
+- Update the position of step TesterPresent at all service (first step is TesterPresent ON, last step is Tester Presend OFF)
