@@ -159,7 +159,7 @@ namespace dcom.controllers.controllers_UIcontainer
                 UIVariables.Service22_DIDTable_Specification.Add(DatabaseVariables.DatabaseService22.ElementAt(0).ElementAt(index));
             }
 
-            // Allow Session && Addressing Mode
+            // Addressing Mode
             UIVariables.Service22_DIDTable_AllowSessionAddressingMode = new List<bool[]> { };
             for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(1).Count; index++)
             {
@@ -187,6 +187,12 @@ namespace dcom.controllers.controllers_UIcontainer
 
             // Optional
             UIVariables.Service22_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(4)[0][1]);
+
+            // Allow Session
+            for(int index = 0; index < UIVariables.Service22_ButtonStatus_AllowSession.Length; index++)
+            {
+                UIVariables.Service22_ButtonStatus_AllowSession[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(5)[index][1]);
+            }
         }
 
         public static void LoadUI_Service2E()
@@ -195,7 +201,7 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service2E_DIDTable_Specification = new List<string[]> { };
             for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(0).Count; index++)
             {
-                UIVariables.Service2E_DIDTable_Specification.Add(DatabaseVariables.DatabaseService22.ElementAt(0).ElementAt(index));
+                UIVariables.Service2E_DIDTable_Specification.Add(DatabaseVariables.DatabaseService2E.ElementAt(0).ElementAt(index));
             }
 
             // Addressing Mode
@@ -221,12 +227,18 @@ namespace dcom.controllers.controllers_UIcontainer
             {
                 UIVariables.Service2E_InvalidValueCondition[index] = DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1];
                 UIVariables.Service2E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2]);
-                UIVariables.Service2E_NRCCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][3];
+                UIVariables.Service2E_NRCCondition[index] = DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3];
             }
 
             // Optional
-            UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStringLevelToBool(DatabaseVariables.DatabaseService22.ElementAt(4)[1][1]);
-            UIVariables.Service2E_SecurityUnlockLv = DatabaseVariables.DatabaseService22.ElementAt(4)[1][1];
+            UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStringLevelToBool(DatabaseVariables.DatabaseService2E.ElementAt(4)[1][1]);
+            UIVariables.Service2E_SecurityUnlockLv = DatabaseVariables.DatabaseService2E.ElementAt(4)[1][1];
+
+            // Allow Session
+            for (int index = 0; index < UIVariables.Service2E_ButtonStatus_AllowSession.Length; index++)
+            {
+                UIVariables.Service2E_ButtonStatus_AllowSession[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(5)[index][1]);
+            }
         }
 
         public static void LoadUI_Service27()

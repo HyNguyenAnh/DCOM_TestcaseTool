@@ -27,7 +27,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 }
             }
 
-            // Allow session
+            // Addressing Mode
             for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(1).Count(); index++)
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22.ElementAt(1)[index].Count(); index_++)
@@ -68,6 +68,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 {
                     Ws.Cells[rowIndex[9] + index, columnIndex[9] + 2] = "0";
                 }
+            }
+
+            // Allow Session
+            for(int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(5).Count; index++)
+            {
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_AllowSession[index]);
+                Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = status;
             }
         }
     }

@@ -25,13 +25,42 @@ namespace dcom.models.models_testcaseHandling
 
             // Test step 
 
-            TestStep = "Tester present " + TestStepStatus + "wait" + timeout;
+            TestStep = $"Tester present {TestStepStatus} wait {timeout}";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = "envvar(EnvTesterPresentOnOff(" + TestStepKeywordStatus + ";" + timeout + "))";
+            TestStepKeyword = $"envvar(EnvTesterPresentOnOff({TestStepKeywordStatus}; {timeout}))";
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+        public static string[] RequestEnvLogInLevel(string level, bool status, int timeout)
+        {
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+
+            string TestStepStatus = Controller_ServiceHandling.ConvertFromBoolToString(status);
+            int TestStepKeywordStatus = Controller_ServiceHandling.ConvertFromBoolToInt(status);
+
+            // Test step 
+
+            TestStep = $"Set the EnvLogInLevel{level} {TestStepStatus} Wait {timeout} ms";
+
+            // Test response
+            TestReponse = "-";
+
+            // Test step keyword
+            //SetEnvVar(string Name EnvLogInLevel1, string Value 1, int WaitTime 1000)
+            TestStepKeyword = $"SetEnvVar(string Name EnvLogInLevel{level}, string Value {TestStepKeywordStatus}, int WaitTime {timeout})";
 
             Data = new string[]
             {
@@ -53,13 +82,13 @@ namespace dcom.models.models_testcaseHandling
             string session = Controller_ServiceHandling.ConvertFromSubFunctionToDiagnosticSessionDisplayString(subFunction);
             // Test step 
 
-            TestStep = "Change to " + session + " session with service 0x10 " + subFunction;
+            TestStep = $"Change to {session} session with service 0x10 {subFunction}";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = "DiagSessionCtrl(" + session + ")";
+            TestStepKeyword = $"DiagSessionCtrl({session})";
 
             Data = new string[]
             {
@@ -114,7 +143,7 @@ namespace dcom.models.models_testcaseHandling
         {
             // subFunction: 01, 02, 03
             // suppressBitEnabledStatus: true -> request 1081, false -> request 1001
-            // isSuppressBitSupported: true -> 1081 - 5081, false -> 1081 -> 7F1012
+            // isSuppressBitSupported: true -> 1081 -> 5081, false -> 1081 -> 7F1012
             // isSIDSupportedInActiveSession: true -> positive response, false: NRC 7F
             // isSubFunctionSupportedInActiveSession: true -> Positive response, false -> NRC 7E
             // addressing mode: 0: Physical, 1: Functional
@@ -200,7 +229,6 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-
         public static string[] RequestService11(string subFunction, bool isSubFunctionSupported,bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
         {
 
@@ -285,10 +313,9 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService3E(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
+        public static string[] RequestService19(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
         {
-
-            string SID = "3E";
+            string SID = "19";
             string subFunctionNew;
             string[] Data;
             string TestStep;
@@ -300,7 +327,6 @@ namespace dcom.models.models_testcaseHandling
 
             string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
             string ResponseCodeString = "";
-
 
             if (suppressBitEnabledStatus)
             {
@@ -369,7 +395,252 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
+        public static string[] RequestService27(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
+        {
+            string SID = "27";
+            string subFunctionNew;
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
 
+            string RequestDisplayString;
+            string RequestCodeString;
+
+            string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
+            string ResponseCodeString = "";
+
+            if (suppressBitEnabledStatus)
+            {
+                subFunctionNew = Controller_ServiceHandling.GetSuppressBitSubFunction(subFunction);
+            }
+            else
+            {
+                subFunctionNew = subFunction;
+            }
+
+            // Configure request string
+            RequestDisplayString = SID + subFunctionNew;
+            RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
+            RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
+
+            // Configure response string
+            if (isSIDSupportedInActiveSession)
+            {
+                if ((suppressBitEnabledStatus & isSubFunctionSupported & isSuppressBitSupported) | (!suppressBitEnabledStatus & isSubFunctionSupported))
+                {
+                    if (isSubFunctionSupportedInActiveSession)
+                    {
+                        switch (suppressBitEnabledStatus)
+                        {
+                            case true:
+                                ResponseCodeString = "";
+                                break;
+                            case false:
+                                ResponseCodeString = ResponseID + subFunctionNew;
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + ResponseID + "7e";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "7f" + ResponseID + "12";
+                }
+            }
+            else
+            {
+                ResponseCodeString = "7f" + ResponseID + "7f";
+            }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: suppressBitEnabledStatus, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: isSubFunctionSupportedInActiveSession, isParametterAvailable: false);
+
+
+            // Test step 
+            TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
+
+            // Test response
+            TestReponse = Controller_ServiceHandling.GetTestResponse(ResponseCodeString);
+
+            // Test step keyword
+            TestStepKeyword = Controller_ServiceHandling.GetTestStepKeyword(RequestCodeString, ResponseCodeString, addressingMode);
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+        public static string[] RequestService28(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
+        {
+            string SID = "28";
+            string subFunctionNew;
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+
+            string RequestDisplayString;
+            string RequestCodeString;
+
+            string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
+            string ResponseCodeString = "";
+
+            if (suppressBitEnabledStatus)
+            {
+                subFunctionNew = Controller_ServiceHandling.GetSuppressBitSubFunction(subFunction);
+            }
+            else
+            {
+                subFunctionNew = subFunction;
+            }
+
+            // Configure request string
+            RequestDisplayString = SID + subFunctionNew;
+            RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
+            RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
+
+            // Configure response string
+            if (isSIDSupportedInActiveSession)
+            {
+                if ((suppressBitEnabledStatus & isSubFunctionSupported & isSuppressBitSupported) | (!suppressBitEnabledStatus & isSubFunctionSupported))
+                {
+                    if (isSubFunctionSupportedInActiveSession)
+                    {
+                        switch (suppressBitEnabledStatus)
+                        {
+                            case true:
+                                ResponseCodeString = "";
+                                break;
+                            case false:
+                                ResponseCodeString = ResponseID + subFunctionNew;
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + ResponseID + "7e";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "7f" + ResponseID + "12";
+                }
+            }
+            else
+            {
+                ResponseCodeString = "7f" + ResponseID + "7f";
+            }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: suppressBitEnabledStatus, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: isSubFunctionSupportedInActiveSession, isParametterAvailable: false);
+
+
+            // Test step 
+            TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
+
+            // Test response
+            TestReponse = Controller_ServiceHandling.GetTestResponse(ResponseCodeString);
+
+            // Test step keyword
+            TestStepKeyword = Controller_ServiceHandling.GetTestStepKeyword(RequestCodeString, ResponseCodeString, addressingMode);
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+        public static string[] RequestService85(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
+        {
+            string SID = "85";
+            string subFunctionNew;
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+
+            string RequestDisplayString;
+            string RequestCodeString;
+
+            string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
+            string ResponseCodeString = "";
+
+            if (suppressBitEnabledStatus)
+            {
+                subFunctionNew = Controller_ServiceHandling.GetSuppressBitSubFunction(subFunction);
+            }
+            else
+            {
+                subFunctionNew = subFunction;
+            }
+
+            // Configure request string
+            RequestDisplayString = SID + subFunctionNew;
+            RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
+            RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
+
+            // Configure response string
+            if (isSIDSupportedInActiveSession)
+            {
+                if ((suppressBitEnabledStatus & isSubFunctionSupported & isSuppressBitSupported) | (!suppressBitEnabledStatus & isSubFunctionSupported))
+                {
+                    if (isSubFunctionSupportedInActiveSession)
+                    {
+                        switch (suppressBitEnabledStatus)
+                        {
+                            case true:
+                                ResponseCodeString = "";
+                                break;
+                            case false:
+                                ResponseCodeString = ResponseID + subFunctionNew;
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + ResponseID + "7e";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "7f" + ResponseID + "12";
+                }
+            }
+            else
+            {
+                ResponseCodeString = "7f" + ResponseID + "7f";
+            }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: suppressBitEnabledStatus, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: isSubFunctionSupportedInActiveSession, isParametterAvailable: false);
+
+
+            // Test step 
+            TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
+
+            // Test response
+            TestReponse = Controller_ServiceHandling.GetTestResponse(ResponseCodeString);
+
+            // Test step keyword
+            TestStepKeyword = Controller_ServiceHandling.GetTestStepKeyword(RequestCodeString, ResponseCodeString, addressingMode);
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
         public static string[] RequestService14(string parametter, bool isSIDSupportedInActiveSession, bool addressingMode)
         {
             // parametter: ffffff
@@ -423,8 +694,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-
-        public static string[] RequestService22(string DID, string expectedValue, bool isAddressingModeSupported, bool isSIDSupportedInActiveSession, bool isParametersupported, bool addressingMode)
+        public static string[] RequestService22(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParametersupported, bool addressingMode, int length)
         {
 
             string SID = "22";
@@ -437,50 +707,42 @@ namespace dcom.models.models_testcaseHandling
             string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
             string ResponseCodeString;
 
+            // Expected value
+            if(expectedValue == "")
+            {
+                expectedValue = ".{" + (length * 2) + "}";
+            }
+
             // Configure response string
             if (addressingMode)
             {
-                if (isAddressingModeSupported)
+                if (isSIDSupportedInActiveSession)
                 {
-                    if (isSIDSupportedInActiveSession)
+                    if (isParametersupported)
                     {
-                        if (isParametersupported)
-                        {
-                            ResponseCodeString = ResponseID + DID + expectedValue;
-                        }
-                        else
-                        {
-                            ResponseCodeString = "7f" + SID + "31";
-                        }
+                        ResponseCodeString = ResponseID + DID + expectedValue;
                     }
                     else
                     {
-                        ResponseCodeString = "7f" + SID + "7f";
+                        ResponseCodeString = "7f" + SID + "31";
                     }
                 }
                 else
                 {
-                    ResponseCodeString = "7f" + SID + "31";
+                    ResponseCodeString = "7f" + SID + "7f";
                 }
             }
             else
             {
-                if (isAddressingModeSupported)
+                if (isSIDSupportedInActiveSession)
                 {
-                    if (isSIDSupportedInActiveSession)
+                    if (isParametersupported)
                     {
-                        if (isParametersupported)
-                        {
-                            ResponseCodeString = ResponseID + DID + expectedValue;
-                        }
-                        else
-                        {
-                            ResponseCodeString = "7f" + SID + "31";
-                        }
+                        ResponseCodeString = ResponseID + DID + expectedValue;
                     }
                     else
                     {
-                        ResponseCodeString = "";
+                        ResponseCodeString = "7f" + SID + "31";
                     }
                 }
                 else
@@ -490,6 +752,169 @@ namespace dcom.models.models_testcaseHandling
             }
 
             //ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: false, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: true, isParametterAvailable: true);
+
+
+            // Test step 
+            TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
+
+            // Test response
+            TestReponse = Controller_ServiceHandling.GetTestResponse(ResponseCodeString);
+
+            // Test step keyword
+            TestStepKeyword = Controller_ServiceHandling.GetTestStepKeyword(RequestCodeString, ResponseCodeString, addressingMode);
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+        public static string[] RequestService2E(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParametersupported, bool addressingMode, int length)
+        {
+
+            string SID = "22";
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+
+            string RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(SID + DID);
+            string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
+            string ResponseCodeString;
+
+            // Expected value
+            if (expectedValue == "")
+            {
+                expectedValue = ".{" + (length * 2) + "}";
+            }
+
+            // Configure response string
+            if (addressingMode)
+            {
+                // Physical
+                if (isSIDSupportedInActiveSession)
+                {
+                    if (isParametersupported)
+                    {
+                        ResponseCodeString = ResponseID + DID + expectedValue;
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + SID + "31";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "7f" + SID + "7f";
+                }
+            }
+            else
+            {
+                // Functional
+                if (isSIDSupportedInActiveSession)
+                {
+                    if (isParametersupported)
+                    {
+                        ResponseCodeString = ResponseID + DID + expectedValue;
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + SID + "31";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "";
+                }
+            }
+
+            //ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: false, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: true, isParametterAvailable: true);
+
+
+            // Test step 
+            TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
+
+            // Test response
+            TestReponse = Controller_ServiceHandling.GetTestResponse(ResponseCodeString);
+
+            // Test step keyword
+            TestStepKeyword = Controller_ServiceHandling.GetTestStepKeyword(RequestCodeString, ResponseCodeString, addressingMode);
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+        public static string[] RequestService3E(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, bool addressingMode)
+        {
+
+            string SID = "3E";
+            string subFunctionNew;
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+
+            string RequestDisplayString;
+            string RequestCodeString;
+
+            string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
+            string ResponseCodeString = "";
+
+
+            if (suppressBitEnabledStatus)
+            {
+                subFunctionNew = Controller_ServiceHandling.GetSuppressBitSubFunction(subFunction);
+            }
+            else
+            {
+                subFunctionNew = subFunction;
+            }
+
+            // Configure request string
+            RequestDisplayString = SID + subFunctionNew;
+            RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
+            RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
+
+            // Configure response string
+            if (isSIDSupportedInActiveSession)
+            {
+                if ((suppressBitEnabledStatus & isSubFunctionSupported & isSuppressBitSupported) | (!suppressBitEnabledStatus & isSubFunctionSupported))
+                {
+                    if (isSubFunctionSupportedInActiveSession)
+                    {
+                        switch (suppressBitEnabledStatus)
+                        {
+                            case true:
+                                ResponseCodeString = "";
+                                break;
+                            case false:
+                                ResponseCodeString = ResponseID + subFunctionNew;
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        ResponseCodeString = "7f" + ResponseID + "7e";
+                    }
+                }
+                else
+                {
+                    ResponseCodeString = "7f" + ResponseID + "12";
+                }
+            }
+            else
+            {
+                ResponseCodeString = "7f" + ResponseID + "7f";
+            }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeString(ResponseCodeString, addressingMode: addressingMode, suppressBitEnabledStatus: suppressBitEnabledStatus, isSIDSupportedInActiveSession: isSIDSupportedInActiveSession, isSubFunctionSupportedInActiveSession: isSubFunctionSupportedInActiveSession, isParametterAvailable: false);
 
 
             // Test step 

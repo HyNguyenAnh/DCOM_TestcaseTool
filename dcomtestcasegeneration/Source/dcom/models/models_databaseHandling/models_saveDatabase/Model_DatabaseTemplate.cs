@@ -66,11 +66,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Save the database
             Controller_ExcelHandling.SaveExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
 
-            // Update Database Variable
-            Definition.DatabaseVariableDefinition();
-
             // After Handling, close the template file
             Controller_ExcelHandling.CloseExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbOutputDatabase);
+
+            // Update current database
+            DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(DatabaseVariables.PathOutputDatabase);
+            Definition.DatabaseVariableDefinition();
+            Controller_ExcelHandling.CloseExcel(DatabaseVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
         }
     }
 }

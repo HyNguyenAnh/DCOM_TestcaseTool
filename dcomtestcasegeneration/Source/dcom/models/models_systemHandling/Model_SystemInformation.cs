@@ -18,8 +18,11 @@ namespace dcom.models.models_systemHandling
                 {
                     //The code will execute if the folder exists
                 }
-                //The below code will create a folder if the folder is not exists in C#.Net.            
-                DirectoryInfo folder = Directory.CreateDirectory(DatabaseVariables.DirectoryOutputDatabase);
+                else
+                {
+                    //The below code will create a folder if the folder is not exists        
+                    DirectoryInfo folder = Directory.CreateDirectory(DatabaseVariables.DirectoryOutputDatabase);
+                }
             }
             catch (Exception e)
             {
@@ -40,7 +43,7 @@ namespace dcom.models.models_systemHandling
                 // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(SystemVariables.backupFilePath))
                 {
-                    sw.WriteLine(DatabaseVariables.DatabasePath);
+                    sw.WriteLine(DatabaseVariables.PathOutputDatabase);
                     sw.WriteLine(DateTime.Now);
                 }
             }

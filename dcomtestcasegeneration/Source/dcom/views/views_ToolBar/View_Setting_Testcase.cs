@@ -258,37 +258,37 @@ namespace dcom.views.views_ToolBar
             button_SelectService2E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[7])[1];
         }
 
-        private void button_SelectCANTP_Click(object sender, EventArgs e)
+        private void button_SelectService31_Click(object sender, EventArgs e)
         {
             DatabaseVariables.SelectedServiceStatus[8] = !DatabaseVariables.SelectedServiceStatus[8];
 
-            button_SelectCANTP.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[0];
-            button_SelectCANTP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[1];
-        }
-
-        private void button_SelectService31_Click(object sender, EventArgs e)
-        {
-            DatabaseVariables.SelectedServiceStatus[9] = !DatabaseVariables.SelectedServiceStatus[9];
-
-            button_SelectService31.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[0];
-            button_SelectService31.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[1];
+            button_SelectService31.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[0];
+            button_SelectService31.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[1];
         }
 
         private void button_SelectService3E_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[10] = !DatabaseVariables.SelectedServiceStatus[10];
+            DatabaseVariables.SelectedServiceStatus[9] = !DatabaseVariables.SelectedServiceStatus[9];
 
-            button_SelectService3E.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[0];
-            button_SelectService3E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[1];
+            button_SelectService3E.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[0];
+            button_SelectService3E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[1];
 
         }
 
         private void button_SelectService85_Click(object sender, EventArgs e)
         {
+            DatabaseVariables.SelectedServiceStatus[10] = !DatabaseVariables.SelectedServiceStatus[10];
+
+            button_SelectService85.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[0];
+            button_SelectService85.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[1];
+        }
+
+        private void button_SelectCANTP_Click(object sender, EventArgs e)
+        {
             DatabaseVariables.SelectedServiceStatus[11] = !DatabaseVariables.SelectedServiceStatus[11];
 
-            button_SelectService85.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[0];
-            button_SelectService85.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[1];
+            button_SelectCANTP.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[0];
+            button_SelectCANTP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[1];
         }
 
         private void comboBox_DBPath_TextChanged(object sender, EventArgs e)

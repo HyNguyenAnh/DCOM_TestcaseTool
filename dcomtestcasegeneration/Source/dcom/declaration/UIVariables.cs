@@ -54,8 +54,8 @@ namespace dcom.declaration
             false,
         };
 
-        // Service 10
-        
+        // Service 10 *****************************************************************************************************************
+
         public static bool[] Service10_ButtonStatus_SessionTransition = new bool[]
         {
             false,
@@ -116,7 +116,7 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 11
+        // Service 11 *****************************************************************************************************************
 
         public static bool[] Service11_ButtonStatus_ResetMode = new bool[]
         {
@@ -172,7 +172,7 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 14
+        // Service 14 *****************************************************************************************************************
 
         public static bool[] Service14_ButtonStatus_SubFunction = new bool[]
         {
@@ -228,10 +228,10 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 19
+        // Service 19 *****************************************************************************************************************
 
 
-        // Service 22
+        // Service 22 *****************************************************************************************************************
         public static List<string[]> Service22_DIDTable_Specification { get; set; }
         public static List<bool[]> Service22_DIDTable_AllowSessionAddressingMode { get; set; }
         public static bool Service22_ButtonStatus_SuppressBit = false;
@@ -272,8 +272,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static bool[] Service22_ButtonStatus_AllowSession = new bool[]
+        {
+            false,
+            false,
+        };
 
-        // Service 2E
+        // Service 2E *****************************************************************************************************************
         public static List<string[]> Service2E_DIDTable_Specification { get; set; }
         public static List<bool[]> Service2E_DIDTable_AddressingMode { get; set; }
         public static bool Service2E_ButtonStatus_SecurityUnlock = false;
@@ -315,8 +320,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static bool[] Service2E_ButtonStatus_AllowSession = new bool[]
+        {
+            false,
+            false,
+        };
 
-        // Service 27
+        // Service 27 *****************************************************************************************************************
         public static bool Service27_ButtonStatus_SuppressBit = false;
         public static bool[] Service27_ButtonStatus_AddressingMode = new bool[]
         {
@@ -385,7 +395,7 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 28
+        // Service 28 *****************************************************************************************************************
 
         public static bool[] Service28_ButtonStatus_ControlType = new bool[]
         {
@@ -448,7 +458,7 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 3E
+        // Service 3E *****************************************************************************************************************
 
         public static bool Service3E_ButtonStatus_SuppressBit = false;
         public static bool[] Service3E_ButtonStatus_AddressingMode = new bool[]
@@ -498,7 +508,7 @@ namespace dcom.declaration
             "",
         };
 
-        // Service 85
+        // Service 85 *****************************************************************************************************************
 
         public static bool Service85_ButtonStatus_SuppressBit = false;
         public static bool[] Service85_ButtonStatus_AddressingMode = new bool[]

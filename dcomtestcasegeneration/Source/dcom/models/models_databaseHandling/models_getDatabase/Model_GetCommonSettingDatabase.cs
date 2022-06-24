@@ -27,9 +27,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[0]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[0]].Text != ""; rowIndex++)
             {
-                for(int index = 0; ws.Cells[startRowIndexDatabaseTable[0] - 1, startColumnIndexDatabaseTable[0] + index].Text != ""; index++)
+                for(int columnIndex = startColumnIndexDatabaseTable[0]; ws.Cells[startRowIndexDatabaseTable[0] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[0] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -49,9 +49,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[1]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[1]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[1] - 1, startColumnIndexDatabaseTable[1] + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable[1]; ws.Cells[startRowIndexDatabaseTable[1] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[1] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -70,9 +70,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[2]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[2]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[2] - 1, startColumnIndexDatabaseTable[2] + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable[2]; ws.Cells[startRowIndexDatabaseTable[2] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[2] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -91,9 +91,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[3]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[3]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[3] - 1, startColumnIndexDatabaseTable[3] + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable[3]; ws.Cells[startRowIndexDatabaseTable[3] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[3] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -112,9 +112,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[4]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[4]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[4] - 1, startColumnIndexDatabaseTable[4] + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable[4]; ws.Cells[startRowIndexDatabaseTable[4] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[4] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();

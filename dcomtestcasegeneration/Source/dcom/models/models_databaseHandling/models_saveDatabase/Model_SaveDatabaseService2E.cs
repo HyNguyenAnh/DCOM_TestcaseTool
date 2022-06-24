@@ -70,6 +70,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     Ws.Cells[rowIndex[9] + index, columnIndex[9] + 2] = "0";
                 }
             }
+
+            // SID support
+            for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(5).Count; index++)
+            {
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_AllowSession[index]);
+                Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = status;
+            }
         }
     }
 }

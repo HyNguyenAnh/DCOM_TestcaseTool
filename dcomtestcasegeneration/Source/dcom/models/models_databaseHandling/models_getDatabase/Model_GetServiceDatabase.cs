@@ -29,9 +29,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[5]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[5]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[5] - 1, startColumnIndexDatabaseTable[5] + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable[5]; ws.Cells[startRowIndexDatabaseTable[5] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[5] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -51,9 +51,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[6]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[6]].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[6] - 1, startColumnIndexDatabaseTable[6] + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable[6]; ws.Cells[startRowIndexDatabaseTable[6] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable[6] + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -83,9 +83,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[7]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[7] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable_except; ws.Cells[startRowIndexDatabaseTable[7] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable_except + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -114,9 +114,9 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[8]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[8] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable_except; ws.Cells[startRowIndexDatabaseTable[8] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable_except + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -146,9 +146,31 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
 
             for (int rowIndex = startRowIndexDatabaseTable[9]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int index = 0; ws.Cells[startRowIndexDatabaseTable[9] - 1, startColumnIndexDatabaseTable_except + index].Text != ""; index++)
+                for (int columnIndex = startColumnIndexDatabaseTable_except; ws.Cells[startRowIndexDatabaseTable[9] - 1, columnIndex].Text != ""; columnIndex++)
                 {
-                    dataRow.Add(ws.Cells[rowIndex, startColumnIndexDatabaseTable_except + index].Text);
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
+                }
+                dataTable.Add(dataRow.ToArray());
+                dataRow.Clear();
+            }
+            return dataTable;
+        }
+
+        public static List<string[]> SIDSupport(string SID)
+        {
+            List<string[]> dataTable = new List<string[]>();
+            List<string> dataRow = new List<string>();
+            string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
+
+            // Definition worksheet
+            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
+            Worksheet ws = DatabaseVariables.WsDatabase;
+
+            for (int rowIndex = startRowIndexDatabaseTable[10]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[10]].Text != ""; rowIndex++)
+            {
+                for (int columnIndex = startColumnIndexDatabaseTable[10]; ws.Cells[startRowIndexDatabaseTable[10] - 1, columnIndex].Text != ""; columnIndex++)
+                {
+                    dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
                 dataTable.Add(dataRow.ToArray());
                 dataRow.Clear();
@@ -165,6 +187,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             data.Add(NRC(SID));
             data.Add(Condition(SID));
             data.Add(Optional(SID));
+            data.Add(SIDSupport(SID));
 
             return data;
 

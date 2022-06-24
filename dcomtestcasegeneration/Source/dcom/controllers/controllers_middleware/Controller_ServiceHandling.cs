@@ -202,6 +202,18 @@ namespace dcom.controllers.controllers_middleware
                 return false;
             }
         }
+        public static bool ConvertAddressingModeToBool(int value)
+        {
+            // Example: 0 -> true; 1 -> false
+            if (value == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public static bool ConvertFromStringToBool(string value)
         {
             // "0" -> false
@@ -458,7 +470,7 @@ namespace dcom.controllers.controllers_middleware
                 case "22": data = "Send " + RequestDisplayString + " Using " + TestStepTitleAddressingMode; break;
                 case "27": data = "Request security access with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "28": data = "Request communication control with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "2E": data = "Request write DID with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
+                case "2E": data = "Send " + RequestDisplayString + " Using " + TestStepTitleAddressingMode; break;
                 case "2F": data = "Request input output control by identier with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "31": data = "Request routine control with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
                 case "3E": data = "Request tester present with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
@@ -511,7 +523,7 @@ namespace dcom.controllers.controllers_middleware
                 CompareMethod = "Equal";
             }
 
-            return RequestResponseMethod + "(" + requestCodeString + ", " + responseCodeString + ", " + CompareMethod + ")"; //RequestResponse(1101, 5101, Equal)
+            return RequestResponseMethod + "(" + requestCodeString.ToLower() + ", " + responseCodeString.ToLower() + ", " + CompareMethod + ")"; //RequestResponse(1101, 5101, Equal)
 
 
         }

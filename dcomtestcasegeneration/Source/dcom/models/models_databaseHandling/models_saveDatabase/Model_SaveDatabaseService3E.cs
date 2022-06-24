@@ -17,7 +17,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
             string status;
 
-            // Allow session || Addressing Mode
+            // Addressing Mode
             int n = 0;
             for (int index = 0; index < DatabaseVariables.DatabaseService3E.ElementAt(1).Count(); index++)
             {
@@ -60,6 +60,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 {
                     Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = "0";
                 }
+            }
+
+            //Allow session
+            for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(5).Count; index++)
+            {
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_AllowSession[index]);
+                Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = status;
             }
         }
     }

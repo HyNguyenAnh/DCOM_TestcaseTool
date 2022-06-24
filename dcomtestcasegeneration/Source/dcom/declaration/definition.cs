@@ -35,6 +35,7 @@ namespace dcom.declaration
                 3,  // NRC
                 3,  // Condition
                 3,  // Optional
+                3,  // SIDSupported
             };
             DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
             {   1,  // Common Setting
@@ -47,6 +48,7 @@ namespace dcom.declaration
                 11, // NRC
                 14, // Condition
                 19, // Optional
+                28,  // SIDSupported
             };
 
         }
@@ -65,6 +67,7 @@ namespace dcom.declaration
                 3,  // NRC
                 3,  // Condition
                 3,  // Optional
+                3,  // SIDSupported
             };
             DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
             {   1,  // Common Setting
@@ -77,6 +80,7 @@ namespace dcom.declaration
                 11, // NRC
                 14, // Condition
                 19, // Optional
+                28,  // SIDSupported
             };
 
 
@@ -88,6 +92,7 @@ namespace dcom.declaration
                 Model_GetCommonSettingDatabase.DataPathInformation(),
                 Model_GetCommonSettingDatabase.SelectedServiceInformation(),
             };
+
             // Common Setting
             DatabaseVariables.DatabaseCommonSettingCreateFault = CommonSettingDatabase[0].ElementAt(0);
             DatabaseVariables.DatabaseCommonSettingVehicleSpeed = CommonSettingDatabase[0].ElementAt(1);
@@ -122,10 +127,18 @@ namespace dcom.declaration
 
             // Data Path Information
             DatabaseVariables.DatabaseSource = CommonSettingDatabase[3].ElementAt(0)[1];
+            
             string[] databasePathSplit = DatabaseVariables.DatabasePath.Split('\\');
             DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
-            string[] databaseDirectorySplit = DatabaseVariables.DatabaseDirectory.Split('\\');
-            DatabaseVariables.TestcaseDirectory = DatabaseVariables.DatabaseDirectory.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "") + @"\Template";
+            DatabaseVariables.TestcaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "")).LocalPath;
+            
+            
+            for(int index = 1; index < 7; index++)
+            {
+                string[] databaseDirectorySplit = DatabaseVariables.TestcaseDirectory.Split('\\');
+                DatabaseVariables.TestcaseDirectory = DatabaseVariables.TestcaseDirectory.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "");
+            }
+            DatabaseVariables.TestcaseDirectory += @"\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Template";
             DatabaseVariables.TemplatePath = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB\Template.xlsx")).LocalPath;
 
             // Selected Service Information
@@ -176,7 +189,7 @@ namespace dcom.declaration
         public static void TestcaseVariableDefinition()
         {
 
-            TestcaseVariables.NameOutputTestcase = DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
+            TestcaseVariables.NameOutputTestcase = "Testcase_" + DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
             TestcaseVariables.DirectoryOutputTestcase = DatabaseVariables.TestcaseDirectory;
             TestcaseVariables.PathOutputTestcase = TestcaseVariables.DirectoryOutputTestcase + @"\" + TestcaseVariables.NameOutputTestcase;
             TestcaseVariables.SubID = TestcaseVariables.NameOutputTestcase.Remove(TestcaseVariables.NameOutputTestcase.Length - 5) + "_";
@@ -242,7 +255,7 @@ namespace dcom.declaration
             TestcaseVariables.ProjectColumnIndex = 9;
 
 
-            TestcaseVariables.ColorTestGroupInterior = System.Drawing.Color.FromArgb(169, 208, 142);
+            TestcaseVariables.ColorTestGroupInterior = System.Drawing.Color.FromArgb(200, 222, 232);
             TestcaseVariables.ColorTestCaseInterior = System.Drawing.Color.White;
 
         }

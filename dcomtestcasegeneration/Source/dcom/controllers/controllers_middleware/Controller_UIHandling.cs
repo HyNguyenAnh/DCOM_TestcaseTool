@@ -400,10 +400,16 @@ namespace dcom.controllers.controllers_middleware
         {
             if (SystemVariables.checkTheFirstLoad == false && stringData.Count > 0)
             {
+                string[] tempstring = new string[stringData.ElementAt(0).Length];
+                bool[] tempbool = new bool[boolData.ElementAt(0).Length];
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
-
+                if(dataGridView.Rows.Count != stringData.Count)
+                {
+                    stringData.Add(tempstring);
+                    boolData.Add(tempbool);
+                }
                 for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
                 {
                     for (int cellIndex = 1; cellIndex < dataGridView.Columns.Count; cellIndex++)

@@ -15,6 +15,11 @@ namespace dcom.models.models_testcaseHandling
         public static int subRowIndex = 0;
         public static string SID = "14";
 
+        public static List<string[]> Specification = DatabaseVariables.DatabaseService14.ElementAt(0);
+        public static List<string[]> AllowSession = DatabaseVariables.DatabaseService14.ElementAt(1);
+        public static List<string[]> NRC = DatabaseVariables.DatabaseService14.ElementAt(2);
+        public static List<string[]> Condition = DatabaseVariables.DatabaseService14.ElementAt(3);
+        public static List<string[]> Optional = DatabaseVariables.DatabaseService14.ElementAt(4);
 
         public static void PushTestcaseService14(Worksheet ws, int startRowIndex, bool selectedStatus)
         {
@@ -25,9 +30,9 @@ namespace dcom.models.models_testcaseHandling
                 TestGroupComponent(ws, rowIndex);
                 AllowSessionComponent(ws, rowIndex);
                 AddressingModeComponent(ws, rowIndex);
-                ActivationComponent(ws, rowIndex);
-                ConditionCheckComponent(ws, rowIndex);
-                NRCComponent(ws, rowIndex);
+                //ActivationComponent(ws, rowIndex);
+                //ConditionCheckComponent(ws, rowIndex);
+                //NRCComponent(ws, rowIndex);
 
                 // return a current ID
                 declaration.TestcaseVariables.ID = rowIndex;
@@ -37,7 +42,7 @@ namespace dcom.models.models_testcaseHandling
         public static void TestGroupComponent(Worksheet ws, int startRowIndex)
         {
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex("14") + Controller_ServiceHandling.GetServiceTestGroupTitle("14");
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + Controller_ServiceHandling.GetServiceTestGroupTitle(SID);
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[1];
 
             rowIndex++;
@@ -138,9 +143,10 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> Specification = DatabaseVariables.DatabaseService14.ElementAt(0);
         public static List<string[]> AllowSession = DatabaseVariables.DatabaseService14.ElementAt(1);
         public static List<string[]> NRC = DatabaseVariables.DatabaseService14.ElementAt(2);
-        public static List<string[]> Optional = DatabaseVariables.DatabaseService14.ElementAt(3);
-        public static List<string[]> Precondition = DatabaseVariables.DatabaseService14.ElementAt(4);
+        public static List<string[]> Condition = DatabaseVariables.DatabaseService14.ElementAt(3);
+        public static List<string[]> Optional = DatabaseVariables.DatabaseService14.ElementAt(4);
 
+        public static string[] subFunction = Controller_ServiceHandling.GetSubFunctions(Specification);
         public static string parametter = Specification.ElementAt(0)[1];
 
         // 1: Default, 2: Programming, 3: Extended
@@ -148,52 +154,57 @@ namespace dcom.models.models_testcaseHandling
         public static string[] AllowedSessionListInFunctional = Controller_ServiceHandling.GetAllowedSessionList(AllowSession, false);   // 1
 
         // Is Suppress bit support ?
-        public static bool IsSuppressBitSupport = Controller_ServiceHandling.ConvertFromStringToBool(Optional.ElementAt(2)[1]);
+        public static bool IsSuppressBitSupport = Controller_ServiceHandling.ConvertFromStringToBool(Optional.ElementAt(0)[1]);
 
         public static string[] GetTestRequestAllowSessionComponent()
         {
             string TestStep = "";
             string TestResponse = "";
             string TeststepKeyword = "";
-            string[] str;
+            string[] str = new string[3];
             int TestStepIndex = 0;
 
 
-            for (int index = 0; index < 3; index++)
+            for (int subFunctionIndex = 0; subFunctionIndex < subFunction.Length; subFunctionIndex++)
             {
-                string step =
-                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                    (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
-                    (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]), addressingMode: true)[index] + "\n" +
-                    (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
-                    (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("03", true)[index] + "\n" +
-                    (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]), addressingMode: true)[index] + "\n" +
-                    (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
-                    (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("02", true)[index] + "\n" +
-                    (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]), addressingMode: true)[index] + "\n" +
-                    (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                    (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 16) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
-                    (TestStepIndex + 17) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
-                    ;
-                switch (index)
+                for (int index = 0; index < 3; index++)
                 {
-                    case 0: TestStep += step; break;
-                    case 1: TestResponse += step; break;
-                    case 2: TeststepKeyword += step; break;
-                }
 
-            }
-            str = new string[]
-            {
+                    string step =
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
+                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                        (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
+                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]), addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
+                        (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("03", true)[index] + "\n" +
+                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]), addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
+                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                        (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("02", true)[index] + "\n" +
+                        (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]), addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
+                        (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
+                        ;
+                    switch (index)
+                    {
+                        case 0: TestStep += step; break;
+                        case 1: TestResponse += step; break;
+                        case 2: TeststepKeyword += step; break;
+                    }
+
+                }
+                str = new string[]
+                {
                     TestStep,
                     TestResponse,
                     TeststepKeyword
-            };
+                };
+
+                TestStepIndex += 14;
+
+
+            }
             return str;
         }
 

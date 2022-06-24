@@ -27,9 +27,9 @@ namespace dcom.models.models_testcaseHandling
                 SessionTransitionComponent(ws, rowIndex);
                 AddressingModeComponent(ws, rowIndex);
                 SuppressBitComponent(ws, rowIndex);
-                ConditionCheckComponent(ws, rowIndex);
-                FlashBootloaderComponent(ws, rowIndex);
-                NRCComponent(ws, rowIndex);
+                //ConditionCheckComponent(ws, rowIndex);
+                //FlashBootloaderComponent(ws, rowIndex);
+                //NRCComponent(ws, rowIndex);
 
                 // return a current ID
                 declaration.TestcaseVariables.ID = rowIndex;
@@ -292,34 +292,42 @@ namespace dcom.models.models_testcaseHandling
         public static string[] SessionTransitionFromProgrammingSession = AllowSession.ElementAt(3);                                      // 3
         public static string[] SessionTransitionFromExtendedSession = AllowSession.ElementAt(4);                                         // 4
         // Is Suppress bit support ?
-        public static bool IsSuppressBitSupport = Controller_ServiceHandling.ConvertFromStringToBool(Optional.ElementAt(2)[1]);
+        public static bool IsSuppressBitSupport = Controller_ServiceHandling.ConvertFromStringToBool(Optional.ElementAt(0)[1]);
 
         public static string[] GetTestRequestAllowSessionComponent()
         {
             string TestStep = "";
             string TestResponse = "";
             string TeststepKeyword = "";
-            string[] str;
+            string[] str = new string[3];
             int TestStepIndex = 0;
 
-
+            
             for (int index = 0; index < 3; index++)
             {
                 string step =
-                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true,
+                                                                                        suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
+                                                                                        isSIDSupportedInActiveSession: true, expectedValue: ".{1}1", addressingMode: true)[index] + "\n" +
                     (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                     (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
                     (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                    (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(2)[3], addressingMode: true)[index] + "\n" +
+                    (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true,
+                                                                                        suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
+                                                                                        isSIDSupportedInActiveSession: true, expectedValue: ".{1}3", addressingMode: true)[index] + "\n" +
                     (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                     (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
-                    (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(1)[3], addressingMode: true)[index] + "\n" +
+                    (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true,
+                                                                                        suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
+                                                                                        isSIDSupportedInActiveSession: true, expectedValue: ".{1}2", addressingMode: true)[index] + "\n" +
                     (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                     (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
-                    (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
+                    (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true,
+                                                                                            suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
+                                                                                            isSIDSupportedInActiveSession: true, expectedValue: ".{1}1", addressingMode: true)[index] + "\n" +
                     (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                     (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                    (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"                    
+                    (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
                     ;
                 switch (index)
                 {
@@ -327,17 +335,19 @@ namespace dcom.models.models_testcaseHandling
                     case 1: TestResponse += step; break;
                     case 2: TeststepKeyword += step; break;
                 }
-
             }
+            TestStepIndex += 14;
+                
             str = new string[]
             {
-                    TestStep,
-                    TestResponse,
-                    TeststepKeyword
+                TestStep,
+                TestResponse,
+                TeststepKeyword
             };
+            
+            
             return str;
         }
-
         public static string[] GetSessionTransitionFromDefaultSessionComponent()
         {
             string TestStep = "";
@@ -369,9 +379,13 @@ namespace dcom.models.models_testcaseHandling
                 {
                     string step =
                         (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                            suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                            isSIDSupportedInActiveSession: true, expectedValue: ".{1}1", addressingMode: true)[index] + "\n" +
                         (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromDefaultSessionStatus[subFunctionIndex], suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromDefaultSessionStatus[subFunctionIndex], 
+                                                                                            suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                            isSIDSupportedInActiveSession: true, expectedValue: ".{1}1", addressingMode: true)[index] + "\n" +
                         (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true)[index] + "\n" +
                         (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
                         ;
@@ -381,7 +395,6 @@ namespace dcom.models.models_testcaseHandling
                         case 1: TestResponse += step; break;
                         case 2: TeststepKeyword += step; break;
                     }
-
                 }
                 str = new string[]
                 {
@@ -389,9 +402,7 @@ namespace dcom.models.models_testcaseHandling
                     TestResponse,
                     TeststepKeyword
                 };
-
                 TestStepIndex += 6;
-
             }
 
             
@@ -425,25 +436,64 @@ namespace dcom.models.models_testcaseHandling
                 {
                     tempSubFunctionIndex = 1;
                 }
-                for (int index = 0; index < 3; index++)
+                if(subFunctionIndex == 0)
                 {
-                    string step =
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
-                        (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromProgrammingSessionStatus[subFunctionIndex], suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true)[index] + "\n" +                      
-                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
-                        ;
-                    switch (index)
+                    for (int index = 0; index < 3; index++)
                     {
-                        case 0: TestStep += step; break;
-                        case 1: TestResponse += step; break;
-                        case 2: TeststepKeyword += step; break;
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
                     }
-
+                    TestStepIndex += 1;
+                }
+                if (subFunctionIndex <= subFunction.Length - 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, 
+                                                                                                expectedValue: ".{1}2", addressingMode: true)[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
+                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, 
+                                                                                                expectedValue: ".{1}2", addressingMode: true)[index] + "\n" +
+                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
+                            (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromProgrammingSessionStatus[subFunctionIndex], 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, 
+                                                                                                expectedValue: ".{1}2", addressingMode: true)[index] + "\n" +
+                            (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 6;
+                }
+                if (subFunctionIndex == subFunction.Length - 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 1;
                 }
                 str = new string[]
                 {
@@ -451,12 +501,7 @@ namespace dcom.models.models_testcaseHandling
                     TestResponse,
                     TeststepKeyword
                 };
-
-                TestStepIndex += 8;
-
             }
-
-
             return str;
         }
         public static string[] GetSessionTransitionFromExtendedSessionComponent()
@@ -487,25 +532,65 @@ namespace dcom.models.models_testcaseHandling
                 {
                     tempSubFunctionIndex = 2;
                 }
-                for (int index = 0; index < 3; index++)
+                if (subFunctionIndex == 0)
                 {
-                    string step =
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
-                        (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromExtendedSessionStatus[subFunctionIndex], suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true, expectedValue: Specification.ElementAt(0)[3], addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true)[index] + "\n" +
-                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
-                        ;
-                    switch (index)
+                    for (int index = 0; index < 3; index++)
                     {
-                        case 0: TestStep += step; break;
-                        case 1: TestResponse += step; break;
-                        case 2: TeststepKeyword += step; break;
+                        string step =
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n"
+                        ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
                     }
+                    TestStepIndex += 1;
+                }
+                if (subFunctionIndex <= subFunction.Length - 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: true, expectedValue: ".{1}3", addressingMode: true)[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
+                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: true, expectedValue: ".{1}3", addressingMode: true)[index] + "\n" +
+                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
+                            (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromExtendedSessionStatus[subFunctionIndex], 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: true, expectedValue: ".{1}3", addressingMode: true)[index] + "\n" +
+                            (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
 
+                    }
+                    TestStepIndex += 6;
+                }
+                if (subFunctionIndex == subFunction.Length - 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
+                        ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 1;
                 }
                 str = new string[]
                 {
@@ -513,9 +598,6 @@ namespace dcom.models.models_testcaseHandling
                     TestResponse,
                     TeststepKeyword
                 };
-
-                TestStepIndex += 8;
-
             }
             return str;
         }
@@ -536,32 +618,77 @@ namespace dcom.models.models_testcaseHandling
                     case 0: AllowedSessionList = AllowedSessionListInFunctional; break;
                     case 1: AllowedSessionList = AllowedSessionListInPhysical; break;
                 }
-
-                for (int index = 0; index < 3; index++)
+                if(addressingModeIndex == 0)
                 {
-                    string step =
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), expectedValue: Specification.ElementAt(0)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]), expectedValue: Specification.ElementAt(2)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
-                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]), expectedValue: Specification.ElementAt(1)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
-                        (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), expectedValue: Specification.ElementAt(0)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
-                       ;
-
-                    switch (index)
+                    for (int index = 0; index < 3; index++)
                     {
-                        case 0: TestStep += step; break;
-                        case 1: TestResponse += step; break;
-                        case 2: TeststepKeyword += step; break;
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), 
+                                                                                                expectedValue: ".{1}1", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
+                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
                     }
+                    TestStepIndex += 4;
+                }
+                if (addressingModeIndex <= 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]), 
+                                                                                                expectedValue: ".{1}3", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
+                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]), 
+                                                                                                expectedValue: ".{1}2", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
+                            (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), 
+                                                                                                expectedValue: ".{1}1", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" 
+                           ;
+
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 9;
+                }
+                if (addressingModeIndex == 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 1;
                 }
                 str = new string[]
                 {
@@ -569,10 +696,7 @@ namespace dcom.models.models_testcaseHandling
                     TestResponse,
                     TeststepKeyword
                 };
-
-                TestStepIndex += 14;
             }
-
             return str;
         }
         public static string[] GetTestRequestSuppressBitComponent()
@@ -592,32 +716,77 @@ namespace dcom.models.models_testcaseHandling
                     case 0: AllowedSessionList = AllowedSessionListInFunctional; break;
                     case 1: AllowedSessionList = AllowedSessionListInPhysical; break;
                 }
-
-                for (int index = 0; index < 3; index++)
+                if(addressingModeIndex == 0)
                 {
-                    string step =
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), expectedValue: Specification.ElementAt(0)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]), expectedValue: Specification.ElementAt(2)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
-                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]), expectedValue: Specification.ElementAt(1)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
-                        (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), expectedValue: Specification.ElementAt(0)[3], addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
-                        (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
-                        (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
-                       ;
-
-                    switch (index)
+                    for (int index = 0; index < 3; index++)
                     {
-                        case 0: TestStep += step; break;
-                        case 1: TestResponse += step; break;
-                        case 2: TeststepKeyword += step; break;
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), 
+                                                                                                expectedValue: ".{1}1", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n" +
+                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
                     }
+                    TestStepIndex += 4;
+                }
+                if (addressingModeIndex <= 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[2], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]), 
+                                                                                                expectedValue: ".{1}3", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[2], true)[index] + "\n" +
+                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[1], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]), 
+                                                                                                expectedValue: ".{1}2", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[1], true)[index] + "\n" +
+                            (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true, 
+                                                                                                suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, 
+                                                                                                isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]), 
+                                                                                                expectedValue: ".{1}1", addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                            (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                            (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[0], true)[index] + "\n"
+                           ;
+
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 9;
+                }
+                if (addressingModeIndex == 1)
+                {
+                    for (int index = 0; index < 3; index++)
+                    {
+                        string step =
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
+                            ;
+                        switch (index)
+                        {
+                            case 0: TestStep += step; break;
+                            case 1: TestResponse += step; break;
+                            case 2: TeststepKeyword += step; break;
+                        }
+                    }
+                    TestStepIndex += 1;
                 }
                 str = new string[]
                 {

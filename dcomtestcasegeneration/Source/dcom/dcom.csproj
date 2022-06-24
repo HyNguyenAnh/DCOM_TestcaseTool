@@ -114,7 +114,7 @@
     <Compile Include="models\models_systemHandling\Model_BackupInformation.cs" />
     <Compile Include="models\models_systemHandling\Model_SystemInformation.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService10.cs" />
-    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService2F.cs" />
+    <Compile Include="models\models_testcaseHandling\Model_PushTestcaseCanTP.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService85.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService3E.cs" />
     <Compile Include="models\models_testcaseHandling\Model_PushTestcaseService28.cs" />

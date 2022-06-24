@@ -1,2 +1,2 @@
-D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Database\Database_template.xlsx
-6/15/2022 10:37:12 AM
+D:\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Source\dcom\bin\Debug\RequirementDB\RequirementDB_CA_C385_BL02_DCOM.xlsx
+6/23/2022 3:54:35 PM
