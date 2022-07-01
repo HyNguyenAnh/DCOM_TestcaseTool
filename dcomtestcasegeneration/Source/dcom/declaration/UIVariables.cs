@@ -97,6 +97,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static string[] Service10_NameInvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
         public static string[] Service10_NRCPriority = new string[15]
         {
             "",
@@ -171,6 +178,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static string[] Service11_NameInvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
 
         // Service 14 *****************************************************************************************************************
 
@@ -227,6 +241,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static string[] Service14_NameInvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
 
         // Service 19 *****************************************************************************************************************
 
@@ -254,6 +275,13 @@ namespace dcom.declaration
             "",
         };       
         public static string[] Service22_InvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service22_NameInvalidValueCondition = new string[]
         {
             "",
             "",
@@ -302,6 +330,13 @@ namespace dcom.declaration
             "",
         };
         public static string[] Service2E_InvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service2E_NameInvalidValueCondition = new string[]
         {
             "",
             "",
@@ -394,6 +429,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static string[] Service27_NameInvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
 
         // Service 28 *****************************************************************************************************************
 
@@ -433,6 +475,13 @@ namespace dcom.declaration
             "",
         };
         public static string[] Service28_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service28_NameInvalidValueCondition = new string[]
         {
             "",
             "",
@@ -489,6 +538,13 @@ namespace dcom.declaration
             "",
             "",
         };
+        public static string[] Service3E_NameInvalidValueCondition = new string[]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
         public static string[] Service3E_NRCPriority = new string[15]
         {
             "",
@@ -533,6 +589,13 @@ namespace dcom.declaration
             "",
         };
         public static string[] Service85_InvalidValueCondition = new string[4]
+        {
+            "",
+            "",
+            "",
+            "",
+        };
+        public static string[] Service85_NameInvalidValueCondition = new string[]
         {
             "",
             "",

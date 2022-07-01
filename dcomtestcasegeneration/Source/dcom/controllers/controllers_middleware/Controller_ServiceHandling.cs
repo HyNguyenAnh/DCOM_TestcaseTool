@@ -151,7 +151,7 @@ namespace dcom.controllers.controllers_middleware
             }
             else
             {
-                expectedValue = "7f" + SID + errorNRC;
+                expectedValue = $"7f{SID}{errorNRC}";
             }
             return expectedValue;
         }
@@ -463,18 +463,18 @@ namespace dcom.controllers.controllers_middleware
 
             switch (SID)
             {
-                case "10": data = "Request change the diagnostic session with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "11": data = "Request reset the camera with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "14": data = "Request clear DTC with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "19": data = "Request read DTC with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "22": data = "Send " + RequestDisplayString + " Using " + TestStepTitleAddressingMode; break;
-                case "27": data = "Request security access with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "28": data = "Request communication control with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "2E": data = "Send " + RequestDisplayString + " Using " + TestStepTitleAddressingMode; break;
-                case "2F": data = "Request input output control by identier with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "31": data = "Request routine control with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "3E": data = "Request tester present with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
-                case "85": data = "Request control DTC setting with service 0x" + RequestDisplayString + " in " + TestStepTitleAddressingMode; break;
+                case "10": data = $"Request change the diagnostic session with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "11": data = $"Request reset the camera with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "14": data = $"Request clear DTC with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "19": data = $"Request read DTC with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "22": data = $"Send {RequestDisplayString} Using {TestStepTitleAddressingMode}"; break;
+                case "27": data = $"Request security access with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "28": data = $"Request communication control with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "2E": data = $"Send {RequestDisplayString} Using {TestStepTitleAddressingMode}"; break;
+                case "2F": data = $"Request input output control by identier with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "31": data = $"Request routine control with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "3E": data = $"Request tester present with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
+                case "85": data = $"Request control DTC setting with service 0x{RequestDisplayString} in {TestStepTitleAddressingMode}"; break;
             }
             return data;
         }
@@ -483,15 +483,15 @@ namespace dcom.controllers.controllers_middleware
         {
             if (responseCodeString == "")
             {
-                return "No response is received";
+                return $"No response is received";
             }
             else if (responseCodeString.Contains("7f"))
             {
-                return "Negative response is received: 0x" + ConvertFromCodeStringToDisplayString(responseCodeString);
+                return $"Negative response is received: 0x{ConvertFromCodeStringToDisplayString(responseCodeString)}";
             }
             else
             {
-                return "Positive response is received: 0x" + ConvertFromCodeStringToDisplayString(responseCodeString);
+                return $"Positive response is received: 0x{ConvertFromCodeStringToDisplayString(responseCodeString)}";
             }
         }
         public static string GetTestStepKeyword(string requestCodeString, string responseCodeString, bool addressingMode)
@@ -523,7 +523,7 @@ namespace dcom.controllers.controllers_middleware
                 CompareMethod = "Equal";
             }
 
-            return RequestResponseMethod + "(" + requestCodeString.ToLower() + ", " + responseCodeString.ToLower() + ", " + CompareMethod + ")"; //RequestResponse(1101, 5101, Equal)
+            return $"{RequestResponseMethod}({requestCodeString.ToLower()}, {responseCodeString.ToLower()}, { CompareMethod})"; //RequestResponse(1101, 5101, Equal)
 
 
         }

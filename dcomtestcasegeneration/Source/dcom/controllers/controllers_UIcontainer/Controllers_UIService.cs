@@ -58,8 +58,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service10_InvalidValueCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(3)[index][1];
-                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[index][2]);
-                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(3)[index][3];
+                UIVariables.Service10_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(3)[index][3]);
+                UIVariables.Service10_NRCCondition[index] = DatabaseVariables.DatabaseService10.ElementAt(3)[index][4];
             }
 
             // SuppressBit
@@ -97,8 +97,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service11_InvalidValueCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(3)[index][1];
-                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[index][2]);
-                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(3)[index][3];
+                UIVariables.Service11_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(3)[index][3]);
+                UIVariables.Service11_NRCCondition[index] = DatabaseVariables.DatabaseService11.ElementAt(3)[index][4];
             }
 
             // Optional
@@ -137,8 +137,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service14_InvalidValueCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][1];
-                UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(3)[index][2]);
-                UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][3];
+                UIVariables.Service14_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService14.ElementAt(3)[index][3]);
+                UIVariables.Service14_NRCCondition[index] = DatabaseVariables.DatabaseService14.ElementAt(3)[index][4];
             }
 
             // Optional
@@ -181,8 +181,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service22_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service22_InvalidValueCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][1];
-                UIVariables.Service22_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(3)[index][2]);
-                UIVariables.Service22_NRCCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][3];
+                UIVariables.Service22_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService22.ElementAt(3)[index][3]);
+                UIVariables.Service22_NRCCondition[index] = DatabaseVariables.DatabaseService22.ElementAt(3)[index][4];
             }
 
             // Optional
@@ -226,8 +226,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service2E_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service2E_InvalidValueCondition[index] = DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1];
-                UIVariables.Service2E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2]);
-                UIVariables.Service2E_NRCCondition[index] = DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3];
+                UIVariables.Service2E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3]);
+                UIVariables.Service2E_NRCCondition[index] = DatabaseVariables.DatabaseService2E.ElementAt(3)[index][4];
             }
 
             // Optional
@@ -273,8 +273,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service27_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service27_InvalidValueCondition[index] = DatabaseVariables.DatabaseService27.ElementAt(3)[index][1];
-                UIVariables.Service27_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(3)[index][2]);
-                UIVariables.Service27_NRCCondition[index] = DatabaseVariables.DatabaseService27.ElementAt(3)[index][3];
+                UIVariables.Service27_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(3)[index][3]);
+                UIVariables.Service27_NRCCondition[index] = DatabaseVariables.DatabaseService27.ElementAt(3)[index][4];
             }
 
             // Optional
@@ -318,8 +318,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service28_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service28_InvalidValueCondition[index] = DatabaseVariables.DatabaseService28.ElementAt(3)[index][1];
-                UIVariables.Service28_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(3)[index][2]);
-                UIVariables.Service28_NRCCondition[index] = DatabaseVariables.DatabaseService28.ElementAt(3)[index][3];
+                UIVariables.Service28_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(3)[index][3]);
+                UIVariables.Service28_NRCCondition[index] = DatabaseVariables.DatabaseService28.ElementAt(3)[index][4];
             }
 
             // SuppressBit
@@ -351,8 +351,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service3E_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service3E_InvalidValueCondition[index] = DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1];
-                UIVariables.Service3E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E.ElementAt(3)[index][2]);
-                UIVariables.Service3E_NRCCondition[index] = DatabaseVariables.DatabaseService3E.ElementAt(3)[index][3];
+                UIVariables.Service3E_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E.ElementAt(3)[index][3]);
+                UIVariables.Service3E_NRCCondition[index] = DatabaseVariables.DatabaseService3E.ElementAt(3)[index][4];
             }
 
             // Optional
@@ -384,8 +384,8 @@ namespace dcom.controllers.controllers_UIcontainer
             for (int index = 0; index < UIVariables.Service85_ButtonStatus_Condition.Length; index++)
             {
                 UIVariables.Service85_InvalidValueCondition[index] = DatabaseVariables.DatabaseService85.ElementAt(3)[index][1];
-                UIVariables.Service85_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService85.ElementAt(3)[index][2]);
-                UIVariables.Service85_NRCCondition[index] = DatabaseVariables.DatabaseService85.ElementAt(3)[index][3];
+                UIVariables.Service85_ButtonStatus_Condition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService85.ElementAt(3)[index][3]);
+                UIVariables.Service85_NRCCondition[index] = DatabaseVariables.DatabaseService85.ElementAt(3)[index][4];
             }
 
             // Optional

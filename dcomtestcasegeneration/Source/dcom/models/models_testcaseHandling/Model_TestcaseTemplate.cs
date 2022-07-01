@@ -15,14 +15,11 @@ namespace dcom.models.models_testcaseHandling
 
         public static void ExportTestcase()
         {
-            //Console.WriteLine(TestcaseVariables.PathOutputTestcase);
             // Create a new testcase file if it's not available
             if (Controller_FileHandling.IsFileExisted(TestcaseVariables.PathOutputTestcase) == false)
             {
-                Console.WriteLine(TestcaseVariables.PathOutputTestcase);
                 TestcaseVariables.WbOutputTestcase = Controller_ExcelHandling.CreateExcel(TestcaseVariables.PathOutputTestcase);
             }
-            //Console.WriteLine(TestcaseVariables.PathOutputTestcase);
 
             // Open the testcase file
             TestcaseVariables.WbOutputTestcase = Controller_ExcelHandling.OpenExcel(TestcaseVariables.PathOutputTestcase);

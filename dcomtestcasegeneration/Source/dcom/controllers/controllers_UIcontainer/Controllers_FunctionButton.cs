@@ -41,18 +41,6 @@ namespace dcom.controllers.controllers_UIcontainer
             Model_SystemInformation.createRequirementDBFolder();
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile();
-            
-            //MessageBoxButtons btn = MessageBoxButtons.YesNo;
-            //DialogResult res = MessageBox.Show("The database updated successfully!\nWould you like to open the database excel file?", "Notice", btn);
-
-            //if (res == DialogResult.Yes)
-            //{
-            //    Process.Start(DatabaseVariables.PathOutputDatabase);
-            //}
-            //else
-            //{
-            //    // Close the pop-up
-            //}
         }
 
         public static void ButtonLoadDataClick()

@@ -20,6 +20,12 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> DIDGroupTestcaseTemp = new List<string[]>();
         public static List<List<string[]>> DIDGroupTestcaseSorted = new List<List<string[]>>();
 
+        public static List<string[]> Specification = DatabaseVariables.DatabaseService2E.ElementAt(0);
+        public static List<string[]> AllowSession = DatabaseVariables.DatabaseService2E.ElementAt(1);
+        public static List<string[]> NRC = DatabaseVariables.DatabaseService2E.ElementAt(2);
+        public static List<string[]> Condition = DatabaseVariables.DatabaseService2E.ElementAt(3);
+        public static List<string[]> Optional = DatabaseVariables.DatabaseService2E.ElementAt(4);
+
         public static void PushTestcaseService2E(Worksheet ws, int startRowIndex, bool selectedStatus)
         {
             if (selectedStatus)
@@ -125,7 +131,6 @@ namespace dcom.models.models_testcaseHandling
                         //
                     }
                 }
-                DIDGroupTestcaseSorted.Add(DIDGroupTestcaseTemp);
                 
 
                 // Test group : DID Check in Extended SS
@@ -209,16 +214,16 @@ namespace dcom.models.models_testcaseHandling
                     (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
                     (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                     (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0)[index] + "\n" +
+                    (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
                     (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
                     (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}3", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0)[index] + "\n" +
+                    (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}3", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
                     (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
                     (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}2", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0)[index] + "\n" +
+                    (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}2", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
                     (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                     (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0)[index] + "\n" +
+                    (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
                     (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
                     ;
                 switch (index)
@@ -255,16 +260,16 @@ namespace dcom.models.models_testcaseHandling
                         (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
                         (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                         (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0)[index] + "\n" +
+                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
                         (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
                         (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}3", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0)[index] + "\n" +
+                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}3", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
                         (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
                         (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}2", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0)[index] + "\n" +
+                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}2", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
                         (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                         (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0)[index] + "\n" +
+                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
                         (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
                         ;
                     switch (index)
@@ -335,7 +340,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
                                                                                                     isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(AllowSession.ElementAt(DIDVal)[2]),
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(Specification.ElementAt(DIDVal)[2]))[index] + "\n"
+                                                                                                    length: Convert.ToInt32(Specification.ElementAt(DIDVal)[2]), 0, 0)[index] + "\n"
                                 ;
                             switch (index)
                             {
@@ -406,7 +411,7 @@ namespace dcom.models.models_testcaseHandling
                 }
                 if (DIDVal <= DIDGroupTestcaseSorted.Count - 1)
                 {
-                    for (int addressingModeIndex = 0; addressingModeIndex < 1; addressingModeIndex++)
+                    for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                     {
                         for (int index = 0; index < 3; index++)
                         {
@@ -427,7 +432,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
                                                                                                     isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(DIDGroupTestcaseSorted.ElementAt(DIDVal)[8]),
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]))[index] + "\n"
+                                                                                                    length: Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]), 0, 0)[index] + "\n"
                                 ;
                             switch (index)
                             {
@@ -518,7 +523,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
                                                                                                     isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(AllowSession.ElementAt(DIDVal)[3]),
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(Specification.ElementAt(DIDVal)[2]))[index] + "\n"
+                                                                                                    length: Convert.ToInt32(Specification.ElementAt(DIDVal)[2]), 0, 0)[index] + "\n"
                                 ;
                             switch (index)
                             {

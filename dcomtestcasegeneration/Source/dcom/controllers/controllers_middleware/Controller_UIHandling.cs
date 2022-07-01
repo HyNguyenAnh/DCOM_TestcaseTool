@@ -381,14 +381,14 @@ namespace dcom.controllers.controllers_middleware
 
         public static void SaveDataGridViewToDatabase(DataGridView dataGridView, List<string[]> Data)
         {
-            if (SystemVariables.checkTheFirstLoad == false && Data.Count > 0)
+            if (SystemVariables.checkTheFirstLoad == false && Data?.Count > 0)
             {
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
-                for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
+                for (int rowIndex = 0; dataGridView?.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
                 {
-                    for (int cellIndex = 0; cellIndex < dataGridView.Columns.Count - 1; cellIndex++)
+                    for (int cellIndex = 0; cellIndex < dataGridView?.Columns.Count - 1; cellIndex++)
                     {
                         Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
                     }
@@ -398,7 +398,7 @@ namespace dcom.controllers.controllers_middleware
 
         public static void SaveDataGridViewToDatabase_SpecialCase(DataGridView dataGridView, List<string[]> stringData, List<bool[]> boolData)
         {
-            if (SystemVariables.checkTheFirstLoad == false && stringData.Count > 0)
+            if (SystemVariables.checkTheFirstLoad == false && stringData?.Count > 0)
             {
                 string[] tempstring = new string[stringData.ElementAt(0).Length];
                 bool[] tempbool = new bool[boolData.ElementAt(0).Length];
@@ -410,9 +410,9 @@ namespace dcom.controllers.controllers_middleware
                     stringData.Add(tempstring);
                     boolData.Add(tempbool);
                 }
-                for (int rowIndex = 0; dataGridView.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
+                for (int rowIndex = 0; dataGridView?.Rows[rowIndex].Cells[1].Value != null; rowIndex++)
                 {
-                    for (int cellIndex = 1; cellIndex < dataGridView.Columns.Count; cellIndex++)
+                    for (int cellIndex = 1; cellIndex < dataGridView?.Columns.Count; cellIndex++)
                     {
                         if (cellIndex < 5)
                         {

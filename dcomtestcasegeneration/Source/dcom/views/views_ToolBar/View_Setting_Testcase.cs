@@ -332,6 +332,7 @@ namespace dcom.views.views_ToolBar
         private void textBox_TestcaseDirectory_TextChanged(object sender, EventArgs e)
         {
             DatabaseVariables.TestcaseDirectory = textBox_TestcaseDirectory.Text;
+            TestcaseVariables.DirectoryOutputTestcase = textBox_TestcaseDirectory.Text;
         }
 
         private void dataGridView_CommonSetting_SelectionChanged(object sender, EventArgs e)

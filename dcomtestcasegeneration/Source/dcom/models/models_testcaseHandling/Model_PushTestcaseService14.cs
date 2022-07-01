@@ -174,15 +174,18 @@ namespace dcom.models.models_testcaseHandling
                         (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                         (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]), addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]), 
+                                                                                            isParameterSupported: true, addressingMode: true, 0, 0)[index] + "\n" +
                         (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
                         (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("03", true)[index] + "\n" +
-                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]), addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]),
+                                                                                            isParameterSupported: true, addressingMode: true, 0, 0)[index] + "\n" +
                         (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
                         (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("02", true)[index] + "\n" +
-                        (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]), addressingMode: true)[index] + "\n" +
+                        (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestService14(parametter: Specification.ElementAt(0)[0], isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]),
+                                                                                            isParameterSupported: true, addressingMode: true, 0, 0)[index] + "\n" +
                         (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                         (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
                         ;
@@ -233,15 +236,18 @@ namespace dcom.models.models_testcaseHandling
                         (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                         (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[addressingModeIndex]), addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[addressingModeIndex]),
+                                                                                            isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                         (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
                         (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("03", true)[index] + "\n" +
-                        (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[addressingModeIndex]), addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                        (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[addressingModeIndex]),
+                                                                                            isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                         (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
                         (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("02", true)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[addressingModeIndex]), addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService14(parametter: parametter, isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[addressingModeIndex]),
+                                                                                             isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                         (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                         (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
                         (TestStepIndex + 16) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +

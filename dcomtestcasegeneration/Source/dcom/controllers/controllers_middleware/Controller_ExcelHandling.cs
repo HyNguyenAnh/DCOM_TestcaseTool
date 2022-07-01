@@ -36,8 +36,8 @@ namespace dcom.controllers.controllers_middleware
         public static ExcelWorkbook OpenExcel(string excelPath)
         {
             ExcelWorkbook wb;
-            string excelFileName = excelPath.Substring(excelPath.LastIndexOf(@"\") + 1);
-            excelFileName = excelFileName.Remove(excelFileName.Length - 5);
+            string excelFileName = excelPath?.Substring(excelPath.LastIndexOf(@"\") + 1);
+            excelFileName = excelFileName?.Remove(excelFileName.Length - 5);
 
             foreach (var process in Process.GetProcessesByName("excel")) //whatever you need to close 
             {

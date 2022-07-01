@@ -40,11 +40,12 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             for (int index = 0; index < UIVariables.Service85_ButtonStatus_Condition.Length; index++)
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Condition[index]);
-                Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = status;
+                Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
                 if (status == "1")
                 {
                     Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = UIVariables.Service85_InvalidValueCondition[index];
-                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = UIVariables.Service85_NRCCondition[index];
+                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = UIVariables.Service85_NameInvalidValueCondition[index];
+                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = UIVariables.Service85_NRCCondition[index];
                 }
             }
 

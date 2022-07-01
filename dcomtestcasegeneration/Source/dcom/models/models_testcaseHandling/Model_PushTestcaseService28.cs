@@ -164,7 +164,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                 isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
                                                                                                 suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                 isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                addressingMode: true)[index] + "\n" +
+                                                                                                addressingMode: true, 0, 0)[index] + "\n" +
                             (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                             (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                             (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
@@ -173,7 +173,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                 isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]),
                                                                                                 suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                 isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]),
-                                                                                                addressingMode: true)[index] + "\n" +
+                                                                                                addressingMode: true, 0, 0)[index] + "\n" +
                             (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                             (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                             (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
@@ -182,7 +182,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                  isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]),
                                                                                                  suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                  isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]),
-                                                                                                 addressingMode: true)[index] + "\n" +
+                                                                                                 addressingMode: true, 0, 0)[index] + "\n" +
                             (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                             (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
                             ;
@@ -267,7 +267,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                    isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]),
                                                                                                    suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                    isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]),
-                                                                                                   addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                                                                                                   addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                                (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                                (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                                (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
@@ -276,7 +276,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                    isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]),
                                                                                                    suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                    isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]),
-                                                                                                   addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                                                                                                   addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                                (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                                (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                                (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
@@ -285,7 +285,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]),
                                                                                                     suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]),
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                                (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                                (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
                                ;
@@ -372,7 +372,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                   isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]),
                                                                                                   suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                   isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[1]),
-                                                                                                  addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                                                                                                  addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                               (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                               (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                               (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
@@ -381,7 +381,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                   isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]),
                                                                                                   suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                   isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[3]),
-                                                                                                  addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                                                                                                  addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                               (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                               (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                               (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
@@ -390,7 +390,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                    isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]),
                                                                                                    suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                    isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[2]),
-                                                                                                   addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n" +
+                                                                                                   addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), 0, 0)[index] + "\n" +
                               (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestWait(7000)[index] + "\n" +
                               (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
                               ;

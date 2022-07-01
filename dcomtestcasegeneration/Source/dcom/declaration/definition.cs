@@ -47,8 +47,8 @@ namespace dcom.declaration
                 6,  // Allow session
                 11, // NRC
                 14, // Condition
-                19, // Optional
-                28,  // SIDSupported
+                20, // Optional
+                29,  // SIDSupported
             };
 
         }
@@ -79,8 +79,8 @@ namespace dcom.declaration
                 6,  // Allow session
                 11, // NRC
                 14, // Condition
-                19, // Optional
-                28,  // SIDSupported
+                20, // Optional
+                29,  // SIDSupported
             };
 
 
@@ -130,15 +130,15 @@ namespace dcom.declaration
             
             string[] databasePathSplit = DatabaseVariables.DatabasePath.Split('\\');
             DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
-            DatabaseVariables.TestcaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "")).LocalPath;
+            string path_programFile = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "")).LocalPath;
             
             
             for(int index = 1; index < 7; index++)
             {
-                string[] databaseDirectorySplit = DatabaseVariables.TestcaseDirectory.Split('\\');
-                DatabaseVariables.TestcaseDirectory = DatabaseVariables.TestcaseDirectory.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "");
+                string[] databaseDirectorySplit = path_programFile.Split('\\');
+                path_programFile = path_programFile.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "");
             }
-            DatabaseVariables.TestcaseDirectory += @"\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Template";
+            DatabaseVariables.TestcaseDirectory = path_programFile + @"\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Template";
             DatabaseVariables.TemplatePath = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB\Template.xlsx")).LocalPath;
 
             // Selected Service Information
@@ -190,7 +190,6 @@ namespace dcom.declaration
         {
 
             TestcaseVariables.NameOutputTestcase = "Testcase_" + DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
-            TestcaseVariables.DirectoryOutputTestcase = DatabaseVariables.TestcaseDirectory;
             TestcaseVariables.PathOutputTestcase = TestcaseVariables.DirectoryOutputTestcase + @"\" + TestcaseVariables.NameOutputTestcase;
             TestcaseVariables.SubID = TestcaseVariables.NameOutputTestcase.Remove(TestcaseVariables.NameOutputTestcase.Length - 5) + "_";
             
