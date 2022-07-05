@@ -80,7 +80,7 @@ namespace dcom.views
             this.tableLayoutPanel_base.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_base.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_base.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel_base.Size = new System.Drawing.Size(1283, 675);
+            this.tableLayoutPanel_base.Size = new System.Drawing.Size(1424, 851);
             this.tableLayoutPanel_base.TabIndex = 0;
             // 
             // panel1
@@ -88,10 +88,10 @@ namespace dcom.views
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label_homepage_toolVersion);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 637);
+            this.panel1.Location = new System.Drawing.Point(0, 813);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1283, 38);
+            this.panel1.Size = new System.Drawing.Size(1424, 38);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -114,7 +114,7 @@ namespace dcom.views
             this.label_homepage_toolVersion.BackColor = System.Drawing.Color.Transparent;
             this.label_homepage_toolVersion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_homepage_toolVersion.ForeColor = System.Drawing.Color.DimGray;
-            this.label_homepage_toolVersion.Location = new System.Drawing.Point(1225, 14);
+            this.label_homepage_toolVersion.Location = new System.Drawing.Point(1296, 14);
             this.label_homepage_toolVersion.Name = "label_homepage_toolVersion";
             this.label_homepage_toolVersion.Size = new System.Drawing.Size(48, 15);
             this.label_homepage_toolVersion.TabIndex = 11;
@@ -128,7 +128,7 @@ namespace dcom.views
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1283, 20);
+            this.panel3.Size = new System.Drawing.Size(1424, 20);
             this.panel3.TabIndex = 1;
             // 
             // label1
@@ -138,7 +138,7 @@ namespace dcom.views
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(1015, -17);
+            this.label1.Location = new System.Drawing.Point(1156, -17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 11;
@@ -160,7 +160,7 @@ namespace dcom.views
             this.tableLayoutPanel_body.Name = "tableLayoutPanel_body";
             this.tableLayoutPanel_body.RowCount = 1;
             this.tableLayoutPanel_body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_body.Size = new System.Drawing.Size(1263, 617);
+            this.tableLayoutPanel_body.Size = new System.Drawing.Size(1404, 793);
             this.tableLayoutPanel_body.TabIndex = 0;
             // 
             // tableLayoutPanel_bodyRight
@@ -172,7 +172,7 @@ namespace dcom.views
             this.tableLayoutPanel_bodyRight.Controls.Add(this.button_save, 0, 1);
             this.tableLayoutPanel_bodyRight.Controls.Add(this.button_play, 0, 0);
             this.tableLayoutPanel_bodyRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(1213, 0);
+            this.tableLayoutPanel_bodyRight.Location = new System.Drawing.Point(1354, 0);
             this.tableLayoutPanel_bodyRight.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel_bodyRight.Name = "tableLayoutPanel_bodyRight";
             this.tableLayoutPanel_bodyRight.RowCount = 5;
@@ -181,7 +181,7 @@ namespace dcom.views
             this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(50, 617);
+            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(50, 793);
             this.tableLayoutPanel_bodyRight.TabIndex = 2;
             // 
             // button_home
@@ -291,7 +291,7 @@ namespace dcom.views
             this.tableLayoutPanel_bodyLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel_bodyLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel_bodyLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyLeft.Size = new System.Drawing.Size(50, 617);
+            this.tableLayoutPanel_bodyLeft.Size = new System.Drawing.Size(50, 793);
             this.tableLayoutPanel_bodyLeft.TabIndex = 0;
             // 
             // button_service2e
@@ -517,7 +517,7 @@ namespace dcom.views
             this.panel_bodyMain.Location = new System.Drawing.Point(50, 0);
             this.panel_bodyMain.Margin = new System.Windows.Forms.Padding(0);
             this.panel_bodyMain.Name = "panel_bodyMain";
-            this.panel_bodyMain.Size = new System.Drawing.Size(1163, 617);
+            this.panel_bodyMain.Size = new System.Drawing.Size(1304, 793);
             this.panel_bodyMain.TabIndex = 1;
             // 
             // View_MainWindow
@@ -525,7 +525,7 @@ namespace dcom.views
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1283, 675);
+            this.ClientSize = new System.Drawing.Size(1424, 851);
             this.Controls.Add(this.tableLayoutPanel_base);
             this.Name = "View_MainWindow";
             this.Text = "DCOM Testcase Generation Automation";

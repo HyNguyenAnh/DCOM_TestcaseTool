@@ -67,11 +67,11 @@ namespace dcom.views.views_Service
 
             InvalidValue_Condition = new TextBox[]
             {
-                vehicleSpeedValue_Text,
+                textBox_ConditionVehicle,
             };
 
             ButtonStatus_SecurityUnlock = button_SecurityUnlock;
-            ComboBox_SecurityUnlock = comboBox_SecurityUnlock;
+            ComboBox_SecurityUnlock = comboBox_SecurityUnlockLevel;
 
             // Load elements to comboBox
             string[] NRCs = UIVariables.NRCs;
@@ -113,8 +113,8 @@ namespace dcom.views.views_Service
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service2E_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service2E_ButtonStatus_Condition[0];
-            comboBox_SecurityUnlock.Enabled = UIVariables.Service2E_ButtonStatus_SecurityUnlock;
-            vehicleSpeedValue_Text.Enabled = UIVariables.Service2E_ButtonStatus_Condition[0];
+            comboBox_SecurityUnlockLevel.Enabled = UIVariables.Service2E_ButtonStatus_SecurityUnlock;
+            textBox_ConditionVehicle.Enabled = UIVariables.Service2E_ButtonStatus_Condition[0];
             dataGridView_DIDTable.Enabled = true;
             dataGridView_NRCPriority.Enabled = true;
         }
@@ -149,23 +149,6 @@ namespace dcom.views.views_Service
             Controller_UIHandling.InsertAfter(dataGridView_DIDTable);
         }
 
-        private void button_ConditionVehicleSpeed_Click(object sender, EventArgs e)
-        {
-            UIVariables.Service2E_ButtonStatus_Condition[0] = !UIVariables.Service2E_ButtonStatus_Condition[0];
-
-            button_ConditionVehicleSpeed.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service2E_ButtonStatus_Condition[0])[0];
-            button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service2E_ButtonStatus_Condition[0])[1];
-            button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service2E_ButtonStatus_Condition[0]);
-        }
-
-        private void button_ConditionEngine_Click(object sender, EventArgs e)
-        {
-            UIVariables.Service2E_ButtonStatus_Condition[1] = !UIVariables.Service2E_ButtonStatus_Condition[1];
-
-            button_ConditionEngine.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service2E_ButtonStatus_Condition[1])[0];
-            button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service2E_ButtonStatus_Condition[1])[1];
-            button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service2E_ButtonStatus_Condition[1]);
-        }
         private void button_SecurityUnlock_Click(object sender, EventArgs e)
         {
             UIVariables.Service2E_ButtonStatus_SecurityUnlock = !UIVariables.Service2E_ButtonStatus_SecurityUnlock;
@@ -175,89 +158,29 @@ namespace dcom.views.views_Service
             button_SecurityUnlock.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service2E_ButtonStatus_SecurityUnlock);
         }
 
-        private void dataGridView_NRCPriority_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button_SecurityUnlock_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service2E_ButtonStatus_SecurityUnlock = Controller_ServiceHandling.ConvertFromStatusToBool(button_SecurityUnlock.Text);
             Console.WriteLine(button_SecurityUnlock.Text);
             if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
             {
-                comboBox_SecurityUnlock.Enabled = true;
-                comboBox_SecurityUnlock.Text = UIVariables.Service2E_SecurityUnlockLv;
+                comboBox_SecurityUnlockLevel.Enabled = true;
+                comboBox_SecurityUnlockLevel.Text = UIVariables.Service2E_SecurityUnlockLv;
             }
             else
             {
-                comboBox_SecurityUnlock.Enabled = false;
-                comboBox_SecurityUnlock.Text = "Level";
+                comboBox_SecurityUnlockLevel.Enabled = false;
+                comboBox_SecurityUnlockLevel.Text = "Level";
             }
         }
 
-        private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
-        {
-            UIVariables.Service2E_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
-            if (UIVariables.Service2E_ButtonStatus_Condition[0] == true)
-            {
-                comboBox_ConditionVehicle_NRC.Enabled = true;
-                vehicleSpeedValue_Text.Enabled = true;
-                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service2E_NRCCondition[0];
-                vehicleSpeedValue_Text.Text = UIVariables.Service2E_InvalidValueCondition[0];
-            }
-            else
-            {
-                comboBox_ConditionVehicle_NRC.Enabled = false;
-                vehicleSpeedValue_Text.Enabled = false;
-                comboBox_ConditionVehicle_NRC.Text = "NRC";
-                vehicleSpeedValue_Text.Text = "...km/h";
-            }
-        }
-        private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
-        {
-            UIVariables.Service2E_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
-            if (UIVariables.Service2E_ButtonStatus_Condition[1] == true)
-            {
-                comboBox_ConditionEngine_NRC.Enabled = true;
-                comboBox_ConditionEngine_NRC.Text = UIVariables.Service2E_NRCCondition[1];
-            }
-            else
-            {
-                comboBox_ConditionEngine_NRC.Enabled = false;
-                comboBox_ConditionEngine_NRC.Text = "NRC";
-            }
-        }
-        private void comboBox_SecurityUnlock_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
-            {
-                UIVariables.Service2E_SecurityUnlockLv = comboBox_SecurityUnlock.Text;
-            }
-        }
-        private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
+        private void textBox_ConditionVehicle_TextChanged(object sender, EventArgs e)
         {
             if (UIVariables.Service2E_ButtonStatus_Condition[0] == true)
             {
-                UIVariables.Service2E_NRCCondition[0] = comboBox_ConditionVehicle_NRC.Text;
+                UIVariables.Service2E_InvalidValueCondition[0] = textBox_ConditionVehicle.Text;
             }
         }
-        private void vehicleSpeedValue_Text_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service2E_ButtonStatus_Condition[0] == true)
-            {
-                UIVariables.Service2E_InvalidValueCondition[0] = vehicleSpeedValue_Text.Text;
-            }
-        }
-
-        private void comboBox_ConditionEngine_NRC_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service2E_ButtonStatus_Condition[1] == true)
-            {
-                UIVariables.Service2E_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
-            }
-        }
-
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView_NRCPriority.Enabled == true)
@@ -286,6 +209,14 @@ namespace dcom.views.views_Service
             //    }
             //}
             //e.Cancel = true;
+        }
+
+        private void comboBox_SecurityUnlockLevel_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service2E_ButtonStatus_SecurityUnlock == true)
+            {
+                UIVariables.Service2E_SecurityUnlockLv = comboBox_SecurityUnlockLevel.Text;
+            }
         }
 
     }

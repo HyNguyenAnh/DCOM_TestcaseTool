@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using dcom.declaration;
 using dcom.views.views_ToolBar;
+using dcom.controllers.controllers_UIcontainer;
 
 namespace dcom.controllers.controllers_middleware
 {
@@ -147,7 +148,14 @@ namespace dcom.controllers.controllers_middleware
         {
             // Delete the selected field
             foreach (DataGridViewCell dgvCell in dataGridView.SelectedCells)
-                dgvCell.Value = string.Empty;
+            {
+                if(dgvCell.ColumnIndex != 0)
+                {
+                    dgvCell.Value = string.Empty;
+                }
+
+            }
+               
         }
         public static void PasteClipboardValue(DataGridView dataGridView)
         {
@@ -172,7 +180,7 @@ namespace dcom.controllers.controllers_middleware
                     foreach (int cellKey in cbValue[rowKey].Keys)
                     {
                         //Check if the index is within the limit
-                        if (iColIndex <= dataGridView.Columns.Count - 1
+                        if (iColIndex > 0 && iColIndex <= dataGridView.Columns.Count - 1
                         && iRowIndex <= dataGridView.Rows.Count - 1)
                         {
                             DataGridViewCell cell = dataGridView[iColIndex, iRowIndex];
@@ -446,6 +454,53 @@ namespace dcom.controllers.controllers_middleware
                     Data[cellIndex] = dataGridView.Rows[0].Cells[cellIndex].Value.ToString();
                 }
             }
+        }
+
+        public static void MappingFromDatabaseToUI()
+        {
+            // Common Setting
+
+            Controllers_UISetting_Testcase.UIDefinition_Setting_Testcase();
+
+            // Service 10
+
+            Controllers_UIService.UIDefinition_Service10();
+
+            // Service 11
+
+            Controllers_UIService.UIDefinition_Service11();
+
+            // Service 14
+
+            Controllers_UIService.UIDefinition_Service14();
+
+            // Service 19
+
+            Controllers_UIService.UIDefinition_Service19();
+
+            // Service 22
+
+            Controllers_UIService.UIDefinition_Service22();
+
+            // Service 2E
+
+            Controllers_UIService.UIDefinition_Service2E();
+
+            // Service 27
+
+            Controllers_UIService.UIDefinition_Service27();
+
+            // Service 28
+
+            Controllers_UIService.UIDefinition_Service28();
+
+            // Service 3E
+
+            Controllers_UIService.UIDefinition_Service3E();
+
+            // Service 85
+
+            Controllers_UIService.UIDefinition_Service85();
         }
 
     }

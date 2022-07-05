@@ -65,7 +65,7 @@ namespace dcom.views.views_Service
 
             InvalidValue_Condition = new TextBox[]
             {
-                vehicleSpeedValue_Text,
+                textBox_ConditionVehicle,
             };
 
             // Load elements to comboBox
@@ -101,7 +101,7 @@ namespace dcom.views.views_Service
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service22_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service22_ButtonStatus_Condition[0];
-            vehicleSpeedValue_Text.Enabled = UIVariables.Service22_ButtonStatus_Condition[0];
+            textBox_ConditionVehicle.Enabled = UIVariables.Service22_ButtonStatus_Condition[0];
             dataGridView_DIDTable.Enabled = true;
             dataGridView_NRCPriority.Enabled = true;
         }
@@ -178,16 +178,16 @@ namespace dcom.views.views_Service
             if (UIVariables.Service22_ButtonStatus_Condition[0] == true)
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
-                vehicleSpeedValue_Text.Enabled = true;
+                textBox_ConditionVehicle.Enabled = true;
                 comboBox_ConditionVehicle_NRC.Text = UIVariables.Service22_NRCCondition[0];
-                vehicleSpeedValue_Text.Text = UIVariables.Service22_InvalidValueCondition[0];
+                textBox_ConditionVehicle.Text = UIVariables.Service22_InvalidValueCondition[0];
             }
             else
             {
                 comboBox_ConditionVehicle_NRC.Enabled = false;
-                vehicleSpeedValue_Text.Enabled = false;
+                textBox_ConditionVehicle.Enabled = false;
                 comboBox_ConditionVehicle_NRC.Text = "NRC";
-                vehicleSpeedValue_Text.Text = "...km/h";
+                textBox_ConditionVehicle.Text = "...km/h";
             }
         }
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
@@ -224,7 +224,7 @@ namespace dcom.views.views_Service
         {
             if (UIVariables.Service22_ButtonStatus_Condition[0] == true)
             {
-                UIVariables.Service22_InvalidValueCondition[0] = vehicleSpeedValue_Text.Text;
+                UIVariables.Service22_InvalidValueCondition[0] = textBox_ConditionVehicle.Text;
             }
         }
 
@@ -242,6 +242,11 @@ namespace dcom.views.views_Service
             {
                 Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AllowSessionAddressingMode);
             }
+        }
+
+        private void vehicleSpeedValue_Text_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

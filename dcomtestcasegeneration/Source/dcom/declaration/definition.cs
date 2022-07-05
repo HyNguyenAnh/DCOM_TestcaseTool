@@ -20,8 +20,8 @@ namespace dcom.declaration
 
         public static void TemplateVariableDefinition()
         {
-            DatabaseVariables.NameOutputDatabase = "RequirementDB_" + DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
-            DatabaseVariables.DirectoryOutputDatabase = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "RequirementDB")).LocalPath;
+            DatabaseVariables.NameOutputDatabase = "RequirementDB_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
+            DatabaseVariables.DirectoryOutputDatabase = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
             DatabaseVariables.PathOutputDatabase = DatabaseVariables.DirectoryOutputDatabase + @"\" + DatabaseVariables.NameOutputDatabase;
 
             DatabaseVariables.StartRowIndexDatabaseTables = new int[]
@@ -82,72 +82,9 @@ namespace dcom.declaration
                 20, // Optional
                 29,  // SIDSupported
             };
+            DatabaseVariables.TemplatePath = @"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Template\Template.xlsx";
 
-
-            // Get data from database
-            List<string[]>[] CommonSettingDatabase = new List<string[]>[]{
-                Model_GetCommonSettingDatabase.CommonSetting(),
-                Model_GetCommonSettingDatabase.CommonDID(),
-                Model_GetCommonSettingDatabase.ProjectInformation(),
-                Model_GetCommonSettingDatabase.DataPathInformation(),
-                Model_GetCommonSettingDatabase.SelectedServiceInformation(),
-            };
-
-            // Common Setting
-            DatabaseVariables.DatabaseCommonSettingCreateFault = CommonSettingDatabase[0].ElementAt(0);
-            DatabaseVariables.DatabaseCommonSettingVehicleSpeed = CommonSettingDatabase[0].ElementAt(1);
-            DatabaseVariables.DatabaseCommonSettingEngineStatus = CommonSettingDatabase[0].ElementAt(2);
-            DatabaseVariables.DatabaseCommonSettingSecurityUnlock = CommonSettingDatabase[0].ElementAt(3);
-
-            DatabaseVariables.DatabaseCommonSetting = new List<string[]>
-            {
-                DatabaseVariables.DatabaseCommonSettingCreateFault,
-                DatabaseVariables.DatabaseCommonSettingVehicleSpeed,
-                DatabaseVariables.DatabaseCommonSettingEngineStatus,
-                DatabaseVariables.DatabaseCommonSettingSecurityUnlock,
-            };
-
-            // Common DID
-            DatabaseVariables.DatabaseCommonDIDCurrentSession = CommonSettingDatabase[1].ElementAt(0);
-            DatabaseVariables.DatabaseCommonDIDInvalidCounter = CommonSettingDatabase[1].ElementAt(1);
-            DatabaseVariables.DatabaseCommonDIDCurrentVoltage = CommonSettingDatabase[1].ElementAt(2);
-
-            DatabaseVariables.DatabaseCommonDID = new List<string[]>
-            {
-                DatabaseVariables.DatabaseCommonDIDCurrentSession,
-                DatabaseVariables.DatabaseCommonDIDInvalidCounter,
-                DatabaseVariables.DatabaseCommonDIDCurrentVoltage,
-            };
-
-            // Project Information
-            DatabaseVariables.ProjectName = CommonSettingDatabase[2].ElementAt(0)[1];
-            DatabaseVariables.Variant = CommonSettingDatabase[2].ElementAt(1)[1];
-            DatabaseVariables.Release = CommonSettingDatabase[2].ElementAt(2)[1];
-            DatabaseVariables.RC = CommonSettingDatabase[2].ElementAt(3)[1];
-
-            // Data Path Information
-            DatabaseVariables.DatabaseSource = CommonSettingDatabase[3].ElementAt(0)[1];
             
-            string[] databasePathSplit = DatabaseVariables.DatabasePath.Split('\\');
-            DatabaseVariables.DatabaseDirectory = DatabaseVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
-            string path_programFile = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "")).LocalPath;
-            
-            
-            for(int index = 1; index < 7; index++)
-            {
-                string[] databaseDirectorySplit = path_programFile.Split('\\');
-                path_programFile = path_programFile.Replace(@"\" + databaseDirectorySplit[databaseDirectorySplit.Length - 1], "");
-            }
-            DatabaseVariables.TestcaseDirectory = path_programFile + @"\BGSV_EDA2_Automation_Tool_LOCALREPO\dcomtestcasegeneration\DCOMTestcaseGenerationR1.1\Template";
-            DatabaseVariables.TemplatePath = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB\Template.xlsx")).LocalPath;
-
-            // Selected Service Information
-            for (int index = 0; index < CommonSettingDatabase[4].Count; index++)
-            {
-                DatabaseVariables.SelectedServiceStatus[index] = Controller_ServiceHandling.ConvertFromStringToBool(CommonSettingDatabase[4].ElementAt(index)[1]);
-            }
-
-
             // Service 10
             DatabaseVariables.DatabaseService10 = Model_GetServiceDatabase.DatabaseService("10");
 
@@ -189,7 +126,7 @@ namespace dcom.declaration
         public static void TestcaseVariableDefinition()
         {
 
-            TestcaseVariables.NameOutputTestcase = "Testcase_" + DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
+            TestcaseVariables.NameOutputTestcase = "Testcase_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
             TestcaseVariables.PathOutputTestcase = TestcaseVariables.DirectoryOutputTestcase + @"\" + TestcaseVariables.NameOutputTestcase;
             TestcaseVariables.SubID = TestcaseVariables.NameOutputTestcase.Remove(TestcaseVariables.NameOutputTestcase.Length - 5) + "_";
             
@@ -269,45 +206,315 @@ namespace dcom.declaration
         
         public static void UIVariableDefinition()
         {
-            // Service 10
+            UIVariables.CompletedEdit = false;
+            UIVariables.NRCs = new string[]
+            {
+                "11",
+                "12",
+                "13S",
+                "13L",
+                "22",
+                "24",
+                "31",
+                "33",
+                "35",
+                "36",
+                "37",
+                "7E",
+                "7F",
+                "83",
+            };
+            UIVariables.SecurityUnlockLevel = new string[]
+            {
+                "1",
+                "2",
+                "3",
+            };
 
-            Controllers_UIService.LoadUI_Service10();
+            // Setting
+            UIVariables.ProjectInformation = new string[] { };
+            UIVariables.DatabaseSource = "Local";
+            UIVariables.DatabasePath = "";
+            UIVariables.TestcaseDirectory = "";
+            UIVariables.SelectedServiceStatus = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+            };
+
+            UIVariables.CommonSettingDatabase = new List<string[]>[] { };
+            // Common Setting
+            UIVariables.DatabaseCommonSettingCreateFault = new string[] { };
+            UIVariables.DatabaseCommonSettingVehicleSpeed = new string[] { };
+            UIVariables.DatabaseCommonSettingEngineStatus = new string[] { };
+            UIVariables.DatabaseCommonSettingSecurityUnlock = new string[] { };
+            UIVariables.DatabaseCommonSetting = new List<string[]> { };
+
+            // Common DID
+            UIVariables.DatabaseCommonDIDCurrentSession = new string[] { };
+            UIVariables.DatabaseCommonDIDInvalidCounter = new string[] { };
+            UIVariables.DatabaseCommonDIDCurrentVoltage = new string[] { };
+
+            UIVariables.DatabaseCommonDID = new List<string[]> { };
+
+            // Project Information
+            UIVariables.ProjectName = "";
+            UIVariables.Variant = "";
+            UIVariables.Release = "";
+            UIVariables.RC = "";
+
+
+            // Service 10
+            UIVariables.Service10_ButtonStatus_SessionTransition = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            };
+            UIVariables.Service10_ButtonStatus_SuppressBit = false;
+            UIVariables.Service10_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            };
+            UIVariables.Service10_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service10_NRCCondition = new string[7];
+
+            UIVariables.Service10_NRCPriority = new string[15];
+
+            UIVariables.Service10_InvalidValueCondition = new string[7];
+
+            UIVariables.Service10_NameInvalidValueCondition = new string[7];
+
 
             // Service 11
 
-            Controllers_UIService.LoadUI_Service11();
+            UIVariables.Service11_ButtonStatus_ResetMode = new bool[]
+            {
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service11_ButtonStatus_SuppressBit = false;
+            UIVariables.Service11_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            };
+            UIVariables.Service11_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service11_NRCPriority = new string[15];
+
+            UIVariables.Service11_NRCCondition = new string[7];
+
+            UIVariables.Service11_InvalidValueCondition = new string[7];
+
+            UIVariables.Service11_NameInvalidValueCondition = new string[7];
+
 
             // Service 14
 
-            Controllers_UIService.LoadUI_Service14();
+            UIVariables.Service14_ButtonStatus_SubFunction = new bool[]
+            {
+                false,
+                false,
+                false
+            };
+            UIVariables.Service14_ButtonStatus_SuppressBit = false;
+            UIVariables.Service14_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            };
+            UIVariables.Service14_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false
+            };
+            UIVariables.Service14_NRCPriority = new string[15];
+            UIVariables.Service14_NRCCondition = new string[7];
+            UIVariables.Service14_InvalidValueCondition = new string[7];
+            UIVariables.Service14_NameInvalidValueCondition = new string[7];
 
             // Service 19
 
-            Controllers_UIService.LoadUI_Service19();
 
             // Service 22
 
-            Controllers_UIService.LoadUI_Service22();
+            UIVariables.Service22_ButtonStatus_SuppressBit = false;
+            UIVariables.Service22_NRCPriority = new string[15];
+            UIVariables.Service22_InvalidValueCondition = new string[7];
+            UIVariables.Service22_NameInvalidValueCondition = new string[7];
+            UIVariables.Service22_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service22_NRCCondition = new string[7];
+            UIVariables.Service22_ButtonStatus_AllowSession = new bool[]
+            {
+                false,
+                false,
+            };
 
             // Service 2E
 
-            Controllers_UIService.LoadUI_Service2E();
+            UIVariables.Service2E_ButtonStatus_SecurityUnlock = false;
+            UIVariables.Service2E_SecurityUnlockLv = "";
+            UIVariables.Service2E_NRCPriority = new string[15];
+
+            UIVariables.Service2E_InvalidValueCondition = new string[7];
+            UIVariables.Service2E_NameInvalidValueCondition = new string[7];
+            UIVariables.Service2E_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service2E_NRCCondition = new string[7];
+            UIVariables.Service2E_ButtonStatus_AllowSession = new bool[]
+            {
+                false,
+                false,
+            };
 
             // Service 27
 
-            Controllers_UIService.LoadUI_Service27();
+            UIVariables.Service27_ButtonStatus_SuppressBit = false;
+            UIVariables.Service27_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            };
+            UIVariables.Service27_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service27_NRCPrioritySeed = new string[15];
+            UIVariables.Service27_NRCPriorityKey = new string[15];
+            UIVariables.Service27_NRCCondition = new string[7];
+            UIVariables.Service27_InvalidValueCondition = new string[7];
+            UIVariables.Service27_NameInvalidValueCondition = new string[7];
 
             // Service 28
 
-            Controllers_UIService.LoadUI_Service28();
+            UIVariables.Service28_ButtonStatus_ControlType = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service28_ButtonStatus_CommunicationType = new bool[]
+            {
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service28_ButtonStatus_SuppressBit = false;
+            UIVariables.Service28_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service28_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service28_NRCCondition = new string[7];
+            UIVariables.Service28_InvalidValueCondition = new string[7];
+            UIVariables.Service28_NameInvalidValueCondition = new string[7];
+            UIVariables.Service28_NRCPriority = new string[15];
 
             // Service 3E
 
-            Controllers_UIService.LoadUI_Service3E();
+            UIVariables.Service3E_ButtonStatus_SuppressBit = false;
+            UIVariables.Service3E_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service3E_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service3E_NRCCondition = new string[7];
+            UIVariables.Service3E_InvalidValueCondition = new string[7];
+            UIVariables.Service3E_NameInvalidValueCondition = new string[7];
+            UIVariables.Service3E_NRCPriority = new string[15];
 
             // Service 85
 
-            Controllers_UIService.LoadUI_Service85();
+            UIVariables.Service85_ButtonStatus_SuppressBit = false;
+            UIVariables.Service85_ButtonStatus_AddressingMode = new bool[]
+            {
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+            };
+            UIVariables.Service85_ButtonStatus_Condition = new bool[]
+            {
+                false,
+                false,
+            };
+            UIVariables.Service85_NRCCondition = new string[7];
+            UIVariables.Service85_InvalidValueCondition = new string[7];
+            UIVariables.Service85_NameInvalidValueCondition = new string[7];
+            UIVariables.Service85_NRCPriority = new string[15];
         }
     }
 }

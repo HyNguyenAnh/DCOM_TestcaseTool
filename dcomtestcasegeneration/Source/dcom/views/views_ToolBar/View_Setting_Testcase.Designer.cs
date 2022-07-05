@@ -29,9 +29,9 @@ namespace dcom.views.views_ToolBar
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Setting_Testcase));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel_base = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -155,7 +155,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_base.RowCount = 1;
             this.tableLayoutPanel_base.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_base.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_base.Size = new System.Drawing.Size(1161, 633);
+            this.tableLayoutPanel_base.Size = new System.Drawing.Size(1440, 890);
             this.tableLayoutPanel_base.TabIndex = 11;
             // 
             // tableLayoutPanel2
@@ -164,7 +164,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1151, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1430, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -181,7 +181,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 633);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(10, 890);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // panel2
@@ -217,7 +217,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel_bodyRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 633);
+            this.tableLayoutPanel_bodyRight.Size = new System.Drawing.Size(10, 890);
             this.tableLayoutPanel_bodyRight.TabIndex = 4;
             // 
             // tabControl_Setting_Testcase
@@ -231,7 +231,7 @@ namespace dcom.views.views_ToolBar
             this.tabControl_Setting_Testcase.Name = "tabControl_Setting_Testcase";
             this.tabControl_Setting_Testcase.Padding = new System.Drawing.Point(0, 0);
             this.tabControl_Setting_Testcase.SelectedIndex = 0;
-            this.tabControl_Setting_Testcase.Size = new System.Drawing.Size(1141, 633);
+            this.tabControl_Setting_Testcase.Size = new System.Drawing.Size(1420, 890);
             this.tabControl_Setting_Testcase.TabIndex = 7;
             // 
             // tabPage1
@@ -240,7 +240,7 @@ namespace dcom.views.views_ToolBar
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1133, 605);
+            this.tabPage1.Size = new System.Drawing.Size(1412, 862);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Setting";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_bodySetting.RowCount = 2;
             this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bodySetting.Size = new System.Drawing.Size(1127, 599);
+            this.tableLayoutPanel_bodySetting.Size = new System.Drawing.Size(1406, 856);
             this.tableLayoutPanel_bodySetting.TabIndex = 8;
             // 
             // groupBox_SettingCommonKeyword
@@ -270,10 +270,10 @@ namespace dcom.views.views_ToolBar
             this.groupBox_SettingCommonKeyword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_SettingCommonKeyword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_SettingCommonKeyword.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_SettingCommonKeyword.Location = new System.Drawing.Point(573, 309);
+            this.groupBox_SettingCommonKeyword.Location = new System.Drawing.Point(713, 438);
             this.groupBox_SettingCommonKeyword.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_SettingCommonKeyword.Name = "groupBox_SettingCommonKeyword";
-            this.groupBox_SettingCommonKeyword.Size = new System.Drawing.Size(544, 280);
+            this.groupBox_SettingCommonKeyword.Size = new System.Drawing.Size(683, 408);
             this.groupBox_SettingCommonKeyword.TabIndex = 3;
             this.groupBox_SettingCommonKeyword.TabStop = false;
             this.groupBox_SettingCommonKeyword.Text = "Common Keyword Information";
@@ -289,7 +289,7 @@ namespace dcom.views.views_ToolBar
             this.tabControl_CommonKeywordInformation.Name = "tabControl_CommonKeywordInformation";
             this.tabControl_CommonKeywordInformation.Padding = new System.Drawing.Point(0, 0);
             this.tabControl_CommonKeywordInformation.SelectedIndex = 0;
-            this.tabControl_CommonKeywordInformation.Size = new System.Drawing.Size(538, 261);
+            this.tabControl_CommonKeywordInformation.Size = new System.Drawing.Size(677, 389);
             this.tabControl_CommonKeywordInformation.TabIndex = 0;
             // 
             // tabPage_CommandSetting
@@ -299,7 +299,7 @@ namespace dcom.views.views_ToolBar
             this.tabPage_CommandSetting.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage_CommandSetting.Name = "tabPage_CommandSetting";
             this.tabPage_CommandSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CommandSetting.Size = new System.Drawing.Size(530, 233);
+            this.tabPage_CommandSetting.Size = new System.Drawing.Size(669, 361);
             this.tabPage_CommandSetting.TabIndex = 0;
             this.tabPage_CommandSetting.Text = "Common Setting";
             this.tabPage_CommandSetting.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(524, 227);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(663, 355);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // dataGridView_CommonSetting
@@ -332,14 +332,14 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_CommonSetting.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonSetting.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_CommonSetting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonSetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
@@ -349,13 +349,13 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_CommonSetting.Enabled = false;
             this.dataGridView_CommonSetting.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView_CommonSetting.Location = new System.Drawing.Point(17, 18);
+            this.dataGridView_CommonSetting.Location = new System.Drawing.Point(20, 24);
             this.dataGridView_CommonSetting.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView_CommonSetting.Name = "dataGridView_CommonSetting";
             this.dataGridView_CommonSetting.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_CommonSetting.RowHeadersVisible = false;
             this.dataGridView_CommonSetting.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_CommonSetting.Size = new System.Drawing.Size(489, 190);
+            this.dataGridView_CommonSetting.Size = new System.Drawing.Size(622, 305);
             this.dataGridView_CommonSetting.StandardTab = true;
             this.dataGridView_CommonSetting.TabIndex = 5;
             this.dataGridView_CommonSetting.SelectionChanged += new System.EventHandler(this.dataGridView_CommonSetting_SelectionChanged);
@@ -398,7 +398,7 @@ namespace dcom.views.views_ToolBar
             this.tabPage_CommonDID.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage_CommonDID.Name = "tabPage_CommonDID";
             this.tabPage_CommonDID.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CommonDID.Size = new System.Drawing.Size(530, 233);
+            this.tabPage_CommonDID.Size = new System.Drawing.Size(669, 361);
             this.tabPage_CommonDID.TabIndex = 2;
             this.tabPage_CommonDID.Text = "Common DID";
             this.tabPage_CommonDID.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(524, 227);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(663, 355);
             this.tableLayoutPanel12.TabIndex = 3;
             // 
             // dataGridView_CommonDID
@@ -431,14 +431,14 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonDID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_CommonDID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonDID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_CommonDID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonDID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -447,13 +447,13 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonDID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_CommonDID.Enabled = false;
             this.dataGridView_CommonDID.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView_CommonDID.Location = new System.Drawing.Point(17, 18);
+            this.dataGridView_CommonDID.Location = new System.Drawing.Point(20, 24);
             this.dataGridView_CommonDID.Margin = new System.Windows.Forms.Padding(7);
             this.dataGridView_CommonDID.Name = "dataGridView_CommonDID";
             this.dataGridView_CommonDID.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_CommonDID.RowHeadersVisible = false;
             this.dataGridView_CommonDID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_CommonDID.Size = new System.Drawing.Size(489, 190);
+            this.dataGridView_CommonDID.Size = new System.Drawing.Size(622, 305);
             this.dataGridView_CommonDID.StandardTab = true;
             this.dataGridView_CommonDID.TabIndex = 5;
             this.dataGridView_CommonDID.SelectionChanged += new System.EventHandler(this.dataGridView_CommonDID_SelectionChanged);
@@ -488,10 +488,10 @@ namespace dcom.views.views_ToolBar
             this.groupBox_SettingSelectedService.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_SettingSelectedService.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_SettingSelectedService.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_SettingSelectedService.Location = new System.Drawing.Point(10, 309);
+            this.groupBox_SettingSelectedService.Location = new System.Drawing.Point(10, 438);
             this.groupBox_SettingSelectedService.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_SettingSelectedService.Name = "groupBox_SettingSelectedService";
-            this.groupBox_SettingSelectedService.Size = new System.Drawing.Size(543, 280);
+            this.groupBox_SettingSelectedService.Size = new System.Drawing.Size(683, 408);
             this.groupBox_SettingSelectedService.TabIndex = 2;
             this.groupBox_SettingSelectedService.TabStop = false;
             this.groupBox_SettingSelectedService.Text = "Selected Service";
@@ -510,7 +510,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(537, 261);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(677, 389);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -534,13 +534,13 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel9.Controls.Add(this.button_SelectService3E, 1, 2);
             this.tableLayoutPanel9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(29, 55);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(36, 80);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(477, 150);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(603, 227);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // button_SelectService2E
@@ -552,9 +552,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService2E.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService2E.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService2E.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService2E.Location = new System.Drawing.Point(360, 53);
+            this.button_SelectService2E.Location = new System.Drawing.Point(453, 78);
             this.button_SelectService2E.Name = "button_SelectService2E";
-            this.button_SelectService2E.Size = new System.Drawing.Size(114, 44);
+            this.button_SelectService2E.Size = new System.Drawing.Size(147, 69);
             this.button_SelectService2E.TabIndex = 7;
             this.button_SelectService2E.Text = "2E";
             this.button_SelectService2E.UseVisualStyleBackColor = false;
@@ -569,9 +569,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService28.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService28.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService28.Location = new System.Drawing.Point(241, 53);
+            this.button_SelectService28.Location = new System.Drawing.Point(303, 78);
             this.button_SelectService28.Name = "button_SelectService28";
-            this.button_SelectService28.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService28.Size = new System.Drawing.Size(144, 69);
             this.button_SelectService28.TabIndex = 6;
             this.button_SelectService28.Text = "28";
             this.button_SelectService28.UseVisualStyleBackColor = false;
@@ -586,9 +586,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService27.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService27.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService27.Location = new System.Drawing.Point(122, 53);
+            this.button_SelectService27.Location = new System.Drawing.Point(153, 78);
             this.button_SelectService27.Name = "button_SelectService27";
-            this.button_SelectService27.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService27.Size = new System.Drawing.Size(144, 69);
             this.button_SelectService27.TabIndex = 5;
             this.button_SelectService27.Text = "27";
             this.button_SelectService27.UseVisualStyleBackColor = false;
@@ -603,9 +603,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService22.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService22.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService22.Location = new System.Drawing.Point(3, 53);
+            this.button_SelectService22.Location = new System.Drawing.Point(3, 78);
             this.button_SelectService22.Name = "button_SelectService22";
-            this.button_SelectService22.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService22.Size = new System.Drawing.Size(144, 69);
             this.button_SelectService22.TabIndex = 4;
             this.button_SelectService22.Text = "22";
             this.button_SelectService22.UseVisualStyleBackColor = false;
@@ -619,9 +619,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService19.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService19.Location = new System.Drawing.Point(360, 3);
+            this.button_SelectService19.Location = new System.Drawing.Point(453, 3);
             this.button_SelectService19.Name = "button_SelectService19";
-            this.button_SelectService19.Size = new System.Drawing.Size(114, 44);
+            this.button_SelectService19.Size = new System.Drawing.Size(147, 69);
             this.button_SelectService19.TabIndex = 3;
             this.button_SelectService19.Text = "19";
             this.button_SelectService19.UseVisualStyleBackColor = false;
@@ -636,9 +636,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService14.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService14.Location = new System.Drawing.Point(241, 3);
+            this.button_SelectService14.Location = new System.Drawing.Point(303, 3);
             this.button_SelectService14.Name = "button_SelectService14";
-            this.button_SelectService14.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService14.Size = new System.Drawing.Size(144, 69);
             this.button_SelectService14.TabIndex = 2;
             this.button_SelectService14.Text = "14";
             this.button_SelectService14.UseVisualStyleBackColor = false;
@@ -653,9 +653,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService11.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService11.Location = new System.Drawing.Point(122, 3);
+            this.button_SelectService11.Location = new System.Drawing.Point(153, 3);
             this.button_SelectService11.Name = "button_SelectService11";
-            this.button_SelectService11.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService11.Size = new System.Drawing.Size(144, 69);
             this.button_SelectService11.TabIndex = 1;
             this.button_SelectService11.Text = "11";
             this.button_SelectService11.UseVisualStyleBackColor = false;
@@ -672,7 +672,7 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService10.ForeColor = System.Drawing.Color.Brown;
             this.button_SelectService10.Location = new System.Drawing.Point(3, 3);
             this.button_SelectService10.Name = "button_SelectService10";
-            this.button_SelectService10.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService10.Size = new System.Drawing.Size(144, 69);
             this.button_SelectService10.TabIndex = 0;
             this.button_SelectService10.Text = "10";
             this.button_SelectService10.UseVisualStyleBackColor = false;
@@ -687,9 +687,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectCANTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectCANTP.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectCANTP.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectCANTP.Location = new System.Drawing.Point(360, 103);
+            this.button_SelectCANTP.Location = new System.Drawing.Point(453, 153);
             this.button_SelectCANTP.Name = "button_SelectCANTP";
-            this.button_SelectCANTP.Size = new System.Drawing.Size(114, 44);
+            this.button_SelectCANTP.Size = new System.Drawing.Size(147, 71);
             this.button_SelectCANTP.TabIndex = 8;
             this.button_SelectCANTP.Text = "CAN TP";
             this.button_SelectCANTP.UseVisualStyleBackColor = false;
@@ -704,9 +704,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService31.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService31.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService31.Location = new System.Drawing.Point(3, 103);
+            this.button_SelectService31.Location = new System.Drawing.Point(3, 153);
             this.button_SelectService31.Name = "button_SelectService31";
-            this.button_SelectService31.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService31.Size = new System.Drawing.Size(144, 71);
             this.button_SelectService31.TabIndex = 9;
             this.button_SelectService31.Text = "31";
             this.button_SelectService31.UseVisualStyleBackColor = false;
@@ -721,9 +721,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService85.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService85.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService85.Location = new System.Drawing.Point(241, 103);
+            this.button_SelectService85.Location = new System.Drawing.Point(303, 153);
             this.button_SelectService85.Name = "button_SelectService85";
-            this.button_SelectService85.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService85.Size = new System.Drawing.Size(144, 71);
             this.button_SelectService85.TabIndex = 11;
             this.button_SelectService85.Text = "85";
             this.button_SelectService85.UseVisualStyleBackColor = false;
@@ -738,9 +738,9 @@ namespace dcom.views.views_ToolBar
             this.button_SelectService3E.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SelectService3E.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_SelectService3E.ForeColor = System.Drawing.Color.Brown;
-            this.button_SelectService3E.Location = new System.Drawing.Point(122, 103);
+            this.button_SelectService3E.Location = new System.Drawing.Point(153, 153);
             this.button_SelectService3E.Name = "button_SelectService3E";
-            this.button_SelectService3E.Size = new System.Drawing.Size(113, 44);
+            this.button_SelectService3E.Size = new System.Drawing.Size(144, 71);
             this.button_SelectService3E.TabIndex = 10;
             this.button_SelectService3E.Text = "3E";
             this.button_SelectService3E.UseVisualStyleBackColor = false;
@@ -752,10 +752,10 @@ namespace dcom.views.views_ToolBar
             this.groupBox_SettingPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_SettingPath.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_SettingPath.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_SettingPath.Location = new System.Drawing.Point(573, 10);
+            this.groupBox_SettingPath.Location = new System.Drawing.Point(713, 10);
             this.groupBox_SettingPath.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_SettingPath.Name = "groupBox_SettingPath";
-            this.groupBox_SettingPath.Size = new System.Drawing.Size(544, 279);
+            this.groupBox_SettingPath.Size = new System.Drawing.Size(683, 408);
             this.groupBox_SettingPath.TabIndex = 1;
             this.groupBox_SettingPath.TabStop = false;
             this.groupBox_SettingPath.Text = "Data Path Configuration";
@@ -775,7 +775,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(538, 260);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(677, 389);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -793,7 +793,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel6.Controls.Add(this.panel_DBPathBrowse, 2, 1);
             this.tableLayoutPanel6.Controls.Add(this.textBox_TestcaseDirectory, 1, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(40, 68);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(40, 133);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
@@ -802,7 +802,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(458, 123);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(597, 123);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
             // comboBox_DBPath
@@ -814,7 +814,7 @@ namespace dcom.views.views_ToolBar
             this.comboBox_DBPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBox_DBPath.Location = new System.Drawing.Point(174, 48);
             this.comboBox_DBPath.Name = "comboBox_DBPath";
-            this.comboBox_DBPath.Size = new System.Drawing.Size(241, 26);
+            this.comboBox_DBPath.Size = new System.Drawing.Size(380, 26);
             this.comboBox_DBPath.TabIndex = 0;
             this.comboBox_DBPath.TextChanged += new System.EventHandler(this.comboBox_DBPath_TextChanged);
             // 
@@ -870,7 +870,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(241, 35);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(380, 35);
             this.tableLayoutPanel7.TabIndex = 12;
             // 
             // radioButton_DBSourceServer
@@ -881,7 +881,7 @@ namespace dcom.views.views_ToolBar
             this.radioButton_DBSourceServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButton_DBSourceServer.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_DBSourceServer.ForeColor = System.Drawing.Color.Brown;
-            this.radioButton_DBSourceServer.Location = new System.Drawing.Point(123, 3);
+            this.radioButton_DBSourceServer.Location = new System.Drawing.Point(193, 3);
             this.radioButton_DBSourceServer.Name = "radioButton_DBSourceServer";
             this.radioButton_DBSourceServer.Size = new System.Drawing.Size(80, 29);
             this.radioButton_DBSourceServer.TabIndex = 1;
@@ -898,7 +898,7 @@ namespace dcom.views.views_ToolBar
             this.radioButton_DBSourceLocal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButton_DBSourceLocal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton_DBSourceLocal.ForeColor = System.Drawing.Color.Brown;
-            this.radioButton_DBSourceLocal.Location = new System.Drawing.Point(47, 3);
+            this.radioButton_DBSourceLocal.Location = new System.Drawing.Point(117, 3);
             this.radioButton_DBSourceLocal.Name = "radioButton_DBSourceLocal";
             this.radioButton_DBSourceLocal.Size = new System.Drawing.Size(70, 29);
             this.radioButton_DBSourceLocal.TabIndex = 0;
@@ -913,7 +913,7 @@ namespace dcom.views.views_ToolBar
             this.panel_TestcaseDirectoryBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_TestcaseDirectoryBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_TestcaseDirectoryBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_TestcaseDirectoryBrowse.Location = new System.Drawing.Point(421, 85);
+            this.panel_TestcaseDirectoryBrowse.Location = new System.Drawing.Point(560, 85);
             this.panel_TestcaseDirectoryBrowse.Name = "panel_TestcaseDirectoryBrowse";
             this.panel_TestcaseDirectoryBrowse.Size = new System.Drawing.Size(34, 35);
             this.panel_TestcaseDirectoryBrowse.TabIndex = 16;
@@ -925,7 +925,7 @@ namespace dcom.views.views_ToolBar
             this.panel_DBPathBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_DBPathBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel_DBPathBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_DBPathBrowse.Location = new System.Drawing.Point(421, 44);
+            this.panel_DBPathBrowse.Location = new System.Drawing.Point(560, 44);
             this.panel_DBPathBrowse.Name = "panel_DBPathBrowse";
             this.panel_DBPathBrowse.Size = new System.Drawing.Size(34, 35);
             this.panel_DBPathBrowse.TabIndex = 13;
@@ -940,7 +940,7 @@ namespace dcom.views.views_ToolBar
             this.textBox_TestcaseDirectory.ForeColor = System.Drawing.Color.Brown;
             this.textBox_TestcaseDirectory.Location = new System.Drawing.Point(174, 89);
             this.textBox_TestcaseDirectory.Name = "textBox_TestcaseDirectory";
-            this.textBox_TestcaseDirectory.Size = new System.Drawing.Size(241, 26);
+            this.textBox_TestcaseDirectory.Size = new System.Drawing.Size(380, 26);
             this.textBox_TestcaseDirectory.TabIndex = 9;
             this.textBox_TestcaseDirectory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_TestcaseDirectory.TextChanged += new System.EventHandler(this.textBox_TestcaseDirectory_TextChanged);
@@ -954,11 +954,11 @@ namespace dcom.views.views_ToolBar
             this.button_LoadDB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_LoadDB.FlatAppearance.BorderSize = 0;
             this.button_LoadDB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_LoadDB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LoadDB.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_LoadDB.ForeColor = System.Drawing.Color.White;
-            this.button_LoadDB.Location = new System.Drawing.Point(349, 213);
+            this.button_LoadDB.Location = new System.Drawing.Point(436, 300);
             this.button_LoadDB.Name = "button_LoadDB";
-            this.button_LoadDB.Size = new System.Drawing.Size(146, 24);
+            this.button_LoadDB.Size = new System.Drawing.Size(198, 45);
             this.button_LoadDB.TabIndex = 3;
             this.button_LoadDB.Text = "LOAD DATABASE";
             this.button_LoadDB.UseVisualStyleBackColor = false;
@@ -973,7 +973,7 @@ namespace dcom.views.views_ToolBar
             this.groupBox_SettingProjectInformation.Location = new System.Drawing.Point(10, 10);
             this.groupBox_SettingProjectInformation.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox_SettingProjectInformation.Name = "groupBox_SettingProjectInformation";
-            this.groupBox_SettingProjectInformation.Size = new System.Drawing.Size(543, 279);
+            this.groupBox_SettingProjectInformation.Size = new System.Drawing.Size(683, 408);
             this.groupBox_SettingProjectInformation.TabIndex = 0;
             this.groupBox_SettingProjectInformation.TabStop = false;
             this.groupBox_SettingProjectInformation.Text = "Project Information";
@@ -992,7 +992,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(537, 260);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(677, 389);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -1009,7 +1009,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel3.Controls.Add(this.label_RC, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.textBox_ProjectName, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(28, 50);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(98, 114);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
@@ -1135,7 +1135,7 @@ namespace dcom.views.views_ToolBar
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1133, 605);
+            this.tabPage2.Size = new System.Drawing.Size(1412, 862);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Testcase Temp";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1153,7 +1153,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_body.Name = "tableLayoutPanel_body";
             this.tableLayoutPanel_body.RowCount = 1;
             this.tableLayoutPanel_body.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_body.Size = new System.Drawing.Size(1133, 605);
+            this.tableLayoutPanel_body.Size = new System.Drawing.Size(1412, 862);
             this.tableLayoutPanel_body.TabIndex = 0;
             // 
             // tableLayoutPanel_testcaseService
@@ -1426,7 +1426,7 @@ namespace dcom.views.views_ToolBar
             this.Controls.Add(this.tableLayoutPanel_base);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "View_Setting_Testcase";
-            this.Size = new System.Drawing.Size(1161, 633);
+            this.Size = new System.Drawing.Size(1440, 890);
             this.Load += new System.EventHandler(this.View_Setting_Testcase_Load);
             this.tableLayoutPanel_base.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

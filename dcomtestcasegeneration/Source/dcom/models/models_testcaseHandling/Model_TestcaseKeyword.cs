@@ -106,13 +106,13 @@ namespace dcom.models.models_testcaseHandling
             string TestStepKeyword;
             
             // Test step
-            TestStep = $"Set the {DatabaseVariables.DatabaseCommonSettingVehicleSpeed[0]} to Value {setInvalidValue} Wait {timeout} ms";
+            TestStep = $"Set the {UIVariables.DatabaseCommonSettingVehicleSpeed[0]} to Value {setInvalidValue} Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(Env{DatabaseVariables.DatabaseCommonSettingVehicleSpeed[0]}({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"EnvVar(Env{UIVariables.DatabaseCommonSettingVehicleSpeed[0]}({setInvalidValue}, {timeout}))";
             
             
 
@@ -124,7 +124,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] SetEngineStatus(double setInvalidValue, int timeout)
+        public static string[] SetEngineStatus(double setInvalidValue, string name, int timeout)
         {
             string[] Data;
             string TestStep;
@@ -132,13 +132,38 @@ namespace dcom.models.models_testcaseHandling
             string TestStepKeyword;
 
             // Test step
-            TestStep = $"Set the {DatabaseVariables.DatabaseCommonSettingEngineStatus[0]} to Value {setInvalidValue} Wait {timeout} ms";
+            TestStep = $"Set the {UIVariables.DatabaseCommonSettingEngineStatus[0]} to Value {setInvalidValue} ({name}) Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(Env{DatabaseVariables.DatabaseCommonSettingEngineStatus[0]}({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"EnvVar(Env{UIVariables.DatabaseCommonSettingEngineStatus[0]}({setInvalidValue}, {timeout}))";
+
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+        public static string[] SetVoltage(double setInvalidValue, string name, int timeout)
+        {
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+
+            // Test step
+            TestStep = $"Set the {UIVariables.DatabaseCommonDIDCurrentVoltage[0]} to Value {setInvalidValue} ({name}) Wait {timeout} ms";
+
+            // Test response
+            TestReponse = "-";
+
+            // Test step keyword
+            TestStepKeyword = $"EnvVar(Env{UIVariables.DatabaseCommonSettingEngineStatus[0]}({setInvalidValue}, {timeout}))";
 
 
             Data = new string[]
@@ -157,7 +182,7 @@ namespace dcom.models.models_testcaseHandling
             string TestStep;
             string TestReponse;
             string TestStepKeyword;
-            string CurrentSessionDIDCodeString = DatabaseVariables.DatabaseCommonDIDCurrentSession[1];
+            string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDIDCurrentSession[1];
             string CurrentSessionDIDDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(CurrentSessionDIDCodeString);
             string responseTitle = Controller_ServiceHandling.GetReponseTitle(responseStatus);
             string ResponseDisplayString;

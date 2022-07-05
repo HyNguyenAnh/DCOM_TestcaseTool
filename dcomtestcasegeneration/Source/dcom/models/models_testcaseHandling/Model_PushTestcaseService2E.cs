@@ -66,7 +66,7 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetTestRequestAllowSessionComponent()[2];
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
             ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = DatabaseVariables.ProjectName;
+            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
 
             rowIndex++;
@@ -83,7 +83,7 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetTestRequestAddressingModeComponent()[2];
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
             ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = DatabaseVariables.ProjectName;
+            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
 
             rowIndex++;
@@ -100,7 +100,7 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService11.GetTestRequestSuppressBitComponent()[2];
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
             ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = DatabaseVariables.ProjectName;
+            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
 
             rowIndex++;
@@ -144,7 +144,7 @@ namespace dcom.models.models_testcaseHandling
                 ws.Cells[startRowIndex + DIDIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetDIDCheckComponentInExtended(DIDGroupTestcaseTemp)[2];
                 ws.Cells[startRowIndex + DIDIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
                 ws.Cells[startRowIndex + DIDIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-                ws.Cells[startRowIndex + DIDIndex, TestcaseVariables.ProjectColumnIndex] = DatabaseVariables.ProjectName;
+                ws.Cells[startRowIndex + DIDIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
                 rowIndex++;
                 DIDGroupTestcaseTemp.Clear();
@@ -162,7 +162,7 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = "";
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
             ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = DatabaseVariables.ProjectName;
+            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
 
             rowIndex++;
@@ -179,7 +179,7 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = "";
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
             ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = DatabaseVariables.ProjectName;
+            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
 
             rowIndex++;
@@ -197,7 +197,7 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> SIDSupported = DatabaseVariables.DatabaseService2E.ElementAt(5);
 
         public static string[] parametters = Controller_ServiceHandling.GetParameters(Specification);
-        public static string CurrentSessionDIDCodeString = DatabaseVariables.DatabaseCommonDIDCurrentSession[1];
+        public static string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDIDCurrentSession[1];
         public static string[] GetTestRequestAllowSessionComponent()
         {
             string TestStep = "";

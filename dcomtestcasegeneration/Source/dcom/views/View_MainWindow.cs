@@ -33,6 +33,8 @@ namespace dcom.views
             // Load home page
             View_Home frm = new View_Home();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
+            Definition.UIVariableDefinition();
+            Definition.SystemVariableDefinition();
         }
         private void button_service10_MouseHover(object sender, EventArgs e)
         {

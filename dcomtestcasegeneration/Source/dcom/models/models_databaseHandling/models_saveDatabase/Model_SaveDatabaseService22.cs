@@ -18,9 +18,9 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             string status;
 
             // Specification
-            for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(0).Count(); index++)
+            for (int index = 0; index < DatabaseVariables.DatabaseService22?.ElementAt(0).Count(); index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22.ElementAt(0)[index].Count(); index_++)
+                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22?.ElementAt(0)[index].Count(); index_++)
                 {
                     status = UIVariables.Service22_DIDTable_Specification[index][index_];
                     Ws.Cells[rowIndex[5] + index, columnIndex[5] + index_] = status;
@@ -28,9 +28,9 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Addressing Mode
-            for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(1).Count(); index++)
+            for (int index = 0; index < DatabaseVariables.DatabaseService22?.ElementAt(1).Count(); index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22.ElementAt(1)[index].Count(); index_++)
+                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService22?.ElementAt(1)[index].Count(); index_++)
                 {
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_DIDTable_AllowSessionAddressingMode[index][index_]);
                     Ws.Cells[rowIndex[6] + index, columnIndex[6] + index_] = status;
@@ -38,14 +38,14 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // NRC
-            for (int index = 0; index < UIVariables.Service22_NRCPriority.Length; index++)
+            for (int index = 0; index < UIVariables.Service22_NRCPriority?.Length; index++)
             {
                 Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = UIVariables.Service22_NRCPriority[index];
             }
 
 
             // Condition
-            for (int index = 0; index < UIVariables.Service22_ButtonStatus_Condition.Length; index++)
+            for (int index = 0; index < UIVariables.Service22_ButtonStatus_Condition?.Length; index++)
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_Condition[index]);
                 Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
@@ -58,7 +58,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Optional
-            for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(4).Count; index++)
+            for (int index = 0; index < DatabaseVariables.DatabaseService22?.ElementAt(4).Count; index++)
             {
                 if (DatabaseVariables.DatabaseService22.ElementAt(4)[index][0].Contains("Suppress"))
                 {
@@ -72,7 +72,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Allow Session
-            for(int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(5).Count; index++)
+            for(int index = 0; index < DatabaseVariables.DatabaseService22?.ElementAt(5).Count; index++)
             {
                 status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_AllowSession[index]);
                 Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = status;

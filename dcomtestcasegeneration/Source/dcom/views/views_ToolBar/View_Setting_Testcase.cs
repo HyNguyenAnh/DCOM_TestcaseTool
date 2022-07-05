@@ -71,39 +71,39 @@ namespace dcom.views.views_ToolBar
 
             // Load Project Information
 
-            DatabaseVariables.ProjectInformation = new string[]
+            UIVariables.ProjectInformation = new string[]
             {
-                DatabaseVariables.ProjectName,
-                DatabaseVariables.Variant,
-                DatabaseVariables.Release,
-                DatabaseVariables.RC,
+                UIVariables.ProjectName,
+                UIVariables.Variant,
+                UIVariables.Release,
+                UIVariables.RC,
 
             };
             for (int ProjectInformationIndex = 0; ProjectInformationIndex < ProjectInformation.Length; ProjectInformationIndex++)
             {
-                ProjectInformation[ProjectInformationIndex].Text = DatabaseVariables.ProjectInformation[ProjectInformationIndex];
+                ProjectInformation[ProjectInformationIndex].Text = UIVariables.ProjectInformation[ProjectInformationIndex];
             }
 
             // Load Data Path Information
-            radioButton_DBSourceLocal.Checked = Controller_UIHandling.GetDatabaseSource(DatabaseVariables.DatabaseSource);
-            radioButton_DBSourceServer.Checked = !Controller_UIHandling.GetDatabaseSource(DatabaseVariables.DatabaseSource);
-            comboBox_DBPath.Text = DatabaseVariables.DatabasePath;
-            textBox_TestcaseDirectory.Text = DatabaseVariables.TestcaseDirectory;
+            radioButton_DBSourceLocal.Checked = Controller_UIHandling.GetDatabaseSource(UIVariables.DatabaseSource);
+            radioButton_DBSourceServer.Checked = !Controller_UIHandling.GetDatabaseSource(UIVariables.DatabaseSource);
+            comboBox_DBPath.Text = UIVariables.DatabasePath;
+            textBox_TestcaseDirectory.Text = UIVariables.TestcaseDirectory;
 
 
             // Load Selected Service
 
-            for (int selectedServiceIndex = 0; selectedServiceIndex < DatabaseVariables.SelectedServiceStatus.Length; selectedServiceIndex++)
+            for (int selectedServiceIndex = 0; selectedServiceIndex < UIVariables.SelectedServiceStatus.Length; selectedServiceIndex++)
             {
-                SelectedServiceInformation[selectedServiceIndex].BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex])[0];
-                SelectedServiceInformation[selectedServiceIndex].ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[selectedServiceIndex])[1];
+                SelectedServiceInformation[selectedServiceIndex].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[selectedServiceIndex])[0];
+                SelectedServiceInformation[selectedServiceIndex].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[selectedServiceIndex])[1];
             }
 
             // Load Common Keyword Information
-            List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
+            List<string[]> DatabaseCommonSetting = UIVariables.DatabaseCommonSetting;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
 
-            List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
+            List<string[]> DatabaseCommonDID = UIVariables.DatabaseCommonDID;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
 
             dataGridView_CommonSetting.Enabled = true;
@@ -124,69 +124,69 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            DatabaseVariables.DatabasePath = comboBox_DBPath.Text;
+            UIVariables.DatabasePath = comboBox_DBPath.Text;
 
             // Get data in databases
             Controllers_FunctionButton.ButtonLoadDataClick();
 
             // Push data to Project Information
-            textBox_ProjectName.Text = DatabaseVariables.ProjectName;
-            textBox_Variant.Text = DatabaseVariables.Variant;
-            textBox_Release.Text = DatabaseVariables.Release;
-            textBox_RC.Text = DatabaseVariables.RC;
+            textBox_ProjectName.Text = UIVariables.ProjectName;
+            textBox_Variant.Text = UIVariables.Variant;
+            textBox_Release.Text = UIVariables.Release;
+            textBox_RC.Text = UIVariables.RC;
 
             // Push data to Data Path Information
-            radioButton_DBSourceLocal.Checked = Controller_UIHandling.GetDatabaseSource(DatabaseVariables.DatabaseSource);
-            radioButton_DBSourceServer.Checked = !Controller_UIHandling.GetDatabaseSource(DatabaseVariables.DatabaseSource);
-            textBox_TestcaseDirectory.Text = DatabaseVariables.TestcaseDirectory;
+            radioButton_DBSourceLocal.Checked = Controller_UIHandling.GetDatabaseSource(UIVariables.DatabaseSource);
+            radioButton_DBSourceServer.Checked = !Controller_UIHandling.GetDatabaseSource(UIVariables.DatabaseSource);
+            textBox_TestcaseDirectory.Text = UIVariables.TestcaseDirectory;
 
             // Push data to Selected Service Information
 
-            button_SelectService10.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[0])[0];
-            button_SelectService10.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[0])[1];
+            button_SelectService10.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[0])[0];
+            button_SelectService10.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[0])[1];
 
-            button_SelectService11.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[1])[0];
-            button_SelectService11.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[1])[1];
+            button_SelectService11.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[1])[0];
+            button_SelectService11.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[1])[1];
 
-            button_SelectService14.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[2])[0];
-            button_SelectService14.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[2])[1];
+            button_SelectService14.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[2])[0];
+            button_SelectService14.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[2])[1];
 
-            button_SelectService19.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[3])[0];
-            button_SelectService19.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[3])[1];
+            button_SelectService19.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[3])[0];
+            button_SelectService19.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[3])[1];
 
-            button_SelectService22.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[4])[0];
-            button_SelectService22.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[4])[1];
+            button_SelectService22.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[4])[0];
+            button_SelectService22.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[4])[1];
 
-            button_SelectService27.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[5])[0];
-            button_SelectService27.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[5])[1];
+            button_SelectService27.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[5])[0];
+            button_SelectService27.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[5])[1];
 
-            button_SelectService28.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[6])[0];
-            button_SelectService28.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[6])[1];
+            button_SelectService28.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[6])[0];
+            button_SelectService28.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[6])[1];
 
-            button_SelectService2E.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[7])[0];
-            button_SelectService2E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[7])[1];
+            button_SelectService2E.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[7])[0];
+            button_SelectService2E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[7])[1];
 
-            button_SelectCANTP.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[0];
-            button_SelectCANTP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[1];
+            button_SelectCANTP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[8])[0];
+            button_SelectCANTP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[8])[1];
 
-            button_SelectService31.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[0];
-            button_SelectService31.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[1];
+            button_SelectService31.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[9])[0];
+            button_SelectService31.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[9])[1];
 
-            button_SelectService3E.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[0];
-            button_SelectService3E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[1];
+            button_SelectService3E.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[10])[0];
+            button_SelectService3E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[10])[1];
 
-            button_SelectService85.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[0];
-            button_SelectService85.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[1];
+            button_SelectService85.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[11])[0];
+            button_SelectService85.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[11])[1];
 
 
 
             // Push data to Common Setting
             
-            List<string[]> DatabaseCommonSetting = DatabaseVariables.DatabaseCommonSetting;
+            List<string[]> DatabaseCommonSetting = UIVariables.DatabaseCommonSetting;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
             
             // Push data to Common DID
-            List<string[]> DatabaseCommonDID = DatabaseVariables.DatabaseCommonDID;
+            List<string[]> DatabaseCommonDID = UIVariables.DatabaseCommonDID;
             Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
 
             dataGridView_CommonSetting.Enabled = true;
@@ -198,97 +198,97 @@ namespace dcom.views.views_ToolBar
 
         private void button_SelectService10_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[0] = !DatabaseVariables.SelectedServiceStatus[0];
-            button_SelectService10.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[0])[0];
-            button_SelectService10.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[0])[1];
+            UIVariables.SelectedServiceStatus[0] = !UIVariables.SelectedServiceStatus[0];
+            button_SelectService10.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[0])[0];
+            button_SelectService10.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[0])[1];
         }
 
         private void button_SelectService11_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[1] = !DatabaseVariables.SelectedServiceStatus[1];
-            button_SelectService11.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[1])[0];
-            button_SelectService11.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[1])[1];
+            UIVariables.SelectedServiceStatus[1] = !UIVariables.SelectedServiceStatus[1];
+            button_SelectService11.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[1])[0];
+            button_SelectService11.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[1])[1];
         }
 
         private void button_SelectService14_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[2] = !DatabaseVariables.SelectedServiceStatus[2];
+            UIVariables.SelectedServiceStatus[2] = !UIVariables.SelectedServiceStatus[2];
 
-            button_SelectService14.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[2])[0];
-            button_SelectService14.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[2])[1];
+            button_SelectService14.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[2])[0];
+            button_SelectService14.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[2])[1];
         }
 
         private void button_SelectService19_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[3] = !DatabaseVariables.SelectedServiceStatus[3];
+            UIVariables.SelectedServiceStatus[3] = !UIVariables.SelectedServiceStatus[3];
 
-            button_SelectService19.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[3])[0];
-            button_SelectService19.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[3])[1];
+            button_SelectService19.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[3])[0];
+            button_SelectService19.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[3])[1];
         }
 
         private void button_SelectService22_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[4] = !DatabaseVariables.SelectedServiceStatus[4];
+            UIVariables.SelectedServiceStatus[4] = !UIVariables.SelectedServiceStatus[4];
 
-            button_SelectService22.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[4])[0];
-            button_SelectService22.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[4])[1];
+            button_SelectService22.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[4])[0];
+            button_SelectService22.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[4])[1];
         }
 
         private void button_SelectService27_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[5] = !DatabaseVariables.SelectedServiceStatus[5];
+            UIVariables.SelectedServiceStatus[5] = !UIVariables.SelectedServiceStatus[5];
 
-            button_SelectService27.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[5])[0];
-            button_SelectService27.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[5])[1];
+            button_SelectService27.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[5])[0];
+            button_SelectService27.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[5])[1];
         }
 
         private void button_SelectService28_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[6] = !DatabaseVariables.SelectedServiceStatus[6];
+            UIVariables.SelectedServiceStatus[6] = !UIVariables.SelectedServiceStatus[6];
 
-            button_SelectService28.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[6])[0];
-            button_SelectService28.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[6])[1];
+            button_SelectService28.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[6])[0];
+            button_SelectService28.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[6])[1];
         }
 
         private void button_SelectService2E_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[7] = !DatabaseVariables.SelectedServiceStatus[7];
+            UIVariables.SelectedServiceStatus[7] = !UIVariables.SelectedServiceStatus[7];
 
-            button_SelectService2E.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[7])[0];
-            button_SelectService2E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[7])[1];
+            button_SelectService2E.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[7])[0];
+            button_SelectService2E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[7])[1];
         }
 
         private void button_SelectService31_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[8] = !DatabaseVariables.SelectedServiceStatus[8];
+            UIVariables.SelectedServiceStatus[8] = !UIVariables.SelectedServiceStatus[8];
 
-            button_SelectService31.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[0];
-            button_SelectService31.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[8])[1];
+            button_SelectService31.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[8])[0];
+            button_SelectService31.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[8])[1];
         }
 
         private void button_SelectService3E_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[9] = !DatabaseVariables.SelectedServiceStatus[9];
+            UIVariables.SelectedServiceStatus[9] = !UIVariables.SelectedServiceStatus[9];
 
-            button_SelectService3E.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[0];
-            button_SelectService3E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[9])[1];
+            button_SelectService3E.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[9])[0];
+            button_SelectService3E.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[9])[1];
 
         }
 
         private void button_SelectService85_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[10] = !DatabaseVariables.SelectedServiceStatus[10];
+            UIVariables.SelectedServiceStatus[10] = !UIVariables.SelectedServiceStatus[10];
 
-            button_SelectService85.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[0];
-            button_SelectService85.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[10])[1];
+            button_SelectService85.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[10])[0];
+            button_SelectService85.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[10])[1];
         }
 
         private void button_SelectCANTP_Click(object sender, EventArgs e)
         {
-            DatabaseVariables.SelectedServiceStatus[11] = !DatabaseVariables.SelectedServiceStatus[11];
+            UIVariables.SelectedServiceStatus[11] = !UIVariables.SelectedServiceStatus[11];
 
-            button_SelectCANTP.BackColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[0];
-            button_SelectCANTP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(DatabaseVariables.SelectedServiceStatus[11])[1];
+            button_SelectCANTP.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[11])[0];
+            button_SelectCANTP.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.SelectedServiceStatus[11])[1];
         }
 
         private void comboBox_DBPath_TextChanged(object sender, EventArgs e)
@@ -298,40 +298,40 @@ namespace dcom.views.views_ToolBar
 
         private void textBox_ProjectName_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.ProjectName = textBox_ProjectName.Text;
+            UIVariables.ProjectName = textBox_ProjectName.Text;
         }
 
         private void textBox_Variant_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.Variant = textBox_Variant.Text;
+            UIVariables.Variant = textBox_Variant.Text;
 
         }
 
         private void textBox_Release_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.Release = textBox_Release.Text;
+            UIVariables.Release = textBox_Release.Text;
 
         }
 
         private void textBox_RC_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.RC = textBox_RC.Text;
+            UIVariables.RC = textBox_RC.Text;
 
         }
 
         private void radioButton_DBSourceLocal_CheckedChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseSource = "Local";
+            UIVariables.DatabaseSource = "Local";
         }
 
         private void radioButton_DBSourceServer_CheckedChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.DatabaseSource = "Server";
+            UIVariables.DatabaseSource = "Server";
         }
 
         private void textBox_TestcaseDirectory_TextChanged(object sender, EventArgs e)
         {
-            DatabaseVariables.TestcaseDirectory = textBox_TestcaseDirectory.Text;
+            UIVariables.TestcaseDirectory = textBox_TestcaseDirectory.Text;
             TestcaseVariables.DirectoryOutputTestcase = textBox_TestcaseDirectory.Text;
         }
 
@@ -339,7 +339,7 @@ namespace dcom.views.views_ToolBar
         {
             if (dataGridView_CommonSetting.Enabled == true)
             {
-                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, DatabaseVariables.DatabaseCommonSetting);
+                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, UIVariables.DatabaseCommonSetting);
             }
         }
 
@@ -347,7 +347,7 @@ namespace dcom.views.views_ToolBar
         {
             if (dataGridView_CommonDID.Enabled == true)
             {
-                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonDID, DatabaseVariables.DatabaseCommonDID);
+                Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonDID, UIVariables.DatabaseCommonDID);
             }
         }
 
@@ -355,8 +355,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -375,8 +375,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -385,8 +385,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -395,8 +395,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -405,8 +405,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -415,8 +415,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -425,8 +425,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -435,8 +435,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -445,8 +445,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -455,8 +455,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -465,8 +465,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service10_Tc frm = new View_Service10_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service10_Tc frm = new View_Service10_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }

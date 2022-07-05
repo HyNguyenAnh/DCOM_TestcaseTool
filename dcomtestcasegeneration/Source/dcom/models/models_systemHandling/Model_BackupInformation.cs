@@ -16,7 +16,6 @@ namespace dcom.models.models_systemHandling
     {
         public static void BackupInformation()
         {
-            Definition.SystemVariableDefinition();
             if (File.Exists(SystemVariables.backupFilePath))
             {
                 MessageBoxButtons btn = MessageBoxButtons.YesNo;
@@ -28,11 +27,11 @@ namespace dcom.models.models_systemHandling
                     Model_SystemInformation.readBackupFile();
 
                     // Load data from database
-                    string databasePath = DatabaseVariables.DatabasePath;
+                    string databasePath = UIVariables.DatabasePath;
                     DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
 
                     Definition.DatabaseVariableDefinition();
-                    Definition.UIVariableDefinition();
+                    Controller_UIHandling.MappingFromDatabaseToUI();
 
                     // Close the database
                     Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);

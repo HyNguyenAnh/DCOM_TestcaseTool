@@ -10,18 +10,18 @@ namespace dcom.models.models_systemHandling
 {
     class Model_SystemInformation
     {
-        public static void createRequirementDBFolder()
+        public static void createFolder(string path_folder)
         {
             try
             {
-                if (Directory.Exists(DatabaseVariables.DirectoryOutputDatabase))
+                if (Directory.Exists(path_folder))
                 {
                     //The code will execute if the folder exists
                 }
                 else
                 {
                     //The below code will create a folder if the folder is not exists        
-                    DirectoryInfo folder = Directory.CreateDirectory(DatabaseVariables.DirectoryOutputDatabase);
+                    DirectoryInfo folder = Directory.CreateDirectory(path_folder);
                 }
             }
             catch (Exception e)
@@ -54,7 +54,7 @@ namespace dcom.models.models_systemHandling
             string backupFilePath = SystemVariables.backupFilePath;
             using (StreamReader sr = File.OpenText(backupFilePath))
             {
-                DatabaseVariables.DatabasePath = sr.ReadLine().ToString();
+                UIVariables.DatabasePath = sr.ReadLine().ToString();
             }
         }
 

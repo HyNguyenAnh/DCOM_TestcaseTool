@@ -10,12 +10,15 @@ namespace dcom.controllers.controllers_UIcontainer
 {
     class Controllers_UIService
     {
-        public static void LoadUI_Service10()
+        public static void UIDefinition_Service10()
         {
+
             // Sub Function
+            UIVariables.Service10_SubFunction = new List<string[]>();
             for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(0).Count; index++)
             {
-                DatabaseVariables.DatabaseService10.ElementAt(0)[index][1] = "1";
+                UIVariables.Service10_SubFunction.Add(DatabaseVariables.DatabaseService10?.ElementAt(0)?.ElementAt(index));
+                UIVariables.Service10_SubFunction.ElementAt(index)[1] = "1";
             }
 
             // Addressing Mode
@@ -66,7 +69,7 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service10_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(4)[0][1]);
         }
 
-        public static void LoadUI_Service11()
+        public static void UIDefinition_Service11()
         {
             // Sub Function | Reset Mode
             for (int index = 0; index < UIVariables.Service11_ButtonStatus_ResetMode.Length; index++)
@@ -105,7 +108,7 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service11_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(4)[0][1]);
         }
 
-        public static void LoadUI_Service14()
+        public static void UIDefinition_Service14()
         {
             // Sub Function
             for (int index = 0; index < DatabaseVariables.DatabaseService14.ElementAt(0).Count; index++)
@@ -145,12 +148,12 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service14_ButtonStatus_SuppressBit = false;
         }
 
-        public static void LoadUI_Service19()
+        public static void UIDefinition_Service19()
         {
 
         }
 
-        public static void LoadUI_Service22()
+        public static void UIDefinition_Service22()
         {
             // Specification
             UIVariables.Service22_DIDTable_Specification = new List<string[]> { };
@@ -195,7 +198,7 @@ namespace dcom.controllers.controllers_UIcontainer
             }
         }
 
-        public static void LoadUI_Service2E()
+        public static void UIDefinition_Service2E()
         {
             // Specification
             UIVariables.Service2E_DIDTable_Specification = new List<string[]> { };
@@ -241,7 +244,7 @@ namespace dcom.controllers.controllers_UIcontainer
             }
         }
 
-        public static void LoadUI_Service27()
+        public static void UIDefinition_Service27()
         {
             // Specification
             for (int index = 0; index < DatabaseVariables.DatabaseService27.ElementAt(0).Count; index++)
@@ -281,7 +284,7 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service27_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService27.ElementAt(4)[0][1]);
         }
 
-        public static void LoadUI_Service28()
+        public static void UIDefinition_Service28()
         {
             // Control Type
             for (int index = 0; index < UIVariables.Service28_ButtonStatus_ControlType.Length; index++)
@@ -326,7 +329,7 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service28_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(4)[0][1]);
         }
 
-        public static void LoadUI_Service3E()
+        public static void UIDefinition_Service3E()
         {
             // Addressing Mode
             for (int index = 0; index < UIVariables.Service3E_ButtonStatus_AddressingMode.Length; index++)
@@ -359,7 +362,7 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service3E_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E.ElementAt(4)[0][1]);
         }
 
-        public static void LoadUI_Service85()
+        public static void UIDefinition_Service85()
         {
             // Addressing Mode
             for (int index = 0; index < UIVariables.Service85_ButtonStatus_AddressingMode.Length; index++)
@@ -392,12 +395,12 @@ namespace dcom.controllers.controllers_UIcontainer
             UIVariables.Service85_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService85.ElementAt(4)[0][1]);
         }
 
-        public static void LoadUI_Service31()
+        public static void UIDefinition_Service31()
         {
 
         }
 
-        public static void LoadUI_CanTP()
+        public static void UIDefinition_CanTP()
         {
 
         }

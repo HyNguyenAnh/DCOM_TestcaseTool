@@ -18,6 +18,7 @@ namespace dcom.controllers.controllers_UIcontainer
     {
         public static void ButtonExportClick()
         {
+            Model_SystemInformation.createFolder(UIVariables.TestcaseDirectory);
             Definition.TestcaseVariableDefinition();
             Model_TestcaseTemplate.ExportTestcase();
 
@@ -38,20 +39,21 @@ namespace dcom.controllers.controllers_UIcontainer
         {
             Definition.TemplateVariableDefinition();
             Definition.SystemVariableDefinition();
-            Model_SystemInformation.createRequirementDBFolder();
+            Model_SystemInformation.createFolder(DatabaseVariables.DirectoryOutputDatabase);
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile();
         }
 
         public static void ButtonLoadDataClick()
         {
-            string databasePath = DatabaseVariables.DatabasePath;
+            string databasePath = UIVariables.DatabasePath;
             
             // Open the database
             DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
 
             Definition.DatabaseVariableDefinition();
             Definition.UIVariableDefinition();
+            Controller_UIHandling.MappingFromDatabaseToUI();
 
             // Close the database
             Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);

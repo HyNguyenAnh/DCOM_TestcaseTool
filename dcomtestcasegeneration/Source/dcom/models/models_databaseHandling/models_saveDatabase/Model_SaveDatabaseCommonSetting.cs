@@ -19,10 +19,10 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Common Setting
             List<string[]> SaveCommonSetting = new List<string[]>
             {
-                DatabaseVariables.DatabaseCommonSettingCreateFault,
-                DatabaseVariables.DatabaseCommonSettingVehicleSpeed,
-                DatabaseVariables.DatabaseCommonSettingEngineStatus,
-                DatabaseVariables.DatabaseCommonSettingSecurityUnlock,
+                UIVariables.DatabaseCommonSettingCreateFault,
+                UIVariables.DatabaseCommonSettingVehicleSpeed,
+                UIVariables.DatabaseCommonSettingEngineStatus,
+                UIVariables.DatabaseCommonSettingSecurityUnlock,
             };
             for (int index = 0; index < SaveCommonSetting?.Count; index++)
             {
@@ -35,9 +35,9 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Common DID
             List<string[]> SaveCommonDID = new List<string[]>
             {
-                DatabaseVariables.DatabaseCommonDIDCurrentSession,
-                DatabaseVariables.DatabaseCommonDIDInvalidCounter,
-                DatabaseVariables.DatabaseCommonDIDCurrentVoltage,
+                UIVariables.DatabaseCommonDIDCurrentSession,
+                UIVariables.DatabaseCommonDIDInvalidCounter,
+                UIVariables.DatabaseCommonDIDCurrentVoltage,
             };
             for (int index = 0; index < SaveCommonDID?.Count; index++)
             {
@@ -50,10 +50,10 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Project Information
             string[] ProjectInformation = new string[]
             {
-                DatabaseVariables.ProjectName,
-                DatabaseVariables.Variant,
-                DatabaseVariables.Release,
-                DatabaseVariables.RC,
+                UIVariables.ProjectName,
+                UIVariables.Variant,
+                UIVariables.Release,
+                UIVariables.RC,
             };
             for (int index = 0; index < ProjectInformation?.Length; index++)
             {
@@ -63,9 +63,9 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Data Path Information
             string[] DataPathInformation = new string[]
             {
-                DatabaseVariables.DatabaseSource,
+                UIVariables.DatabaseSource,
                 DatabaseVariables.PathOutputDatabase,
-                DatabaseVariables.TestcaseDirectory,
+                UIVariables.TestcaseDirectory,
             };
             for(int index = 0; index < DataPathInformation?.Length; index++)
             {
@@ -76,7 +76,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Selected Service
             for (int index = 0; index < 12; index++)
             {
-                string selectedServiceStatus = Controller_ServiceHandling.ConvertFromBoolToStringBit(DatabaseVariables.SelectedServiceStatus[index]);
+                string selectedServiceStatus = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.SelectedServiceStatus[index]);
                 Ws.Cells[rowIndex[4] + index, columnIndex[4] + 1] = selectedServiceStatus;
             }
         }

@@ -23,6 +23,7 @@ namespace dcom.views.views_ToolBar
         private void button_homepage_goToSetting_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
+
             if (SystemVariables.checkTheFirstLoad == true)
             {
                 Model_BackupInformation.BackupInformation();
@@ -31,6 +32,11 @@ namespace dcom.views.views_ToolBar
             view_MainWindow.button_setting.PerformClick();
             
             Cursor = Cursors.Default;
+        }
+
+        private void View_Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

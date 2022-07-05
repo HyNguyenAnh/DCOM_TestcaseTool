@@ -75,7 +75,7 @@ namespace dcom.views.views_Service
 
             InvalidValue_Condition = new TextBox[]
             {
-                vehicleSpeedValue_Text,
+                textBox_ConditionVehicle,
             };
 
             // Load elements to comboBox
@@ -111,15 +111,15 @@ namespace dcom.views.views_Service
             }
 
             // Load Invalid Value Condition
-            vehicleSpeedValue_Text.Text = UIVariables.Service14_InvalidValueCondition[0];
+            textBox_ConditionVehicle.Text = UIVariables.Service14_InvalidValueCondition[0];
 
             comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service14_ButtonStatus_Condition[1];
             comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service14_ButtonStatus_Condition[0];
-            vehicleSpeedValue_Text.Enabled = UIVariables.Service14_ButtonStatus_Condition[0];
+            textBox_ConditionVehicle.Enabled = UIVariables.Service14_ButtonStatus_Condition[0];
             dataGridView_NRCPriority.Enabled = true;
         }
 
-        private void button_Service14_PhysicalDefault_Click(object sender, EventArgs e)
+        private void button_PhysicalDefault_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[0] = !UIVariables.Service14_ButtonStatus_AddressingMode[0];
 
@@ -129,7 +129,7 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_PhysicalProgramming_Click(object sender, EventArgs e)
+        private void button_PhysicalProgramming_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[1] = !UIVariables.Service14_ButtonStatus_AddressingMode[1];
 
@@ -139,7 +139,7 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_PhysicalExtended_Click(object sender, EventArgs e)
+        private void button_PhysicalExtended_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[2] = !UIVariables.Service14_ButtonStatus_AddressingMode[2];
 
@@ -148,7 +148,7 @@ namespace dcom.views.views_Service
             button_PhysicalExtended.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service14_ButtonStatus_AddressingMode[2]);
         }
 
-        private void button_Service14_FunctionalDefault_Click(object sender, EventArgs e)
+        private void button_FunctionalDefault_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[3] = !UIVariables.Service14_ButtonStatus_AddressingMode[3];
 
@@ -158,7 +158,7 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_FunctionalProgramming_Click(object sender, EventArgs e)
+        private void button_FunctionalProgramming_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[4] = !UIVariables.Service14_ButtonStatus_AddressingMode[4];
 
@@ -168,7 +168,7 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_FunctionalExtended_Click(object sender, EventArgs e)
+        private void button_FunctionalExtended_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[5] = !UIVariables.Service14_ButtonStatus_AddressingMode[5];
 
@@ -178,7 +178,7 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_ConditionEngine_Click(object sender, EventArgs e)
+        private void button_ConditionEngine_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_Condition[1] = !UIVariables.Service14_ButtonStatus_Condition[1];
 
@@ -188,7 +188,7 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_ConditionVehicleSpeed_Click(object sender, EventArgs e)
+        private void button_ConditionVehicleSpeed_Click(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_Condition[0] = !UIVariables.Service14_ButtonStatus_Condition[0];
 
@@ -203,32 +203,32 @@ namespace dcom.views.views_Service
 
         }
 
-        private void button_Service14_PhysicalDefault_TextChanged(object sender, EventArgs e)
+        private void button_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
         }
 
-        private void button_Service14_PhysicalProgramming_TextChanged(object sender, EventArgs e)
+        private void button_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalProgramming.Text);
         }
 
-        private void button_Service14_PhysicalExtended_TextChanged(object sender, EventArgs e)
+        private void button_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalExtended.Text);
         }
 
-        private void button_Service14_FunctionalDefault_TextChanged(object sender, EventArgs e)
+        private void button_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalDefault.Text);
         }
 
-        private void button_Service14_FunctionalProgramming_TextChanged(object sender, EventArgs e)
+        private void button_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalProgramming.Text);
         }
 
-        private void button_Service14_FunctionalExtended_TextChanged(object sender, EventArgs e)
+        private void button_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service14_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalExtended.Text);
         }
@@ -243,59 +243,30 @@ namespace dcom.views.views_Service
 
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
-            if (UIVariables.Service14_ButtonStatus_Condition[1] == true)
-            {
-                comboBox_ConditionEngine_NRC.Enabled = true;
-                comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
-            }
-            else
-            {
-                comboBox_ConditionEngine_NRC.Enabled = false;
-                comboBox_ConditionEngine_NRC.Text = "NRC";
-            }
+
         }
 
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service14_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
-            if (UIVariables.Service14_ButtonStatus_Condition[0] == true)
-            {
-                comboBox_ConditionVehicle_NRC.Enabled = true;
-                vehicleSpeedValue_Text.Enabled = true;
-                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service14_NRCCondition[0];
-                vehicleSpeedValue_Text.Text = UIVariables.Service14_InvalidValueCondition[0];
-            }
-            else
-            {
-                comboBox_ConditionVehicle_NRC.Enabled = false;
-                vehicleSpeedValue_Text.Enabled = false;
-                comboBox_ConditionVehicle_NRC.Text = "NRC";
-                vehicleSpeedValue_Text.Text = "...km/h";
-            }
+
         }
 
-        private void comboBox_ConditionEngine_NRC_TextChanged(object sender, EventArgs e)
+
+        private void button_ConditionVoltage_Click(object sender, EventArgs e)
         {
-            if (UIVariables.Service14_ButtonStatus_Condition[1] == true)
-            {
-                UIVariables.Service14_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
-            }
+
         }
 
-        private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
+        private void button_ConditionVoltage_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_ConditionVehicle_TextChanged(object sender, EventArgs e)
         {
             if (UIVariables.Service14_ButtonStatus_Condition[0] == true)
             {
-                UIVariables.Service14_NRCCondition[0] = comboBox_ConditionVehicle_NRC.Text;
-            }
-        }
-
-        private void VehicleSpeedValue_Text_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service14_ButtonStatus_Condition[0] == true)
-            {
-                UIVariables.Service14_InvalidValueCondition[0] = vehicleSpeedValue_Text.Text;
+                UIVariables.Service14_InvalidValueCondition[0] = textBox_ConditionVehicle.Text;
             }
         }
     }

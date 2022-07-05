@@ -22,7 +22,7 @@ namespace dcom.declaration
         public static string TestcaseDirectory { get; set; }
         public static string DatabaseDirectory { get; set; }
         public static string TemplatePath { get; set; }
-        public static string DatabaseSource = "Local";
+        public static string DatabaseSource { get; set; }
 
         public static int[] StartRowIndexDatabaseTables { get; set; }
         public static int[] StartColumnIndexDatabaseTables { get; set; }
@@ -57,22 +57,7 @@ namespace dcom.declaration
         public static string[] DatabaseCommonDIDCurrentVoltage { get; set; }
 
 
-        public static bool[] SelectedServiceStatus = new bool[]
-        {
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-
-        };
+        public static bool[] SelectedServiceStatus { get; set; }
 
         public static string[] ProjectInformation { get; set; }
     }
