@@ -8,13 +8,6 @@ namespace dcom.declaration
 {
     class DatabaseVariables
     {
-        public static Workbook WbOutputDatabase { get; set; }
-        public static Worksheet WsOutputDatabase { get; set; }
-
-        public static string NameOutputDatabase { get; set; }
-        public static string DirectoryOutputDatabase { get; set; }
-        public static string PathOutputDatabase { get; set; }
-
         public static Workbook WbDatabase { get; set; }
         public static Worksheet WsDatabase { get; set; }
 

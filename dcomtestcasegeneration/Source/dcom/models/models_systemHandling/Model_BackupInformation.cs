@@ -8,7 +8,7 @@ using dcom.controllers.controllers_middleware;
 using dcom.declaration;
 using System.Windows.Forms;
 using System.IO;
-
+using dcom.controllers.controllers_UIcontainer;
 
 namespace dcom.models.models_systemHandling
 {
@@ -24,17 +24,11 @@ namespace dcom.models.models_systemHandling
                 if (res == DialogResult.Yes)
                 {
                     // Get the last recent database path from backup file
-                    Model_SystemInformation.readBackupFile();
+                    Model_SystemInformation.readBackupFile(SystemVariables.backupFilePath);
 
                     // Load data from database
                     string databasePath = UIVariables.DatabasePath;
-                    DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
-
-                    Definition.DatabaseVariableDefinition();
-                    Controller_UIHandling.MappingFromDatabaseToUI();
-
-                    // Close the database
-                    Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
+                    Controllers_FunctionButton.ButtonLoadDataClick(databasePath);
                     SystemVariables.checkTheFirstLoad = false;
 
                 }

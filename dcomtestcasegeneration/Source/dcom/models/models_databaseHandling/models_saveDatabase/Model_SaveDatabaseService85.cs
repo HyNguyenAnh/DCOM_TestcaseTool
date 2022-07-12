@@ -17,11 +17,20 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
             string status;
 
+            // Specification
+            for (int index = 0; index < UIVariables.Service85_SubFunction?.Count(); index++)
+            {
+                for (int index_ = 0; index_ < UIVariables.Service85_SubFunction?.ElementAt(index).Length; index_++)
+                {
+                    Ws.Cells[rowIndex[5] + index, columnIndex[5] + index_] = UIVariables.Service85_SubFunction.ElementAt(index)[index_];
+                }
+            }
+
             // Allow session || Addressing Mode
             int n = 0;
-            for (int index = 0; index < DatabaseVariables.DatabaseService85?.ElementAt(1).Count(); index++)
+            for (int index = 0; index < 2; index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService85?.ElementAt(1)[index].Count() - 1; index_++)
+                for (int index_ = 0; index_ < 3; index_++)
                 {
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_AddressingMode[n]);
                     Ws.Cells[rowIndex[6] + index, columnIndex[6] + index_ + 1] = status;
@@ -50,17 +59,10 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             }
 
             // Optional
-            for (int index = 0; index < DatabaseVariables.DatabaseService85?.ElementAt(4).Count; index++)
+            for (int index = 0; index < UIVariables.Service85_ButtonStatus_Optional.Length; index++)
             {
-                if (DatabaseVariables.DatabaseService85.ElementAt(4)[index][0].Contains("Suppress"))
-                {
-                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_SuppressBit);
-                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = status;
-                }
-                else
-                {
-                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = "0";
-                }
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Optional[index]);
+                Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = status;
             }
         }
     }

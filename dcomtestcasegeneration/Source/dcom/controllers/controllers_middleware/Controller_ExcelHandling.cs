@@ -33,45 +33,60 @@ namespace dcom.controllers.controllers_middleware
             CloseExcel(excelPath, wb);
             return wb;
         }
-        public static ExcelWorkbook OpenExcel(string excelPath)
+        public static void OpenExcel(string excelPath, ExcelWorkbook wb)
         {
-            ExcelWorkbook wb;
             string excelFileName = excelPath?.Substring(excelPath.LastIndexOf(@"\") + 1);
             excelFileName = excelFileName?.Remove(excelFileName.Length - 5);
-
-            foreach (var process in Process.GetProcessesByName("excel")) //whatever you need to close 
+            Console.WriteLine(excelFileName);
+            if (Controller_FileHandling.IsFileLocked(excelPath))
             {
-                if (process.MainWindowTitle.Contains(excelFileName))
-                {
-                    process.Kill();
-                    break;
-                }
+                CloseExcel(excelPath, wb);
+                
             }
 
             try
             {
                 wb = app.Workbooks.Open(excelPath);
+                if (excelFileName.Contains("RequirementDB"))
+                {
+                    DatabaseVariables.WbDatabase = wb;
+                }
+                else if (excelFileName.Contains("Testcase"))
+                {
+                    TestcaseVariables.WbOutputTestcase = wb;
+                }
+
             }
             catch
             {
                 app = new ExcelApplication();
                 wb = app.Workbooks.Open(excelPath);
-            }
 
-            return wb;
+            }
         }
 
 
         public static void SaveExcel(string excelPath, ExcelWorkbook wb)
         {
+            string excelFileName = excelPath.Substring(excelPath.LastIndexOf(@"\") + 1);
+            excelFileName = excelFileName.Remove(excelFileName.Length - 5);
+
             app.DisplayAlerts = false; // to avoid the "replace" warning
+
             try
             {
                 wb.SaveAs(excelPath);
             }
             catch
             {
-                //
+                foreach (var process in Process.GetProcessesByName("excel")) //whatever you need to close 
+                {
+                    if (process.MainWindowTitle.Contains(excelFileName))
+                    {
+                        process.Kill();
+                        break;
+                    }
+                }
             }
         }
 
@@ -84,7 +99,7 @@ namespace dcom.controllers.controllers_middleware
             app.DisplayAlerts = false;
             try
             {
-                wb.Close(1, excelFileName);
+                wb?.Close(0);
             }
             catch
             {

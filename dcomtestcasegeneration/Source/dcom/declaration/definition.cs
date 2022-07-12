@@ -20,36 +20,7 @@ namespace dcom.declaration
 
         public static void TemplateVariableDefinition()
         {
-            DatabaseVariables.NameOutputDatabase = "RequirementDB_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
-            DatabaseVariables.DirectoryOutputDatabase = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
-            DatabaseVariables.PathOutputDatabase = DatabaseVariables.DirectoryOutputDatabase + @"\" + DatabaseVariables.NameOutputDatabase;
-
-            DatabaseVariables.StartRowIndexDatabaseTables = new int[]
-            {   2,  // Common Setting
-                21, // Common DID
-                31, // Project Information
-                41, // Data Path Information
-                51, // Selected Service
-                3,  // Specification
-                3,  // Allow session
-                3,  // NRC
-                3,  // Condition
-                3,  // Optional
-                3,  // SIDSupported
-            };
-            DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
-            {   1,  // Common Setting
-                1,  // Common DID
-                1,  // Project Information
-                1,  // Data Path Information
-                1,  // Selected Service
-                1,  // Specification
-                6,  // Allow session
-                11, // NRC
-                14, // Condition
-                20, // Optional
-                29,  // SIDSupported
-            };
+            
 
         }
 
@@ -88,44 +59,43 @@ namespace dcom.declaration
             // Service 10
             DatabaseVariables.DatabaseService10 = Model_GetServiceDatabase.DatabaseService("10");
 
-            // Service 11
-            DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
-            
-            // Service 14
-            DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");
+            //// Service 11
+            //DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
 
-            // Service 19
-            DatabaseVariables.DatabaseService19 = Model_GetServiceDatabase.DatabaseService("19");
+            //// Service 14
+            //DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");
 
-            // Service 22
-            DatabaseVariables.DatabaseService22 = Model_GetServiceDatabase.DatabaseService("22");
+            //// Service 19
+            //DatabaseVariables.DatabaseService19 = Model_GetServiceDatabase.DatabaseService("19");
 
-            // Service 27
-            DatabaseVariables.DatabaseService27 = Model_GetServiceDatabase.DatabaseService("27");
+            //// Service 22
+            //DatabaseVariables.DatabaseService22 = Model_GetServiceDatabase.DatabaseService("22");
 
-            // Service 28
-            DatabaseVariables.DatabaseService28 = Model_GetServiceDatabase.DatabaseService("28");
+            //// Service 27
+            //DatabaseVariables.DatabaseService27 = Model_GetServiceDatabase.DatabaseService("27");
 
-            // Service 2E
-            DatabaseVariables.DatabaseService2E = Model_GetServiceDatabase.DatabaseService("2E");
+            //// Service 28
+            //DatabaseVariables.DatabaseService28 = Model_GetServiceDatabase.DatabaseService("28");
 
-            // Service 31
-            DatabaseVariables.DatabaseService31 = Model_GetServiceDatabase.DatabaseService("31");
+            //// Service 2E
+            //DatabaseVariables.DatabaseService2E = Model_GetServiceDatabase.DatabaseService("2E");
 
-            // Service 3E
-            DatabaseVariables.DatabaseService3E = Model_GetServiceDatabase.DatabaseService("3E");
+            //// Service 31
+            //DatabaseVariables.DatabaseService31 = Model_GetServiceDatabase.DatabaseService("31");
 
-            // Service 85
-            DatabaseVariables.DatabaseService85 = Model_GetServiceDatabase.DatabaseService("85");
+            //// Service 3E
+            //DatabaseVariables.DatabaseService3E = Model_GetServiceDatabase.DatabaseService("3E");
 
-            // Can TP
-            DatabaseVariables.DatabaseCanTP = Model_GetServiceDatabase.DatabaseService("CanTP");
+            //// Service 85
+            //DatabaseVariables.DatabaseService85 = Model_GetServiceDatabase.DatabaseService("85");
+
+            //// Can TP
+            //DatabaseVariables.DatabaseCanTP = Model_GetServiceDatabase.DatabaseService("CanTP");
 
         }
         
         public static void TestcaseVariableDefinition()
         {
-
             TestcaseVariables.NameOutputTestcase = "Testcase_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
             TestcaseVariables.PathOutputTestcase = TestcaseVariables.DirectoryOutputTestcase + @"\" + TestcaseVariables.NameOutputTestcase;
             TestcaseVariables.SubID = TestcaseVariables.NameOutputTestcase.Remove(TestcaseVariables.NameOutputTestcase.Length - 5) + "_";
@@ -201,7 +171,12 @@ namespace dcom.declaration
             SystemVariables.currentApplicationPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             SystemVariables.backupFileName = "BackupFile.txt";
             SystemVariables.backupFilePath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, SystemVariables.backupFileName)).LocalPath;
-            
+            SystemVariables.templateFileServerPath = @"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Template\Template.xlsx";
+            SystemVariables.templateFileLocalPath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, @"DB_Template\Template.xlsx")).LocalPath;
+
+            SystemVariables.NameOutputDatabase = "RequirementDB_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
+            SystemVariables.DirectoryOutputDatabase = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
+            SystemVariables.PathOutputDatabase = SystemVariables.DirectoryOutputDatabase + @"\" + SystemVariables.NameOutputDatabase;
         }
         
         public static void UIVariableDefinition()
@@ -235,6 +210,9 @@ namespace dcom.declaration
             UIVariables.ProjectInformation = new string[] { };
             UIVariables.DatabaseSource = "Local";
             UIVariables.DatabasePath = "";
+            UIVariables.DatabaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
+            UIVariables.DBPath_LocalList = Directory.GetFiles(UIVariables.DatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
+            UIVariables.DBPath_ServerList = Directory.GetFiles(@"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Requirement", "*.xlsx", SearchOption.AllDirectories);
             UIVariables.TestcaseDirectory = "";
             UIVariables.SelectedServiceStatus = new bool[]
             {
@@ -287,7 +265,11 @@ namespace dcom.declaration
                 false,
                 false
             };
-            UIVariables.Service10_ButtonStatus_SuppressBit = false;
+            UIVariables.Service10_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service10_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -299,6 +281,7 @@ namespace dcom.declaration
             };
             UIVariables.Service10_ButtonStatus_Condition = new bool[]
             {
+                false,
                 false,
                 false,
             };
@@ -319,7 +302,11 @@ namespace dcom.declaration
                 false,
                 false,
             };
-            UIVariables.Service11_ButtonStatus_SuppressBit = false;
+            UIVariables.Service11_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service11_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -331,6 +318,7 @@ namespace dcom.declaration
             };
             UIVariables.Service11_ButtonStatus_Condition = new bool[]
             {
+                false,
                 false,
                 false,
             };
@@ -345,13 +333,12 @@ namespace dcom.declaration
 
             // Service 14
 
-            UIVariables.Service14_ButtonStatus_SubFunction = new bool[]
+            UIVariables.Service14_SubFunction = new List<string[]> { };
+            UIVariables.Service14_ButtonStatus_Optional = new bool[]
             {
                 false,
                 false,
-                false
             };
-            UIVariables.Service14_ButtonStatus_SuppressBit = false;
             UIVariables.Service14_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -364,7 +351,8 @@ namespace dcom.declaration
             UIVariables.Service14_ButtonStatus_Condition = new bool[]
             {
                 false,
-                false
+                false,
+                false,
             };
             UIVariables.Service14_NRCPriority = new string[15];
             UIVariables.Service14_NRCCondition = new string[7];
@@ -376,12 +364,17 @@ namespace dcom.declaration
 
             // Service 22
 
-            UIVariables.Service22_ButtonStatus_SuppressBit = false;
+            UIVariables.Service22_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service22_NRCPriority = new string[15];
             UIVariables.Service22_InvalidValueCondition = new string[7];
             UIVariables.Service22_NameInvalidValueCondition = new string[7];
             UIVariables.Service22_ButtonStatus_Condition = new bool[]
             {
+                false,
                 false,
                 false,
             };
@@ -390,11 +383,16 @@ namespace dcom.declaration
             {
                 false,
                 false,
+                false,
             };
 
             // Service 2E
 
-            UIVariables.Service2E_ButtonStatus_SecurityUnlock = false;
+            UIVariables.Service2E_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service2E_SecurityUnlockLv = "";
             UIVariables.Service2E_NRCPriority = new string[15];
 
@@ -404,17 +402,24 @@ namespace dcom.declaration
             {
                 false,
                 false,
+                false,
             };
             UIVariables.Service2E_NRCCondition = new string[7];
             UIVariables.Service2E_ButtonStatus_AllowSession = new bool[]
             {
                 false,
                 false,
+                false,
             };
 
             // Service 27
 
-            UIVariables.Service27_ButtonStatus_SuppressBit = false;
+            UIVariables.Service27_SubFunction = new List<string[]> { };
+            UIVariables.Service27_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service27_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -426,7 +431,6 @@ namespace dcom.declaration
             };
             UIVariables.Service27_ButtonStatus_Condition = new bool[]
             {
-                false,
                 false,
                 false,
                 false,
@@ -452,7 +456,11 @@ namespace dcom.declaration
                 false,
                 false,
             };
-            UIVariables.Service28_ButtonStatus_SuppressBit = false;
+            UIVariables.Service28_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            }; ;
             UIVariables.Service28_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -466,6 +474,7 @@ namespace dcom.declaration
             {
                 false,
                 false,
+                false,
             };
             UIVariables.Service28_NRCCondition = new string[7];
             UIVariables.Service28_InvalidValueCondition = new string[7];
@@ -474,7 +483,12 @@ namespace dcom.declaration
 
             // Service 3E
 
-            UIVariables.Service3E_ButtonStatus_SuppressBit = false;
+            UIVariables.Service3E_SubFunction = new List<string[]> { };
+            UIVariables.Service3E_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service3E_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -488,6 +502,7 @@ namespace dcom.declaration
             {
                 false,
                 false,
+                false,
             };
             UIVariables.Service3E_NRCCondition = new string[7];
             UIVariables.Service3E_InvalidValueCondition = new string[7];
@@ -496,7 +511,12 @@ namespace dcom.declaration
 
             // Service 85
 
-            UIVariables.Service85_ButtonStatus_SuppressBit = false;
+            UIVariables.Service85_SubFunction = new List<string[]> { };
+            UIVariables.Service85_ButtonStatus_Optional = new bool[]
+            {
+                false,
+                false,
+            };
             UIVariables.Service85_ButtonStatus_AddressingMode = new bool[]
             {
                 false,
@@ -508,6 +528,7 @@ namespace dcom.declaration
             };
             UIVariables.Service85_ButtonStatus_Condition = new bool[]
             {
+                false,
                 false,
                 false,
             };

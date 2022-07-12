@@ -59,9 +59,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
             // Data Path Information
             UIVariables.DatabaseSource = UIVariables.CommonSettingDatabase[3].ElementAt(0)[1];
-
-            string[] databasePathSplit = UIVariables.DatabasePath.Split('\\');
-            UIVariables.DatabaseDirectory = UIVariables.DatabasePath.Replace(@"\" + databasePathSplit[databasePathSplit.Length - 1], "");
+            UIVariables.DatabaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
             UIVariables.TestcaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "Testcase")).LocalPath;
 
             // Selected Service Information

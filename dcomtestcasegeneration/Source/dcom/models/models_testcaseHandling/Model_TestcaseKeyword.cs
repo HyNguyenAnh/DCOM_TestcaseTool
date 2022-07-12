@@ -106,13 +106,13 @@ namespace dcom.models.models_testcaseHandling
             string TestStepKeyword;
             
             // Test step
-            TestStep = $"Set the {UIVariables.DatabaseCommonSettingVehicleSpeed[0]} to Value {setInvalidValue} Wait {timeout} ms";
+            TestStep = $"Set the Vehicle_Speed to Value {setInvalidValue} Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(Env{UIVariables.DatabaseCommonSettingVehicleSpeed[0]}({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"EnvVar(EnvVehicle_Speed({setInvalidValue}, {timeout}))";
             
             
 
@@ -132,13 +132,13 @@ namespace dcom.models.models_testcaseHandling
             string TestStepKeyword;
 
             // Test step
-            TestStep = $"Set the {UIVariables.DatabaseCommonSettingEngineStatus[0]} to Value {setInvalidValue} ({name}) Wait {timeout} ms";
+            TestStep = $"Set the Engine_Status to Value {setInvalidValue} ({name}) Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(Env{UIVariables.DatabaseCommonSettingEngineStatus[0]}({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"EnvVar(EnvEngine_Status({setInvalidValue}, {timeout}))";
 
 
             Data = new string[]
@@ -157,13 +157,13 @@ namespace dcom.models.models_testcaseHandling
             string TestStepKeyword;
 
             // Test step
-            TestStep = $"Set the {UIVariables.DatabaseCommonDIDCurrentVoltage[0]} to Value {setInvalidValue} ({name}) Wait {timeout} ms";
+            TestStep = $"Set the ({name}) Voltage to Value {setInvalidValue} Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(Env{UIVariables.DatabaseCommonSettingEngineStatus[0]}({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"EnvVar(EnvVoltage({setInvalidValue}, {timeout}))";
 
 
             Data = new string[]
@@ -1018,9 +1018,9 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService3E(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool isParameterSupported, bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool isParameterSupported, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0, 
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
-
             string SID = "3E";
             string subFunctionNew;
             string[] Data;
@@ -1050,71 +1050,65 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (isSuppressBitSupported)
                 {
-                    if (isSuppressBitSupported)
+                    if ((isSubFunctionSupported & addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported & addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession & addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if ((isSubFunctionSupportedInActiveSession & addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
+                            if (isParameterSupported)
                             {
-                                if (isParameterSupported)
+                                switch (suppressBitEnabledStatus)
                                 {
-                                    switch (suppressBitEnabledStatus)
-                                    {
-                                        case true:
-                                            ResponseCodeString = ResponseID + subFunctionNew;
-                                            break;
-                                        case false:
-                                            ResponseCodeString = ResponseID + subFunction;
-                                            break;
-                                    }
+                                    case true:
+                                        ResponseCodeString = ResponseID + subFunctionNew;
+                                        break;
+                                    case false:
+                                        ResponseCodeString = ResponseID + subFunction;
+                                        break;
                                 }
-                                else
-                                {
-                                    ResponseCodeString = $"7f{ResponseID}31";
-                                }
-
-                            }
-                            else if(!isSubFunctionSupportedInActiveSession & addressingMode)
-                            {
-                                ResponseCodeString = $"7f{ResponseID}7e";
                             }
                             else
                             {
-                                ResponseCodeString = $"";
+                                ResponseCodeString = $"7f{ResponseID}31";
                             }
+
                         }
-                        else if(!isSubFunctionSupported & addressingMode)
+                        else if(!isSubFunctionSupportedInActiveSession & addressingMode)
                         {
-                            ResponseCodeString = $"7f{ResponseID}12";
+                            ResponseCodeString = $"7f{ResponseID}7e";
                         }
                         else
                         {
                             ResponseCodeString = $"";
                         }
                     }
+                    else if(!isSubFunctionSupported & addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if(!isSIDSupportedInActiveSession & addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if(!isSIDSupportedInActiveSession & addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
-            
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);

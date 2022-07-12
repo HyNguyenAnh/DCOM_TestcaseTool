@@ -251,7 +251,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1400, 289);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1400, 290);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // groupBox_Service11ResetMode
@@ -264,7 +264,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service11ResetMode.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox_Service11ResetMode.Name = "groupBox_Service11ResetMode";
             this.groupBox_Service11ResetMode.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Service11ResetMode.Size = new System.Drawing.Size(684, 273);
+            this.groupBox_Service11ResetMode.Size = new System.Drawing.Size(684, 274);
             this.groupBox_Service11ResetMode.TabIndex = 0;
             this.groupBox_Service11ResetMode.TabStop = false;
             this.groupBox_Service11ResetMode.Text = "Sub Function";
@@ -286,7 +286,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(676, 252);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(676, 253);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -302,7 +302,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 195F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(196, 194);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(196, 195);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
             // label8
@@ -314,7 +314,7 @@ namespace dcom.views.views_Service
             this.label8.Location = new System.Drawing.Point(40, 5);
             this.label8.Margin = new System.Windows.Forms.Padding(5);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 184);
+            this.label8.Size = new System.Drawing.Size(116, 185);
             this.label8.TabIndex = 0;
             this.label8.Text = "Supress Bit";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,7 +333,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(228, 194);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(228, 195);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // label3
@@ -396,7 +396,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel21.RowCount = 2;
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(228, 194);
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(228, 195);
             this.tableLayoutPanel21.TabIndex = 4;
             // 
             // label1
@@ -436,7 +436,7 @@ namespace dcom.views.views_Service
             this.groupBox_Service11AddressingMode.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox_Service11AddressingMode.Name = "groupBox_Service11AddressingMode";
             this.groupBox_Service11AddressingMode.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Service11AddressingMode.Size = new System.Drawing.Size(684, 273);
+            this.groupBox_Service11AddressingMode.Size = new System.Drawing.Size(684, 274);
             this.groupBox_Service11AddressingMode.TabIndex = 1;
             this.groupBox_Service11AddressingMode.TabStop = false;
             this.groupBox_Service11AddressingMode.Text = "Addressing Mode";
@@ -457,7 +457,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 253F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(676, 252);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(676, 253);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // tableLayoutPanel11
@@ -478,7 +478,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(226, 252);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(226, 253);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // button_FunctionalExtended
@@ -493,7 +493,7 @@ namespace dcom.views.views_Service
             this.button_FunctionalExtended.Location = new System.Drawing.Point(8, 197);
             this.button_FunctionalExtended.Margin = new System.Windows.Forms.Padding(8);
             this.button_FunctionalExtended.Name = "button_FunctionalExtended";
-            this.button_FunctionalExtended.Size = new System.Drawing.Size(210, 47);
+            this.button_FunctionalExtended.Size = new System.Drawing.Size(210, 48);
             this.button_FunctionalExtended.TabIndex = 7;
             this.button_FunctionalExtended.Text = "ON";
             this.button_FunctionalExtended.UseVisualStyleBackColor = false;
@@ -570,7 +570,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(225, 252);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(225, 253);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // button_PhysicalExtended
@@ -585,7 +585,7 @@ namespace dcom.views.views_Service
             this.button_PhysicalExtended.Location = new System.Drawing.Point(8, 197);
             this.button_PhysicalExtended.Margin = new System.Windows.Forms.Padding(8);
             this.button_PhysicalExtended.Name = "button_PhysicalExtended";
-            this.button_PhysicalExtended.Size = new System.Drawing.Size(209, 47);
+            this.button_PhysicalExtended.Size = new System.Drawing.Size(209, 48);
             this.button_PhysicalExtended.TabIndex = 6;
             this.button_PhysicalExtended.Text = "ON";
             this.button_PhysicalExtended.UseVisualStyleBackColor = false;
@@ -659,7 +659,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(225, 252);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(225, 253);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // label11
@@ -669,7 +669,7 @@ namespace dcom.views.views_Service
             this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(64, 189);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 63);
+            this.label11.Size = new System.Drawing.Size(97, 64);
             this.label11.TabIndex = 4;
             this.label11.Text = "Extended";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -704,11 +704,11 @@ namespace dcom.views.views_Service
             this.groupBox_Service11Condition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_Service11Condition.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Service11Condition.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service11Condition.Location = new System.Drawing.Point(8, 297);
+            this.groupBox_Service11Condition.Location = new System.Drawing.Point(8, 298);
             this.groupBox_Service11Condition.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox_Service11Condition.Name = "groupBox_Service11Condition";
             this.groupBox_Service11Condition.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Service11Condition.Size = new System.Drawing.Size(1384, 273);
+            this.groupBox_Service11Condition.Size = new System.Drawing.Size(1384, 274);
             this.groupBox_Service11Condition.TabIndex = 2;
             this.groupBox_Service11Condition.TabStop = false;
             this.groupBox_Service11Condition.Text = "Condition";
@@ -732,7 +732,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(1376, 252);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(1376, 253);
             this.tableLayoutPanel15.TabIndex = 3;
             // 
             // tableLayoutPanel18
@@ -753,7 +753,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(402, 192);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(402, 193);
             this.tableLayoutPanel18.TabIndex = 5;
             // 
             // label13
@@ -792,7 +792,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionVehicle_NRC.Name = "comboBox_ConditionVehicle_NRC";
             this.comboBox_ConditionVehicle_NRC.Size = new System.Drawing.Size(394, 26);
             this.comboBox_ConditionVehicle_NRC.TabIndex = 2;
-            this.comboBox_ConditionVehicle_NRC.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_SelectedIndexChanged);
+            this.comboBox_ConditionVehicle_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_TextChanged);
             // 
             // label16
             // 
@@ -864,7 +864,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(540, 192);
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(540, 193);
             this.tableLayoutPanel19.TabIndex = 4;
             // 
             // textBox_ConditionEngine_ValidValue
@@ -877,6 +877,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_ValidValue.Size = new System.Drawing.Size(532, 26);
             this.textBox_ConditionEngine_ValidValue.TabIndex = 6;
             this.textBox_ConditionEngine_ValidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionEngine_ValidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_ValidValue_TextChanged);
             // 
             // label17
             // 
@@ -902,6 +903,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_InvalidValue.Size = new System.Drawing.Size(532, 26);
             this.textBox_ConditionEngine_InvalidValue.TabIndex = 4;
             this.textBox_ConditionEngine_InvalidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionEngine_InvalidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_InvalidValue_TextChanged);
             // 
             // tableLayoutPanel13
             // 
@@ -960,7 +962,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionEngine_NRC.Name = "comboBox_ConditionEngine_NRC";
             this.comboBox_ConditionEngine_NRC.Size = new System.Drawing.Size(82, 26);
             this.comboBox_ConditionEngine_NRC.TabIndex = 2;
-            this.comboBox_ConditionEngine_NRC.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConditionEngine_NRC_SelectedIndexChanged);
+            this.comboBox_ConditionEngine_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionEngine_NRC_TextChanged);
             // 
             // button_ConditionVoltage
             // 
@@ -999,7 +1001,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(404, 192);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(404, 193);
             this.tableLayoutPanel14.TabIndex = 7;
             // 
             // tableLayoutPanel16
@@ -1029,6 +1031,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVoltage_High.Size = new System.Drawing.Size(194, 26);
             this.textBox_ConditionVoltage_High.TabIndex = 5;
             this.textBox_ConditionVoltage_High.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVoltage_High.TextChanged += new System.EventHandler(this.textBox_ConditionVoltage_High_TextChanged);
             // 
             // textBox_ConditionVoltage_Low
             // 
@@ -1040,6 +1043,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVoltage_Low.Size = new System.Drawing.Size(194, 26);
             this.textBox_ConditionVoltage_Low.TabIndex = 4;
             this.textBox_ConditionVoltage_Low.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVoltage_Low.TextChanged += new System.EventHandler(this.textBox_ConditionVoltage_Low_TextChanged);
             // 
             // label20
             // 
@@ -1065,7 +1069,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionVoltage_NRC.Name = "comboBox_ConditionVoltage_NRC";
             this.comboBox_ConditionVoltage_NRC.Size = new System.Drawing.Size(396, 26);
             this.comboBox_ConditionVoltage_NRC.TabIndex = 2;
-            this.comboBox_ConditionVoltage_NRC.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConditionVoltage_NRC_SelectedIndexChanged);
+            this.comboBox_ConditionVoltage_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVoltage_NRC_TextChanged);
             // 
             // tableLayoutPanel24
             // 
@@ -1118,11 +1122,11 @@ namespace dcom.views.views_Service
             this.groupBox_Service27NRC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_Service27NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Service27NRC.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service27NRC.Location = new System.Drawing.Point(8, 586);
+            this.groupBox_Service27NRC.Location = new System.Drawing.Point(8, 588);
             this.groupBox_Service27NRC.Margin = new System.Windows.Forms.Padding(8);
             this.groupBox_Service27NRC.Name = "groupBox_Service27NRC";
             this.groupBox_Service27NRC.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Service27NRC.Size = new System.Drawing.Size(1384, 276);
+            this.groupBox_Service27NRC.Size = new System.Drawing.Size(1384, 274);
             this.groupBox_Service27NRC.TabIndex = 3;
             this.groupBox_Service27NRC.TabStop = false;
             this.groupBox_Service27NRC.Text = "Negative Reponse Code";
@@ -1141,18 +1145,18 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1376, 255);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1376, 253);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // groupBox_Key_NRC
             // 
             this.groupBox_Key_NRC.Controls.Add(this.tableLayoutPanel22);
             this.groupBox_Key_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Key_NRC.Location = new System.Drawing.Point(0, 127);
+            this.groupBox_Key_NRC.Location = new System.Drawing.Point(0, 126);
             this.groupBox_Key_NRC.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox_Key_NRC.Name = "groupBox_Key_NRC";
             this.groupBox_Key_NRC.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Key_NRC.Size = new System.Drawing.Size(1376, 128);
+            this.groupBox_Key_NRC.Size = new System.Drawing.Size(1376, 127);
             this.groupBox_Key_NRC.TabIndex = 1;
             this.groupBox_Key_NRC.TabStop = false;
             this.groupBox_Key_NRC.Text = "Send Key - NRC priority";
@@ -1172,7 +1176,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(1368, 107);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(1368, 106);
             this.tableLayoutPanel22.TabIndex = 1;
             // 
             // dataGridView_NRCPriorityKey
@@ -1217,7 +1221,6 @@ namespace dcom.views.views_Service
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_NRCPriorityKey.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView_NRCPriorityKey.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_NRCPriorityKey.Enabled = false;
             this.dataGridView_NRCPriorityKey.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_NRCPriorityKey.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_NRCPriorityKey.Margin = new System.Windows.Forms.Padding(0);
@@ -1410,7 +1413,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(1368, 47);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(1368, 46);
             this.tableLayoutPanel23.TabIndex = 9;
             // 
             // label5
@@ -1445,7 +1448,7 @@ namespace dcom.views.views_Service
             this.groupBox_Seed_NRC.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox_Seed_NRC.Name = "groupBox_Seed_NRC";
             this.groupBox_Seed_NRC.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Seed_NRC.Size = new System.Drawing.Size(1376, 127);
+            this.groupBox_Seed_NRC.Size = new System.Drawing.Size(1376, 126);
             this.groupBox_Seed_NRC.TabIndex = 0;
             this.groupBox_Seed_NRC.TabStop = false;
             this.groupBox_Seed_NRC.Text = "Request Seed - NRC priority";
@@ -1465,7 +1468,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(1368, 106);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(1368, 105);
             this.tableLayoutPanel17.TabIndex = 1;
             // 
             // dataGridView_NRCPrioritySeed
@@ -1510,7 +1513,6 @@ namespace dcom.views.views_Service
             dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_NRCPrioritySeed.DefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView_NRCPrioritySeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_NRCPrioritySeed.Enabled = false;
             this.dataGridView_NRCPrioritySeed.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_NRCPrioritySeed.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_NRCPrioritySeed.Margin = new System.Windows.Forms.Padding(0);
@@ -1703,7 +1705,7 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(1368, 46);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(1368, 45);
             this.tableLayoutPanel20.TabIndex = 9;
             // 
             // label14

@@ -67,10 +67,7 @@ namespace dcom.views.views_ToolBar
                 dataGridView_CommonDID,
             };
 
-            
-
             // Load Project Information
-
             UIVariables.ProjectInformation = new string[]
             {
                 UIVariables.ProjectName,
@@ -87,6 +84,30 @@ namespace dcom.views.views_ToolBar
             // Load Data Path Information
             radioButton_DBSourceLocal.Checked = Controller_UIHandling.GetDatabaseSource(UIVariables.DatabaseSource);
             radioButton_DBSourceServer.Checked = !Controller_UIHandling.GetDatabaseSource(UIVariables.DatabaseSource);
+            if (UIVariables.DatabaseSource.ToLower() == "local")
+            {
+                if (UIVariables.DBPath_LocalList != null)
+                {
+                    comboBox_DBPath.Items.Clear();
+                    comboBox_DBPath.Items.AddRange(UIVariables.DBPath_LocalList);
+                }
+                else
+                {
+                    comboBox_DBPath.Items.Clear();
+                }
+            }
+            else
+            {
+                if (UIVariables.DBPath_ServerList != null)
+                {
+                    comboBox_DBPath.Items.Clear();
+                    comboBox_DBPath.Items.AddRange(UIVariables.DBPath_ServerList);
+                }
+                else
+                {
+                    comboBox_DBPath.Items.Clear();
+                }
+            }
             comboBox_DBPath.Text = UIVariables.DatabasePath;
             textBox_TestcaseDirectory.Text = UIVariables.TestcaseDirectory;
 
@@ -127,7 +148,7 @@ namespace dcom.views.views_ToolBar
             UIVariables.DatabasePath = comboBox_DBPath.Text;
 
             // Get data in databases
-            Controllers_FunctionButton.ButtonLoadDataClick();
+            Controllers_FunctionButton.ButtonLoadDataClick(UIVariables.DatabasePath);
 
             // Push data to Project Information
             textBox_ProjectName.Text = UIVariables.ProjectName;
@@ -294,6 +315,7 @@ namespace dcom.views.views_ToolBar
         private void comboBox_DBPath_TextChanged(object sender, EventArgs e)
         {
             button_LoadDB.Enabled = Controller_FileHandling.IsFileExisted(comboBox_DBPath.Text) & comboBox_DBPath.Text.Contains(".xls");
+            UIVariables.DatabasePath = comboBox_DBPath.Text;
         }
 
         private void textBox_ProjectName_TextChanged(object sender, EventArgs e)
@@ -322,11 +344,29 @@ namespace dcom.views.views_ToolBar
         private void radioButton_DBSourceLocal_CheckedChanged(object sender, EventArgs e)
         {
             UIVariables.DatabaseSource = "Local";
+            if (UIVariables.DBPath_LocalList != null)
+            {
+                comboBox_DBPath.Items.Clear();
+                comboBox_DBPath.Items.AddRange(UIVariables.DBPath_LocalList);
+            }
+            else
+            {
+                comboBox_DBPath.Items.Clear();
+            }
         }
 
         private void radioButton_DBSourceServer_CheckedChanged(object sender, EventArgs e)
         {
             UIVariables.DatabaseSource = "Server";
+            if (UIVariables.DBPath_ServerList != null)
+            {
+                comboBox_DBPath.Items.Clear();
+                comboBox_DBPath.Items.AddRange(UIVariables.DBPath_ServerList);
+            }
+            else
+            {
+                comboBox_DBPath.Items.Clear();
+            }
         }
 
         private void textBox_TestcaseDirectory_TextChanged(object sender, EventArgs e)

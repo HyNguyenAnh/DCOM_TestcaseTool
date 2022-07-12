@@ -22,7 +22,8 @@ namespace dcom.models.models_testcaseHandling
             }
 
             // Open the testcase file
-            TestcaseVariables.WbOutputTestcase = Controller_ExcelHandling.OpenExcel(TestcaseVariables.PathOutputTestcase);
+            Controller_ExcelHandling.OpenExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
+             
 
             // Select the first sheet to push all data
             TestcaseVariables.WsOutputTestcase = TestcaseVariables.WbOutputTestcase.Sheets[1];

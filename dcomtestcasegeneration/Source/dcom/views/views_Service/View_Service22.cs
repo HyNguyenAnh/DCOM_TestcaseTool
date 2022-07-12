@@ -15,6 +15,7 @@ namespace dcom.views.views_Service
 {
     public partial class View_Service22 : UserControl
     {
+        public static Button[] ButtonStatus_AllowSession;
         public static Button[] ButtonStatus_Condition;
         public static ComboBox[] ComboBox_ConditionNRCs;
         public static DataGridViewComboBoxColumn[] DataGridViewComboBoxColumn_NRCPriority;
@@ -31,17 +32,25 @@ namespace dcom.views.views_Service
 
             // Definition
 
+            ButtonStatus_AllowSession = new Button[]
+            {
+                button_AllowDefault,
+                button_AllowProgramming,
+                button_AllowExtended,
+            };
 
             ButtonStatus_Condition = new Button[]
             {
                 button_ConditionVehicleSpeed,
                 button_ConditionEngine,
+                button_ConditionVoltage,
             };
 
             ComboBox_ConditionNRCs = new ComboBox[]
             {
                 comboBox_ConditionVehicle_NRC,
                 comboBox_ConditionEngine_NRC,
+                comboBox_ConditionVoltage_NRC,
             };
 
             DataGridViewComboBoxColumn_NRCPriority = new DataGridViewComboBoxColumn[]
@@ -66,6 +75,9 @@ namespace dcom.views.views_Service
             InvalidValue_Condition = new TextBox[]
             {
                 textBox_ConditionVehicle,
+                textBox_ConditionEngine_InvalidValue,
+                textBox_ConditionVoltage_Low,
+                textBox_ConditionVoltage_High,
             };
 
             // Load elements to comboBox
@@ -74,6 +86,7 @@ namespace dcom.views.views_Service
             {
                 Controller_UIHandling.AddArrayElementToComboBox(ComboBox_ConditionNRCs[index], NRCs);
                 ComboBox_ConditionNRCs[index].Text = UIVariables.Service22_NRCCondition[index];
+                ComboBox_ConditionNRCs[index].Enabled = UIVariables.Service22_ButtonStatus_Condition[index];
             }
 
             for (int index = 0; index < DataGridViewComboBoxColumn_NRCPriority.Length; index++)
@@ -82,7 +95,21 @@ namespace dcom.views.views_Service
                 dataGridView_NRCPriority.Rows[0].Cells[index].Value = UIVariables.Service22_NRCPriority[index];
             }
 
+            // Load Allow Session
+            for (int index = 0; index < ButtonStatus_AllowSession.Length; index++)
+            {
+                ButtonStatus_AllowSession[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[index])[0];
+                ButtonStatus_AllowSession[index].ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[index])[1];
+                ButtonStatus_AllowSession[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[index]);
+            }
+
             // Load Condition
+
+            for (int index = 0; index < InvalidValue_Condition.Length; index++)
+            {
+                InvalidValue_Condition[index].Text = UIVariables.Service22_InvalidValueCondition[index];
+            }
+            textBox_ConditionEngine_ValidValue.Text = UIVariables.Service22_ValidValueCondition;
             for (int index = 0; index < ButtonStatus_Condition.Length; index++)
             {
                 ButtonStatus_Condition[index].BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[index])[0];
@@ -90,20 +117,15 @@ namespace dcom.views.views_Service
                 ButtonStatus_Condition[index].Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[index]);
             }
 
-            // Load Invalid Value Condition
-            for (int index = 0; index < InvalidValue_Condition.Length; index++)
-            {
-                InvalidValue_Condition[index].Text = UIVariables.Service22_InvalidValueCondition[index];
-            }
-
             // Load data to DataGridView
             Controller_UIHandling.PutDatabaseToDataGridView_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AllowSessionAddressingMode);
 
-            comboBox_ConditionEngine_NRC.Enabled = UIVariables.Service22_ButtonStatus_Condition[1];
-            comboBox_ConditionVehicle_NRC.Enabled = UIVariables.Service22_ButtonStatus_Condition[0];
+            // Set initial
             textBox_ConditionVehicle.Enabled = UIVariables.Service22_ButtonStatus_Condition[0];
-            dataGridView_DIDTable.Enabled = true;
-            dataGridView_NRCPriority.Enabled = true;
+            textBox_ConditionEngine_InvalidValue.Enabled = UIVariables.Service22_ButtonStatus_Condition[1];
+            textBox_ConditionEngine_ValidValue.Enabled = UIVariables.Service22_ButtonStatus_Condition[1];
+            textBox_ConditionVoltage_Low.Enabled = UIVariables.Service22_ButtonStatus_Condition[2];
+            textBox_ConditionVoltage_High.Enabled = UIVariables.Service22_ButtonStatus_Condition[2];
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +179,7 @@ namespace dcom.views.views_Service
             button_ConditionVehicleSpeed.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[0])[0];
             button_ConditionVehicleSpeed.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[0])[1];
             button_ConditionVehicleSpeed.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[0]);
+
         }
 
         private void button_ConditionEngine_Click(object sender, EventArgs e)
@@ -167,9 +190,61 @@ namespace dcom.views.views_Service
             button_ConditionEngine.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[1])[1];
             button_ConditionEngine.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[1]);
         }
+
+        private void button_ConditionVoltage_Click(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_Condition[2] = !UIVariables.Service22_ButtonStatus_Condition[2];
+
+            button_ConditionVoltage.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[2])[0];
+            button_ConditionVoltage.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[2])[1];
+            button_ConditionVoltage.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_Condition[2]);
+        }
+
+        private void button_AllowDefault_Click(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_AllowSession[0] = !UIVariables.Service22_ButtonStatus_AllowSession[0];
+
+            button_AllowDefault.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[0])[0];
+            button_AllowDefault.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[0])[1];
+            button_AllowDefault.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[0]);
+        }
+
+        private void button_AllowProgramming_Click(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_AllowSession[1] = !UIVariables.Service22_ButtonStatus_AllowSession[1];
+
+            button_AllowProgramming.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[1])[0];
+            button_AllowProgramming.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[1])[1];
+            button_AllowProgramming.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[1]);
+        }
+
+        private void button_AllowExtended_Click(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_AllowSession[2] = !UIVariables.Service22_ButtonStatus_AllowSession[2];
+
+            button_AllowExtended.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[2])[0];
+            button_AllowExtended.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[2])[1];
+            button_AllowExtended.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service22_ButtonStatus_AllowSession[2]);
+        }
+
         private void dataGridView_NRCPriority_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button_AllowDefault_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_AllowSession[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_AllowDefault.Text);
+        }
+
+        private void button_AllowProgramming_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_AllowSession[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_AllowProgramming.Text);
+        }
+
+        private void button_AllowExtended_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_AllowSession[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_AllowExtended.Text);
         }
 
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
@@ -190,6 +265,7 @@ namespace dcom.views.views_Service
                 textBox_ConditionVehicle.Text = "...km/h";
             }
         }
+
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service22_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
@@ -197,13 +273,45 @@ namespace dcom.views.views_Service
             {
                 comboBox_ConditionEngine_NRC.Enabled = true;
                 comboBox_ConditionEngine_NRC.Text = UIVariables.Service22_NRCCondition[1];
+                textBox_ConditionEngine_InvalidValue.Enabled = true;
+                textBox_ConditionEngine_InvalidValue.Text = UIVariables.Service22_InvalidValueCondition[1];
+                textBox_ConditionEngine_ValidValue.Enabled = true;
+                textBox_ConditionEngine_ValidValue.Text = UIVariables.Service22_ValidValueCondition;
             }
             else
             {
                 comboBox_ConditionEngine_NRC.Enabled = false;
                 comboBox_ConditionEngine_NRC.Text = "NRC";
+                textBox_ConditionEngine_InvalidValue.Enabled = false;
+                textBox_ConditionEngine_InvalidValue.Text = "Example: 1(Crank); 2(Running); 3(Reverse); 0(Stop)...";
+                textBox_ConditionEngine_ValidValue.Enabled = false;
+                textBox_ConditionEngine_ValidValue.Text = "...";
             }
         }
+
+        private void button_ConditionVoltage_TextChanged(object sender, EventArgs e)
+        {
+            UIVariables.Service22_ButtonStatus_Condition[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVoltage.Text);
+            if (UIVariables.Service22_ButtonStatus_Condition[2] == true)
+            {
+                comboBox_ConditionVoltage_NRC.Enabled = true;
+                textBox_ConditionVoltage_Low.Enabled = true;
+                textBox_ConditionVoltage_High.Enabled = true;
+                comboBox_ConditionVoltage_NRC.Text = UIVariables.Service22_NRCCondition[2];
+                textBox_ConditionVoltage_Low.Text = UIVariables.Service22_InvalidValueCondition[2];
+                textBox_ConditionVoltage_High.Text = UIVariables.Service22_InvalidValueCondition[3];
+            }
+            else
+            {
+                comboBox_ConditionVoltage_NRC.Enabled = false;
+                textBox_ConditionVoltage_Low.Enabled = false;
+                textBox_ConditionVoltage_High.Enabled = false;
+                comboBox_ConditionVoltage_NRC.Text = "NRC";
+                textBox_ConditionVoltage_Low.Text = "...V";
+                textBox_ConditionVoltage_High.Text = "...V";
+            }
+        }
+
         private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
         {
             if (UIVariables.Service22_ButtonStatus_Condition[0] == true)
@@ -218,9 +326,17 @@ namespace dcom.views.views_Service
             {
                 UIVariables.Service22_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
             }
-        }       
-   
-        private void vehicleSpeedValue_Text_TextChanged(object sender, EventArgs e)
+        }
+
+        private void comboBox_ConditionVoltage_NRC_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service22_ButtonStatus_Condition[2] == true)
+            {
+                UIVariables.Service22_NRCCondition[2] = comboBox_ConditionEngine_NRC.Text;
+            }
+        }
+
+        private void textBox_ConditionVehicle_TextChanged(object sender, EventArgs e)
         {
             if (UIVariables.Service22_ButtonStatus_Condition[0] == true)
             {
@@ -228,25 +344,47 @@ namespace dcom.views.views_Service
             }
         }
 
+        private void textBox_ConditionEngine_InvalidValue_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service22_ButtonStatus_Condition[1] == true)
+            {
+                UIVariables.Service22_InvalidValueCondition[1] = textBox_ConditionEngine_InvalidValue.Text;
+            }
+        }
+
+        private void textBox_ConditionEngine_ValidValue_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service22_ButtonStatus_Condition[1] == true)
+            {
+                UIVariables.Service22_ValidValueCondition = textBox_ConditionEngine_ValidValue.Text;
+            }
+        }
+
+        private void textBox_ConditionVoltage_Low_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service22_ButtonStatus_Condition[2] == true)
+            {
+                UIVariables.Service22_InvalidValueCondition[2] = textBox_ConditionVoltage_Low.Text;
+            }
+        }
+
+        private void textBox_ConditionVoltage_High_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service22_ButtonStatus_Condition[2] == true)
+            {
+                UIVariables.Service22_InvalidValueCondition[3] = textBox_ConditionVoltage_High.Text;
+            }
+        }
+
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView_NRCPriority.Enabled == true)
-            {
-                Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service22_NRCPriority);
-            }
+            Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service22_NRCPriority);
         }
 
         private void dataGridView_DIDTable_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView_DIDTable.Enabled == true)
-            {
-                Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AllowSessionAddressingMode);
-            }
+            Controller_UIHandling.SaveDataGridViewToDatabase_SpecialCase(dataGridView_DIDTable, UIVariables.Service22_DIDTable_Specification, UIVariables.Service22_DIDTable_AllowSessionAddressingMode);
         }
 
-        private void vehicleSpeedValue_Text_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

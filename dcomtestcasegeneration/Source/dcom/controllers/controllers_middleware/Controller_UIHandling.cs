@@ -449,11 +449,16 @@ namespace dcom.controllers.controllers_middleware
                 // Save data from Grid View
                 dataGridView.Update();
                 dataGridView.Refresh();
-                for (int cellIndex = 0; cellIndex < Data.Length; cellIndex++)
+                for (int cellIndex = 0; cellIndex < Data?.Length; cellIndex++)
                 {
                     Data[cellIndex] = dataGridView.Rows[0].Cells[cellIndex].Value.ToString();
                 }
             }
+        }
+
+        public static void MappingFromUIToDatabase()
+        {
+
         }
 
         public static void MappingFromDatabaseToUI()
@@ -466,41 +471,41 @@ namespace dcom.controllers.controllers_middleware
 
             Controllers_UIService.UIDefinition_Service10();
 
-            // Service 11
+            //// Service 11
 
-            Controllers_UIService.UIDefinition_Service11();
+            //Controllers_UIService.UIDefinition_Service11();
 
-            // Service 14
+            //// Service 14
 
-            Controllers_UIService.UIDefinition_Service14();
+            //Controllers_UIService.UIDefinition_Service14();
 
-            // Service 19
+            //// Service 19
 
-            Controllers_UIService.UIDefinition_Service19();
+            //Controllers_UIService.UIDefinition_Service19();
 
-            // Service 22
+            //// Service 22
 
-            Controllers_UIService.UIDefinition_Service22();
+            //Controllers_UIService.UIDefinition_Service22();
 
-            // Service 2E
+            //// Service 2E
 
-            Controllers_UIService.UIDefinition_Service2E();
+            //Controllers_UIService.UIDefinition_Service2E();
 
-            // Service 27
+            //// Service 27
 
-            Controllers_UIService.UIDefinition_Service27();
+            //Controllers_UIService.UIDefinition_Service27();
 
-            // Service 28
+            //// Service 28
 
-            Controllers_UIService.UIDefinition_Service28();
+            //Controllers_UIService.UIDefinition_Service28();
 
-            // Service 3E
+            //// Service 3E
 
-            Controllers_UIService.UIDefinition_Service3E();
+            //Controllers_UIService.UIDefinition_Service3E();
 
-            // Service 85
+            //// Service 85
 
-            Controllers_UIService.UIDefinition_Service85();
+            //Controllers_UIService.UIDefinition_Service85();
         }
 
     }

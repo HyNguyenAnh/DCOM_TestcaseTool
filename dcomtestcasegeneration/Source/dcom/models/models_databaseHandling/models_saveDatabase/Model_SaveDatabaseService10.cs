@@ -18,19 +18,19 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             string status;
 
             // Specification
-            for (int index = 0; index < DatabaseVariables.DatabaseService10?.ElementAt(0).Count(); index++)
+            for (int index = 0; index < UIVariables.Service10_SubFunction?.Count(); index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService10?.ElementAt(0)[0].Count(); index_++)
+                for (int index_ = 0; index_ < UIVariables.Service10_SubFunction?.ElementAt(index).Count(); index_++)
                 {
-                    Ws.Cells[rowIndex[5] + index, columnIndex[5] + index_] = DatabaseVariables.DatabaseService10.ElementAt(0)[index][index_];
+                    Ws.Cells[rowIndex[5] + index, columnIndex[5] + index_] = UIVariables.Service10_SubFunction.ElementAt(index)[index_];
                 }
             }
 
-            // Allow session
+            // Allow session & Addressing mode
             int n = 0;
-            for (int index = 0; index < DatabaseVariables.DatabaseService10?.ElementAt(1).Count(); index++)
+            for (int index = 0; index < 5; index++)
             {
-                for (int index_ = 0; index_ < DatabaseVariables.DatabaseService10?.ElementAt(1)[index].Count() - 1; index_++)
+                for (int index_ = 0; index_ < 3; index_++)
                 {
                     if (index < 2)
                     {
@@ -61,28 +61,83 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             // Condition
             for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition?.Length; index++)
             {
-                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Condition[index]);
-                Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
-                if (status == "1")
+                string condition = "";
+                switch (index)
                 {
+                    case 0: condition = "Vehicle_Speed"; break;
+                    case 1: condition = "Engine_Status"; break;
+                    case 2: condition = "Voltage"; break;
+                }
+                string[] engineStatusConditionSplit;
+                if (UIVariables.Service10_InvalidValueCondition[1].Contains(UIVariables.Service10_ValidValueCondition))
+                {
+                    engineStatusConditionSplit = UIVariables.Service10_InvalidValueCondition[1].Split(';');
+                }
+                else
+                {
+                    engineStatusConditionSplit = string.Concat(UIVariables.Service10_InvalidValueCondition[1], "; " + UIVariables.Service10_ValidValueCondition).Split(';');
+                }
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Condition[index]);
+                
+                if (index == 0 && status == "1")
+                {
+                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 0] = condition;
                     Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = UIVariables.Service10_InvalidValueCondition[index];
-                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = UIVariables.Service10_NameInvalidValueCondition[index];
+                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
                     Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = UIVariables.Service10_NRCCondition[index];
+                }
+                else if (index == 1 && status == "1")
+                {
+                    for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                    {
+                        Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 0] = condition;
+                        Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                        Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                        if(engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                        {
+                            Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = status;
+                            Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = UIVariables.Service10_NRCCondition[index];
+                        }
+                        else
+                        {
+                            Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = "0";
+                            Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = "";
+                        }
+                    }
+                }
+                else if(index == 2 && status == "1")
+                {
+                    for(int index_ = 0; index_ < 2; index_++)
+                    {
+                        string voltageName = "";
+                        switch (index_)
+                        {
+                            case 0: voltageName = "Low"; break;
+                            case 1: voltageName = "High"; break;
+                        }
+                        Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 0] = condition;
+                        Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = UIVariables.Service10_InvalidValueCondition[index + index_];
+                        Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = voltageName;
+                        Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = status;
+                        Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = UIVariables.Service10_NRCCondition[index];
+                    }
+                }
+                else
+                {
+                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 0] = condition;
+                    Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
+                    if(index == UIVariables.Service10_ButtonStatus_Condition?.Length - 1)
+                    {
+                        Ws.Cells[rowIndex[8] + index + 1, columnIndex[8] + 3] = status;
+                    }
                 }
             }
 
             // Optional
-            for (int index = 0; index < DatabaseVariables.DatabaseService10?.ElementAt(4).Count; index++)
+            for (int index = 0; index < UIVariables.Service10_ButtonStatus_Optional.Length; index++)
             {
-                if (DatabaseVariables.DatabaseService10.ElementAt(4)[index][0].Contains("Suppress"))
-                {
-                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_SuppressBit);
-                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = status;
-                }
-                else
-                {
-                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = "0";
-                }
+                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Optional[index]);
+                Ws.Cells[rowIndex[9] + index, columnIndex[9] + 1] = status;
             }
         }
     }

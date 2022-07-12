@@ -14,7 +14,6 @@ namespace dcom.views.views_Service
 {
     public partial class View_Service85 : UserControl
     {
-        public static Button ButtonStatus_SuppressBit;
         public static Button[] ButtonStatus_AddressingMode;
         public static Button[] ButtonStatus_Condition;
         public static ComboBox[] ComboBox_ConditionNRCs;
@@ -28,8 +27,6 @@ namespace dcom.views.views_Service
         private void View_Service85_Load(object sender, EventArgs e)
         {
             // Definition
-
-            ButtonStatus_SuppressBit = button_SupressBit;
 
             ButtonStatus_AddressingMode = new Button[]{
                 button_PhysicalDefault,
@@ -93,9 +90,9 @@ namespace dcom.views.views_Service
 
             // Load Suppress bit
 
-            ButtonStatus_SuppressBit.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_SuppressBit)[0];
-            ButtonStatus_SuppressBit.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_SuppressBit)[1];
-            ButtonStatus_SuppressBit.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service85_ButtonStatus_SuppressBit);
+            button_SupressBit.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_Optional[0])[0];
+            button_SupressBit.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_Optional[0])[1];
+            button_SupressBit.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service85_ButtonStatus_Optional[0]);
 
             // Load Addressing Mode
 
@@ -129,11 +126,11 @@ namespace dcom.views.views_Service
         }
         private void button_Service85_SupressBit_Click(object sender, EventArgs e)
         {
-            UIVariables.Service85_ButtonStatus_SuppressBit = !UIVariables.Service85_ButtonStatus_SuppressBit;
+            UIVariables.Service85_ButtonStatus_Optional[0] = !UIVariables.Service85_ButtonStatus_Optional[0];
 
-            button_SupressBit.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_SuppressBit)[0];
-            button_SupressBit.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_SuppressBit)[1];
-            button_SupressBit.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service85_ButtonStatus_SuppressBit);
+            button_SupressBit.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_Optional[0])[0];
+            button_SupressBit.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service85_ButtonStatus_Optional[0])[1];
+            button_SupressBit.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service85_ButtonStatus_Optional[0]);
 
         }
 
@@ -252,7 +249,7 @@ namespace dcom.views.views_Service
         }
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service85_ButtonStatus_SuppressBit = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
+            UIVariables.Service85_ButtonStatus_Optional[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
         }
 
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
@@ -269,8 +266,8 @@ namespace dcom.views.views_Service
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
                 vehicleSpeedValue_Text.Enabled = true;
-                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service10_NRCCondition[0];
-                vehicleSpeedValue_Text.Text = UIVariables.Service10_InvalidValueCondition[0];
+                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service85_NRCCondition[0];
+                vehicleSpeedValue_Text.Text = UIVariables.Service85_InvalidValueCondition[0];
             }
             else
             {
@@ -287,7 +284,7 @@ namespace dcom.views.views_Service
             if (UIVariables.Service85_ButtonStatus_Condition[1] == true)
             {
                 comboBox_ConditionEngine_NRC.Enabled = true;
-                comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
+                comboBox_ConditionEngine_NRC.Text = UIVariables.Service85_NRCCondition[1];
             }
             else
             {

@@ -64,7 +64,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             string[] DataPathInformation = new string[]
             {
                 UIVariables.DatabaseSource,
-                DatabaseVariables.PathOutputDatabase,
+                SystemVariables.PathOutputDatabase,
                 UIVariables.TestcaseDirectory,
             };
             for(int index = 0; index < DataPathInformation?.Length; index++)

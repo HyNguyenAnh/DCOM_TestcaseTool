@@ -1197,7 +1197,6 @@ namespace dcom.views.views_Service
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_NRCPriority.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView_NRCPriority.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_NRCPriority.Enabled = false;
             this.dataGridView_NRCPriority.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_NRCPriority.Location = new System.Drawing.Point(4, 4);
             this.dataGridView_NRCPriority.Margin = new System.Windows.Forms.Padding(4);
@@ -1491,6 +1490,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionVehicle
             // 
             this.textBox_ConditionVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVehicle.Enabled = false;
             this.textBox_ConditionVehicle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionVehicle.Location = new System.Drawing.Point(4, 45);
             this.textBox_ConditionVehicle.Margin = new System.Windows.Forms.Padding(4);
@@ -1498,10 +1498,12 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVehicle.Size = new System.Drawing.Size(394, 26);
             this.textBox_ConditionVehicle.TabIndex = 3;
             this.textBox_ConditionVehicle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVehicle.TextChanged += new System.EventHandler(this.textBox_ConditionVehicle_TextChanged);
             // 
             // comboBox_ConditionVehicle_NRC
             // 
             this.comboBox_ConditionVehicle_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVehicle_NRC.Enabled = false;
             this.comboBox_ConditionVehicle_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionVehicle_NRC.FormattingEnabled = true;
             this.comboBox_ConditionVehicle_NRC.Location = new System.Drawing.Point(4, 127);
@@ -1509,7 +1511,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionVehicle_NRC.Name = "comboBox_ConditionVehicle_NRC";
             this.comboBox_ConditionVehicle_NRC.Size = new System.Drawing.Size(394, 26);
             this.comboBox_ConditionVehicle_NRC.TabIndex = 2;
-            this.comboBox_ConditionVehicle_NRC.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_SelectedIndexChanged);
+            this.comboBox_ConditionVehicle_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_TextChanged);
             // 
             // label18
             // 
@@ -1587,6 +1589,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionEngine_ValidValue
             // 
             this.textBox_ConditionEngine_ValidValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionEngine_ValidValue.Enabled = false;
             this.textBox_ConditionEngine_ValidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionEngine_ValidValue.Location = new System.Drawing.Point(4, 127);
             this.textBox_ConditionEngine_ValidValue.Margin = new System.Windows.Forms.Padding(4);
@@ -1594,6 +1597,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_ValidValue.Size = new System.Drawing.Size(532, 26);
             this.textBox_ConditionEngine_ValidValue.TabIndex = 6;
             this.textBox_ConditionEngine_ValidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionEngine_ValidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_ValidValue_TextChanged);
             // 
             // label25
             // 
@@ -1612,6 +1616,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionEngine_InvalidValue
             // 
             this.textBox_ConditionEngine_InvalidValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionEngine_InvalidValue.Enabled = false;
             this.textBox_ConditionEngine_InvalidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionEngine_InvalidValue.Location = new System.Drawing.Point(4, 45);
             this.textBox_ConditionEngine_InvalidValue.Margin = new System.Windows.Forms.Padding(4);
@@ -1619,6 +1624,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_InvalidValue.Size = new System.Drawing.Size(532, 26);
             this.textBox_ConditionEngine_InvalidValue.TabIndex = 4;
             this.textBox_ConditionEngine_InvalidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionEngine_InvalidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_InvalidValue_TextChanged);
             // 
             // tableLayoutPanel13
             // 
@@ -1677,7 +1683,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionEngine_NRC.Name = "comboBox_ConditionEngine_NRC";
             this.comboBox_ConditionEngine_NRC.Size = new System.Drawing.Size(82, 26);
             this.comboBox_ConditionEngine_NRC.TabIndex = 2;
-            this.comboBox_ConditionEngine_NRC.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConditionEngine_NRC_SelectedIndexChanged);
+            this.comboBox_ConditionEngine_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionEngine_NRC_TextChanged);
             // 
             // button_ConditionVoltage
             // 
@@ -1739,6 +1745,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionVoltage_High
             // 
             this.textBox_ConditionVoltage_High.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVoltage_High.Enabled = false;
             this.textBox_ConditionVoltage_High.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionVoltage_High.Location = new System.Drawing.Point(206, 4);
             this.textBox_ConditionVoltage_High.Margin = new System.Windows.Forms.Padding(4);
@@ -1746,10 +1753,12 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVoltage_High.Size = new System.Drawing.Size(194, 26);
             this.textBox_ConditionVoltage_High.TabIndex = 5;
             this.textBox_ConditionVoltage_High.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVoltage_High.TextChanged += new System.EventHandler(this.textBox_ConditionVoltage_High_TextChanged);
             // 
             // textBox_ConditionVoltage_Low
             // 
             this.textBox_ConditionVoltage_Low.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVoltage_Low.Enabled = false;
             this.textBox_ConditionVoltage_Low.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionVoltage_Low.Location = new System.Drawing.Point(4, 4);
             this.textBox_ConditionVoltage_Low.Margin = new System.Windows.Forms.Padding(4);
@@ -1757,6 +1766,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVoltage_Low.Size = new System.Drawing.Size(194, 26);
             this.textBox_ConditionVoltage_Low.TabIndex = 4;
             this.textBox_ConditionVoltage_Low.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVoltage_Low.TextChanged += new System.EventHandler(this.textBox_ConditionVoltage_Low_TextChanged);
             // 
             // label28
             // 
@@ -1775,6 +1785,7 @@ namespace dcom.views.views_Service
             // comboBox_ConditionVoltage_NRC
             // 
             this.comboBox_ConditionVoltage_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVoltage_NRC.Enabled = false;
             this.comboBox_ConditionVoltage_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionVoltage_NRC.FormattingEnabled = true;
             this.comboBox_ConditionVoltage_NRC.Location = new System.Drawing.Point(4, 127);
@@ -1782,7 +1793,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionVoltage_NRC.Name = "comboBox_ConditionVoltage_NRC";
             this.comboBox_ConditionVoltage_NRC.Size = new System.Drawing.Size(396, 26);
             this.comboBox_ConditionVoltage_NRC.TabIndex = 2;
-            this.comboBox_ConditionVoltage_NRC.SelectedIndexChanged += new System.EventHandler(this.comboBox_ConditionVoltage_NRC_SelectedIndexChanged);
+            this.comboBox_ConditionVoltage_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVoltage_NRC_TextChanged);
             // 
             // tableLayoutPanel4
             // 

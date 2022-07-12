@@ -30,8 +30,8 @@ namespace dcom.views.views_ToolBar
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Setting_Testcase));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel_base = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -332,14 +332,14 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_CommonSetting.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonSetting.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_CommonSetting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonSetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
@@ -347,7 +347,6 @@ namespace dcom.views.views_ToolBar
             this.dataGridViewTextBoxColumn10,
             this.Column1});
             this.dataGridView_CommonSetting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_CommonSetting.Enabled = false;
             this.dataGridView_CommonSetting.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_CommonSetting.Location = new System.Drawing.Point(20, 24);
             this.dataGridView_CommonSetting.Margin = new System.Windows.Forms.Padding(7);
@@ -431,21 +430,20 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonDID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_CommonDID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonDID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_CommonDID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonDID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dataGridView_CommonDID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_CommonDID.Enabled = false;
             this.dataGridView_CommonDID.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_CommonDID.Location = new System.Drawing.Point(20, 24);
             this.dataGridView_CommonDID.Margin = new System.Windows.Forms.Padding(7);
@@ -1174,7 +1172,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service11_tc, 0, 1);
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service10_tc, 0, 0);
             this.tableLayoutPanel_testcaseService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_testcaseService.Location = new System.Drawing.Point(1078, 0);
+            this.tableLayoutPanel_testcaseService.Location = new System.Drawing.Point(1357, 0);
             this.tableLayoutPanel_testcaseService.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel_testcaseService.Name = "tableLayoutPanel_testcaseService";
             this.tableLayoutPanel_testcaseService.RowCount = 13;
@@ -1191,7 +1189,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_testcaseService.Size = new System.Drawing.Size(55, 605);
+            this.tableLayoutPanel_testcaseService.Size = new System.Drawing.Size(55, 862);
             this.tableLayoutPanel_testcaseService.TabIndex = 3;
             // 
             // button_canTP_tc
@@ -1416,7 +1414,7 @@ namespace dcom.views.views_ToolBar
             this.panel_bodyTestcase.Location = new System.Drawing.Point(0, 0);
             this.panel_bodyTestcase.Margin = new System.Windows.Forms.Padding(0);
             this.panel_bodyTestcase.Name = "panel_bodyTestcase";
-            this.panel_bodyTestcase.Size = new System.Drawing.Size(1078, 605);
+            this.panel_bodyTestcase.Size = new System.Drawing.Size(1357, 862);
             this.panel_bodyTestcase.TabIndex = 2;
             // 
             // View_Setting_Testcase

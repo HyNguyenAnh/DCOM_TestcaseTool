@@ -39,20 +39,18 @@ namespace dcom.controllers.controllers_UIcontainer
         {
             Definition.TemplateVariableDefinition();
             Definition.SystemVariableDefinition();
-            Model_SystemInformation.createFolder(DatabaseVariables.DirectoryOutputDatabase);
+            Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
             Model_DatabaseTemplate.SaveDatabase();
-            Model_SystemInformation.createBackupFile();
+            Model_SystemInformation.createBackupFile(SystemVariables.backupFilePath);
         }
 
-        public static void ButtonLoadDataClick()
+        public static void ButtonLoadDataClick(string databasePath)
         {
-            string databasePath = UIVariables.DatabasePath;
-            
             // Open the database
-            DatabaseVariables.WbDatabase = Controller_ExcelHandling.OpenExcel(databasePath);
+            
+            Controller_ExcelHandling.OpenExcel(databasePath, DatabaseVariables.WbDatabase);
 
             Definition.DatabaseVariableDefinition();
-            Definition.UIVariableDefinition();
             Controller_UIHandling.MappingFromDatabaseToUI();
 
             // Close the database

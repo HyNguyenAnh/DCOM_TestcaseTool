@@ -33,8 +33,10 @@ namespace dcom.views
             // Load home page
             View_Home frm = new View_Home();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
-            Definition.UIVariableDefinition();
             Definition.SystemVariableDefinition();
+            Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
+            Model_SystemInformation.checkTemplateFile(SystemVariables.templateFileLocalPath, SystemVariables.templateFileServerPath);
+            Definition.UIVariableDefinition();
         }
         private void button_service10_MouseHover(object sender, EventArgs e)
         {
@@ -232,11 +234,18 @@ namespace dcom.views
         private void button_setting_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-
-            if (SystemVariables.checkTheFirstLoad == true)
+            if(UIVariables.DBPath_LocalList.Length > 0 || UIVariables.DBPath_ServerList.Length > 0)
             {
-                Model_BackupInformation.BackupInformation();
+                if (SystemVariables.checkTheFirstLoad == true)
+                {
+                    Model_BackupInformation.BackupInformation();
+                }
             }
+            else
+            {
+                UIVariables.DatabasePath = SystemVariables.templateFileLocalPath;
+            }
+            
             View_Setting_Testcase frm = new View_Setting_Testcase();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
 

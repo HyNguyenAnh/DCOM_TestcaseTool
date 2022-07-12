@@ -156,7 +156,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             return dataTable;
         }
 
-        public static List<string[]> SIDSupport(string SID)
+        public static List<string[]> AllowSession_22_2E(string SID)
         {
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
@@ -187,7 +187,7 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             data.Add(NRC(SID));
             data.Add(Condition(SID));
             data.Add(Optional(SID));
-            data.Add(SIDSupport(SID));
+            data.Add(AllowSession_22_2E(SID));
 
             return data;
 

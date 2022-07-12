@@ -228,17 +228,17 @@ namespace dcom.controllers.controllers_middleware
             }
         }
 
-        public static bool ConvertFromStringLevelToBool(string value)
+        public static bool ConvertFromStringOptionalToBool(string value)
         {
             // "0" -> false
             // "1" -> true
-            if (value == "1" || value == "2" || value == "3")
+            if (value == "0" | value == "")
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
@@ -404,7 +404,51 @@ namespace dcom.controllers.controllers_middleware
 
             return data.ToLower();
         }
-  
+
+        public static string GetResponseCodeStringCondtion(int condtionIndex, double invalidValue, double setInvalidValue, string orgResponseCodeString, string ResponseID, string conditionNRC, string conditionName)
+        {
+            string data = "";
+            switch (condtionIndex)
+            {
+                case 0:
+                    data = orgResponseCodeString;
+                    break;
+                case 1:
+                    if (((setInvalidValue <= invalidValue) & (setInvalidValue >= 0)) || setInvalidValue == 0 || setInvalidValue == 10)
+                    {
+                        data = orgResponseCodeString;
+                    }
+                    else
+                    {
+                        data = $"7f{ResponseID}{conditionNRC}";
+                    }
+                    break;
+                case 2:
+                    if(invalidValue == 0)
+                    {
+                        data = orgResponseCodeString;
+                    }
+                    else
+                    {
+                        data = $"7f{ResponseID}{conditionNRC}";
+                    }
+                    break;
+                case 3:
+                    if (((setInvalidValue <= invalidValue) & (setInvalidValue >= 0) & (conditionName == "Low")) | ((setInvalidValue >= invalidValue) & (setInvalidValue <= 18) & (conditionName == "Low")))
+                    {
+                        data = orgResponseCodeString;
+                    }
+                    else
+                    {
+                        data = $"7f{ResponseID}{conditionNRC}";
+                    }
+                    break;
+            }
+
+            return data.ToLower();
+        }
+
+
         public static string GetResponseID(string SID)
         {
             // Example: SID = 2E -> Response ID = SID + 40h = 6Eh
