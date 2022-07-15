@@ -53,43 +53,42 @@ namespace dcom.declaration
                 20, // Optional
                 29,  // SIDSupported
             };
-            DatabaseVariables.TemplatePath = @"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Template\Template.xlsx";
 
             
             // Service 10
             DatabaseVariables.DatabaseService10 = Model_GetServiceDatabase.DatabaseService("10");
 
-            //// Service 11
-            //DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
+            // Service 11
+            DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
 
-            //// Service 14
-            //DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");
+            // Service 14
+            DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");
 
-            //// Service 19
+            // Service 19
             //DatabaseVariables.DatabaseService19 = Model_GetServiceDatabase.DatabaseService("19");
 
-            //// Service 22
-            //DatabaseVariables.DatabaseService22 = Model_GetServiceDatabase.DatabaseService("22");
+            // Service 22
+            DatabaseVariables.DatabaseService22 = Model_GetServiceDatabase.DatabaseService("22");
 
-            //// Service 27
-            //DatabaseVariables.DatabaseService27 = Model_GetServiceDatabase.DatabaseService("27");
+            // Service 27
+            DatabaseVariables.DatabaseService27 = Model_GetServiceDatabase.DatabaseService("27");
 
-            //// Service 28
-            //DatabaseVariables.DatabaseService28 = Model_GetServiceDatabase.DatabaseService("28");
+            // Service 28
+            DatabaseVariables.DatabaseService28 = Model_GetServiceDatabase.DatabaseService("28");
 
-            //// Service 2E
-            //DatabaseVariables.DatabaseService2E = Model_GetServiceDatabase.DatabaseService("2E");
+            // Service 2E
+            DatabaseVariables.DatabaseService2E = Model_GetServiceDatabase.DatabaseService("2E");
 
-            //// Service 31
+            // Service 31
             //DatabaseVariables.DatabaseService31 = Model_GetServiceDatabase.DatabaseService("31");
 
-            //// Service 3E
-            //DatabaseVariables.DatabaseService3E = Model_GetServiceDatabase.DatabaseService("3E");
+            // Service 3E
+            DatabaseVariables.DatabaseService3E = Model_GetServiceDatabase.DatabaseService("3E");
 
-            //// Service 85
+            // Service 85
             //DatabaseVariables.DatabaseService85 = Model_GetServiceDatabase.DatabaseService("85");
 
-            //// Can TP
+            // Can TP
             //DatabaseVariables.DatabaseCanTP = Model_GetServiceDatabase.DatabaseService("CanTP");
 
         }
@@ -181,6 +180,22 @@ namespace dcom.declaration
         
         public static void UIVariableDefinition()
         {
+            UIVariables.edited_View = new bool[13]
+            {
+                true,  // View Setting
+                false,  // View Service 10
+                false,  // View Service 11
+                false,  // View Service 14
+                false,  // View Service 19
+                false,  // View Service 22
+                false,  // View Service 2E
+                false,  // View Service 27
+                false,  // View Service 28
+                false,  // View Service 31
+                false,  // View Service 3E
+                false,  // View Service 85
+                false,  // View CanTP
+            };
             UIVariables.CompletedEdit = false;
             UIVariables.NRCs = new string[]
             {
@@ -210,9 +225,10 @@ namespace dcom.declaration
             UIVariables.ProjectInformation = new string[] { };
             UIVariables.DatabaseSource = "Local";
             UIVariables.DatabasePath = "";
-            UIVariables.DatabaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
-            UIVariables.DBPath_LocalList = Directory.GetFiles(UIVariables.DatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
-            UIVariables.DBPath_ServerList = Directory.GetFiles(@"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Requirement", "*.xlsx", SearchOption.AllDirectories);
+            UIVariables.LocalDatabaseDirectory = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), @"DB_Requirement\")).LocalPath;
+            UIVariables.ServerDatabaseDirectory = @"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Requirement\";
+            UIVariables.DBPath_LocalList = Directory.GetFiles(UIVariables.LocalDatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
+            UIVariables.DBPath_ServerList = Directory.GetFiles(UIVariables.ServerDatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
             UIVariables.TestcaseDirectory = "";
             UIVariables.SelectedServiceStatus = new bool[]
             {
@@ -287,7 +303,24 @@ namespace dcom.declaration
             };
             UIVariables.Service10_NRCCondition = new string[7];
 
-            UIVariables.Service10_NRCPriority = new string[15];
+            UIVariables.Service10_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
 
             UIVariables.Service10_InvalidValueCondition = new string[7];
 
@@ -322,7 +355,24 @@ namespace dcom.declaration
                 false,
                 false,
             };
-            UIVariables.Service11_NRCPriority = new string[15];
+            UIVariables.Service11_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
 
             UIVariables.Service11_NRCCondition = new string[7];
 
@@ -354,7 +404,24 @@ namespace dcom.declaration
                 false,
                 false,
             };
-            UIVariables.Service14_NRCPriority = new string[15];
+            UIVariables.Service14_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
             UIVariables.Service14_NRCCondition = new string[7];
             UIVariables.Service14_InvalidValueCondition = new string[7];
             UIVariables.Service14_NameInvalidValueCondition = new string[7];
@@ -369,7 +436,24 @@ namespace dcom.declaration
                 false,
                 false,
             };
-            UIVariables.Service22_NRCPriority = new string[15];
+            UIVariables.Service22_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
             UIVariables.Service22_InvalidValueCondition = new string[7];
             UIVariables.Service22_NameInvalidValueCondition = new string[7];
             UIVariables.Service22_ButtonStatus_Condition = new bool[]
@@ -394,7 +478,24 @@ namespace dcom.declaration
                 false,
             };
             UIVariables.Service2E_SecurityUnlockLv = "";
-            UIVariables.Service2E_NRCPriority = new string[15];
+            UIVariables.Service2E_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
 
             UIVariables.Service2E_InvalidValueCondition = new string[7];
             UIVariables.Service2E_NameInvalidValueCondition = new string[7];
@@ -435,8 +536,42 @@ namespace dcom.declaration
                 false,
                 false,
             };
-            UIVariables.Service27_NRCPrioritySeed = new string[15];
-            UIVariables.Service27_NRCPriorityKey = new string[15];
+            UIVariables.Service27_NRCPrioritySeed = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
+            UIVariables.Service27_NRCPriorityKey = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
             UIVariables.Service27_NRCCondition = new string[7];
             UIVariables.Service27_InvalidValueCondition = new string[7];
             UIVariables.Service27_NameInvalidValueCondition = new string[7];
@@ -479,7 +614,24 @@ namespace dcom.declaration
             UIVariables.Service28_NRCCondition = new string[7];
             UIVariables.Service28_InvalidValueCondition = new string[7];
             UIVariables.Service28_NameInvalidValueCondition = new string[7];
-            UIVariables.Service28_NRCPriority = new string[15];
+            UIVariables.Service28_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
 
             // Service 3E
 
@@ -507,7 +659,24 @@ namespace dcom.declaration
             UIVariables.Service3E_NRCCondition = new string[7];
             UIVariables.Service3E_InvalidValueCondition = new string[7];
             UIVariables.Service3E_NameInvalidValueCondition = new string[7];
-            UIVariables.Service3E_NRCPriority = new string[15];
+            UIVariables.Service3E_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
 
             // Service 85
 
@@ -535,7 +704,24 @@ namespace dcom.declaration
             UIVariables.Service85_NRCCondition = new string[7];
             UIVariables.Service85_InvalidValueCondition = new string[7];
             UIVariables.Service85_NameInvalidValueCondition = new string[7];
-            UIVariables.Service85_NRCPriority = new string[15];
+            UIVariables.Service85_NRCPriority = new string[15]
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            };
         }
     }
 }

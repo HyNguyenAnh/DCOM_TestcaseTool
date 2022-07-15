@@ -8,6 +8,7 @@ namespace dcom.declaration
 {
     class UIVariables
     {
+        public static bool[] edited_View { get; set; }
         public static bool CompletedEdit { get; set; }
         // NRC List
         public static string[] NRCs { get; set; }
@@ -15,7 +16,8 @@ namespace dcom.declaration
         // Common Setting
         public static string DatabasePath { get; set; }
         public static string TestcaseDirectory { get; set; }
-        public static string DatabaseDirectory { get; set; }
+        public static string LocalDatabaseDirectory { get; set; }
+        public static string ServerDatabaseDirectory { get; set; }
         public static string TemplatePath { get; set; }
         public static string DatabaseSource { get; set; }
 

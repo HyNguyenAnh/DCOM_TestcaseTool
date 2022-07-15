@@ -89,7 +89,10 @@ namespace dcom.views.views_ToolBar
                 if (UIVariables.DBPath_LocalList != null)
                 {
                     comboBox_DBPath.Items.Clear();
-                    comboBox_DBPath.Items.AddRange(UIVariables.DBPath_LocalList);
+                    for(int index = 0; index < UIVariables.DBPath_LocalList.Length; index++)
+                    {
+                        comboBox_DBPath.Items.Add(UIVariables.DBPath_LocalList[index].Split('\\')[UIVariables.DBPath_LocalList[index].Split('\\').Length - 1]);
+                    }
                 }
                 else
                 {
@@ -101,7 +104,10 @@ namespace dcom.views.views_ToolBar
                 if (UIVariables.DBPath_ServerList != null)
                 {
                     comboBox_DBPath.Items.Clear();
-                    comboBox_DBPath.Items.AddRange(UIVariables.DBPath_ServerList);
+                    for (int index = 0; index < UIVariables.DBPath_ServerList.Length; index++)
+                    {
+                        comboBox_DBPath.Items.Add(UIVariables.DBPath_ServerList[index].Split('\\')[UIVariables.DBPath_ServerList[index].Split('\\').Length - 1]);
+                    }
                 }
                 else
                 {
@@ -144,8 +150,6 @@ namespace dcom.views.views_ToolBar
         private void button_LoadDB_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-
-            UIVariables.DatabasePath = comboBox_DBPath.Text;
 
             // Get data in databases
             Controllers_FunctionButton.ButtonLoadDataClick(UIVariables.DatabasePath);
@@ -314,8 +318,21 @@ namespace dcom.views.views_ToolBar
 
         private void comboBox_DBPath_TextChanged(object sender, EventArgs e)
         {
-            button_LoadDB.Enabled = Controller_FileHandling.IsFileExisted(comboBox_DBPath.Text) & comboBox_DBPath.Text.Contains(".xls");
-            UIVariables.DatabasePath = comboBox_DBPath.Text;
+            if (UIVariables.DatabaseSource == "Local" && comboBox_DBPath.Text.Split('\\').Length == 1)
+            {
+                button_LoadDB.Enabled = Controller_FileHandling.IsFileExisted(string.Concat(UIVariables.LocalDatabaseDirectory, $@"\{comboBox_DBPath.Text}")) & comboBox_DBPath.Text.Contains(".xls");
+                UIVariables.DatabasePath = string.Concat(UIVariables.LocalDatabaseDirectory, $@"\{comboBox_DBPath.Text}");
+            }
+            else if (UIVariables.DatabaseSource == "Server" && comboBox_DBPath.Text.Split('\\').Length == 1)
+            {
+                button_LoadDB.Enabled = Controller_FileHandling.IsFileExisted(string.Concat(UIVariables.ServerDatabaseDirectory, $@"\{comboBox_DBPath.Text}")) & comboBox_DBPath.Text.Contains(".xls");
+                UIVariables.DatabasePath = string.Concat(UIVariables.ServerDatabaseDirectory, $@"\{comboBox_DBPath.Text}");
+            }
+            else
+            {
+                button_LoadDB.Enabled = Controller_FileHandling.IsFileExisted(comboBox_DBPath.Text) & comboBox_DBPath.Text.Contains(".xls");
+                UIVariables.DatabasePath = comboBox_DBPath.Text;
+            }
         }
 
         private void textBox_ProjectName_TextChanged(object sender, EventArgs e)
@@ -347,7 +364,11 @@ namespace dcom.views.views_ToolBar
             if (UIVariables.DBPath_LocalList != null)
             {
                 comboBox_DBPath.Items.Clear();
-                comboBox_DBPath.Items.AddRange(UIVariables.DBPath_LocalList);
+                comboBox_DBPath.Text = "";
+                for (int index = 0; index < UIVariables.DBPath_LocalList.Length; index++)
+                {
+                    comboBox_DBPath.Items.Add(UIVariables.DBPath_LocalList[index].Split('\\')[UIVariables.DBPath_LocalList[index].Split('\\').Length - 1]);
+                }
             }
             else
             {
@@ -361,7 +382,11 @@ namespace dcom.views.views_ToolBar
             if (UIVariables.DBPath_ServerList != null)
             {
                 comboBox_DBPath.Items.Clear();
-                comboBox_DBPath.Items.AddRange(UIVariables.DBPath_ServerList);
+                comboBox_DBPath.Text = "";
+                for (int index = 0; index < UIVariables.DBPath_ServerList.Length; index++)
+                {
+                    comboBox_DBPath.Items.Add(UIVariables.DBPath_ServerList[index].Split('\\')[UIVariables.DBPath_ServerList[index].Split('\\').Length - 1]);
+                }
             }
             else
             {

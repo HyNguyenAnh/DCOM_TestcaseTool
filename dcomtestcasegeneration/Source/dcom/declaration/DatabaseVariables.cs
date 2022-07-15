@@ -14,7 +14,6 @@ namespace dcom.declaration
         public static string DatabasePath { get; set; }
         public static string TestcaseDirectory { get; set; }
         public static string DatabaseDirectory { get; set; }
-        public static string TemplatePath { get; set; }
         public static string DatabaseSource { get; set; }
 
         public static int[] StartRowIndexDatabaseTables { get; set; }

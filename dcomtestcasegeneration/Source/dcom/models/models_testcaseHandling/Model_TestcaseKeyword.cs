@@ -217,7 +217,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService10(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                string expectedValue, bool addressingMode, double invalidValue, double setInvalidValue)
+                                                string expectedValue, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             // subFunction: 01, 02, 03
             // suppressBitEnabledStatus: true -> request 1081, false -> request 1001
@@ -323,7 +324,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService11(string subFunction, bool isSubFunctionSupported,bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
 
             string SID = "11";
@@ -423,7 +425,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService19(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             string SID = "19";
             string subFunctionNew;
@@ -521,7 +524,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService27(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             string SID = "27";
             string subFunctionNew;
@@ -619,7 +623,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService28(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             string SID = "28";
             string subFunctionNew;
@@ -718,7 +723,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService85(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             string SID = "85";
             string subFunctionNew;
@@ -815,7 +821,8 @@ namespace dcom.models.models_testcaseHandling
             return Data;
         }
         public static string[] RequestService14(string parametter, bool isSIDSupportedInActiveSession, bool isParameterSupported, 
-                                                bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             // parametter: ffffff
             // isSIDSupportedInActiveSession: true -> Positive response, false -> NRC 7F
@@ -885,7 +892,8 @@ namespace dcom.models.models_testcaseHandling
             return Data;
         }
         public static string[] RequestService22(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParametersupported, 
-                                                bool addressingMode, int length, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, int length, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
 
             string SID = "22";
@@ -952,7 +960,8 @@ namespace dcom.models.models_testcaseHandling
             return Data;
         }
         public static string[] RequestService2E(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParametersupported, 
-                                                bool addressingMode, int length, double invalidValue, double setInvalidValue)
+                                                bool addressingMode, int length, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
 
             string SID = "22";
@@ -1129,7 +1138,8 @@ namespace dcom.models.models_testcaseHandling
         }
         public static string[] RequestService31(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession,
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession,
-                                                bool isParameterSupported, bool addressingMode, double invalidValue, double setInvalidValue)
+                                                bool isParameterSupported, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
 
             string SID = "31";

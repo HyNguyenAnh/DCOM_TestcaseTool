@@ -451,14 +451,9 @@ namespace dcom.controllers.controllers_middleware
                 dataGridView.Refresh();
                 for (int cellIndex = 0; cellIndex < Data?.Length; cellIndex++)
                 {
-                    Data[cellIndex] = dataGridView.Rows[0].Cells[cellIndex].Value.ToString();
+                    Data[cellIndex] = dataGridView?.Rows[0].Cells[cellIndex].Value.ToString();
                 }
             }
-        }
-
-        public static void MappingFromUIToDatabase()
-        {
-
         }
 
         public static void MappingFromDatabaseToUI()
@@ -471,42 +466,101 @@ namespace dcom.controllers.controllers_middleware
 
             Controllers_UIService.UIDefinition_Service10();
 
-            //// Service 11
+            // Service 11
 
-            //Controllers_UIService.UIDefinition_Service11();
+            Controllers_UIService.UIDefinition_Service11();
 
-            //// Service 14
+            // Service 14
 
-            //Controllers_UIService.UIDefinition_Service14();
+            Controllers_UIService.UIDefinition_Service14();
 
-            //// Service 19
+            // Service 19
 
             //Controllers_UIService.UIDefinition_Service19();
 
-            //// Service 22
+            // Service 22
 
-            //Controllers_UIService.UIDefinition_Service22();
+            Controllers_UIService.UIDefinition_Service22();
 
-            //// Service 2E
+            // Service 2E
 
-            //Controllers_UIService.UIDefinition_Service2E();
+            Controllers_UIService.UIDefinition_Service2E();
 
-            //// Service 27
+            // Service 27
 
-            //Controllers_UIService.UIDefinition_Service27();
+            Controllers_UIService.UIDefinition_Service27();
 
-            //// Service 28
+            // Service 28
 
-            //Controllers_UIService.UIDefinition_Service28();
+            Controllers_UIService.UIDefinition_Service28();
 
-            //// Service 3E
+            // Service 31
 
-            //Controllers_UIService.UIDefinition_Service3E();
+            //Controllers_UIService.UIDefinition_Service31();
 
-            //// Service 85
+            // Service 3E
+
+            Controllers_UIService.UIDefinition_Service3E();
+
+            // Service 85
 
             //Controllers_UIService.UIDefinition_Service85();
+
+            // CanTP
+
+            //Controllers_UIService.UIDefinition_CanTP();
         }
 
+        public static void MappingFromUIToDatabase(bool[] edited)
+        {
+            // Service 10
+
+            Controllers_UIService.UpdateDB_Service10(edited[1]);
+
+            // Service 11
+
+            Controllers_UIService.UpdateDB_Service11(edited[2]);
+
+            // Service 14
+
+            Controllers_UIService.UpdateDB_Service14(edited[3]);
+
+            // Service 19
+
+            //Controllers_UIService.UpdateDB_Service19(edited[4]);
+
+            // Service 22
+
+            Controllers_UIService.UpdateDB_Service22(edited[5]);
+
+            // Service 2E
+
+            Controllers_UIService.UpdateDB_Service2E(edited[6]);
+
+            // Service 27
+
+            Controllers_UIService.UpdateDB_Service27(edited[7]);
+
+            // Service 28
+
+            Controllers_UIService.UpdateDB_Service28(edited[8]);
+
+            // Service 31
+
+            //Controllers_UIService.UpdateDB_Service31(edited[9]);
+
+            // Service 3E
+
+            Controllers_UIService.UpdateDB_Service3E(edited[10]);
+
+            // Service 85
+
+            //Controllers_UIService.UpdateDB_Service85(edited[11]);
+
+            // CanTP
+
+            //Controllers_UIService.UpdateDB_CanTP(edited[12]);
+
+        }
     }
 }

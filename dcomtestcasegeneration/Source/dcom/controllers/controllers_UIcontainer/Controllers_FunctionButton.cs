@@ -42,6 +42,7 @@ namespace dcom.controllers.controllers_UIcontainer
             Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile(SystemVariables.backupFilePath);
+            Controller_UIHandling.MappingFromUIToDatabase(UIVariables.edited_View);
         }
 
         public static void ButtonLoadDataClick(string databasePath)

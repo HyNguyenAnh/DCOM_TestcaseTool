@@ -1079,6 +1079,8 @@ namespace dcom.views.views_Service
             // 
             // textBox_ConditionEngine_InvalidValue
             // 
+            this.textBox_ConditionEngine_InvalidValue.AccessibleDescription = "";
+            this.textBox_ConditionEngine_InvalidValue.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBox_ConditionEngine_InvalidValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_ConditionEngine_InvalidValue.Enabled = false;
             this.textBox_ConditionEngine_InvalidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1087,6 +1089,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_InvalidValue.Name = "textBox_ConditionEngine_InvalidValue";
             this.textBox_ConditionEngine_InvalidValue.Size = new System.Drawing.Size(534, 26);
             this.textBox_ConditionEngine_InvalidValue.TabIndex = 4;
+            this.textBox_ConditionEngine_InvalidValue.Tag = "";
             this.textBox_ConditionEngine_InvalidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_ConditionEngine_InvalidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_InvalidValue_TextChanged);
             // 

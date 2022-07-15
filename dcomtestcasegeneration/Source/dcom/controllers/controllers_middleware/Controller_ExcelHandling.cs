@@ -33,11 +33,11 @@ namespace dcom.controllers.controllers_middleware
             CloseExcel(excelPath, wb);
             return wb;
         }
+
         public static void OpenExcel(string excelPath, ExcelWorkbook wb)
         {
             string excelFileName = excelPath?.Substring(excelPath.LastIndexOf(@"\") + 1);
             excelFileName = excelFileName?.Remove(excelFileName.Length - 5);
-            Console.WriteLine(excelFileName);
             if (Controller_FileHandling.IsFileLocked(excelPath))
             {
                 CloseExcel(excelPath, wb);
@@ -47,13 +47,17 @@ namespace dcom.controllers.controllers_middleware
             try
             {
                 wb = app.Workbooks.Open(excelPath);
-                if (excelFileName.Contains("RequirementDB"))
+                if (excelFileName.Contains("RequirementDB") || excelFileName.Contains("Template"))
                 {
                     DatabaseVariables.WbDatabase = wb;
                 }
                 else if (excelFileName.Contains("Testcase"))
                 {
                     TestcaseVariables.WbOutputTestcase = wb;
+                }
+                else
+                {
+                    MessageBox.Show($"1) Please check the filename. \nExample: \n  - RequirementDB___.xlsx\n  - Template___.xlsx\n  - Testcase___.xlsx \n2) Please check the structure in file");
                 }
 
             }

@@ -234,6 +234,7 @@ namespace dcom.views
         private void button_setting_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
+
             if(UIVariables.DBPath_LocalList.Length > 0 || UIVariables.DBPath_ServerList.Length > 0)
             {
                 if (SystemVariables.checkTheFirstLoad == true)

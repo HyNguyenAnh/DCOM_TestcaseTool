@@ -10,6 +10,7 @@ namespace dcom.controllers.controllers_UIcontainer
 {
     class Controllers_UIService
     {
+        // Definite data from database to UI
         public static void UIDefinition_Service10()
         {
 
@@ -22,32 +23,24 @@ namespace dcom.controllers.controllers_UIcontainer
             }
 
             // Addressing Mode
-            for (int index = 0; index < UIVariables.Service10_ButtonStatus_AddressingMode?.Length; index++)
+            int n = 0;
+            for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(1).Count - 3; index++)
             {
-                if (index < 3)
+                for (int index_ = 1; index_ < DatabaseVariables.DatabaseService10.ElementAt(1)[index].Length; index_++)
                 {
-                    UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[0][index + 1]);
-                }
-                else
-                {
-                    UIVariables.Service10_ButtonStatus_AddressingMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[1][index - 2]);
+                    UIVariables.Service10_ButtonStatus_AddressingMode[n] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[index][index_]);
+                    n++;
                 }
             }
 
             // Session Transition
-            for (int index = 0; index < UIVariables.Service10_ButtonStatus_SessionTransition?.Length; index++)
+            n = 0;
+            for (int index = 2; index < DatabaseVariables.DatabaseService10.ElementAt(1).Count; index++)
             {
-                if (index < 3)
+                for (int index_ = 1; index_ < DatabaseVariables.DatabaseService10.ElementAt(1)[index].Length; index_++)
                 {
-                    UIVariables.Service10_ButtonStatus_SessionTransition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[2][index + 1]);
-                }
-                else if ((index < 6) && (index > 2))
-                {
-                    UIVariables.Service10_ButtonStatus_SessionTransition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[3][index - 2]);
-                }
-                else
-                {
-                    UIVariables.Service10_ButtonStatus_SessionTransition[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[4][index - 5]);
+                    UIVariables.Service10_ButtonStatus_SessionTransition[n] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10.ElementAt(1)[index][index_]);
+                    n++;
                 }
             }
 
@@ -123,7 +116,7 @@ namespace dcom.controllers.controllers_UIcontainer
         public static void UIDefinition_Service11()
         {
             // Sub Function | Reset Mode
-            for (int index = 0; index < UIVariables.Service11_ButtonStatus_ResetMode?.Length; index++)
+            for (int index = 0; index < DatabaseVariables.DatabaseService11?.ElementAt(0)?.Count; index++)
             {
                 UIVariables.Service11_ButtonStatus_ResetMode[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(0)[index][1]);
             }
@@ -134,7 +127,7 @@ namespace dcom.controllers.controllers_UIcontainer
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService11?.ElementAt(1)[index].Length - 1; index_++)
                 {
-                    UIVariables.Service11_ButtonStatus_AddressingMode[n] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_ + 1]);
+                    UIVariables.Service11_ButtonStatus_AddressingMode[n] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService11?.ElementAt(1)[index][index_ + 1]);
                     n++;
                 }
             }
@@ -865,5 +858,1379 @@ namespace dcom.controllers.controllers_UIcontainer
         {
 
         }
+
+        // Update data of database from UI
+
+        public static void UpdateDB_Service10(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service10_SubFunction?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service10_SubFunction?.ElementAt(index).Count(); index_++)
+                    {
+                        DatabaseVariables.DatabaseService10.ElementAt(0)[index][index_] = UIVariables.Service10_SubFunction.ElementAt(index)[index_];
+                    }
+                }
+
+                // Allow session & Addressing mode
+                int n = 0;
+                for (int index = 0; index < 5; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        if (index < 2)
+                        {
+                            status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_AddressingMode[n]);
+                            DatabaseVariables.DatabaseService10.ElementAt(1)[index][index_ + 1] = status;
+                            n++;
+                            if ((index == 1) && (index_ == 2))
+                            {
+                                n = 0;
+                            }
+                        }
+                        else
+                        {
+                            status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_SessionTransition[n]);
+                            DatabaseVariables.DatabaseService10.ElementAt(1)[index][index_ + 1] = status;
+                            n++;
+                        }
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service10_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService10.ElementAt(2)[index][1] = UIVariables.Service10_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service10_InvalidValueCondition[1].Contains(UIVariables.Service10_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service10_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service10_InvalidValueCondition[1], "; " + UIVariables.Service10_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService10.ElementAt(3)[index][1] = UIVariables.Service10_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService10.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService10.ElementAt(3)[index][4] = UIVariables.Service10_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][4] = UIVariables.Service10_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service10_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service10_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService10.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service10_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService10.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service10_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service10_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService10.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[1] = false;
+            }
+        }
+
+        public static void UpdateDB_Service11(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service11_ButtonStatus_ResetMode?.Count(); index++)
+                {
+                    DatabaseVariables.DatabaseService11.ElementAt(0)[index][1] = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_ResetMode[index]);
+                }
+
+                // Allow session & Addressing mode
+                int n = 0;
+                for (int index = 0; index < 5; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_AddressingMode[n]);
+                        DatabaseVariables.DatabaseService11.ElementAt(1)[index][index_ + 1] = status;
+                        n++;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service11_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService11.ElementAt(2)[index][1] = UIVariables.Service11_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service11_InvalidValueCondition[1].Contains(UIVariables.Service10_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service11_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service11_InvalidValueCondition[1], "; " + UIVariables.Service11_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService11.ElementAt(3)[index][1] = UIVariables.Service11_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService11.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService11.ElementAt(3)[index][4] = UIVariables.Service11_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][4] = UIVariables.Service11_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service11_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service11_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService11.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service11_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService11.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service11_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service11_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService11.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[2] = false;
+            }
+        }
+
+        public static void UpdateDB_Service14(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service14_SubFunction?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service14_SubFunction?.ElementAt(index).Count(); index_++)
+                    {
+                        DatabaseVariables.DatabaseService14.ElementAt(0)[index][index_] = UIVariables.Service14_SubFunction.ElementAt(index)[index_];
+                    }
+                }
+
+                // Allow session & Addressing mode
+                int n = 0;
+                for (int index = 0; index < 5; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_AddressingMode[n]);
+                        DatabaseVariables.DatabaseService14.ElementAt(1)[index][index_ + 1] = status;
+                        n++;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service14_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService14.ElementAt(2)[index][1] = UIVariables.Service14_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service14_InvalidValueCondition[1].Contains(UIVariables.Service14_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service14_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service14_InvalidValueCondition[1], "; " + UIVariables.Service14_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService14.ElementAt(3)[index][1] = UIVariables.Service14_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService14.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService14.ElementAt(3)[index][4] = UIVariables.Service14_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][4] = UIVariables.Service14_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service14_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service14_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService14.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service14_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService14.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service14_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service14_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService14.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[3] = false;
+            }
+        }
+
+        //public static void UpdateDB_Service19(bool flag)
+        //{
+        //    string status;
+
+        //    // Specification
+        //    for (int index = 0; index < UIVariables.Service19_SubFunction?.Count(); index++)
+        //    {
+        //        for (int index_ = 0; index_ < UIVariables.Service19_SubFunction?.ElementAt(index).Count(); index_++)
+        //        {
+        //            DatabaseVariables.DatabaseService19.ElementAt(0)[index][index_] = UIVariables.Service19_SubFunction.ElementAt(index)[index_];
+        //        }
+        //    }
+
+        //    // Allow session & Addressing mode
+        //    int n = 0;
+        //    for (int index = 0; index < 5; index++)
+        //    {
+        //        for (int index_ = 0; index_ < 3; index_++)
+        //        {
+        //            if (index < 2)
+        //            {
+        //                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service19_ButtonStatus_AddressingMode[n]);
+        //                DatabaseVariables.DatabaseService19.ElementAt(1)[index][index_ + 1] = status;
+        //                n++;
+        //                if ((index == 1) && (index_ == 2))
+        //                {
+        //                    n = 0;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service19_ButtonStatus_SessionTransition[n]);
+        //                DatabaseVariables.DatabaseService19.ElementAt(1)[index][index_ + 1] = status;
+        //                n++;
+        //            }
+        //        }
+        //    }
+
+        //    // NRC
+        //    for (int index = 0; index < UIVariables.Service19_NRCPriority?.Length; index++)
+        //    {
+        //        DatabaseVariables.DatabaseService19.ElementAt(2)[index][1] = UIVariables.Service19_NRCPriority[index];
+        //    }
+
+
+        //    // Condition
+        //    for (int index = 0; index < UIVariables.Service19_ButtonStatus_Condition?.Length; index++)
+        //    {
+        //        string condition = "";
+        //        switch (index)
+        //        {
+        //            case 0: condition = "Vehicle_Speed"; break;
+        //            case 1: condition = "Engine_Status"; break;
+        //            case 2: condition = "Voltage"; break;
+        //        }
+        //        string[] engineStatusConditionSplit;
+        //        if (UIVariables.Service19_InvalidValueCondition[1].Contains(UIVariables.Service19_ValidValueCondition))
+        //        {
+        //            engineStatusConditionSplit = UIVariables.Service19_InvalidValueCondition[1].Split(';');
+        //        }
+        //        else
+        //        {
+        //            engineStatusConditionSplit = string.Concat(UIVariables.Service19_InvalidValueCondition[1], "; " + UIVariables.Service19_ValidValueCondition).Split(';');
+        //        }
+        //        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service19_ButtonStatus_Condition[index]);
+
+        //        if (index == 0 && status == "1")
+        //        {
+        //            DatabaseVariables.DatabaseService19.ElementAt(3)[index][0] = condition;
+        //            DatabaseVariables.DatabaseService19.ElementAt(3)[index][1] = UIVariables.Service19_InvalidValueCondition[index];
+        //            DatabaseVariables.DatabaseService19.ElementAt(3)[index][3] = status;
+        //            DatabaseVariables.DatabaseService19.ElementAt(3)[index][4] = UIVariables.Service19_NRCCondition[index];
+        //        }
+        //        else if (index == 1 && status == "1")
+        //        {
+        //            for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+        //            {
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index][0] = condition;
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+        //                if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+        //                {
+        //                    DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_][3] = status;
+        //                    DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_][4] = UIVariables.Service19_NRCCondition[index];
+        //                }
+        //                else
+        //                {
+        //                    DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_][3] = "0";
+        //                    DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_][4] = "";
+        //                }
+        //            }
+        //        }
+        //        else if (index == 2 && status == "1")
+        //        {
+        //            for (int index_ = 0; index_ < 2; index_++)
+        //            {
+        //                string voltageName = "";
+        //                switch (index_)
+        //                {
+        //                    case 0: voltageName = "Low"; break;
+        //                    case 1: voltageName = "High"; break;
+        //                }
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service19_InvalidValueCondition[index + index_];
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service19_NRCCondition[index];
+        //            }
+        //        }
+        //        else
+        //        {
+        //            DatabaseVariables.DatabaseService19.ElementAt(3)[index][0] = condition;
+        //            DatabaseVariables.DatabaseService19.ElementAt(3)[index][3] = status;
+        //            if (index == UIVariables.Service19_ButtonStatus_Condition?.Length - 1)
+        //            {
+        //                DatabaseVariables.DatabaseService19.ElementAt(3)[index + 1][3] = status;
+        //            }
+        //        }
+        //    }
+
+        //    // Optional
+        //    for (int index = 0; index < UIVariables.Service19_ButtonStatus_Optional.Length; index++)
+        //    {
+        //        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service19_ButtonStatus_Optional[index]);
+        //        DatabaseVariables.DatabaseService19.ElementAt(4)[index][1] = status;
+        //    }
+        //}
+
+        public static void UpdateDB_Service22(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service22_DIDTable_Specification?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service22_DIDTable_Specification?.ElementAt(index).Count(); index_++)
+                    {
+                        status = UIVariables.Service22_DIDTable_Specification[index][index_];
+                        DatabaseVariables.DatabaseService22.ElementAt(0)[index][index_] = status;
+                    }
+                }
+
+                // Allow Session & Addressing Mode
+                for (int index = 0; index < UIVariables.Service22_DIDTable_AllowSessionAddressingMode?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service22_DIDTable_AllowSessionAddressingMode?.ElementAt(index).Length; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_DIDTable_AllowSessionAddressingMode[index][index_]);
+                        DatabaseVariables.DatabaseService22.ElementAt(1)[index][index_] = status;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service22_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService22.ElementAt(2)[index][1] = UIVariables.Service22_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service22_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service22_InvalidValueCondition[1].Contains(UIVariables.Service22_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service22_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service22_InvalidValueCondition[1], "; " + UIVariables.Service22_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService22.ElementAt(3)[index][1] = UIVariables.Service22_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService22.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService22.ElementAt(3)[index][4] = UIVariables.Service22_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][4] = UIVariables.Service22_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service22_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service22_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService22.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service22_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService22.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service22_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService22.ElementAt(4)[index][1] = status;
+                }
+
+                // Allow Session
+                for (int index = 0; index < UIVariables.Service22_ButtonStatus_AllowSession?.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_AllowSession[index]);
+                    DatabaseVariables.DatabaseService22.ElementAt(5)[index][1] = status;
+                }
+
+                UIVariables.edited_View[5] = false;
+            }
+        }
+
+        public static void UpdateDB_Service2E(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service2E_DIDTable_Specification?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service2E_DIDTable_Specification?.ElementAt(index).Count(); index_++)
+                    {
+                        status = UIVariables.Service2E_DIDTable_Specification[index][index_];
+                        DatabaseVariables.DatabaseService2E.ElementAt(0)[index][index_] = status;
+                    }
+                }
+
+                // Allow session & Addressing Mode
+                for (int index = 0; index < UIVariables.Service2E_DIDTable_AllowSessionAddressingMode?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service2E_DIDTable_AllowSessionAddressingMode?.ElementAt(index).Length; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_DIDTable_AllowSessionAddressingMode[index][index_]);
+                        DatabaseVariables.DatabaseService2E.ElementAt(1)[index][index_] = status;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service2E_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService2E.ElementAt(2)[index][1] = UIVariables.Service2E_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service2E_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service2E_InvalidValueCondition[1].Contains(UIVariables.Service2E_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service2E_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service2E_InvalidValueCondition[1], "; " + UIVariables.Service2E_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1] = UIVariables.Service2E_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService2E.ElementAt(3)[index][4] = UIVariables.Service2E_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][4] = UIVariables.Service2E_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service2E_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service2E_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service2E_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService2E.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service2E_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService2E.ElementAt(4)[index][1] = status;
+                }
+
+                // Allow Session (SID support)
+                for (int index = 0; index < UIVariables.Service2E_ButtonStatus_AllowSession?.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_AllowSession[index]);
+                    DatabaseVariables.DatabaseService2E.ElementAt(5)[index][1] = status;
+                }
+
+                UIVariables.edited_View[6] = false;
+            }
+        }
+
+        public static void UpdateDB_Service27(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service27_SubFunction?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service27_SubFunction?.ElementAt(index).Count(); index_++)
+                    {
+                        DatabaseVariables.DatabaseService27.ElementAt(0)[index][index_] = UIVariables.Service27_SubFunction.ElementAt(index)[index_];
+                    }
+                }
+
+                // Allow Session || Addressing Mode
+                int n = 0;
+                for (int index = 0; index < 2; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service27_ButtonStatus_AddressingMode[n]);
+                        DatabaseVariables.DatabaseService27.ElementAt(1)[index][index_ + 1] = status;
+                        n++;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service27_NRCPrioritySeed?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService27.ElementAt(2)[index][1] = UIVariables.Service27_NRCPrioritySeed[index];
+                }
+                for (int index = 0; index < UIVariables.Service27_NRCPriorityKey?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService27.ElementAt(2)[index][2] = UIVariables.Service27_NRCPriorityKey[index];
+                }
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service27_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service27_InvalidValueCondition[1].Contains(UIVariables.Service27_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service27_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service27_InvalidValueCondition[1], "; " + UIVariables.Service27_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service27_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService27.ElementAt(3)[index][1] = UIVariables.Service27_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService27.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService27.ElementAt(3)[index][4] = UIVariables.Service27_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][4] = UIVariables.Service27_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service27_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service27_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService27.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service27_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService27.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service27_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service27_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService27.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[7] = false;
+            }
+        }
+
+        public static void UpdateDB_Service28(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service28_ButtonStatus_ControlType?.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service28_ButtonStatus_ControlType[index]);
+                    DatabaseVariables.DatabaseService28.ElementAt(0)[index][1] = status;
+                }
+                for (int index = 0; index < UIVariables.Service28_ButtonStatus_CommunicationType?.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service28_ButtonStatus_CommunicationType[index]);
+                    DatabaseVariables.DatabaseService28.ElementAt(0)[index][3] = status;
+                }
+
+                // Allow session & Addressing mode
+                int n = 0;
+                for (int index = 0; index < 5; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service28_ButtonStatus_AddressingMode[n]);
+                        DatabaseVariables.DatabaseService28.ElementAt(1)[index][index_ + 1] = status;
+                        n++;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service28_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService28.ElementAt(2)[index][1] = UIVariables.Service28_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service28_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service28_InvalidValueCondition[1].Contains(UIVariables.Service28_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service28_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service28_InvalidValueCondition[1], "; " + UIVariables.Service28_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service28_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService28.ElementAt(3)[index][1] = UIVariables.Service28_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService28.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService28.ElementAt(3)[index][4] = UIVariables.Service28_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][4] = UIVariables.Service28_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service28_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service28_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService28.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service28_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService28.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service28_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service28_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService28.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[8] = false;
+            }
+        }
+        //public static void UpdateDB_Service31(bool flag)
+        //{
+        //    string status;
+
+        //    // Specification
+        //    for (int index = 0; index < UIVariables.Service31_SubFunction?.Count(); index++)
+        //    {
+        //        for (int index_ = 0; index_ < UIVariables.Service31_SubFunction?.ElementAt(index).Count(); index_++)
+        //        {
+        //            DatabaseVariables.DatabaseService31.ElementAt(0)[index][index_] = UIVariables.Service31_SubFunction.ElementAt(index)[index_];
+        //        }
+        //    }
+
+        //    // Allow session & Addressing mode
+        //    int n = 0;
+        //    for (int index = 0; index < 5; index++)
+        //    {
+        //        for (int index_ = 0; index_ < 3; index_++)
+        //        {
+        //            if (index < 2)
+        //            {
+        //                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service31_ButtonStatus_AddressingMode[n]);
+        //                DatabaseVariables.DatabaseService31.ElementAt(1)[index][index_ + 1] = status;
+        //                n++;
+        //                if ((index == 1) && (index_ == 2))
+        //                {
+        //                    n = 0;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service31_ButtonStatus_SessionTransition[n]);
+        //                DatabaseVariables.DatabaseService31.ElementAt(1)[index][index_ + 1] = status;
+        //                n++;
+        //            }
+        //        }
+        //    }
+
+        //    // NRC
+        //    for (int index = 0; index < UIVariables.Service31_NRCPriority?.Length; index++)
+        //    {
+        //        DatabaseVariables.DatabaseService31.ElementAt(2)[index][1] = UIVariables.Service31_NRCPriority[index];
+        //    }
+
+
+        //    // Condition
+        //    for (int index = 0; index < UIVariables.Service31_ButtonStatus_Condition?.Length; index++)
+        //    {
+        //        string condition = "";
+        //        switch (index)
+        //        {
+        //            case 0: condition = "Vehicle_Speed"; break;
+        //            case 1: condition = "Engine_Status"; break;
+        //            case 2: condition = "Voltage"; break;
+        //        }
+        //        string[] engineStatusConditionSplit;
+        //        if (UIVariables.Service31_InvalidValueCondition[1].Contains(UIVariables.Service31_ValidValueCondition))
+        //        {
+        //            engineStatusConditionSplit = UIVariables.Service31_InvalidValueCondition[1].Split(';');
+        //        }
+        //        else
+        //        {
+        //            engineStatusConditionSplit = string.Concat(UIVariables.Service31_InvalidValueCondition[1], "; " + UIVariables.Service31_ValidValueCondition).Split(';');
+        //        }
+        //        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service31_ButtonStatus_Condition[index]);
+
+        //        if (index == 0 && status == "1")
+        //        {
+        //            DatabaseVariables.DatabaseService31.ElementAt(3)[index][0] = condition;
+        //            DatabaseVariables.DatabaseService31.ElementAt(3)[index][1] = UIVariables.Service31_InvalidValueCondition[index];
+        //            DatabaseVariables.DatabaseService31.ElementAt(3)[index][3] = status;
+        //            DatabaseVariables.DatabaseService31.ElementAt(3)[index][4] = UIVariables.Service31_NRCCondition[index];
+        //        }
+        //        else if (index == 1 && status == "1")
+        //        {
+        //            for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+        //            {
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index][0] = condition;
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+        //                if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+        //                {
+        //                    DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_][3] = status;
+        //                    DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_][4] = UIVariables.Service31_NRCCondition[index];
+        //                }
+        //                else
+        //                {
+        //                    DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_][3] = "0";
+        //                    DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_][4] = "";
+        //                }
+        //            }
+        //        }
+        //        else if (index == 2 && status == "1")
+        //        {
+        //            for (int index_ = 0; index_ < 2; index_++)
+        //            {
+        //                string voltageName = "";
+        //                switch (index_)
+        //                {
+        //                    case 0: voltageName = "Low"; break;
+        //                    case 1: voltageName = "High"; break;
+        //                }
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service31_InvalidValueCondition[index + index_];
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service31_NRCCondition[index];
+        //            }
+        //        }
+        //        else
+        //        {
+        //            DatabaseVariables.DatabaseService31.ElementAt(3)[index][0] = condition;
+        //            DatabaseVariables.DatabaseService31.ElementAt(3)[index][3] = status;
+        //            if (index == UIVariables.Service31_ButtonStatus_Condition?.Length - 1)
+        //            {
+        //                DatabaseVariables.DatabaseService31.ElementAt(3)[index + 1][3] = status;
+        //            }
+        //        }
+        //    }
+
+        //    // Optional
+        //    for (int index = 0; index < UIVariables.Service31_ButtonStatus_Optional.Length; index++)
+        //    {
+        //        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service31_ButtonStatus_Optional[index]);
+        //        DatabaseVariables.DatabaseService31.ElementAt(4)[index][1] = status;
+        //    }
+        //}
+
+        //public static void UpdateDB_Service85(bool flag)
+        //{
+        //    string status;
+
+        //    // Specification
+        //    for (int index = 0; index < UIVariables.Service85_SubFunction?.Count(); index++)
+        //    {
+        //        for (int index_ = 0; index_ < UIVariables.Service85_SubFunction?.ElementAt(index).Count(); index_++)
+        //        {
+        //            DatabaseVariables.DatabaseService85.ElementAt(0)[index][index_] = UIVariables.Service85_SubFunction.ElementAt(index)[index_];
+        //        }
+        //    }
+
+        //    // Allow session & Addressing mode
+        //    int n = 0;
+        //    for (int index = 0; index < 5; index++)
+        //    {
+        //        for (int index_ = 0; index_ < 3; index_++)
+        //        {
+        //            if (index < 2)
+        //            {
+        //                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_AddressingMode[n]);
+        //                DatabaseVariables.DatabaseService85.ElementAt(1)[index][index_ + 1] = status;
+        //                n++;
+        //                if ((index == 1) && (index_ == 2))
+        //                {
+        //                    n = 0;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_SessionTransition[n]);
+        //                DatabaseVariables.DatabaseService85.ElementAt(1)[index][index_ + 1] = status;
+        //                n++;
+        //            }
+        //        }
+        //    }
+
+        //    // NRC
+        //    for (int index = 0; index < UIVariables.Service85_NRCPriority?.Length; index++)
+        //    {
+        //        DatabaseVariables.DatabaseService85.ElementAt(2)[index][1] = UIVariables.Service85_NRCPriority[index];
+        //    }
+
+
+        //    // Condition
+        //    for (int index = 0; index < UIVariables.Service85_ButtonStatus_Condition?.Length; index++)
+        //    {
+        //        string condition = "";
+        //        switch (index)
+        //        {
+        //            case 0: condition = "Vehicle_Speed"; break;
+        //            case 1: condition = "Engine_Status"; break;
+        //            case 2: condition = "Voltage"; break;
+        //        }
+        //        string[] engineStatusConditionSplit;
+        //        if (UIVariables.Service85_InvalidValueCondition[1].Contains(UIVariables.Service85_ValidValueCondition))
+        //        {
+        //            engineStatusConditionSplit = UIVariables.Service85_InvalidValueCondition[1].Split(';');
+        //        }
+        //        else
+        //        {
+        //            engineStatusConditionSplit = string.Concat(UIVariables.Service85_InvalidValueCondition[1], "; " + UIVariables.Service85_ValidValueCondition).Split(';');
+        //        }
+        //        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Condition[index]);
+
+        //        if (index == 0 && status == "1")
+        //        {
+        //            DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
+        //            DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = UIVariables.Service85_InvalidValueCondition[index];
+        //            DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
+        //            DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = UIVariables.Service85_NRCCondition[index];
+        //        }
+        //        else if (index == 1 && status == "1")
+        //        {
+        //            for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+        //            {
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+        //                if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+        //                {
+        //                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = status;
+        //                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][4] = UIVariables.Service85_NRCCondition[index];
+        //                }
+        //                else
+        //                {
+        //                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = "0";
+        //                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][4] = "";
+        //                }
+        //            }
+        //        }
+        //        else if (index == 2 && status == "1")
+        //        {
+        //            for (int index_ = 0; index_ < 2; index_++)
+        //            {
+        //                string voltageName = "";
+        //                switch (index_)
+        //                {
+        //                    case 0: voltageName = "Low"; break;
+        //                    case 1: voltageName = "High"; break;
+        //                }
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service85_InvalidValueCondition[index + index_];
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service85_NRCCondition[index];
+        //            }
+        //        }
+        //        else
+        //        {
+        //            DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
+        //            DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
+        //            if (index == UIVariables.Service85_ButtonStatus_Condition?.Length - 1)
+        //            {
+        //                DatabaseVariables.DatabaseService85.ElementAt(3)[index + 1][3] = status;
+        //            }
+        //        }
+        //    }
+
+        //    // Optional
+        //    for (int index = 0; index < UIVariables.Service85_ButtonStatus_Optional.Length; index++)
+        //    {
+        //        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Optional[index]);
+        //        DatabaseVariables.DatabaseService85.ElementAt(4)[index][1] = status;
+        //    }
+        //}
+
+        public static void UpdateDB_Service3E(bool flag)
+        {
+            if (flag)
+            {
+                string status;
+
+                // Specification
+                for (int index = 0; index < UIVariables.Service3E_SubFunction?.Count(); index++)
+                {
+                    for (int index_ = 0; index_ < UIVariables.Service3E_SubFunction?.ElementAt(index).Count(); index_++)
+                    {
+                        DatabaseVariables.DatabaseService3E.ElementAt(0)[index][index_] = UIVariables.Service3E_SubFunction.ElementAt(index)[index_];
+                    }
+                }
+
+                // Allow session & Addressing mode
+                int n = 0;
+                for (int index = 0; index < 2; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service3E_ButtonStatus_AddressingMode[n]);
+                        DatabaseVariables.DatabaseService3E.ElementAt(1)[index][index_ + 1] = status;
+                        n++;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < UIVariables.Service3E_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService3E.ElementAt(2)[index][1] = UIVariables.Service3E_NRCPriority[index];
+                }
+
+
+                // Condition
+                for (int index = 0; index < UIVariables.Service3E_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service3E_InvalidValueCondition[1].Contains(UIVariables.Service3E_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service3E_InvalidValueCondition[1].Split(';');
+                    }
+                    else
+                    {
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service3E_InvalidValueCondition[1], "; " + UIVariables.Service3E_ValidValueCondition).Split(';');
+                    }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service3E_ButtonStatus_Condition[index]);
+
+                    if (index == 0 && status == "1")
+                    {
+                        DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1] = UIVariables.Service3E_InvalidValueCondition[index];
+                        DatabaseVariables.DatabaseService3E.ElementAt(3)[index][3] = status;
+                        DatabaseVariables.DatabaseService3E.ElementAt(3)[index][4] = UIVariables.Service3E_NRCCondition[index];
+                    }
+                    else if (index == 1 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                        {
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                            {
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][3] = status;
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][4] = UIVariables.Service3E_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][3] = "0";
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][4] = "";
+                            }
+                        }
+                    }
+                    else if (index == 2 && status == "1")
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service3E_InvalidValueCondition[index + index_];
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = status;
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service3E_NRCCondition[index];
+                        }
+                    }
+                    else
+                    {
+                        DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
+                        DatabaseVariables.DatabaseService3E.ElementAt(3)[index][3] = status;
+                        if (index == UIVariables.Service3E_ButtonStatus_Condition?.Length - 1)
+                        {
+                            DatabaseVariables.DatabaseService3E.ElementAt(3)[index + 1][3] = status;
+                        }
+                    }
+                }
+
+                // Optional
+                for (int index = 0; index < UIVariables.Service3E_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service3E_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService3E.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[10] = false;
+            }
+        }
+
     }
 }

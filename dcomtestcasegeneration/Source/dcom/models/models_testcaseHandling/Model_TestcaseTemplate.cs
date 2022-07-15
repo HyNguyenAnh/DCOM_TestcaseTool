@@ -51,14 +51,14 @@ namespace dcom.models.models_testcaseHandling
             Model_PushTestcaseService10.PushTestcaseService10(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[0]);
             Model_PushTestcaseService11.PushTestcaseService11(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[1]);
             Model_PushTestcaseService14.PushTestcaseService14(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[2]);
-            Model_PushTestcaseService19.PushTestcaseService19(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[3]);
+            //Model_PushTestcaseService19.PushTestcaseService19(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[3]);
             Model_PushTestcaseService22.PushTestcaseService22(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[4]);
             Model_PushTestcaseService27.PushTestcaseService27(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[5]);
             Model_PushTestcaseService28.PushTestcaseService28(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[6]);
             Model_PushTestcaseService2E.PushTestcaseService2E(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[7]);
-            Model_PushTestcaseService31.PushTestcaseService31(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[8]);
+            //Model_PushTestcaseService31.PushTestcaseService31(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[8]);
             Model_PushTestcaseService3E.PushTestcaseService3E(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[9]);
-            Model_PushTestcaseService85.PushTestcaseService85(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[10]);
+            //Model_PushTestcaseService85.PushTestcaseService85(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[10]);
             //Model_PushTestcaseCanTP.PushTestcaseCanTP(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[11]);
         }
 

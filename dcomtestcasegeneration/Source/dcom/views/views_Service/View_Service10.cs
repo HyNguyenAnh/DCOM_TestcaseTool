@@ -339,46 +339,121 @@ namespace dcom.views.views_Service
         private void button_DtoP_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_DtoP.BackColor.Name.ToString());
+            if (UIVariables.Service10_ButtonStatus_SessionTransition[1] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[2][2]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void button_DtoE_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_DtoE.BackColor.Name.ToString());
+            if (UIVariables.Service10_ButtonStatus_SessionTransition[2] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[2][3]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void button_PtoD_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PtoD.BackColor.Name.ToString());
+            if (UIVariables.Service10_ButtonStatus_SessionTransition[3] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[3][1]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void button_PtoE_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PtoE.BackColor.Name.ToString());
+            if (UIVariables.Service10_ButtonStatus_SessionTransition[5] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[3][3]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void button_EtoD_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[6] = Controller_ServiceHandling.ConvertFromStatusToBool(button_EtoD.BackColor.Name.ToString());
+            if (UIVariables.Service10_ButtonStatus_SessionTransition[6] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[4][1]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void button_EtoP_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[7] = Controller_ServiceHandling.ConvertFromStatusToBool(button_EtoP.BackColor.Name.ToString());
+            if (UIVariables.Service10_ButtonStatus_SessionTransition[7] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[4][2]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_Optional[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
+            if (UIVariables.Service10_ButtonStatus_Optional[0] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(4)[0][1]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
         }
 
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
         {
             Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service10_NRCPriority);
+            for(int index = 0; dataGridView_NRCPriority.Rows[0].Cells[index].Value.ToString() != ""; index++)
+            {
+                if (dataGridView_NRCPriority.Rows[0].Cells[index].Value.ToString() != DatabaseVariables.DatabaseService10?.ElementAt(2)[index][1])
+                {
+                    UIVariables.edited_View[1] = true;
+                }
+                else
+                {
+                    UIVariables.edited_View[1] = false;
+                }
+            }
         }
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
-            if(UIVariables.Service10_ButtonStatus_Condition[1] == true)
+            if (UIVariables.Service10_ButtonStatus_Condition[1] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(3)[1][3]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
+            if (UIVariables.Service10_ButtonStatus_Condition[1] == true)
             {
                 comboBox_ConditionEngine_NRC.Enabled = true;
                 comboBox_ConditionEngine_NRC.Text = UIVariables.Service10_NRCCondition[1];
@@ -401,6 +476,14 @@ namespace dcom.views.views_Service
         private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+            if (UIVariables.Service10_ButtonStatus_Condition[0] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(3)[0][3]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
             if (UIVariables.Service10_ButtonStatus_Condition[0] == true)
             {
                 comboBox_ConditionVehicle_NRC.Enabled = true;
@@ -420,6 +503,14 @@ namespace dcom.views.views_Service
         private void button_ConditionVoltage_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_Condition[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVoltage.Text);
+            if (UIVariables.Service10_ButtonStatus_Condition[2] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(3)[3][3]))
+            {
+                UIVariables.edited_View[1] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[1] = false;
+            }
             if (UIVariables.Service10_ButtonStatus_Condition[2] == true)
             {
                 comboBox_ConditionVoltage_NRC.Enabled = true;

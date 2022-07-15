@@ -27,8 +27,7 @@ namespace dcom.models.models_systemHandling
                     Model_SystemInformation.readBackupFile(SystemVariables.backupFilePath);
 
                     // Load data from database
-                    string databasePath = UIVariables.DatabasePath;
-                    Controllers_FunctionButton.ButtonLoadDataClick(databasePath);
+                    Controllers_FunctionButton.ButtonLoadDataClick(UIVariables.DatabasePath);
                     SystemVariables.checkTheFirstLoad = false;
 
                 }
