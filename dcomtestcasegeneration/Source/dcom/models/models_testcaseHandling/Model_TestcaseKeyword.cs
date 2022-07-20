@@ -820,7 +820,9 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService14(string parametter, bool isSIDSupportedInActiveSession, bool isParameterSupported, 
+        public static string[] RequestService14(string parametter, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession,
+                                                bool suppressBitEnabledStatus, bool isSuppressBitSupported,
+                                                bool isSIDSupportedInActiveSession, bool isParameterSupported, 
                                                 bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {

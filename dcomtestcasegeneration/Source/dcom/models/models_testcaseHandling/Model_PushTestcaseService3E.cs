@@ -144,8 +144,8 @@ namespace dcom.models.models_testcaseHandling
                 ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
                 rowIndex++;
+                startRowIndex++;
             }
-            //startRowIndex++;
             for (int index = 0; index < EngineStatusCondition.Count; index++)
             {
                 subRowIndex++;
@@ -161,8 +161,8 @@ namespace dcom.models.models_testcaseHandling
                 ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
                 rowIndex++;
+                startRowIndex++;
             }
-            //startRowIndex++;
             for (int index = 0; index < VoltageCondition.Count; index++)
             {
                 subRowIndex++;
@@ -180,6 +180,7 @@ namespace dcom.models.models_testcaseHandling
                 rowIndex++;
             }
         }
+        
         public static void NRCComponent(Worksheet ws, int startRowIndex)
         {
             subRowIndex++;

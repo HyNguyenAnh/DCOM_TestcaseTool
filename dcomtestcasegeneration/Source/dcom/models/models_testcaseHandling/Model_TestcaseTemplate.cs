@@ -50,7 +50,7 @@ namespace dcom.models.models_testcaseHandling
         {
             Model_PushTestcaseService10.PushTestcaseService10(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[0]);
             Model_PushTestcaseService11.PushTestcaseService11(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[1]);
-            Model_PushTestcaseService14.PushTestcaseService14(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[2]);
+            //Model_PushTestcaseService14.PushTestcaseService14(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[2]);
             //Model_PushTestcaseService19.PushTestcaseService19(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[3]);
             Model_PushTestcaseService22.PushTestcaseService22(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[4]);
             Model_PushTestcaseService27.PushTestcaseService27(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[5]);
@@ -117,17 +117,13 @@ namespace dcom.models.models_testcaseHandling
                 {
                     Ws.Range[Ws.Cells[rowIndex, TestcaseVariables.IDColumnIndex], Ws.Cells[rowIndex, TestcaseVariables.ProjectColumnIndex]].Font.Bold = true;
                     Ws.Range[Ws.Cells[rowIndex, TestcaseVariables.IDColumnIndex], Ws.Cells[rowIndex, TestcaseVariables.ProjectColumnIndex]].Interior.Color = TestcaseVariables.ColorTestGroupInterior;
-
                 }
                 else
                 {
                     Ws.Range[Ws.Cells[rowIndex, TestcaseVariables.IDColumnIndex], Ws.Cells[rowIndex, TestcaseVariables.ProjectColumnIndex]].Font.Bold = false;
                     Ws.Range[Ws.Cells[rowIndex, TestcaseVariables.IDColumnIndex], Ws.Cells[rowIndex, TestcaseVariables.ProjectColumnIndex]].Interior.Color = TestcaseVariables.ColorTestCaseInterior;
-
                 }
             }
-
-            
         }
     }
 }

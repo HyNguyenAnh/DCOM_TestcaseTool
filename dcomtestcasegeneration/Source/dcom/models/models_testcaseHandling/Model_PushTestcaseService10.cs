@@ -39,7 +39,7 @@ namespace dcom.models.models_testcaseHandling
                 SessionTransitionComponent(ws, rowIndex);
                 AddressingModeComponent(ws, rowIndex);
                 SuppressBitComponent(ws, rowIndex);
-                //ConditionCheckComponent(ws, rowIndex);
+                ConditionCheckComponent(ws, rowIndex);
                 //FlashBootloaderComponent(ws, rowIndex);
                 //NRCComponent(ws, rowIndex);
 
