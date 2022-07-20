@@ -183,16 +183,16 @@ namespace dcom.declaration
             UIVariables.edited_View = new bool[13]
             {
                 true,  // View Setting
-                false,  // View Service 10
-                false,  // View Service 11
-                false,  // View Service 14
+                true,  // View Service 10
+                true,  // View Service 11
+                true,  // View Service 14
                 false,  // View Service 19
-                false,  // View Service 22
-                false,  // View Service 2E
-                false,  // View Service 27
-                false,  // View Service 28
+                true,  // View Service 22
+                true,  // View Service 2E
+                true,  // View Service 27
+                true,  // View Service 28
                 false,  // View Service 31
-                false,  // View Service 3E
+                true,  // View Service 3E
                 false,  // View Service 85
                 false,  // View CanTP
             };

@@ -20,6 +20,11 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> Condition = DatabaseVariables.DatabaseService11.ElementAt(3);
         public static List<string[]> Optional = DatabaseVariables.DatabaseService11.ElementAt(4);
 
+        // Condition
+        public static List<string[]> VehicleSpeedCondition { get; set; }
+        public static List<string[]> EngineStatusCondition { get; set; }
+        public static List<string[]> VoltageCondition { get; set; }
+
         public static void PushTestcaseService11(Worksheet ws, int startRowIndex, bool selectedStatus)
         {          
             if (selectedStatus)
@@ -30,7 +35,7 @@ namespace dcom.models.models_testcaseHandling
                 AllowSessionComponent(ws, rowIndex);
                 AddressingModeComponent(ws, rowIndex);
                 SuppressBitComponent(ws, rowIndex);
-                //ConditionCheckComponent(ws, rowIndex);
+                ConditionCheckComponent(ws, rowIndex);
                 //NRCComponent(ws, rowIndex);
 
                 // return a current ID
@@ -98,20 +103,79 @@ namespace dcom.models.models_testcaseHandling
         }
         public static void ConditionCheckComponent(Worksheet ws, int startRowIndex)
         {
-            subRowIndex++;
+            string GetSubServiceTestGroupIndex;
+            VehicleSpeedCondition = new List<string[]>();
+            EngineStatusCondition = new List<string[]>();
+            VoltageCondition = new List<string[]>();
+            // Get groups of Condition
+            for (int index = 0; index < Condition.Count; index++)
+            {
+                if (Condition[index][0] == "Vehicle_Speed")
+                {
+                    VehicleSpeedCondition.Add(Condition[index]);
+                }
+                else if (Condition[index][0] == "Engine_Status")
+                {
+                    EngineStatusCondition.Add(Condition[index]);
+                }
+                else
+                {
+                    VoltageCondition.Add(Condition[index]);
+                }
+            }
 
-            ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex + " Check all supported condition in service 0x" + SID;
-            ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
-            ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService11.GetTestRequestConditionCheckComponent()[0];
-            ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService11.GetTestRequestConditionCheckComponent()[1];
-            ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService11.GetTestRequestConditionCheckComponent()[2];
-            ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
-            ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+            for (int index = 0; index < VehicleSpeedCondition.Count; index++)
+            {
+                subRowIndex++;
+                GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex}.{subRowIndex}: Check {VehicleSpeedCondition.ElementAt(index)[0]} ({VehicleSpeedCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
+                ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService3E.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[0];
+                ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService3E.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[1];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService3E.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[2];
+                ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
+                rowIndex++;
+                startRowIndex++;
+            }
+            for (int index = 0; index < EngineStatusCondition.Count; index++)
+            {
+                subRowIndex++;
+                GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex}.{subRowIndex}: Check {EngineStatusCondition.ElementAt(index)[0]} ({EngineStatusCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
+                ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService3E.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[0];
+                ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService3E.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[1];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService3E.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[2];
+                ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
-            rowIndex++;
+                rowIndex++;
+                startRowIndex++;
+            }
+            
+            for (int index = 0; index < VoltageCondition.Count; index++)
+            {
+                subRowIndex++;
+                GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex}.{subRowIndex}: Check {VoltageCondition.ElementAt(index)[0]} ({VoltageCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
+                ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService3E.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[0];
+                ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService3E.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[1];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService3E.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[2];
+                ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+
+                rowIndex++;
+                startRowIndex++;
+            }
         }
         public static void NRCComponent(Worksheet ws, int startRowIndex)
         {

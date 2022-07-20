@@ -655,5 +655,10 @@ namespace dcom.views.views_ToolBar
         {
             button_canTP_tc.Margin = new Padding(buttonLeaveMargin);
         }
+
+        private void radioButton_DBSourceLocal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
