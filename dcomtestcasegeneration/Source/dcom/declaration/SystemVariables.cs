@@ -14,6 +14,7 @@ namespace dcom.declaration
         public static string backupFilePath { get; set; }
         public static string backupFileName { get; set; }
         public static bool checkTheFirstLoad { get; set; }
+        public static bool checkDBVariableDefinitionStatus { get; set; }
         public static string templateFileServerPath { get; set; }
         public static string templateFileLocalPath { get; set; }
 

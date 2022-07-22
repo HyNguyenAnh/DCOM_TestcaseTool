@@ -178,6 +178,7 @@ namespace dcom.models.models_testcaseHandling
                 ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
                 rowIndex++;
+                startRowIndex++;
             }
         }
         
@@ -257,7 +258,6 @@ namespace dcom.models.models_testcaseHandling
                     (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                     (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
                     ;
-                TestStepIndex += 2;
                 switch (index)
                 {
                     case 0: TestStep += step; break;
@@ -306,11 +306,11 @@ namespace dcom.models.models_testcaseHandling
                             case 1: AllowedSessionList = AllowedSessionListInPhysical; break;
                         }
                         step +=
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
-                                                                                                isSubFunctionSupportedInActiveSession: true,
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunctionMode[subIndex], isSubFunctionSupported: true,
+                                                                                                isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
                                                                                                 suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                 isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
-                                                                                                isParameterSupported: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
+                                                                                                isParameterSupported: true,
                                                                                                 addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n"
                             ;
                         TestStepIndex += 1;
@@ -322,8 +322,6 @@ namespace dcom.models.models_testcaseHandling
                     (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                     (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestTesterPresent(status: false, timeout: 100)[index] + "\n"
                     ;
-                TestStepIndex += 3;
-
                 switch (index)
                 {
                     case 0: TestStep += step; break;
@@ -345,6 +343,7 @@ namespace dcom.models.models_testcaseHandling
             string TestResponse = "";
             string TeststepKeyword = "";
             string[] str;
+            string[] AllowedSessionList = new string[] { };
 
 
             for (int index = 0; index < 3; index++)
@@ -364,11 +363,16 @@ namespace dcom.models.models_testcaseHandling
                     TestStepIndex += 3;
                     for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                     {
+                        switch (addressingModeIndex)
+                        {
+                            case 0: AllowedSessionList = AllowedSessionListInFunctional; break;
+                            case 1: AllowedSessionList = AllowedSessionListInPhysical; break;
+                        }
                         step +=
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
-                                                                                            isSubFunctionSupportedInActiveSession: true,
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunctionMode[subIndex], isSubFunctionSupported: true,
+                                                                                            isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
                                                                                             suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
-                                                                                            isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[Int32.Parse(subFunctionMode[subIndex])]),
+                                                                                            isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
                                                                                             isParameterSupported: true,
                                                                                             addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1))[index] + "\n"
                             ;
@@ -386,61 +390,6 @@ namespace dcom.models.models_testcaseHandling
                     case 1: TestResponse += step; break;
                     case 2: TeststepKeyword += step; break;
                 }
-                //step =
-                //    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                //    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                //    (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
-                //    (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: Specification.ElementAt(0)[0], isSubFunctionSupported: true, 
-                //                                                                        isSubFunctionSupportedInActiveSession: true, 
-                //                                                                        suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport, 
-                //                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                //                                                                        isParameterSupported: true,
-                //                                                                        addressingMode: true)[index] + "\n" +
-                //    (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: Specification.ElementAt(0)[0], isSubFunctionSupported: true,
-                //                                                                        isSubFunctionSupportedInActiveSession: true,
-                //                                                                        suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
-                //                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInFunctional[1]),
-                //                                                                        isParameterSupported: true,
-                //                                                                        addressingMode: false)[index] + "\n" +
-                //    (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
-                //    (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                //    (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("03", true)[index] + "\n" +
-                //    (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: Specification.ElementAt(0)[0], isSubFunctionSupported: true,
-                //                                                                        isSubFunctionSupportedInActiveSession: true,
-                //                                                                        suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
-                //                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[3]),
-                //                                                                        isParameterSupported: true,
-                //                                                                        addressingMode: true)[index] + "\n" +
-                //    (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: Specification.ElementAt(0)[0], isSubFunctionSupported: true,
-                //                                                                        isSubFunctionSupportedInActiveSession: true,
-                //                                                                        suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
-                //                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInFunctional[3]),
-                //                                                                        isParameterSupported: true,
-                //                                                                        addressingMode: false)[index] + "\n" +
-                //    (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
-                //    (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                //    (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("02", true)[index] + "\n" +
-                //    (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: Specification.ElementAt(0)[0], isSubFunctionSupported: true,
-                //                                                                        isSubFunctionSupportedInActiveSession: true,
-                //                                                                        suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
-                //                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[2]),
-                //                                                                        isParameterSupported: true,
-                //                                                                        addressingMode: true)[index] + "\n" +
-                //    (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: Specification.ElementAt(0)[0], isSubFunctionSupported: true,
-                //                                                                        isSubFunctionSupportedInActiveSession: true,
-                //                                                                        suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
-                //                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInFunctional[2]),
-                //                                                                        isParameterSupported: true,
-                //                                                                        addressingMode: false)[index] + "\n" +
-                //    (TestStepIndex + 16) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                //    (TestStepIndex + 17) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n"
-                //    ;
-                //switch (index)
-                //{
-                //    case 0: TestStep += step; break;
-                //    case 1: TestResponse += step; break;
-                //    case 2: TeststepKeyword += step; break;
-                //}
             }
             str = new string[3]
             {
@@ -456,6 +405,7 @@ namespace dcom.models.models_testcaseHandling
             string TestResponse = "";
             string TeststepKeyword = "";
             string[] str;
+            string[] AllowedSessionList = new string[] { };
             double invalidValue;
 
             if (Controller_ServiceHandling.ConvertFromStringToBool(conditionGroupTestcase[3]))
@@ -478,15 +428,20 @@ namespace dcom.models.models_testcaseHandling
                     TestStepIndex += 1;
                     for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                     {
-                        for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                        for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                         {
+                            switch (addressingModeIndex)
+                            {
+                                case 0: AllowedSessionList = AllowedSessionListInFunctional; break;
+                                case 1: AllowedSessionList = AllowedSessionListInPhysical; break;
+                            }
                             step +=
                                 (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
                                                                                                     isSubFunctionSupportedInActiveSession: true,
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: true,
                                                                                                     isParameterSupported: true,
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), 
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1), 
                                                                                                     invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                     conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;
@@ -515,7 +470,7 @@ namespace dcom.models.models_testcaseHandling
                         TestStepIndex += 1;
                         for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                         {
-                            for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                            for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                             {
                                 step +=
                                     (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
@@ -523,7 +478,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: true,
                                                                                                         isParameterSupported: true,
-                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), invalidValue: invalidValue,
+                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1), invalidValue: invalidValue,
                                                                                                         setInvalidValue: invalidValue - 0.2 + (0.2 * vehicleValue),
                                                                                                         conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                     ;
@@ -536,7 +491,7 @@ namespace dcom.models.models_testcaseHandling
                         TestStepIndex += 1;
                         for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                         {
-                            for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                            for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                             {
                                 step +=
                                     (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
@@ -544,7 +499,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: true,
                                                                                                         isParameterSupported: true,
-                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), 
+                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1), 
                                                                                                         invalidValue: invalidValue, setInvalidValue: 0, 
                                                                                                         conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                     ;
@@ -578,26 +533,29 @@ namespace dcom.models.models_testcaseHandling
             int TestStepIndex = 0;
             string[] str;
             double invalidValue;
+            double validValue;
 
             if (Controller_ServiceHandling.ConvertFromStringToBool(conditionGroupTestcase[3]))
             {
                 invalidValue = Convert.ToDouble(conditionGroupTestcase[1]);
+                validValue = 0;
             }
             else
             {
                 invalidValue = 0;
+                validValue = Convert.ToDouble(conditionGroupTestcase[1]);
             }
             
             for (int index = 0; index < 3; index++)
             {
                 string step = "";
                 step +=
-                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetEngineStatus(setInvalidValue: invalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetEngineStatus(invalidValue: invalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
                     ;
                 TestStepIndex += 1;
                 for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                 {
-                    for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                    for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                     {
                         step +=
                             (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
@@ -605,8 +563,8 @@ namespace dcom.models.models_testcaseHandling
                                                                                                 suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                 isSIDSupportedInActiveSession: true,
                                                                                                 isParameterSupported: true,
-                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), 
-                                                                                                invalidValue: invalidValue, setInvalidValue: invalidValue,
+                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1), 
+                                                                                                invalidValue: invalidValue, setInvalidValue: validValue,
                                                                                                 conditionIndex: 2, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                             ;
                         TestStepIndex += 1;
@@ -634,28 +592,29 @@ namespace dcom.models.models_testcaseHandling
             string TeststepKeyword = "";
             int TestStepIndex = 0;
             string[] str;
-            double invalidValue;
+            double invalidValue = 12;
+            double setInvalidValue;
 
             if (Controller_ServiceHandling.ConvertFromStringToBool(conditionGroupTestcase[3]))
             {
-                invalidValue = 12;
+                setInvalidValue = Convert.ToDouble(conditionGroupTestcase[1]);
             }
             else
             {
-                invalidValue = -1;
+                setInvalidValue = 0;
             }
-            if (invalidValue == 12)
+            if (setInvalidValue != 0)
             {
                 for (int index = 0; index < 3; index++)
                 {
                     string step = "";
                     step +=
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVoltage(setInvalidValue: invalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVoltage(setInvalidValue: setInvalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
                         ;
                     TestStepIndex += 1;
                     for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                     {
-                        for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                        for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                         {
                             step +=
                                 (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
@@ -663,8 +622,8 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
                                                                                                     isParameterSupported: true,
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), 
-                                                                                                    invalidValue: invalidValue, setInvalidValue: Double.Parse(conditionGroupTestcase[1]),
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1), 
+                                                                                                    invalidValue: invalidValue, setInvalidValue: setInvalidValue,
                                                                                                     conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;
                             TestStepIndex += 1;
@@ -672,7 +631,7 @@ namespace dcom.models.models_testcaseHandling
                     }
                     for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                     {
-                        for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                        for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                         {
                             step +=
                                 (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
@@ -680,7 +639,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
                                                                                                     isParameterSupported: true,
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1),
                                                                                                     invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                     conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;
@@ -701,12 +660,12 @@ namespace dcom.models.models_testcaseHandling
                 {
                     string step = "";
                     step +=
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVoltage(setInvalidValue: invalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVoltage(setInvalidValue: setInvalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
                         ;
                     TestStepIndex += 1;
                     for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                     {
-                        for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                        for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                         {
                             step +=
                                 (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService3E(subFunction: subFunction[0], isSubFunctionSupported: true,
@@ -714,7 +673,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
                                                                                                     isParameterSupported: true,
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1),
                                                                                                     invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                     conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;

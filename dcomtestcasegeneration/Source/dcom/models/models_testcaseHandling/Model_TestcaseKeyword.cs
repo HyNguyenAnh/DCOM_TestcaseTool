@@ -53,14 +53,14 @@ namespace dcom.models.models_testcaseHandling
 
             // Test step 
 
-            TestStep = $"Set the EnvLogInLevel{level} {TestStepStatus} Wait {timeout} ms";
+            TestStep = $"Set the EnvLogInLevel {level} {TestStepStatus} Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
             //SetEnvVar(string Name EnvLogInLevel1, string Value 1, int WaitTime 1000)
-            TestStepKeyword = $"SetEnvVar(string Name EnvLogInLevel{level}, string Value {TestStepKeywordStatus}, int WaitTime {timeout})";
+            TestStepKeyword = $"SetEnvVar(string Name EnvLogInLevel {level}, string Value {TestStepKeywordStatus}, int WaitTime {timeout})";
 
             Data = new string[]
             {
@@ -112,7 +112,7 @@ namespace dcom.models.models_testcaseHandling
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(EnvVehicle_Speed({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"envvar(EnvVehicle_Speed({setInvalidValue}, {timeout}))";
             
             
 
@@ -124,7 +124,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] SetEngineStatus(double setInvalidValue, string name, int timeout)
+        public static string[] SetEngineStatus(double invalidValue, string name, int timeout)
         {
             string[] Data;
             string TestStep;
@@ -132,13 +132,13 @@ namespace dcom.models.models_testcaseHandling
             string TestStepKeyword;
 
             // Test step
-            TestStep = $"Set the Engine_Status to Value {setInvalidValue} ({name}) Wait {timeout} ms";
+            TestStep = $"Set the Engine_Status to Value {invalidValue} ({name}) Wait {timeout} ms";
 
             // Test response
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(EnvEngine_Status({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"envvar(EnvEngine_Status({invalidValue}, {timeout}))";
 
 
             Data = new string[]
@@ -163,7 +163,7 @@ namespace dcom.models.models_testcaseHandling
             TestReponse = "-";
 
             // Test step keyword
-            TestStepKeyword = $"EnvVar(EnvVoltage({setInvalidValue}, {timeout}))";
+            TestStepKeyword = $"envvar(EnvVoltage({setInvalidValue}, {timeout}))";
 
 
             Data = new string[]
@@ -256,28 +256,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue | setInvalidValue == 0 | setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (!isSuppressBitSupported)
                 {
-                    if (!isSuppressBitSupported)
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isSubFunctionSupportedInActiveSession)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = "";
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = ResponseID + subFunctionNew + expectedValue;
+                                    break;
+                                case false:
+                                    ResponseCodeString = "";
+                                    break;
                             }
                         }
-                        else if (!isSubFunctionSupported && addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -286,24 +283,30 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
+                    else if (!isSubFunctionSupported && addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if (!isSIDSupportedInActiveSession && addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if (!isSIDSupportedInActiveSession && addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -357,28 +360,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (!isSuppressBitSupported)
                 {
-                    if (!isSuppressBitSupported)
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isSubFunctionSupportedInActiveSession)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = "";
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    break;
+                                case false:
+                                    ResponseCodeString = "";
+                                    break;
                             }
                         }
-                        else if (!isSubFunctionSupported && addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -387,24 +387,30 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
+                    else if (!isSubFunctionSupported && addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if (!isSIDSupportedInActiveSession && addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if (!isSIDSupportedInActiveSession && addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -456,28 +462,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (!isSuppressBitSupported)
                 {
-                    if (!isSuppressBitSupported)
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isSubFunctionSupportedInActiveSession)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = "";
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    break;
+                                case false:
+                                    ResponseCodeString = "";
+                                    break;
                             }
                         }
-                        else if (!isSubFunctionSupported && addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -486,24 +489,30 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
+                    else if (!isSubFunctionSupported && addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if (!isSIDSupportedInActiveSession && addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if (!isSIDSupportedInActiveSession && addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -555,28 +564,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (!isSuppressBitSupported)
                 {
-                    if (!isSuppressBitSupported)
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isSubFunctionSupportedInActiveSession)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = "";
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    break;
+                                case false:
+                                    ResponseCodeString = "";
+                                    break;
                             }
                         }
-                        else if (!isSubFunctionSupported && addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -585,24 +591,30 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
+                    else if (!isSubFunctionSupported && addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if (!isSIDSupportedInActiveSession && addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if (!isSIDSupportedInActiveSession && addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -654,28 +666,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (!isSuppressBitSupported)
                 {
-                    if (!isSuppressBitSupported)
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isSubFunctionSupportedInActiveSession)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = "";
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    break;
+                                case false:
+                                    ResponseCodeString = "";
+                                    break;
                             }
                         }
-                        else if(!isSubFunctionSupported && addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -684,25 +693,30 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
+                    else if (!isSubFunctionSupported && addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if(!isSIDSupportedInActiveSession && addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if (!isSIDSupportedInActiveSession && addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
-            
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -754,28 +768,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (!isSuppressBitSupported)
                 {
-                    if (!isSuppressBitSupported)
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isSubFunctionSupportedInActiveSession)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = "";
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    break;
+                                case false:
+                                    ResponseCodeString = "";
+                                    break;
                             }
                         }
-                        else if (!isSubFunctionSupported && addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -784,24 +795,30 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
+                    else if (!isSubFunctionSupported && addressingMode)
+                    {
+                        ResponseCodeString = $"7f{ResponseID}12";
+                    }
                     else
                     {
                         ResponseCodeString = $"";
                     }
-                }
-                else if (!isSIDSupportedInActiveSession && addressingMode)
-                {
-                    ResponseCodeString = $"7f{ResponseID}7f";
                 }
                 else
                 {
                     ResponseCodeString = $"";
                 }
             }
+            else if (!isSIDSupportedInActiveSession && addressingMode)
+            {
+                ResponseCodeString = $"7f{ResponseID}7f";
+            }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -820,8 +837,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService14(string parametter, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession,
-                                                bool suppressBitEnabledStatus, bool isSuppressBitSupported,
+        public static string[] RequestService14(string parametter,
                                                 bool isSIDSupportedInActiveSession, bool isParameterSupported, 
                                                 bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
@@ -847,33 +863,27 @@ namespace dcom.models.models_testcaseHandling
             // Configure request string
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (isParameterSupported)
                 {
-                    if (isParameterSupported)
-                    {
-                        ResponseCodeString = ResponseID;
-                    }
-                    else
-                    {
-                        ResponseCodeString = $"7f{SID}31";
-                    }
-                }
-                else if (!isSIDSupportedInActiveSession & addressingMode)
-                {
-                    ResponseCodeString = $"7f{SID}7f";
+                    ResponseCodeString = ResponseID;
                 }
                 else
                 {
-                    ResponseCodeString = $"";
+                    ResponseCodeString = $"7f{SID}31";
                 }
+            }
+            else if (!isSIDSupportedInActiveSession & addressingMode)
+            {
+                ResponseCodeString = $"7f{SID}7f";
             }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
 
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -893,7 +903,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService22(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParametersupported, 
+        public static string[] RequestService22(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParameterSupported, 
                                                 bool addressingMode, int length, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
@@ -915,34 +925,27 @@ namespace dcom.models.models_testcaseHandling
             }
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (isParameterSupported)
                 {
-                    if (isParametersupported)
-                    {
-                        ResponseCodeString = ResponseID + DID + expectedValue;
-                    }
-                    else
-                    {
-                        ResponseCodeString = $"7f{SID}31";
-                    }
-                }
-                else if (!isSIDSupportedInActiveSession & addressingMode)
-                {
-                    ResponseCodeString = $"7f{SID}7f";
+                    ResponseCodeString = ResponseID + DID + expectedValue;
                 }
                 else
                 {
-                    ResponseCodeString = $"";
+                    ResponseCodeString = $"7f{SID}31";
                 }
+            }
+            else if (!isSIDSupportedInActiveSession & addressingMode)
+            {
+                ResponseCodeString = $"7f{SID}7f";
             }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
 
-
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -983,32 +986,27 @@ namespace dcom.models.models_testcaseHandling
             }
 
             // Configure response string
-            if (setInvalidValue <= invalidValue || setInvalidValue == 0 || setInvalidValue == 10)
+            if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+                if (isParametersupported)
                 {
-                    if (isParametersupported)
-                    {
-                        ResponseCodeString = ResponseID + DID + expectedValue;
-                    }
-                    else
-                    {
-                        ResponseCodeString = $"7f{SID}31";
-                    }
-                }
-                else if (!isSIDSupportedInActiveSession & addressingMode)
-                {
-                    ResponseCodeString = $"7f{SID}7f";
+                    ResponseCodeString = ResponseID + DID + expectedValue;
                 }
                 else
                 {
-                    ResponseCodeString = $"";
+                    ResponseCodeString = $"7f{SID}31";
                 }
+            }
+            else if (!isSIDSupportedInActiveSession & addressingMode)
+            {
+                ResponseCodeString = $"7f{SID}7f";
             }
             else
             {
-                ResponseCodeString = $"7f{ResponseID}22";
+                ResponseCodeString = $"";
             }
+
+            ResponseCodeString = Controller_ServiceHandling.GetResponseCodeStringCondtion(conditionIndex, invalidValue, setInvalidValue, ResponseCodeString, ResponseID, conditionNRC, conditionName);
 
             // Test step 
             TestStep = Controller_ServiceHandling.GetTestStep(SID, RequestCodeString, addressingMode);
@@ -1063,7 +1061,7 @@ namespace dcom.models.models_testcaseHandling
             // Configure response string
             if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (isSuppressBitSupported)
+                if (!isSuppressBitSupported)
                 {
                     if ((isSubFunctionSupported & addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {

@@ -8,6 +8,7 @@ using System.Drawing;
 using dcom.declaration;
 using dcom.views.views_ToolBar;
 using dcom.controllers.controllers_UIcontainer;
+using dcom.models.models_databaseHandling.models_getDatabase;
 
 namespace dcom.controllers.controllers_middleware
 {
@@ -561,6 +562,46 @@ namespace dcom.controllers.controllers_middleware
 
             //Controllers_UIService.UpdateDB_CanTP(edited[12]);
 
+        }
+
+        public static void MappingFromDatabaseFileToDatabaseVariables()
+        {
+            SystemVariables.checkDBVariableDefinitionStatus = true;
+            // Service 10
+            DatabaseVariables.DatabaseService10 = Model_GetServiceDatabase.DatabaseService("10");
+
+            // Service 11
+            DatabaseVariables.DatabaseService11 = Model_GetServiceDatabase.DatabaseService("11");
+
+            // Service 14
+            DatabaseVariables.DatabaseService14 = Model_GetServiceDatabase.DatabaseService("14");
+
+            // Service 19
+            //DatabaseVariables.DatabaseService19 = Model_GetServiceDatabase.DatabaseService("19");
+
+            // Service 22
+            DatabaseVariables.DatabaseService22 = Model_GetServiceDatabase.DatabaseService("22");
+
+            // Service 27
+            DatabaseVariables.DatabaseService27 = Model_GetServiceDatabase.DatabaseService("27");
+
+            // Service 28
+            DatabaseVariables.DatabaseService28 = Model_GetServiceDatabase.DatabaseService("28");
+
+            // Service 2E
+            DatabaseVariables.DatabaseService2E = Model_GetServiceDatabase.DatabaseService("2E");
+
+            // Service 31
+            //DatabaseVariables.DatabaseService31 = Model_GetServiceDatabase.DatabaseService("31");
+
+            // Service 3E
+            DatabaseVariables.DatabaseService3E = Model_GetServiceDatabase.DatabaseService("3E");
+
+            // Service 85
+            //DatabaseVariables.DatabaseService85 = Model_GetServiceDatabase.DatabaseService("85");
+
+            // Can TP
+            //DatabaseVariables.DatabaseCanTP = Model_GetServiceDatabase.DatabaseService("CanTP");
         }
     }
 }

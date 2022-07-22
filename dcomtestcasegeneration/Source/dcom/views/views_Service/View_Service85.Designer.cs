@@ -45,8 +45,62 @@ namespace dcom.views.views_Service
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Service85));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_bodySetting = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox_Service85NRC = new System.Windows.Forms.GroupBox();
+            this.groupBox_Service85Condition = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_ConditionVehicle = new System.Windows.Forms.TextBox();
+            this.comboBox_ConditionVehicle_NRC = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button_ConditionVehicleSpeed = new System.Windows.Forms.Button();
+            this.button_ConditionEngine = new System.Windows.Forms.Button();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_ConditionEngine_ValidValue = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox_ConditionEngine_InvalidValue = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox_ConditionEngine_NRC = new System.Windows.Forms.ComboBox();
+            this.button_ConditionVoltage = new System.Windows.Forms.Button();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_ConditionVoltage_High = new System.Windows.Forms.TextBox();
+            this.textBox_ConditionVoltage_Low = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.comboBox_ConditionVoltage_NRC = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox_Service85ResetMode = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button_SupressBit = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox_Service85AddressingMode = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_FunctionalExtended = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button_FunctionalDefault = new System.Windows.Forms.Button();
+            this.button_FunctionalProgramming = new System.Windows.Forms.Button();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_PhysicalExtended = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button_PhysicalDefault = new System.Windows.Forms.Button();
+            this.button_PhysicalProgramming = new System.Windows.Forms.Button();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox_Service85NRC = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_NRCPriority = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -68,77 +122,35 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.groupBox_Service85Condition = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox_ConditionVehicle_NRC = new System.Windows.Forms.ComboBox();
-            this.vehicleSpeedValue_Text = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button_ConditionVehicleSpeed = new System.Windows.Forms.Button();
-            this.button_ConditionEngine = new System.Windows.Forms.Button();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox_ConditionEngine_NRC = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.groupBox_Service85AddressingMode = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_FunctionalExtended = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button_FunctionalDefault = new System.Windows.Forms.Button();
-            this.button_FunctionalProgramming = new System.Windows.Forms.Button();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_PhysicalExtended = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button_PhysicalDefault = new System.Windows.Forms.Button();
-            this.button_PhysicalProgramming = new System.Windows.Forms.Button();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox_Service85ResetMode = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button_SupressBit = new System.Windows.Forms.Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_bodyRight = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel_bodySetting.SuspendLayout();
-            this.groupBox_Service85NRC.SuspendLayout();
-            this.tableLayoutPanel16.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NRCPriority)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel20.SuspendLayout();
             this.groupBox_Service85Condition.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
-            this.tableLayoutPanel24.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
-            this.groupBox_Service85AddressingMode.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.groupBox_Service85ResetMode.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel24.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.groupBox_Service85ResetMode.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.groupBox_Service85AddressingMode.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.groupBox_Service85NRC.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NRCPriority)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel_bodyRight.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,56 +175,907 @@ namespace dcom.views.views_Service
             // 
             // tableLayoutPanel_bodySetting
             // 
-            this.tableLayoutPanel_bodySetting.ColumnCount = 2;
-            this.tableLayoutPanel_bodySetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bodySetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85NRC, 1, 1);
+            this.tableLayoutPanel_bodySetting.ColumnCount = 1;
+            this.tableLayoutPanel_bodySetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85Condition, 0, 1);
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85AddressingMode, 1, 0);
-            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85ResetMode, 0, 0);
+            this.tableLayoutPanel_bodySetting.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel_bodySetting.Controls.Add(this.groupBox_Service85NRC, 0, 2);
             this.tableLayoutPanel_bodySetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_bodySetting.Location = new System.Drawing.Point(20, 10);
-            this.tableLayoutPanel_bodySetting.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.tableLayoutPanel_bodySetting.Margin = new System.Windows.Forms.Padding(10);
             this.tableLayoutPanel_bodySetting.Name = "tableLayoutPanel_bodySetting";
-            this.tableLayoutPanel_bodySetting.RowCount = 2;
-            this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_bodySetting.RowCount = 3;
+            this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel_bodySetting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel_bodySetting.Size = new System.Drawing.Size(1400, 870);
             this.tableLayoutPanel_bodySetting.TabIndex = 9;
             // 
-            // groupBox_Service85NRC
+            // groupBox_Service85Condition
             // 
-            this.groupBox_Service85NRC.Controls.Add(this.tableLayoutPanel16);
-            this.groupBox_Service85NRC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service85NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service85NRC.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service85NRC.Location = new System.Drawing.Point(710, 445);
-            this.groupBox_Service85NRC.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.groupBox_Service85NRC.Name = "groupBox_Service85NRC";
-            this.groupBox_Service85NRC.Size = new System.Drawing.Size(680, 415);
-            this.groupBox_Service85NRC.TabIndex = 3;
-            this.groupBox_Service85NRC.TabStop = false;
-            this.groupBox_Service85NRC.Text = "Negative Reponse Code";
+            this.groupBox_Service85Condition.Controls.Add(this.tableLayoutPanel15);
+            this.groupBox_Service85Condition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85Condition.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85Condition.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85Condition.Location = new System.Drawing.Point(10, 358);
+            this.groupBox_Service85Condition.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox_Service85Condition.Name = "groupBox_Service85Condition";
+            this.groupBox_Service85Condition.Size = new System.Drawing.Size(1380, 328);
+            this.groupBox_Service85Condition.TabIndex = 2;
+            this.groupBox_Service85Condition.TabStop = false;
+            this.groupBox_Service85Condition.Text = "Condition";
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 3;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel18, 1, 1);
+            this.tableLayoutPanel15.Controls.Add(this.button_ConditionVehicleSpeed, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.button_ConditionEngine, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel19, 0, 1);
+            this.tableLayoutPanel15.Controls.Add(this.button_ConditionVoltage, 2, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel14, 2, 1);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 2;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(1374, 309);
+            this.tableLayoutPanel15.TabIndex = 3;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.BackColor = System.Drawing.Color.SeaShell;
+            this.tableLayoutPanel18.ColumnCount = 1;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Controls.Add(this.label13, 0, 2);
+            this.tableLayoutPanel18.Controls.Add(this.textBox_ConditionVehicle, 0, 1);
+            this.tableLayoutPanel18.Controls.Add(this.comboBox_ConditionVehicle_NRC, 0, 3);
+            this.tableLayoutPanel18.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(554, 55);
+            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 4;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(402, 249);
+            this.tableLayoutPanel18.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Brown;
+            this.label13.Location = new System.Drawing.Point(5, 129);
+            this.label13.Margin = new System.Windows.Forms.Padding(5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(392, 52);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "the responsed NRC will be:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_ConditionVehicle
+            // 
+            this.textBox_ConditionVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVehicle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ConditionVehicle.Location = new System.Drawing.Point(4, 66);
+            this.textBox_ConditionVehicle.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ConditionVehicle.Name = "textBox_ConditionVehicle";
+            this.textBox_ConditionVehicle.Size = new System.Drawing.Size(394, 26);
+            this.textBox_ConditionVehicle.TabIndex = 3;
+            this.textBox_ConditionVehicle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVehicle.TextChanged += new System.EventHandler(this.textBox_ConditionVehicle_TextChanged);
+            // 
+            // comboBox_ConditionVehicle_NRC
+            // 
+            this.comboBox_ConditionVehicle_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVehicle_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ConditionVehicle_NRC.FormattingEnabled = true;
+            this.comboBox_ConditionVehicle_NRC.Location = new System.Drawing.Point(4, 190);
+            this.comboBox_ConditionVehicle_NRC.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_ConditionVehicle_NRC.Name = "comboBox_ConditionVehicle_NRC";
+            this.comboBox_ConditionVehicle_NRC.Size = new System.Drawing.Size(394, 26);
+            this.comboBox_ConditionVehicle_NRC.TabIndex = 2;
+            this.comboBox_ConditionVehicle_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Brown;
+            this.label16.Location = new System.Drawing.Point(5, 5);
+            this.label16.Margin = new System.Windows.Forms.Padding(5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(392, 52);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "If the Vehicle speed (km/h) is greater than:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_ConditionVehicleSpeed
+            // 
+            this.button_ConditionVehicleSpeed.BackColor = System.Drawing.Color.Brown;
+            this.button_ConditionVehicleSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_ConditionVehicleSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_ConditionVehicleSpeed.FlatAppearance.BorderSize = 0;
+            this.button_ConditionVehicleSpeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ConditionVehicleSpeed.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ConditionVehicleSpeed.ForeColor = System.Drawing.Color.White;
+            this.button_ConditionVehicleSpeed.Location = new System.Drawing.Point(553, 4);
+            this.button_ConditionVehicleSpeed.Margin = new System.Windows.Forms.Padding(4);
+            this.button_ConditionVehicleSpeed.Name = "button_ConditionVehicleSpeed";
+            this.button_ConditionVehicleSpeed.Size = new System.Drawing.Size(404, 42);
+            this.button_ConditionVehicleSpeed.TabIndex = 1;
+            this.button_ConditionVehicleSpeed.Text = "ON";
+            this.button_ConditionVehicleSpeed.UseVisualStyleBackColor = false;
+            this.button_ConditionVehicleSpeed.TextChanged += new System.EventHandler(this.button_ConditionVehicleSpeed_TextChanged);
+            this.button_ConditionVehicleSpeed.Click += new System.EventHandler(this.button_ConditionVehicleSpeed_Click);
+            // 
+            // button_ConditionEngine
+            // 
+            this.button_ConditionEngine.BackColor = System.Drawing.Color.Brown;
+            this.button_ConditionEngine.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_ConditionEngine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_ConditionEngine.FlatAppearance.BorderSize = 0;
+            this.button_ConditionEngine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ConditionEngine.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ConditionEngine.ForeColor = System.Drawing.Color.White;
+            this.button_ConditionEngine.Location = new System.Drawing.Point(4, 4);
+            this.button_ConditionEngine.Margin = new System.Windows.Forms.Padding(4);
+            this.button_ConditionEngine.Name = "button_ConditionEngine";
+            this.button_ConditionEngine.Size = new System.Drawing.Size(541, 42);
+            this.button_ConditionEngine.TabIndex = 0;
+            this.button_ConditionEngine.Text = "ON";
+            this.button_ConditionEngine.UseVisualStyleBackColor = false;
+            this.button_ConditionEngine.TextChanged += new System.EventHandler(this.button_ConditionEngine_TextChanged);
+            this.button_ConditionEngine.Click += new System.EventHandler(this.button_ConditionEngine_Click);
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.BackColor = System.Drawing.Color.SeaShell;
+            this.tableLayoutPanel19.ColumnCount = 1;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Controls.Add(this.textBox_ConditionEngine_ValidValue, 0, 3);
+            this.tableLayoutPanel19.Controls.Add(this.label17, 0, 2);
+            this.tableLayoutPanel19.Controls.Add(this.textBox_ConditionEngine_InvalidValue, 0, 1);
+            this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel13, 0, 0);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(5, 55);
+            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 4;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(539, 249);
+            this.tableLayoutPanel19.TabIndex = 4;
+            // 
+            // textBox_ConditionEngine_ValidValue
+            // 
+            this.textBox_ConditionEngine_ValidValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionEngine_ValidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ConditionEngine_ValidValue.Location = new System.Drawing.Point(4, 190);
+            this.textBox_ConditionEngine_ValidValue.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ConditionEngine_ValidValue.Name = "textBox_ConditionEngine_ValidValue";
+            this.textBox_ConditionEngine_ValidValue.Size = new System.Drawing.Size(531, 26);
+            this.textBox_ConditionEngine_ValidValue.TabIndex = 6;
+            this.textBox_ConditionEngine_ValidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Brown;
+            this.label17.Location = new System.Drawing.Point(5, 129);
+            this.label17.Margin = new System.Windows.Forms.Padding(5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(529, 52);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "The positive response will be received if Engine Status are:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_ConditionEngine_InvalidValue
+            // 
+            this.textBox_ConditionEngine_InvalidValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionEngine_InvalidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ConditionEngine_InvalidValue.Location = new System.Drawing.Point(4, 66);
+            this.textBox_ConditionEngine_InvalidValue.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ConditionEngine_InvalidValue.Name = "textBox_ConditionEngine_InvalidValue";
+            this.textBox_ConditionEngine_InvalidValue.Size = new System.Drawing.Size(531, 26);
+            this.textBox_ConditionEngine_InvalidValue.TabIndex = 4;
+            this.textBox_ConditionEngine_InvalidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 3;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.label18, 2, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label19, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.comboBox_ConditionEngine_NRC, 1, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(539, 62);
+            this.tableLayoutPanel13.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Brown;
+            this.label18.Location = new System.Drawing.Point(162, 5);
+            this.label18.Margin = new System.Windows.Forms.Padding(5);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(372, 52);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "will be responsed if Engine Status are:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Brown;
+            this.label19.Location = new System.Drawing.Point(5, 5);
+            this.label19.Margin = new System.Windows.Forms.Padding(5);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 52);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "NRC: ";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox_ConditionEngine_NRC
+            // 
+            this.comboBox_ConditionEngine_NRC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_ConditionEngine_NRC.Enabled = false;
+            this.comboBox_ConditionEngine_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ConditionEngine_NRC.FormattingEnabled = true;
+            this.comboBox_ConditionEngine_NRC.Location = new System.Drawing.Point(75, 18);
+            this.comboBox_ConditionEngine_NRC.Margin = new System.Windows.Forms.Padding(0);
+            this.comboBox_ConditionEngine_NRC.Name = "comboBox_ConditionEngine_NRC";
+            this.comboBox_ConditionEngine_NRC.Size = new System.Drawing.Size(82, 26);
+            this.comboBox_ConditionEngine_NRC.TabIndex = 2;
+            this.comboBox_ConditionEngine_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionEngine_NRC_TextChanged);
+            // 
+            // button_ConditionVoltage
+            // 
+            this.button_ConditionVoltage.BackColor = System.Drawing.Color.Brown;
+            this.button_ConditionVoltage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_ConditionVoltage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_ConditionVoltage.FlatAppearance.BorderSize = 0;
+            this.button_ConditionVoltage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ConditionVoltage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ConditionVoltage.ForeColor = System.Drawing.Color.White;
+            this.button_ConditionVoltage.Location = new System.Drawing.Point(965, 4);
+            this.button_ConditionVoltage.Margin = new System.Windows.Forms.Padding(4);
+            this.button_ConditionVoltage.Name = "button_ConditionVoltage";
+            this.button_ConditionVoltage.Size = new System.Drawing.Size(405, 42);
+            this.button_ConditionVoltage.TabIndex = 6;
+            this.button_ConditionVoltage.Text = "ON";
+            this.button_ConditionVoltage.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.BackColor = System.Drawing.Color.SeaShell;
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel16, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.label20, 0, 2);
+            this.tableLayoutPanel14.Controls.Add(this.comboBox_ConditionVoltage_NRC, 0, 3);
+            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel24, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(966, 55);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 4;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(403, 249);
+            this.tableLayoutPanel14.TabIndex = 7;
             // 
             // tableLayoutPanel16
             // 
-            this.tableLayoutPanel16.AutoSize = true;
-            this.tableLayoutPanel16.ColumnCount = 3;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel17, 1, 1);
+            this.tableLayoutPanel16.ColumnCount = 2;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel16.Controls.Add(this.textBox_ConditionVoltage_High, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.textBox_ConditionVoltage_Low, 0, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(0, 62);
             this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 3;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(674, 396);
-            this.tableLayoutPanel16.TabIndex = 2;
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(403, 62);
+            this.tableLayoutPanel16.TabIndex = 6;
+            // 
+            // textBox_ConditionVoltage_High
+            // 
+            this.textBox_ConditionVoltage_High.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVoltage_High.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ConditionVoltage_High.Location = new System.Drawing.Point(205, 4);
+            this.textBox_ConditionVoltage_High.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ConditionVoltage_High.Name = "textBox_ConditionVoltage_High";
+            this.textBox_ConditionVoltage_High.Size = new System.Drawing.Size(194, 26);
+            this.textBox_ConditionVoltage_High.TabIndex = 5;
+            this.textBox_ConditionVoltage_High.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_ConditionVoltage_Low
+            // 
+            this.textBox_ConditionVoltage_Low.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVoltage_Low.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ConditionVoltage_Low.Location = new System.Drawing.Point(4, 4);
+            this.textBox_ConditionVoltage_Low.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ConditionVoltage_Low.Name = "textBox_ConditionVoltage_Low";
+            this.textBox_ConditionVoltage_Low.Size = new System.Drawing.Size(193, 26);
+            this.textBox_ConditionVoltage_Low.TabIndex = 4;
+            this.textBox_ConditionVoltage_Low.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Brown;
+            this.label20.Location = new System.Drawing.Point(5, 129);
+            this.label20.Margin = new System.Windows.Forms.Padding(5);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(393, 52);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "the responsed NRC will be:";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox_ConditionVoltage_NRC
+            // 
+            this.comboBox_ConditionVoltage_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVoltage_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ConditionVoltage_NRC.FormattingEnabled = true;
+            this.comboBox_ConditionVoltage_NRC.Location = new System.Drawing.Point(4, 190);
+            this.comboBox_ConditionVoltage_NRC.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_ConditionVoltage_NRC.Name = "comboBox_ConditionVoltage_NRC";
+            this.comboBox_ConditionVoltage_NRC.Size = new System.Drawing.Size(395, 26);
+            this.comboBox_ConditionVoltage_NRC.TabIndex = 2;
+            // 
+            // tableLayoutPanel24
+            // 
+            this.tableLayoutPanel24.ColumnCount = 2;
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel24.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel24.Controls.Add(this.label22, 0, 0);
+            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
+            this.tableLayoutPanel24.RowCount = 1;
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(403, 62);
+            this.tableLayoutPanel24.TabIndex = 5;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Brown;
+            this.label21.Location = new System.Drawing.Point(206, 5);
+            this.label21.Margin = new System.Windows.Forms.Padding(5);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(192, 52);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "HIGH VOLTAGE";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Brown;
+            this.label22.Location = new System.Drawing.Point(5, 5);
+            this.label22.Margin = new System.Windows.Forms.Padding(5);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(191, 52);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "LOW VOLTAGE";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.groupBox_Service85ResetMode, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.groupBox_Service85AddressingMode, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1400, 348);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // groupBox_Service85ResetMode
+            // 
+            this.groupBox_Service85ResetMode.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox_Service85ResetMode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85ResetMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85ResetMode.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85ResetMode.Location = new System.Drawing.Point(8, 8);
+            this.groupBox_Service85ResetMode.Margin = new System.Windows.Forms.Padding(8);
+            this.groupBox_Service85ResetMode.Name = "groupBox_Service85ResetMode";
+            this.groupBox_Service85ResetMode.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox_Service85ResetMode.Size = new System.Drawing.Size(684, 332);
+            this.groupBox_Service85ResetMode.TabIndex = 0;
+            this.groupBox_Service85ResetMode.TabStop = false;
+            this.groupBox_Service85ResetMode.Text = "Sub Function";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button_SupressBit, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 17);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(676, 311);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.BackColor = System.Drawing.Color.Coral;
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(476, 54);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 253F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(196, 253);
+            this.tableLayoutPanel7.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label8.Location = new System.Drawing.Point(40, 5);
+            this.label8.Margin = new System.Windows.Forms.Padding(5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 243);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Supress Bit";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Coral;
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(240, 54);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(228, 253);
+            this.tableLayoutPanel5.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(90, 131);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 32);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "02";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Brown;
+            this.label4.Location = new System.Drawing.Point(28, 99);
+            this.label4.Margin = new System.Windows.Forms.Padding(5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 22);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Start DTC Setting";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_SupressBit
+            // 
+            this.button_SupressBit.BackColor = System.Drawing.Color.Brown;
+            this.button_SupressBit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_SupressBit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_SupressBit.FlatAppearance.BorderSize = 0;
+            this.button_SupressBit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_SupressBit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SupressBit.ForeColor = System.Drawing.Color.White;
+            this.button_SupressBit.Location = new System.Drawing.Point(476, 4);
+            this.button_SupressBit.Margin = new System.Windows.Forms.Padding(4);
+            this.button_SupressBit.Name = "button_SupressBit";
+            this.button_SupressBit.Size = new System.Drawing.Size(196, 42);
+            this.button_SupressBit.TabIndex = 3;
+            this.button_SupressBit.Text = "ON";
+            this.button_SupressBit.UseVisualStyleBackColor = false;
+            this.button_SupressBit.TextChanged += new System.EventHandler(this.button_SupressBit_TextChanged);
+            this.button_SupressBit.Click += new System.EventHandler(this.button_SupressBit_Click);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.Coral;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 54);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(228, 253);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Brown;
+            this.label1.Location = new System.Drawing.Point(29, 99);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Stop DTC Setting";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(90, 131);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "01";
+            // 
+            // groupBox_Service85AddressingMode
+            // 
+            this.groupBox_Service85AddressingMode.Controls.Add(this.tableLayoutPanel8);
+            this.groupBox_Service85AddressingMode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85AddressingMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85AddressingMode.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85AddressingMode.Location = new System.Drawing.Point(708, 8);
+            this.groupBox_Service85AddressingMode.Margin = new System.Windows.Forms.Padding(8);
+            this.groupBox_Service85AddressingMode.Name = "groupBox_Service85AddressingMode";
+            this.groupBox_Service85AddressingMode.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox_Service85AddressingMode.Size = new System.Drawing.Size(684, 332);
+            this.groupBox_Service85AddressingMode.TabIndex = 1;
+            this.groupBox_Service85AddressingMode.TabStop = false;
+            this.groupBox_Service85AddressingMode.Text = "Addressing Mode";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel11, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 17);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 311F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(676, 311);
+            this.tableLayoutPanel8.TabIndex = 2;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.button_FunctionalExtended, 0, 3);
+            this.tableLayoutPanel11.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.button_FunctionalDefault, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.button_FunctionalProgramming, 0, 2);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(450, 0);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 4;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(226, 311);
+            this.tableLayoutPanel11.TabIndex = 2;
+            // 
+            // button_FunctionalExtended
+            // 
+            this.button_FunctionalExtended.BackColor = System.Drawing.Color.Brown;
+            this.button_FunctionalExtended.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_FunctionalExtended.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_FunctionalExtended.FlatAppearance.BorderSize = 0;
+            this.button_FunctionalExtended.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_FunctionalExtended.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_FunctionalExtended.ForeColor = System.Drawing.Color.White;
+            this.button_FunctionalExtended.Location = new System.Drawing.Point(8, 239);
+            this.button_FunctionalExtended.Margin = new System.Windows.Forms.Padding(8);
+            this.button_FunctionalExtended.Name = "button_FunctionalExtended";
+            this.button_FunctionalExtended.Size = new System.Drawing.Size(210, 64);
+            this.button_FunctionalExtended.TabIndex = 7;
+            this.button_FunctionalExtended.Text = "ON";
+            this.button_FunctionalExtended.UseVisualStyleBackColor = false;
+            this.button_FunctionalExtended.TextChanged += new System.EventHandler(this.button_FunctionalExtended_TextChanged);
+            this.button_FunctionalExtended.Click += new System.EventHandler(this.button_FunctionalExtended_Click);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(45, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(135, 77);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "FUNCTIONAL";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_FunctionalDefault
+            // 
+            this.button_FunctionalDefault.BackColor = System.Drawing.Color.Brown;
+            this.button_FunctionalDefault.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_FunctionalDefault.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_FunctionalDefault.FlatAppearance.BorderSize = 0;
+            this.button_FunctionalDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_FunctionalDefault.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_FunctionalDefault.ForeColor = System.Drawing.Color.White;
+            this.button_FunctionalDefault.Location = new System.Drawing.Point(8, 85);
+            this.button_FunctionalDefault.Margin = new System.Windows.Forms.Padding(8);
+            this.button_FunctionalDefault.Name = "button_FunctionalDefault";
+            this.button_FunctionalDefault.Size = new System.Drawing.Size(210, 61);
+            this.button_FunctionalDefault.TabIndex = 5;
+            this.button_FunctionalDefault.Text = "ON";
+            this.button_FunctionalDefault.UseVisualStyleBackColor = false;
+            this.button_FunctionalDefault.TextChanged += new System.EventHandler(this.button_FunctionalDefault_TextChanged);
+            this.button_FunctionalDefault.Click += new System.EventHandler(this.button_FunctionalDefault_Click);
+            // 
+            // button_FunctionalProgramming
+            // 
+            this.button_FunctionalProgramming.BackColor = System.Drawing.Color.Brown;
+            this.button_FunctionalProgramming.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_FunctionalProgramming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_FunctionalProgramming.FlatAppearance.BorderSize = 0;
+            this.button_FunctionalProgramming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_FunctionalProgramming.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_FunctionalProgramming.ForeColor = System.Drawing.Color.White;
+            this.button_FunctionalProgramming.Location = new System.Drawing.Point(8, 162);
+            this.button_FunctionalProgramming.Margin = new System.Windows.Forms.Padding(8);
+            this.button_FunctionalProgramming.Name = "button_FunctionalProgramming";
+            this.button_FunctionalProgramming.Size = new System.Drawing.Size(210, 61);
+            this.button_FunctionalProgramming.TabIndex = 6;
+            this.button_FunctionalProgramming.Text = "ON";
+            this.button_FunctionalProgramming.UseVisualStyleBackColor = false;
+            this.button_FunctionalProgramming.TextChanged += new System.EventHandler(this.button_FunctionalProgramming_TextChanged);
+            this.button_FunctionalProgramming.Click += new System.EventHandler(this.button_FunctionalProgramming_Click);
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.BackColor = System.Drawing.Color.Purple;
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.button_PhysicalExtended, 0, 3);
+            this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.button_PhysicalDefault, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.button_PhysicalProgramming, 0, 2);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(225, 0);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 4;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(225, 311);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // button_PhysicalExtended
+            // 
+            this.button_PhysicalExtended.BackColor = System.Drawing.Color.Brown;
+            this.button_PhysicalExtended.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_PhysicalExtended.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_PhysicalExtended.FlatAppearance.BorderSize = 0;
+            this.button_PhysicalExtended.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PhysicalExtended.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PhysicalExtended.ForeColor = System.Drawing.Color.White;
+            this.button_PhysicalExtended.Location = new System.Drawing.Point(8, 239);
+            this.button_PhysicalExtended.Margin = new System.Windows.Forms.Padding(8);
+            this.button_PhysicalExtended.Name = "button_PhysicalExtended";
+            this.button_PhysicalExtended.Size = new System.Drawing.Size(209, 64);
+            this.button_PhysicalExtended.TabIndex = 6;
+            this.button_PhysicalExtended.Text = "ON";
+            this.button_PhysicalExtended.UseVisualStyleBackColor = false;
+            this.button_PhysicalExtended.TextChanged += new System.EventHandler(this.button_PhysicalExtended_TextChanged);
+            this.button_PhysicalExtended.Click += new System.EventHandler(this.button_PhysicalExtended_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(59, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 77);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "PHYSICAL";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_PhysicalDefault
+            // 
+            this.button_PhysicalDefault.BackColor = System.Drawing.Color.Brown;
+            this.button_PhysicalDefault.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_PhysicalDefault.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_PhysicalDefault.FlatAppearance.BorderSize = 0;
+            this.button_PhysicalDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PhysicalDefault.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PhysicalDefault.ForeColor = System.Drawing.Color.White;
+            this.button_PhysicalDefault.Location = new System.Drawing.Point(8, 85);
+            this.button_PhysicalDefault.Margin = new System.Windows.Forms.Padding(8);
+            this.button_PhysicalDefault.Name = "button_PhysicalDefault";
+            this.button_PhysicalDefault.Size = new System.Drawing.Size(209, 61);
+            this.button_PhysicalDefault.TabIndex = 4;
+            this.button_PhysicalDefault.Text = "ON";
+            this.button_PhysicalDefault.UseVisualStyleBackColor = false;
+            this.button_PhysicalDefault.TextChanged += new System.EventHandler(this.button_PhysicalDefault_TextChanged);
+            this.button_PhysicalDefault.Click += new System.EventHandler(this.button_PhysicalDefault_Click);
+            // 
+            // button_PhysicalProgramming
+            // 
+            this.button_PhysicalProgramming.BackColor = System.Drawing.Color.Brown;
+            this.button_PhysicalProgramming.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_PhysicalProgramming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_PhysicalProgramming.FlatAppearance.BorderSize = 0;
+            this.button_PhysicalProgramming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_PhysicalProgramming.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PhysicalProgramming.ForeColor = System.Drawing.Color.White;
+            this.button_PhysicalProgramming.Location = new System.Drawing.Point(8, 162);
+            this.button_PhysicalProgramming.Margin = new System.Windows.Forms.Padding(8);
+            this.button_PhysicalProgramming.Name = "button_PhysicalProgramming";
+            this.button_PhysicalProgramming.Size = new System.Drawing.Size(209, 61);
+            this.button_PhysicalProgramming.TabIndex = 5;
+            this.button_PhysicalProgramming.Text = "ON";
+            this.button_PhysicalProgramming.UseVisualStyleBackColor = false;
+            this.button_PhysicalProgramming.TextChanged += new System.EventHandler(this.button_PhysicalProgramming_TextChanged);
+            this.button_PhysicalProgramming.Click += new System.EventHandler(this.button_PhysicalProgramming_Click);
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Controls.Add(this.label11, 0, 3);
+            this.tableLayoutPanel9.Controls.Add(this.label10, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 4;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(225, 311);
+            this.tableLayoutPanel9.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(64, 231);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 80);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Extended";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(45, 154);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(135, 77);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Programming";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(75, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 77);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Default";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox_Service85NRC
+            // 
+            this.groupBox_Service85NRC.Controls.Add(this.tableLayoutPanel17);
+            this.groupBox_Service85NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_Service85NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Service85NRC.ForeColor = System.Drawing.Color.Brown;
+            this.groupBox_Service85NRC.Location = new System.Drawing.Point(8, 704);
+            this.groupBox_Service85NRC.Margin = new System.Windows.Forms.Padding(8);
+            this.groupBox_Service85NRC.Name = "groupBox_Service85NRC";
+            this.groupBox_Service85NRC.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox_Service85NRC.Size = new System.Drawing.Size(1384, 158);
+            this.groupBox_Service85NRC.TabIndex = 3;
+            this.groupBox_Service85NRC.TabStop = false;
+            this.groupBox_Service85NRC.Text = "Negative Reponse Code";
             // 
             // tableLayoutPanel17
             // 
@@ -222,15 +1085,15 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel17.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel20, 0, 2);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(10, 149);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(4, 17);
             this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 3;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(654, 98);
-            this.tableLayoutPanel17.TabIndex = 0;
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(1376, 137);
+            this.tableLayoutPanel17.TabIndex = 1;
             // 
             // dataGridView_NRCPriority
             // 
@@ -242,7 +1105,7 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -267,7 +1130,7 @@ namespace dcom.views.views_Service
             this.Column15});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Brown;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -276,8 +1139,8 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_NRCPriority.Enabled = false;
             this.dataGridView_NRCPriority.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView_NRCPriority.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_NRCPriority.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView_NRCPriority.Location = new System.Drawing.Point(4, 4);
+            this.dataGridView_NRCPriority.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_NRCPriority.Name = "dataGridView_NRCPriority";
             this.dataGridView_NRCPriority.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_NRCPriority.RowHeadersVisible = false;
@@ -286,10 +1149,10 @@ namespace dcom.views.views_Service
             this.dataGridView_NRCPriority.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView_NRCPriority.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView_NRCPriority.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_NRCPriority.Size = new System.Drawing.Size(654, 44);
+            this.dataGridView_NRCPriority.Size = new System.Drawing.Size(1368, 36);
             this.dataGridView_NRCPriority.StandardTab = true;
             this.dataGridView_NRCPriority.TabIndex = 7;
-            this.dataGridView_NRCPriority.SelectionChanged += new System.EventHandler(this.dataGridView_NRCPriority_SelectionChanged);
+            this.dataGridView_NRCPriority.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CommonSetting_CellContentClick);
             // 
             // Column1
             // 
@@ -446,10 +1309,10 @@ namespace dcom.views.views_Service
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 62);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 58);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(654, 13);
+            this.pictureBox1.Size = new System.Drawing.Size(1368, 13);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -461,12 +1324,12 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel20.Controls.Add(this.label14, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.label15, 1, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 75);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(4, 79);
+            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(654, 23);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(1368, 54);
             this.tableLayoutPanel20.TabIndex = 9;
             // 
             // label14
@@ -475,7 +1338,7 @@ namespace dcom.views.views_Service
             this.label14.Location = new System.Drawing.Point(0, 5);
             this.label14.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 14);
+            this.label14.Size = new System.Drawing.Size(90, 12);
             this.label14.TabIndex = 0;
             this.label14.Text = "Highest Priority";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -485,697 +1348,13 @@ namespace dcom.views.views_Service
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Purple;
-            this.label15.Location = new System.Drawing.Point(560, 5);
+            this.label15.Location = new System.Drawing.Point(1280, 5);
             this.label15.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(94, 14);
+            this.label15.Size = new System.Drawing.Size(88, 12);
             this.label15.TabIndex = 1;
             this.label15.Text = "Lowest Priority";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox_Service85Condition
-            // 
-            this.groupBox_Service85Condition.Controls.Add(this.tableLayoutPanel14);
-            this.groupBox_Service85Condition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service85Condition.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service85Condition.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service85Condition.Location = new System.Drawing.Point(10, 445);
-            this.groupBox_Service85Condition.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.groupBox_Service85Condition.Name = "groupBox_Service85Condition";
-            this.groupBox_Service85Condition.Size = new System.Drawing.Size(680, 415);
-            this.groupBox_Service85Condition.TabIndex = 2;
-            this.groupBox_Service85Condition.TabStop = false;
-            this.groupBox_Service85Condition.Text = "Condition";
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 3;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 1, 1);
-            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 3;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(674, 396);
-            this.tableLayoutPanel14.TabIndex = 5;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel18, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.button_ConditionVehicleSpeed, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.button_ConditionEngine, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel19, 0, 1);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(137, 93);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(400, 210);
-            this.tableLayoutPanel15.TabIndex = 0;
-            // 
-            // tableLayoutPanel18
-            // 
-            this.tableLayoutPanel18.BackColor = System.Drawing.Color.SeaShell;
-            this.tableLayoutPanel18.ColumnCount = 1;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel24, 0, 1);
-            this.tableLayoutPanel18.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(205, 55);
-            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            this.tableLayoutPanel18.RowCount = 2;
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(190, 150);
-            this.tableLayoutPanel18.TabIndex = 5;
-            // 
-            // tableLayoutPanel24
-            // 
-            this.tableLayoutPanel24.ColumnCount = 2;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.Controls.Add(this.comboBox_ConditionVehicle_NRC, 1, 0);
-            this.tableLayoutPanel24.Controls.Add(this.vehicleSpeedValue_Text, 0, 0);
-            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 112);
-            this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel24.Name = "tableLayoutPanel24";
-            this.tableLayoutPanel24.RowCount = 1;
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(190, 38);
-            this.tableLayoutPanel24.TabIndex = 4;
-            // 
-            // comboBox_ConditionVehicle_NRC
-            // 
-            this.comboBox_ConditionVehicle_NRC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox_ConditionVehicle_NRC.Enabled = false;
-            this.comboBox_ConditionVehicle_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_ConditionVehicle_NRC.FormattingEnabled = true;
-            this.comboBox_ConditionVehicle_NRC.Location = new System.Drawing.Point(110, 3);
-            this.comboBox_ConditionVehicle_NRC.Name = "comboBox_ConditionVehicle_NRC";
-            this.comboBox_ConditionVehicle_NRC.Size = new System.Drawing.Size(65, 26);
-            this.comboBox_ConditionVehicle_NRC.TabIndex = 3;
-            this.comboBox_ConditionVehicle_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVehicle_NRC_TextChanged);
-            // 
-            // vehicleSpeedValue_Text
-            // 
-            this.vehicleSpeedValue_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.vehicleSpeedValue_Text.Enabled = false;
-            this.vehicleSpeedValue_Text.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.vehicleSpeedValue_Text.Location = new System.Drawing.Point(3, 3);
-            this.vehicleSpeedValue_Text.Name = "vehicleSpeedValue_Text";
-            this.vehicleSpeedValue_Text.Size = new System.Drawing.Size(89, 26);
-            this.vehicleSpeedValue_Text.TabIndex = 2;
-            this.vehicleSpeedValue_Text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.vehicleSpeedValue_Text.TextChanged += new System.EventHandler(this.vehicleSpeedValue_Text_TextChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Brown;
-            this.label13.Location = new System.Drawing.Point(5, 5);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 102);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "When the Vehicle speed is greater than 4km/h, the responsed NRC is:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button_ConditionVehicleSpeed
-            // 
-            this.button_ConditionVehicleSpeed.BackColor = System.Drawing.Color.Brown;
-            this.button_ConditionVehicleSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ConditionVehicleSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_ConditionVehicleSpeed.FlatAppearance.BorderSize = 0;
-            this.button_ConditionVehicleSpeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ConditionVehicleSpeed.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ConditionVehicleSpeed.ForeColor = System.Drawing.Color.White;
-            this.button_ConditionVehicleSpeed.Location = new System.Drawing.Point(205, 5);
-            this.button_ConditionVehicleSpeed.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button_ConditionVehicleSpeed.Name = "button_ConditionVehicleSpeed";
-            this.button_ConditionVehicleSpeed.Size = new System.Drawing.Size(190, 40);
-            this.button_ConditionVehicleSpeed.TabIndex = 1;
-            this.button_ConditionVehicleSpeed.Text = "ON";
-            this.button_ConditionVehicleSpeed.UseVisualStyleBackColor = false;
-            this.button_ConditionVehicleSpeed.TextChanged += new System.EventHandler(this.button_ConditionVehicleSpeed_TextChanged);
-            this.button_ConditionVehicleSpeed.Click += new System.EventHandler(this.button_Service85_ConditionVehicleSpeed_Click);
-            // 
-            // button_ConditionEngine
-            // 
-            this.button_ConditionEngine.BackColor = System.Drawing.Color.Brown;
-            this.button_ConditionEngine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ConditionEngine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_ConditionEngine.FlatAppearance.BorderSize = 0;
-            this.button_ConditionEngine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ConditionEngine.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ConditionEngine.ForeColor = System.Drawing.Color.White;
-            this.button_ConditionEngine.Location = new System.Drawing.Point(5, 5);
-            this.button_ConditionEngine.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button_ConditionEngine.Name = "button_ConditionEngine";
-            this.button_ConditionEngine.Size = new System.Drawing.Size(190, 40);
-            this.button_ConditionEngine.TabIndex = 0;
-            this.button_ConditionEngine.Text = "ON";
-            this.button_ConditionEngine.UseVisualStyleBackColor = false;
-            this.button_ConditionEngine.TextChanged += new System.EventHandler(this.button_ConditionEngine_TextChanged);
-            this.button_ConditionEngine.Click += new System.EventHandler(this.button_Service85_ConditionEngine_Click);
-            // 
-            // tableLayoutPanel19
-            // 
-            this.tableLayoutPanel19.BackColor = System.Drawing.Color.SeaShell;
-            this.tableLayoutPanel19.ColumnCount = 1;
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.Controls.Add(this.comboBox_ConditionEngine_NRC, 0, 1);
-            this.tableLayoutPanel19.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(5, 55);
-            this.tableLayoutPanel19.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            this.tableLayoutPanel19.RowCount = 2;
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(190, 150);
-            this.tableLayoutPanel19.TabIndex = 4;
-            // 
-            // comboBox_ConditionEngine_NRC
-            // 
-            this.comboBox_ConditionEngine_NRC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox_ConditionEngine_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_ConditionEngine_NRC.FormattingEnabled = true;
-            this.comboBox_ConditionEngine_NRC.Location = new System.Drawing.Point(62, 115);
-            this.comboBox_ConditionEngine_NRC.Name = "comboBox_ConditionEngine_NRC";
-            this.comboBox_ConditionEngine_NRC.Size = new System.Drawing.Size(65, 26);
-            this.comboBox_ConditionEngine_NRC.TabIndex = 1;
-            this.comboBox_ConditionEngine_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionEngine_NRC_TextChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Brown;
-            this.label18.Location = new System.Drawing.Point(5, 5);
-            this.label18.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(180, 102);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "When the engine is running or the electric power train is ready, the responsed NR" +
-    "C is:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox_Service85AddressingMode
-            // 
-            this.groupBox_Service85AddressingMode.Controls.Add(this.tableLayoutPanel12);
-            this.groupBox_Service85AddressingMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service85AddressingMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service85AddressingMode.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service85AddressingMode.Location = new System.Drawing.Point(710, 10);
-            this.groupBox_Service85AddressingMode.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.groupBox_Service85AddressingMode.Name = "groupBox_Service85AddressingMode";
-            this.groupBox_Service85AddressingMode.Size = new System.Drawing.Size(680, 415);
-            this.groupBox_Service85AddressingMode.TabIndex = 1;
-            this.groupBox_Service85AddressingMode.TabStop = false;
-            this.groupBox_Service85AddressingMode.Text = "Addressing Mode";
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 3;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel8, 1, 1);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 3;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(674, 396);
-            this.tableLayoutPanel12.TabIndex = 2;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 3;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel11, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(99, 93);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(475, 210);
-            this.tableLayoutPanel8.TabIndex = 1;
-            // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.tableLayoutPanel11.ColumnCount = 1;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Controls.Add(this.button_FunctionalExtended, 0, 3);
-            this.tableLayoutPanel11.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.button_FunctionalDefault, 0, 1);
-            this.tableLayoutPanel11.Controls.Add(this.button_FunctionalProgramming, 0, 2);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(316, 0);
-            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 4;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(159, 210);
-            this.tableLayoutPanel11.TabIndex = 2;
-            // 
-            // button_FunctionalExtended
-            // 
-            this.button_FunctionalExtended.BackColor = System.Drawing.Color.Brown;
-            this.button_FunctionalExtended.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_FunctionalExtended.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_FunctionalExtended.FlatAppearance.BorderSize = 0;
-            this.button_FunctionalExtended.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_FunctionalExtended.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_FunctionalExtended.ForeColor = System.Drawing.Color.White;
-            this.button_FunctionalExtended.Location = new System.Drawing.Point(10, 166);
-            this.button_FunctionalExtended.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.button_FunctionalExtended.Name = "button_FunctionalExtended";
-            this.button_FunctionalExtended.Size = new System.Drawing.Size(139, 34);
-            this.button_FunctionalExtended.TabIndex = 7;
-            this.button_FunctionalExtended.Text = "ON";
-            this.button_FunctionalExtended.UseVisualStyleBackColor = false;
-            this.button_FunctionalExtended.TextChanged += new System.EventHandler(this.button_Service85_FunctionalExtended_TextChanged);
-            this.button_FunctionalExtended.Click += new System.EventHandler(this.button_Service85_FunctionalExtended_Click);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(12, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 52);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "FUNCTIONAL";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button_FunctionalDefault
-            // 
-            this.button_FunctionalDefault.BackColor = System.Drawing.Color.Brown;
-            this.button_FunctionalDefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_FunctionalDefault.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_FunctionalDefault.FlatAppearance.BorderSize = 0;
-            this.button_FunctionalDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_FunctionalDefault.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_FunctionalDefault.ForeColor = System.Drawing.Color.White;
-            this.button_FunctionalDefault.Location = new System.Drawing.Point(10, 62);
-            this.button_FunctionalDefault.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.button_FunctionalDefault.Name = "button_FunctionalDefault";
-            this.button_FunctionalDefault.Size = new System.Drawing.Size(139, 32);
-            this.button_FunctionalDefault.TabIndex = 5;
-            this.button_FunctionalDefault.Text = "ON";
-            this.button_FunctionalDefault.UseVisualStyleBackColor = false;
-            this.button_FunctionalDefault.TextChanged += new System.EventHandler(this.button_Service85_FunctionalDefault_TextChanged);
-            this.button_FunctionalDefault.Click += new System.EventHandler(this.button_Service85_FunctionalDefault_Click);
-            // 
-            // button_FunctionalProgramming
-            // 
-            this.button_FunctionalProgramming.BackColor = System.Drawing.Color.Brown;
-            this.button_FunctionalProgramming.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_FunctionalProgramming.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_FunctionalProgramming.FlatAppearance.BorderSize = 0;
-            this.button_FunctionalProgramming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_FunctionalProgramming.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_FunctionalProgramming.ForeColor = System.Drawing.Color.White;
-            this.button_FunctionalProgramming.Location = new System.Drawing.Point(10, 114);
-            this.button_FunctionalProgramming.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.button_FunctionalProgramming.Name = "button_FunctionalProgramming";
-            this.button_FunctionalProgramming.Size = new System.Drawing.Size(139, 32);
-            this.button_FunctionalProgramming.TabIndex = 6;
-            this.button_FunctionalProgramming.Text = "ON";
-            this.button_FunctionalProgramming.UseVisualStyleBackColor = false;
-            this.button_FunctionalProgramming.TextChanged += new System.EventHandler(this.button_Service85_FunctionalProgramming_TextChanged);
-            this.button_FunctionalProgramming.Click += new System.EventHandler(this.button_Service85_FunctionalProgramming_Click);
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.BackColor = System.Drawing.Color.Purple;
-            this.tableLayoutPanel10.ColumnCount = 1;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.button_PhysicalExtended, 0, 3);
-            this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button_PhysicalDefault, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.button_PhysicalProgramming, 0, 2);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(158, 0);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 4;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(158, 210);
-            this.tableLayoutPanel10.TabIndex = 1;
-            // 
-            // button_PhysicalExtended
-            // 
-            this.button_PhysicalExtended.BackColor = System.Drawing.Color.Brown;
-            this.button_PhysicalExtended.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_PhysicalExtended.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_PhysicalExtended.FlatAppearance.BorderSize = 0;
-            this.button_PhysicalExtended.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PhysicalExtended.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_PhysicalExtended.ForeColor = System.Drawing.Color.White;
-            this.button_PhysicalExtended.Location = new System.Drawing.Point(10, 166);
-            this.button_PhysicalExtended.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.button_PhysicalExtended.Name = "button_PhysicalExtended";
-            this.button_PhysicalExtended.Size = new System.Drawing.Size(138, 34);
-            this.button_PhysicalExtended.TabIndex = 6;
-            this.button_PhysicalExtended.Text = "ON";
-            this.button_PhysicalExtended.UseVisualStyleBackColor = false;
-            this.button_PhysicalExtended.TextChanged += new System.EventHandler(this.button_Service85_PhysicalExtended_TextChanged);
-            this.button_PhysicalExtended.Click += new System.EventHandler(this.button_Service85_PhysicalExtended_Click);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(25, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 52);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "PHYSICAL";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button_PhysicalDefault
-            // 
-            this.button_PhysicalDefault.BackColor = System.Drawing.Color.Brown;
-            this.button_PhysicalDefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_PhysicalDefault.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_PhysicalDefault.FlatAppearance.BorderSize = 0;
-            this.button_PhysicalDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PhysicalDefault.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_PhysicalDefault.ForeColor = System.Drawing.Color.White;
-            this.button_PhysicalDefault.Location = new System.Drawing.Point(10, 62);
-            this.button_PhysicalDefault.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.button_PhysicalDefault.Name = "button_PhysicalDefault";
-            this.button_PhysicalDefault.Size = new System.Drawing.Size(138, 32);
-            this.button_PhysicalDefault.TabIndex = 4;
-            this.button_PhysicalDefault.Text = "ON";
-            this.button_PhysicalDefault.UseVisualStyleBackColor = false;
-            this.button_PhysicalDefault.TextChanged += new System.EventHandler(this.button_Service85_PhysicalDefault_TextChanged);
-            this.button_PhysicalDefault.Click += new System.EventHandler(this.button_Service85_PhysicalDefault_Click);
-            // 
-            // button_PhysicalProgramming
-            // 
-            this.button_PhysicalProgramming.BackColor = System.Drawing.Color.Brown;
-            this.button_PhysicalProgramming.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_PhysicalProgramming.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_PhysicalProgramming.FlatAppearance.BorderSize = 0;
-            this.button_PhysicalProgramming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_PhysicalProgramming.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_PhysicalProgramming.ForeColor = System.Drawing.Color.White;
-            this.button_PhysicalProgramming.Location = new System.Drawing.Point(10, 114);
-            this.button_PhysicalProgramming.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.button_PhysicalProgramming.Name = "button_PhysicalProgramming";
-            this.button_PhysicalProgramming.Size = new System.Drawing.Size(138, 32);
-            this.button_PhysicalProgramming.TabIndex = 5;
-            this.button_PhysicalProgramming.Text = "ON";
-            this.button_PhysicalProgramming.UseVisualStyleBackColor = false;
-            this.button_PhysicalProgramming.TextChanged += new System.EventHandler(this.button_Service85_PhysicalProgramming_TextChanged);
-            this.button_PhysicalProgramming.Click += new System.EventHandler(this.button_Service85_PhysicalProgramming_Click);
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.label11, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.label10, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 4;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(158, 210);
-            this.tableLayoutPanel9.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(30, 156);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 54);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Extended";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 104);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(135, 52);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Programming";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(41, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 52);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Default";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox_Service85ResetMode
-            // 
-            this.groupBox_Service85ResetMode.Controls.Add(this.tableLayoutPanel13);
-            this.groupBox_Service85ResetMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_Service85ResetMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Service85ResetMode.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox_Service85ResetMode.Location = new System.Drawing.Point(10, 10);
-            this.groupBox_Service85ResetMode.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.groupBox_Service85ResetMode.Name = "groupBox_Service85ResetMode";
-            this.groupBox_Service85ResetMode.Size = new System.Drawing.Size(680, 415);
-            this.groupBox_Service85ResetMode.TabIndex = 0;
-            this.groupBox_Service85ResetMode.TabStop = false;
-            this.groupBox_Service85ResetMode.Text = "Sub Function";
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 3;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 475F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel3, 1, 1);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 3;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(674, 396);
-            this.tableLayoutPanel13.TabIndex = 4;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button_SupressBit, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(99, 93);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(475, 210);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.BackColor = System.Drawing.Color.Coral;
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(337, 55);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(133, 150);
-            this.tableLayoutPanel7.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label8.Location = new System.Drawing.Point(8, 5);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 140);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Supress Bit";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Coral;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(171, 55);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(156, 150);
-            this.tableLayoutPanel5.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(54, 80);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 32);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "02";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Brown;
-            this.label4.Location = new System.Drawing.Point(27, 26);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 44);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Start DTC Setting";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button_SupressBit
-            // 
-            this.button_SupressBit.BackColor = System.Drawing.Color.Brown;
-            this.button_SupressBit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_SupressBit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_SupressBit.FlatAppearance.BorderSize = 0;
-            this.button_SupressBit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SupressBit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SupressBit.ForeColor = System.Drawing.Color.White;
-            this.button_SupressBit.Location = new System.Drawing.Point(337, 5);
-            this.button_SupressBit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.button_SupressBit.Name = "button_SupressBit";
-            this.button_SupressBit.Size = new System.Drawing.Size(133, 40);
-            this.button_SupressBit.TabIndex = 3;
-            this.button_SupressBit.Text = "ON";
-            this.button_SupressBit.UseVisualStyleBackColor = false;
-            this.button_SupressBit.TextChanged += new System.EventHandler(this.button_SupressBit_TextChanged);
-            this.button_SupressBit.Click += new System.EventHandler(this.button_Service85_SupressBit_Click);
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.Coral;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 55);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(156, 150);
-            this.tableLayoutPanel4.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(29, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Stop DTC Setting";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(54, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "01";
             // 
             // tableLayoutPanel2
             // 
@@ -1248,34 +1427,22 @@ namespace dcom.views.views_Service
             this.Load += new System.EventHandler(this.View_Service85_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel_bodySetting.ResumeLayout(false);
-            this.groupBox_Service85NRC.ResumeLayout(false);
-            this.groupBox_Service85NRC.PerformLayout();
-            this.tableLayoutPanel16.ResumeLayout(false);
-            this.tableLayoutPanel17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NRCPriority)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel20.PerformLayout();
             this.groupBox_Service85Condition.ResumeLayout(false);
-            this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel18.PerformLayout();
-            this.tableLayoutPanel24.ResumeLayout(false);
-            this.tableLayoutPanel24.PerformLayout();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.tableLayoutPanel19.PerformLayout();
-            this.groupBox_Service85AddressingMode.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.groupBox_Service85ResetMode.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            this.tableLayoutPanel24.ResumeLayout(false);
+            this.tableLayoutPanel24.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.groupBox_Service85ResetMode.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
@@ -1283,6 +1450,20 @@ namespace dcom.views.views_Service
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.groupBox_Service85AddressingMode.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.groupBox_Service85NRC.ResumeLayout(false);
+            this.tableLayoutPanel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NRCPriority)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel_bodyRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1296,7 +1477,8 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodySetting;
         private System.Windows.Forms.GroupBox groupBox_Service85NRC;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.GroupBox groupBox_Service85Condition;
+        private System.Windows.Forms.GroupBox groupBox_Service85AddressingMode;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         public System.Windows.Forms.DataGridView dataGridView_NRCPriority;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
@@ -1318,18 +1500,6 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox groupBox_Service85Condition;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button_ConditionVehicleSpeed;
-        private System.Windows.Forms.Button button_ConditionEngine;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.ComboBox comboBox_ConditionEngine_NRC;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.GroupBox groupBox_Service85AddressingMode;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Button button_FunctionalExtended;
@@ -1346,7 +1516,6 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox_Service85ResetMode;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label8;
@@ -1357,8 +1526,32 @@ namespace dcom.views.views_Service
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox_ConditionVehicle;
         private System.Windows.Forms.ComboBox comboBox_ConditionVehicle_NRC;
-        private System.Windows.Forms.TextBox vehicleSpeedValue_Text;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button_ConditionVehicleSpeed;
+        private System.Windows.Forms.Button button_ConditionEngine;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.TextBox textBox_ConditionEngine_ValidValue;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox_ConditionEngine_InvalidValue;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox_ConditionEngine_NRC;
+        private System.Windows.Forms.Button button_ConditionVoltage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.TextBox textBox_ConditionVoltage_High;
+        private System.Windows.Forms.TextBox textBox_ConditionVoltage_Low;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox comboBox_ConditionVoltage_NRC;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }

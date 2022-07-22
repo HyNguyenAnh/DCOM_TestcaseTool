@@ -180,6 +180,9 @@ namespace dcom.declaration
         public static bool[] Service85_ButtonStatus_AddressingMode { get; set; }
         public static bool[] Service85_ButtonStatus_Condition { get; set; }
         public static string[] Service85_NRCCondition { get; set; }
+        public static bool Service85_ButtonStatus_SuppressBit { get; set; }
+
+
         public static string[] Service85_InvalidValueCondition { get; set; }
         public static string[] Service85_NameInvalidValueCondition { get; set; }
         public static string[] Service85_NRCPriority { get; set; }

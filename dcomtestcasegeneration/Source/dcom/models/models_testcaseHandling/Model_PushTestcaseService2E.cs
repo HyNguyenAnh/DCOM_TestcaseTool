@@ -35,7 +35,7 @@ namespace dcom.models.models_testcaseHandling
                 TestGroupComponent(ws, rowIndex);
                 AllowSessionComponent(ws, rowIndex);
                 AddressingModeComponent(ws, rowIndex);
-                SuppressBitComponent(ws, rowIndex);
+                //SuppressBitComponent(ws, rowIndex);
                 DIDComponent(ws, rowIndex);
                 //ConditionCheckComponent(ws, rowIndex);
                 //NRCComponent(ws, rowIndex);
@@ -432,7 +432,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
                                                                                                     isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(DIDGroupTestcaseSorted.ElementAt(DIDVal)[8]),
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]), 0, 0)[index] + "\n"
+                                                                                                    length: Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]))[index] + "\n"
                                 ;
                             switch (index)
                             {

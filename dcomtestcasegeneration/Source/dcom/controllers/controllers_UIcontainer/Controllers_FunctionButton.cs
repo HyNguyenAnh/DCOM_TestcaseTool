@@ -18,8 +18,9 @@ namespace dcom.controllers.controllers_UIcontainer
     {
         public static void ButtonExportClick()
         {
-            Model_SystemInformation.createFolder(UIVariables.TestcaseDirectory);
             Definition.TestcaseVariableDefinition();
+            Model_SystemInformation.createFolder(UIVariables.TestcaseDirectory);
+            
             Model_TestcaseTemplate.ExportTestcase();
 
             MessageBoxButtons btn = MessageBoxButtons.YesNo;
@@ -38,7 +39,8 @@ namespace dcom.controllers.controllers_UIcontainer
         public static void ButtonSaveClick()
         {
             Definition.TemplateVariableDefinition();
-            Definition.SystemVariableDefinition();
+            //Definition.SystemVariableDefinition();
+
             Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile(SystemVariables.backupFilePath);
@@ -51,7 +53,7 @@ namespace dcom.controllers.controllers_UIcontainer
             
             Controller_ExcelHandling.OpenExcel(databasePath, DatabaseVariables.WbDatabase);
 
-            Definition.DatabaseVariableDefinition();
+            Controller_UIHandling.MappingFromDatabaseFileToDatabaseVariables();
             Controller_UIHandling.MappingFromDatabaseToUI();
 
             // Close the database

@@ -17,7 +17,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
         public static void SaveDatabase()
         {
             // Create a copy file from template file to save requirement database
-            if (SystemVariables.PathOutputDatabase != UIVariables.DatabasePath)
+            if (SystemVariables.PathOutputDatabase != UIVariables.DatabasePath && !File.Exists(SystemVariables.PathOutputDatabase))
             {
                 File.Copy(SystemVariables.templateFileLocalPath, SystemVariables.PathOutputDatabase, true);
             }
@@ -75,6 +75,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
 
             // Save the database
             Controller_ExcelHandling.SaveExcel(SystemVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
+
+            Console.WriteLine(SystemVariables.checkDBVariableDefinitionStatus);
+            if (!SystemVariables.checkDBVariableDefinitionStatus)
+            {
+                Controller_UIHandling.MappingFromDatabaseFileToDatabaseVariables();
+            }
+           
 
             // After Handling, close the template file
             Controller_ExcelHandling.CloseExcel(SystemVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);

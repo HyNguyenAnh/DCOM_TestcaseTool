@@ -33,10 +33,7 @@ namespace dcom.views
             // Load home page
             View_Home frm = new View_Home();
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
-            Definition.SystemVariableDefinition();
-            Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
-            Model_SystemInformation.checkTemplateFile(SystemVariables.templateFileLocalPath, SystemVariables.templateFileServerPath);
-            Definition.UIVariableDefinition();
+            
         }
         private void button_service10_MouseHover(object sender, EventArgs e)
         {

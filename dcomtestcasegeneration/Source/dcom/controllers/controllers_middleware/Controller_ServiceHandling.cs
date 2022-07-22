@@ -424,7 +424,7 @@ namespace dcom.controllers.controllers_middleware
                     }
                     break;
                 case 2:
-                    if(invalidValue == 0)
+                    if((invalidValue == 0) || (invalidValue == 0 && setInvalidValue != 0))
                     {
                         data = orgResponseCodeString;
                     }
@@ -434,7 +434,7 @@ namespace dcom.controllers.controllers_middleware
                     }
                     break;
                 case 3:
-                    if (((setInvalidValue <= invalidValue) & (setInvalidValue >= 0) & (conditionName == "Low")) | ((setInvalidValue >= invalidValue) & (setInvalidValue <= 18) & (conditionName == "Low")))
+                    if (((setInvalidValue <= invalidValue) & (setInvalidValue > 0) & (conditionName == "Low")) | ((setInvalidValue >= invalidValue) & (setInvalidValue <= 18) & (conditionName == "High")))
                     {
                         data = orgResponseCodeString;
                     }

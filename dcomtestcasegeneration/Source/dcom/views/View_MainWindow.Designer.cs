@@ -547,9 +547,7 @@ namespace dcom.views
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_base;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_body;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodyRight;
         private System.Windows.Forms.Button button_play;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodyLeft;
         private System.Windows.Forms.Panel panel_bodyMain;
         public System.Windows.Forms.Button button_setting;
         private System.Windows.Forms.Button button_save;
@@ -571,5 +569,7 @@ namespace dcom.views
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_home;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodyRight;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel_bodyLeft;
     }
 }

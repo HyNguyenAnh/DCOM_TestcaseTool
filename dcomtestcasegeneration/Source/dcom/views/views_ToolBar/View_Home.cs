@@ -23,20 +23,34 @@ namespace dcom.views.views_ToolBar
         private void button_homepage_goToSetting_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
+            Definition.SystemVariableDefinition();
+            Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
+            Model_SystemInformation.checkTemplateFile(SystemVariables.templateFileLocalPath, SystemVariables.templateFileServerPath);
+            Definition.DatabaseVariableDefinition();
+            Definition.UIVariableDefinition();
 
             if (SystemVariables.checkTheFirstLoad == true)
             {
                 Model_BackupInformation.BackupInformation();
             }
+            tableLayoutPanel_pointerRight.Visible = true;
+            tableLayoutPanel_pointerLeft.Visible = true;
             View_MainWindow view_MainWindow = (View_MainWindow)this?.Parent?.Parent?.Parent?.Parent;
+            view_MainWindow.tableLayoutPanel_bodyLeft.Show();
+            view_MainWindow.tableLayoutPanel_bodyRight.Show();
+
+
             view_MainWindow.button_setting.PerformClick();
-            
+
             Cursor = Cursors.Default;
         }
 
         private void View_Home_Load(object sender, EventArgs e)
         {
-
+            View_MainWindow view_MainWindow = (View_MainWindow)this?.Parent?.Parent?.Parent?.Parent;
+            view_MainWindow.tableLayoutPanel_bodyLeft.Hide();
+            view_MainWindow.tableLayoutPanel_bodyRight.Hide();
+            tableLayoutPanel_pointerRight.Visible = false;
         }
     }
 }
