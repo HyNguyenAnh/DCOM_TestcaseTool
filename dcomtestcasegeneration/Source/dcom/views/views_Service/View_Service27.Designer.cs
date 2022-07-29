@@ -773,6 +773,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionVehicle
             // 
             this.textBox_ConditionVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVehicle.Enabled = false;
             this.textBox_ConditionVehicle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionVehicle.Location = new System.Drawing.Point(4, 52);
             this.textBox_ConditionVehicle.Margin = new System.Windows.Forms.Padding(4);
@@ -785,6 +786,7 @@ namespace dcom.views.views_Service
             // comboBox_ConditionVehicle_NRC
             // 
             this.comboBox_ConditionVehicle_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVehicle_NRC.Enabled = false;
             this.comboBox_ConditionVehicle_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionVehicle_NRC.FormattingEnabled = true;
             this.comboBox_ConditionVehicle_NRC.Location = new System.Drawing.Point(4, 148);
@@ -870,6 +872,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionEngine_ValidValue
             // 
             this.textBox_ConditionEngine_ValidValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionEngine_ValidValue.Enabled = false;
             this.textBox_ConditionEngine_ValidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionEngine_ValidValue.Location = new System.Drawing.Point(4, 148);
             this.textBox_ConditionEngine_ValidValue.Margin = new System.Windows.Forms.Padding(4);
@@ -896,6 +899,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionEngine_InvalidValue
             // 
             this.textBox_ConditionEngine_InvalidValue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionEngine_InvalidValue.Enabled = false;
             this.textBox_ConditionEngine_InvalidValue.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionEngine_InvalidValue.Location = new System.Drawing.Point(4, 52);
             this.textBox_ConditionEngine_InvalidValue.Margin = new System.Windows.Forms.Padding(4);
@@ -1024,6 +1028,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionVoltage_High
             // 
             this.textBox_ConditionVoltage_High.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVoltage_High.Enabled = false;
             this.textBox_ConditionVoltage_High.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionVoltage_High.Location = new System.Drawing.Point(206, 4);
             this.textBox_ConditionVoltage_High.Margin = new System.Windows.Forms.Padding(4);
@@ -1036,6 +1041,7 @@ namespace dcom.views.views_Service
             // textBox_ConditionVoltage_Low
             // 
             this.textBox_ConditionVoltage_Low.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ConditionVoltage_Low.Enabled = false;
             this.textBox_ConditionVoltage_Low.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ConditionVoltage_Low.Location = new System.Drawing.Point(4, 4);
             this.textBox_ConditionVoltage_Low.Margin = new System.Windows.Forms.Padding(4);
@@ -1062,6 +1068,7 @@ namespace dcom.views.views_Service
             // comboBox_ConditionVoltage_NRC
             // 
             this.comboBox_ConditionVoltage_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVoltage_NRC.Enabled = false;
             this.comboBox_ConditionVoltage_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionVoltage_NRC.FormattingEnabled = true;
             this.comboBox_ConditionVoltage_NRC.Location = new System.Drawing.Point(4, 148);

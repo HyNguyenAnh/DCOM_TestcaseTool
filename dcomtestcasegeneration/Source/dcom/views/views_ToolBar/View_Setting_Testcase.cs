@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,13 +31,29 @@ namespace dcom.views.views_ToolBar
             button_LoadDB.Enabled = false;
         }
 
+        private void InitialDataGridViewCommonSetting()
+        {
+            Controller_UIHandling.InitialDataGridRows(dataGridView_CommonSetting, 4);
+            dataGridView_CommonSetting.Rows[0].Cells[1].Value = "Create_Fault";
+            dataGridView_CommonSetting.Rows[1].Cells[1].Value = "Vehicle_Speed";
+            dataGridView_CommonSetting.Rows[2].Cells[1].Value = "Engine_Status";
+            dataGridView_CommonSetting.Rows[3].Cells[1].Value = "Security_Access";
 
+            dataGridView_CommonSetting.Rows[3].Cells[2].Value = "EnvLogInLevel";
+
+        }
+
+        private void InitialDataGridViewCommonDID()
+        {
+            Controller_UIHandling.InitialDataGridRows(dataGridView_CommonDID, 3);
+            dataGridView_CommonDID.Rows[0].Cells[1].Value = "Current_Session";
+            dataGridView_CommonDID.Rows[1].Cells[1].Value = "Invalid_Counter";
+            dataGridView_CommonDID.Rows[2].Cells[1].Value = "Current_Voltage";
+        }
 
         private void View_Setting_Testcase_Load(object sender, EventArgs e)
         {
-            // Initial 100 empty row for the DID table
-            Controller_UIHandling.InitialDataGridRows(dataGridView_CommonSetting, 10);
-            Controller_UIHandling.InitialDataGridRows(dataGridView_CommonDID, 10);
+            
 
             // Definition
             ProjectInformation = new TextBox[]{
@@ -128,13 +145,27 @@ namespace dcom.views.views_ToolBar
 
             // Load Common Keyword Information
             List<string[]> DatabaseCommonSetting = UIVariables.DatabaseCommonSetting;
-            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
-
             List<string[]> DatabaseCommonDID = UIVariables.DatabaseCommonDID;
-            Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
 
-            dataGridView_CommonSetting.Enabled = true;
-            dataGridView_CommonDID.Enabled = true;
+            if (DatabaseCommonSetting != null)
+            {
+                Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonSetting, DatabaseCommonSetting);
+            }
+            else
+            {
+                InitialDataGridViewCommonSetting();
+            }
+
+            if (DatabaseCommonDID != null)
+            {
+                Controller_UIHandling.PutDatabaseToDataGridView(dataGridView_CommonDID, DatabaseCommonDID);
+            }
+            else
+            {
+                InitialDataGridViewCommonDID();
+            }
+
+
         }
 
         private void panel_DBPathBrowse_Click(object sender, EventArgs e)
@@ -216,6 +247,8 @@ namespace dcom.views.views_ToolBar
 
             dataGridView_CommonSetting.Enabled = true;
             dataGridView_CommonDID.Enabled = true;
+            SystemVariables.dbLoadStatus = true;
+
             Cursor = Cursors.Default;
             MessageBox.Show("The database is loaded successfully");
         }
@@ -358,42 +391,6 @@ namespace dcom.views.views_ToolBar
 
         }
 
-        private void radioButton_DBSourceLocal_CheckedChanged(object sender, EventArgs e)
-        {
-            UIVariables.DatabaseSource = "Local";
-            if (UIVariables.DBPath_LocalList != null)
-            {
-                comboBox_DBPath.Items.Clear();
-                comboBox_DBPath.Text = "";
-                for (int index = 0; index < UIVariables.DBPath_LocalList.Length; index++)
-                {
-                    comboBox_DBPath.Items.Add(UIVariables.DBPath_LocalList[index].Split('\\')[UIVariables.DBPath_LocalList[index].Split('\\').Length - 1]);
-                }
-            }
-            else
-            {
-                comboBox_DBPath.Items.Clear();
-            }
-        }
-
-        private void radioButton_DBSourceServer_CheckedChanged(object sender, EventArgs e)
-        {
-            UIVariables.DatabaseSource = "Server";
-            if (UIVariables.DBPath_ServerList != null)
-            {
-                comboBox_DBPath.Items.Clear();
-                comboBox_DBPath.Text = "";
-                for (int index = 0; index < UIVariables.DBPath_ServerList.Length; index++)
-                {
-                    comboBox_DBPath.Items.Add(UIVariables.DBPath_ServerList[index].Split('\\')[UIVariables.DBPath_ServerList[index].Split('\\').Length - 1]);
-                }
-            }
-            else
-            {
-                comboBox_DBPath.Items.Clear();
-            }
-        }
-
         private void textBox_TestcaseDirectory_TextChanged(object sender, EventArgs e)
         {
             UIVariables.TestcaseDirectory = textBox_TestcaseDirectory.Text;
@@ -402,15 +399,16 @@ namespace dcom.views.views_ToolBar
 
         private void dataGridView_CommonSetting_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView_CommonSetting.Enabled == true)
+            if (SystemVariables.dbLoadStatus)
             {
+                Console.WriteLine("complete save dtgv");
                 Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, UIVariables.DatabaseCommonSetting);
             }
         }
 
         private void dataGridView_CommonDID_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView_CommonDID.Enabled == true)
+            if (SystemVariables.dbLoadStatus)
             {
                 Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonDID, UIVariables.DatabaseCommonDID);
             }
@@ -430,8 +428,8 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
 
-            View_Service11_Tc frm = new View_Service11_Tc();
-            Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
+            //View_Service11_Tc frm = new View_Service11_Tc();
+            //Controller_UIHandling.ShowUserControl(panel_bodyTestcase, frm);
 
             Cursor = Cursors.Default;
         }
@@ -658,7 +656,49 @@ namespace dcom.views.views_ToolBar
 
         private void radioButton_DBSourceLocal_Click(object sender, EventArgs e)
         {
-
+            UIVariables.DatabaseSource = "Local";
+            UIVariables.DBPath_LocalList = Directory.GetFiles(UIVariables.LocalDatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
+            LoadDBPath(UIVariables.DBPath_LocalList);
         }
+
+        private void radioButton_DBSourceServer_Click(object sender, EventArgs e)
+        {
+            UIVariables.DatabaseSource = "Server";
+            UIVariables.DBPath_ServerList = Directory.GetFiles(UIVariables.ServerDatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
+            LoadDBPath(UIVariables.DBPath_ServerList);
+        }
+
+        private void comboBox_DBPath_Click(object sender, EventArgs e)
+        {
+
+            UIVariables.DBPath_LocalList = Directory.GetFiles(UIVariables.LocalDatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
+            UIVariables.DBPath_ServerList = Directory.GetFiles(UIVariables.ServerDatabaseDirectory, "*.xlsx", SearchOption.AllDirectories);
+
+            if (UIVariables.DatabaseSource == "Local")
+            {
+                LoadDBPath(UIVariables.DBPath_LocalList);
+            }
+            else
+            {
+                LoadDBPath(UIVariables.DBPath_ServerList);
+            }
+        }
+
+        private void LoadDBPath(string[] pathList)
+        {
+            comboBox_DBPath.Items.Clear();
+            if (pathList != null)
+            {
+                comboBox_DBPath.Text = "";
+                for (int index = 0; index < pathList.Length; index++)
+                {
+                    if (!pathList[index].Contains("~$"))
+                    {
+                        comboBox_DBPath.Items.Add(pathList[index].Split('\\')[pathList[index].Split('\\').Length - 1]);
+                    }
+                }
+            }
+        }
+
     }
 }

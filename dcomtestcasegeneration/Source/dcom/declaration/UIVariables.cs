@@ -18,7 +18,6 @@ namespace dcom.declaration
         public static string TestcaseDirectory { get; set; }
         public static string LocalDatabaseDirectory { get; set; }
         public static string ServerDatabaseDirectory { get; set; }
-        public static string TemplatePath { get; set; }
         public static string DatabaseSource { get; set; }
 
         public static string[] DBPath_LocalList { get; set; }

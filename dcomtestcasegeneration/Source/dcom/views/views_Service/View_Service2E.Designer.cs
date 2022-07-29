@@ -1317,7 +1317,6 @@ namespace dcom.views.views_Service
             this.Extended});
             this.dataGridView_DIDTable.ContextMenuStrip = this.contextMenuStrip_DIDTable;
             this.dataGridView_DIDTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_DIDTable.Enabled = false;
             this.dataGridView_DIDTable.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_DIDTable.Location = new System.Drawing.Point(3, 16);
             this.dataGridView_DIDTable.Margin = new System.Windows.Forms.Padding(8);

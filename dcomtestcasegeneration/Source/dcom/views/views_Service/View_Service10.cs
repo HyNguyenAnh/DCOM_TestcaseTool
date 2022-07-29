@@ -339,13 +339,16 @@ namespace dcom.views.views_Service
         private void button_DtoP_BackColorChanged(object sender, EventArgs e)
         {
             UIVariables.Service10_ButtonStatus_SessionTransition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_DtoP.BackColor.Name.ToString());
-            if (UIVariables.Service10_ButtonStatus_SessionTransition[1] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[2][2]))
+            if(DatabaseVariables.DatabaseService10?.ElementAt(1)[2][2] != null)
             {
-                UIVariables.edited_View[1] = true;
-            }
-            else
-            {
-                UIVariables.edited_View[1] = false;
+                if (UIVariables.Service10_ButtonStatus_SessionTransition[1] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService10?.ElementAt(1)[2][2]))
+                {
+                    UIVariables.edited_View[1] = true;
+                }
+                else
+                {
+                    UIVariables.edited_View[1] = false;
+                }
             }
         }
 

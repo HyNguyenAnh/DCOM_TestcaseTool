@@ -26,7 +26,6 @@ namespace dcom.declaration
 
         public static void DatabaseVariableDefinition()
         {
-
             DatabaseVariables.StartRowIndexDatabaseTables = new int[]
             {
                 2,  // Common Setting
@@ -52,45 +51,107 @@ namespace dcom.declaration
                 11, // NRC
                 14, // Condition
                 20, // Optional
-                29,  // SIDSupported
+                24,  // SIDSupported
             };
 
 
             // Service 10
-            DatabaseVariables.DatabaseService10 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService10 = new List<List<string[]>>();
+            DatabaseVariables.DatabaseService10.Add(Controller_UIHandling.addListArray(3, 2));
+            DatabaseVariables.DatabaseService10.Add(Controller_UIHandling.addListArray(5, 4));
+            DatabaseVariables.DatabaseService10.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService10.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService10.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 11
             DatabaseVariables.DatabaseService11 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(1, 2));
+            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(2, 4));
+            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 14
             DatabaseVariables.DatabaseService14 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService14.Add(Controller_UIHandling.addListArray(5, 2));
+            DatabaseVariables.DatabaseService14.Add(Controller_UIHandling.addListArray(2, 4));
+            DatabaseVariables.DatabaseService14.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService14.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService14.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 19
             //DatabaseVariables.DatabaseService19 = new List<List<string[]>> { };
+            //DatabaseVariables.DatabaseService19.Add(Controller_UIHandling.addListArray(3, 2));
+            //DatabaseVariables.DatabaseService19.Add(Controller_UIHandling.addListArray(5, 4));
+            //DatabaseVariables.DatabaseService19.Add(Controller_UIHandling.addListArray(15, 2));
+            //DatabaseVariables.DatabaseService19.Add(Controller_UIHandling.addListArray(4, 5));
+            //DatabaseVariables.DatabaseService19.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 22
             DatabaseVariables.DatabaseService22 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService22.Add(Controller_UIHandling.addListArray(100, 4));
+            DatabaseVariables.DatabaseService22.Add(Controller_UIHandling.addListArray(100, 5));
+            DatabaseVariables.DatabaseService22.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService22.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService22.Add(Controller_UIHandling.addListArray(2, 2));
+            DatabaseVariables.DatabaseService22.Add(Controller_UIHandling.addListArray(3, 2));
 
             // Service 27
             DatabaseVariables.DatabaseService27 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService27.Add(Controller_UIHandling.addListArray(2, 2));
+            DatabaseVariables.DatabaseService27.Add(Controller_UIHandling.addListArray(2, 4));
+            DatabaseVariables.DatabaseService27.Add(Controller_UIHandling.addListArray(15, 3));
+            DatabaseVariables.DatabaseService27.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService27.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 28
             DatabaseVariables.DatabaseService28 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService28.Add(Controller_UIHandling.addListArray(4, 4));
+            DatabaseVariables.DatabaseService28.Add(Controller_UIHandling.addListArray(2, 4));
+            DatabaseVariables.DatabaseService28.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService28.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService28.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 2E
             DatabaseVariables.DatabaseService2E = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService2E.Add(Controller_UIHandling.addListArray(100, 5));
+            DatabaseVariables.DatabaseService2E.Add(Controller_UIHandling.addListArray(100, 5));
+            DatabaseVariables.DatabaseService2E.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService2E.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService2E.Add(Controller_UIHandling.addListArray(2, 2));
+            DatabaseVariables.DatabaseService2E.Add(Controller_UIHandling.addListArray(3, 2));
 
             // Service 31
             //DatabaseVariables.DatabaseService31 = new List<List<string[]>> { };
+            //DatabaseVariables.DatabaseService31.Add(Controller_UIHandling.addListArray(3, 2));
+            //DatabaseVariables.DatabaseService31.Add(Controller_UIHandling.addListArray(5, 4));
+            //DatabaseVariables.DatabaseService31.Add(Controller_UIHandling.addListArray(15, 2));
+            //DatabaseVariables.DatabaseService31.Add(Controller_UIHandling.addListArray(4, 5));
+            //DatabaseVariables.DatabaseService31.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 3E
             DatabaseVariables.DatabaseService3E = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService3E.Add(Controller_UIHandling.addListArray(1, 2));
+            DatabaseVariables.DatabaseService3E.Add(Controller_UIHandling.addListArray(2, 4));
+            DatabaseVariables.DatabaseService3E.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService3E.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService3E.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 85
             //DatabaseVariables.DatabaseService85 = new List<List<string[]>> { };
+            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(3, 2));
+            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(5, 4));
+            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(15, 2));
+            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(4, 5));
+            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Can TP
             //DatabaseVariables.DatabaseCanTP = new List<List<string[]>> { };
+            //DatabaseVariables.DatabaseCanTP.Add(Controller_UIHandling.addListArray(3, 2));
+            //DatabaseVariables.DatabaseCanTP.Add(Controller_UIHandling.addListArray(5, 4));
+            //DatabaseVariables.DatabaseCanTP.Add(Controller_UIHandling.addListArray(15, 2));
+            //DatabaseVariables.DatabaseCanTP.Add(Controller_UIHandling.addListArray(4, 5));
+            //DatabaseVariables.DatabaseCanTP.Add(Controller_UIHandling.addListArray(2, 2));
 
         }
 
@@ -165,37 +226,14 @@ namespace dcom.declaration
             TestcaseVariables.ColorTestGroupInterior = System.Drawing.Color.FromArgb(200, 222, 232);
             TestcaseVariables.ColorTestCaseInterior = System.Drawing.Color.White;
 
+            TestcaseVariables.isFaultEnable = false;
+            TestcaseVariables.isFaultDisable = false;
+            TestcaseVariables.isClearDTC = false;
         }
         
         public static void SystemVariableDefinition()
         {
-            DatabaseVariables.StartRowIndexDatabaseTables = new int[]
-            {   2,  // Common Setting
-                21, // Common DID
-                31, // Project Information
-                41, // Data Path Information
-                51, // Selected Service
-                3,  // Specification
-                3,  // Allow session
-                3,  // NRC
-                3,  // Condition
-                3,  // Optional
-                3,  // SIDSupported
-            };
-            DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
-            {   1,  // Common Setting
-                1,  // Common DID
-                1,  // Project Information
-                1,  // Data Path Information
-                1,  // Selected Service
-                1,  // Specification
-                6,  // Allow session
-                11, // NRC
-                14, // Condition
-                20, // Optional
-                29,  // SIDSupported
-            };
-
+            SystemVariables.dbLoadStatus = false;
             SystemVariables.checkDBVariableDefinitionStatus = false;
             SystemVariables.currentApplicationPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
             SystemVariables.backupFileName = "BackupFile.txt";
@@ -283,14 +321,12 @@ namespace dcom.declaration
             UIVariables.DatabaseCommonSettingVehicleSpeed = new string[] { };
             UIVariables.DatabaseCommonSettingEngineStatus = new string[] { };
             UIVariables.DatabaseCommonSettingSecurityUnlock = new string[] { };
-            UIVariables.DatabaseCommonSetting = new List<string[]> { };
 
             // Common DID
             UIVariables.DatabaseCommonDIDCurrentSession = new string[] { };
             UIVariables.DatabaseCommonDIDInvalidCounter = new string[] { };
             UIVariables.DatabaseCommonDIDCurrentVoltage = new string[] { };
 
-            UIVariables.DatabaseCommonDID = new List<string[]> { };
 
             // Project Information
             UIVariables.ProjectName = "";

@@ -399,7 +399,7 @@ namespace dcom.controllers.controllers_middleware
                 {
                     for (int cellIndex = 0; cellIndex < dataGridView?.Columns.Count - 1; cellIndex++)
                     {
-                        Data.ElementAt(rowIndex)[cellIndex] = dataGridView.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
+                        Data.ElementAt(rowIndex)[cellIndex] = dataGridView?.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
                     }
                 }
             }
@@ -456,7 +456,21 @@ namespace dcom.controllers.controllers_middleware
                 }
             }
         }
-
+        public static List<string[]> addListArray(int numberOfListStringArray, int numberOfStringArray)
+        {
+            string[] strArray = new string[numberOfStringArray];
+            List<string[]> listStrArray = new List<string[]>();
+            for(int index = 0; index < numberOfListStringArray; index++)
+            {
+                listStrArray.Add(strArray);
+            }
+            return listStrArray;
+        }
+        public static string[] addArray(int numberOfStringArray)
+        {
+            string[] strArray = new string[numberOfStringArray];
+            return strArray;
+        }
         public static void MappingFromDatabaseToUI()
         {
             // Common Setting

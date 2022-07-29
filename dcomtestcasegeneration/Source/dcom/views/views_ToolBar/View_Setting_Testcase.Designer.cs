@@ -30,8 +30,8 @@ namespace dcom.views.views_ToolBar
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Setting_Testcase));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel_base = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,10 +44,6 @@ namespace dcom.views.views_ToolBar
             this.tabPage_CommandSetting = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_CommonSetting = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage_CommonDID = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_CommonDID = new System.Windows.Forms.DataGridView();
@@ -110,6 +106,10 @@ namespace dcom.views.views_ToolBar
             this.button_service11_tc = new System.Windows.Forms.Button();
             this.button_service10_tc = new System.Windows.Forms.Button();
             this.panel_bodyTestcase = new System.Windows.Forms.Panel();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_DTCID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel_base.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabControl_Setting_Testcase.SuspendLayout();
@@ -330,22 +330,21 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.AllowUserToResizeRows = false;
             this.dataGridView_CommonSetting.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView_CommonSetting.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_CommonSetting.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonSetting.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonSetting.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_CommonSetting.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonSetting.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
-            this.Column1});
+            this.Column_DTCID});
             this.dataGridView_CommonSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_CommonSetting.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView_CommonSetting.Location = new System.Drawing.Point(20, 24);
@@ -358,37 +357,6 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonSetting.StandardTab = true;
             this.dataGridView_CommonSetting.TabIndex = 5;
             this.dataGridView_CommonSetting.SelectionChanged += new System.EventHandler(this.dataGridView_CommonSetting_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.Frozen = true;
-            this.dataGridViewTextBoxColumn8.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn8.Width = 22;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.FillWeight = 257.1429F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.FillWeight = 21.42857F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Variable";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Timeout";
-            this.Column1.Name = "Column1";
             // 
             // tabPage_CommonDID
             // 
@@ -428,16 +396,15 @@ namespace dcom.views.views_ToolBar
             this.dataGridView_CommonDID.AllowUserToResizeRows = false;
             this.dataGridView_CommonDID.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView_CommonDID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_CommonDID.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView_CommonDID.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CommonDID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_CommonDID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_CommonDID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -815,6 +782,7 @@ namespace dcom.views.views_ToolBar
             this.comboBox_DBPath.Size = new System.Drawing.Size(380, 26);
             this.comboBox_DBPath.TabIndex = 0;
             this.comboBox_DBPath.TextChanged += new System.EventHandler(this.comboBox_DBPath_TextChanged);
+            this.comboBox_DBPath.Click += new System.EventHandler(this.comboBox_DBPath_Click);
             // 
             // label1
             // 
@@ -886,7 +854,7 @@ namespace dcom.views.views_ToolBar
             this.radioButton_DBSourceServer.TabStop = true;
             this.radioButton_DBSourceServer.Text = "Server";
             this.radioButton_DBSourceServer.UseVisualStyleBackColor = true;
-            this.radioButton_DBSourceServer.CheckedChanged += new System.EventHandler(this.radioButton_DBSourceServer_CheckedChanged);
+            this.radioButton_DBSourceServer.Click += new System.EventHandler(this.radioButton_DBSourceServer_Click);
             // 
             // radioButton_DBSourceLocal
             // 
@@ -903,7 +871,6 @@ namespace dcom.views.views_ToolBar
             this.radioButton_DBSourceLocal.TabStop = true;
             this.radioButton_DBSourceLocal.Text = "Local";
             this.radioButton_DBSourceLocal.UseVisualStyleBackColor = true;
-            this.radioButton_DBSourceLocal.CheckedChanged += new System.EventHandler(this.radioButton_DBSourceLocal_CheckedChanged);
             this.radioButton_DBSourceLocal.Click += new System.EventHandler(this.radioButton_DBSourceLocal_Click);
             // 
             // panel_TestcaseDirectoryBrowse
@@ -1173,6 +1140,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service11_tc, 0, 1);
             this.tableLayoutPanel_testcaseService.Controls.Add(this.button_service10_tc, 0, 0);
             this.tableLayoutPanel_testcaseService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_testcaseService.Enabled = false;
             this.tableLayoutPanel_testcaseService.Location = new System.Drawing.Point(1357, 0);
             this.tableLayoutPanel_testcaseService.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel_testcaseService.Name = "tableLayoutPanel_testcaseService";
@@ -1192,6 +1160,7 @@ namespace dcom.views.views_ToolBar
             this.tableLayoutPanel_testcaseService.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_testcaseService.Size = new System.Drawing.Size(55, 862);
             this.tableLayoutPanel_testcaseService.TabIndex = 3;
+            this.tableLayoutPanel_testcaseService.Visible = false;
             // 
             // button_canTP_tc
             // 
@@ -1412,11 +1381,44 @@ namespace dcom.views.views_ToolBar
             // panel_bodyTestcase
             // 
             this.panel_bodyTestcase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_bodyTestcase.Enabled = false;
             this.panel_bodyTestcase.Location = new System.Drawing.Point(0, 0);
             this.panel_bodyTestcase.Margin = new System.Windows.Forms.Padding(0);
             this.panel_bodyTestcase.Name = "panel_bodyTestcase";
             this.panel_bodyTestcase.Size = new System.Drawing.Size(1357, 862);
             this.panel_bodyTestcase.TabIndex = 2;
+            this.panel_bodyTestcase.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.Frozen = true;
+            this.dataGridViewTextBoxColumn8.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn8.Width = 22;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.FillWeight = 257.1429F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.FillWeight = 21.42857F;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Variable";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column_DTCID
+            // 
+            this.Column_DTCID.HeaderText = "DTCID";
+            this.Column_DTCID.Name = "Column_DTCID";
             // 
             // View_Setting_Testcase
             // 
@@ -1537,10 +1539,10 @@ namespace dcom.views.views_ToolBar
         private System.Windows.Forms.Button button_service14_tc;
         private System.Windows.Forms.Button button_service11_tc;
         private System.Windows.Forms.Button button_service10_tc;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_DTCID;
     }
 }

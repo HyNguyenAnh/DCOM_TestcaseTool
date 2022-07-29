@@ -26,8 +26,7 @@ namespace dcom.views.views_ToolBar
             Definition.SystemVariableDefinition();
             Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
             Model_SystemInformation.checkTemplateFile(SystemVariables.templateFileLocalPath, SystemVariables.templateFileServerPath);
-            Definition.DatabaseVariableDefinition();
-            Definition.UIVariableDefinition();
+            
 
             if (SystemVariables.checkTheFirstLoad == true)
             {

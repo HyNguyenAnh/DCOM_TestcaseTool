@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using dcom.controllers.controllers_middleware;
 using dcom.declaration;
-using dcom.controllers.controllers_middleware;
-using dcom.controllers.controllers_UIcontainer;
-using dcom.models.models_databaseHandling;
-using dcom.models.models_testcaseHandling;
 
 namespace dcom.models.models_testcaseHandling
 {
@@ -174,7 +166,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestReadCurrentDiagnosticSession(string subFunction, bool responseStatus)
+        public static string[] RequestReadCurrentDiagnosticSession(string subFunction, bool responseStatus, bool suppressBitEnabledStatus = false)
         {
             // subFunction: 01, 02, 03
 
@@ -187,9 +179,13 @@ namespace dcom.models.models_testcaseHandling
             string responseTitle = Controller_ServiceHandling.GetReponseTitle(responseStatus);
             string ResponseDisplayString;
             string ResponseCodeString;
-
+            
             if (responseStatus)
             {
+                if (suppressBitEnabledStatus)
+                {
+                    subFunction = Controller_ServiceHandling.GetSuppressBitSubFunction(subFunction);
+                }
                 ResponseDisplayString = $"62 {CurrentSessionDIDDisplayString} {subFunction}";
             }
             else
@@ -215,6 +211,143 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
+        public static string[] RequestCreateFault(bool status, int timeout)
+        {
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+            string createFault = UIVariables.DatabaseCommonSettingCreateFault[1];
+            int TestStepStatus = Controller_ServiceHandling.ConvertFromBoolToInt(status);
+
+            // Test step
+            TestStep = $"Set the {createFault} to Value {TestStepStatus} Wait {timeout} ms";
+
+            // Test response
+            TestReponse = "-";
+
+            // Test step keyword
+            TestStepKeyword = $"envvar({createFault}({TestStepStatus};{timeout}))";
+
+
+            if (status)
+            {
+                TestcaseVariables.isFaultEnable = true;
+                TestcaseVariables.isFaultDisable = false;
+            }
+            else
+            {
+                TestcaseVariables.isFaultDisable = true;
+            }
+
+
+            // service 14
+            if (TestcaseVariables.isClearDTC)
+            {
+                if(TestcaseVariables.isFaultDisable)
+                {
+                    TestcaseVariables.isFaultEnable = false;
+                    TestcaseVariables.isFaultDisable = false;
+                }
+            }
+
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            return Data;
+        }
+
+        public static string[] ReadDTCStatus(string dtcID, string subFunction, bool isFaultEnable, bool isFaultDisable, bool isClearDTC)
+        {
+            // dtcStatus:
+            // - active       >> dtcStatusMask = {1}[f|9|b].*
+            // - passive      >> dtcStatusMask = {1}[e|8|a].*
+            // - nodtc:       >> dtcStatusMask = {1}0
+            // - noconfirmed: >> dtcStatusMask = {1}[1|3|7|].*
+
+            // Request: 1906{dtcID}01
+            // Response: 5906{dtcID}{dtcStatusMask}
+            // RequestResponse({Request}, {Response}, Regexp)
+            string[] Data;
+            string TestStep;
+            string TestReponse;
+            string TestStepKeyword;
+            string dtcStatusMask = "";
+            string dtcStatus;
+
+            if (!isFaultEnable)
+            {
+                dtcStatus = "nodtc";
+            }
+            else
+            {
+                if (!isFaultDisable)
+                {
+                    if(subFunction == "01")
+                    {
+                        dtcStatus = "active";
+                    }
+                    else
+                    {
+                        dtcStatus = "noconfirmedA";
+                    }
+                }
+                else
+                {
+                    if (!isClearDTC)
+                    {
+                        if(subFunction == "01")
+                        {
+                            dtcStatus = "passive";
+                        }
+                        else
+                        {
+                            dtcStatus = "noconfirmedP";
+                        }
+                    }
+                    else
+                    {
+                        dtcStatus = "nodtc";
+                    }
+                }
+            }
+            switch (dtcStatus)
+            {
+                case "active": dtcStatusMask = $"{1}[f|9|b].*";
+                    break;
+                case "passive": dtcStatusMask = $"{1}[e|a|8].*";
+                    break;
+                case "nodtc": dtcStatusMask = $"{1}0";
+                    break;
+                case "noconfirmedA": dtcStatusMask = $"{1}[1|3|5|7].*";
+                    break;
+                case "noconfirmedP": dtcStatusMask = $"{1}[2|4|6].*";
+                    break;
+            }
+
+            // Test step
+            TestStep = $"Send request 1906{dtcID}01";
+
+            // Test response
+            TestReponse = $"Expected response ia 5906{dtcID}{dtcStatusMask}";
+
+            // Test step keyword
+            TestStepKeyword = $"RequestResponse({TestStep}, {TestReponse}, Regexp)";
+
+            Data = new string[]
+            {
+                TestStep,
+                TestReponse,
+                TestStepKeyword
+            };
+            TestcaseVariables.isClearDTC = false;
+            return Data;
+        }
+
         public static string[] RequestService10(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
                                                 string expectedValue, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
@@ -225,7 +358,7 @@ namespace dcom.models.models_testcaseHandling
             // isSuppressBitSupported: true -> 1081 -> 5081, false -> 1081 -> 7F1012
             // isSIDSupportedInActiveSession: true -> positive response, false: NRC 7F
             // isSubFunctionSupportedInActiveSession: true -> Positive response, false -> NRC 7E
-            // addressing mode: 0: Physical, 1: Functional
+            // addressing mode: 1: Physical, 0: Functional
 
             string SID = "10";
             string subFunctionNew;
@@ -258,19 +391,19 @@ namespace dcom.models.models_testcaseHandling
             // Configure response string
             if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
                     if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            switch (suppressBitEnabledStatus)
+                            switch (suppressBitEnabledStatus) 
                             {
                                 case true:
-                                    ResponseCodeString = ResponseID + subFunctionNew + expectedValue;
+                                    ResponseCodeString = $"7f{ResponseID}12";
                                     break;
                                 case false:
-                                    ResponseCodeString = "";
+                                    ResponseCodeString = ResponseID + subFunctionNew + expectedValue;
                                     break;
                             }
                         }
@@ -292,10 +425,58 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $""; 
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew + expectedValue;
+                            break;
+                    }
                 }
+
+                //if (!isSuppressBitSupported)
+                //{
+                //    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
+                //    {
+                //        if((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
+                //        {
+                //            switch (suppressBitEnabledStatus)
+                //            {
+                //                case true:
+                //                    ResponseCodeString = ResponseID + subFunctionNew + expectedValue;
+                //                    break;
+                //                case false:
+                //                    ResponseCodeString = $"";
+                //                    break;
+                //            }
+                //        }
+                //        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
+                //        {
+                //            ResponseCodeString = $"7f{ResponseID}7e";
+                //        }
+                //        else
+                //        {
+                //            ResponseCodeString = $"";
+                //        }
+                //    }
+                //    else if (!isSubFunctionSupported && addressingMode)
+                //    {
+                //        ResponseCodeString = $"7f{ResponseID}12";
+                //    }
+                //    else
+                //    {
+                //        ResponseCodeString = $"";
+                //    }
+                //}
+                //else
+                //{
+
+                //    ResponseCodeString = $""; // ?
+                //}
             }
             else if (!isSIDSupportedInActiveSession && addressingMode)
             {
@@ -359,10 +540,9 @@ namespace dcom.models.models_testcaseHandling
             RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
-            // Configure response string
             if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
                     if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
@@ -371,10 +551,10 @@ namespace dcom.models.models_testcaseHandling
                             switch (suppressBitEnabledStatus)
                             {
                                 case true:
-                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    ResponseCodeString = $"7f{ResponseID}12";
                                     break;
                                 case false:
-                                    ResponseCodeString = "";
+                                    ResponseCodeString = ResponseID + subFunctionNew;
                                     break;
                             }
                         }
@@ -396,9 +576,17 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $"";
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew;
+                            break;
+                    }
                 }
             }
             else if (!isSIDSupportedInActiveSession && addressingMode)
@@ -461,10 +649,9 @@ namespace dcom.models.models_testcaseHandling
             RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
-            // Configure response string
             if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
                     if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
@@ -473,10 +660,10 @@ namespace dcom.models.models_testcaseHandling
                             switch (suppressBitEnabledStatus)
                             {
                                 case true:
-                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    ResponseCodeString = $"7f{ResponseID}12";
                                     break;
                                 case false:
-                                    ResponseCodeString = "";
+                                    ResponseCodeString = ResponseID + subFunctionNew;
                                     break;
                             }
                         }
@@ -498,9 +685,17 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $"";
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew;
+                            break;
+                    }
                 }
             }
             else if (!isSIDSupportedInActiveSession && addressingMode)
@@ -532,8 +727,8 @@ namespace dcom.models.models_testcaseHandling
             return Data;
         }
         public static string[] RequestService27(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
-                                                bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession,
+                                                bool isParameterSupported, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             string SID = "27";
@@ -563,23 +758,29 @@ namespace dcom.models.models_testcaseHandling
             RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
-            // Configure response string
             if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
                     if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
                         if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            switch (suppressBitEnabledStatus)
+                            if (isParameterSupported)
                             {
-                                case true:
-                                    ResponseCodeString = ResponseID + subFunctionNew;
-                                    break;
-                                case false:
-                                    ResponseCodeString = "";
-                                    break;
+                                switch (suppressBitEnabledStatus)
+                                {
+                                    case true:
+                                        ResponseCodeString = $"7f{ResponseID}12";
+                                        break;
+                                    case false:
+                                        ResponseCodeString = ResponseID + subFunctionNew;
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                ResponseCodeString = $"7f{ResponseID}35";
                             }
                         }
                         else if (!isSubFunctionSupportedInActiveSession && addressingMode)
@@ -600,9 +801,17 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $"";
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew;
+                            break;
+                    }
                 }
             }
             else if (!isSIDSupportedInActiveSession && addressingMode)
@@ -634,8 +843,8 @@ namespace dcom.models.models_testcaseHandling
             return Data;
         }
         public static string[] RequestService28(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
-                                                bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession, 
-                                                bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
+                                                bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession,
+                                                bool isParameterSupported, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
             string SID = "28";
@@ -665,23 +874,29 @@ namespace dcom.models.models_testcaseHandling
             RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
-            // Configure response string
             if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
                     if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
                         if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            switch (suppressBitEnabledStatus)
+                            if (isParameterSupported)
                             {
-                                case true:
-                                    ResponseCodeString = ResponseID + subFunctionNew;
-                                    break;
-                                case false:
-                                    ResponseCodeString = "";
-                                    break;
+                                switch (suppressBitEnabledStatus)
+                                {
+                                    case true:
+                                        ResponseCodeString = $"7f{ResponseID}12";
+                                        break;
+                                    case false:
+                                        ResponseCodeString = ResponseID + subFunctionNew;
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                ResponseCodeString = $"7f{ResponseID}31";
                             }
                         }
                         else if (!isSubFunctionSupportedInActiveSession && addressingMode)
@@ -702,9 +917,17 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $"";
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew;
+                            break;
+                    }
                 }
             }
             else if (!isSIDSupportedInActiveSession && addressingMode)
@@ -770,7 +993,7 @@ namespace dcom.models.models_testcaseHandling
             // Configure response string
             if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
                     if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
@@ -779,10 +1002,10 @@ namespace dcom.models.models_testcaseHandling
                             switch (suppressBitEnabledStatus)
                             {
                                 case true:
-                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    ResponseCodeString = $"7f{ResponseID}12";
                                     break;
                                 case false:
-                                    ResponseCodeString = "";
+                                    ResponseCodeString = ResponseID + subFunctionNew;
                                     break;
                             }
                         }
@@ -804,9 +1027,17 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $"";
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew;
+                            break;
+                    }
                 }
             }
             else if (!isSIDSupportedInActiveSession && addressingMode)
@@ -901,6 +1132,7 @@ namespace dcom.models.models_testcaseHandling
                 TestReponse,
                 TestStepKeyword
             };
+            TestcaseVariables.isClearDTC = true;
             return Data;
         }
         public static string[] RequestService22(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParameterSupported, 
@@ -1059,33 +1291,25 @@ namespace dcom.models.models_testcaseHandling
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
             // Configure response string
-            if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
+            if ((isSIDSupportedInActiveSession && addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (!isSuppressBitSupported)
+                if (!isSuppressBitSupported) // isSuppressBitSupported = 0
                 {
-                    if ((isSubFunctionSupported & addressingMode) | (isSubFunctionSupported & !addressingMode))
+                    if ((isSubFunctionSupported && addressingMode) | (isSubFunctionSupported & !addressingMode))
                     {
-                        if ((isSubFunctionSupportedInActiveSession & addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
+                        if ((isSubFunctionSupportedInActiveSession && addressingMode) | (isSubFunctionSupportedInActiveSession & !addressingMode))
                         {
-                            if (isParameterSupported)
+                            switch (suppressBitEnabledStatus)
                             {
-                                switch (suppressBitEnabledStatus)
-                                {
-                                    case true:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
-                                        break;
-                                    case false:
-                                        ResponseCodeString = ResponseID + subFunction;
-                                        break;
-                                }
+                                case true:
+                                    ResponseCodeString = $"7f{ResponseID}12";
+                                    break;
+                                case false:
+                                    ResponseCodeString = ResponseID + subFunctionNew;
+                                    break;
                             }
-                            else
-                            {
-                                ResponseCodeString = $"7f{ResponseID}31";
-                            }
-
                         }
-                        else if(!isSubFunctionSupportedInActiveSession & addressingMode)
+                        else if (!isSubFunctionSupportedInActiveSession && addressingMode)
                         {
                             ResponseCodeString = $"7f{ResponseID}7e";
                         }
@@ -1094,7 +1318,7 @@ namespace dcom.models.models_testcaseHandling
                             ResponseCodeString = $"";
                         }
                     }
-                    else if(!isSubFunctionSupported & addressingMode)
+                    else if (!isSubFunctionSupported && addressingMode)
                     {
                         ResponseCodeString = $"7f{ResponseID}12";
                     }
@@ -1103,12 +1327,20 @@ namespace dcom.models.models_testcaseHandling
                         ResponseCodeString = $"";
                     }
                 }
-                else
+                else // isSuppressBitSupported = 1
                 {
-                    ResponseCodeString = $"";
+                    switch (suppressBitEnabledStatus)
+                    {
+                        case true:
+                            ResponseCodeString = $"";
+                            break;
+                        case false:
+                            ResponseCodeString = ResponseID + subFunctionNew;
+                            break;
+                    }
                 }
             }
-            else if(!isSIDSupportedInActiveSession & addressingMode)
+            else if (!isSIDSupportedInActiveSession && addressingMode)
             {
                 ResponseCodeString = $"7f{ResponseID}7f";
             }

@@ -40,6 +40,9 @@ namespace dcom.declaration
         public static Color ColorTestGroupInterior { get; set; }
         public static Color ColorTestCaseInterior { get; set; }
 
+        public static bool isFaultEnable { get; set; }
+        public static bool isFaultDisable { get; set; }
+        public static bool isClearDTC { get; set; }
 
     }
 }

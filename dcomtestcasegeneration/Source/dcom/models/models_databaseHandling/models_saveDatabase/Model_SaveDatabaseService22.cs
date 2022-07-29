@@ -70,17 +70,17 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     {
                         if (status == "1")
                         {
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 0] = condition;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = UIVariables.Service22_InvalidValueCondition[index];
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = UIVariables.Service22_NRCCondition[index];
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = condition;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = UIVariables.Service22_InvalidValueCondition[index];
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = UIVariables.Service22_NRCCondition[index];
                         }
                         else
                         {
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 0] = condition;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = "";
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = "";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = condition;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = "";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = "";
                         }
                     }
                     else if (index == 1)
@@ -89,28 +89,28 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 0] = condition;
-                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 1] = condition;
+                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 2] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = status;
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = UIVariables.Service22_NRCCondition[index];
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = status;
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 5] = UIVariables.Service22_NRCCondition[index];
                                 }
                                 else
                                 {
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = "0";
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = "";
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = "0";
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 5] = "";
                                 }
                             }
                         }
                         else
                         {
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 0] = condition;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = "0";
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = "Stop";
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = status;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = "";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = condition;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = "0";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = "Stop";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = "";
                         }
                     }
                     else
@@ -125,28 +125,28 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                             }
                             if (status == "1")
                             {
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 0] = condition;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = UIVariables.Service22_InvalidValueCondition[index + index_];
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = voltageName;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = status;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = UIVariables.Service22_NRCCondition[index];
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = condition;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = UIVariables.Service22_InvalidValueCondition[index + index_];
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = voltageName;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = status;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 5] = UIVariables.Service22_NRCCondition[index];
                             }
                             else
                             {
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 0] = condition;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = "";
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = voltageName;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = status;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = "";
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = condition;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = "";
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = voltageName;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = status;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 5] = "";
                             }
                         }
                         for (int index_ = 0; index_ < 5; index_++)
                         {
-                            Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 0] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 1] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 2] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 3] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 4] = "";
+                            Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 5] = "";
                         }
                     }
                 }

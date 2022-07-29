@@ -44,14 +44,23 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
+            int startColumnIndexDatabaseTable_except;
+            if (SID == "2E")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[6] + 1;
+            }
+            else
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[6];
+            }
 
             // Definition worksheet
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[6]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[6]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[6]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int columnIndex = startColumnIndexDatabaseTable[6]; ws.Cells[startRowIndexDatabaseTable[6] - 1, columnIndex].Text != ""; columnIndex++)
+                for (int columnIndex = startColumnIndexDatabaseTable_except; ws.Cells[startRowIndexDatabaseTable[6] - 1, columnIndex].Text != ""; columnIndex++)
                 {
                     dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }
@@ -68,9 +77,13 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
             int startColumnIndexDatabaseTable_except;
-            if(SID == "22" || SID == "2E")
+            if(SID == "22")
             {
                 startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[7] + 1;
+            }
+            else if (SID == "2E")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[7] + 2;
             }
             else
             {
@@ -99,9 +112,13 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
             int startColumnIndexDatabaseTable_except;
-            if (SID == "22" || SID == "2E" || SID == "27")
+            if (SID == "22" || SID == "27")
             {
                 startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[8] + 1;
+            }
+            else if (SID == "2E")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[8] + 2;
             }
             else
             {
@@ -131,9 +148,13 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
             int startColumnIndexDatabaseTable_except;
-            if (SID == "22" || SID == "2E" || SID == "27")
+            if (SID == "22" || SID == "27")
             {
                 startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[9] + 1;
+            }
+            else if (SID == "2E")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[9] + 2;
             }
             else
             {
@@ -161,14 +182,22 @@ namespace dcom.models.models_databaseHandling.models_getDatabase
             List<string[]> dataTable = new List<string[]>();
             List<string> dataRow = new List<string>();
             string sheetName = Controller_ServiceHandling.GetSheetNameOfService(SID);
-
+            int startColumnIndexDatabaseTable_except;
+            if (SID == "2E")
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[10] + 1;
+            }
+            else
+            {
+                startColumnIndexDatabaseTable_except = startColumnIndexDatabaseTable[10];
+            }
             // Definition worksheet
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase?.Sheets[sheetName];
             Worksheet ws = DatabaseVariables.WsDatabase;
 
-            for (int rowIndex = startRowIndexDatabaseTable[10]; ws.Cells[rowIndex, startColumnIndexDatabaseTable[10]].Text != ""; rowIndex++)
+            for (int rowIndex = startRowIndexDatabaseTable[10]; ws.Cells[rowIndex, startColumnIndexDatabaseTable_except].Text != ""; rowIndex++)
             {
-                for (int columnIndex = startColumnIndexDatabaseTable[10]; ws.Cells[startRowIndexDatabaseTable[10] - 1, columnIndex].Text != ""; columnIndex++)
+                for (int columnIndex = startColumnIndexDatabaseTable_except; ws.Cells[startRowIndexDatabaseTable[10] - 1, columnIndex].Text != ""; columnIndex++)
                 {
                     dataRow.Add(ws.Cells[rowIndex, columnIndex].Text);
                 }

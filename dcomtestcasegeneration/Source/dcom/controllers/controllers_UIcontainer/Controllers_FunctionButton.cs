@@ -38,10 +38,6 @@ namespace dcom.controllers.controllers_UIcontainer
 
         public static void ButtonSaveClick()
         {
-            Definition.TemplateVariableDefinition();
-            //Definition.SystemVariableDefinition();
-
-            Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile(SystemVariables.backupFilePath);
             Controller_UIHandling.MappingFromUIToDatabase(UIVariables.edited_View);
@@ -50,7 +46,6 @@ namespace dcom.controllers.controllers_UIcontainer
         public static void ButtonLoadDataClick(string databasePath)
         {
             // Open the database
-            
             Controller_ExcelHandling.OpenExcel(databasePath, DatabaseVariables.WbDatabase);
 
             Controller_UIHandling.MappingFromDatabaseFileToDatabaseVariables();

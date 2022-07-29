@@ -369,6 +369,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_ValidValue.Size = new System.Drawing.Size(531, 26);
             this.textBox_ConditionEngine_ValidValue.TabIndex = 6;
             this.textBox_ConditionEngine_ValidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionEngine_ValidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_ValidValue_TextChanged);
             // 
             // label17
             // 
@@ -394,6 +395,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionEngine_InvalidValue.Size = new System.Drawing.Size(531, 26);
             this.textBox_ConditionEngine_InvalidValue.TabIndex = 4;
             this.textBox_ConditionEngine_InvalidValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionEngine_InvalidValue.TextChanged += new System.EventHandler(this.textBox_ConditionEngine_InvalidValue_TextChanged);
             // 
             // tableLayoutPanel13
             // 
@@ -470,6 +472,8 @@ namespace dcom.views.views_Service
             this.button_ConditionVoltage.TabIndex = 6;
             this.button_ConditionVoltage.Text = "ON";
             this.button_ConditionVoltage.UseVisualStyleBackColor = false;
+            this.button_ConditionVoltage.TextChanged += new System.EventHandler(this.button_ConditionVoltage_TextChanged);
+            this.button_ConditionVoltage.Click += new System.EventHandler(this.button_ConditionVoltage_Click);
             // 
             // tableLayoutPanel14
             // 
@@ -519,6 +523,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVoltage_High.Size = new System.Drawing.Size(194, 26);
             this.textBox_ConditionVoltage_High.TabIndex = 5;
             this.textBox_ConditionVoltage_High.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVoltage_High.TextChanged += new System.EventHandler(this.textBox_ConditionVoltage_High_TextChanged);
             // 
             // textBox_ConditionVoltage_Low
             // 
@@ -530,6 +535,7 @@ namespace dcom.views.views_Service
             this.textBox_ConditionVoltage_Low.Size = new System.Drawing.Size(193, 26);
             this.textBox_ConditionVoltage_Low.TabIndex = 4;
             this.textBox_ConditionVoltage_Low.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_ConditionVoltage_Low.TextChanged += new System.EventHandler(this.textBox_ConditionVoltage_Low_TextChanged);
             // 
             // label20
             // 
@@ -548,6 +554,7 @@ namespace dcom.views.views_Service
             // comboBox_ConditionVoltage_NRC
             // 
             this.comboBox_ConditionVoltage_NRC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_ConditionVoltage_NRC.Enabled = false;
             this.comboBox_ConditionVoltage_NRC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ConditionVoltage_NRC.FormattingEnabled = true;
             this.comboBox_ConditionVoltage_NRC.Location = new System.Drawing.Point(4, 190);
@@ -555,6 +562,7 @@ namespace dcom.views.views_Service
             this.comboBox_ConditionVoltage_NRC.Name = "comboBox_ConditionVoltage_NRC";
             this.comboBox_ConditionVoltage_NRC.Size = new System.Drawing.Size(395, 26);
             this.comboBox_ConditionVoltage_NRC.TabIndex = 2;
+            this.comboBox_ConditionVoltage_NRC.TextChanged += new System.EventHandler(this.comboBox_ConditionVoltage_NRC_TextChanged);
             // 
             // tableLayoutPanel24
             // 

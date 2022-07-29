@@ -340,7 +340,7 @@ namespace dcom.views.views_Service
         {
             if (UIVariables.Service14_ButtonStatus_Condition[2] == true)
             {
-                UIVariables.Service14_NRCCondition[2] = comboBox_ConditionEngine_NRC.Text;
+                UIVariables.Service14_NRCCondition[2] = comboBox_ConditionVoltage_NRC.Text;
             }
         }
 

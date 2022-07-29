@@ -122,7 +122,7 @@ namespace dcom.views.views_Service
             }
 
             // Load Security Unlock
-
+            comboBox_SecurityUnlockLevel.Text = UIVariables.Service2E_SecurityUnlockLv;
             button_SecurityUnlock.BackColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service2E_ButtonStatus_Optional[1])[0];
             button_SecurityUnlock.ForeColor = Controller_UIHandling.GetColorOfStatusButton(UIVariables.Service2E_ButtonStatus_Optional[1])[1];
             button_SecurityUnlock.Text = Controller_UIHandling.GetNameOfStatusButton(UIVariables.Service2E_ButtonStatus_Optional[1]);
@@ -367,7 +367,7 @@ namespace dcom.views.views_Service
         {
             if (UIVariables.Service2E_ButtonStatus_Condition[2] == true)
             {
-                UIVariables.Service2E_NRCCondition[2] = comboBox_ConditionEngine_NRC.Text;
+                UIVariables.Service2E_NRCCondition[2] = comboBox_ConditionVoltage_NRC.Text;
             }
         }
 

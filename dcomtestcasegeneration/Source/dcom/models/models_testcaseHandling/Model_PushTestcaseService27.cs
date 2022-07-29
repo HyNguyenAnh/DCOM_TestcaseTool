@@ -244,7 +244,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                         isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[Int32.Parse(subFunction[subIndex])]),
                                                                                         suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                         isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[Int32.Parse(subFunction[subIndex])]),
-                                                                                        addressingMode: true)[index] + "\n"
+                                                                                        isParameterSupported: true, addressingMode: true)[index] + "\n"
                     ;
                     TestStepIndex += 4;
                 }
@@ -304,7 +304,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                 isSubFunctionSupportedInActiveSession: true,
                                                                                                 suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                 isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunction[subIndex])]),
-                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n"
+                                                                                                isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n"
                             ;
                         TestStepIndex += 1;
                     }
@@ -365,7 +365,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             isSubFunctionSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunction[subIndex])]),
                                                                                             suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunction[subIndex])]),
-                                                                                            addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1))[index] + "\n"
+                                                                                            isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1))[index] + "\n"
                             ;
                         TestStepIndex += 1;
                     }
@@ -427,7 +427,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: true,
-                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                        isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                         conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                     ;
@@ -467,7 +467,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                             isSubFunctionSupportedInActiveSession: true,
                                                                                                             suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                             isSIDSupportedInActiveSession: true,
-                                                                                                            addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), invalidValue: invalidValue,
+                                                                                                            isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), invalidValue: invalidValue,
                                                                                                             setInvalidValue: invalidValue - 0.2 + (0.2 * vehicleValue),
                                                                                                             conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                         ;
@@ -488,7 +488,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: true,
-                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                        isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: 0,
                                                                                                         conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                     ;
@@ -553,7 +553,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSubFunctionSupportedInActiveSession: true,
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: true,
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                     invalidValue: invalidValue, setInvalidValue: validValue,
                                                                                                     conditionIndex: 2, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;
@@ -615,7 +615,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                        addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                        isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: setInvalidValue,
                                                                                                         conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                     ;
@@ -632,7 +632,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSubFunctionSupportedInActiveSession: true,
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                     invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                     conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;
@@ -665,7 +665,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSubFunctionSupportedInActiveSession: true,
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                     invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                     conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                                 ;

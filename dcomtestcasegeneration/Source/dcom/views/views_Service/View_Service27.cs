@@ -381,7 +381,10 @@ namespace dcom.views.views_Service
 
         private void comboBox_ConditionVoltage_NRC_TextChanged(object sender, EventArgs e)
         {
-
+            if (UIVariables.Service27_ButtonStatus_Condition[2] == true)
+            {
+                UIVariables.Service27_NRCCondition[2] = comboBox_ConditionVoltage_NRC.Text;
+            }
         }
 
         private void textBox_ConditionVehicle_TextChanged(object sender, EventArgs e)
