@@ -519,7 +519,7 @@ namespace dcom.controllers.controllers_middleware
 
             // Service 85
 
-            //Controllers_UIService.UIDefinition_Service85();
+            Controllers_UIService.UIDefinition_Service85();
 
             // CanTP
 
@@ -570,7 +570,7 @@ namespace dcom.controllers.controllers_middleware
 
             // Service 85
 
-            //Controllers_UIService.UpdateDB_Service85(edited[11]);
+            Controllers_UIService.UpdateDB_Service85(edited[11]);
 
             // CanTP
 
