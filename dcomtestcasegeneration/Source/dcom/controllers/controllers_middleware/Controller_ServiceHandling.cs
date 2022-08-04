@@ -76,6 +76,35 @@ namespace dcom.controllers.controllers_middleware
 
         }
 
+        public static List<string[]> GetControlType(List<string[]> Specification)
+        {
+            List<string[]> controlType = new List<string[]>();
+            for(int index = 0; index < Specification.Count; index++)
+            {
+                string[] row = new string[2];
+                for (int index_ = 0; index_ < 2; index_++)
+                {
+                    row[index_] = Specification.ElementAt(index)[index_];
+                }
+                controlType.Add(row);
+            }
+            return controlType;
+        }
+        public static List<string[]> GetCommunicationType(List<string[]> Specification)
+        {
+            List<string[]> communicationType = new List<string[]>();
+            for (int index = 0; index < Specification.Count - 1; index++)
+            {
+                string[] row = new string[2];
+                for (int index_ = 0; index_ < 2; index_++)
+                {
+                    row[index_] = Specification.ElementAt(index)[index_ + 2];
+                }
+                communicationType.Add(row);
+            }
+            return communicationType;
+        }
+
         public static string[] GetSubFunctions(List<string[]> Specification)
         {
             string[] SubFunction = new string[Specification.Count];

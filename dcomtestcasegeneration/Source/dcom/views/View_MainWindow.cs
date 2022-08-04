@@ -35,6 +35,7 @@ namespace dcom.views
             Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);
             Definition.DatabaseVariableDefinition();
             Definition.UIVariableDefinition();
+            Definition.OutputVariablesDefinition();
 
         }
         private void button_service10_MouseHover(object sender, EventArgs e)

@@ -17,13 +17,13 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
         public static void SaveDatabase()
         {
             // Create a copy file from template file to save requirement database
-            if (SystemVariables.PathOutputDatabase != UIVariables.DatabasePath && !File.Exists(SystemVariables.PathOutputDatabase))
+            if (OutputVariables.PathOutputDatabase != UIVariables.DatabasePath && !File.Exists(OutputVariables.PathOutputDatabase))
             {
-                File.Copy(SystemVariables.templateFileLocalPath, SystemVariables.PathOutputDatabase, true);
+                File.Copy(SystemVariables.templateFileLocalPath, OutputVariables.PathOutputDatabase, true);
             }
 
             // Open the requirement database(template) file
-            Controller_ExcelHandling.OpenExcel(SystemVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
+            Controller_ExcelHandling.OpenExcel(OutputVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
 
             // Save data from common setting to the database
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[1];
@@ -61,20 +61,24 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[9];
             Model_SaveDatabaseService28.SaveDatabaseService28(DatabaseVariables.WsDatabase, UIVariables.edited_View[8]);
 
-            //// Save data from service 31 to the database
-            //DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[10];
-            //Model_SaveDatabaseService31.SaveDatabaseService31(DatabaseVariables.WsDatabase, UIVariables.edited_View[9]);
-
             // Save data from service 3E to the database
-            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[11];
-            Model_SaveDatabaseService3E.SaveDatabaseService3E(DatabaseVariables.WsDatabase, UIVariables.edited_View[10]);
+            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[10];
+            Model_SaveDatabaseService3E.SaveDatabaseService3E(DatabaseVariables.WsDatabase, UIVariables.edited_View[9]);
 
             // Save data from service 85 to the database
-            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[12];
-            Model_SaveDatabaseService85.SaveDatabaseService85(DatabaseVariables.WsDatabase, UIVariables.edited_View[11]);
+            DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[11];
+            Model_SaveDatabaseService85.SaveDatabaseService85(DatabaseVariables.WsDatabase, UIVariables.edited_View[10]);
+
+            //// Save data from service 31 to the database
+            //DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[12];
+            //Model_SaveDatabaseService31.SaveDatabaseService31(DatabaseVariables.WsDatabase, UIVariables.edited_View[11]);
+
+            //// Save data from CanTP to the database
+            //DatabaseVariables.WsDatabase = DatabaseVariables.WbDatabase.Sheets[13];
+            //Model_SaveDatabaseService31.SaveDatabaseService31(DatabaseVariables.WsDatabase, UIVariables.edited_View[12]);
 
             // Save the database
-            Controller_ExcelHandling.SaveExcel(SystemVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
+            Controller_ExcelHandling.SaveExcel(OutputVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
 
             Console.WriteLine(SystemVariables.checkDBVariableDefinitionStatus);
             if (!SystemVariables.checkDBVariableDefinitionStatus)
@@ -84,7 +88,7 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
            
 
             // After Handling, close the template file
-            Controller_ExcelHandling.CloseExcel(SystemVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
+            Controller_ExcelHandling.CloseExcel(OutputVariables.PathOutputDatabase, DatabaseVariables.WbDatabase);
         }
     }
 }

@@ -20,9 +20,7 @@ namespace dcom.declaration
         public static string templateFileLocalPath { get; set; }
 
 
-        public static string NameOutputDatabase { get; set; }
-        public static string DirectoryOutputDatabase { get; set; }
-        public static string PathOutputDatabase { get; set; }
+        
 
     }
 }

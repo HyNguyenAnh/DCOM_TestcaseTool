@@ -45,7 +45,7 @@ namespace dcom.models.models_systemHandling
             // Create a file to write to.
             using (StreamWriter sw = File.CreateText(backupFilePath))
             {
-                sw.WriteLine(SystemVariables.PathOutputDatabase);
+                sw.WriteLine(OutputVariables.PathOutputDatabase);
                 sw.WriteLine(DateTime.Now);
             }
         }

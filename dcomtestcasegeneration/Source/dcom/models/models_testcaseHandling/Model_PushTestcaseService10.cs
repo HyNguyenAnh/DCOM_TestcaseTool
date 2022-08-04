@@ -59,9 +59,10 @@ namespace dcom.models.models_testcaseHandling
         public static void AllowSessionComponent(Worksheet ws, int startRowIndex)
         {
             subRowIndex++;
+            string GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
 
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex + " Check all allowed diagnostic sessions in service 0x" + SID;
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check all allowed diagnostic sessions";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all allowed diagnostic session";
             ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestAllowSessionComponent()[0];
             ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestAllowSessionComponent()[1];
@@ -75,24 +76,14 @@ namespace dcom.models.models_testcaseHandling
         }
         public static void SessionTransitionComponent(Worksheet ws, int startRowIndex)
         {
-            int subSubRowIndex = 0;
-            subRowIndex++;
-
-            string GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
-
-            // Test group : Session transitions
-            ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = GetSubServiceTestGroupIndex + " Session transitions";
-            ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[1];
-
-            rowIndex++;
+            string GetSubServiceTestGroupIndex;
 
             // Session transitions - From Default Session
-            subSubRowIndex++;
-            startRowIndex++;
+            subRowIndex++;
 
+            GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = GetSubServiceTestGroupIndex + "." + subSubRowIndex + " Session transitions - From Default Session";
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check Session transitions - From Default Session";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all diagnostic sessions can be transited from Default session";
             ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetSessionTransitionFromDefaultSessionComponent()[0];
             ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetSessionTransitionFromDefaultSessionComponent()[1];
@@ -102,13 +93,14 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
             rowIndex++;
-
-            // Session transitions - From Programming Session
-            subSubRowIndex++;
             startRowIndex++;
 
+            // Session transitions - From Programming Session
+            subRowIndex++;
+
+            GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = GetSubServiceTestGroupIndex + "." + subSubRowIndex + " Session transitions - From Programming Session";
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check Session transitions - From Programming Session";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all diagnostic sessions can be transited from Programming session";
             ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetSessionTransitionFromProgrammingSessionComponent()[0];
             ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetSessionTransitionFromProgrammingSessionComponent()[1];
@@ -118,13 +110,14 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
             rowIndex++;
-
-            // Session transitions - From Extended Session
-            subSubRowIndex++;
             startRowIndex++;
 
+            // Session transitions - From Extended Session
+            subRowIndex++;
+
+            GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = GetSubServiceTestGroupIndex + "." + subSubRowIndex + " Session transitions - From Extended Session";
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check Session transitions - From Extended Session";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all diagnostic sessions can be transited from Extended session";
             ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetSessionTransitionFromExtendedSessionComponent()[0];
             ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetSessionTransitionFromExtendedSessionComponent()[1];
@@ -134,15 +127,14 @@ namespace dcom.models.models_testcaseHandling
             ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
             rowIndex++;
-
-
         }
         public static void AddressingModeComponent(Worksheet ws, int startRowIndex)
         {
             subRowIndex++;
+            string GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
 
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex + " Check all supported addressing mode in service 0x" + SID;
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check all supported addressing mode";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported addressing mode";
             ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestAddressingModeComponent()[0];
             ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestAddressingModeComponent()[1];
@@ -157,9 +149,10 @@ namespace dcom.models.models_testcaseHandling
         public static void SuppressBitComponent(Worksheet ws, int startRowIndex)
         {
             subRowIndex++;
+            string GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
 
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex + " Check suppress bit in service 0x" + SID;
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check all supported suppress bit";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check suppress bit";
             ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestSuppressBitComponent()[0];
             ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestSuppressBitComponent()[1];
@@ -174,9 +167,11 @@ namespace dcom.models.models_testcaseHandling
         public static void ConditionCheckComponent(Worksheet ws, int startRowIndex)
         {
             string GetSubServiceTestGroupIndex;
+
             VehicleSpeedCondition = new List<string[]>();
             EngineStatusCondition = new List<string[]>();
             VoltageCondition = new List<string[]>();
+
             // Get groups of Condition
             for (int index = 0; index < Condition.Count; index++)
             {
@@ -194,46 +189,56 @@ namespace dcom.models.models_testcaseHandling
                 }
             }
 
-            for (int index = 0; index < VehicleSpeedCondition.Count; index++)
-            {
-                subRowIndex++;
-                GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
-                ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex}.{subRowIndex}: Check {VehicleSpeedCondition.ElementAt(index)[0]} condition in service 0x{SID}";
-                ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
-                ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[0];
-                ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[1];
-                ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService10.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[2];
-                ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
-                ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-                ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
 
-                rowIndex++;
-                startRowIndex++;
+            if ((UIVariables.DatabaseCommonSettingVehicleSpeed[1] != "") || (UIVariables.DatabaseCommonSettingVehicleSpeed[1] != null))
+            {
+                for (int index = 0; index < VehicleSpeedCondition.Count; index++)
+                {
+                    subRowIndex++;
+
+                    GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check {VehicleSpeedCondition.ElementAt(index)[0]} condition";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[0];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[1];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService10.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                    ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+
+                    rowIndex++;
+                    startRowIndex++;
+                }
             }
-            for (int index = 0; index < EngineStatusCondition.Count; index++)
+            if ((UIVariables.DatabaseCommonSettingEngineStatus[1] != "") || (UIVariables.DatabaseCommonSettingEngineStatus[1] != null))
             {
-                subRowIndex++;
-                GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
-                ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex}.{subRowIndex}: Check {EngineStatusCondition.ElementAt(index)[0]} ({EngineStatusCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
-                ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
-                ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[0];
-                ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[1];
-                ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService10.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[2];
-                ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
-                ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-                ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+                for (int index = 0; index < EngineStatusCondition.Count; index++)
+                {
+                    subRowIndex++;
 
-                rowIndex++;
-                startRowIndex++;
+                    GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check {EngineStatusCondition.ElementAt(index)[0]} ({EngineStatusCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[0];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[1];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService10.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                    ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+
+                    rowIndex++;
+                    startRowIndex++;
+                }
             }
             for (int index = 0; index < VoltageCondition.Count; index++)
             {
                 subRowIndex++;
+
                 GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
                 ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex}.{subRowIndex}: Check {VoltageCondition.ElementAt(index)[0]} ({VoltageCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
+                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check {VoltageCondition.ElementAt(index)[0]} ({VoltageCondition.ElementAt(index)[2]}) condition";
                 ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
                 ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[0];
                 ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[1];
@@ -370,6 +375,7 @@ namespace dcom.models.models_testcaseHandling
         public static string[] SessionTransitionFromDefaultSession = AllowSession.ElementAt(2);                                          // 2
         public static string[] SessionTransitionFromProgrammingSession = AllowSession.ElementAt(3);                                      // 3
         public static string[] SessionTransitionFromExtendedSession = AllowSession.ElementAt(4);                                         // 4
+
         // Is Suppress bit support ?
         public static bool IsSuppressBitSupport = Controller_ServiceHandling.ConvertFromStringToBool(Optional.ElementAt(0)[1]);
 
@@ -389,7 +395,7 @@ namespace dcom.models.models_testcaseHandling
                     step +=
                         (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunctionMode[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true,
                                                                                             suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
-                                                                                            isSIDSupportedInActiveSession: true, expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]), addressingMode: true)[index] + "\n" +
+                                                                                            isSIDSupportedInActiveSession: true, expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}", addressingMode: true)[index] + "\n" +
                         (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(5000)[index] + "\n" +
                         (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunctionMode[subFunctionIndex], true)[index] + "\n"
                         ;
@@ -406,7 +412,7 @@ namespace dcom.models.models_testcaseHandling
                         step +=
                             (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunctionMode[0], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: true,
                                                                                                 suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
-                                                                                                isSIDSupportedInActiveSession: true, expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]), addressingMode: true)[index] + "\n" +
+                                                                                                isSIDSupportedInActiveSession: true, expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}", addressingMode: true)[index] + "\n" +
                             (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(5000)[index] + "\n" +
                             (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunctionMode[subFunctionIndex], true)[index] + "\n" +
                             (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
@@ -478,7 +484,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                     isSubFunctionSupportedInActiveSession: SessionTransitionFromDefaultSessionStatus[subFunctionIndex],
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), 
                                                                                                     isSuppressBitSupported: IsSuppressBitSupport,
-                                                                                                    isSIDSupportedInActiveSession: true, expectedValue: ".{1}" + $"{Int32.Parse(subFunctionMode[subFunctionIndex])}", 
+                                                                                                    isSIDSupportedInActiveSession: true, expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}", 
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1))[index] + "\n" +
                                 (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true)[index] + "\n"
                                 ;
@@ -558,7 +564,7 @@ namespace dcom.models.models_testcaseHandling
                                 (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction[subFunctionIndex], isSubFunctionSupported: true, isSubFunctionSupportedInActiveSession: SessionTransitionFromProgrammingSessionStatus[subFunctionIndex],
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), 
                                                                                                     isSuppressBitSupported: IsSuppressBitSupport, isSIDSupportedInActiveSession: true,
-                                                                                                    expectedValue: ".{1}" + $"{Int32.Parse(subFunction[subFunctionIndex])}", 
+                                                                                                    expectedValue: $".{{1}}{Int32.Parse(subFunction[subFunctionIndex])}", 
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1))[index] + "\n" +
                                 (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction[tempSubFunctionIndex], true, suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus))[index] + "\n"
                                 ;
@@ -697,14 +703,14 @@ namespace dcom.models.models_testcaseHandling
                                                                                                 isSubFunctionSupportedInActiveSession: true,
                                                                                                 suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                 isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
-                                                                                                expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subIndex]),
+                                                                                                expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subIndex])}",
                                                                                                 addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex))[index] + "\n"
                             ;
                         TestStepIndex += 1;
                     }
 
                 }
-                step =
+                step +=
                     (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
                     (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession("01", true)[index] + "\n" +
                     (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestTesterPresent(status: false, timeout: 100)[index] + "\n"
@@ -759,7 +765,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             isSubFunctionSupportedInActiveSession: true,
                                                                                             suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subIndex])]),
-                                                                                            expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subIndex]),
+                                                                                            expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subIndex])}",
                                                                                             addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1))[index] + "\n" +
                             (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestReadCurrentDiagnosticSession(subFunction: (80 + Int32.Parse(subFunctionMode[subIndex])).ToString(), true)[index] + "\n"
                             ;
@@ -812,7 +818,7 @@ namespace dcom.models.models_testcaseHandling
                         (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVehicleSpeed(setInvalidValue: invalidValue, timeout: 100)[index] + "\n"
                         ;
                     TestStepIndex += 1;
-                    for (int subFunctionIndex = 0; subFunctionIndex < subFunction.Length; subFunctionIndex++)
+                    for (int subFunctionIndex = 0; subFunctionIndex < subFunction.Length - 1; subFunctionIndex++)
                     {
                         for (int suppressBitStatus = 0; suppressBitStatus < 2; suppressBitStatus++)
                         {
@@ -823,7 +829,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: true,
-                                                                                                        expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                        expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                         addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                         conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
@@ -863,7 +869,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                             isSubFunctionSupportedInActiveSession: true,
                                                                                                             suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                             isSIDSupportedInActiveSession: true,
-                                                                                                            expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                            expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                             addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1), invalidValue: invalidValue,
                                                                                                             setInvalidValue: invalidValue - 0.2 + (0.2 * vehicleValue),
                                                                                                             conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
@@ -887,7 +893,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                             isSubFunctionSupportedInActiveSession: true,
                                                                                                             suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                             isSIDSupportedInActiveSession: true,
-                                                                                                            expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                            expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                             addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                             invalidValue: invalidValue, setInvalidValue: 0,
                                                                                                             conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
@@ -950,11 +956,11 @@ namespace dcom.models.models_testcaseHandling
                         for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
                         {
                             step +=
-                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction: subFunction[0], isSubFunctionSupported: true,
+                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService10(subFunction: subFunctionMode[subFunctionIndex], isSubFunctionSupported: true,
                                                                                                     isSubFunctionSupportedInActiveSession: true,
                                                                                                     suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                     isSIDSupportedInActiveSession: true,
-                                                                                                    expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                    expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                     addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                     invalidValue: invalidValue, setInvalidValue: validValue,
                                                                                                     conditionIndex: 2, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
@@ -1016,7 +1022,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                        expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                        expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                         addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: setInvalidValue,
                                                                                                         conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
@@ -1033,7 +1039,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                        expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                        expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                         addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: invalidValue,
                                                                                                         conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
@@ -1071,7 +1077,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                                         isSubFunctionSupportedInActiveSession: true,
                                                                                                         suppressBitEnabledStatus: Controller_ServiceHandling.ConvertFromIntToBool(suppressBitStatus), isSuppressBitSupported: IsSuppressBitSupport,
                                                                                                         isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionListInPhysical[1]),
-                                                                                                        expectedValue: ".{1}" + Int32.Parse(subFunctionMode[subFunctionIndex]),
+                                                                                                        expectedValue: $".{{1}}{Int32.Parse(subFunctionMode[subFunctionIndex])}",
                                                                                                         addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
                                                                                                         invalidValue: invalidValue, setInvalidValue: setInvalidValue,
                                                                                                         conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"

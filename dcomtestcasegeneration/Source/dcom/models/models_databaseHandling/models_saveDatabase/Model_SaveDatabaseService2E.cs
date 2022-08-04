@@ -35,14 +35,14 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     for (int index_ = 0; index_ < UIVariables.Service2E_DIDTable_AllowSessionAddressingMode?.ElementAt(index).Length; index_++)
                     {
                         status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_DIDTable_AllowSessionAddressingMode[index][index_]);
-                        Ws.Cells[rowIndex[6] + index, columnIndex[6] + index_] = status;
+                        Ws.Cells[rowIndex[6] + index, columnIndex[6] + index_ + 1] = status;
                     }
                 }
 
                 // NRC
                 for (int index = 0; index < UIVariables.Service2E_NRCPriority?.Length; index++)
                 {
-                    Ws.Cells[rowIndex[7] + index, columnIndex[7] + 2] = UIVariables.Service2E_NRCPriority[index];
+                    Ws.Cells[rowIndex[7] + index, columnIndex[7] + 3] = UIVariables.Service2E_NRCPriority[index];
                 }
 
 
@@ -71,17 +71,17 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                     {
                         if (status == "1")
                         {
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = condition;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = UIVariables.Service2E_InvalidValueCondition[index];
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = UIVariables.Service2E_NRCCondition[index];
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = condition;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = UIVariables.Service2E_InvalidValueCondition[index];
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = status;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 6] = UIVariables.Service2E_NRCCondition[index];
                         }
                         else
                         {
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = condition;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = "";
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = "";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = condition;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = "";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = status;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 6] = "";
                         }
                     }
                     else if (index == 1)
@@ -90,28 +90,28 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 1] = condition;
-                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 2] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 2] = condition;
+                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 3] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = status;
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 5] = UIVariables.Service2E_NRCCondition[index];
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 5] = status;
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 6] = UIVariables.Service2E_NRCCondition[index];
                                 }
                                 else
                                 {
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 4] = "0";
-                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 5] = "";
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 5] = "0";
+                                    Ws.Cells[rowIndex[8] + index + index_, columnIndex[8] + 6] = "";
                                 }
                             }
                         }
                         else
                         {
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 1] = condition;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = "0";
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = "Stop";
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = status;
-                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = "";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 2] = condition;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 3] = "0";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 4] = "Stop";
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 5] = status;
+                            Ws.Cells[rowIndex[8] + index, columnIndex[8] + 6] = "";
                         }
                     }
                     else
@@ -126,28 +126,28 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                             }
                             if (status == "1")
                             {
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = condition;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = UIVariables.Service2E_InvalidValueCondition[index + index_];
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = voltageName;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = status;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 5] = UIVariables.Service2E_NRCCondition[index];
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = condition;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = UIVariables.Service2E_InvalidValueCondition[index + index_];
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = voltageName;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 5] = status;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 6] = UIVariables.Service2E_NRCCondition[index];
                             }
                             else
                             {
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 1] = condition;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = "";
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = voltageName;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = status;
-                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 5] = "";
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 2] = condition;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 3] = "";
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 4] = voltageName;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 5] = status;
+                                Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length - 1, columnIndex[8] + 6] = "";
                             }
                         }
                         for (int index_ = 0; index_ < 5; index_++)
                         {
-                            Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 1] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 2] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 3] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 4] = "";
                             Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 5] = "";
+                            Ws.Cells[rowIndex[8] + index + index_ + engineStatusConditionSplit.Length + 1, columnIndex[8] + 6] = "";
                         }
                     }
                 }
@@ -156,14 +156,14 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 for (int index = 0; index < UIVariables.Service2E_ButtonStatus_Optional.Length; index++)
                 {
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_Optional[index]);
-                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 2] = status;
+                    Ws.Cells[rowIndex[9] + index, columnIndex[9] + 3] = status;
                 }
 
                 // Allow Session (SID support)
                 for (int index = 0; index < UIVariables.Service2E_ButtonStatus_AllowSession?.Length; index++)
                 {
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_ButtonStatus_AllowSession[index]);
-                    Ws.Cells[rowIndex[10] + index, columnIndex[10] + 1] = status;
+                    Ws.Cells[rowIndex[10] + index, columnIndex[10] + 2] = status;
                 }
             }
         }

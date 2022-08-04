@@ -138,12 +138,12 @@ namespace dcom.declaration
             DatabaseVariables.DatabaseService3E.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Service 85
-            //DatabaseVariables.DatabaseService85 = new List<List<string[]>> { };
-            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(3, 2));
-            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(5, 4));
-            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(15, 2));
-            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(4, 5));
-            //DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(2, 2));
+            DatabaseVariables.DatabaseService85 = new List<List<string[]>> { };
+            DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(3, 2));
+            DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(5, 4));
+            DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(15, 2));
+            DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(4, 5));
+            DatabaseVariables.DatabaseService85.Add(Controller_UIHandling.addListArray(2, 2));
 
             // Can TP
             //DatabaseVariables.DatabaseCanTP = new List<List<string[]>> { };
@@ -241,11 +241,14 @@ namespace dcom.declaration
             SystemVariables.templateFileServerPath = @"\\bosch.com\dfsrb\DfsVN\LOC\Hc\RBVH\20_EDA\04_External\00_Common\02_EDA2\db_BGSV_EDA2_Automation_Tool\DCOM\DB_Template\Template.xlsx";
             SystemVariables.templateFileLocalPath = new Uri(Path.Combine(SystemVariables.currentApplicationPath, @"DB_Template\Template.xlsx")).LocalPath;
 
-            SystemVariables.NameOutputDatabase = "RequirementDB_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
-            SystemVariables.DirectoryOutputDatabase = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
-            SystemVariables.PathOutputDatabase = SystemVariables.DirectoryOutputDatabase + @"\" + SystemVariables.NameOutputDatabase;
+            
         }
-        
+        public static void OutputVariablesDefinition()
+        {
+            OutputVariables.NameOutputDatabase = "RequirementDB_" + UIVariables.ProjectName + "_" + UIVariables.Variant + "_" + UIVariables.Release + "_DCOM.xlsx";
+            OutputVariables.DirectoryOutputDatabase = new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "DB_Requirement")).LocalPath;
+            OutputVariables.PathOutputDatabase = OutputVariables.DirectoryOutputDatabase + @"\" + OutputVariables.NameOutputDatabase;
+        }
         public static void UIVariableDefinition()
         {
 
@@ -260,9 +263,9 @@ namespace dcom.declaration
                 true,  // View Service 2E
                 true,  // View Service 27
                 true,  // View Service 28
-                false,  // View Service 31
                 true,  // View Service 3E
-                false,  // View Service 85
+                true,  // View Service 85
+                false,  // View Service 31
                 false,  // View CanTP
             };
             UIVariables.CompletedEdit = false;

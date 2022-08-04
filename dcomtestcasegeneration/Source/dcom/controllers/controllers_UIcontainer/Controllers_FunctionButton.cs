@@ -23,21 +23,12 @@ namespace dcom.controllers.controllers_UIcontainer
             
             Model_TestcaseTemplate.ExportTestcase();
 
-            MessageBoxButtons btn = MessageBoxButtons.YesNo;
-            DialogResult res = MessageBox.Show("The test case the exported successfully!\nWould you like to open the testcase excel file?", "Notice", btn);
-            
-            if(res == DialogResult.Yes)
-            {
-                Process.Start(TestcaseVariables.PathOutputTestcase);
-            }
-            else
-            {
-                // Close the pop-up
-            }
         }
 
         public static void ButtonSaveClick()
         {
+            Console.WriteLine(SystemVariables.checkDBVariableDefinitionStatus);
+            Definition.OutputVariablesDefinition();
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile(SystemVariables.backupFilePath);
             Controller_UIHandling.MappingFromUIToDatabase(UIVariables.edited_View);
@@ -47,12 +38,22 @@ namespace dcom.controllers.controllers_UIcontainer
         {
             // Open the database
             Controller_ExcelHandling.OpenExcel(databasePath, DatabaseVariables.WbDatabase);
+            try
+            {
+                Controller_UIHandling.MappingFromDatabaseFileToDatabaseVariables();
+                Controller_UIHandling.MappingFromDatabaseToUI();
 
-            Controller_UIHandling.MappingFromDatabaseFileToDatabaseVariables();
-            Controller_UIHandling.MappingFromDatabaseToUI();
+                // Close the database
+                Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
+            }
+            catch(Exception e)
+            {
+                // Close the database
+                Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
 
-            // Close the database
-            Controller_ExcelHandling.CloseExcel(databasePath, DatabaseVariables.WbDatabase);
+                MessageBoxButtons btn_ = MessageBoxButtons.OK;
+                MessageBox.Show($"{e}", "Notice", btn_, MessageBoxIcon.Warning);
+            }
         }
     }
 }

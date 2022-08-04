@@ -583,15 +583,15 @@ namespace dcom.controllers.controllers_UIcontainer
         public static void UIDefinition_Service28()
         {
             // Control Type
-            for (int index = 0; index < UIVariables.Service28_ButtonStatus_ControlType?.Length; index++)
+            for (int index = 0; index < DatabaseVariables.DatabaseService28?.ElementAt(0).Count; index++)
             {
-                UIVariables.Service28_ButtonStatus_ControlType[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(0)[index][1]);
+                UIVariables.Service28_ButtonStatus_ControlType[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28?.ElementAt(0)[index][1]);
             }
 
             // Communication Type
-            for (int index = 0; index < UIVariables.Service28_ButtonStatus_CommunicationType?.Length; index++)
+            for (int index = 0; index < DatabaseVariables.DatabaseService28?.ElementAt(0).Count - 1; index++)
             {
-                UIVariables.Service28_ButtonStatus_CommunicationType[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(0)[index][3]);
+                UIVariables.Service28_ButtonStatus_CommunicationType[index] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28?.ElementAt(0)[index][3]);
             }
 
             // Allow Session || Addressing Mode
@@ -600,7 +600,7 @@ namespace dcom.controllers.controllers_UIcontainer
             {
                 for (int index_ = 0; index_ < DatabaseVariables.DatabaseService28?.ElementAt(1)[index].Length - 1; index_++)
                 {
-                    UIVariables.Service28_ButtonStatus_AddressingMode[n] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28.ElementAt(1)[index][index_ + 1]);
+                    UIVariables.Service28_ButtonStatus_AddressingMode[n] = Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService28?.ElementAt(1)[index][index_ + 1]);
                     n++;
                 }
             }
@@ -961,9 +961,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService10.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService10.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][3] = status;
@@ -1110,9 +1110,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService11.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService11.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][3] = status;
@@ -1262,9 +1262,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService14.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService14.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][3] = status;
@@ -1466,8 +1466,11 @@ namespace dcom.controllers.controllers_UIcontainer
                 string status;
 
                 // Specification
+                DatabaseVariables.DatabaseService22.ElementAt(0).Clear();
                 for (int index = 0; index < UIVariables.Service22_DIDTable_Specification?.Count(); index++)
                 {
+                    string[] empty = new string[4];
+                    DatabaseVariables.DatabaseService22.ElementAt(0).Add(empty);
                     for (int index_ = 0; index_ < UIVariables.Service22_DIDTable_Specification?.ElementAt(index).Count(); index_++)
                     {
                         status = UIVariables.Service22_DIDTable_Specification[index][index_];
@@ -1476,8 +1479,11 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // Allow Session & Addressing Mode
+                DatabaseVariables.DatabaseService22.ElementAt(1).Clear();
                 for (int index = 0; index < UIVariables.Service22_DIDTable_AllowSessionAddressingMode?.Count(); index++)
                 {
+                    string[] empty = new string[5];
+                    DatabaseVariables.DatabaseService22.ElementAt(1).Add(empty);
                     for (int index_ = 0; index_ < UIVariables.Service22_DIDTable_AllowSessionAddressingMode?.ElementAt(index).Length; index_++)
                     {
                         status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_DIDTable_AllowSessionAddressingMode[index][index_]);
@@ -1541,9 +1547,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService22.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService22.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][3] = status;
@@ -1699,9 +1705,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][3] = status;
@@ -1861,9 +1867,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService27.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService27.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][3] = status;
@@ -2016,9 +2022,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService28.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService28.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][3] = status;
@@ -2228,7 +2234,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
             // Allow session & Addressing mode
             int n = 0;
-            for (int index = 0; index < 5; index++)
+            for (int index = 0; index < 2; index++)
             {
                 for (int index_ = 0; index_ < 3; index_++)
                 {
@@ -2294,9 +2300,9 @@ namespace dcom.controllers.controllers_UIcontainer
                         for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                         {
                             DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][0] = condition;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                             if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                             {
                                 DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = status;
@@ -2443,9 +2449,9 @@ namespace dcom.controllers.controllers_UIcontainer
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
                                 DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
-                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
-                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
                                 if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
                                 {
                                     DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][3] = status;

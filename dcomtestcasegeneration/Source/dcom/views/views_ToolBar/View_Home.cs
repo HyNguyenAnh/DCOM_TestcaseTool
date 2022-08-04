@@ -24,7 +24,7 @@ namespace dcom.views.views_ToolBar
         {
             Cursor = Cursors.WaitCursor;
             Definition.SystemVariableDefinition();
-            Model_SystemInformation.createFolder(SystemVariables.DirectoryOutputDatabase);
+            Model_SystemInformation.createFolder(OutputVariables.DirectoryOutputDatabase);
             Model_SystemInformation.checkTemplateFile(SystemVariables.templateFileLocalPath, SystemVariables.templateFileServerPath);
             
 

@@ -3,10 +3,12 @@ using dcom.declaration;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace dcom.models.models_testcaseHandling
 {
@@ -23,7 +25,6 @@ namespace dcom.models.models_testcaseHandling
 
             // Open the testcase file
             Controller_ExcelHandling.OpenExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
-             
 
             // Select the first sheet to push all data
             TestcaseVariables.WsOutputTestcase = TestcaseVariables.WbOutputTestcase.Sheets[1];
@@ -31,19 +32,43 @@ namespace dcom.models.models_testcaseHandling
             // Clear all current data in this sheet
             Controller_ExcelHandling.CleanExcelSheet(TestcaseVariables.WsOutputTestcase);
 
-            // Push data to the testcase 
-            CreateTestcaseHeader(TestcaseVariables.WsOutputTestcase);
-            CreateTestcaseBodyHeader(TestcaseVariables.WsOutputTestcase);
-            CreateTestcaseBody(TestcaseVariables.WsOutputTestcase);
+            try
+            {
+                // Push data to the testcase 
+                CreateTestcaseHeader(TestcaseVariables.WsOutputTestcase);
+                CreateTestcaseBodyHeader(TestcaseVariables.WsOutputTestcase);
+                CreateTestcaseBody(TestcaseVariables.WsOutputTestcase);
 
-            // Push style to the testcase
-            CreateTestcaseStyle(TestcaseVariables.WsOutputTestcase);
+                // Push style to the testcase
+                CreateTestcaseStyle(TestcaseVariables.WsOutputTestcase);
 
-            // Save the testcase
-            Controller_ExcelHandling.SaveExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
+                // Save the testcase
+                Controller_ExcelHandling.SaveExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
 
-            // After Handling, close the testcase file
-            Controller_ExcelHandling.CloseExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
+                // After Handling, close the testcase file
+                Controller_ExcelHandling.CloseExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
+
+
+                MessageBoxButtons btn = MessageBoxButtons.YesNo;
+                DialogResult res = MessageBox.Show("The test case the exported successfully!\nWould you like to open the testcase excel file?", "Notice", btn);
+
+                if (res == DialogResult.Yes)
+                {
+                    Process.Start(TestcaseVariables.PathOutputTestcase);
+                }
+                else
+                {
+                    // Close the pop-up
+                }
+            }
+            catch(Exception e)
+            {
+                // After Handling, close the testcase file
+                Controller_ExcelHandling.CloseExcel(TestcaseVariables.PathOutputTestcase, TestcaseVariables.WbOutputTestcase);
+
+                MessageBoxButtons btn_ = MessageBoxButtons.OK;
+                MessageBox.Show($"{e}", "Notice", btn_, MessageBoxIcon.Warning);
+            }
         }
 
         public static void CreateTestcaseBody(Worksheet ws)
@@ -58,7 +83,7 @@ namespace dcom.models.models_testcaseHandling
             Model_PushTestcaseService2E.PushTestcaseService2E(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[7]);
             //Model_PushTestcaseService31.PushTestcaseService31(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[8]);
             Model_PushTestcaseService3E.PushTestcaseService3E(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[9]);
-            //Model_PushTestcaseService85.PushTestcaseService85(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[10]);
+            Model_PushTestcaseService85.PushTestcaseService85(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[10]);
             //Model_PushTestcaseCanTP.PushTestcaseCanTP(ws, TestcaseVariables.ID, UIVariables.SelectedServiceStatus[11]);
         }
 

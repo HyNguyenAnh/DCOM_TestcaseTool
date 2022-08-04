@@ -26,6 +26,11 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> Condition = DatabaseVariables.DatabaseService2E.ElementAt(3);
         public static List<string[]> Optional = DatabaseVariables.DatabaseService2E.ElementAt(4);
 
+        // Condition
+        public static List<string[]> VehicleSpeedCondition { get; set; }
+        public static List<string[]> EngineStatusCondition { get; set; }
+        public static List<string[]> VoltageCondition { get; set; }
+
         public static void PushTestcaseService2E(Worksheet ws, int startRowIndex, bool selectedStatus)
         {
             if (selectedStatus)
@@ -37,7 +42,7 @@ namespace dcom.models.models_testcaseHandling
                 AddressingModeComponent(ws, rowIndex);
                 //SuppressBitComponent(ws, rowIndex);
                 DIDComponent(ws, rowIndex);
-                //ConditionCheckComponent(ws, rowIndex);
+                ConditionCheckComponent(ws, rowIndex);
                 //NRCComponent(ws, rowIndex);
 
                 // return a current ID
@@ -57,13 +62,14 @@ namespace dcom.models.models_testcaseHandling
         public static void AllowSessionComponent(Worksheet ws, int startRowIndex)
         {
             subRowIndex++;
+            string GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
 
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex + " LabT_DCOM: Service " + SID + ":Check all allowed diagnostic sessions in service 0x" + SID;
+            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service {SID}: Check all allowed diagnostic sessions";
             ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all allowed diagnostic session";
-            ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService2E.GetTestRequestAllowSessionComponent()[0];
-            ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService2E.GetTestRequestAllowSessionComponent()[1];
-            ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetTestRequestAllowSessionComponent()[2];
+            ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService10.GetTestRequestAllowSessionComponent()[0];
+            ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService10.GetTestRequestAllowSessionComponent()[1];
+            ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService10.GetTestRequestAllowSessionComponent()[2];
             ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
             ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
             ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
@@ -152,20 +158,90 @@ namespace dcom.models.models_testcaseHandling
         }
         public static void ConditionCheckComponent(Worksheet ws, int startRowIndex)
         {
-            subRowIndex++;
+            string GetSubServiceTestGroupIndex;
 
-            ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
-            ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex + " LabT_DCOM: Service " + SID + ":Check all supported condition in service 0x" + SID;
-            ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
-            ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = "";
-            ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = "";
-            ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = "";
-            ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
-            ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
-            ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+            VehicleSpeedCondition = new List<string[]>();
+            EngineStatusCondition = new List<string[]>();
+            VoltageCondition = new List<string[]>();
+
+            // Get groups of Condition
+            for (int index = 0; index < Condition.Count; index++)
+            {
+                if (Condition[index][0] == "Vehicle_Speed")
+                {
+                    VehicleSpeedCondition.Add(Condition[index]);
+                }
+                else if (Condition[index][0] == "Engine_Status")
+                {
+                    EngineStatusCondition.Add(Condition[index]);
+                }
+                else
+                {
+                    VoltageCondition.Add(Condition[index]);
+                }
+            }
 
 
-            rowIndex++;
+            if ((UIVariables.DatabaseCommonSettingVehicleSpeed[1] != "") || (UIVariables.DatabaseCommonSettingVehicleSpeed[1] != null))
+            {
+                for (int index = 0; index < VehicleSpeedCondition.Count; index++)
+                {
+                    subRowIndex++;
+
+                    GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service 0x{SID}: Check {VehicleSpeedCondition.ElementAt(index)[0]} condition";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService2E.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[0];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService2E.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[1];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetTestRequestVehicleSpeedConditionCheckComponent(VehicleSpeedCondition[index])[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                    ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+
+                    rowIndex++;
+                    startRowIndex++;
+                }
+            }
+            if ((UIVariables.DatabaseCommonSettingEngineStatus[1] != "") || (UIVariables.DatabaseCommonSettingEngineStatus[1] != null))
+            {
+                for (int index = 0; index < EngineStatusCondition.Count; index++)
+                {
+                    subRowIndex++;
+
+                    GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                    ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service 0x{SID}: Check {EngineStatusCondition.ElementAt(index)[0]} ({EngineStatusCondition.ElementAt(index)[2]}) condition in service 0x{SID}";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService2E.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[0];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService2E.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[1];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetTestRequestEngineStatusConditionCheckComponent(EngineStatusCondition[index])[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                    ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                    ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+
+                    rowIndex++;
+                    startRowIndex++;
+                }
+            }
+            for (int index = 0; index < VoltageCondition.Count; index++)
+            {
+                subRowIndex++;
+
+                GetSubServiceTestGroupIndex = Controller_ServiceHandling.GetServiceTestGroupIndex(SID) + "." + subRowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
+                ws.Cells[startRowIndex, TestcaseVariables.ComponentColumnIndex] = $"{GetSubServiceTestGroupIndex} LabT_DCOM: Service 0x{SID}: Check {VoltageCondition.ElementAt(index)[0]} ({VoltageCondition.ElementAt(index)[2]}) condition";
+                ws.Cells[startRowIndex, TestcaseVariables.TestDescriptionColumnIndex] = "This testcase check all supported condition";
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepColumnIndex] = Model_GetTestRequestService2E.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[0];
+                ws.Cells[startRowIndex, TestcaseVariables.TestResponseColumnIndex] = Model_GetTestRequestService2E.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[1];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStepKeywordColumnIndex] = Model_GetTestRequestService2E.GetTestRequestVoltageConditionCheckComponent(VoltageCondition[index])[2];
+                ws.Cells[startRowIndex, TestcaseVariables.ObjectTypeColumnIndex] = TestcaseVariables.ObjectType[2];
+                ws.Cells[startRowIndex, TestcaseVariables.TestStatusColumnIndex] = TestcaseVariables.TestStatus;
+                ws.Cells[startRowIndex, TestcaseVariables.ProjectColumnIndex] = UIVariables.ProjectName;
+
+                rowIndex++;
+                startRowIndex++;
+            }
         }
         public static void NRCComponent(Worksheet ws, int startRowIndex)
         {
@@ -196,6 +272,14 @@ namespace dcom.models.models_testcaseHandling
         public static List<string[]> Optional = DatabaseVariables.DatabaseService2E.ElementAt(4);
         public static List<string[]> SIDSupported = DatabaseVariables.DatabaseService2E.ElementAt(5);
 
+        // SubFuntion Mode
+        public static string[] subFunctionMode = new string[3]
+        {
+            "03",
+            "02",
+            "01",
+        };
+
         public static string[] parametters = Controller_ServiceHandling.GetParameters(Specification);
         public static string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDIDCurrentSession[1];
         public static string[] GetTestRequestAllowSessionComponent()
@@ -204,28 +288,43 @@ namespace dcom.models.models_testcaseHandling
             string TestResponse = "";
             string TeststepKeyword = "";
             string[] str;
-
-
-            int TestStepIndex = 0;
+            int securityAccessLevel = 1;
 
             for (int index = 0; index < 3; index++)
             {
-                string step =
-                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                    (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
-                    (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
-                    (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}3", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
-                    (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
-                    (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}2", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
-                    (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                    (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                    (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: true, length: 0, 0, 0)[index] + "\n" +
-                    (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
+                int TestStepIndex = 0;
+                string step = "";
+                step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 100)[index] + "\n"
                     ;
+                TestStepIndex += 1;
+                for (int subFunctionModeIndex = 0; subFunctionModeIndex < subFunctionMode.Length; subFunctionModeIndex++)
+                {
+                    step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession(subFunctionMode[subFunctionModeIndex])[index] + "\n" +
+                    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                    (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: $".*{{1}}{Int32.Parse(subFunctionMode[subFunctionModeIndex])}",
+                                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(Int32.Parse(subFunctionMode[subFunctionModeIndex]) - 1)[1]),
+                                                                                        isParameterSupported: true, addressingMode: true,
+                                                                                        length: 0)[index] + "\n"
+                    ;
+                    TestStepIndex += 3;
+                    if (securityAccessLevel <= Int32.Parse(Optional.ElementAt(1)[1]))
+                    {
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel($"{securityAccessLevel}", status: true, timeout: 1000)[index] + "\n" +
+                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel($"{securityAccessLevel}", status: false, timeout: 1000)[index] + "\n"
+                            ;
+                        TestStepIndex += 2;
+                        securityAccessLevel++;
+                    }
+                }
+                step +=
+                   (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession(subFunctionMode[2])[index] + "\n" +
+                   (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                   (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
+                   ;
+
                 switch (index)
                 {
                     case 0: TestStep += step; break;
@@ -248,133 +347,66 @@ namespace dcom.models.models_testcaseHandling
             string TestStep = "";
             string TestResponse = "";
             string TeststepKeyword = "";
-            string[] str = new string[3];
+            string[] str;
+            int securityAccessLevel = 1;
 
-            int TestStepIndex = 0;
 
-            for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
+            for (int index = 0; index < 3; index++)
             {
-                for (int index = 0; index < 3; index++)
+                int TestStepIndex = 0;
+                string step = "";
+                step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 100)[index] + "\n"
+                    ;
+                TestStepIndex += 1;
+                for (int subFunctionModeIndex = 0; subFunctionModeIndex < subFunctionMode.Length; subFunctionModeIndex++)
                 {
-                    string step =
-                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 0)[index] + "\n" +
-                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                        (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
-                        (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}3", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
-                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
-                        (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}2", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
-                        (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                        (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: ".*{1}1", isSIDSupportedInActiveSession: true, isParametersupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex), length: 0, 0, 0)[index] + "\n" +
-                        (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 0)[index] + "\n"
+                    step +=
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession(subFunctionMode[subFunctionModeIndex])[index] + "\n" +
+                        (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n"
                         ;
-                    switch (index)
-                    {
-                        case 0: TestStep += step; break;
-                        case 1: TestResponse += step; break;
-                        case 2: TeststepKeyword += step; break;
-                    }
-
-                }
-                str = new string[]
-                {
-                    TestStep,
-                    TestResponse,
-                    TeststepKeyword
-                };
-                TestStepIndex += 14;
-            }
-
-            return str;
-        }
-        public static string[] GetDIDCheckComponentInDefault()
-        {
-            string TestStep = "";
-            string TestResponse = "";
-            string TeststepKeyword = "";
-            string[] str = new string[3];
-            int TestStepIndex = 0;
-
-            for (int DIDVal = 0; DIDVal < Specification.Count; DIDVal++)
-            {
-                if (DIDVal == 0)
-                {
-                    for (int index = 0; index < 3; index++)
-                    {
-                        string step =
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 100)[index] + "\n" +
-                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n"
-                            ;
-                        switch (index)
-                        {
-                            case 0: TestStep += step; break;
-                            case 1: TestResponse += step; break;
-                            case 2: TeststepKeyword += step; break;
-                        }
-                    }
-                    TestStepIndex += 3;
-                }
-                if (DIDVal <= Specification.Count - 1)
-                {
+                    TestStepIndex += 2;
                     for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                     {
-                        for (int index = 0; index < 3; index++)
-                        {
-                            string expectedValue;
-                            if (Specification.ElementAt(DIDVal)[1].ToLower() == "f1fd")
-                            {
-                                expectedValue = "{" + (Convert.ToInt32(Specification.ElementAt(DIDVal)[2]) * 2 - 1) + "}1";
-                            }
-                            else
-                            {
-                                expectedValue = Specification.ElementAt(DIDVal)[3];
-                            }
-                            string step =
-                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: Specification.ElementAt(DIDVal)[1],
-                                                                                                    expectedValue: expectedValue,
-                                                                                                    isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
-                                                                                                    isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(AllowSession.ElementAt(DIDVal)[2]),
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(Specification.ElementAt(DIDVal)[2]), 0, 0)[index] + "\n"
-                                ;
-                            switch (index)
-                            {
-                                case 0: TestStep += step; break;
-                                case 1: TestResponse += step; break;
-                                case 2: TeststepKeyword += step; break;
-                            }
-                        }
-                        TestStepIndex += 1;
-                    }
-                }
-                if (DIDVal == Specification.Count - 1)
-                {
-                    for (int index = 0; index < 3; index++)
-                    {
-                        string step =
-                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(CurrentSessionDIDCodeString, expectedValue: $".*{{1}}{Int32.Parse(subFunctionMode[subFunctionModeIndex])}",
+                                                                                        isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(Int32.Parse(subFunctionMode[subFunctionModeIndex]) - 1)[1]),
+                                                                                        isParameterSupported: true, addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1),
+                                                                                        length: 0)[index] + "\n"
                             ;
-                        switch (index)
+                        TestStepIndex += 1;
+                        if (securityAccessLevel <= Int32.Parse(Optional.ElementAt(1)[1]))
                         {
-                            case 0: TestStep += step; break;
-                            case 1: TestResponse += step; break;
-                            case 2: TeststepKeyword += step; break;
+                            step +=
+                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel($"{securityAccessLevel}", status: true, timeout: 1000)[index] + "\n" +
+                                (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel($"{securityAccessLevel}", status: false, timeout: 1000)[index] + "\n"
+                                ;
+                            TestStepIndex += 2;
+                            securityAccessLevel++;
                         }
                     }
-                    TestStepIndex += 1;
                 }
-                str = new string[]
+
+                step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession(subFunctionMode[2])[index] + "\n" +
+                    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                    (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
+                    ;
+
+                switch (index)
                 {
+                    case 0: TestStep += step; break;
+                    case 1: TestResponse += step; break;
+                    case 2: TeststepKeyword += step; break;
+                }
+            }
+            str = new string[3]
+            {
                 TestStep,
                 TestResponse,
                 TeststepKeyword
-                };
-            }
+            };
+
             return str;
         }
         public static string[] GetDIDCheckComponentInExtended(List<string[]> DIDGroupTestcaseSorted)
@@ -382,201 +414,322 @@ namespace dcom.models.models_testcaseHandling
             string TestStep = "";
             string TestResponse = "";
             string TeststepKeyword = "";
-            string[] str = new string[3];
-            int TestStepIndex = 0;
-            
-            for (int DIDVal = 0; DIDVal < DIDGroupTestcaseSorted.Count; DIDVal++)
+            string[] str;
+
+            for (int index = 0; index < 3; index++)
             {
-                if (DIDVal == 0)
-                {
-                    for (int index = 0; index < 3; index++)
-                    {
-                        string step =
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 100)[index] + "\n" +
-                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
-                            (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                            (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel(Optional.ElementAt(1)[1], true, 1000)[index] + "\n"+
-                            (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel(Optional.ElementAt(1)[1], false, 1000)[index] + "\n"
-                            ;
-                        switch (index)
-                        {
-                            case 0: TestStep += step; break;
-                            case 1: TestResponse += step; break;
-                            case 2: TeststepKeyword += step; break;
-                        }
-                    }
-                    TestStepIndex += 7;
-                }
-                if (DIDVal <= DIDGroupTestcaseSorted.Count - 1)
+                int TestStepIndex = 0;
+                string step = "";
+                step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 100)[index] + "\n" +
+                    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
+                    (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                    (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
+                    (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
+                    (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel(Optional.ElementAt(1)[1], true, 1000)[index] + "\n" +
+                    (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestEnvLogInLevel(Optional.ElementAt(1)[1], false, 1000)[index] + "\n"
+                    ;
+                TestStepIndex += 7;
+                for (int DIDVal = 0; DIDVal < DIDGroupTestcaseSorted.Count; DIDVal++)
                 {
                     for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
                     {
-                        for (int index = 0; index < 3; index++)
+                        // Expected value with empty case
+                        string expectedValue;
+                        if (DIDGroupTestcaseSorted.ElementAt(DIDVal)[1].ToLower() == "f1fd")
                         {
-                            // Expected value with empty case
-                            string expectedValue;
-                            if (DIDGroupTestcaseSorted.ElementAt(DIDVal)[1].ToLower() == "f1fd")
-                            {
-                                expectedValue = "{" + (Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]) * 2 - 1) + "}3";
-                            }
-                            else
-                            {
-                                expectedValue = DIDGroupTestcaseSorted.ElementAt(DIDVal)[3];
-                            }
-
-                            string step =
-                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: DIDGroupTestcaseSorted.ElementAt(DIDVal)[1],
-                                                                                                    expectedValue: expectedValue,
-                                                                                                    isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
-                                                                                                    isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(DIDGroupTestcaseSorted.ElementAt(DIDVal)[8]),
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]))[index] + "\n"
-                                ;
-                            switch (index)
-                            {
-                                case 0: TestStep += step; break;
-                                case 1: TestResponse += step; break;
-                                case 2: TeststepKeyword += step; break;
-                            }
+                            expectedValue = "{" + (Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]) * 2 - 1) + "}3";
                         }
+                        else
+                        {
+                            expectedValue = DIDGroupTestcaseSorted.ElementAt(DIDVal)[3];
+                        }
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: DIDGroupTestcaseSorted.ElementAt(DIDVal)[1],
+                                                                                                expectedValue: expectedValue,
+                                                                                                isSIDSupportedInActiveSession: (Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(2)[1]) && Controller_ServiceHandling.ConvertFromStringToBool(DIDGroupTestcaseSorted.ElementAt(DIDVal)[9])),
+                                                                                                isParameterSupported: Controller_ServiceHandling.ConvertFromStringToBool(DIDGroupTestcaseSorted.ElementAt(DIDVal)[5 + addressingModeIndex]),
+                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeIndex + 1),
+                                                                                                length: Convert.ToInt32(DIDGroupTestcaseSorted.ElementAt(DIDVal)[2]))[index] + "\n"
+                            ;
                         TestStepIndex += 1;
                     }
                 }
-                if (DIDVal == DIDGroupTestcaseSorted.Count - 1)
+                step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
+                    (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
+                    ;
+                switch (index)
                 {
-                    for (int index = 0; index < 3; index++)
-                    {
-                        string step =
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
-                            ;
-                        switch (index)
-                        {
-                            case 0: TestStep += step; break;
-                            case 1: TestResponse += step; break;
-                            case 2: TeststepKeyword += step; break;
-                        }
-                    }
-                    TestStepIndex += 2;
+                    case 0: TestStep += step; break;
+                    case 1: TestResponse += step; break;
+                    case 2: TeststepKeyword += step; break;
                 }
-                str = new string[]
-                {
+            }
+            str = new string[3]
+            {
                 TestStep,
                 TestResponse,
                 TeststepKeyword
-                };
-            }
+            };
             return str;
         }
-        public static string[] GetDIDCheckComponentInProgramming()
+        public static string[] GetTestRequestVehicleSpeedConditionCheckComponent(string[] conditionGroupTestcase)
         {
             string TestStep = "";
             string TestResponse = "";
             string TeststepKeyword = "";
-            string[] str = new string[3];
-            int TestStepIndex = 0;
+            string[] str;
+            double invalidValue;
 
-            for (int DIDVal = 0; DIDVal < Specification.Count; DIDVal++)
+            if (Controller_ServiceHandling.ConvertFromStringToBool(conditionGroupTestcase[3]))
             {
-                if (DIDVal == 0)
+                invalidValue = Convert.ToDouble(conditionGroupTestcase[1]);
+            }
+            else
+            {
+                invalidValue = 0;
+            }
+            if ((invalidValue <= 0) | (invalidValue == 10))
+            {
+                for (int index = 0; index < 3; index++)
                 {
-                    for (int index = 0; index < 3; index++)
+                    int TestStepIndex = 0;
+                    string step = "";
+                    step +=
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVehicleSpeed(setInvalidValue: invalidValue, timeout: 100)[index] + "\n"
+                        ;
+                    TestStepIndex += 1;
+                    for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
                     {
-                        string step =
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestTesterPresent(true, 100)[index] + "\n" +
-                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                            (TestStepIndex + 3) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                            (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("03")[index] + "\n" +
-                            (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n" +
-                            (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("02")[index] + "\n" +
-                            (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestWait(1000)[index] + "\n"
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                                isSIDSupportedInActiveSession: true,
+                                                                                                isParameterSupported: true,
+                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                length: 0,
+                                                                                                invalidValue: invalidValue, setInvalidValue: invalidValue,
+                                                                                                conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
                             ;
-                        switch (index)
-                        {
-                            case 0: TestStep += step; break;
-                            case 1: TestResponse += step; break;
-                            case 2: TeststepKeyword += step; break;
-                        }
-                    }
-                    TestStepIndex += 7;
-                }
-                else
-                {
-                    for (int addressingModeIndex = 0; addressingModeIndex < 2; addressingModeIndex++)
-                    {
-                        for (int index = 0; index < 3; index++)
-                        {
-                            string expectedValue;
-                            if (Specification.ElementAt(DIDVal)[1].ToLower() == "f1fd")
-                            {
-                                expectedValue = "{" + (Convert.ToInt32(Specification.ElementAt(DIDVal)[2]) * 2 - 1) + "}2";
-                            }
-                            else
-                            {
-                                expectedValue = Specification.ElementAt(DIDVal)[3];
-                            }
-                            string step =
-                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: Specification.ElementAt(DIDVal)[1],
-                                                                                                    expectedValue: expectedValue,
-                                                                                                    isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(SIDSupported.ElementAt(addressingModeIndex)[1]),
-                                                                                                    isParametersupported: Controller_ServiceHandling.ConvertFromStringToBool(AllowSession.ElementAt(DIDVal)[3]),
-                                                                                                    addressingMode: Controller_ServiceHandling.ConvertAddressingModeToBool(addressingModeIndex),
-                                                                                                    length: Convert.ToInt32(Specification.ElementAt(DIDVal)[2]), 0, 0)[index] + "\n"
-                                ;
-                            switch (index)
-                            {
-                                case 0: TestStep += step; break;
-                                case 1: TestResponse += step; break;
-                                case 2: TeststepKeyword += step; break;
-                            }
-                        }
                         TestStepIndex += 1;
                     }
-                }
-                if (DIDVal == Specification.Count - 1)
-                {
-                    for (int index = 0; index < 3; index++)
+                    switch (index)
                     {
-                        string step =
-                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestDiagnosticSession("01")[index] + "\n" +
-                            (TestStepIndex + 2) + ") " + Model_TestcaseKeyword.RequestTesterPresent(false, 100)[index] + "\n"
+                        case 0: TestStep += step; break;
+                        case 1: TestResponse += step; break;
+                        case 2: TeststepKeyword += step; break;
+                    }
+                }
+            }
+            else
+            {
+                for (int index = 0; index < 3; index++)
+                {
+                    int TestStepIndex = 0;
+                    string step = "";
+                    for (double vehicleValue = 0; vehicleValue < 3; vehicleValue++)
+                    {
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVehicleSpeed(setInvalidValue: invalidValue - 0.2 + (0.2 * vehicleValue), timeout: 100)[index] + "\n"
                             ;
-                        switch (index)
+                        TestStepIndex += 1;
+                        for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
                         {
-                            case 0: TestStep += step; break;
-                            case 1: TestResponse += step; break;
-                            case 2: TeststepKeyword += step; break;
+                            step +=
+                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                                    isSIDSupportedInActiveSession: true,
+                                                                                                    isParameterSupported: true,
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    length: 0,
+                                                                                                    setInvalidValue: invalidValue - 0.2 + (0.2 * vehicleValue),
+                                                                                                    conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
+                                ;
+                            TestStepIndex += 1;
+                        }
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVehicleSpeed(setInvalidValue: 0, timeout: 100)[index] + "\n"
+                            ;
+                        TestStepIndex += 1;
+                        for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                        {
+                            step +=
+                                (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                                    isSIDSupportedInActiveSession: true,
+                                                                                                    isParameterSupported: true,
+                                                                                                    addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                    length: 0,
+                                                                                                    invalidValue: invalidValue, setInvalidValue: 0,
+                                                                                                    conditionIndex: 1, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
+                                ;
+                            TestStepIndex += 1;
                         }
                     }
-                    TestStepIndex += 2;
+                    switch (index)
+                    {
+                        case 0: TestStep += step; break;
+                        case 1: TestResponse += step; break;
+                        case 2: TeststepKeyword += step; break;
+                    }
                 }
-                str = new string[]
-                {
+            }
+
+            str = new string[3]
+            {
                 TestStep,
                 TestResponse,
                 TeststepKeyword
-                };
-            }
+            };
+
             return str;
         }
-
-        public static string[] GetTestRequestConditionCheckComponent()
+        public static string[] GetTestRequestEngineStatusConditionCheckComponent(string[] conditionGroupTestcase)
         {
-            string TestStep;
-            string TestResponse;
-            string TeststepKeyword;
+            string TestStep = "";
+            string TestResponse = "";
+            string TeststepKeyword = "";
             string[] str;
+            double invalidValue;
+            double validValue;
 
-            TestStep = "";
+            if (Controller_ServiceHandling.ConvertFromStringToBool(conditionGroupTestcase[3]))
+            {
+                invalidValue = Convert.ToDouble(conditionGroupTestcase[1]);
+                validValue = 0;
+            }
+            else
+            {
+                invalidValue = 0;
+                validValue = Convert.ToDouble(conditionGroupTestcase[1]);
+            }
 
+            for (int index = 0; index < 3; index++)
+            {
+                int TestStepIndex = 0;
+                string step = "";
+                step +=
+                    (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetEngineStatus(invalidValue: invalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
+                    ;
+                TestStepIndex += 1;
+                for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                {
+                    step +=
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                            isSIDSupportedInActiveSession: true,
+                                                                                            isParameterSupported: true,
+                                                                                            addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                            length: 0,
+                                                                                            invalidValue: invalidValue, setInvalidValue: validValue,
+                                                                                            conditionIndex: 2, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
+                        ;
+                    TestStepIndex += 1;
+                }
+                switch (index)
+                {
+                    case 0: TestStep += step; break;
+                    case 1: TestResponse += step; break;
+                    case 2: TeststepKeyword += step; break;
+                }
+            }
+            str = new string[]{
+                TestStep,
+                TestResponse,
+                TeststepKeyword
+            };
 
-            TestResponse = "";
+            return str;
+        }
+        public static string[] GetTestRequestVoltageConditionCheckComponent(string[] conditionGroupTestcase)
+        {
+            string TestStep = "";
+            string TestResponse = "";
+            string TeststepKeyword = "";
+            string[] str;
+            double invalidValue = 12;
+            double setInvalidValue;
 
-
-            TeststepKeyword = "";
-
+            if (Controller_ServiceHandling.ConvertFromStringToBool(conditionGroupTestcase[3]))
+            {
+                setInvalidValue = Convert.ToDouble(conditionGroupTestcase[1]);
+            }
+            else
+            {
+                setInvalidValue = 0;
+            }
+            if (setInvalidValue != 0)
+            {
+                for (int index = 0; index < 3; index++)
+                {
+                    int TestStepIndex = 0;
+                    string step = "";
+                    step +=
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVoltage(setInvalidValue: setInvalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
+                        ;
+                    TestStepIndex += 1;
+                    for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                    {
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                                isSIDSupportedInActiveSession: true,
+                                                                                                isParameterSupported: true,
+                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                length: 0,
+                                                                                                invalidValue: invalidValue, setInvalidValue: setInvalidValue,
+                                                                                                conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
+                            ;
+                        TestStepIndex += 1;
+                    }
+                    for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                    {
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                                isSIDSupportedInActiveSession: true,
+                                                                                                isParameterSupported: true,
+                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                length: 0,
+                                                                                                invalidValue: invalidValue, setInvalidValue: invalidValue,
+                                                                                                conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
+                            ;
+                        TestStepIndex += 1;
+                    }
+                    switch (index)
+                    {
+                        case 0: TestStep += step; break;
+                        case 1: TestResponse += step; break;
+                        case 2: TeststepKeyword += step; break;
+                    }
+                }
+            }
+            else
+            {
+                for (int index = 0; index < 3; index++)
+                {
+                    int TestStepIndex = 0;
+                    string step = "";
+                    step +=
+                        (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.SetVoltage(setInvalidValue: setInvalidValue, name: conditionGroupTestcase[2], timeout: 100)[index] + "\n"
+                        ;
+                    TestStepIndex += 1;
+                    for (int addressingModeStauts = 0; addressingModeStauts < 2; addressingModeStauts++)
+                    {
+                        step +=
+                            (TestStepIndex + 1) + ") " + Model_TestcaseKeyword.RequestService2E(DID: CurrentSessionDIDCodeString, expectedValue: ".*{1}",
+                                                                                                isSIDSupportedInActiveSession: true,
+                                                                                                isParameterSupported: true,
+                                                                                                addressingMode: Controller_ServiceHandling.ConvertFromIntToBool(addressingModeStauts + 1),
+                                                                                                length: 0,
+                                                                                                invalidValue: invalidValue, setInvalidValue: invalidValue,
+                                                                                                conditionIndex: 3, conditionName: conditionGroupTestcase[2], conditionNRC: conditionGroupTestcase[4])[index] + "\n"
+                            ;
+                        TestStepIndex += 1;
+                    }
+                    switch (index)
+                    {
+                        case 0: TestStep += step; break;
+                        case 1: TestResponse += step; break;
+                        case 2: TeststepKeyword += step; break;
+                    }
+                }
+            }
             str = new string[]{
                 TestStep,
                 TestResponse,

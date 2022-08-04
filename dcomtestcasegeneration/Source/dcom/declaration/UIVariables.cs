@@ -31,6 +31,7 @@ namespace dcom.declaration
         public static string Release { get; set; }
         public static string RC { get; set; }
 
+
         public static List<string[]>[] CommonSettingDatabase { get; set; }
         public static string[] DatabaseCommonSettingCreateFault { get; set; }
         public static string[] DatabaseCommonSettingVehicleSpeed { get; set; }

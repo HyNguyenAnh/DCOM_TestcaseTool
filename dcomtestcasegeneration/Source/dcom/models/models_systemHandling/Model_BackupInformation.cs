@@ -19,7 +19,7 @@ namespace dcom.models.models_systemHandling
             if (File.Exists(SystemVariables.backupFilePath))
             {
                 MessageBoxButtons btn = MessageBoxButtons.YesNo;
-                DialogResult res = MessageBox.Show("Would you want to load the last recent database?", "Notice", btn);
+                DialogResult res = MessageBox.Show("Would you want to load the last recent database?", "Notice", btn, MessageBoxIcon.Question);
 
                 if (res == DialogResult.Yes)
                 {
@@ -40,7 +40,7 @@ namespace dcom.models.models_systemHandling
             else
             {
                 MessageBoxButtons btn_ = MessageBoxButtons.OK;
-                MessageBox.Show("You don't have backup file", "Notice", btn_);
+                MessageBox.Show("You don't have backup file", "Notice", btn_, MessageBoxIcon.Warning);
                 SystemVariables.checkTheFirstLoad = false;
                 // Close the pop-up
             }

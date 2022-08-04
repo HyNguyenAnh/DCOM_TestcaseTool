@@ -317,15 +317,15 @@ namespace dcom.models.models_testcaseHandling
             }
             switch (dtcStatus)
             {
-                case "active": dtcStatusMask = $"{1}[f|9|b].*";
+                case "active": dtcStatusMask = $"{{1}}[f|9|b].*";
                     break;
-                case "passive": dtcStatusMask = $"{1}[e|a|8].*";
+                case "passive": dtcStatusMask = $"{{1}}[e|a|8].*";
                     break;
-                case "nodtc": dtcStatusMask = $"{1}0";
+                case "nodtc": dtcStatusMask = $"{{1}}0";
                     break;
-                case "noconfirmedA": dtcStatusMask = $"{1}[1|3|5|7].*";
+                case "noconfirmedA": dtcStatusMask = $"{{1}}[1|3|5|7].*";
                     break;
-                case "noconfirmedP": dtcStatusMask = $"{1}[2|4|6].*";
+                case "noconfirmedP": dtcStatusMask = $"{{1}}[2|4|6].*";
                     break;
             }
 
@@ -774,7 +774,7 @@ namespace dcom.models.models_testcaseHandling
                                         ResponseCodeString = $"7f{ResponseID}12";
                                         break;
                                     case false:
-                                        ResponseCodeString = ResponseID + subFunctionNew;
+                                        ResponseCodeString = ResponseID + subFunctionNew + ".*";
                                         break;
                                 }
                             }
@@ -842,7 +842,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService28(string subFunction, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
+        public static string[] RequestService28(string controlType, string communicationType, bool isSubFunctionSupported, bool isSubFunctionSupportedInActiveSession, 
                                                 bool suppressBitEnabledStatus, bool isSuppressBitSupported, bool isSIDSupportedInActiveSession,
                                                 bool isParameterSupported, bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
@@ -862,15 +862,15 @@ namespace dcom.models.models_testcaseHandling
 
             if (suppressBitEnabledStatus)
             {
-                subFunctionNew = Controller_ServiceHandling.GetSuppressBitSubFunction(subFunction);
+                subFunctionNew = Controller_ServiceHandling.GetSuppressBitSubFunction(controlType);
             }
             else
             {
-                subFunctionNew = subFunction;
+                subFunctionNew = controlType;
             }
 
             // Configure request string
-            RequestDisplayString = SID + subFunctionNew;
+            RequestDisplayString = SID + subFunctionNew + communicationType;
             RequestDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(RequestDisplayString);
             RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(RequestDisplayString);
 
@@ -1068,7 +1068,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService14(string parametter,
+        public static string[] RequestService14(string parameter,
                                                 bool isSIDSupportedInActiveSession, bool isParameterSupported, 
                                                 bool addressingMode, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
@@ -1083,7 +1083,7 @@ namespace dcom.models.models_testcaseHandling
             string TestReponse;
             string TestStepKeyword;
 
-            string RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(SID + parametter);
+            string RequestCodeString = Controller_ServiceHandling.ConvertFromDisplayStringToCodeString(SID + parameter);
             
 
             string ResponseID = Controller_ServiceHandling.GetResponseID(SID);
@@ -1196,7 +1196,7 @@ namespace dcom.models.models_testcaseHandling
             };
             return Data;
         }
-        public static string[] RequestService2E(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParametersupported, 
+        public static string[] RequestService2E(string DID, string expectedValue, bool isSIDSupportedInActiveSession, bool isParameterSupported, 
                                                 bool addressingMode, int length, double invalidValue = 0, double setInvalidValue = 0,
                                                 int conditionIndex = 0, string conditionName = "", string conditionNRC = "")
         {
@@ -1220,7 +1220,7 @@ namespace dcom.models.models_testcaseHandling
             // Configure response string
             if ((isSIDSupportedInActiveSession & addressingMode) | (isSIDSupportedInActiveSession & !addressingMode))
             {
-                if (isParametersupported)
+                if (isParameterSupported)
                 {
                     ResponseCodeString = ResponseID + DID + expectedValue;
                 }
