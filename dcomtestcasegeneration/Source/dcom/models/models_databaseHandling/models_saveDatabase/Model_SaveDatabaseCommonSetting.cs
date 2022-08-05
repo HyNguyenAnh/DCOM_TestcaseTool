@@ -19,33 +19,20 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
                 int[] columnIndex = DatabaseVariables.StartColumnIndexDatabaseTables;
 
                 // Common Setting
-                List<string[]> SaveCommonSetting = new List<string[]>
+                for (int index = 0; index < UIVariables.DatabaseCommonSetting?.Count; index++)
                 {
-                    UIVariables.DatabaseCommonSettingCreateFault,
-                    UIVariables.DatabaseCommonSettingVehicleSpeed,
-                    UIVariables.DatabaseCommonSettingEngineStatus,
-                    UIVariables.DatabaseCommonSettingSecurityUnlock,
-                };
-                for (int index = 0; index < SaveCommonSetting?.Count; index++)
-                {
-                    for (int index_ = 0; index_ < SaveCommonSetting?.ElementAt(index).Length; index_++)
+                    for (int index_ = 0; index_ < UIVariables.DatabaseCommonSetting?.ElementAt(index).Length; index_++)
                     {
-                        Ws.Cells[rowIndex[0] + index, columnIndex[0] + index_] = SaveCommonSetting.ElementAt(index)[index_];
+                        Ws.Cells[rowIndex[0] + index, columnIndex[0] + index_] = UIVariables.DatabaseCommonSetting?.ElementAt(index)[index_];
                     }
                 }
 
                 // Common DID
-                List<string[]> SaveCommonDID = new List<string[]>
+                for (int index = 0; index < UIVariables.DatabaseCommonDID?.Count; index++)
                 {
-                    UIVariables.DatabaseCommonDIDCurrentSession,
-                    UIVariables.DatabaseCommonDIDInvalidCounter,
-                    UIVariables.DatabaseCommonDIDCurrentVoltage,
-                };
-                for (int index = 0; index < SaveCommonDID?.Count; index++)
-                {
-                    for (int index_ = 0; index_ < SaveCommonDID?.ElementAt(index).Length; index_++)
+                    for (int index_ = 0; index_ < UIVariables.DatabaseCommonDID?.ElementAt(index).Length; index_++)
                     {
-                        Ws.Cells[rowIndex[1] + index, columnIndex[1] + index_] = SaveCommonDID.ElementAt(index)[index_];
+                        Ws.Cells[rowIndex[1] + index, columnIndex[1] + index_] = UIVariables.DatabaseCommonDID?.ElementAt(index)[index_];
                     }
                 }
 

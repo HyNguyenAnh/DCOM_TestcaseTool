@@ -182,7 +182,7 @@ namespace dcom.models.models_testcaseHandling
             }
 
 
-            if ((UIVariables.DatabaseCommonSettingVehicleSpeed[1] != "") || (UIVariables.DatabaseCommonSettingVehicleSpeed[1] != null))
+            if (UIVariables.DatabaseCommonSetting[1][1] != "")
             {
                 for (int index = 0; index < VehicleSpeedCondition.Count; index++)
                 {
@@ -203,7 +203,8 @@ namespace dcom.models.models_testcaseHandling
                     startRowIndex++;
                 }
             }
-            if ((UIVariables.DatabaseCommonSettingEngineStatus[1] != "") || (UIVariables.DatabaseCommonSettingEngineStatus[1] != null))
+            else { }
+            if (UIVariables.DatabaseCommonSetting[2][1] != "")
             {
                 for (int index = 0; index < EngineStatusCondition.Count; index++)
                 {
@@ -224,6 +225,7 @@ namespace dcom.models.models_testcaseHandling
                     startRowIndex++;
                 }
             }
+            else { }
             for (int index = 0; index < VoltageCondition.Count; index++)
             {
                 subRowIndex++;
@@ -281,7 +283,7 @@ namespace dcom.models.models_testcaseHandling
         };
 
         public static string[] parametters = Controller_ServiceHandling.GetParameters(Specification);
-        public static string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDIDCurrentSession[1];
+        public static string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDID[0][1];
         public static string[] GetTestRequestAllowSessionComponent()
         {
             string TestStep = "";

@@ -168,7 +168,7 @@ namespace dcom.models.models_testcaseHandling
             }
 
 
-            if ((UIVariables.DatabaseCommonSettingVehicleSpeed[1] != "") || (UIVariables.DatabaseCommonSettingVehicleSpeed[1] != null))
+            if (UIVariables.DatabaseCommonSetting[1][1] != "")
             {
                 for (int index = 0; index < VehicleSpeedCondition.Count; index++)
                 {
@@ -189,7 +189,8 @@ namespace dcom.models.models_testcaseHandling
                     startRowIndex++;
                 }
             }
-            if ((UIVariables.DatabaseCommonSettingEngineStatus[1] != "") || (UIVariables.DatabaseCommonSettingEngineStatus[1] != null))
+            else { }
+            if (UIVariables.DatabaseCommonSetting[2][1] != "")
             {
                 for (int index = 0; index < EngineStatusCondition.Count; index++)
                 {
@@ -210,6 +211,7 @@ namespace dcom.models.models_testcaseHandling
                     startRowIndex++;
                 }
             }
+            else { }
             for (int index = 0; index < VoltageCondition.Count; index++)
             {
                 subRowIndex++;
@@ -352,7 +354,7 @@ namespace dcom.models.models_testcaseHandling
                         (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService14("ffffff", isSIDSupportedInActiveSession: true,
                                                                                             isParameterSupported: true,
                                                                                             addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[1],
+                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[1],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[1], isSubFunctionSupported: true,
@@ -361,7 +363,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
                         (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestCreateFault(false, 100)[index] + "\n" +
-                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[1],
+                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[1],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[0], isSubFunctionSupported: true,
@@ -369,7 +371,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
-                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[0],
+                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[0],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[1], isSubFunctionSupported: true,
@@ -378,7 +380,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
                         (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestCreateFault(true, 5000)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[1],
+                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[1],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[0], isSubFunctionSupported: true,
@@ -386,13 +388,13 @@ namespace dcom.models.models_testcaseHandling
                                                                                             suppressBitEnabledStatus: false, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
-                        (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[0],
+                        (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[0],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 16) + ") " + Model_TestcaseKeyword.RequestService14("ffffff", isSIDSupportedInActiveSession: true,
                                                                                             isParameterSupported: true,
                                                                                             addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 17) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[0],
+                        (TestStepIndex + 17) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[0],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n"
                         ;
@@ -468,7 +470,7 @@ namespace dcom.models.models_testcaseHandling
                         (TestStepIndex + 4) + ") " + Model_TestcaseKeyword.RequestService14("ffffff", isSIDSupportedInActiveSession: true,
                                                                                             isParameterSupported: true,
                                                                                             addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[1],
+                        (TestStepIndex + 5) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[1],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 6) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[1], isSubFunctionSupported: true,
@@ -477,7 +479,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
                         (TestStepIndex + 7) + ") " + Model_TestcaseKeyword.RequestCreateFault(false, 100)[index] + "\n" +
-                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[1],
+                        (TestStepIndex + 8) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[1],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 9) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[0], isSubFunctionSupported: true,
@@ -485,7 +487,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
-                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[0],
+                        (TestStepIndex + 10) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[0],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 11) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[1], isSubFunctionSupported: true,
@@ -494,7 +496,7 @@ namespace dcom.models.models_testcaseHandling
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
                         (TestStepIndex + 12) + ") " + Model_TestcaseKeyword.RequestCreateFault(true, 5000)[index] + "\n" +
-                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[1],
+                        (TestStepIndex + 13) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[1],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 14) + ") " + Model_TestcaseKeyword.RequestService85(subFunction[0], isSubFunctionSupported: true,
@@ -502,13 +504,13 @@ namespace dcom.models.models_testcaseHandling
                                                                                             suppressBitEnabledStatus: true, isSuppressBitSupported: IsSuppressBitSupport,
                                                                                             isSIDSupportedInActiveSession: Controller_ServiceHandling.ConvertFromStringToBool(AllowedSessionList[Int32.Parse(subFunctionMode[subFunctionModeIndex])]),
                                                                                             addressingMode: addressingMode)[index] + "\n" +
-                        (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[0],
+                        (TestStepIndex + 15) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[0],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n" +
                         (TestStepIndex + 16) + ") " + Model_TestcaseKeyword.RequestService14("ffffff", isSIDSupportedInActiveSession: true,
                                                                                             isParameterSupported: true,
                                                                                             addressingMode: true)[index] + "\n" +
-                        (TestStepIndex + 17) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSettingCreateFault[2], subFunction: subFunction[0],
+                        (TestStepIndex + 17) + ") " + Model_TestcaseKeyword.ReadDTCStatus(UIVariables.DatabaseCommonSetting[0][2], subFunction: subFunction[0],
                                                                                         isFaultEnable: TestcaseVariables.isFaultEnable, isFaultDisable: TestcaseVariables.isFaultDisable,
                                                                                         isClearDTC: TestcaseVariables.isClearDTC)[index] + "\n"
                         ;

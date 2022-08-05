@@ -40,7 +40,7 @@ namespace dcom.views.views_ToolBar
 
 
             view_MainWindow.button_setting.PerformClick();
-
+            SystemVariables.dbLoadStatus = true;
             Cursor = Cursors.Default;
         }
 

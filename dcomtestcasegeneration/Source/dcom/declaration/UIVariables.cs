@@ -32,15 +32,8 @@ namespace dcom.declaration
         public static string RC { get; set; }
 
 
-        public static List<string[]>[] CommonSettingDatabase { get; set; }
-        public static string[] DatabaseCommonSettingCreateFault { get; set; }
-        public static string[] DatabaseCommonSettingVehicleSpeed { get; set; }
-        public static string[] DatabaseCommonSettingEngineStatus { get; set; }
-        public static string[] DatabaseCommonSettingSecurityUnlock { get; set; }
-
-        public static string[] DatabaseCommonDIDCurrentSession { get; set; }
-        public static string[] DatabaseCommonDIDInvalidCounter { get; set; }
-        public static string[] DatabaseCommonDIDCurrentVoltage { get; set; }
+        public static List<string[]>[] CommonSettingFromDatabase { get; set; }
+        
 
         public static List<string[]> DatabaseCommonSetting { get; set; }
         public static List<string[]> DatabaseCommonDID { get; set; }

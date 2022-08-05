@@ -399,7 +399,14 @@ namespace dcom.controllers.controllers_middleware
                 {
                     for (int cellIndex = 0; cellIndex < dataGridView?.Columns.Count - 1; cellIndex++)
                     {
-                        Data.ElementAt(rowIndex)[cellIndex] = dataGridView?.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
+                        if (dataGridView?.Rows[rowIndex].Cells[cellIndex + 1].Value != null)
+                        {
+                            Data.ElementAt(rowIndex)[cellIndex] = dataGridView?.Rows[rowIndex].Cells[cellIndex + 1].Value.ToString();
+                        }
+                        else
+                        {
+                            Data.ElementAt(rowIndex)[cellIndex] = "";
+                        }
                     }
                 }
             }
@@ -550,7 +557,7 @@ namespace dcom.controllers.controllers_middleware
 
             // Service 2E
 
-            //Controllers_UIService.UpdateDB_Service2E(edited[6]);
+            Controllers_UIService.UpdateDB_Service2E(edited[6]);
 
             // Service 27
 

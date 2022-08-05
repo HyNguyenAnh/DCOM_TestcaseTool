@@ -174,7 +174,7 @@ namespace dcom.models.models_testcaseHandling
             string TestStep;
             string TestReponse;
             string TestStepKeyword;
-            string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDIDCurrentSession[1];
+            string CurrentSessionDIDCodeString = UIVariables.DatabaseCommonDID[0][1];
             string CurrentSessionDIDDisplayString = Controller_ServiceHandling.ConvertFromCodeStringToDisplayString(CurrentSessionDIDCodeString);
             string responseTitle = Controller_ServiceHandling.GetReponseTitle(responseStatus);
             string ResponseDisplayString;
@@ -217,7 +217,7 @@ namespace dcom.models.models_testcaseHandling
             string TestStep;
             string TestReponse;
             string TestStepKeyword;
-            string createFault = UIVariables.DatabaseCommonSettingCreateFault[1];
+            string createFault = UIVariables.DatabaseCommonSetting[0][1];
             int TestStepStatus = Controller_ServiceHandling.ConvertFromBoolToInt(status);
 
             // Test step

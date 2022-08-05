@@ -905,6 +905,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService10.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService10.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service10_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService10.ElementAt(2)[index][1] = UIVariables.Service10_NRCPriority[index];
@@ -915,7 +919,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService10.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service10_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -939,7 +942,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService10.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][1] = UIVariables.Service10_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][3] = status;
@@ -947,7 +950,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService10.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][3] = status;
@@ -960,7 +963,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService10.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -978,7 +981,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService10.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService10.ElementAt(3)[index][2] = "Stop";
@@ -999,7 +1002,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService10.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service10_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1008,7 +1011,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService10.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService10.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService10.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1026,7 +1029,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService10.ElementAt(4)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[1] = false;
+                UIVariables.edited_View[1] = false;
             }
         }
 
@@ -1055,6 +1058,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService11.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService11.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service11_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService11.ElementAt(2)[index][1] = UIVariables.Service11_NRCPriority[index];
@@ -1065,7 +1072,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService11.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service11_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -1088,7 +1094,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService11.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][1] = UIVariables.Service11_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][3] = status;
@@ -1096,7 +1102,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService11.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][3] = status;
@@ -1109,7 +1115,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService11.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -1127,7 +1133,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService11.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService11.ElementAt(3)[index][2] = "Stop";
@@ -1148,7 +1154,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService11.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service11_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1157,7 +1163,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService11.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService11.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService11.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1175,7 +1181,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService11.ElementAt(4)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[2] = false;
+                UIVariables.edited_View[2] = false;
             }
         }
 
@@ -1207,6 +1213,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService14.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService14.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service14_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService14.ElementAt(2)[index][1] = UIVariables.Service14_NRCPriority[index];
@@ -1217,7 +1227,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService14.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service14_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -1240,7 +1249,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService14.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][1] = UIVariables.Service14_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][3] = status;
@@ -1248,7 +1257,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService14.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][3] = status;
@@ -1261,7 +1270,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService14.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -1279,7 +1288,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService14.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService14.ElementAt(3)[index][2] = "Stop";
@@ -1300,7 +1309,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService14.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service14_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1309,7 +1318,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService14.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService14.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService14.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1327,7 +1336,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService14.ElementAt(4)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[3] = false;
+                UIVariables.edited_View[3] = false;
             }
         }
 
@@ -1469,8 +1478,7 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService22.ElementAt(0).Clear();
                 for (int index = 0; index < UIVariables.Service22_DIDTable_Specification?.Count(); index++)
                 {
-                    string[] empty = new string[4];
-                    DatabaseVariables.DatabaseService22.ElementAt(0).Add(empty);
+                    DatabaseVariables.DatabaseService22.ElementAt(0).Add(new string[4]);
                     for (int index_ = 0; index_ < UIVariables.Service22_DIDTable_Specification?.ElementAt(index).Count(); index_++)
                     {
                         status = UIVariables.Service22_DIDTable_Specification[index][index_];
@@ -1482,8 +1490,7 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService22.ElementAt(1).Clear();
                 for (int index = 0; index < UIVariables.Service22_DIDTable_AllowSessionAddressingMode?.Count(); index++)
                 {
-                    string[] empty = new string[5];
-                    DatabaseVariables.DatabaseService22.ElementAt(1).Add(empty);
+                    DatabaseVariables.DatabaseService22.ElementAt(1).Add(new string[5]);
                     for (int index_ = 0; index_ < UIVariables.Service22_DIDTable_AllowSessionAddressingMode?.ElementAt(index).Length; index_++)
                     {
                         status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_DIDTable_AllowSessionAddressingMode[index][index_]);
@@ -1492,17 +1499,19 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService22.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService22.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service22_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService22.ElementAt(2)[index][1] = UIVariables.Service22_NRCPriority[index];
                 }
 
-
                 // Condition
                 DatabaseVariables.DatabaseService22.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service22_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -1520,12 +1529,11 @@ namespace dcom.controllers.controllers_UIcontainer
                         engineStatusConditionSplit = string.Concat(UIVariables.Service22_InvalidValueCondition[1], "; " + UIVariables.Service22_ValidValueCondition).Split(';');
                     }
                     status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service22_ButtonStatus_Condition[index]);
-
                     if (index == 0)
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService22.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][1] = UIVariables.Service22_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][3] = status;
@@ -1533,7 +1541,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService22.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][3] = status;
@@ -1546,7 +1554,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService22.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -1564,7 +1572,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService22.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService22.ElementAt(3)[index][2] = "Stop";
@@ -1585,7 +1593,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService22.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service22_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1594,12 +1602,12 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService22.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService22.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
                                 DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][3] = status;
-                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
+                                DatabaseVariables.DatabaseService22.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = "";
                             }
                         }
                     }
@@ -1619,7 +1627,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService22.ElementAt(5)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[5] = false;
+                UIVariables.edited_View[5] = false;
             }
         }
 
@@ -1630,8 +1638,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 string status;
 
                 // Specification
+                DatabaseVariables.DatabaseService2E.ElementAt(0).Clear();
                 for (int index = 0; index < UIVariables.Service2E_DIDTable_Specification?.Count(); index++)
                 {
+                    DatabaseVariables.DatabaseService2E.ElementAt(0).Add(new string[5]);
                     for (int index_ = 0; index_ < UIVariables.Service2E_DIDTable_Specification?.ElementAt(index).Count(); index_++)
                     {
                         status = UIVariables.Service2E_DIDTable_Specification[index][index_];
@@ -1640,8 +1650,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // Allow session & Addressing Mode
+                DatabaseVariables.DatabaseService2E.ElementAt(1).Clear();
                 for (int index = 0; index < UIVariables.Service2E_DIDTable_AllowSessionAddressingMode?.Count(); index++)
                 {
+                    DatabaseVariables.DatabaseService2E.ElementAt(1).Add(new string[5]);
                     for (int index_ = 0; index_ < UIVariables.Service2E_DIDTable_AllowSessionAddressingMode?.ElementAt(index).Length; index_++)
                     {
                         status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service2E_DIDTable_AllowSessionAddressingMode[index][index_]);
@@ -1650,6 +1662,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService2E.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService2E.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service2E_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService2E.ElementAt(2)[index][1] = UIVariables.Service2E_NRCPriority[index];
@@ -1660,7 +1676,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService2E.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service2E_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -1683,7 +1698,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService2E.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1] = UIVariables.Service2E_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3] = status;
@@ -1691,7 +1706,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService2E.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][3] = status;
@@ -1704,7 +1719,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService2E.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -1722,7 +1737,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService2E.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService2E.ElementAt(3)[index][2] = "Stop";
@@ -1743,7 +1758,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService2E.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service2E_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1752,7 +1767,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService2E.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService2E.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService2E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1777,7 +1792,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService2E.ElementAt(5)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[6] = false;
+                UIVariables.edited_View[6] = false;
             }
         }
 
@@ -1809,6 +1824,11 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for(int index = 0; index < DatabaseVariables.DatabaseService27.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService27.ElementAt(2)[index][1] = "";
+                    DatabaseVariables.DatabaseService27.ElementAt(2)[index][2] = "";
+                }
                 for (int index = 0; index < UIVariables.Service27_NRCPrioritySeed?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService27.ElementAt(2)[index][1] = UIVariables.Service27_NRCPrioritySeed[index];
@@ -1822,7 +1842,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService27.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service27_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -1845,7 +1864,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService27.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][1] = UIVariables.Service27_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][3] = status;
@@ -1853,7 +1872,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService27.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][3] = status;
@@ -1866,7 +1885,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService27.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -1884,7 +1903,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService27.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService27.ElementAt(3)[index][2] = "Stop";
@@ -1905,7 +1924,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService27.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service27_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1914,7 +1933,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService27.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService27.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService27.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -1932,7 +1951,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService27.ElementAt(4)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[7] = false;
+                UIVariables.edited_View[7] = false;
             }
         }
 
@@ -1967,6 +1986,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService28.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService28.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service28_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService28.ElementAt(2)[index][1] = UIVariables.Service28_NRCPriority[index];
@@ -1977,7 +2000,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService28.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service28_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -2000,7 +2022,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService28.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][1] = UIVariables.Service28_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][3] = status;
@@ -2008,7 +2030,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService28.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][3] = status;
@@ -2021,7 +2043,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService28.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -2039,7 +2061,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService28.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService28.ElementAt(3)[index][2] = "Stop";
@@ -2060,7 +2082,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService28.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service28_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -2069,7 +2091,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService28.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService28.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService28.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -2087,7 +2109,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService28.ElementAt(4)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[8] = false;
+                UIVariables.edited_View[8] = false;
             }
         }
 
@@ -2221,148 +2243,156 @@ namespace dcom.controllers.controllers_UIcontainer
 
         public static void UpdateDB_Service85(bool flag)
         {
-            string status;
-
-            // Specification
-            for (int index = 0; index < UIVariables.Service85_SubFunction?.Count(); index++)
+            if (flag)
             {
-                for (int index_ = 0; index_ < UIVariables.Service85_SubFunction?.ElementAt(index).Count(); index_++)
-                {
-                    DatabaseVariables.DatabaseService85.ElementAt(0)[index][index_] = UIVariables.Service85_SubFunction.ElementAt(index)[index_];
-                }
-            }
+                string status;
 
-            // Allow session & Addressing mode
-            int n = 0;
-            for (int index = 0; index < 2; index++)
-            {
-                for (int index_ = 0; index_ < 3; index_++)
+                // Specification
+                for (int index = 0; index < UIVariables.Service85_SubFunction?.Count(); index++)
                 {
-                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_AddressingMode[n]);
-                    DatabaseVariables.DatabaseService85.ElementAt(1)[index][index_ + 1] = status;
-                    n++;
-                }
-            }
-
-            // NRC
-            for (int index = 0; index < UIVariables.Service85_NRCPriority?.Length; index++)
-            {
-                DatabaseVariables.DatabaseService85.ElementAt(2)[index][1] = UIVariables.Service85_NRCPriority[index];
-            }
-
-
-            // Condition
-            DatabaseVariables.DatabaseService85.ElementAt(3).Clear();
-            for (int index = 0; index < UIVariables.Service85_ButtonStatus_Condition?.Length; index++)
-            {
-                string[] empty = new string[5];
-                string condition = "";
-                switch (index)
-                {
-                    case 0: condition = "Vehicle_Speed"; break;
-                    case 1: condition = "Engine_Status"; break;
-                    case 2: condition = "Voltage"; break;
-                }
-                string[] engineStatusConditionSplit;
-                if (UIVariables.Service85_InvalidValueCondition[1].Contains(UIVariables.Service85_ValidValueCondition))
-                {
-                    engineStatusConditionSplit = UIVariables.Service85_InvalidValueCondition[1].Split(';');
-                }
-                else
-                {
-                    engineStatusConditionSplit = string.Concat(UIVariables.Service85_InvalidValueCondition[1], "; " + UIVariables.Service85_ValidValueCondition).Split(';');
-                }
-                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Condition[index]);
-
-                if (index == 0)
-                {
-                    if (status == "1")
+                    for (int index_ = 0; index_ < UIVariables.Service85_SubFunction?.ElementAt(index).Count(); index_++)
                     {
-                        DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = UIVariables.Service85_InvalidValueCondition[index];
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = UIVariables.Service85_NRCCondition[index];
+                        DatabaseVariables.DatabaseService85.ElementAt(0)[index][index_] = UIVariables.Service85_SubFunction.ElementAt(index)[index_];
+                    }
+                }
+
+                // Allow session & Addressing mode
+                int n = 0;
+                for (int index = 0; index < 2; index++)
+                {
+                    for (int index_ = 0; index_ < 3; index_++)
+                    {
+                        status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_AddressingMode[n]);
+                        DatabaseVariables.DatabaseService85.ElementAt(1)[index][index_ + 1] = status;
+                        n++;
+                    }
+                }
+
+                // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService85.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService85.ElementAt(2)[index][1] = "";
+                }
+                for (int index = 0; index < UIVariables.Service85_NRCPriority?.Length; index++)
+                {
+                    DatabaseVariables.DatabaseService85.ElementAt(2)[index][1] = UIVariables.Service85_NRCPriority[index];
+                }
+
+
+                // Condition
+                DatabaseVariables.DatabaseService85.ElementAt(3).Clear();
+                for (int index = 0; index < UIVariables.Service85_ButtonStatus_Condition?.Length; index++)
+                {
+                    string condition = "";
+                    switch (index)
+                    {
+                        case 0: condition = "Vehicle_Speed"; break;
+                        case 1: condition = "Engine_Status"; break;
+                        case 2: condition = "Voltage"; break;
+                    }
+                    string[] engineStatusConditionSplit;
+                    if (UIVariables.Service85_InvalidValueCondition[1].Contains(UIVariables.Service85_ValidValueCondition))
+                    {
+                        engineStatusConditionSplit = UIVariables.Service85_InvalidValueCondition[1].Split(';');
                     }
                     else
                     {
-                        DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = "";
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = "";
+                        engineStatusConditionSplit = string.Concat(UIVariables.Service85_InvalidValueCondition[1], "; " + UIVariables.Service85_ValidValueCondition).Split(';');
                     }
-                }
-                else if (index == 1)
-                {
-                    if (status == "1")
-                    {
-                        for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
-                        {
-                            DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][0] = condition;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
-                            if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
-                            {
-                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = status;
-                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][4] = UIVariables.Service85_NRCCondition[index];
-                            }
-                            else
-                            {
-                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = "0";
-                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][4] = "";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = "0";
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][2] = "Stop";
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
-                        DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = "";
-                    }
-                }
-                else
-                {
-                    for (int index_ = 0; index_ < 2; index_++)
-                    {
-                        string voltageName = "";
-                        switch (index_)
-                        {
-                            case 0: voltageName = "Low"; break;
-                            case 1: voltageName = "High"; break;
-                        }
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Condition[index]);
 
+                    if (index == 0)
+                    {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service85_InvalidValueCondition[index + index_];
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][3] = status;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service85_NRCCondition[index];
+                            DatabaseVariables.DatabaseService85.ElementAt(3).Add(new string[5]);
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = UIVariables.Service85_InvalidValueCondition[index];
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = UIVariables.Service85_NRCCondition[index];
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService85.ElementAt(3).Add(empty);
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][3] = status;
-                            DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
+                            DatabaseVariables.DatabaseService85.ElementAt(3).Add(new string[5]);
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = "";
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = "";
+                        }
+                    }
+                    else if (index == 1)
+                    {
+                        if (status == "1")
+                        {
+                            for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
+                            {
+                                DatabaseVariables.DatabaseService85.ElementAt(3).Add(new string[5]);
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][0] = condition;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
+                                if (engineStatusConditionSplit[index_].Trim().Split('(')[0] != "0")
+                                {
+                                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = status;
+                                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][4] = UIVariables.Service85_NRCCondition[index];
+                                }
+                                else
+                                {
+                                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][3] = "0";
+                                    DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_][4] = "";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            DatabaseVariables.DatabaseService85.ElementAt(3).Add(new string[5]);
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][0] = condition;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][1] = "0";
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][2] = "Stop";
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][3] = status;
+                            DatabaseVariables.DatabaseService85.ElementAt(3)[index][4] = "";
+                        }
+                    }
+                    else
+                    {
+                        for (int index_ = 0; index_ < 2; index_++)
+                        {
+                            string voltageName = "";
+                            switch (index_)
+                            {
+                                case 0: voltageName = "Low"; break;
+                                case 1: voltageName = "High"; break;
+                            }
+
+                            if (status == "1")
+                            {
+                                DatabaseVariables.DatabaseService85.ElementAt(3).Add(new string[5]);
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service85_InvalidValueCondition[index + index_];
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][3] = status;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][4] = UIVariables.Service85_NRCCondition[index];
+                            }
+                            else
+                            {
+                                DatabaseVariables.DatabaseService85.ElementAt(3).Add(new string[5]);
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][3] = status;
+                                DatabaseVariables.DatabaseService85.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
+                            }
                         }
                     }
                 }
-            }
 
-            // Optional
-            for (int index = 0; index < UIVariables.Service85_ButtonStatus_Optional.Length; index++)
-            {
-                status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Optional[index]);
-                DatabaseVariables.DatabaseService85.ElementAt(4)[index][1] = status;
+                // Optional
+                for (int index = 0; index < UIVariables.Service85_ButtonStatus_Optional.Length; index++)
+                {
+                    status = Controller_ServiceHandling.ConvertFromBoolToStringBit(UIVariables.Service85_ButtonStatus_Optional[index]);
+                    DatabaseVariables.DatabaseService85.ElementAt(4)[index][1] = status;
+                }
+
+                UIVariables.edited_View[11] = false;
             }
         }
 
@@ -2394,6 +2424,10 @@ namespace dcom.controllers.controllers_UIcontainer
                 }
 
                 // NRC
+                for (int index = 0; index < DatabaseVariables.DatabaseService3E.ElementAt(2).Count; index++)
+                {
+                    DatabaseVariables.DatabaseService3E.ElementAt(2)[index][1] = "";
+                }
                 for (int index = 0; index < UIVariables.Service3E_NRCPriority?.Length; index++)
                 {
                     DatabaseVariables.DatabaseService3E.ElementAt(2)[index][1] = UIVariables.Service3E_NRCPriority[index];
@@ -2404,7 +2438,6 @@ namespace dcom.controllers.controllers_UIcontainer
                 DatabaseVariables.DatabaseService3E.ElementAt(3).Clear();
                 for (int index = 0; index < UIVariables.Service3E_ButtonStatus_Condition?.Length; index++)
                 {
-                    string[] empty = new string[5];
                     string condition = "";
                     switch (index)
                     {
@@ -2427,7 +2460,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     {
                         if (status == "1")
                         {
-                            DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService3E.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1] = UIVariables.Service3E_InvalidValueCondition[index];
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][3] = status;
@@ -2435,7 +2468,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService3E.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1] = "";
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][3] = status;
@@ -2448,7 +2481,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         {
                             for (int index_ = 0; index_ < engineStatusConditionSplit.Length; index_++)
                             {
-                                DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService3E.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][0] = condition;
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][1] = engineStatusConditionSplit[index_].Trim().Split('(')[0];
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_][2] = engineStatusConditionSplit[index_].Trim().Split('(')[1].Split(')')[0];
@@ -2466,7 +2499,7 @@ namespace dcom.controllers.controllers_UIcontainer
                         }
                         else
                         {
-                            DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
+                            DatabaseVariables.DatabaseService3E.ElementAt(3).Add(new string[5]);
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][0] = condition;
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][1] = "0";
                             DatabaseVariables.DatabaseService3E.ElementAt(3)[index][2] = "Stop";
@@ -2487,7 +2520,7 @@ namespace dcom.controllers.controllers_UIcontainer
 
                             if (status == "1")
                             {
-                                DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService3E.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = UIVariables.Service3E_InvalidValueCondition[index + index_];
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -2496,7 +2529,7 @@ namespace dcom.controllers.controllers_UIcontainer
                             }
                             else
                             {
-                                DatabaseVariables.DatabaseService3E.ElementAt(3).Add(empty);
+                                DatabaseVariables.DatabaseService3E.ElementAt(3).Add(new string[5]);
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][0] = condition;
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][1] = "";
                                 DatabaseVariables.DatabaseService3E.ElementAt(3)[index + index_ + engineStatusConditionSplit.Length - 1][2] = voltageName;
@@ -2514,7 +2547,7 @@ namespace dcom.controllers.controllers_UIcontainer
                     DatabaseVariables.DatabaseService3E.ElementAt(4)[index][1] = status;
                 }
 
-                //UIVariables.edited_View[10] = false;
+                UIVariables.edited_View[10] = false;
             }
         }
 

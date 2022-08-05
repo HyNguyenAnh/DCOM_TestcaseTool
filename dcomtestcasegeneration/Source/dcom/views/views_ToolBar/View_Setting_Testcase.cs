@@ -401,7 +401,6 @@ namespace dcom.views.views_ToolBar
         {
             if (SystemVariables.dbLoadStatus)
             {
-                Console.WriteLine("complete save dtgv");
                 Controller_UIHandling.SaveDataGridViewToDatabase(dataGridView_CommonSetting, UIVariables.DatabaseCommonSetting);
             }
         }

@@ -372,6 +372,7 @@ namespace dcom.views
             this.button_service19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_service19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_service19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_service19.Enabled = false;
             this.button_service19.FlatAppearance.BorderSize = 0;
             this.button_service19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_service19.Location = new System.Drawing.Point(10, 160);
@@ -444,6 +445,7 @@ namespace dcom.views
             this.button_service31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_service31.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_service31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_service31.Enabled = false;
             this.button_service31.FlatAppearance.BorderSize = 0;
             this.button_service31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_service31.Location = new System.Drawing.Point(10, 410);
@@ -480,6 +482,7 @@ namespace dcom.views
             this.button_canTP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_canTP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_canTP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_canTP.Enabled = false;
             this.button_canTP.FlatAppearance.BorderSize = 0;
             this.button_canTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_canTP.Location = new System.Drawing.Point(10, 560);

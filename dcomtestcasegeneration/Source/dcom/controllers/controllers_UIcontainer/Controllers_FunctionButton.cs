@@ -27,7 +27,6 @@ namespace dcom.controllers.controllers_UIcontainer
 
         public static void ButtonSaveClick()
         {
-            Console.WriteLine(SystemVariables.checkDBVariableDefinitionStatus);
             Definition.OutputVariablesDefinition();
             Model_DatabaseTemplate.SaveDatabase();
             Model_SystemInformation.createBackupFile(SystemVariables.backupFilePath);

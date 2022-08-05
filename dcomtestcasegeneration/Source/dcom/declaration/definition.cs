@@ -41,7 +41,8 @@ namespace dcom.declaration
                 3,  // SIDSupported
             };
             DatabaseVariables.StartColumnIndexDatabaseTables = new int[]
-            {   1,  // Common Setting
+            {   
+                1,  // Common Setting
                 1,  // Common DID
                 1,  // Project Information
                 1,  // Data Path Information
@@ -65,7 +66,7 @@ namespace dcom.declaration
 
             // Service 11
             DatabaseVariables.DatabaseService11 = new List<List<string[]>> { };
-            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(1, 2));
+            DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(3, 2));
             DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(2, 4));
             DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(15, 2));
             DatabaseVariables.DatabaseService11.Add(Controller_UIHandling.addListArray(4, 5));
@@ -255,16 +256,16 @@ namespace dcom.declaration
             UIVariables.edited_View = new bool[13]
             {
                 true,  // View Setting
-                true,  // View Service 10
-                true,  // View Service 11
-                true,  // View Service 14
+                false,  // View Service 10
+                false,  // View Service 11
+                false,  // View Service 14
                 false,  // View Service 19
-                true,  // View Service 22
-                true,  // View Service 2E
-                true,  // View Service 27
-                true,  // View Service 28
-                true,  // View Service 3E
-                true,  // View Service 85
+                false,  // View Service 22
+                false,  // View Service 2E
+                false,  // View Service 27
+                false,  // View Service 28
+                false,  // View Service 3E
+                false,  // View Service 85
                 false,  // View Service 31
                 false,  // View CanTP
             };
@@ -318,18 +319,8 @@ namespace dcom.declaration
                 false,
             };
 
-            UIVariables.CommonSettingDatabase = new List<string[]>[] { };
-            // Common Setting
-            UIVariables.DatabaseCommonSettingCreateFault = new string[] { };
-            UIVariables.DatabaseCommonSettingVehicleSpeed = new string[] { };
-            UIVariables.DatabaseCommonSettingEngineStatus = new string[] { };
-            UIVariables.DatabaseCommonSettingSecurityUnlock = new string[] { };
-
-            // Common DID
-            UIVariables.DatabaseCommonDIDCurrentSession = new string[] { };
-            UIVariables.DatabaseCommonDIDInvalidCounter = new string[] { };
-            UIVariables.DatabaseCommonDIDCurrentVoltage = new string[] { };
-
+            UIVariables.CommonSettingFromDatabase = new List<string[]>[] { };
+            
 
             // Project Information
             UIVariables.ProjectName = "";

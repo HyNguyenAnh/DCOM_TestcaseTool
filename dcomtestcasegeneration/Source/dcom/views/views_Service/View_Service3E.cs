@@ -236,167 +236,338 @@ namespace dcom.views.views_Service
         private void button_PhysicalDefault_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_AddressingMode[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalDefault.Text);
+            if (UIVariables.Service3E_ButtonStatus_AddressingMode[0] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(1)[0][1]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
 
         private void button_PhysicalProgramming_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_AddressingMode[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalProgramming.Text);
+            if (UIVariables.Service3E_ButtonStatus_AddressingMode[1] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(1)[0][2]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
 
         private void button_PhysicalExtended_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_AddressingMode[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_PhysicalExtended.Text);
+            if (UIVariables.Service3E_ButtonStatus_AddressingMode[2] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(1)[0][3]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
 
         private void button_FunctionalDefault_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_AddressingMode[3] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalDefault.Text);
+            if (UIVariables.Service3E_ButtonStatus_AddressingMode[3] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(1)[1][1]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
 
         private void button_FunctionalProgramming_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_AddressingMode[4] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalProgramming.Text);
+            if (UIVariables.Service3E_ButtonStatus_AddressingMode[4] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(1)[1][2]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
 
         private void button_FunctionalExtended_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_AddressingMode[5] = Controller_ServiceHandling.ConvertFromStatusToBool(button_FunctionalExtended.Text);
+            if (UIVariables.Service3E_ButtonStatus_AddressingMode[5] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(1)[1][3]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
+
         private void button_SupressBit_TextChanged(object sender, EventArgs e)
         {
             UIVariables.Service3E_ButtonStatus_Optional[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_SupressBit.Text);
+            if (UIVariables.Service3E_ButtonStatus_Optional[0] != Controller_ServiceHandling.ConvertFromStringToBool(DatabaseVariables.DatabaseService3E?.ElementAt(4)[0][1]))
+            {
+                UIVariables.edited_View[10] = true;
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
         }
 
         private void dataGridView_NRCPriority_SelectionChanged(object sender, EventArgs e)
         {
             Controller_UIHandling.SaveDataGridViewNRCToDatabase(dataGridView_NRCPriority, UIVariables.Service3E_NRCPriority);
-        }
-        private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
-        {
-            UIVariables.Service3E_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
-            if (UIVariables.Service3E_ButtonStatus_Condition[0] == true)
+            for (int index = 0; dataGridView_NRCPriority.Rows[0].Cells[index].Value.ToString() != ""; index++)
             {
-                comboBox_ConditionVehicle_NRC.Enabled = true;
-                textBox_ConditionVehicle.Enabled = true;
-                comboBox_ConditionVehicle_NRC.Text = UIVariables.Service3E_NRCCondition[0];
-                textBox_ConditionVehicle.Text = UIVariables.Service3E_InvalidValueCondition[0];
-            }
-            else
-            {
-                comboBox_ConditionVehicle_NRC.Enabled = false;
-                textBox_ConditionVehicle.Enabled = false;
-                comboBox_ConditionVehicle_NRC.Text = "NRC";
-                textBox_ConditionVehicle.Text = "...km/h";
+                if (dataGridView_NRCPriority.Rows[0].Cells[index].Value.ToString() != DatabaseVariables.DatabaseService3E?.ElementAt(2)[index][1])
+                {
+                    UIVariables.edited_View[10] = true;
+                }
+                else
+                {
+                    UIVariables.edited_View[10] = false;
+                }
             }
         }
 
         private void button_ConditionEngine_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service3E_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
-            if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+            if (UIVariables.Service3E_ButtonStatus_Condition[1] != Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text))
             {
-                comboBox_ConditionEngine_NRC.Enabled = true;
-                comboBox_ConditionEngine_NRC.Text = UIVariables.Service3E_NRCCondition[1];
-                textBox_ConditionEngine_InvalidValue.Enabled = true;
-                textBox_ConditionEngine_InvalidValue.Text = UIVariables.Service3E_InvalidValueCondition[1];
-                textBox_ConditionEngine_ValidValue.Enabled = true;
-                textBox_ConditionEngine_ValidValue.Text = UIVariables.Service3E_ValidValueCondition;
+                UIVariables.Service3E_ButtonStatus_Condition[1] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionEngine.Text);
+
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+                {
+                    comboBox_ConditionEngine_NRC.Enabled = true;
+                    comboBox_ConditionEngine_NRC.Text = UIVariables.Service3E_NRCCondition[1];
+                    textBox_ConditionEngine_InvalidValue.Enabled = true;
+                    textBox_ConditionEngine_InvalidValue.Text = UIVariables.Service3E_InvalidValueCondition[1];
+                    textBox_ConditionEngine_ValidValue.Enabled = true;
+                    textBox_ConditionEngine_ValidValue.Text = UIVariables.Service3E_ValidValueCondition;
+                }
+                else
+                {
+                    comboBox_ConditionEngine_NRC.Enabled = false;
+                    comboBox_ConditionEngine_NRC.Text = "NRC";
+                    textBox_ConditionEngine_InvalidValue.Enabled = false;
+                    textBox_ConditionEngine_InvalidValue.Text = "Example: 1(Crank); 2(Running); 3(Reverse); 0(Stop)...";
+                    textBox_ConditionEngine_ValidValue.Enabled = false;
+                    textBox_ConditionEngine_ValidValue.Text = "...";
+                }
             }
             else
             {
-                comboBox_ConditionEngine_NRC.Enabled = false;
-                comboBox_ConditionEngine_NRC.Text = "NRC";
-                textBox_ConditionEngine_InvalidValue.Enabled = false;
-                textBox_ConditionEngine_InvalidValue.Text = "Example: 1(Crank); 2(Running); 3(Reverse); 0(Stop)...";
-                textBox_ConditionEngine_ValidValue.Enabled = false;
-                textBox_ConditionEngine_ValidValue.Text = "...";
+                UIVariables.edited_View[10] = false;
+            }
+        }
+
+        private void button_ConditionVehicleSpeed_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service3E_ButtonStatus_Condition[0] != Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text))
+            {
+                UIVariables.Service3E_ButtonStatus_Condition[0] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVehicleSpeed.Text);
+
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[0] == true)
+                {
+                    comboBox_ConditionVehicle_NRC.Enabled = true;
+                    textBox_ConditionVehicle.Enabled = true;
+                    comboBox_ConditionVehicle_NRC.Text = UIVariables.Service3E_NRCCondition[0];
+                    textBox_ConditionVehicle.Text = UIVariables.Service3E_InvalidValueCondition[0];
+                }
+                else
+                {
+                    comboBox_ConditionVehicle_NRC.Enabled = false;
+                    textBox_ConditionVehicle.Enabled = false;
+                    comboBox_ConditionVehicle_NRC.Text = "NRC";
+                    textBox_ConditionVehicle.Text = "...km/h";
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void button_ConditionVoltage_TextChanged(object sender, EventArgs e)
         {
-            UIVariables.Service3E_ButtonStatus_Condition[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVoltage.Text);
-            if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+            if (UIVariables.Service3E_ButtonStatus_Condition[2] != Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVoltage.Text))
             {
-                comboBox_ConditionVoltage_NRC.Enabled = true;
-                textBox_ConditionVoltage_Low.Enabled = true;
-                textBox_ConditionVoltage_High.Enabled = true;
-                comboBox_ConditionVoltage_NRC.Text = UIVariables.Service3E_NRCCondition[2];
-                textBox_ConditionVoltage_Low.Text = UIVariables.Service3E_InvalidValueCondition[2];
-                textBox_ConditionVoltage_High.Text = UIVariables.Service3E_InvalidValueCondition[3];
+                UIVariables.Service3E_ButtonStatus_Condition[2] = Controller_ServiceHandling.ConvertFromStatusToBool(button_ConditionVoltage.Text);
+
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+                {
+                    comboBox_ConditionVoltage_NRC.Enabled = true;
+                    textBox_ConditionVoltage_Low.Enabled = true;
+                    textBox_ConditionVoltage_High.Enabled = true;
+                    comboBox_ConditionVoltage_NRC.Text = UIVariables.Service3E_NRCCondition[2];
+                    textBox_ConditionVoltage_Low.Text = UIVariables.Service3E_InvalidValueCondition[2];
+                    textBox_ConditionVoltage_High.Text = UIVariables.Service3E_InvalidValueCondition[3];
+                }
+                else
+                {
+                    comboBox_ConditionVoltage_NRC.Enabled = false;
+                    textBox_ConditionVoltage_Low.Enabled = false;
+                    textBox_ConditionVoltage_High.Enabled = false;
+                    comboBox_ConditionVoltage_NRC.Text = "NRC";
+                    textBox_ConditionVoltage_Low.Text = "...V";
+                    textBox_ConditionVoltage_High.Text = "...V";
+                }
             }
             else
             {
-                comboBox_ConditionVoltage_NRC.Enabled = false;
-                textBox_ConditionVoltage_Low.Enabled = false;
-                textBox_ConditionVoltage_High.Enabled = false;
-                comboBox_ConditionVoltage_NRC.Text = "NRC";
-                textBox_ConditionVoltage_Low.Text = "...V";
-                textBox_ConditionVoltage_High.Text = "...V";
-            }
-        }
-
-        private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service3E_ButtonStatus_Condition[0] == true)
-            {
-                UIVariables.Service3E_NRCCondition[0] = comboBox_ConditionVehicle_NRC.Text;
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void comboBox_ConditionEngine_NRC_TextChanged(object sender, EventArgs e)
         {
-            if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+            if (UIVariables.Service3E_NRCCondition[1] != comboBox_ConditionEngine_NRC.Text)
             {
-                UIVariables.Service3E_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+                {
+                    UIVariables.Service3E_NRCCondition[1] = comboBox_ConditionEngine_NRC.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
+        }
+
+        private void comboBox_ConditionVehicle_NRC_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service3E_NRCCondition[0] != comboBox_ConditionVehicle_NRC.Text)
+            {
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[0] == true)
+                {
+                    UIVariables.Service3E_NRCCondition[0] = comboBox_ConditionVehicle_NRC.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void comboBox_ConditionVoltage_NRC_TextChanged(object sender, EventArgs e)
         {
-            if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+            if (UIVariables.Service3E_NRCCondition[2] != comboBox_ConditionVoltage_NRC.Text)
             {
-                UIVariables.Service3E_NRCCondition[2] = comboBox_ConditionVoltage_NRC.Text;
-            }
-        }
+                UIVariables.edited_View[10] = true;
 
-        private void textBox_ConditionVehicle_TextChanged(object sender, EventArgs e)
-        {
-            if (UIVariables.Service3E_ButtonStatus_Condition[0] == true)
+                if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+                {
+                    UIVariables.Service3E_NRCCondition[2] = comboBox_ConditionVoltage_NRC.Text;
+                }
+            }
+            else
             {
-                UIVariables.Service3E_InvalidValueCondition[0] = textBox_ConditionVehicle.Text;
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void textBox_ConditionEngine_InvalidValue_TextChanged(object sender, EventArgs e)
         {
-            if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+            if (UIVariables.Service3E_InvalidValueCondition[1] != textBox_ConditionEngine_InvalidValue.Text)
             {
-                UIVariables.Service3E_InvalidValueCondition[1] = textBox_ConditionEngine_InvalidValue.Text;
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+                {
+                    UIVariables.Service3E_InvalidValueCondition[1] = textBox_ConditionEngine_InvalidValue.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void textBox_ConditionEngine_ValidValue_TextChanged(object sender, EventArgs e)
         {
-            if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+            if (UIVariables.Service3E_ValidValueCondition != textBox_ConditionEngine_ValidValue.Text)
             {
-                UIVariables.Service3E_ValidValueCondition = textBox_ConditionEngine_ValidValue.Text;
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[1] == true)
+                {
+                    UIVariables.Service3E_ValidValueCondition = textBox_ConditionEngine_ValidValue.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
+            }
+        }
+
+        private void textBox_ConditionVehicle_TextChanged(object sender, EventArgs e)
+        {
+            if (UIVariables.Service3E_InvalidValueCondition[0] != textBox_ConditionVehicle.Text)
+            {
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[0] == true)
+                {
+                    UIVariables.Service3E_InvalidValueCondition[0] = textBox_ConditionVehicle.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void textBox_ConditionVoltage_Low_TextChanged(object sender, EventArgs e)
         {
-            if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+            if (UIVariables.Service3E_InvalidValueCondition[2] != textBox_ConditionVoltage_Low.Text)
             {
-                UIVariables.Service3E_InvalidValueCondition[2] = textBox_ConditionVoltage_Low.Text;
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+                {
+                    UIVariables.Service3E_InvalidValueCondition[2] = textBox_ConditionVoltage_Low.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
             }
         }
 
         private void textBox_ConditionVoltage_High_TextChanged(object sender, EventArgs e)
         {
-            if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+            if (UIVariables.Service3E_InvalidValueCondition[3] != textBox_ConditionVoltage_High.Text)
             {
-                UIVariables.Service3E_InvalidValueCondition[3] = textBox_ConditionVoltage_High.Text;
+                UIVariables.edited_View[10] = true;
+
+                if (UIVariables.Service3E_ButtonStatus_Condition[2] == true)
+                {
+                    UIVariables.Service3E_InvalidValueCondition[3] = textBox_ConditionVoltage_High.Text;
+                }
+            }
+            else
+            {
+                UIVariables.edited_View[10] = false;
             }
         }
     }

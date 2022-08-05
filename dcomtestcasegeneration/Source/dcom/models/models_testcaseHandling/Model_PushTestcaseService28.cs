@@ -48,7 +48,6 @@ namespace dcom.models.models_testcaseHandling
             }
             
         }
-
         public static void TestGroupComponent(Worksheet ws, int startRowIndex)
         {
             ws.Cells[startRowIndex, TestcaseVariables.IDColumnIndex] = TestcaseVariables.SubID + rowIndex;
@@ -179,7 +178,7 @@ namespace dcom.models.models_testcaseHandling
             }
 
 
-            if ((UIVariables.DatabaseCommonSettingVehicleSpeed[1] != "") || (UIVariables.DatabaseCommonSettingVehicleSpeed[1] != null))
+            if (UIVariables.DatabaseCommonSetting[1][1] != "")
             {
                 for (int communicationTypeindex = 0; communicationTypeindex < CommunicationType.Count; communicationTypeindex++)
                 {
@@ -203,7 +202,8 @@ namespace dcom.models.models_testcaseHandling
                     }
                 }
             }
-            if ((UIVariables.DatabaseCommonSettingEngineStatus[1] != "") || (UIVariables.DatabaseCommonSettingEngineStatus[1] != null))
+            else { }
+            if (UIVariables.DatabaseCommonSetting[2][1] != "")
             {
                 for (int index = 0; index < EngineStatusCondition.Count; index++)
                 {
@@ -230,6 +230,7 @@ namespace dcom.models.models_testcaseHandling
                     }
                 }
             }
+            else { }
             for (int index = 0; index < VoltageCondition.Count; index++)
             {
                 subRowIndex++;
